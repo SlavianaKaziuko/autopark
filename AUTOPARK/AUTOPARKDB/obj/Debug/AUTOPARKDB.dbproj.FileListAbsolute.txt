@@ -1,0 +1,8 @@
+C:\Users\s.kaziuko\Dropbox\Саша\Sasha\1\WORK2\AUTOPARK\AUTOPARKDB\sql\debug\AUTOPARKDB.deploymanifest
+C:\Users\s.kaziuko\Dropbox\Саша\Sasha\1\WORK2\AUTOPARK\AUTOPARKDB\sql\debug\AUTOPARKDB.dbschema
+C:\Users\s.kaziuko\Dropbox\Саша\Sasha\1\WORK2\AUTOPARK\AUTOPARKDB\obj\Debug\AUTOPARKDB.dbschema
+C:\Users\s.kaziuko\Dropbox\Саша\Sasha\1\WORK2\AUTOPARK\AUTOPARKDB\sql\debug\Путевые листы_Script.PreDeployment.sql
+C:\Users\s.kaziuko\Dropbox\Саша\Sasha\1\WORK2\AUTOPARK\AUTOPARKDB\sql\debug\Путевые листы_Script.PostDeployment.sql
+C:\Users\s.kaziuko\Dropbox\Саша\Sasha\1\WORK2\AUTOPARK\AUTOPARKDB\sql\debug\Путевые листы_Database.sqlsettings
+C:\Users\s.kaziuko\Dropbox\Саша\Sasha\1\WORK2\AUTOPARK\AUTOPARKDB\sql\debug\Путевые листы_Database.sqldeployment
+C:\Users\s.kaziuko\Dropbox\Саша\Sasha\1\WORK2\AUTOPARK\AUTOPARKDB\sql\debug\Путевые листы_Database.sqlcmdvars
