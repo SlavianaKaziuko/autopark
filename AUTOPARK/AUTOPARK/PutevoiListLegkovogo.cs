@@ -142,13 +142,16 @@ namespace AUTOPARK
 
         private void dgvPutevieLegkovie_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
-            if (dgvPutevieLegkovie.CurrentRow != null)
+            if (dgvPutevieLegkovie.CurrentRow == null) return;
+            dgvPutevieLegkovie.CurrentRow.Cells["ID_Путевого листа"].Value = PutevoiId;
+            dgvPutevieLegkovie.CurrentRow.Cells["Время выезда"].Value = new TimeSpan(0, 0, 0);
+            dgvPutevieLegkovie.CurrentRow.Cells["Время возвращения"].Value = new TimeSpan(0, 0, 0);
+            dgvPutevieLegkovie.CurrentRow.Cells["Время в наряде"].Value = new TimeSpan(0, 0, 0);
+            if (dgvPutevieLegkovie.RowCount > 1)
             {
-                dgvPutevieLegkovie.CurrentRow.Cells["ID_Путевого листа"].Value = PutevoiId;
-                dgvPutevieLegkovie.CurrentRow.Cells["Время выезда"].Value = new TimeSpan(0, 0, 0);
-                dgvPutevieLegkovie.CurrentRow.Cells["Время возвращения"].Value = new TimeSpan(0, 0, 0);
-                dgvPutevieLegkovie.CurrentRow.Cells["Время в наряде"].Value = new TimeSpan(0, 0, 0);
-
+                dgvPutevieLegkovie.CurrentRow.Cells["Показания спидометра при выезде"].Value =
+                    dgvPutevieLegkovie.Rows[dgvPutevieLegkovie.CurrentRow.Index].Cells[
+                        "Показания спидометра при возвращении"].Value;
             }
         }
 
