@@ -77,10 +77,6 @@ namespace AUTOPARK {
         
         private global::System.Data.DataRelation relationFK_Путевой_лист_легкового_автомобиля_Подвижной_состав1;
         
-        private global::System.Data.DataRelation relationFK_Данные_Путевой_лист_легкового_авто_Путевой_лист_легкового_автомобиля;
-        
-        private global::System.Data.DataRelation relationFK_Данные_Путевой_лист_легкового_авто_Путевой_лист_легкового_автомобиля1;
-        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -722,10 +718,10 @@ namespace AUTOPARK {
                         this.tableПутевые_листы_легковые.табельный__номерColumn}, new global::System.Data.DataColumn[] {
                         this.tableПутевой_лист_легкового_автомобиля.ID_ВодительColumn}, false);
             this.Relations.Add(this.relationFK_Путевой_лист_легкового_автомобиля_личный_состав1);
-            this.relationFK_Данные_Путевой_лист_легкового_авто_Путевой_лист_легкового_автомобиля1 = new global::System.Data.DataRelation("FK_Данные Путевой лист легкового авто_Путевой лист легкового автомобиля1", new global::System.Data.DataColumn[] {
-                        this.tablePutevoiListLegkTable.ID_Путевого_листаColumn}, new global::System.Data.DataColumn[] {
-                        this.tableДанные_Путевой_лист_легкового_авто.ID_Путевого_листаColumn}, false);
-            this.Relations.Add(this.relationFK_Данные_Путевой_лист_легкового_авто_Путевой_лист_легкового_автомобиля1);
+            //this.relationFK_Данные_Путевой_лист_легкового_авто_Путевой_лист_легкового_автомобиля1 = new global::System.Data.DataRelation("FK_Данные Путевой лист легкового авто_Путевой лист легкового автомобиля1", new global::System.Data.DataColumn[] {
+            //            this.tablePutevoiListLegkTable.ID_Путевого_листаColumn}, new global::System.Data.DataColumn[] {
+            //            this.tableДанные_Путевой_лист_легкового_авто.ID_Путевого_листаColumn}, false);
+            //this.Relations.Add(this.relationFK_Данные_Путевой_лист_легкового_авто_Путевой_лист_легкового_автомобиля1);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -10431,11 +10427,11 @@ namespace AUTOPARK {
                 return this.IsNull(this.tableView_Работа_водителя_и_авто.Показания_спидометраColumn);
             }
             
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetРасход_топлива_экономия_перерасходNull() {
-                this[this.tableДанные_Путевой_лист_легкового_авто.Расход_топлива_экономия_перерасходColumn] = global::System.Convert.DBNull;
-            }
+            //[global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            //[global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            //public void SetРасход_топлива_экономия_перерасходNull() {
+            //    this[this.tableДанные_Путевой_лист_легкового_авто.Расход_топлива_экономия_перерасходColumn] = global::System.Convert.DBNull;
+            //}
         }
         
         /// <summary>
