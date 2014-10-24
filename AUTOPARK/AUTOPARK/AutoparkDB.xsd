@@ -1370,123 +1370,38 @@ FROM            [View_Данные путевой лист легкового а
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Время_x0020_выезда" msprop:Generator_ColumnVarNameInTable="columnВремя_выезда" msprop:Generator_ColumnPropNameInRow="Время_выезда" msprop:Generator_ColumnPropNameInTable="Время_выездаColumn" msprop:Generator_UserColumnName="Время выезда" type="xs:duration" />
-              <xs:element name="Время_x0020_возвращения" msprop:Generator_ColumnVarNameInTable="columnВремя_возвращения" msprop:Generator_ColumnPropNameInRow="Время_возвращения" msprop:Generator_ColumnPropNameInTable="Время_возвращенияColumn" msprop:Generator_UserColumnName="Время возвращения" type="xs:duration" />
-              <xs:element name="Время_x0020_в_x0020_наряде" msprop:Generator_ColumnVarNameInTable="columnВремя_в_наряде" msprop:Generator_ColumnPropNameInRow="Время_в_наряде" msprop:Generator_ColumnPropNameInTable="Время_в_нарядеColumn" msprop:Generator_UserColumnName="Время в наряде" type="xs:duration" />
-              <xs:element name="Показания_x0020_спидометра_x0020_при_x0020_выезде" msprop:Generator_ColumnVarNameInTable="columnПоказания_спидометра_при_выезде" msprop:Generator_ColumnPropNameInRow="Показания_спидометра_при_выезде" msprop:Generator_ColumnPropNameInTable="Показания_спидометра_при_выездеColumn" msprop:Generator_UserColumnName="Показания спидометра при выезде">
+              <xs:element name="За_x0020_период_x0020_с" msprop:Generator_ColumnVarNameInTable="columnЗа_период_с" msprop:Generator_ColumnPropNameInRow="За_период_с" msprop:Generator_ColumnPropNameInTable="За_период_сColumn" msprop:Generator_UserColumnName="За период с" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="За_x0020_период_x0020_по" msprop:Generator_ColumnVarNameInTable="columnЗа_период_по" msprop:Generator_ColumnPropNameInRow="За_период_по" msprop:Generator_ColumnPropNameInTable="За_период_поColumn" msprop:Generator_UserColumnName="За период по" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ID_Автомобиль" msprop:Generator_ColumnVarNameInTable="columnID_Автомобиль" msprop:Generator_ColumnPropNameInRow="ID_Автомобиль" msprop:Generator_ColumnPropNameInTable="ID_АвтомобильColumn" msprop:Generator_UserColumnName="ID_Автомобиль" type="xs:int" minOccurs="0" />
+              <xs:element name="ID_Водитель" msprop:Generator_ColumnVarNameInTable="columnID_Водитель" msprop:Generator_ColumnPropNameInRow="ID_Водитель" msprop:Generator_ColumnPropNameInTable="ID_ВодительColumn" msprop:Generator_UserColumnName="ID_Водитель" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Данные_x0020_Путевой_x0020_лист_x0020_легкового_x0020_авто" msprop:Generator_TableClassName="Данные_Путевой_лист_легкового_автоDataTable" msprop:Generator_TableVarName="tableДанные_Путевой_лист_легкового_авто" msprop:Generator_TablePropName="Данные_Путевой_лист_легкового_авто" msprop:Generator_RowDeletingName="Данные_Путевой_лист_легкового_автоRowDeleting" msprop:Generator_RowChangingName="Данные_Путевой_лист_легкового_автоRowChanging" msprop:Generator_RowEvHandlerName="Данные_Путевой_лист_легкового_автоRowChangeEventHandler" msprop:Generator_RowDeletedName="Данные_Путевой_лист_легкового_автоRowDeleted" msprop:Generator_UserTableName="Данные Путевой лист легкового авто" msprop:Generator_RowChangedName="Данные_Путевой_лист_легкового_автоRowChanged" msprop:Generator_RowEvArgName="Данные_Путевой_лист_легкового_автоRowChangeEvent" msprop:Generator_RowClassName="Данные_Путевой_лист_легкового_автоRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id_Данных" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid_Данных" msprop:Generator_ColumnPropNameInRow="id_Данных" msprop:Generator_ColumnPropNameInTable="id_ДанныхColumn" msprop:Generator_UserColumnName="id_Данных" type="xs:int" />
+              <xs:element name="ID_Путевого_x0020_листа" msprop:Generator_ColumnVarNameInTable="columnID_Путевого_листа" msprop:Generator_ColumnPropNameInRow="ID_Путевого_листа" msprop:Generator_ColumnPropNameInTable="ID_Путевого_листаColumn" msprop:Generator_UserColumnName="ID_Путевого листа" type="xs:int" />
+              <xs:element name="Число" msprop:Generator_ColumnVarNameInTable="columnЧисло" msprop:Generator_ColumnPropNameInRow="Число" msprop:Generator_ColumnPropNameInTable="ЧислоColumn" msprop:Generator_UserColumnName="Число" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Время_x0020_выезда" msprop:nullValue="_throw" msprop:Generator_ColumnPropNameInRow="Время_выезда" msprop:Generator_ColumnVarNameInTable="columnВремя_выезда" msprop:Generator_ColumnPropNameInTable="Время_выездаColumn" msprop:Generator_UserColumnName="Время выезда" type="xs:duration" minOccurs="0" />
+              <xs:element name="Время_x0020_возвращения" msprop:nullValue="_throw" msprop:Generator_ColumnPropNameInRow="Время_возвращения" msprop:Generator_ColumnVarNameInTable="columnВремя_возвращения" msprop:Generator_ColumnPropNameInTable="Время_возвращенияColumn" msprop:Generator_UserColumnName="Время возвращения" type="xs:duration" minOccurs="0" />
+              <xs:element name="Время_x0020_в_x0020_наряде" msprop:nullValue="_throw" msprop:Generator_ColumnPropNameInRow="Время_в_наряде" msprop:Generator_ColumnVarNameInTable="columnВремя_в_наряде" msprop:Generator_ColumnPropNameInTable="Время_в_нарядеColumn" msprop:Generator_UserColumnName="Время в наряде" type="xs:duration" minOccurs="0" />
+              <xs:element name="Показания_x0020_спидометра_x0020_при_x0020_выезде" msprop:nullValue="_throw" msprop:Generator_ColumnPropNameInRow="Показания_спидометра_при_выезде" msprop:Generator_ColumnVarNameInTable="columnПоказания_спидометра_при_выезде" msprop:Generator_ColumnPropNameInTable="Показания_спидометра_при_выездеColumn" msprop:Generator_UserColumnName="Показания спидометра при выезде" type="xs:int" default="0" minOccurs="0" />
+              <xs:element name="Показания_x0020_спидометра_x0020_при_x0020_возвращении" msprop:nullValue="_throw" msprop:Generator_ColumnPropNameInRow="Показания_спидометра_при_возвращении" msprop:Generator_ColumnVarNameInTable="columnПоказания_спидометра_при_возвращении" msprop:Generator_ColumnPropNameInTable="Показания_спидометра_при_возвращенииColumn" msprop:Generator_UserColumnName="Показания спидометра при возвращении" type="xs:int" default="0" minOccurs="0" />
+              <xs:element name="Пробег_x0020_км" msprop:nullValue="_throw" msprop:Generator_ColumnPropNameInRow="Пробег_км" msprop:Generator_ColumnVarNameInTable="columnПробег_км" msprop:Generator_ColumnPropNameInTable="Пробег_кмColumn" msprop:Generator_UserColumnName="Пробег км" type="xs:int" default="0" minOccurs="0" />
+              <xs:element name="Остаток_x0020_топлива_x0020_при_x0020_выезде" msprop:nullValue="_throw" msprop:Generator_ColumnPropNameInRow="Остаток_топлива_при_выезде" msprop:Generator_ColumnVarNameInTable="columnОстаток_топлива_при_выезде" msprop:Generator_ColumnPropNameInTable="Остаток_топлива_при_выездеColumn" msprop:Generator_UserColumnName="Остаток топлива при выезде" type="xs:double" default="0" minOccurs="0" />
+              <xs:element name="Остаток_x0020_топлива_x0020_при_x0020_возвращении" msprop:nullValue="_throw" msprop:Generator_ColumnPropNameInRow="Остаток_топлива_при_возвращении" msprop:Generator_ColumnVarNameInTable="columnОстаток_топлива_при_возвращении" msprop:Generator_ColumnPropNameInTable="Остаток_топлива_при_возвращенииColumn" msprop:Generator_UserColumnName="Остаток топлива при возвращении" type="xs:double" default="0" minOccurs="0" />
+              <xs:element name="Заправлено_x0020_топлива_x0020_л" msprop:nullValue="_throw" msprop:Generator_ColumnPropNameInRow="Заправлено_топлива_л" msprop:Generator_ColumnVarNameInTable="columnЗаправлено_топлива_л" msprop:Generator_ColumnPropNameInTable="Заправлено_топлива_лColumn" msprop:Generator_UserColumnName="Заправлено топлива л" type="xs:double" default="0" minOccurs="0" />
+              <xs:element name="Дата_x0020_и_x0020__x2116__x0020_чека_x0020_АЗС" msprop:nullValue="_throw" msprop:Generator_ColumnPropNameInRow="_Дата_и___чека_АЗС" msprop:Generator_ColumnVarNameInTable="_columnДата_и___чека_АЗС" msprop:Generator_ColumnPropNameInTable="_Дата_и___чека_АЗСColumn" msprop:Generator_UserColumnName="Дата и № чека АЗС" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Показания_x0020_спидометра_x0020_при_x0020_возвращении" msprop:Generator_ColumnVarNameInTable="columnПоказания_спидометра_при_возвращении" msprop:Generator_ColumnPropNameInRow="Показания_спидометра_при_возвращении" msprop:Generator_ColumnPropNameInTable="Показания_спидометра_при_возвращенииColumn" msprop:Generator_UserColumnName="Показания спидометра при возвращении">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Пробег_x0020_км" msprop:Generator_ColumnVarNameInTable="columnПробег_км" msprop:Generator_ColumnPropNameInRow="Пробег_км" msprop:Generator_ColumnPropNameInTable="Пробег_кмColumn" msprop:Generator_UserColumnName="Пробег км">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Остаток_x0020_топлива_x0020_при_x0020_выезде" msprop:Generator_ColumnVarNameInTable="columnОстаток_топлива_при_выезде" msprop:Generator_ColumnPropNameInRow="Остаток_топлива_при_выезде" msprop:Generator_ColumnPropNameInTable="Остаток_топлива_при_выездеColumn" msprop:Generator_UserColumnName="Остаток топлива при выезде">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Остаток_x0020_топлива_x0020_при_x0020_возвращении" msprop:Generator_ColumnVarNameInTable="columnОстаток_топлива_при_возвращении" msprop:Generator_ColumnPropNameInRow="Остаток_топлива_при_возвращении" msprop:Generator_ColumnPropNameInTable="Остаток_топлива_при_возвращенииColumn" msprop:Generator_UserColumnName="Остаток топлива при возвращении">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Заправлено_x0020_топлива_x0020_л" msprop:Generator_ColumnVarNameInTable="columnЗаправлено_топлива_л" msprop:Generator_ColumnPropNameInRow="Заправлено_топлива_л" msprop:Generator_ColumnPropNameInTable="Заправлено_топлива_лColumn" msprop:Generator_UserColumnName="Заправлено топлива л">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Дата_x0020_и_x0020__x2116__x0020_чека_x0020_АЗС" msprop:Generator_ColumnVarNameInTable="_columnДата_и___чека_АЗС" msprop:Generator_ColumnPropNameInRow="_Дата_и___чека_АЗС" msprop:Generator_ColumnPropNameInTable="_Дата_и___чека_АЗСColumn" msprop:Generator_UserColumnName="Дата и № чека АЗС" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Расход_x0020_топлива_x0020_по_x0020_норме" msprop:Generator_ColumnVarNameInTable="columnРасход_топлива_по_норме" msprop:Generator_ColumnPropNameInRow="Расход_топлива_по_норме" msprop:Generator_ColumnPropNameInTable="Расход_топлива_по_нормеColumn" msprop:Generator_UserColumnName="Расход топлива по норме" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Расход_x0020_топлива_x0020_фактически" msprop:Generator_ColumnVarNameInTable="columnРасход_топлива_фактически" msprop:Generator_ColumnPropNameInRow="Расход_топлива_фактически" msprop:Generator_ColumnPropNameInTable="Расход_топлива_фактическиColumn" msprop:Generator_UserColumnName="Расход топлива фактически" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Расход_x0020_топлива_x0020_экономия_x0020_перерасход" msprop:Generator_ColumnVarNameInTable="columnРасход_топлива_экономия_перерасход" msprop:Generator_ColumnPropNameInRow="Расход_топлива_экономия_перерасход" msprop:Generator_ColumnPropNameInTable="Расход_топлива_экономия_перерасходColumn" msprop:Generator_UserColumnName="Расход топлива экономия перерасход" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Автомобиль_x0020_технически_x0020_исправлен_x0020_выезд_x0020_разрешен_x0020__x0028_подрись_x0020_штамп_x0020_уполномоченного_x0020_лица_x0029_" msprop:Generator_ColumnVarNameInTable="_columnАвтомобиль_технически_исправлен_выезд_разрешен__подрись_штамп_уполномоченного_лица_" msprop:Generator_ColumnPropNameInRow="_Автомобиль_технически_исправлен_выезд_разрешен__подрись_штамп_уполномоченного_лица_" msprop:Generator_ColumnPropNameInTable="_Автомобиль_технически_исправлен_выезд_разрешен__подрись_штамп_уполномоченного_лица_Column" msprop:Generator_UserColumnName="Автомобиль технически исправлен выезд разрешен (подрись штамп уполномоченного лица)" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Автомобиль_x0020_технически_x0020_исправлен_x0020_принял_x0028_подпись_x0020_водителя_x0029_" msprop:Generator_ColumnVarNameInTable="_columnАвтомобиль_технически_исправлен_принял_подпись_водителя_" msprop:Generator_ColumnPropNameInRow="_Автомобиль_технически_исправлен_принял_подпись_водителя_" msprop:Generator_ColumnPropNameInTable="_Автомобиль_технически_исправлен_принял_подпись_водителя_Column" msprop:Generator_UserColumnName="Автомобиль технически исправлен принял(подпись водителя)" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="При_x0020_возвращении_x0020_автомобиль_x0020_сдал_x0028_подпись_x0020_водителя_x0029_" msprop:Generator_ColumnVarNameInTable="_columnПри_возвращении_автомобиль_сдал_подпись_водителя_" msprop:Generator_ColumnPropNameInRow="_При_возвращении_автомобиль_сдал_подпись_водителя_" msprop:Generator_ColumnPropNameInTable="_При_возвращении_автомобиль_сдал_подпись_водителя_Column" msprop:Generator_UserColumnName="При возвращении автомобиль сдал(подпись водителя)" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="При_x0020_возвращении_x0020_автомобиль_x0020_принял_x0028_подпись_x0020_штамп_x0020_уполномоченного_x0020_лица_x0029_" msprop:Generator_ColumnVarNameInTable="_columnПри_возвращении_автомобиль_принял_подпись_штамп_уполномоченного_лица_" msprop:Generator_ColumnPropNameInRow="_При_возвращении_автомобиль_принял_подпись_штамп_уполномоченного_лица_" msprop:Generator_ColumnPropNameInTable="_При_возвращении_автомобиль_принял_подпись_штамп_уполномоченного_лица_Column" msprop:Generator_UserColumnName="При возвращении автомобиль принял(подпись штамп уполномоченного лица)" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Водитель_x0020_по_x0020_состоянию_x0020_здоровья_x0020_к_x0020_управлению_x0020_допущен_x0020__x0028_подпись_x0020_штам_x0020_уполномоченного_x0020_лица_x0029_" msprop:Generator_ColumnVarNameInTable="_columnВодитель_по_состоянию_здоровья_к_управлению_допущен__подпись_штам_уполномоченного_лица_" msprop:Generator_ColumnPropNameInRow="_Водитель_по_состоянию_здоровья_к_управлению_допущен__подпись_штам_уполномоченного_лица_" msprop:Generator_ColumnPropNameInTable="_Водитель_по_состоянию_здоровья_к_управлению_допущен__подпись_штам_уполномоченного_лица_Column" msprop:Generator_UserColumnName="Водитель по состоянию здоровья к управлению допущен (подпись штам уполномоченного лица)" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Подпись_x0028_штамп_x0029__x0020_лица_x002C_ответственного_x0020_за_x0020_оформление_x0020_путевого_x0020_листа" msprop:Generator_ColumnVarNameInTable="_columnПодпись_штамп__лица_ответственного_за_оформление_путевого_листа" msprop:Generator_ColumnPropNameInRow="_Подпись_штамп__лица_ответственного_за_оформление_путевого_листа" msprop:Generator_ColumnPropNameInTable="_Подпись_штамп__лица_ответственного_за_оформление_путевого_листаColumn" msprop:Generator_UserColumnName="Подпись(штамп) лица,ответственного за оформление путевого листа" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="id_Данных" msprop:Generator_ColumnVarNameInTable="columnid_Данных" msprop:Generator_ColumnPropNameInRow="id_Данных" msprop:Generator_ColumnPropNameInTable="id_ДанныхColumn" msprop:Generator_UserColumnName="id_Данных" type="xs:int" />
-              <xs:element name="ID_Путевого_x0020_листа" msprop:Generator_ColumnVarNameInTable="columnID_Путевого_листа" msprop:Generator_ColumnPropNameInRow="ID_Путевого_листа" msprop:Generator_ColumnPropNameInTable="ID_Путевого_листаColumn" msprop:Generator_UserColumnName="ID_Путевого листа" type="xs:int" minOccurs="0" />
+              <xs:element name="Расход_x0020_топлива_x0020_по_x0020_норме" msprop:nullValue="_throw" msprop:Generator_ColumnPropNameInRow="Расход_топлива_по_норме" msprop:Generator_ColumnVarNameInTable="columnРасход_топлива_по_норме" msprop:Generator_ColumnPropNameInTable="Расход_топлива_по_нормеColumn" msprop:Generator_UserColumnName="Расход топлива по норме" type="xs:double" default="0" minOccurs="0" />
+              <xs:element name="Расход_x0020_топлива_x0020_фактически" msprop:nullValue="_throw" msprop:Generator_ColumnPropNameInRow="Расход_топлива_фактически" msprop:Generator_ColumnVarNameInTable="columnРасход_топлива_фактически" msprop:Generator_ColumnPropNameInTable="Расход_топлива_фактическиColumn" msprop:Generator_UserColumnName="Расход топлива фактически" type="xs:double" default="0" minOccurs="0" />
+              <xs:element name="Расход_x0020_топлива_x0020_экономия_x0020_перерасход" msprop:nullValue="_throw" msprop:Generator_ColumnPropNameInRow="Расход_топлива_экономия_перерасход" msprop:Generator_ColumnVarNameInTable="columnРасход_топлива_экономия_перерасход" msprop:Generator_ColumnPropNameInTable="Расход_топлива_экономия_перерасходColumn" msprop:Generator_UserColumnName="Расход топлива экономия перерасход" type="xs:double" default="0" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -1603,10 +1518,6 @@ FROM            [View_Данные путевой лист легкового а
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="За_x0020_период_x0020_с" msprop:Generator_ColumnVarNameInTable="columnЗа_период_с" msprop:Generator_ColumnPropNameInRow="За_период_с" msprop:Generator_ColumnPropNameInTable="За_период_сColumn" msprop:Generator_UserColumnName="За период с" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="За_x0020_период_x0020_по" msprop:Generator_ColumnVarNameInTable="columnЗа_период_по" msprop:Generator_ColumnPropNameInRow="За_период_по" msprop:Generator_ColumnPropNameInTable="За_период_поColumn" msprop:Generator_UserColumnName="За период по" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="ID_Автомобиль" msprop:Generator_ColumnVarNameInTable="columnID_Автомобиль" msprop:Generator_ColumnPropNameInRow="ID_Автомобиль" msprop:Generator_ColumnPropNameInTable="ID_АвтомобильColumn" msprop:Generator_UserColumnName="ID_Автомобиль" type="xs:int" minOccurs="0" />
-              <xs:element name="ID_Водитель" msprop:Generator_ColumnVarNameInTable="columnID_Водитель" msprop:Generator_ColumnPropNameInRow="ID_Водитель" msprop:Generator_ColumnPropNameInTable="ID_ВодительColumn" msprop:Generator_UserColumnName="ID_Водитель" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -1649,35 +1560,7 @@ FROM            [View_Данные путевой лист легкового а
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Данные_x0020_Путевой_x0020_лист_x0020_легкового_x0020_авто" msprop:Generator_TableClassName="Данные_Путевой_лист_легкового_автоDataTable" msprop:Generator_TableVarName="tableДанные_Путевой_лист_легкового_авто" msprop:Generator_TablePropName="Данные_Путевой_лист_легкового_авто" msprop:Generator_RowDeletingName="Данные_Путевой_лист_легкового_автоRowDeleting" msprop:Generator_RowChangingName="Данные_Путевой_лист_легкового_автоRowChanging" msprop:Generator_RowEvHandlerName="Данные_Путевой_лист_легкового_автоRowChangeEventHandler" msprop:Generator_RowDeletedName="Данные_Путевой_лист_легкового_автоRowDeleted" msprop:Generator_UserTableName="Данные Путевой лист легкового авто" msprop:Generator_RowChangedName="Данные_Путевой_лист_легкового_автоRowChanged" msprop:Generator_RowEvArgName="Данные_Путевой_лист_легкового_автоRowChangeEvent" msprop:Generator_RowClassName="Данные_Путевой_лист_легкового_автоRow">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="id_Данных" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid_Данных" msprop:Generator_ColumnPropNameInRow="id_Данных" msprop:Generator_ColumnPropNameInTable="id_ДанныхColumn" msprop:Generator_UserColumnName="id_Данных" type="xs:int" />
-              <xs:element name="ID_Путевого_x0020_листа" msprop:Generator_ColumnVarNameInTable="columnID_Путевого_листа" msprop:Generator_ColumnPropNameInRow="ID_Путевого_листа" msprop:Generator_ColumnPropNameInTable="ID_Путевого_листаColumn" msprop:Generator_UserColumnName="ID_Путевого листа" type="xs:int" />
-              <xs:element name="Число" msprop:Generator_ColumnVarNameInTable="columnЧисло" msprop:Generator_ColumnPropNameInRow="Число" msprop:Generator_ColumnPropNameInTable="ЧислоColumn" msprop:Generator_UserColumnName="Число" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="Время_x0020_выезда" msprop:nullValue="_throw" msprop:Generator_ColumnPropNameInRow="Время_выезда" msprop:Generator_ColumnVarNameInTable="columnВремя_выезда" msprop:Generator_ColumnPropNameInTable="Время_выездаColumn" msprop:Generator_UserColumnName="Время выезда" type="xs:duration" minOccurs="0" />
-              <xs:element name="Время_x0020_возвращения" msprop:nullValue="_throw" msprop:Generator_ColumnPropNameInRow="Время_возвращения" msprop:Generator_ColumnVarNameInTable="columnВремя_возвращения" msprop:Generator_ColumnPropNameInTable="Время_возвращенияColumn" msprop:Generator_UserColumnName="Время возвращения" type="xs:duration" minOccurs="0" />
-              <xs:element name="Время_x0020_в_x0020_наряде" msprop:nullValue="_throw" msprop:Generator_ColumnPropNameInRow="Время_в_наряде" msprop:Generator_ColumnVarNameInTable="columnВремя_в_наряде" msprop:Generator_ColumnPropNameInTable="Время_в_нарядеColumn" msprop:Generator_UserColumnName="Время в наряде" type="xs:duration" minOccurs="0" />
-              <xs:element name="Показания_x0020_спидометра_x0020_при_x0020_выезде" msprop:nullValue="_throw" msprop:Generator_ColumnPropNameInRow="Показания_спидометра_при_выезде" msprop:Generator_ColumnVarNameInTable="columnПоказания_спидометра_при_выезде" msprop:Generator_ColumnPropNameInTable="Показания_спидометра_при_выездеColumn" msprop:Generator_UserColumnName="Показания спидометра при выезде" type="xs:int" default="0" minOccurs="0" />
-              <xs:element name="Показания_x0020_спидометра_x0020_при_x0020_возвращении" msprop:nullValue="_throw" msprop:Generator_ColumnPropNameInRow="Показания_спидометра_при_возвращении" msprop:Generator_ColumnVarNameInTable="columnПоказания_спидометра_при_возвращении" msprop:Generator_ColumnPropNameInTable="Показания_спидометра_при_возвращенииColumn" msprop:Generator_UserColumnName="Показания спидометра при возвращении" type="xs:int" default="0" minOccurs="0" />
-              <xs:element name="Пробег_x0020_км" msprop:nullValue="_throw" msprop:Generator_ColumnPropNameInRow="Пробег_км" msprop:Generator_ColumnVarNameInTable="columnПробег_км" msprop:Generator_ColumnPropNameInTable="Пробег_кмColumn" msprop:Generator_UserColumnName="Пробег км" type="xs:int" default="0" minOccurs="0" />
-              <xs:element name="Остаток_x0020_топлива_x0020_при_x0020_выезде" msprop:nullValue="_throw" msprop:Generator_ColumnPropNameInRow="Остаток_топлива_при_выезде" msprop:Generator_ColumnVarNameInTable="columnОстаток_топлива_при_выезде" msprop:Generator_ColumnPropNameInTable="Остаток_топлива_при_выездеColumn" msprop:Generator_UserColumnName="Остаток топлива при выезде" type="xs:double" default="0" minOccurs="0" />
-              <xs:element name="Остаток_x0020_топлива_x0020_при_x0020_возвращении" msprop:nullValue="_throw" msprop:Generator_ColumnPropNameInRow="Остаток_топлива_при_возвращении" msprop:Generator_ColumnVarNameInTable="columnОстаток_топлива_при_возвращении" msprop:Generator_ColumnPropNameInTable="Остаток_топлива_при_возвращенииColumn" msprop:Generator_UserColumnName="Остаток топлива при возвращении" type="xs:double" default="0" minOccurs="0" />
-              <xs:element name="Заправлено_x0020_топлива_x0020_л" msprop:nullValue="_throw" msprop:Generator_ColumnPropNameInRow="Заправлено_топлива_л" msprop:Generator_ColumnVarNameInTable="columnЗаправлено_топлива_л" msprop:Generator_ColumnPropNameInTable="Заправлено_топлива_лColumn" msprop:Generator_UserColumnName="Заправлено топлива л" type="xs:double" default="0" minOccurs="0" />
-              <xs:element name="Дата_x0020_и_x0020__x2116__x0020_чека_x0020_АЗС" msprop:nullValue="_throw" msprop:Generator_ColumnPropNameInRow="_Дата_и___чека_АЗС" msprop:Generator_ColumnVarNameInTable="_columnДата_и___чека_АЗС" msprop:Generator_ColumnPropNameInTable="_Дата_и___чека_АЗСColumn" msprop:Generator_UserColumnName="Дата и № чека АЗС" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Расход_x0020_топлива_x0020_по_x0020_норме" msprop:nullValue="_throw" msprop:Generator_ColumnPropNameInRow="Расход_топлива_по_норме" msprop:Generator_ColumnVarNameInTable="columnРасход_топлива_по_норме" msprop:Generator_ColumnPropNameInTable="Расход_топлива_по_нормеColumn" msprop:Generator_UserColumnName="Расход топлива по норме" type="xs:double" default="0" minOccurs="0" />
-              <xs:element name="Расход_x0020_топлива_x0020_фактически" msprop:nullValue="_throw" msprop:Generator_ColumnPropNameInRow="Расход_топлива_фактически" msprop:Generator_ColumnVarNameInTable="columnРасход_топлива_фактически" msprop:Generator_ColumnPropNameInTable="Расход_топлива_фактическиColumn" msprop:Generator_UserColumnName="Расход топлива фактически" type="xs:double" default="0" minOccurs="0" />
-              <xs:element name="Расход_x0020_топлива_x0020_экономия_x0020_перерасход" msprop:nullValue="_throw" msprop:Generator_ColumnPropNameInRow="Расход_топлива_экономия_перерасход" msprop:Generator_ColumnVarNameInTable="columnРасход_топлива_экономия_перерасход" msprop:Generator_ColumnPropNameInTable="Расход_топлива_экономия_перерасходColumn" msprop:Generator_UserColumnName="Расход топлива экономия перерасход" type="xs:double" default="0" minOccurs="0" />
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-<xs:element name="View_Работа_x0020_водителя_x0020_и_x0020_авто" msprop:Generator_TableClassName="View_Работа_водителя_и_автоDataTable" msprop:Generator_TableVarName="tableView_Работа_водителя_и_авто" msprop:Generator_TablePropName="View_Работа_водителя_и_авто" msprop:Generator_RowDeletingName="View_Работа_водителя_и_автоRowDeleting" msprop:Generator_UserTableName="View_Работа водителя и авто" msprop:Generator_RowChangingName="View_Работа_водителя_и_автоRowChanging" msprop:Generator_RowEvHandlerName="View_Работа_водителя_и_автоRowChangeEventHandler" msprop:Generator_RowDeletedName="View_Работа_водителя_и_автоRowDeleted" msprop:Generator_RowEvArgName="View_Работа_водителя_и_автоRowChangeEvent" msprop:Generator_RowChangedName="View_Работа_водителя_и_автоRowChanged" msprop:Generator_RowClassName="View_Работа_водителя_и_автоRow">
+        <xs:element name="View_Работа_x0020_водителя_x0020_и_x0020_авто" msprop:Generator_TableClassName="View_Работа_водителя_и_автоDataTable" msprop:Generator_TableVarName="tableView_Работа_водителя_и_авто" msprop:Generator_TablePropName="View_Работа_водителя_и_авто" msprop:Generator_RowDeletingName="View_Работа_водителя_и_автоRowDeleting" msprop:Generator_UserTableName="View_Работа водителя и авто" msprop:Generator_RowChangingName="View_Работа_водителя_и_автоRowChanging" msprop:Generator_RowEvHandlerName="View_Работа_водителя_и_автоRowChangeEventHandler" msprop:Generator_RowDeletedName="View_Работа_водителя_и_автоRowDeleted" msprop:Generator_RowEvArgName="View_Работа_водителя_и_автоRowChangeEvent" msprop:Generator_RowChangedName="View_Работа_водителя_и_автоRowChanged" msprop:Generator_RowClassName="View_Работа_водителя_и_автоRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Операции" msprop:Generator_ColumnVarNameInTable="columnОперации" msprop:Generator_ColumnPropNameInRow="Операции" msprop:Generator_ColumnPropNameInTable="ОперацииColumn" msprop:Generator_UserColumnName="Операции">
