@@ -1,3 +1,13 @@
+
+[Bb]in
+[Bb]in/
+[Dd]ebug/
+[Oo]bj
+[Oo]bj/
+[Rr]elease/
+[Ss]tyle[Cc]op.*
+[Tt]est[Rr]esult*
+
 *.Cache
 *.dbmdl
 *.DotSettings
@@ -28,15 +38,6 @@
 
 Logs
 Logs/
-
-[Bb]in
-[Bb]in/
-[Dd]ebug/
-[Oo]bj
-[Oo]bj/
-[Rr]elease/
-[Ss]tyle[Cc]op.*
-[Tt]est[Rr]esult*
 
 _ReSharper*
 _UpgradeReport_Files/
