@@ -1,29 +1,58 @@
-# Object files
-*.o
-*.ko
+*.Cache
+*.dbmdl
+*.DotSettings
+*.ilk
+*.log
+*.meta
 *.obj
-*.elf
-
-# Precompiled Headers
-*.gch
+*.orig
 *.pch
+*.pdb
+*.pgc
+*.pgd
+*.rsp
+*.sbr
+*.sln.docstates
+*.suo
+*.tlb
+*.tlh
+*.tli
+*.tmp
+*.user
+*.vspscc
+*.vssscc
+*_i.c
+*_p.c
 
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
+.builds
 
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
+Logs
+Logs/
 
-# Executables
-*.exe
-*.out
-*.app
-*.i*86
-*.x86_64
-*.hex
+[Bb]in
+[Bb]in/
+[Dd]ebug/
+[Oo]bj
+[Oo]bj/
+[Rr]elease/
+[Ss]tyle[Cc]op.*
+[Tt]est[Rr]esult*
+
+_ReSharper*
+_UpgradeReport_Files/
+AppPackages/
+Backup*/
+ClientBin
+CodeGeneration.Log.xml
+packages
+publish
+StyleCop.Cache
+TestResults
+TestResults
+UpgradeLog*.XML
+x64/
+*.tss
+
+*.references
+
+
