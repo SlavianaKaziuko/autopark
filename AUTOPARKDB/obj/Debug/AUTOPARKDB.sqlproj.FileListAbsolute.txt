@@ -1,0 +1,5 @@
+D:\my\AUTOPARKDB\bin\Debug\AUTOPARKDB.dacpac
+D:\my\AUTOPARKDB\bin\Debug\AUTOPARKDB.dll
+D:\my\AUTOPARKDB\bin\Debug\AUTOPARKDB.pdb
+D:\my\AUTOPARKDB\obj\Debug\AUTOPARKDB.dll
+D:\my\AUTOPARKDB\obj\Debug\AUTOPARKDB.pdb
