@@ -29,12 +29,18 @@
 Logs
 Logs/
 
-[Bb]in
-[Bb]in/
-[Dd]ebug/
-[Oo]bj
-[Oo]bj/
-[Rr]elease/
+AUTOPARK/AUTOPARK/[Bb]in
+AUTOPARK/AUTOPARK/[Bb]in/
+AUTOPARK/AUTOPARK/[Dd]ebug/
+AUTOPARK/AUTOPARK/[Oo]bj
+AUTOPARK/AUTOPARK/[Oo]bj/
+AUTOPARK/AUTOPARK/[Rr]elease/
+AUTOPARK/AUTOPARKDB/[Bb]in
+AUTOPARK/AUTOPARKDB/[Bb]in/
+AUTOPARK/AUTOPARKDB/[Dd]ebug/
+AUTOPARK/AUTOPARKDB/[Oo]bj
+AUTOPARK/AUTOPARKDB/[Oo]bj/
+AUTOPARK/AUTOPARKDB/[Rr]elease/
 [Ss]tyle[Cc]op.*
 [Tt]est[Rr]esult*
 
