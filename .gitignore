@@ -74,3 +74,19 @@ x64/
 
 AUTOPARK/AUTOPARK.suo
 AUTOPARK/AUTOPARKDB/AUTOPARKDB.dbmdl
+
+AUTOPARK/AUTOPARK/bin/Debug/AUTOPARK.pdb
+AUTOPARK/AUTOPARK/bin/Debug/AUTOPARK.vshost.exe.manifest
+AUTOPARK/AUTOPARK/obj/x86/Debug/AUTOPARK.csproj.FileListAbsolute.txt
+AUTOPARK/AUTOPARK/obj/x86/Debug/AUTOPARK.Menu.resources
+AUTOPARK/AUTOPARK/obj/x86/Debug/AUTOPARK.pdb
+AUTOPARK/AUTOPARK/obj/x86/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+AUTOPARK/AUTOPARK/obj/x86/Debug/GenerateResource.read.1.tlog
+AUTOPARK/AUTOPARK/obj/x86/Debug/GenerateResource.write.1.tlog
+AUTOPARK/AUTOPARK/obj/x86/Debug/ResolveAssemblyReference.cache
+AUTOPARK/AUTOPARKDB/AUTOPARKDB.dbmdl
+AUTOPARK/AUTOPARKDB/bin/Debug/AUTOPARKDB.deploymanifest
+AUTOPARK/AUTOPARKDB/bin/Debug/Путевые листы_Database.sqlsettings
+AUTOPARK/AUTOPARKDB/bin/Debug/Путевые листы_Script.PostDeployment.sql
+AUTOPARK/AUTOPARKDB/bin/Debug/Путевые листы_Script.PreDeployment.sql
+AUTOPARK/AUTOPARKDB/obj/Debug/AUTOPARKDB.dbproj.FileListAbsolute.txt
