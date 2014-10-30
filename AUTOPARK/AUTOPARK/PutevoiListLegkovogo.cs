@@ -10,7 +10,7 @@ namespace AUTOPARK
 {
     public partial class PutListLegkovogoavto : Form
     {
-        private readonly BindingSource _bindingAuto = new BindingSource(); 
+        private readonly BindingSource _bindingAuto = new BindingSource();
         private readonly BindingSource _bindingVoditel = new BindingSource();
         private readonly BindingSource _bindingDannie = new BindingSource();
         private string _number;
