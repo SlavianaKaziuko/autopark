@@ -1,4 +1,4 @@
-
+﻿
 AUTOPARK/AUTOPARK/[Bb]in*
 AUTOPARK/AUTOPARK/[Bb]in/*
 AUTOPARK/AUTOPARK/[Dd]ebug/*
@@ -37,15 +37,11 @@ AUTOPARK/AUTOPARKDB/[Rr]elease/*
 *.vssscc
 *_i.c
 *_p.c
-
 .builds
-
 Logs
 Logs/
-
 [Ss]tyle[Cc]op.*
 [Tt]est[Rr]esult*
-
 _ReSharper*
 _UpgradeReport_Files/
 AppPackages/
@@ -60,13 +56,10 @@ TestResults
 UpgradeLog*.XML
 x64/
 *.tss
-
 *.references
-
 
 AUTOPARK/AUTOPARK.suo
 AUTOPARK/AUTOPARKDB/AUTOPARKDB.dbmdl
-
 AUTOPARK/AUTOPARK/bin/Debug/AUTOPARK.pdb
 AUTOPARK/AUTOPARK/bin/Debug/AUTOPARK.vshost.exe.manifest
 AUTOPARK/AUTOPARK/obj/x86/Debug/AUTOPARK.csproj.FileListAbsolute.txt
