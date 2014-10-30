@@ -22,7 +22,7 @@
 	</Header>
 	<Model>
 		<Element Type="ISql100DatabaseOptions">
-			<Property Name="Collation" Value="SQL_Latin1_General_CP1_CI_AS" />
+			<Property Name="Collation" Value="Latin1_General_CI_AS" />
 			<Property Name="IsAnsiNullDefaultOn" Value="True" />
 			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Property Name="IsAnsiWarningsOn" Value="True" />
