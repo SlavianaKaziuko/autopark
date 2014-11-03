@@ -17,7 +17,7 @@
 			<Metadata Name="CompatibilityMode" Value="100" />
 		</CustomData>
 		<CustomData Category="Permissions" Type="XmlPermissions">
-			<Metadata Name="FileName" Value="D:\MY\AUTOPARK\AUTOPARKDB\PROPERTIES\DATABASE.SQLPERMISSIONS" />
+			<Metadata Name="FileName" Value="D:\ДОКУМЕНТЫ\AUTOPARKAPP\AUTOPARKDB\PROPERTIES\DATABASE.SQLPERMISSIONS" />
 		</CustomData>
 	</Header>
 	<Model>
@@ -1129,8 +1129,7 @@ FROM         dbo.[Работа водителя и автомобиля]]]></Val
 		</Element>
 		<Element Type="ISql100View" Name="[dbo].[View_Работа водителя и автомобиля]">
 			<Property Name="QueryScript">
-				<Value><![CDATA[
-SELECT     Операции, [Показания спидометра] AS Показания_спидометра, [Дата и время по графику] AS Дата_и_время_по_графику, 
+				<Value><![CDATA[ SELECT     Операции, [Показания спидометра] AS Показания_спидометра, [Дата и время по графику] AS Дата_и_время_по_графику, 
                       [Дата и время фактически] AS Дата_и_время_фактически, [Нулевой пробег] AS Нулевой_пробег, 
                       [Время работы двигателя час] AS Время_работы_двигателя_час, [Время работы спецоборудования] AS Время_работы_спецоборудования
 FROM         dbo.[Работа водителя и автомобиля]]]></Value>
@@ -1236,7 +1235,7 @@ FROM         dbo.[Работа водителя и автомобиля]]]></Val
 				<Property Name="Length" Value="493" />
 				<Property Name="StartLine" Value="1" />
 				<Property Name="StartColumn" Value="1" />
-				<Property Name="HeaderContents" Value="CREATE VIEW [dbo].[View_Работа водителя и автомобиля]&#xD;&#xA;AS" />
+				<Property Name="HeaderContents" Value="CREATE VIEW [dbo].[View_Работа водителя и автомобиля]&#xD;&#xA;&#x9;AS" />
 			</Annotation>
 		</Element>
 		<Element Type="ISql100Table" Name="[dbo].[Водители авто]">
@@ -1307,6 +1306,7 @@ FROM         dbo.[Работа водителя и автомобиля]]]></Val
 				<Entry>
 					<Element Type="ISql100SimpleColumn" Name="[dbo].[Данные Путевой лист легкового авто].[id_Данных]">
 						<Property Name="IsNullable" Value="False" />
+						<Property Name="IsIdentity" Value="True" />
 						<Relationship Name="TypeSpecifier">
 							<Entry>
 								<Element Type="ISql90TypeSpecifier">
@@ -1343,10 +1343,9 @@ FROM         dbo.[Работа водителя и автомобиля]]]></Val
 						<Relationship Name="TypeSpecifier">
 							<Entry>
 								<Element Type="ISql90TypeSpecifier">
-									<Property Name="Length" Value="50" />
 									<Relationship Name="Type">
 										<Entry>
-											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+											<References ExternalSource="BuiltIns" Name="[date]" />
 										</Entry>
 									</Relationship>
 								</Element>
@@ -1576,6 +1575,7 @@ FROM         dbo.[Работа водителя и автомобиля]]]></Val
 				<Entry>
 					<Element Type="ISql100SimpleColumn" Name="[dbo].[Движение ТСМ].[ID_Движение ТМЦ]">
 						<Property Name="IsNullable" Value="False" />
+						<Property Name="IsIdentity" Value="True" />
 						<Relationship Name="TypeSpecifier">
 							<Entry>
 								<Element Type="ISql90TypeSpecifier">
@@ -1653,6 +1653,7 @@ FROM         dbo.[Работа водителя и автомобиля]]]></Val
 				<Entry>
 					<Element Type="ISql100SimpleColumn" Name="[dbo].[Задание водителю].[id]">
 						<Property Name="IsNullable" Value="False" />
+						<Property Name="IsIdentity" Value="True" />
 						<Relationship Name="TypeSpecifier">
 							<Entry>
 								<Element Type="ISql90TypeSpecifier">
@@ -1852,21 +1853,6 @@ FROM         dbo.[Работа водителя и автомобиля]]]></Val
 					</Element>
 				</Entry>
 				<Entry>
-					<Element Type="ISql100SimpleColumn" Name="[dbo].[Заправка ТСМ].[ID_Путевого листа]">
-						<Relationship Name="TypeSpecifier">
-							<Entry>
-								<Element Type="ISql90TypeSpecifier">
-									<Relationship Name="Type">
-										<Entry>
-											<References ExternalSource="BuiltIns" Name="[int]" />
-										</Entry>
-									</Relationship>
-								</Element>
-							</Entry>
-						</Relationship>
-					</Element>
-				</Entry>
-				<Entry>
 					<Element Type="ISql100SimpleColumn" Name="[dbo].[Заправка ТСМ].[Дата]">
 						<Relationship Name="TypeSpecifier">
 							<Entry>
@@ -1905,6 +1891,21 @@ FROM         dbo.[Работа водителя и автомобиля]]]></Val
 									<Relationship Name="Type">
 										<Entry>
 											<References ExternalSource="BuiltIns" Name="[float]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="ISql100SimpleColumn" Name="[dbo].[Заправка ТСМ].[ID_Путевого листа]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
 										</Entry>
 									</Relationship>
 								</Element>
@@ -1957,7 +1958,7 @@ FROM         dbo.[Работа водителя и автомобиля]]]></Val
 					</Element>
 				</Entry>
 				<Entry>
-					<Element Type="ISql100SimpleColumn" Name="[dbo].[Личный состав].[серия водительского удостоверения]">
+					<Element Type="ISql100SimpleColumn" Name="[dbo].[Личный состав].[номер водительского удостоверения]">
 						<Property Name="IsNullable" Value="False" />
 						<Relationship Name="TypeSpecifier">
 							<Entry>
@@ -1966,22 +1967,6 @@ FROM         dbo.[Работа водителя и автомобиля]]]></Val
 									<Relationship Name="Type">
 										<Entry>
 											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
-										</Entry>
-									</Relationship>
-								</Element>
-							</Entry>
-						</Relationship>
-					</Element>
-				</Entry>
-				<Entry>
-					<Element Type="ISql100SimpleColumn" Name="[dbo].[Личный состав].[номер водительского удостоверения]">
-						<Property Name="IsNullable" Value="False" />
-						<Relationship Name="TypeSpecifier">
-							<Entry>
-								<Element Type="ISql90TypeSpecifier">
-									<Relationship Name="Type">
-										<Entry>
-											<References ExternalSource="BuiltIns" Name="[int]" />
 										</Entry>
 									</Relationship>
 								</Element>
@@ -2356,6 +2341,22 @@ FROM         dbo.[Работа водителя и автомобиля]]]></Val
 									<Relationship Name="Type">
 										<Entry>
 											<References ExternalSource="BuiltIns" Name="[date]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="ISql100SimpleColumn" Name="[dbo].[Подвижной состав].[Тип назначения авто]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Property Name="Length" Value="1" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[char]" />
 										</Entry>
 									</Relationship>
 								</Element>
@@ -3545,133 +3546,6 @@ End
 			<Relationship Name="Host">
 				<Entry>
 					<References Name="[dbo].[View_Работа водителя и авто]" />
-				</Entry>
-			</Relationship>
-		</Element>
-		<Element Type="ISqlExtendedProperty" Name="[ISqlView].[dbo].[View_Работа водителя и автомобиля].[MS_DiagramPane1]">
-			<Property Name="Value">
-				<Value><![CDATA[N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
-Begin DesignProperties = 
-   Begin PaneConfigurations = 
-      Begin PaneConfiguration = 0
-         NumPanes = 4
-         Configuration = "(H (1[40] 4[20] 2[20] 3) )"
-      End
-      Begin PaneConfiguration = 1
-         NumPanes = 3
-         Configuration = "(H (1 [50] 4 [25] 3))"
-      End
-      Begin PaneConfiguration = 2
-         NumPanes = 3
-         Configuration = "(H (1 [50] 2 [25] 3))"
-      End
-      Begin PaneConfiguration = 3
-         NumPanes = 3
-         Configuration = "(H (4 [30] 2 [40] 3))"
-      End
-      Begin PaneConfiguration = 4
-         NumPanes = 2
-         Configuration = "(H (1 [56] 3))"
-      End
-      Begin PaneConfiguration = 5
-         NumPanes = 2
-         Configuration = "(H (2 [66] 3))"
-      End
-      Begin PaneConfiguration = 6
-         NumPanes = 2
-         Configuration = "(H (4 [50] 3))"
-      End
-      Begin PaneConfiguration = 7
-         NumPanes = 1
-         Configuration = "(V (3))"
-      End
-      Begin PaneConfiguration = 8
-         NumPanes = 3
-         Configuration = "(H (1[56] 4[18] 2) )"
-      End
-      Begin PaneConfiguration = 9
-         NumPanes = 2
-         Configuration = "(H (1 [75] 4))"
-      End
-      Begin PaneConfiguration = 10
-         NumPanes = 2
-         Configuration = "(H (1[66] 2) )"
-      End
-      Begin PaneConfiguration = 11
-         NumPanes = 2
-         Configuration = "(H (4 [60] 2))"
-      End
-      Begin PaneConfiguration = 12
-         NumPanes = 1
-         Configuration = "(H (1) )"
-      End
-      Begin PaneConfiguration = 13
-         NumPanes = 1
-         Configuration = "(V (4))"
-      End
-      Begin PaneConfiguration = 14
-         NumPanes = 1
-         Configuration = "(V (2))"
-      End
-      ActivePaneConfig = 0
-   End
-   Begin DiagramPane = 
-      Begin Origin = 
-         Top = 0
-         Left = 0
-      End
-      Begin Tables = 
-         Begin Table = "Работа водителя и автомобиля"
-            Begin Extent = 
-               Top = 6
-               Left = 38
-               Bottom = 125
-               Right = 297
-            End
-            DisplayFlags = 280
-            TopColumn = 0
-         End
-      End
-   End
-   Begin SQLPane = 
-   End
-   Begin DataPane = 
-      Begin ParameterDefaults = ""
-      End
-   End
-   Begin CriteriaPane = 
-      Begin ColumnWidths = 11
-         Column = 3780
-         Alias = 4455
-         Table = 1170
-         Output = 720
-         Append = 1400
-         NewValue = 1170
-         SortType = 1350
-         SortOrder = 1410
-         GroupBy = 1350
-         Filter = 1350
-         Or = 1350
-         Or = 1350
-         Or = 1350
-      End
-   End
-End
-']]></Value>
-			</Property>
-			<Relationship Name="Host">
-				<Entry>
-					<References Name="[dbo].[View_Работа водителя и автомобиля]" />
-				</Entry>
-			</Relationship>
-		</Element>
-		<Element Type="ISqlExtendedProperty" Name="[ISqlView].[dbo].[View_Работа водителя и автомобиля].[MS_DiagramPaneCount]">
-			<Property Name="Value">
-				<Value><![CDATA[1]]></Value>
-			</Property>
-			<Relationship Name="Host">
-				<Entry>
-					<References Name="[dbo].[View_Работа водителя и автомобиля]" />
 				</Entry>
 			</Relationship>
 		</Element>

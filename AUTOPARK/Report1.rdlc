@@ -3216,6 +3216,7 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -3274,7 +3275,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Автомобиль_технически_исправлен_выезд_разрешен_подпись_штамп_уполномоченного_лица.Value</Value>
+                              <Value />
                               <Style>
                                 <FontFamily>Times New Roman</FontFamily>
                                 <FontSize>8pt</FontSize>
@@ -3314,14 +3315,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Автомобиль_технически_исправлен_прнял_подпись_водителя">
+                    <Textbox Name="Textbox7">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Автомобиль_технически_исправлен_прнял_подпись_водителя.Value</Value>
+                              <Value />
                               <Style>
                                 <FontFamily>Times New Roman</FontFamily>
                                 <FontSize>8pt</FontSize>
@@ -3331,7 +3332,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Автомобиль_технически_исправлен_прнял_подпись_водителя</rd:DefaultName>
+                      <rd:DefaultName>Textbox7</rd:DefaultName>
                       <Style>
                         <Border>
                           <Style>None</Style>
@@ -3368,7 +3369,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!При_возвращении_автомобиль_сдал_подпись_водителя.Value</Value>
+                              <Value />
                               <Style>
                                 <FontFamily>Times New Roman</FontFamily>
                                 <FontSize>8pt</FontSize>
@@ -3408,14 +3409,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="При_возвращении_автомобиль_принял_подпись_штамп_уполномоченного_лица">
+                    <Textbox Name="Textbox8">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!При_возвращении_автомобиль_принял_подпись_штамп_уполномоченного_лица.Value</Value>
+                              <Value />
                               <Style>
                                 <FontFamily>Times New Roman</FontFamily>
                                 <FontSize>8pt</FontSize>
@@ -3425,7 +3426,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>При_возвращении_автомобиль_принял_подпись_штамп_уполномоченного_лица</rd:DefaultName>
+                      <rd:DefaultName>Textbox8</rd:DefaultName>
                       <Style>
                         <Border>
                           <Style>None</Style>
@@ -3455,14 +3456,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Водитель_по_состоянию_здоровья_к_управлению_допущен_подпись_штамп_уполномоченного_лица">
+                    <Textbox Name="Textbox9">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Водитель_по_состоянию_здоровья_к_управлению_допущен_подпись_штамп_уполномоченного_лица.Value</Value>
+                              <Value />
                               <Style>
                                 <FontFamily>Times New Roman</FontFamily>
                                 <FontSize>8pt</FontSize>
@@ -3472,7 +3473,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Водитель_по_состоянию_здоровья_к_управлению_допущен_подпись_штамп_уполномоченного_лица</rd:DefaultName>
+                      <rd:DefaultName>Textbox9</rd:DefaultName>
                       <Style>
                         <Border>
                           <Style>None</Style>
@@ -3509,7 +3510,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Подпись_штамп_лица_ответственного_за_оформление_путевого_листа.Value</Value>
+                              <Value />
                               <Style>
                                 <FontFamily>Times New Roman</FontFamily>
                                 <FontSize>8pt</FontSize>
@@ -3605,7 +3606,7 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>4.91702in</Height>
+    <Height>5.07327in</Height>
     <Style>
       <Border>
         <Style>None</Style>

@@ -48,15 +48,24 @@ namespace AUTOPARK
             switch (_name)
             {
                 case "Путевые листы легковых автомобилей":
-                {
-                    var form = new PutListLegkovogoavto(); ////PutListLegkovogoavto
-                    this.Hide(); //// скрытие текущей формы
-                    form.ShowDialog(); //// открытие формы Spravochnik
-                    var table = new AutoparkDBTableAdapters.PutevieLegkovieTableAdapter();
-                    _binding.DataSource = table.GetData();
-                    this.Show(); //// отображение главной формы после закрытия PutListLegkovogoavto
-                    break;
-                }
+                    {
+                        Form form;
+                        try
+                        {
+                            form = new PutListLegkovogoavto(); ////PutListLegkovogoavto
+                            form.ShowDialog(); //// открытие формы Spravochnik
+                            this.Hide(); //// скрытие текущей формы
+                            var table = new AutoparkDBTableAdapters.PutevieLegkovieTableAdapter();
+                            _binding.DataSource = table.GetData();
+                            this.Show(); //// отображение главной формы после закрытия PutListLegkovogoavto
+                        }
+                        catch (Exception exc)
+                        {
+                            MessageBox.Show(exc.Message);
+                        }
+                        break;
+
+                    }
 
                 case "Путевые листы грузовых автомобилей":
                 {
