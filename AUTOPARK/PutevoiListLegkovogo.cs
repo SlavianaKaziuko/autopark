@@ -29,14 +29,18 @@ namespace AUTOPARK
             _bindingAuto.DataSource = tablep.GetDataByType("Л");
             if (_bindingAuto.Count == 0)
             {
-                MessageBox.Show("Пожалуйста, заполните справочник ");
+                throw new Exception("Пожалуйста, заполните справочник \"Подвижной состав\"");
             }
             cbNomerAuto.DataSource = _bindingAuto;                              
             cbNomerAuto.DisplayMember = "Гос_номер";                            
             cbNomerAuto.ValueMember = "ID";                                     
 
             var tablel = new AutoparkDBTableAdapters.LichniiTableAdapter();    
-            _bindingVoditel.DataSource = tablel.GetData();                            
+            _bindingVoditel.DataSource = tablel.GetData();
+            if (_bindingVoditel.Count == 0)
+            {
+                throw new Exception("Пожалуйста, заполните справочник \"Личный состав\"");
+            }
             cbVodUdostoverenie.DataSource = _bindingVoditel;
             cbVodUdostoverenie.DisplayMember = "ФИО";
             cbVodUdostoverenie.ValueMember = "табельный_номер";
@@ -44,6 +48,8 @@ namespace AUTOPARK
             var newLegkNumber = tablePutevoi.GetNewLegkNumber();
             if (newLegkNumber != null)
                 txtNumber.Text = newLegkNumber.Value.ToString(CultureInfo.InvariantCulture);
+            _dateStart = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
+            _dateEnd = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1).AddMonths(1).AddDays(-1);
         }
 
         public PutListLegkovogoavto(int id)
@@ -53,12 +59,20 @@ namespace AUTOPARK
             PutevoiId = id;
             var tablep = new AutoparkDBTableAdapters.PodvijnoiTableAdapter();
             _bindingAuto.DataSource = tablep.GetDataByType("Л");
+            if (_bindingAuto.Count == 0)
+            {
+                throw new Exception("Пожалуйста, заполните справочник \"Подвижной состав\"");
+            }
             cbNomerAuto.DataSource = _bindingAuto;
             cbNomerAuto.DisplayMember = "Гос_номер";
             cbNomerAuto.ValueMember = "ID";
 
             var tablel = new AutoparkDBTableAdapters.LichniiTableAdapter();
             _bindingVoditel.DataSource = tablel.GetData();
+            if (_bindingVoditel.Count == 0)
+            {
+                throw new Exception("Пожалуйста, заполните справочник \"Личный состав\"");
+            } 
             cbVodUdostoverenie.DataSource = _bindingVoditel;
             cbVodUdostoverenie.DisplayMember = "ФИО";
             cbVodUdostoverenie.ValueMember = "табельный_номер";
@@ -89,6 +103,16 @@ namespace AUTOPARK
 
         private void PutListLegkovogoavto_Load(object sender, EventArgs e)
         {
+            if (_bindingAuto.Count == 0)
+            {
+                MessageBox.Show("Пожалуйста, заполните справочник \"Подвижной состав\"");
+                this.Close();
+            }
+            else if (_bindingVoditel.Count==0)
+            {
+                MessageBox.Show("Пожалуйста, заполните справочник \"Личный состав\"");
+                this.Close();
+            }
             txtNumber.Text = _number;
             cbNomerAuto.SelectedItem = _idauto;
             cbVodUdostoverenie.SelectedItem = _idvod;
@@ -113,6 +137,7 @@ namespace AUTOPARK
             txtVoditel.Text = ((DataRowView)_bindingVoditel[cbVodUdostoverenie.SelectedIndex]).Row.ItemArray[2].ToString();
             txtKlassnost.Text = ((DataRowView)_bindingVoditel[cbVodUdostoverenie.SelectedIndex]).Row.ItemArray[3].ToString();
         }
+
         private void btnSave_Click(object sender, EventArgs e)      // Кнопка Сохранить
         {
             var tablePutevoi = new AutoparkDBTableAdapters.PutevoiListLegkTableAdapter();

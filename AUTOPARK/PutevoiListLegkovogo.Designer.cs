@@ -28,14 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-           this.components = new System.ComponentModel.Container();
             this.lblLegkovoi = new System.Windows.Forms.Label();
             this.txtNumber = new System.Windows.Forms.TextBox();
             this.lblperiod = new System.Windows.Forms.Label();
             this.lblpo = new System.Windows.Forms.Label();
-            this.dtpStart = new System.Windows.Forms.DateTimePicker();
-            this.dtpEnd = new System.Windows.Forms.DateTimePicker();
             this.lblvoditel = new System.Windows.Forms.Label();
             this.txtVoditel = new System.Windows.Forms.TextBox();
             this.lblVodUdostoverenie = new System.Windows.Forms.Label();
@@ -50,13 +46,10 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnReport = new System.Windows.Forms.Button();
-            this.autoparkDB = new AUTOPARK.AutoparkDB();
-            this.данныеПутевойЛистЛегковогоАвтоBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.putListLegkovogoDannieTableAdapter = new AUTOPARK.AutoparkDBTableAdapters.PutListLegkovogoDannieTableAdapter();
+            this.dtpStart = new System.Windows.Forms.DateTimePicker();
+            this.dtpEnd = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPutevieLegkovie)).BeginInit();
             this.pnlShapka.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.autoparkDB)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.данныеПутевойЛистЛегковогоАвтоBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // lblLegkovoi
@@ -97,28 +90,6 @@
             this.lblpo.Size = new System.Drawing.Size(25, 18);
             this.lblpo.TabIndex = 4;
             this.lblpo.Text = "по";
-            // 
-            // dtpStart
-            // 
-            this.dtpStart.CustomFormat = "dd MMM yyyy";
-            this.dtpStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.dtpStart.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpStart.Location = new System.Drawing.Point(168, 51);
-            this.dtpStart.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dtpStart.Name = "dtpStart";
-            this.dtpStart.Size = new System.Drawing.Size(170, 23);
-            this.dtpStart.TabIndex = 6;
-            // 
-            // dtpEnd
-            // 
-            this.dtpEnd.CustomFormat = "dd MMM yyyy";
-            this.dtpEnd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.dtpEnd.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpEnd.Location = new System.Drawing.Point(385, 50);
-            this.dtpEnd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dtpEnd.Name = "dtpEnd";
-            this.dtpEnd.Size = new System.Drawing.Size(170, 23);
-            this.dtpEnd.TabIndex = 7;
             // 
             // lblvoditel
             // 
@@ -202,6 +173,8 @@
             // 
             // pnlShapka
             // 
+            this.pnlShapka.Controls.Add(this.dtpEnd);
+            this.pnlShapka.Controls.Add(this.dtpStart);
             this.pnlShapka.Controls.Add(this.txtKlassnost);
             this.pnlShapka.Controls.Add(this.lblKlassnost);
             this.pnlShapka.Controls.Add(this.cbVodUdostoverenie);
@@ -211,8 +184,6 @@
             this.pnlShapka.Controls.Add(this.lblVodUdostoverenie);
             this.pnlShapka.Controls.Add(this.txtVoditel);
             this.pnlShapka.Controls.Add(this.lblvoditel);
-            this.pnlShapka.Controls.Add(this.dtpEnd);
-            this.pnlShapka.Controls.Add(this.dtpStart);
             this.pnlShapka.Controls.Add(this.lblpo);
             this.pnlShapka.Controls.Add(this.lblperiod);
             this.pnlShapka.Controls.Add(this.txtNumber);
@@ -270,19 +241,25 @@
             this.btnReport.UseVisualStyleBackColor = true;
             this.btnReport.Click += new System.EventHandler(this.btnReport_Click_1);
             // 
-            // autoparkDB
+            // dtpStart
             // 
-            this.autoparkDB.DataSetName = "AutoparkDB";
-            this.autoparkDB.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.dtpStart.CustomFormat = "dd MMMM yyyy";
+            this.dtpStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.dtpStart.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpStart.Location = new System.Drawing.Point(178, 52);
+            this.dtpStart.Name = "dtpStart";
+            this.dtpStart.Size = new System.Drawing.Size(162, 23);
+            this.dtpStart.TabIndex = 18;
             // 
-            // данныеПутевойЛистЛегковогоАвтоBindingSource
+            // dtpEnd
             // 
-            this.данныеПутевойЛистЛегковогоАвтоBindingSource.DataMember = "Данные Путевой лист легкового авто";
-            this.данныеПутевойЛистЛегковогоАвтоBindingSource.DataSource = this.autoparkDB;
-            // 
-            // putListLegkovogoDannieTableAdapter
-            // 
-            this.putListLegkovogoDannieTableAdapter.ClearBeforeFill = true;
+            this.dtpEnd.CustomFormat = "dd MMMM yyyy";
+            this.dtpEnd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.dtpEnd.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpEnd.Location = new System.Drawing.Point(395, 52);
+            this.dtpEnd.Name = "dtpEnd";
+            this.dtpEnd.Size = new System.Drawing.Size(162, 23);
+            this.dtpEnd.TabIndex = 19;
             // 
             // PutListLegkovogoavto
             // 
@@ -303,8 +280,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvPutevieLegkovie)).EndInit();
             this.pnlShapka.ResumeLayout(false);
             this.pnlShapka.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.autoparkDB)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.данныеПутевойЛистЛегковогоАвтоBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -315,8 +290,6 @@
         private System.Windows.Forms.TextBox txtNumber;
         private System.Windows.Forms.Label lblperiod;
         private System.Windows.Forms.Label lblpo;
-        private System.Windows.Forms.DateTimePicker dtpStart;
-        private System.Windows.Forms.DateTimePicker dtpEnd;
         private System.Windows.Forms.Label lblvoditel;
         private System.Windows.Forms.TextBox txtVoditel;
         private System.Windows.Forms.Label lblVodUdostoverenie;
@@ -330,10 +303,9 @@
         private System.Windows.Forms.Label lblKlassnost;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnCancel;
-        private AutoparkDB autoparkDB;
-        private System.Windows.Forms.BindingSource данныеПутевойЛистЛегковогоАвтоBindingSource;
-        private AutoparkDBTableAdapters.PutListLegkovogoDannieTableAdapter putListLegkovogoDannieTableAdapter;
         private System.Windows.Forms.Button btnReport;
+        private System.Windows.Forms.DateTimePicker dtpEnd;
+        private System.Windows.Forms.DateTimePicker dtpStart;
 
     }
 }
