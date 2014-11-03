@@ -192,9 +192,4 @@
       <SubType>Code</SubType>
     </Build>
   </ItemGroup>
-  <ItemGroup>
-    <NotInBuild Include="Scripts\ScriptsIgnoredOnImport.sql">
-      <SubType>NotInBuild</SubType>
-    </NotInBuild>
-  </ItemGroup>
 </Project>

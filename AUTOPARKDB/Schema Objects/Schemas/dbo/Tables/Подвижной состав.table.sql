@@ -5,7 +5,7 @@
 	[Гос.номер] [nvarchar](50) NOT NULL,
 	[Гаражный номер] [nvarchar](50) NULL,
 	[Тип двигателя] [nvarchar](50) NULL,
-	[Год выпуска] [int] NULL,
+	[Год выпуска] [date] NULL,
 	[Инвентарный номер] [nvarchar](50) NULL,
 	[Вид топлива] [nvarchar](50) NULL,
 	[дата окончания страховки] [date] NULL,
