@@ -79,11 +79,17 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form2.cs">
+    <Compile Include="OtchetLegkovogo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form2.Designer.cs">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <Compile Include="OtchetLegkovogo.Designer.cs">
+      <DependentUpon>OtchetLegkovogo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OtchetGruzavogo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OtchetGruzavogo.Designer.cs">
+      <DependentUpon>OtchetGruzavogo.cs</DependentUpon>
     </Compile>
     <Compile Include="Menu.cs">
       <SubType>Form</SubType>
@@ -119,16 +125,14 @@
     <Compile Include="Spravochnik.Designer.cs">
       <DependentUpon>Spravochnik.cs</DependentUpon>
     </Compile>
-    <Compile Include="Путевые_листыDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Путевые_листыDataSet.xsd</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form2.resx">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <EmbeddedResource Include="OtchetLegkovogo.resx">
+      <DependentUpon>OtchetLegkovogo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OtchetGruzavogo.resx">
+      <DependentUpon>OtchetGruzavogo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
@@ -153,6 +157,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Report1.rdlc" />
     <EmbeddedResource Include="Report2.rdlc" />
+    <EmbeddedResource Include="Report3.rdlc" />
     <EmbeddedResource Include="Spravochnik.resx">
       <DependentUpon>Spravochnik.cs</DependentUpon>
     </EmbeddedResource>
@@ -177,17 +182,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="Путевые_листыDataSet.xsc">
-      <DependentUpon>Путевые_листыDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="Путевые_листыDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>Путевые_листыDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Путевые_листыDataSet.xss">
-      <DependentUpon>Путевые_листыDataSet.xsd</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">

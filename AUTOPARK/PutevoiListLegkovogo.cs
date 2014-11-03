@@ -172,7 +172,7 @@ namespace AUTOPARK
 
         private void btnReport_Click_1(object sender, EventArgs e)      // кнопка Отчет
         {
-            Form1 f1 = new Form1();
+            OtchetLegkovogo f1 = new OtchetLegkovogo(PutevoiId);
             f1.Show();
         }
     }
