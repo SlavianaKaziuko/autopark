@@ -31,12 +31,8 @@ namespace AUTOPARK
         private void Form1_Load(object sender, EventArgs e)
         {
             // TODO: данная строка кода позволяет загрузить данные в таблицу "autoparkDB.View_Данные_путевой_лист_легкового_авто". При необходимости она может быть перемещена или удалена.
-            this.AutoparkDBTableAdapters.PutListLegkovogoDannieTableAdapter.FillWithCalculating(this.autoparkDB.Данные_Путевой_лист_легкового_авто, PutevoiId);
-            //this.View_Данные_путевой_лист_легкового_автоTableAdapter.Fill(_bindingDannie);
+            this.putListLegkovogoDannieTableAdapter.FillWithCalculating(this.autoparkDB.Данные_Путевой_лист_легкового_авто, PutevoiId);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "autoparkDB.View_Данные_путевой_лист_легкового_авто". При необходимости она может быть перемещена или удалена.
-            this.View_Данные_путевой_лист_легкового_автоTableAdapter.Fill(this.autoparkDB.View_Данные_путевой_лист_легкового_авто);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "autoparkDB.Данные_Путевой_лист_легкового_авто". При необходимости она может быть перемещена или удалена.
-            this.putListLegkovogoDannieTableAdapter.Fill(this.autoparkDB.Данные_Путевой_лист_легкового_авто);
             this.reportViewer1.RefreshReport();
             
 

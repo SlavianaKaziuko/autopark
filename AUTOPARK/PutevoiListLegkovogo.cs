@@ -26,7 +26,11 @@ namespace AUTOPARK
             InitializeComponent();
             _modeIsNew = true;
             var tablep = new AutoparkDBTableAdapters.PodvijnoiTableAdapter();   
-            _bindingAuto.DataSource = tablep.GetDataByType("Л");                
+            _bindingAuto.DataSource = tablep.GetDataByType("Л");
+            if (_bindingAuto.Count == 0)
+            {
+                MessageBox.Show("Пожалуйста, заполните справочник ");
+            }
             cbNomerAuto.DataSource = _bindingAuto;                              
             cbNomerAuto.DisplayMember = "Гос_номер";                            
             cbNomerAuto.ValueMember = "ID";                                     

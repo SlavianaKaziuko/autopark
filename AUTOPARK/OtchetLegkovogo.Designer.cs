@@ -30,26 +30,37 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.View_Данные_путевой_лист_легкового_автоBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.autoparkDB = new AUTOPARK.AutoparkDB();
+            this.View_Данные_путевой_лист_легкового_автоBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.данныеПутевойЛистЛегковогоАвтоBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.putListLegkovogoDannieTableAdapter = new AUTOPARK.AutoparkDBTableAdapters.PutListLegkovogoDannieTableAdapter();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.View_Данные_путевой_лист_легкового_автоTableAdapter = new AUTOPARK.AutoparkDBTableAdapters.View_Данные_путевой_лист_легкового_автоTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.View_Данные_путевой_лист_легкового_автоBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.autoparkDB)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.View_Данные_путевой_лист_легкового_автоBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.данныеПутевойЛистЛегковогоАвтоBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // View_Данные_путевой_лист_легкового_автоBindingSource
+            // reportViewer1
             // 
-            this.View_Данные_путевой_лист_легкового_автоBindingSource.DataMember = "View_Данные путевой лист легкового авто";
-            this.View_Данные_путевой_лист_легкового_автоBindingSource.DataSource = this.autoparkDB;
+            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            reportDataSource1.Name = "DataSet1";
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "AUTOPARK.Report1.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(0, 0);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.Size = new System.Drawing.Size(690, 394);
+            this.reportViewer1.TabIndex = 0;
             // 
             // autoparkDB
             // 
             this.autoparkDB.DataSetName = "AutoparkDB";
             this.autoparkDB.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // View_Данные_путевой_лист_легкового_автоBindingSource
+            // 
+            this.View_Данные_путевой_лист_легкового_автоBindingSource.DataMember = "View_Данные путевой лист легкового авто";
+            this.View_Данные_путевой_лист_легкового_автоBindingSource.DataSource = this.autoparkDB;
             // 
             // данныеПутевойЛистЛегковогоАвтоBindingSource
             // 
@@ -59,19 +70,6 @@
             // putListLegkovogoDannieTableAdapter
             // 
             this.putListLegkovogoDannieTableAdapter.ClearBeforeFill = true;
-            // 
-            // reportViewer1
-            // 
-            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource1.Name = "DataSet1";
-            reportDataSource1.Value = this.View_Данные_путевой_лист_легкового_автоBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "AUTOPARK.Report1.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(0, 0);
-            this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.Size = new System.Drawing.Size(690, 394);
-            this.reportViewer1.TabIndex = 0;
-            this.reportViewer1.Load += new System.EventHandler(this.reportViewer1_Load);
             // 
             // View_Данные_путевой_лист_легкового_автоTableAdapter
             // 
@@ -86,8 +84,8 @@
             this.Name = "OtchetLegkovogo";
             this.Text = "Отчет Легкового Авто";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.View_Данные_путевой_лист_легкового_автоBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.autoparkDB)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.View_Данные_путевой_лист_легкового_автоBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.данныеПутевойЛистЛегковогоАвтоBindingSource)).EndInit();
             this.ResumeLayout(false);
 
