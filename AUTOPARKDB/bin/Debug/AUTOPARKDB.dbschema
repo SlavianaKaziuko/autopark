@@ -1306,6 +1306,7 @@ FROM         dbo.[Работа водителя и автомобиля]]]></Val
 				<Entry>
 					<Element Type="ISql100SimpleColumn" Name="[dbo].[Данные Путевой лист легкового авто].[id_Данных]">
 						<Property Name="IsNullable" Value="False" />
+						<Property Name="IsIdentity" Value="True" />
 						<Relationship Name="TypeSpecifier">
 							<Entry>
 								<Element Type="ISql90TypeSpecifier">
@@ -1342,10 +1343,9 @@ FROM         dbo.[Работа водителя и автомобиля]]]></Val
 						<Relationship Name="TypeSpecifier">
 							<Entry>
 								<Element Type="ISql90TypeSpecifier">
-									<Property Name="Length" Value="50" />
 									<Relationship Name="Type">
 										<Entry>
-											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+											<References ExternalSource="BuiltIns" Name="[date]" />
 										</Entry>
 									</Relationship>
 								</Element>
@@ -1575,6 +1575,7 @@ FROM         dbo.[Работа водителя и автомобиля]]]></Val
 				<Entry>
 					<Element Type="ISql100SimpleColumn" Name="[dbo].[Движение ТСМ].[ID_Движение ТМЦ]">
 						<Property Name="IsNullable" Value="False" />
+						<Property Name="IsIdentity" Value="True" />
 						<Relationship Name="TypeSpecifier">
 							<Entry>
 								<Element Type="ISql90TypeSpecifier">
@@ -1652,6 +1653,7 @@ FROM         dbo.[Работа водителя и автомобиля]]]></Val
 				<Entry>
 					<Element Type="ISql100SimpleColumn" Name="[dbo].[Задание водителю].[id]">
 						<Property Name="IsNullable" Value="False" />
+						<Property Name="IsIdentity" Value="True" />
 						<Relationship Name="TypeSpecifier">
 							<Entry>
 								<Element Type="ISql90TypeSpecifier">
@@ -1956,7 +1958,7 @@ FROM         dbo.[Работа водителя и автомобиля]]]></Val
 					</Element>
 				</Entry>
 				<Entry>
-					<Element Type="ISql100SimpleColumn" Name="[dbo].[Личный состав].[серия водительского удостоверения]">
+					<Element Type="ISql100SimpleColumn" Name="[dbo].[Личный состав].[номер водительского удостоверения]">
 						<Property Name="IsNullable" Value="False" />
 						<Relationship Name="TypeSpecifier">
 							<Entry>
@@ -1965,22 +1967,6 @@ FROM         dbo.[Работа водителя и автомобиля]]]></Val
 									<Relationship Name="Type">
 										<Entry>
 											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
-										</Entry>
-									</Relationship>
-								</Element>
-							</Entry>
-						</Relationship>
-					</Element>
-				</Entry>
-				<Entry>
-					<Element Type="ISql100SimpleColumn" Name="[dbo].[Личный состав].[номер водительского удостоверения]">
-						<Property Name="IsNullable" Value="False" />
-						<Relationship Name="TypeSpecifier">
-							<Entry>
-								<Element Type="ISql90TypeSpecifier">
-									<Relationship Name="Type">
-										<Entry>
-											<References ExternalSource="BuiltIns" Name="[int]" />
 										</Entry>
 									</Relationship>
 								</Element>
