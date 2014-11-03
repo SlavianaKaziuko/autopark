@@ -29,3 +29,11 @@ D:\autopark\AUTOPARK\AUTOPARKDB\bin\Debug\Путевые листы_Database.sql
 D:\autopark\AUTOPARK\AUTOPARKDB\bin\Debug\AUTOPARKDB.deploymanifest
 D:\autopark\AUTOPARK\AUTOPARKDB\bin\Debug\AUTOPARKDB.dbschema
 D:\autopark\AUTOPARK\AUTOPARKDB\obj\Debug\AUTOPARKDB.dbschema
+D:\my\autopark\AUTOPARKDB\obj\Debug\AUTOPARKDB.dbschema
+D:\my\autopark\AUTOPARKDB\bin\Debug\Путевые листы_Script.PreDeployment.sql
+D:\my\autopark\AUTOPARKDB\bin\Debug\Путевые листы_Script.PostDeployment.sql
+D:\my\autopark\AUTOPARKDB\bin\Debug\Путевые листы_Database.sqlsettings
+D:\my\autopark\AUTOPARKDB\bin\Debug\Путевые листы_Database.sqldeployment
+D:\my\autopark\AUTOPARKDB\bin\Debug\Путевые листы_Database.sqlcmdvars
+D:\my\autopark\AUTOPARKDB\bin\Debug\AUTOPARKDB.deploymanifest
+D:\my\autopark\AUTOPARKDB\bin\Debug\AUTOPARKDB.dbschema
