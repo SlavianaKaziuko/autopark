@@ -1,6 +1,6 @@
 ﻿namespace AUTOPARK
 {
-    partial class Form2
+    partial class OtchetGruzavogo
     {
         /// <summary>
         /// Required designer variable.

@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace AUTOPARK
 {
-    public partial class Form2 : Form
+    public partial class OtchetGruzavogo : Form
     {
-        public Form2()
+        public OtchetGruzavogo()
         {
             InitializeComponent();
         }
