@@ -15652,15 +15652,14 @@ FROM            [Данные Путевой лист легкового авт�
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = @"SELECT        id_Данных, [ID_Путевого листа], Число, [Время выезда], [Время возвращения],
-                         CAST(DATEADD(minute,0, DATEDIFF(minute,[Время возвращения] ,[Время выезда])) AS time) AS [Время в наряде], 
-                         [Показания спидометра при выезде], [Показания спидометра при возвращении], 
+            this._commandCollection[1].CommandText = @"SELECT        id_Данных, [ID_Путевого листа], CAST(Число AS date) AS 'Число', [Время выезда], [Время возвращения], CAST(DATEADD(minute, 0, DATEDIFF(minute, 
+                         [Время возвращения], [Время выезда])) AS time) AS [Время в наряде], [Показания спидометра при выезде], [Показания спидометра при возвращении], 
                          [Показания спидометра при возвращении] - [Показания спидометра при выезде] AS [Пробег км], [Остаток топлива при выезде], 
                          [Остаток топлива при возвращении], [Заправлено топлива л], [Дата и № чека АЗС], [Расход топлива по норме], 
                          [Остаток топлива при выезде] + [Заправлено топлива л] - [Остаток топлива при возвращении] AS [Расход топлива фактически], 
                          [Расход топлива экономия перерасход]
-  FROM [Данные Путевой лист легкового авто]
-WHERE [ID_Путевого листа] = @ID";
+FROM            [Данные Путевой лист легкового авто]
+WHERE        ([ID_Путевого листа] = @ID)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Путевого листа", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
@@ -15693,9 +15692,14 @@ WHERE [ID_Путевого листа] = @ID";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillWithCalculating(AutoparkDB.Данные_Путевой_лист_легкового_автоDataTable dataTable, int ID) {
+        public virtual int FillWithCalculating(AutoparkDB.Данные_Путевой_лист_легкового_автоDataTable dataTable, global::System.Nullable<int> ID) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
-            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(ID));
+            if ((ID.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((int)(ID.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -15707,9 +15711,14 @@ WHERE [ID_Путевого листа] = @ID";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual AutoparkDB.Данные_Путевой_лист_легкового_автоDataTable GetDataWithCalculating(int ID) {
+        public virtual AutoparkDB.Данные_Путевой_лист_легкового_автоDataTable GetDataWithCalculating(global::System.Nullable<int> ID) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
-            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(ID));
+            if ((ID.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((int)(ID.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
             AutoparkDB.Данные_Путевой_лист_легкового_автоDataTable dataTable = new AutoparkDB.Данные_Путевой_лист_легкового_автоDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;

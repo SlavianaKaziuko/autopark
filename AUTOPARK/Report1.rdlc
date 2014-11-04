@@ -106,6 +106,86 @@
         <rd:TableAdapterName>View_Данные_путевой_лист_легкового_автоTableAdapter</rd:TableAdapterName>
       </rd:DataSetInfo>
     </DataSet>
+    <DataSet Name="DataSet2">
+      <Fields>
+        <Field Name="id_Данных">
+          <DataField>id_Данных</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ID_Путевого_листа">
+          <DataField>ID_Путевого листа</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Число">
+          <DataField>Число</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="Время_выезда">
+          <DataField>Время выезда</DataField>
+          <rd:TypeName>System.TimeSpan</rd:TypeName>
+        </Field>
+        <Field Name="Время_возвращения">
+          <DataField>Время возвращения</DataField>
+          <rd:TypeName>System.TimeSpan</rd:TypeName>
+        </Field>
+        <Field Name="Время_в_наряде">
+          <DataField>Время в наряде</DataField>
+          <rd:TypeName>System.TimeSpan</rd:TypeName>
+        </Field>
+        <Field Name="Показания_спидометра_при_выезде">
+          <DataField>Показания спидометра при выезде</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Показания_спидометра_при_возвращении">
+          <DataField>Показания спидометра при возвращении</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Пробег_км">
+          <DataField>Пробег км</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Остаток_топлива_при_выезде">
+          <DataField>Остаток топлива при выезде</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="Остаток_топлива_при_возвращении">
+          <DataField>Остаток топлива при возвращении</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="Заправлено_топлива_л">
+          <DataField>Заправлено топлива л</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="Дата_и__чека_АЗС">
+          <DataField>Дата и № чека АЗС</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Расход_топлива_по_норме">
+          <DataField>Расход топлива по норме</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="Расход_топлива_фактически">
+          <DataField>Расход топлива фактически</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="Расход_топлива_экономия_перерасход">
+          <DataField>Расход топлива экономия перерасход</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>AutoparkDB</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <rd:DataSetInfo>
+        <rd:DataSetName>AutoparkDB</rd:DataSetName>
+        <rd:SchemaPath>D:\my\autopark\AUTOPARK\AutoparkDB.xsd</rd:SchemaPath>
+        <rd:TableName>Данные Путевой лист легкового авто</rd:TableName>
+        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
+        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
+        <rd:TableAdapterName>PutListLegkovogoDannieTableAdapter</rd:TableAdapterName>
+      </rd:DataSetInfo>
+    </DataSet>
   </DataSets>
   <Body>
     <ReportItems>
@@ -246,7 +326,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox31</rd:DefaultName>
-        <Left>0.39688cm</Left>
+        <Top>0.08156in</Top>
+        <Left>2.65417cm</Left>
         <Height>4.46292cm</Height>
         <Width>24.45853cm</Width>
         <Style>
@@ -279,8 +360,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox64</rd:DefaultName>
-        <Top>5.16398cm</Top>
-        <Left>0.10584cm</Left>
+        <Top>4.84648cm</Top>
+        <Left>0.53751cm</Left>
         <Height>3.97805cm</Height>
         <Width>1.56152cm</Width>
         <ZIndex>1</ZIndex>
@@ -335,8 +416,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox65</rd:DefaultName>
-        <Top>6.3504cm</Top>
-        <Left>1.66736cm</Left>
+        <Top>6.0329cm</Top>
+        <Left>2.09903cm</Left>
         <Height>2.79163cm</Height>
         <Width>1.30181cm</Width>
         <ZIndex>2</ZIndex>
@@ -405,8 +486,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox66</rd:DefaultName>
-        <Top>6.3504cm</Top>
-        <Left>2.96917cm</Left>
+        <Top>6.0329cm</Top>
+        <Left>3.40084cm</Left>
         <Height>2.79163cm</Height>
         <Width>1.48576cm</Width>
         <ZIndex>3</ZIndex>
@@ -461,8 +542,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox73</rd:DefaultName>
-        <Top>5.16398cm</Top>
-        <Left>1.66736cm</Left>
+        <Top>4.84648cm</Top>
+        <Left>2.09903cm</Left>
         <Height>1.18642cm</Height>
         <Width>4.25569cm</Width>
         <ZIndex>4</ZIndex>
@@ -543,8 +624,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox74</rd:DefaultName>
-        <Top>6.3504cm</Top>
-        <Left>4.45493cm</Left>
+        <Top>6.0329cm</Top>
+        <Left>4.8866cm</Left>
         <Height>2.79163cm</Height>
         <Width>1.46812cm</Width>
         <ZIndex>5</ZIndex>
@@ -613,8 +694,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox75</rd:DefaultName>
-        <Top>5.16398cm</Top>
-        <Left>5.92305cm</Left>
+        <Top>4.84648cm</Top>
+        <Left>6.35472cm</Left>
         <Height>1.18642cm</Height>
         <Width>3.33277cm</Width>
         <ZIndex>6</ZIndex>
@@ -669,8 +750,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox76</rd:DefaultName>
-        <Top>6.3504cm</Top>
-        <Left>5.92305cm</Left>
+        <Top>6.0329cm</Top>
+        <Left>6.35472cm</Left>
         <Height>2.79163cm</Height>
         <Width>1.71507cm</Width>
         <ZIndex>7</ZIndex>
@@ -739,8 +820,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox77</rd:DefaultName>
-        <Top>6.3504cm</Top>
-        <Left>7.63812cm</Left>
+        <Top>6.0329cm</Top>
+        <Left>8.06979cm</Left>
         <Height>2.79163cm</Height>
         <Width>1.6177cm</Width>
         <ZIndex>8</ZIndex>
@@ -809,8 +890,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox78</rd:DefaultName>
-        <Top>5.16398cm</Top>
-        <Left>9.25583cm</Left>
+        <Top>4.84648cm</Top>
+        <Left>9.6875cm</Left>
         <Height>3.97805cm</Height>
         <Width>1.17375cm</Width>
         <ZIndex>9</ZIndex>
@@ -865,8 +946,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox79</rd:DefaultName>
-        <Top>5.16398cm</Top>
-        <Left>10.42958cm</Left>
+        <Top>4.84648cm</Top>
+        <Left>10.86125cm</Left>
         <Height>0.83364cm</Height>
         <Width>7.69812cm</Width>
         <ZIndex>10</ZIndex>
@@ -906,8 +987,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox80</rd:DefaultName>
-        <Top>5.99763cm</Top>
-        <Left>10.42958cm</Left>
+        <Top>5.68013cm</Top>
+        <Left>10.86125cm</Left>
         <Height>0.62646cm</Height>
         <Width>2.02374cm</Width>
         <ZIndex>11</ZIndex>
@@ -962,8 +1043,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox81</rd:DefaultName>
-        <Top>5.99763cm</Top>
-        <Left>12.45332cm</Left>
+        <Top>5.68013cm</Top>
+        <Left>12.88499cm</Left>
         <Height>0.62646cm</Height>
         <Width>2.41182cm</Width>
         <ZIndex>12</ZIndex>
@@ -1003,8 +1084,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox82</rd:DefaultName>
-        <Top>5.99762cm</Top>
-        <Left>14.86514cm</Left>
+        <Top>5.68012cm</Top>
+        <Left>15.29681cm</Left>
         <Height>0.62647cm</Height>
         <Width>3.26256cm</Width>
         <ZIndex>13</ZIndex>
@@ -1059,8 +1140,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox83</rd:DefaultName>
-        <Top>6.62409cm</Top>
-        <Left>10.42958cm</Left>
+        <Top>6.30659cm</Top>
+        <Left>10.86125cm</Left>
         <Height>2.51794cm</Height>
         <Width>1.00577cm</Width>
         <ZIndex>14</ZIndex>
@@ -1143,8 +1224,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox84</rd:DefaultName>
-        <Top>6.62409cm</Top>
-        <Left>11.43535cm</Left>
+        <Top>6.30659cm</Top>
+        <Left>11.86702cm</Left>
         <Height>2.51794cm</Height>
         <Width>1.01797cm</Width>
         <ZIndex>15</ZIndex>
@@ -1213,8 +1294,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox85</rd:DefaultName>
-        <Top>6.62409cm</Top>
-        <Left>12.45332cm</Left>
+        <Top>6.30659cm</Top>
+        <Left>12.88499cm</Left>
         <Height>2.51794cm</Height>
         <Width>1.0848cm</Width>
         <ZIndex>16</ZIndex>
@@ -1339,8 +1420,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox86</rd:DefaultName>
-        <Top>6.62409cm</Top>
-        <Left>13.53812cm</Left>
+        <Top>6.30659cm</Top>
+        <Left>13.96979cm</Left>
         <Height>2.51794cm</Height>
         <Width>1.32702cm</Width>
         <ZIndex>17</ZIndex>
@@ -1409,8 +1490,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox87</rd:DefaultName>
-        <Top>6.62409cm</Top>
-        <Left>14.86514cm</Left>
+        <Top>6.30659cm</Top>
+        <Left>15.29681cm</Left>
         <Height>2.51794cm</Height>
         <Width>0.98778cm</Width>
         <ZIndex>18</ZIndex>
@@ -1479,8 +1560,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox88</rd:DefaultName>
-        <Top>6.62409cm</Top>
-        <Left>15.85291cm</Left>
+        <Top>6.30659cm</Top>
+        <Left>16.28458cm</Left>
         <Height>2.51794cm</Height>
         <Width>0.99188cm</Width>
         <ZIndex>19</ZIndex>
@@ -1593,8 +1674,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox89</rd:DefaultName>
-        <Top>6.62409cm</Top>
-        <Left>16.84479cm</Left>
+        <Top>6.30659cm</Top>
+        <Left>17.27646cm</Left>
         <Height>2.51794cm</Height>
         <Width>1.28291cm</Width>
         <ZIndex>20</ZIndex>
@@ -1663,8 +1744,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox90</rd:DefaultName>
-        <Top>5.16398cm</Top>
-        <Left>18.1277cm</Left>
+        <Top>4.84648cm</Top>
+        <Left>18.55937cm</Left>
         <Height>0.86892cm</Height>
         <Width>3.20084cm</Width>
         <ZIndex>21</ZIndex>
@@ -1803,8 +1884,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox91</rd:DefaultName>
-        <Top>6.0329cm</Top>
-        <Left>18.12521cm</Left>
+        <Top>5.7154cm</Top>
+        <Left>18.55688cm</Left>
         <Height>3.10913cm</Height>
         <Width>1.60042cm</Width>
         <ZIndex>22</ZIndex>
@@ -1887,8 +1968,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox92</rd:DefaultName>
-        <Top>6.0329cm</Top>
-        <Left>19.72563cm</Left>
+        <Top>5.7154cm</Top>
+        <Left>20.1573cm</Left>
         <Height>3.10913cm</Height>
         <Width>1.60042cm</Width>
         <ZIndex>23</ZIndex>
@@ -1957,8 +2038,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox93</rd:DefaultName>
-        <Top>5.16398cm</Top>
-        <Left>21.32605cm</Left>
+        <Top>4.84648cm</Top>
+        <Left>21.75772cm</Left>
         <Height>0.86892cm</Height>
         <Width>3.09875cm</Width>
         <ZIndex>24</ZIndex>
@@ -2041,8 +2122,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox94</rd:DefaultName>
-        <Top>6.0329cm</Top>
-        <Left>21.32605cm</Left>
+        <Top>5.7154cm</Top>
+        <Left>21.75772cm</Left>
         <Height>3.10913cm</Height>
         <Width>1.45931cm</Width>
         <ZIndex>25</ZIndex>
@@ -2167,8 +2248,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox95</rd:DefaultName>
-        <Top>6.0329cm</Top>
-        <Left>22.78535cm</Left>
+        <Top>5.7154cm</Top>
+        <Left>23.21702cm</Left>
         <Height>3.10913cm</Height>
         <Width>1.63695cm</Width>
         <ZIndex>26</ZIndex>
@@ -2335,8 +2416,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox96</rd:DefaultName>
-        <Top>5.16398cm</Top>
-        <Left>24.4223cm</Left>
+        <Top>4.84648cm</Top>
+        <Left>24.85397cm</Left>
         <Height>3.97805cm</Height>
         <Width>2.55763cm</Width>
         <ZIndex>27</ZIndex>
@@ -2503,8 +2584,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox97</rd:DefaultName>
-        <Top>5.16398cm</Top>
-        <Left>26.97993cm</Left>
+        <Top>4.84648cm</Top>
+        <Left>27.4116cm</Left>
         <Height>3.97805cm</Height>
         <Width>1.52104cm</Width>
         <ZIndex>28</ZIndex>
@@ -2609,7 +2690,7 @@
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Число1">
+                    <Textbox Name="Число">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -2626,7 +2707,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Число1</rd:DefaultName>
+                      <rd:DefaultName>Число</rd:DefaultName>
                       <Style>
                         <Border>
                           <Style>None</Style>
@@ -2844,14 +2925,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Показания_спидометра_при_возращении">
+                    <Textbox Name="Показания_спидометра_при_возвращении">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Показания_спидометра_при_возращении.Value</Value>
+                              <Value>=Fields!Показания_спидометра_при_возвращении.Value</Value>
                               <Style>
                                 <FontFamily>Times New Roman</FontFamily>
                                 <FontSize>8pt</FontSize>
@@ -2861,7 +2942,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Показания_спидометра_при_возращении</rd:DefaultName>
+                      <rd:DefaultName>Показания_спидометра_при_возвращении</rd:DefaultName>
                       <Style>
                         <Border>
                           <Style>None</Style>
@@ -2985,14 +3066,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Остаток_топлива_при_возвращении">
+                    <Textbox Name="Показания_спидометра_при_возвращении1">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Остаток_топлива_при_возвращении.Value</Value>
+                              <Value>=Fields!Показания_спидометра_при_возвращении.Value</Value>
                               <Style>
                                 <FontFamily>Times New Roman</FontFamily>
                                 <FontSize>8pt</FontSize>
@@ -3002,7 +3083,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Остаток_топлива_при_возвращении</rd:DefaultName>
+                      <rd:DefaultName>Показания_спидометра_при_возвращении1</rd:DefaultName>
                       <Style>
                         <Border>
                           <Style>None</Style>
@@ -3032,14 +3113,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Заправлено_топливо_л">
+                    <Textbox Name="Заправлено_топлива_л">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Заправлено_топливо_л.Value</Value>
+                              <Value>=Fields!Заправлено_топлива_л.Value</Value>
                               <Style>
                                 <FontFamily>Times New Roman</FontFamily>
                                 <FontSize>8pt</FontSize>
@@ -3049,7 +3130,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Заправлено_топливо_л</rd:DefaultName>
+                      <rd:DefaultName>Заправлено_топлива_л</rd:DefaultName>
                       <Style>
                         <Border>
                           <Style>None</Style>
@@ -3079,14 +3160,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Дата_и_номер_чека_АЗС">
+                    <Textbox Name="Дата_и__чека_АЗС">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Дата_и_номер_чека_АЗС.Value</Value>
+                              <Value>=Fields!Дата_и__чека_АЗС.Value</Value>
                               <Style>
                                 <FontFamily>Times New Roman</FontFamily>
                                 <FontSize>7pt</FontSize>
@@ -3096,7 +3177,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Дата_и_номер_чека_АЗС</rd:DefaultName>
+                      <rd:DefaultName>Дата_и__чека_АЗС</rd:DefaultName>
                       <Style>
                         <Border>
                           <Style>None</Style>
@@ -3122,6 +3203,7 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -3216,7 +3298,6 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -3583,9 +3664,9 @@
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
-        <DataSetName>DataSet1</DataSetName>
-        <Top>9.14203cm</Top>
-        <Left>0.10584cm</Left>
+        <DataSetName>DataSet2</DataSetName>
+        <Top>8.82453cm</Top>
+        <Left>0.53751cm</Left>
         <Height>0.6cm</Height>
         <Width>28.39763cm</Width>
         <ZIndex>29</ZIndex>

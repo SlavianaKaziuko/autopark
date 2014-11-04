@@ -30,6 +30,7 @@ namespace AUTOPARK
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            
             this.putListLegkovogoDannieTableAdapter.FillWithCalculating(this.autoparkDB.Данные_Путевой_лист_легкового_авто, PutevoiId);
             this.reportViewer1.RefreshReport();
 
