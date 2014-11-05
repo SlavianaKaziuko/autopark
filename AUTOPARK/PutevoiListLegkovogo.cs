@@ -226,5 +226,13 @@ namespace AUTOPARK
         {
             Environment.Exit(0);
         }
+
+        private void llblMenu_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            var form = new Menu(); ////создание экземпляра формы PutevieListi
+            this.Hide(); //// скрытие текущей формы
+            form.ShowDialog(); //// открытие формы PutevieListi
+            this.Close(); //// закрытие текущей формы
+        }
     }
 }

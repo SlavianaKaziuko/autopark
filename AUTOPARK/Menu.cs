@@ -35,5 +35,10 @@ namespace AUTOPARK
         private void Spravochniki_Enter(object sender, EventArgs e)
         {
         }
+
+        private void Menu_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Environment.Exit(0);
+        }
     }
 }

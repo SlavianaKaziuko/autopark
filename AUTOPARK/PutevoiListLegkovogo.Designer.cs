@@ -50,6 +50,7 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnReport = new System.Windows.Forms.Button();
             this.exitPic = new System.Windows.Forms.PictureBox();
+            this.llblMenu = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPutevieLegkovie)).BeginInit();
             this.pnlShapka.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.exitPic)).BeginInit();
@@ -275,11 +276,23 @@
             this.exitPic.TabStop = false;
             this.exitPic.Click += new System.EventHandler(this.exitPic_Click);
             // 
+            // llblMenu
+            // 
+            this.llblMenu.AutoSize = true;
+            this.llblMenu.Location = new System.Drawing.Point(-2, -1);
+            this.llblMenu.Name = "llblMenu";
+            this.llblMenu.Size = new System.Drawing.Size(41, 15);
+            this.llblMenu.TabIndex = 22;
+            this.llblMenu.TabStop = true;
+            this.llblMenu.Text = "Меню";
+            this.llblMenu.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llblMenu_LinkClicked);
+            // 
             // PutListLegkovogoavto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1006, 521);
+            this.Controls.Add(this.llblMenu);
             this.Controls.Add(this.exitPic);
             this.Controls.Add(this.btnReport);
             this.Controls.Add(this.btnCancel);
@@ -297,6 +310,7 @@
             this.pnlShapka.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.exitPic)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -323,6 +337,7 @@
         private System.Windows.Forms.DateTimePicker dtpEnd;
         private System.Windows.Forms.DateTimePicker dtpStart;
         private System.Windows.Forms.PictureBox exitPic;
+        private System.Windows.Forms.LinkLabel llblMenu;
 
     }
 }
