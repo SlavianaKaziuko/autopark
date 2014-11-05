@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PutListLegkovogoavto));
             this.lblLegkovoi = new System.Windows.Forms.Label();
             this.txtNumber = new System.Windows.Forms.TextBox();
             this.lblperiod = new System.Windows.Forms.Label();
@@ -41,15 +42,17 @@
             this.cbVodUdostoverenie = new System.Windows.Forms.ComboBox();
             this.dgvPutevieLegkovie = new System.Windows.Forms.DataGridView();
             this.pnlShapka = new System.Windows.Forms.Panel();
+            this.dtpEnd = new System.Windows.Forms.DateTimePicker();
+            this.dtpStart = new System.Windows.Forms.DateTimePicker();
             this.txtKlassnost = new System.Windows.Forms.TextBox();
             this.lblKlassnost = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnReport = new System.Windows.Forms.Button();
-            this.dtpStart = new System.Windows.Forms.DateTimePicker();
-            this.dtpEnd = new System.Windows.Forms.DateTimePicker();
+            this.exitPic = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPutevieLegkovie)).BeginInit();
             this.pnlShapka.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.exitPic)).BeginInit();
             this.SuspendLayout();
             // 
             // lblLegkovoi
@@ -193,6 +196,26 @@
             this.pnlShapka.Size = new System.Drawing.Size(766, 156);
             this.pnlShapka.TabIndex = 17;
             // 
+            // dtpEnd
+            // 
+            this.dtpEnd.CustomFormat = "dd MMMM yyyy";
+            this.dtpEnd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.dtpEnd.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpEnd.Location = new System.Drawing.Point(395, 52);
+            this.dtpEnd.Name = "dtpEnd";
+            this.dtpEnd.Size = new System.Drawing.Size(162, 23);
+            this.dtpEnd.TabIndex = 19;
+            // 
+            // dtpStart
+            // 
+            this.dtpStart.CustomFormat = "dd MMMM yyyy";
+            this.dtpStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.dtpStart.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpStart.Location = new System.Drawing.Point(178, 52);
+            this.dtpStart.Name = "dtpStart";
+            this.dtpStart.Size = new System.Drawing.Size(162, 23);
+            this.dtpStart.TabIndex = 18;
+            // 
             // txtKlassnost
             // 
             this.txtKlassnost.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -241,31 +264,23 @@
             this.btnReport.UseVisualStyleBackColor = true;
             this.btnReport.Click += new System.EventHandler(this.btnReport_Click_1);
             // 
-            // dtpStart
+            // exitPic
             // 
-            this.dtpStart.CustomFormat = "dd MMMM yyyy";
-            this.dtpStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.dtpStart.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpStart.Location = new System.Drawing.Point(178, 52);
-            this.dtpStart.Name = "dtpStart";
-            this.dtpStart.Size = new System.Drawing.Size(162, 23);
-            this.dtpStart.TabIndex = 18;
-            // 
-            // dtpEnd
-            // 
-            this.dtpEnd.CustomFormat = "dd MMMM yyyy";
-            this.dtpEnd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.dtpEnd.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpEnd.Location = new System.Drawing.Point(395, 52);
-            this.dtpEnd.Name = "dtpEnd";
-            this.dtpEnd.Size = new System.Drawing.Size(162, 23);
-            this.dtpEnd.TabIndex = 19;
+            this.exitPic.Image = ((System.Drawing.Image)(resources.GetObject("exitPic.Image")));
+            this.exitPic.Location = new System.Drawing.Point(974, -1);
+            this.exitPic.Name = "exitPic";
+            this.exitPic.Size = new System.Drawing.Size(32, 32);
+            this.exitPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.exitPic.TabIndex = 21;
+            this.exitPic.TabStop = false;
+            this.exitPic.Click += new System.EventHandler(this.exitPic_Click);
             // 
             // PutListLegkovogoavto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1006, 521);
+            this.Controls.Add(this.exitPic);
             this.Controls.Add(this.btnReport);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
@@ -280,6 +295,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvPutevieLegkovie)).EndInit();
             this.pnlShapka.ResumeLayout(false);
             this.pnlShapka.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.exitPic)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -306,6 +322,7 @@
         private System.Windows.Forms.Button btnReport;
         private System.Windows.Forms.DateTimePicker dtpEnd;
         private System.Windows.Forms.DateTimePicker dtpStart;
+        private System.Windows.Forms.PictureBox exitPic;
 
     }
 }

@@ -24,7 +24,14 @@ namespace AUTOPARK
         public PutListLegkovogoavto()
         {
             InitializeComponent();
-            _modeIsNew = true;
+            // Create the ToolTip and associate with the Form container.
+            // Set up the delays for the ToolTip.
+            // Force the ToolTip text to be displayed whether or not the form is active.
+            var toolTip1 = new ToolTip {AutoPopDelay = 5000, InitialDelay = 1000, ReshowDelay = 500, ShowAlways = true};
+
+            // Set up the ToolTip text for the Button and Checkbox.
+            toolTip1.SetToolTip(exitPic, "Выйти из приложения"); 
+            
             var tablep = new AutoparkDBTableAdapters.PodvijnoiTableAdapter();   
             _bindingAuto.DataSource = tablep.GetDataByType("Л");
             if (_bindingAuto.Count == 0)
@@ -55,6 +62,14 @@ namespace AUTOPARK
         public PutListLegkovogoavto(int id)
         {
             InitializeComponent();
+            // Create the ToolTip and associate with the Form container.
+            // Set up the delays for the ToolTip.
+            // Force the ToolTip text to be displayed whether or not the form is active.
+            var toolTip1 = new ToolTip { AutoPopDelay = 5000, InitialDelay = 1000, ReshowDelay = 500, ShowAlways = true };
+
+            // Set up the ToolTip text for the Button and Checkbox.
+            toolTip1.SetToolTip(exitPic, "Выйти из приложения"); 
+            
             _modeIsNew = false;
             PutevoiId = id;
             var tablep = new AutoparkDBTableAdapters.PodvijnoiTableAdapter();
@@ -191,18 +206,25 @@ namespace AUTOPARK
 
         private void lblLiatLegkovogoavto_Resize(object sender, EventArgs e)
         {
-            dgvPutevieLegkovie.Width = this.Width - 40;   //как растянут датагридвью в ширину и высоту
+            dgvPutevieLegkovie.Width = this.Width - 40; //как растянут датагридвью в ширину и высоту
             dgvPutevieLegkovie.Height = this.Height - 100 - dgvPutevieLegkovie.Location.Y;
 
-            btnSave.Location = new Point(this.Width - 219, this.Height - 73);       //как растянуты кнопки Сохранить и Отмена когда открывается полностью окно
+            btnSave.Location = new Point(this.Width - 219, this.Height - 73);
+                //как растянуты кнопки Сохранить и Отмена когда открывается полностью окно
             btnCancel.Location = new Point(this.Width - 103, this.Height - 73);
-                    btnReport.Location = new Point(this.Width - 320, this.Height - 73);
-}
+            btnReport.Location = new Point(this.Width - 320, this.Height - 73);
+            exitPic.Location = new Point(this.Width - 2 * exitPic.Width, exitPic.Location.Y);
+        }
 
         private void btnReport_Click_1(object sender, EventArgs e)      // кнопка Отчет
         {
             OtchetLegkovogo f1 = new OtchetLegkovogo(PutevoiId);
             f1.Show();
+        }
+
+        private void exitPic_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(0);
         }
     }
 }
