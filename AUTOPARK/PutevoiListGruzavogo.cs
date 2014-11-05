@@ -45,5 +45,18 @@ namespace AUTOPARK
             OtchetGruzavogo f1 = new OtchetGruzavogo();
             f1.Show();
         }
+
+        private void exitPic_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(0);  //Полный выход из программы если нажимаем на картинку с дверкой в Путевых листах грузового авто
+        }
+
+        private void llblMenu_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            var form = new Menu(); ////создание экземпляра формы PutevieListi
+            this.Hide(); //// скрытие текущей формы
+            form.ShowDialog(); //// открытие формы PutevieListi
+            this.Close(); //// закрытие текущей формы
+        }
     }
 }

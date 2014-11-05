@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PutevoiListGruzavogo));
             this.lblGruzovoi = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.dtpHapka = new System.Windows.Forms.DateTimePicker();
@@ -82,12 +83,15 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnReport = new System.Windows.Forms.Button();
+            this.exitPic = new System.Windows.Forms.PictureBox();
+            this.llblMenu = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvZapravkaTCM)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.exitPic)).BeginInit();
             this.SuspendLayout();
             // 
             // lblGruzovoi
@@ -608,11 +612,35 @@
             this.btnReport.UseVisualStyleBackColor = true;
             this.btnReport.Click += new System.EventHandler(this.btnReport_Click);
             // 
+            // exitPic
+            // 
+            this.exitPic.Image = ((System.Drawing.Image)(resources.GetObject("exitPic.Image")));
+            this.exitPic.Location = new System.Drawing.Point(1190, 9);
+            this.exitPic.Name = "exitPic";
+            this.exitPic.Size = new System.Drawing.Size(32, 32);
+            this.exitPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.exitPic.TabIndex = 57;
+            this.exitPic.TabStop = false;
+            this.exitPic.Click += new System.EventHandler(this.exitPic_Click);
+            // 
+            // llblMenu
+            // 
+            this.llblMenu.AutoSize = true;
+            this.llblMenu.Location = new System.Drawing.Point(2, -2);
+            this.llblMenu.Name = "llblMenu";
+            this.llblMenu.Size = new System.Drawing.Size(41, 15);
+            this.llblMenu.TabIndex = 58;
+            this.llblMenu.TabStop = true;
+            this.llblMenu.Text = "Меню";
+            this.llblMenu.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llblMenu_LinkClicked);
+            // 
             // PutevoiListGruzavogo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1234, 607);
+            this.Controls.Add(this.llblMenu);
+            this.Controls.Add(this.exitPic);
             this.Controls.Add(this.btnReport);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
@@ -639,6 +667,7 @@
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.exitPic)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -700,5 +729,7 @@
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnReport;
+        private System.Windows.Forms.PictureBox exitPic;
+        private System.Windows.Forms.LinkLabel llblMenu;
     }
 }

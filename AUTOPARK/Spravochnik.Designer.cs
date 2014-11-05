@@ -28,9 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Spravochnik));
             this.dgvSpravochnik = new System.Windows.Forms.DataGridView();
             this.btnSaveChanges = new System.Windows.Forms.Button();
+            this.exitPic = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSpravochnik)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.exitPic)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvSpravochnik
@@ -52,17 +55,30 @@
             this.btnSaveChanges.UseVisualStyleBackColor = true;
             this.btnSaveChanges.Click += new System.EventHandler(this.btnSaveChanges_Click);
             // 
+            // exitPic
+            // 
+            this.exitPic.Image = ((System.Drawing.Image)(resources.GetObject("exitPic.Image")));
+            this.exitPic.Location = new System.Drawing.Point(1282, 12);
+            this.exitPic.Name = "exitPic";
+            this.exitPic.Size = new System.Drawing.Size(32, 32);
+            this.exitPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.exitPic.TabIndex = 58;
+            this.exitPic.TabStop = false;
+            this.exitPic.Click += new System.EventHandler(this.exitPic_Click);
+            // 
             // Spravochnik
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1168, 268);
+            this.ClientSize = new System.Drawing.Size(1326, 377);
+            this.Controls.Add(this.exitPic);
             this.Controls.Add(this.btnSaveChanges);
             this.Controls.Add(this.dgvSpravochnik);
             this.Name = "Spravochnik";
             this.Text = "Справочник";
             this.Resize += new System.EventHandler(this.Spravochnik_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSpravochnik)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.exitPic)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -71,5 +87,6 @@
 
         private System.Windows.Forms.DataGridView dgvSpravochnik;
         private System.Windows.Forms.Button btnSaveChanges;
+        private System.Windows.Forms.PictureBox exitPic;
     }
 }

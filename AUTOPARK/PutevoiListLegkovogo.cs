@@ -224,7 +224,7 @@ namespace AUTOPARK
 
         private void exitPic_Click(object sender, EventArgs e)
         {
-            Environment.Exit(0);
+            Environment.Exit(0);  //Полный выход из программы если нажимаем на дверку в Путевых листах легкового авто
         }
 
         private void llblMenu_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
