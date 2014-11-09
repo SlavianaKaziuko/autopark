@@ -44,6 +44,8 @@ namespace AUTOPARK
             }
 
             dgvSpravochnik.DataSource = _binding;
+            var dataGridViewColumn = dgvSpravochnik.Columns["ФИО"];
+            if (dataGridViewColumn != null) dataGridViewColumn.Visible = false;
         }
 
         private void btnSaveChanges_Click(object sender, EventArgs e)

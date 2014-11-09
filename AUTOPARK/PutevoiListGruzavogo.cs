@@ -42,7 +42,7 @@ namespace AUTOPARK
 
         private void btnReport_Click(object sender, EventArgs e)
         {
-            OtchetGruzavogo f1 = new OtchetGruzavogo();
+            var f1 = new OtchetGruzavogo();
             f1.Show();
         }
 

@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
 using System.Globalization;
@@ -13,11 +12,11 @@ namespace AUTOPARK
         private readonly BindingSource _bindingAuto = new BindingSource();
         private readonly BindingSource _bindingVoditel = new BindingSource();
         private readonly BindingSource _bindingDannie = new BindingSource();
-        private string _number;
-        private int _idauto;
-        private int _idvod;
-        private DateTime _dateStart;
-        private DateTime _dateEnd;
+        private readonly string _number;
+        private readonly int _idauto;
+        private readonly int _idvod;
+        private readonly DateTime _dateStart;
+        private readonly DateTime _dateEnd;
         private readonly bool _modeIsNew; ////true - add, false - update
         private int PutevoiId { get; set; }
 
@@ -42,8 +41,8 @@ namespace AUTOPARK
             cbNomerAuto.DisplayMember = "Гос_номер";                            
             cbNomerAuto.ValueMember = "ID";                                     
 
-            var tablel = new AutoparkDBTableAdapters.LichniiTableAdapter();    
-            _bindingVoditel.DataSource = tablel.GetData();
+            var tablel = new AutoparkDBTableAdapters.LichniiTableAdapter();
+            _bindingVoditel.DataSource = tablel.GetDataSpisokVoditeli();
             if (_bindingVoditel.Count == 0)
             {
                 throw new Exception("Пожалуйста, заполните справочник \"Личный состав\"");
@@ -52,9 +51,9 @@ namespace AUTOPARK
             cbVodUdostoverenie.DisplayMember = "ФИО";
             cbVodUdostoverenie.ValueMember = "табельный_номер";
             var tablePutevoi = new AutoparkDBTableAdapters.PutevieLegkovieTableAdapter();
-            var newLegkNumber = tablePutevoi.GetNewLegkNumber();
-            if (newLegkNumber != null)
-                txtNumber.Text = newLegkNumber.Value.ToString(CultureInfo.InvariantCulture);
+            //var newLegkNumber = tablePutevoi.GetNewLegkNumber();
+            //if (newLegkNumber != null)
+            //    txtNumber.Text = newLegkNumber.Value.ToString(CultureInfo.InvariantCulture);
             _dateStart = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
             _dateEnd = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1).AddMonths(1).AddDays(-1);
         }
@@ -83,7 +82,7 @@ namespace AUTOPARK
             cbNomerAuto.ValueMember = "ID";
 
             var tablel = new AutoparkDBTableAdapters.LichniiTableAdapter();
-            _bindingVoditel.DataSource = tablel.GetData();
+            _bindingVoditel.DataSource = tablel.GetDataSpisokVoditeli();
             if (_bindingVoditel.Count == 0)
             {
                 throw new Exception("Пожалуйста, заполните справочник \"Личный состав\"");
@@ -92,9 +91,11 @@ namespace AUTOPARK
             cbVodUdostoverenie.DisplayMember = "ФИО";
             cbVodUdostoverenie.ValueMember = "табельный_номер";
 
-            var table = new AutoparkDBTableAdapters.PutListLegkovogoDannieTableAdapter();
-            _bindingDannie.DataSource = table.GetDataWithCalculating(PutevoiId);
+            var tableDannie = new AutoparkDBTableAdapters.PutListLegkovogoDannieTableAdapter();
+            _bindingDannie.DataSource = tableDannie.GetData();
+            _bindingDannie.Filter = "[ID_Путевого листа] = " + PutevoiId;
             dgvPutevieLegkovie.DataSource = _bindingDannie;
+            
             var dataGridViewColumn = dgvPutevieLegkovie.Columns["ID_Путевого листа"];
             if (dataGridViewColumn != null)
                 dataGridViewColumn.Visible = false;
@@ -120,12 +121,12 @@ namespace AUTOPARK
         {
             if (_bindingAuto.Count == 0)
             {
-                MessageBox.Show("Пожалуйста, заполните справочник \"Подвижной состав\"");
+                MessageBox.Show(@"Пожалуйста, заполните справочник ""Подвижной состав""");
                 this.Close();
             }
             else if (_bindingVoditel.Count==0)
             {
-                MessageBox.Show("Пожалуйста, заполните справочник \"Личный состав\"");
+                MessageBox.Show(@"Пожалуйста, заполните справочник ""Личный состав""");
                 this.Close();
             }
             txtNumber.Text = _number;
@@ -149,8 +150,8 @@ namespace AUTOPARK
         {
             //Вытягивание из таблицы binding строку,затем преобразовываем в тип данных DataRowView,
             //вытягивание из массива данных(Row) и затем вытягивание ячейки 1 (ItemArray[2,3])
-            txtVoditel.Text = ((DataRowView)_bindingVoditel[cbVodUdostoverenie.SelectedIndex]).Row.ItemArray[2].ToString();
-            txtKlassnost.Text = ((DataRowView)_bindingVoditel[cbVodUdostoverenie.SelectedIndex]).Row.ItemArray[3].ToString();
+            txtVoditel.Text = ((DataRowView)_bindingVoditel[cbVodUdostoverenie.SelectedIndex]).Row.ItemArray[4].ToString();
+            txtKlassnost.Text = ((DataRowView)_bindingVoditel[cbVodUdostoverenie.SelectedIndex]).Row.ItemArray[5].ToString();
         }
 
         private void btnSave_Click(object sender, EventArgs e)      // Кнопка Сохранить
@@ -163,7 +164,8 @@ namespace AUTOPARK
                     int.Parse(((DataRowView) _bindingAuto[cbNomerAuto.SelectedIndex]).Row.ItemArray[0].ToString()),
                     int.Parse(
                         ((DataRowView) _bindingVoditel[cbVodUdostoverenie.SelectedIndex]).Row.ItemArray[0].ToString()));
-                _bindingDannie.DataSource = tableDannie.GetDataWithCalculating(PutevoiId);
+                _bindingDannie.DataSource = tableDannie.GetData();
+                _bindingDannie.Filter = "[ID_Путевого листа] = " + PutevoiId;
                 dgvPutevieLegkovie.DataSource = _bindingDannie;
                 var dataGridViewColumn = dgvPutevieLegkovie.Columns["ID_Путевого листа"];
                 if (dataGridViewColumn != null)
@@ -178,7 +180,8 @@ namespace AUTOPARK
                     PutevoiId, _number, _dateStart, _dateEnd, _idauto, _idvod);
                 
                 tableDannie.Update((AutoparkDB.Данные_Путевой_лист_легкового_автоDataTable) _bindingDannie.DataSource);
-                _bindingDannie.DataSource = tableDannie.GetDataWithCalculating(PutevoiId);
+                _bindingDannie.DataSource = tableDannie.GetData();
+                _bindingDannie.Filter = "[ID_Путевого листа] = " + PutevoiId;
                 dgvPutevieLegkovie.DataSource = _bindingDannie;
             }
             btnCancel.Visible = false;
@@ -218,7 +221,7 @@ namespace AUTOPARK
 
         private void btnReport_Click_1(object sender, EventArgs e)      // кнопка Отчет
         {
-            OtchetLegkovogo f1 = new OtchetLegkovogo(PutevoiId);
+            var f1 = new OtchetLegkovogo(PutevoiId);
             f1.Show();
         }
 

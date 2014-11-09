@@ -34,13 +34,10 @@
             this.данныеПутевойЛистЛегковогоАвтоBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.autoparkDB = new AUTOPARK.AutoparkDB();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.View_Данные_путевой_лист_легкового_автоBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.putListLegkovogoDannieTableAdapter = new AUTOPARK.AutoparkDBTableAdapters.PutListLegkovogoDannieTableAdapter();
-            this.View_Данные_путевой_лист_легкового_автоTableAdapter = new AUTOPARK.AutoparkDBTableAdapters.View_Данные_путевой_лист_легкового_автоTableAdapter();
             this.данныеПутевойЛистЛегковогоАвтоBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.данныеПутевойЛистЛегковогоАвтоBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.autoparkDB)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.View_Данные_путевой_лист_легкового_автоBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.данныеПутевойЛистЛегковогоАвтоBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -69,18 +66,9 @@
             this.reportViewer1.Size = new System.Drawing.Size(690, 394);
             this.reportViewer1.TabIndex = 0;
             // 
-            // View_Данные_путевой_лист_легкового_автоBindingSource
-            // 
-            this.View_Данные_путевой_лист_легкового_автоBindingSource.DataMember = "View_Данные путевой лист легкового авто";
-            this.View_Данные_путевой_лист_легкового_автоBindingSource.DataSource = this.autoparkDB;
-            // 
             // putListLegkovogoDannieTableAdapter
             // 
             this.putListLegkovogoDannieTableAdapter.ClearBeforeFill = true;
-            // 
-            // View_Данные_путевой_лист_легкового_автоTableAdapter
-            // 
-            this.View_Данные_путевой_лист_легкового_автоTableAdapter.ClearBeforeFill = true;
             // 
             // данныеПутевойЛистЛегковогоАвтоBindingSource1
             // 
@@ -98,7 +86,6 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.данныеПутевойЛистЛегковогоАвтоBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.autoparkDB)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.View_Данные_путевой_лист_легкового_автоBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.данныеПутевойЛистЛегковогоАвтоBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
@@ -110,8 +97,6 @@
         private System.Windows.Forms.BindingSource данныеПутевойЛистЛегковогоАвтоBindingSource;
         private AutoparkDBTableAdapters.PutListLegkovogoDannieTableAdapter putListLegkovogoDannieTableAdapter;
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
-        private System.Windows.Forms.BindingSource View_Данные_путевой_лист_легкового_автоBindingSource;
-        private AutoparkDBTableAdapters.View_Данные_путевой_лист_легкового_автоTableAdapter View_Данные_путевой_лист_легкового_автоTableAdapter;
         private System.Windows.Forms.BindingSource данныеПутевойЛистЛегковогоАвтоBindingSource1;
 
     }
