@@ -158,5 +158,18 @@ namespace AUTOPARK
             btnEdit.Location = new Point(this.Width - 214, this.Height - 73);
             btnDelete.Location = new Point(this.Width - 103, this.Height - 73);
         }
+
+        private void tsmiToMenu_Click(object sender, EventArgs e)
+        {
+            var form = new Menu(); ////создание экземпляра формы PutevieListi
+            this.Hide(); //// скрытие текущей формы
+            form.ShowDialog(); //// открытие формы PutevieListi
+            this.Close(); //// закрытие текущей формы
+        }
+
+        private void tsmiExitApplication_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(0);  //Полный выход из программы если нажимаем на дверку в Путевых листах легкового авто
+        }
     }
 }

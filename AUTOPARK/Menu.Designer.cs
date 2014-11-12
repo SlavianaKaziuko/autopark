@@ -150,7 +150,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(946, 409);
+            this.ClientSize = new System.Drawing.Size(885, 409);
             this.Controls.Add(this.groupListi);
             this.Controls.Add(this.Spravochniki);
             this.Name = "Menu";

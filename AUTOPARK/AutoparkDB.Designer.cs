@@ -12363,7 +12363,7 @@ WHERE        ([Личный состав].[табельный  номер] = @Vo
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = @"SELECT        [Путевой лист легкового автомобиля].[ID_Путевого листа], [Путевой лист легкового автомобиля].[Номер путевого листа], 
@@ -12376,10 +12376,22 @@ FROM            [Путевой лист легкового автомобиля
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT        ISNULL(MAX([Номер путевого листа]), 0) + 1 AS newID\r\nFROM          " +
+            this._commandCollection[1].CommandText = @"SELECT        [Путевой лист легкового автомобиля].[ID_Путевого листа], [Путевой лист легкового автомобиля].[Номер путевого листа], 
+                         [Путевой лист легкового автомобиля].[За период с], [Путевой лист легкового автомобиля].[За период по], [Личный состав].[табельный  номер], 
+                         [Личный состав].Фамилия + ' ' +[Личный состав].Имя + ' ' +[Личный состав].Отчество  AS 'ФИО', [Подвижной состав].[Марка и модель], [Подвижной состав].[Гос.номер], [Подвижной состав].[Гаражный номер], 
+                         [Путевой лист легкового автомобиля].ID_Автомобиль, [Путевой лист легкового автомобиля].ID_Водитель
+FROM            [Путевой лист легкового автомобиля] INNER JOIN
+                         [Личный состав] ON [Путевой лист легкового автомобиля].ID_Водитель = [Личный состав].[табельный  номер] INNER JOIN
+                         [Подвижной состав] ON [Путевой лист легкового автомобиля].ID_Автомобиль = [Подвижной состав].ID
+WHERE [Путевой лист легкового автомобиля].[ID_Путевого листа] = @ID";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Путевого листа", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "SELECT        ISNULL(MAX([Номер путевого листа]), 0) + 1 AS newID\r\nFROM          " +
                 "  [Путевой лист легкового автомобиля]\r\nWHERE        (YEAR([За период с]) = YEAR(" +
                 "GETDATE()))";
-            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -12409,8 +12421,34 @@ FROM            [Путевой лист легкового автомобиля
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByID(AutoparkDB.Путевые_листы_легковыеDataTable dataTable, int ID) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(ID));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual AutoparkDB.Путевые_листы_легковыеDataTable GetDataByID(int ID) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(ID));
+            AutoparkDB.Путевые_листы_легковыеDataTable dataTable = new AutoparkDB.Путевые_листы_легковыеDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual object GetNewLegkNumber() {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {

@@ -10,103 +10,7 @@
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="DataSet1">
-      <Fields>
-        <Field Name="Число">
-          <DataField>Число</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Время_выезда">
-          <DataField>Время_выезда</DataField>
-          <rd:TypeName>System.TimeSpan</rd:TypeName>
-        </Field>
-        <Field Name="Время_возвращения">
-          <DataField>Время_возвращения</DataField>
-          <rd:TypeName>System.TimeSpan</rd:TypeName>
-        </Field>
-        <Field Name="Время_в_наряде">
-          <DataField>Время_в_наряде</DataField>
-          <rd:TypeName>System.TimeSpan</rd:TypeName>
-        </Field>
-        <Field Name="Показания_спидометра_при_выезде">
-          <DataField>Показания_спидометра_при_выезде</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Показания_спидометра_при_возращении">
-          <DataField>Показания_спидометра_при_возращении</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Пробег_км">
-          <DataField>Пробег_км</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Остаток_топлива_при_выезде">
-          <DataField>Остаток_топлива_при_выезде</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Остаток_топлива_при_возвращении">
-          <DataField>Остаток_топлива_при_возвращении</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Заправлено_топливо_л">
-          <DataField>Заправлено_топливо_л</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Дата_и_номер_чека_АЗС">
-          <DataField>Дата_и_номер_чека_АЗС</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Расход_топлива_по_норме">
-          <DataField>Расход_топлива_по_норме</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Расход_топлива_фактически">
-          <DataField>Расход_топлива_фактически</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Автомобиль_технически_исправлен_выезд_разрешен_подпись_штамп_уполномоченного_лица">
-          <DataField>Автомобиль_технически_исправлен_выезд_разрешен_подпись_штамп_уполномоченного_лица</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Расход_топлива_экономия_перерасход">
-          <DataField>Расход_топлива_экономия_перерасход</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Автомобиль_технически_исправлен_прнял_подпись_водителя">
-          <DataField>Автомобиль_технически_исправлен_прнял_подпись_водителя</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="При_возвращении_автомобиль_сдал_подпись_водителя">
-          <DataField>При_возвращении_автомобиль_сдал_подпись_водителя</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="При_возвращении_автомобиль_принял_подпись_штамп_уполномоченного_лица">
-          <DataField>При_возвращении_автомобиль_принял_подпись_штамп_уполномоченного_лица</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Водитель_по_состоянию_здоровья_к_управлению_допущен_подпись_штамп_уполномоченного_лица">
-          <DataField>Водитель_по_состоянию_здоровья_к_управлению_допущен_подпись_штамп_уполномоченного_лица</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Подпись_штамп_лица_ответственного_за_оформление_путевого_листа">
-          <DataField>Подпись_штамп_лица_ответственного_за_оформление_путевого_листа</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-      </Fields>
-      <Query>
-        <DataSourceName>AutoparkDB</DataSourceName>
-        <CommandText>/* Local Query */</CommandText>
-      </Query>
-      <rd:DataSetInfo>
-        <rd:DataSetName>AutoparkDB</rd:DataSetName>
-        <rd:SchemaPath>D:\WORK1\WORK2\AUTOPARK\AUTOPARK\AutoparkDB.xsd</rd:SchemaPath>
-        <rd:TableName>View_Данные путевой лист легкового авто</rd:TableName>
-        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
-        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>View_Данные_путевой_лист_легкового_автоTableAdapter</rd:TableAdapterName>
-      </rd:DataSetInfo>
-    </DataSet>
-    <DataSet Name="DataSet2">
+    <DataSet Name="Body">
       <Fields>
         <Field Name="id_Данных">
           <DataField>id_Данных</DataField>
@@ -186,160 +90,61 @@
         <rd:TableAdapterName>PutListLegkovogoDannieTableAdapter</rd:TableAdapterName>
       </rd:DataSetInfo>
     </DataSet>
+    <DataSet Name="ReportHead">
+      <Fields>
+        <Field Name="ID_Путевого_листа">
+          <DataField>ID_Путевого листа</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Номер_путевого_листа">
+          <DataField>Номер путевого листа</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="За_период_с">
+          <DataField>За период с</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="За_период_по">
+          <DataField>За период по</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="табельный_номер">
+          <DataField>табельный  номер</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ФИО">
+          <DataField>ФИО</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Марка_и_модель">
+          <DataField>Марка и модель</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Гос_номер">
+          <DataField>Гос.номер</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Гаражный_номер">
+          <DataField>Гаражный номер</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>AutoparkDB</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <rd:DataSetInfo>
+        <rd:DataSetName>AutoparkDB</rd:DataSetName>
+        <rd:SchemaPath>D:\my\autopark\AUTOPARK\AutoparkDB.xsd</rd:SchemaPath>
+        <rd:TableName>Путевые листы легковые</rd:TableName>
+        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
+        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
+        <rd:TableAdapterName>PutevieLegkovieTableAdapter</rd:TableAdapterName>
+      </rd:DataSetInfo>
+    </DataSet>
   </DataSets>
   <Body>
     <ReportItems>
-      <Textbox Name="Textbox31">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value />
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style>
-              <TextAlign>Center</TextAlign>
-            </Style>
-          </Paragraph>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value />
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style>
-              <TextAlign>Center</TextAlign>
-            </Style>
-          </Paragraph>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>ПУТЕВОЙ ЛИСТ ЛЕГКОВОГО АВТОМОБИЛЯ № ___________________________</Value>
-                <Style>
-                  <FontFamily>Times New Roman</FontFamily>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style>
-              <TextAlign>Center</TextAlign>
-            </Style>
-          </Paragraph>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value />
-                <Style>
-                  <FontFamily>Times New Roman</FontFamily>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style>
-              <TextAlign>Center</TextAlign>
-            </Style>
-          </Paragraph>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>за перид с"____" по "_____" _________________г.</Value>
-                <Style>
-                  <FontFamily>Times New Roman</FontFamily>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style>
-              <TextAlign>Center</TextAlign>
-            </Style>
-          </Paragraph>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>  ОАО"Зенит" г.Могилев, ул.Гришина 94 т.263454</Value>
-                <Style>
-                  <FontStyle>Normal</FontStyle>
-                  <FontFamily>Times New Roman</FontFamily>
-                  <FontSize>8pt</FontSize>
-                  <FontWeight>Normal</FontWeight>
-                  <TextDecoration>Underline</TextDecoration>
-                  <Color>#000000</Color>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style>
-              <TextAlign>Left</TextAlign>
-            </Style>
-          </Paragraph>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>Автомобиль_______________________________</Value>
-                <Style>
-                  <FontFamily>Times New Roman</FontFamily>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style>
-              <TextAlign>Center</TextAlign>
-            </Style>
-          </Paragraph>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value />
-                <Style>
-                  <FontFamily>Times New Roman</FontFamily>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style>
-              <TextAlign>Center</TextAlign>
-            </Style>
-          </Paragraph>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>Водитель ________________________________                                        Водительское удостоверение __________________________________</Value>
-                <Style>
-                  <FontFamily>Times New Roman</FontFamily>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style>
-              <TextAlign>Center</TextAlign>
-            </Style>
-          </Paragraph>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value />
-                <Style>
-                  <FontFamily>Times New Roman</FontFamily>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style>
-              <TextAlign>Center</TextAlign>
-            </Style>
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox31</rd:DefaultName>
-        <Top>0.08156in</Top>
-        <Left>2.65417cm</Left>
-        <Height>4.46292cm</Height>
-        <Width>24.45853cm</Width>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
       <Textbox Name="Textbox64">
         <CanGrow>true</CanGrow>
         <KeepTogether>true</KeepTogether>
@@ -360,11 +165,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox64</rd:DefaultName>
-        <Top>4.84648cm</Top>
-        <Left>0.53751cm</Left>
+        <Top>4.98373cm</Top>
+        <Left>0.74243cm</Left>
         <Height>3.97805cm</Height>
         <Width>1.56152cm</Width>
-        <ZIndex>1</ZIndex>
         <Style>
           <Border>
             <Style>Solid</Style>
@@ -416,11 +220,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox65</rd:DefaultName>
-        <Top>6.0329cm</Top>
-        <Left>2.09903cm</Left>
+        <Top>6.17015cm</Top>
+        <Left>2.30395cm</Left>
         <Height>2.79163cm</Height>
         <Width>1.30181cm</Width>
-        <ZIndex>2</ZIndex>
+        <ZIndex>1</ZIndex>
         <Style>
           <Border>
             <Style>Solid</Style>
@@ -486,11 +290,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox66</rd:DefaultName>
-        <Top>6.0329cm</Top>
-        <Left>3.40084cm</Left>
+        <Top>6.17015cm</Top>
+        <Left>3.60576cm</Left>
         <Height>2.79163cm</Height>
         <Width>1.48576cm</Width>
-        <ZIndex>3</ZIndex>
+        <ZIndex>2</ZIndex>
         <Style>
           <Border>
             <Style>Solid</Style>
@@ -542,11 +346,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox73</rd:DefaultName>
-        <Top>4.84648cm</Top>
-        <Left>2.09903cm</Left>
+        <Top>4.98373cm</Top>
+        <Left>2.30395cm</Left>
         <Height>1.18642cm</Height>
         <Width>4.25569cm</Width>
-        <ZIndex>4</ZIndex>
+        <ZIndex>3</ZIndex>
         <Style>
           <Border>
             <Style>Solid</Style>
@@ -624,11 +428,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox74</rd:DefaultName>
-        <Top>6.0329cm</Top>
-        <Left>4.8866cm</Left>
+        <Top>6.17015cm</Top>
+        <Left>5.09152cm</Left>
         <Height>2.79163cm</Height>
         <Width>1.46812cm</Width>
-        <ZIndex>5</ZIndex>
+        <ZIndex>4</ZIndex>
         <Style>
           <Border>
             <Style>Solid</Style>
@@ -694,11 +498,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox75</rd:DefaultName>
-        <Top>4.84648cm</Top>
-        <Left>6.35472cm</Left>
+        <Top>4.98373cm</Top>
+        <Left>6.55964cm</Left>
         <Height>1.18642cm</Height>
         <Width>3.33277cm</Width>
-        <ZIndex>6</ZIndex>
+        <ZIndex>5</ZIndex>
         <Style>
           <Border>
             <Style>Solid</Style>
@@ -750,11 +554,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox76</rd:DefaultName>
-        <Top>6.0329cm</Top>
-        <Left>6.35472cm</Left>
+        <Top>6.17015cm</Top>
+        <Left>6.55964cm</Left>
         <Height>2.79163cm</Height>
         <Width>1.71507cm</Width>
-        <ZIndex>7</ZIndex>
+        <ZIndex>6</ZIndex>
         <Style>
           <Border>
             <Style>Solid</Style>
@@ -820,11 +624,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox77</rd:DefaultName>
-        <Top>6.0329cm</Top>
-        <Left>8.06979cm</Left>
+        <Top>6.17015cm</Top>
+        <Left>8.27471cm</Left>
         <Height>2.79163cm</Height>
         <Width>1.6177cm</Width>
-        <ZIndex>8</ZIndex>
+        <ZIndex>7</ZIndex>
         <Style>
           <Border>
             <Style>Solid</Style>
@@ -890,11 +694,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox78</rd:DefaultName>
-        <Top>4.84648cm</Top>
-        <Left>9.6875cm</Left>
+        <Top>4.98373cm</Top>
+        <Left>9.89242cm</Left>
         <Height>3.97805cm</Height>
         <Width>1.17375cm</Width>
-        <ZIndex>9</ZIndex>
+        <ZIndex>8</ZIndex>
         <Style>
           <Border>
             <Style>Solid</Style>
@@ -946,11 +750,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox79</rd:DefaultName>
-        <Top>4.84648cm</Top>
-        <Left>10.86125cm</Left>
-        <Height>0.83364cm</Height>
+        <Top>4.98373cm</Top>
+        <Left>11.06617cm</Left>
+        <Height>0.86892cm</Height>
         <Width>7.69812cm</Width>
-        <ZIndex>10</ZIndex>
+        <ZIndex>9</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -987,11 +791,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox80</rd:DefaultName>
-        <Top>5.68013cm</Top>
-        <Left>10.86125cm</Left>
-        <Height>0.62646cm</Height>
+        <Top>5.85265cm</Top>
+        <Left>11.06617cm</Left>
+        <Height>0.59119cm</Height>
         <Width>2.02374cm</Width>
-        <ZIndex>11</ZIndex>
+        <ZIndex>10</ZIndex>
         <Style>
           <Border>
             <Style>Solid</Style>
@@ -1043,11 +847,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox81</rd:DefaultName>
-        <Top>5.68013cm</Top>
-        <Left>12.88499cm</Left>
-        <Height>0.62646cm</Height>
+        <Top>5.85265cm</Top>
+        <Left>13.08991cm</Left>
+        <Height>0.59119cm</Height>
         <Width>2.41182cm</Width>
-        <ZIndex>12</ZIndex>
+        <ZIndex>11</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1084,11 +888,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox82</rd:DefaultName>
-        <Top>5.68012cm</Top>
-        <Left>15.29681cm</Left>
-        <Height>0.62647cm</Height>
+        <Top>5.85265cm</Top>
+        <Left>15.50173cm</Left>
+        <Height>0.59119cm</Height>
         <Width>3.26256cm</Width>
-        <ZIndex>13</ZIndex>
+        <ZIndex>12</ZIndex>
         <Style>
           <Border>
             <Style>Solid</Style>
@@ -1140,11 +944,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox83</rd:DefaultName>
-        <Top>6.30659cm</Top>
-        <Left>10.86125cm</Left>
+        <Top>6.44384cm</Top>
+        <Left>11.06617cm</Left>
         <Height>2.51794cm</Height>
         <Width>1.00577cm</Width>
-        <ZIndex>14</ZIndex>
+        <ZIndex>13</ZIndex>
         <Style>
           <Border>
             <Style>Solid</Style>
@@ -1224,11 +1028,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox84</rd:DefaultName>
-        <Top>6.30659cm</Top>
-        <Left>11.86702cm</Left>
+        <Top>6.44384cm</Top>
+        <Left>12.07194cm</Left>
         <Height>2.51794cm</Height>
         <Width>1.01797cm</Width>
-        <ZIndex>15</ZIndex>
+        <ZIndex>14</ZIndex>
         <Style>
           <Border>
             <Style>Solid</Style>
@@ -1294,11 +1098,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox85</rd:DefaultName>
-        <Top>6.30659cm</Top>
-        <Left>12.88499cm</Left>
+        <Top>6.44384cm</Top>
+        <Left>13.08991cm</Left>
         <Height>2.51794cm</Height>
         <Width>1.0848cm</Width>
-        <ZIndex>16</ZIndex>
+        <ZIndex>15</ZIndex>
         <Style>
           <Border>
             <Style>Solid</Style>
@@ -1420,11 +1224,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox86</rd:DefaultName>
-        <Top>6.30659cm</Top>
-        <Left>13.96979cm</Left>
+        <Top>6.44384cm</Top>
+        <Left>14.17471cm</Left>
         <Height>2.51794cm</Height>
         <Width>1.32702cm</Width>
-        <ZIndex>17</ZIndex>
+        <ZIndex>16</ZIndex>
         <Style>
           <Border>
             <Style>Solid</Style>
@@ -1490,11 +1294,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox87</rd:DefaultName>
-        <Top>6.30659cm</Top>
-        <Left>15.29681cm</Left>
+        <Top>6.44384cm</Top>
+        <Left>15.50173cm</Left>
         <Height>2.51794cm</Height>
         <Width>0.98778cm</Width>
-        <ZIndex>18</ZIndex>
+        <ZIndex>17</ZIndex>
         <Style>
           <Border>
             <Style>Solid</Style>
@@ -1560,11 +1364,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox88</rd:DefaultName>
-        <Top>6.30659cm</Top>
-        <Left>16.28458cm</Left>
+        <Top>6.44384cm</Top>
+        <Left>16.4895cm</Left>
         <Height>2.51794cm</Height>
         <Width>0.99188cm</Width>
-        <ZIndex>19</ZIndex>
+        <ZIndex>18</ZIndex>
         <Style>
           <Border>
             <Style>Solid</Style>
@@ -1674,11 +1478,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox89</rd:DefaultName>
-        <Top>6.30659cm</Top>
-        <Left>17.27646cm</Left>
+        <Top>6.44384cm</Top>
+        <Left>17.48138cm</Left>
         <Height>2.51794cm</Height>
         <Width>1.28291cm</Width>
-        <ZIndex>20</ZIndex>
+        <ZIndex>19</ZIndex>
         <Style>
           <Border>
             <Style>Solid</Style>
@@ -1744,11 +1548,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox90</rd:DefaultName>
-        <Top>4.84648cm</Top>
-        <Left>18.55937cm</Left>
+        <Top>4.98373cm</Top>
+        <Left>18.76429cm</Left>
         <Height>0.86892cm</Height>
         <Width>3.20084cm</Width>
-        <ZIndex>21</ZIndex>
+        <ZIndex>20</ZIndex>
         <Style>
           <Border>
             <Style>Solid</Style>
@@ -1884,11 +1688,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox91</rd:DefaultName>
-        <Top>5.7154cm</Top>
-        <Left>18.55688cm</Left>
+        <Top>5.85265cm</Top>
+        <Left>18.76429cm</Left>
         <Height>3.10913cm</Height>
-        <Width>1.60042cm</Width>
-        <ZIndex>22</ZIndex>
+        <Width>1.59793cm</Width>
+        <ZIndex>21</ZIndex>
         <Style>
           <Border>
             <Style>Solid</Style>
@@ -1968,11 +1772,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox92</rd:DefaultName>
-        <Top>5.7154cm</Top>
-        <Left>20.1573cm</Left>
+        <Top>5.85265cm</Top>
+        <Left>20.36222cm</Left>
         <Height>3.10913cm</Height>
         <Width>1.60042cm</Width>
-        <ZIndex>23</ZIndex>
+        <ZIndex>22</ZIndex>
         <Style>
           <Border>
             <Style>Solid</Style>
@@ -2038,11 +1842,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox93</rd:DefaultName>
-        <Top>4.84648cm</Top>
-        <Left>21.75772cm</Left>
+        <Top>4.98373cm</Top>
+        <Left>21.96264cm</Left>
         <Height>0.86892cm</Height>
-        <Width>3.09875cm</Width>
-        <ZIndex>24</ZIndex>
+        <Width>3.09625cm</Width>
+        <ZIndex>23</ZIndex>
         <Style>
           <Border>
             <Style>Solid</Style>
@@ -2122,11 +1926,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox94</rd:DefaultName>
-        <Top>5.7154cm</Top>
-        <Left>21.75772cm</Left>
+        <Top>5.85265cm</Top>
+        <Left>21.96264cm</Left>
         <Height>3.10913cm</Height>
         <Width>1.45931cm</Width>
-        <ZIndex>25</ZIndex>
+        <ZIndex>24</ZIndex>
         <Style>
           <Border>
             <Style>Solid</Style>
@@ -2248,11 +2052,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox95</rd:DefaultName>
-        <Top>5.7154cm</Top>
-        <Left>23.21702cm</Left>
+        <Top>5.85265cm</Top>
+        <Left>23.42194cm</Left>
         <Height>3.10913cm</Height>
         <Width>1.63695cm</Width>
-        <ZIndex>26</ZIndex>
+        <ZIndex>25</ZIndex>
         <Style>
           <Border>
             <Style>Solid</Style>
@@ -2416,11 +2220,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox96</rd:DefaultName>
-        <Top>4.84648cm</Top>
-        <Left>24.85397cm</Left>
+        <Top>4.98373cm</Top>
+        <Left>25.05889cm</Left>
         <Height>3.97805cm</Height>
         <Width>2.55763cm</Width>
-        <ZIndex>27</ZIndex>
+        <ZIndex>26</ZIndex>
         <Style>
           <Border>
             <Style>Solid</Style>
@@ -2584,11 +2388,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox97</rd:DefaultName>
-        <Top>4.84648cm</Top>
-        <Left>27.4116cm</Left>
+        <Top>4.98373cm</Top>
+        <Left>27.61652cm</Left>
         <Height>3.97805cm</Height>
         <Width>1.52104cm</Width>
-        <ZIndex>28</ZIndex>
+        <ZIndex>27</ZIndex>
         <Style>
           <Border>
             <Style>Solid</Style>
@@ -2675,7 +2479,7 @@
               <Width>0.57453in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.64447in</Width>
+              <Width>0.64348in</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>1.00694in</Width>
@@ -2701,6 +2505,7 @@
                               <Style>
                                 <FontFamily>Times New Roman</FontFamily>
                                 <FontSize>8pt</FontSize>
+                                <Format>="dd/MM/yyyy"</Format>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -3066,14 +2871,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Показания_спидометра_при_возвращении1">
+                    <Textbox Name="Остаток_топлива_при_возвращении">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Показания_спидометра_при_возвращении.Value</Value>
+                              <Value>=Fields!Остаток_топлива_при_возвращении.Value</Value>
                               <Style>
                                 <FontFamily>Times New Roman</FontFamily>
                                 <FontSize>8pt</FontSize>
@@ -3083,7 +2888,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Показания_спидометра_при_возвращении1</rd:DefaultName>
+                      <rd:DefaultName>Остаток_топлива_при_возвращении</rd:DefaultName>
                       <Style>
                         <Border>
                           <Style>None</Style>
@@ -3203,7 +3008,6 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -3664,12 +3468,12 @@
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
-        <DataSetName>DataSet2</DataSetName>
-        <Top>8.82453cm</Top>
-        <Left>0.53751cm</Left>
+        <DataSetName>Body</DataSetName>
+        <Top>8.96178cm</Top>
+        <Left>0.74243cm</Left>
         <Height>0.6cm</Height>
-        <Width>28.39763cm</Width>
-        <ZIndex>29</ZIndex>
+        <Width>28.39512cm</Width>
+        <ZIndex>28</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -3686,6 +3490,482 @@
           </RightBorder>
         </Style>
       </Tablix>
+      <Textbox Name="Textbox15">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!Номер_путевого_листа.Value, "ReportHead")</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox15</rd:DefaultName>
+        <Top>0.62653cm</Top>
+        <Left>17.48387cm</Left>
+        <Height>0.6cm</Height>
+        <Width>2.5cm</Width>
+        <ZIndex>29</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <BottomBorder>
+            <Style>Solid</Style>
+          </BottomBorder>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox1">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>ПУТЕВОЙ ЛИСТ ЛЕГКОВОГО АВТОМОБИЛЯ №</Value>
+                <Style>
+                  <FontFamily>Times New Roman</FontFamily>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox1</rd:DefaultName>
+        <Top>0.62653cm</Top>
+        <Left>9.49624cm</Left>
+        <Height>0.6cm</Height>
+        <Width>7.68583cm</Width>
+        <ZIndex>30</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox2">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>  ОАО"Зенит" г.Могилев, ул.Гришина 94 т.263454</Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontFamily>Times New Roman</FontFamily>
+                  <FontSize>8pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>Underline</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox2</rd:DefaultName>
+        <Top>1.7998cm</Top>
+        <Left>0.74492cm</Left>
+        <Height>0.6cm</Height>
+        <Width>7.02438cm</Width>
+        <ZIndex>31</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox3">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>за перид с </Value>
+                <Style>
+                  <FontFamily>Times New Roman</FontFamily>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox3</rd:DefaultName>
+        <Top>1.55257cm</Top>
+        <Left>9.64912cm</Left>
+        <Height>0.6cm</Height>
+        <Width>1.865cm</Width>
+        <ZIndex>32</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox4">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>по</Value>
+                <Style>
+                  <FontFamily>Times New Roman</FontFamily>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox4</rd:DefaultName>
+        <Top>1.55257cm</Top>
+        <Left>15.28197cm</Left>
+        <Height>0.6cm</Height>
+        <Width>0.56854cm</Width>
+        <ZIndex>33</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox5">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!За_период_по.Value, "ReportHead")</Value>
+                <Style>
+                  <Format>="dd MMMM yyyy"</Format>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox5</rd:DefaultName>
+        <Top>1.55257cm</Top>
+        <Left>16.0269cm</Left>
+        <Height>0.6cm</Height>
+        <Width>3.77cm</Width>
+        <ZIndex>34</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <BottomBorder>
+            <Style>Solid</Style>
+          </BottomBorder>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox6">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!За_период_с.Value, "ReportHead")</Value>
+                <Style>
+                  <Format>="dd MMMM yyyy"</Format>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox6</rd:DefaultName>
+        <Top>1.55257cm</Top>
+        <Left>11.69051cm</Left>
+        <Height>0.6cm</Height>
+        <Width>3.41507cm</Width>
+        <ZIndex>35</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <BottomBorder>
+            <Style>Solid</Style>
+          </BottomBorder>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox10">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Автомобиль</Value>
+                <Style>
+                  <FontFamily>Times New Roman</FontFamily>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox10</rd:DefaultName>
+        <Top>2.56626cm</Top>
+        <Left>10.63787cm</Left>
+        <Height>0.6cm</Height>
+        <Width>2.5cm</Width>
+        <ZIndex>36</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox11">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!Марка_и_модель.Value, "ReportHead")</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox11</rd:DefaultName>
+        <Top>2.57535cm</Top>
+        <Left>13.31426cm</Left>
+        <Height>0.6cm</Height>
+        <Width>2.53625cm</Width>
+        <ZIndex>37</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <BottomBorder>
+            <Style>Solid</Style>
+          </BottomBorder>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox12">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!Гос_номер.Value, "ReportHead")</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox12</rd:DefaultName>
+        <Top>2.56626cm</Top>
+        <Left>16.0269cm</Left>
+        <Height>0.6cm</Height>
+        <Width>2.5cm</Width>
+        <ZIndex>38</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <BottomBorder>
+            <Style>Solid</Style>
+          </BottomBorder>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox13">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Водитель </Value>
+                <Style>
+                  <FontFamily>Times New Roman</FontFamily>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox13</rd:DefaultName>
+        <Top>3.60735cm</Top>
+        <Left>4.6247cm</Left>
+        <Height>0.6cm</Height>
+        <Width>2.5cm</Width>
+        <ZIndex>39</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox14">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value> Водительское удостоверение</Value>
+                <Style>
+                  <FontFamily>Times New Roman</FontFamily>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox14</rd:DefaultName>
+        <Top>3.60735cm</Top>
+        <Left>14.17969cm</Left>
+        <Height>0.6cm</Height>
+        <Width>4.6737cm</Width>
+        <ZIndex>40</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox16">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!ФИО.Value, "ReportHead")</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox16</rd:DefaultName>
+        <Top>3.60735cm</Top>
+        <Left>7.26581cm</Left>
+        <Height>0.6cm</Height>
+        <Width>6.73749cm</Width>
+        <ZIndex>41</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <BottomBorder>
+            <Style>Solid</Style>
+          </BottomBorder>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox17">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!табельный_номер.Value, "ReportHead")</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox17</rd:DefaultName>
+        <Top>3.60735cm</Top>
+        <Left>19.02978cm</Left>
+        <Height>0.6cm</Height>
+        <Width>2.02375cm</Width>
+        <ZIndex>42</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <BottomBorder>
+            <Style>Solid</Style>
+          </BottomBorder>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
     </ReportItems>
     <Height>5.07327in</Height>
     <Style>

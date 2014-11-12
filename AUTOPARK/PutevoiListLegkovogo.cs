@@ -23,14 +23,7 @@ namespace AUTOPARK
         public PutListLegkovogoavto()
         {
             InitializeComponent();
-            // Create the ToolTip and associate with the Form container.
-            // Set up the delays for the ToolTip.
-            // Force the ToolTip text to be displayed whether or not the form is active.
-            var toolTip1 = new ToolTip {AutoPopDelay = 5000, InitialDelay = 1000, ReshowDelay = 500, ShowAlways = true};
 
-            // Set up the ToolTip text for the Button and Checkbox.
-            toolTip1.SetToolTip(exitPic, "Выйти из приложения"); 
-            
             var tablep = new AutoparkDBTableAdapters.PodvijnoiTableAdapter();   
             _bindingAuto.DataSource = tablep.GetDataByType("Л");
             if (_bindingAuto.Count == 0)
@@ -61,14 +54,7 @@ namespace AUTOPARK
         public PutListLegkovogoavto(int id)
         {
             InitializeComponent();
-            // Create the ToolTip and associate with the Form container.
-            // Set up the delays for the ToolTip.
-            // Force the ToolTip text to be displayed whether or not the form is active.
-            var toolTip1 = new ToolTip { AutoPopDelay = 5000, InitialDelay = 1000, ReshowDelay = 500, ShowAlways = true };
-
-            // Set up the ToolTip text for the Button and Checkbox.
-            toolTip1.SetToolTip(exitPic, "Выйти из приложения"); 
-            
+           
             _modeIsNew = false;
             PutevoiId = id;
             var tablep = new AutoparkDBTableAdapters.PodvijnoiTableAdapter();
@@ -122,12 +108,12 @@ namespace AUTOPARK
             if (_bindingAuto.Count == 0)
             {
                 MessageBox.Show(@"Пожалуйста, заполните справочник ""Подвижной состав""");
-                this.Close();
+                Close();
             }
             else if (_bindingVoditel.Count==0)
             {
                 MessageBox.Show(@"Пожалуйста, заполните справочник ""Личный состав""");
-                this.Close();
+                Close();
             }
             txtNumber.Text = _number;
             cbNomerAuto.SelectedItem = _idauto;
@@ -190,6 +176,7 @@ namespace AUTOPARK
         private void dgvPutevieLegkovie_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
             if (dgvPutevieLegkovie.CurrentRow == null) return;
+            if (dgvPutevieLegkovie.CurrentRow.Index==0 && _bindingDannie.Count!=0) return;
             dgvPutevieLegkovie.CurrentRow.Cells["ID_Путевого листа"].Value = PutevoiId;
             dgvPutevieLegkovie.CurrentRow.Cells["Время выезда"].Value = new TimeSpan(0, 0, 0);
             dgvPutevieLegkovie.CurrentRow.Cells["Время возвращения"].Value = new TimeSpan(0, 0, 0);
@@ -197,7 +184,7 @@ namespace AUTOPARK
             if (dgvPutevieLegkovie.RowCount > 1)
             {
                 dgvPutevieLegkovie.CurrentRow.Cells["Показания спидометра при выезде"].Value =
-                    dgvPutevieLegkovie.Rows[dgvPutevieLegkovie.CurrentRow.Index].Cells[
+                    dgvPutevieLegkovie.Rows[dgvPutevieLegkovie.CurrentRow.Index-1].Cells[
                         "Показания спидометра при возвращении"].Value;
             }
         }
@@ -216,7 +203,6 @@ namespace AUTOPARK
                 //как растянуты кнопки Сохранить и Отмена когда открывается полностью окно
             btnCancel.Location = new Point(this.Width - 103, this.Height - 73);
             btnReport.Location = new Point(this.Width - 320, this.Height - 73);
-            exitPic.Location = new Point(this.Width - 2 * exitPic.Width, exitPic.Location.Y);
         }
 
         private void btnReport_Click_1(object sender, EventArgs e)      // кнопка Отчет
@@ -225,17 +211,26 @@ namespace AUTOPARK
             f1.Show();
         }
 
-        private void exitPic_Click(object sender, EventArgs e)
+        private void tsmiToMenu_Click(object sender, EventArgs e)
+        {
+            var form = new Menu(); ////создание экземпляра формы PutevieListi
+            Hide(); //// скрытие текущей формы
+            form.ShowDialog(); //// открытие формы PutevieListi
+            Close(); //// закрытие текущей формы
+        }
+
+        private void tsmiExitApplication_Click(object sender, EventArgs e)
         {
             Environment.Exit(0);  //Полный выход из программы если нажимаем на дверку в Путевых листах легкового авто
         }
 
-        private void llblMenu_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void tsmiRefresh_Click(object sender, EventArgs e)
         {
-            var form = new Menu(); ////создание экземпляра формы PutevieListi
-            this.Hide(); //// скрытие текущей формы
-            form.ShowDialog(); //// открытие формы PutevieListi
-            this.Close(); //// закрытие текущей формы
+            var tableDannie = new AutoparkDBTableAdapters.PutListLegkovogoDannieTableAdapter();
+            _bindingDannie.DataSource = tableDannie.GetData();
+            _bindingDannie.Filter = "[ID_Путевого листа] = " + PutevoiId;
+            dgvPutevieLegkovie.DataSource = _bindingDannie;
         }
+
     }
 }

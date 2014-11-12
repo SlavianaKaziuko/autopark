@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using Microsoft.Reporting.WinForms;
 
 namespace AUTOPARK
 {
@@ -23,17 +24,16 @@ namespace AUTOPARK
             var table = new AutoparkDBTableAdapters.PutListLegkovogoDannieTableAdapter();
             _bindingDannie.DataSource = table.GetDataWithCalculating(PutevoiId);
 
-            var tablePutevoi = new AutoparkDBTableAdapters.PutevoiListLegkTableAdapter();
-            var res = tablePutevoi.GetDataByID(id).ToList();
-
+            var tablePutevoi = new AutoparkDBTableAdapters.PutevieLegkovieTableAdapter();
+            _bindingHead.DataSource = tablePutevoi.GetDataByID(PutevoiId);
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("Body", _bindingDannie));
+            reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("ReportHead", _bindingHead));
             
-            this.putListLegkovogoDannieTableAdapter.FillWithCalculating(this.autoparkDB.Данные_Путевой_лист_легкового_авто, PutevoiId);
-            this.reportViewer1.RefreshReport();
-
+            reportViewer1.RefreshReport();
         }
 
     }

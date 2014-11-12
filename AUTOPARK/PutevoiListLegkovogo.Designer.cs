@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PutListLegkovogoavto));
             this.lblLegkovoi = new System.Windows.Forms.Label();
             this.txtNumber = new System.Windows.Forms.TextBox();
             this.lblperiod = new System.Windows.Forms.Label();
@@ -49,11 +48,14 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnReport = new System.Windows.Forms.Button();
-            this.exitPic = new System.Windows.Forms.PictureBox();
-            this.llblMenu = new System.Windows.Forms.LinkLabel();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiToMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiExitApplication = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiRefresh = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPutevieLegkovie)).BeginInit();
             this.pnlShapka.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.exitPic)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblLegkovoi
@@ -192,7 +194,7 @@
             this.pnlShapka.Controls.Add(this.lblperiod);
             this.pnlShapka.Controls.Add(this.txtNumber);
             this.pnlShapka.Controls.Add(this.lblLegkovoi);
-            this.pnlShapka.Location = new System.Drawing.Point(167, 12);
+            this.pnlShapka.Location = new System.Drawing.Point(123, 26);
             this.pnlShapka.Name = "pnlShapka";
             this.pnlShapka.Size = new System.Drawing.Size(766, 156);
             this.pnlShapka.TabIndex = 17;
@@ -265,41 +267,60 @@
             this.btnReport.UseVisualStyleBackColor = true;
             this.btnReport.Click += new System.EventHandler(this.btnReport_Click_1);
             // 
-            // exitPic
+            // menuStrip1
             // 
-            this.exitPic.Image = ((System.Drawing.Image)(resources.GetObject("exitPic.Image")));
-            this.exitPic.Location = new System.Drawing.Point(974, -1);
-            this.exitPic.Name = "exitPic";
-            this.exitPic.Size = new System.Drawing.Size(32, 32);
-            this.exitPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.exitPic.TabIndex = 21;
-            this.exitPic.TabStop = false;
-            this.exitPic.Click += new System.EventHandler(this.exitPic_Click);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1,
+            this.tsmiRefresh});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1006, 24);
+            this.menuStrip1.TabIndex = 24;
+            this.menuStrip1.Text = "menuStrip1";
             // 
-            // llblMenu
+            // toolStripMenuItem1
             // 
-            this.llblMenu.AutoSize = true;
-            this.llblMenu.Location = new System.Drawing.Point(-2, -1);
-            this.llblMenu.Name = "llblMenu";
-            this.llblMenu.Size = new System.Drawing.Size(41, 15);
-            this.llblMenu.TabIndex = 22;
-            this.llblMenu.TabStop = true;
-            this.llblMenu.Text = "Меню";
-            this.llblMenu.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llblMenu_LinkClicked);
+            this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiToMenu,
+            this.tsmiExitApplication});
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(78, 20);
+            this.toolStripMenuItem1.Text = "Навигация";
+            // 
+            // tsmiToMenu
+            // 
+            this.tsmiToMenu.Name = "tsmiToMenu";
+            this.tsmiToMenu.Size = new System.Drawing.Size(197, 22);
+            this.tsmiToMenu.Text = "Вернуться к Меню";
+            this.tsmiToMenu.Click += new System.EventHandler(this.tsmiToMenu_Click);
+            // 
+            // tsmiExitApplication
+            // 
+            this.tsmiExitApplication.Name = "tsmiExitApplication";
+            this.tsmiExitApplication.Size = new System.Drawing.Size(197, 22);
+            this.tsmiExitApplication.Text = "Выйти из приложения";
+            this.tsmiExitApplication.Click += new System.EventHandler(this.tsmiExitApplication_Click);
+            // 
+            // tsmiRefresh
+            // 
+            this.tsmiRefresh.Name = "tsmiRefresh";
+            this.tsmiRefresh.Size = new System.Drawing.Size(73, 20);
+            this.tsmiRefresh.Text = "Обновить";
+            this.tsmiRefresh.Click += new System.EventHandler(this.tsmiRefresh_Click);
             // 
             // PutListLegkovogoavto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1006, 521);
-            this.Controls.Add(this.llblMenu);
-            this.Controls.Add(this.exitPic);
             this.Controls.Add(this.btnReport);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.pnlShapka);
             this.Controls.Add(this.dgvPutevieLegkovie);
+            this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "PutListLegkovogoavto";
             this.Text = "Путевой лист легкового автомобиля";
@@ -308,7 +329,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvPutevieLegkovie)).EndInit();
             this.pnlShapka.ResumeLayout(false);
             this.pnlShapka.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.exitPic)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -336,8 +358,11 @@
         private System.Windows.Forms.Button btnReport;
         private System.Windows.Forms.DateTimePicker dtpEnd;
         private System.Windows.Forms.DateTimePicker dtpStart;
-        private System.Windows.Forms.PictureBox exitPic;
-        private System.Windows.Forms.LinkLabel llblMenu;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem tsmiToMenu;
+        private System.Windows.Forms.ToolStripMenuItem tsmiExitApplication;
+        private System.Windows.Forms.ToolStripMenuItem tsmiRefresh;
 
     }
 }
