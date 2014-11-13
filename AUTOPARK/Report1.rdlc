@@ -121,11 +121,15 @@
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="Гос_номер">
-          <DataField>Гос.номер</DataField>
+          <DataField>Гос_номер</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="Гаражный_номер">
           <DataField>Гаражный номер</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Водительское_удостоверение">
+          <DataField>Водительское удостоверение</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>
@@ -135,7 +139,7 @@
       </Query>
       <rd:DataSetInfo>
         <rd:DataSetName>AutoparkDB</rd:DataSetName>
-        <rd:SchemaPath>D:\my\autopark\AUTOPARK\AutoparkDB.xsd</rd:SchemaPath>
+        <rd:SchemaPath>d:\Документы\AutoparkApp\AUTOPARK\AutoparkDB.xsd</rd:SchemaPath>
         <rd:TableName>Путевые листы легковые</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
@@ -3938,7 +3942,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=First(Fields!табельный_номер.Value, "ReportHead")</Value>
+                <Value>=First(Fields!Водительское_удостоверение.Value, "ReportHead")</Value>
                 <Style />
               </TextRun>
             </TextRuns>

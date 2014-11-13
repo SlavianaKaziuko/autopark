@@ -178,9 +178,9 @@ namespace AUTOPARK
             if (dgvPutevieLegkovie.CurrentRow == null) return;
             if (dgvPutevieLegkovie.CurrentRow.Index==0 && _bindingDannie.Count!=0) return;
             dgvPutevieLegkovie.CurrentRow.Cells["ID_Путевого листа"].Value = PutevoiId;
-            dgvPutevieLegkovie.CurrentRow.Cells["Время выезда"].Value = new TimeSpan(0, 0, 0);
-            dgvPutevieLegkovie.CurrentRow.Cells["Время возвращения"].Value = new TimeSpan(0, 0, 0);
-            dgvPutevieLegkovie.CurrentRow.Cells["Время в наряде"].Value = new TimeSpan(0, 0, 0);
+            dgvPutevieLegkovie.CurrentRow.Cells["Время выезда"].Value = new TimeSpan(8, 15, 0);
+            dgvPutevieLegkovie.CurrentRow.Cells["Время возвращения"].Value = new TimeSpan(17, 0, 0);
+            dgvPutevieLegkovie.CurrentRow.Cells["Время в наряде"].Value = new TimeSpan(8, 45, 0);
             if (dgvPutevieLegkovie.RowCount > 1)
             {
                 dgvPutevieLegkovie.CurrentRow.Cells["Показания спидометра при выезде"].Value =

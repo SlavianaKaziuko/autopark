@@ -2203,6 +2203,8 @@ namespace AUTOPARK {
             
             private global::System.Data.DataColumn columnГос_номер;
             
+            private global::System.Data.DataColumn columnВодительское_удостоверение;
+            
             private global::System.Data.DataColumn columnГаражный_номер;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2304,6 +2306,14 @@ namespace AUTOPARK {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Водительское_удостоверениеColumn {
+                get {
+                    return this.columnВодительское_удостоверение;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public global::System.Data.DataColumn Гаражный_номерColumn {
                 get {
                     return this.columnГаражный_номер;
@@ -2347,7 +2357,7 @@ namespace AUTOPARK {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public Путевые_листы_легковыеRow AddПутевые_листы_легковыеRow(string Номер_путевого_листа, System.DateTime За_период_с, System.DateTime За_период_по, int табельный__номер, string ФИО, string Марка_и_модель, string Гос_номер, string Гаражный_номер) {
+            public Путевые_листы_легковыеRow AddПутевые_листы_легковыеRow(string Номер_путевого_листа, System.DateTime За_период_с, System.DateTime За_период_по, int табельный__номер, string ФИО, string Марка_и_модель, string Гос_номер, string Водительское_удостоверение, string Гаражный_номер) {
                 Путевые_листы_легковыеRow rowПутевые_листы_легковыеRow = ((Путевые_листы_легковыеRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -2358,6 +2368,7 @@ namespace AUTOPARK {
                         ФИО,
                         Марка_и_модель,
                         Гос_номер,
+                        Водительское_удостоверение,
                         Гаражный_номер};
                 rowПутевые_листы_легковыеRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowПутевые_листы_легковыеRow);
@@ -2396,6 +2407,7 @@ namespace AUTOPARK {
                 this.columnФИО = base.Columns["ФИО"];
                 this.columnМарка_и_модель = base.Columns["Марка и модель"];
                 this.columnГос_номер = base.Columns["Гос_номер"];
+                this.columnВодительское_удостоверение = base.Columns["Водительское удостоверение"];
                 this.columnГаражный_номер = base.Columns["Гаражный номер"];
             }
             
@@ -2418,6 +2430,8 @@ namespace AUTOPARK {
                 base.Columns.Add(this.columnМарка_и_модель);
                 this.columnГос_номер = new global::System.Data.DataColumn("Гос_номер", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnГос_номер);
+                this.columnВодительское_удостоверение = new global::System.Data.DataColumn("Водительское удостоверение", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnВодительское_удостоверение);
                 this.columnГаражный_номер = new global::System.Data.DataColumn("Гаражный номер", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnГаражный_номер);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
@@ -7863,6 +7877,23 @@ namespace AUTOPARK {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Водительское_удостоверение {
+                get {
+                    try {
+                        return ((string)(this[this.tableПутевые_листы_легковые.Водительское_удостоверениеColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Водительское удостоверение\' in table \'Путевые листы легковы" +
+                                "е\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableПутевые_листы_легковые.Водительское_удостоверениеColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string Гаражный_номер {
                 get {
                     try {
@@ -7912,6 +7943,18 @@ namespace AUTOPARK {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetЗа_период_поNull() {
                 this[this.tableПутевые_листы_легковые.За_период_поColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsВодительское_удостоверениеNull() {
+                return this.IsNull(this.tableПутевые_листы_легковые.Водительское_удостоверениеColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetВодительское_удостоверениеNull() {
+                this[this.tableПутевые_листы_легковые.Водительское_удостоверениеColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -12350,6 +12393,7 @@ WHERE        ([Личный состав].[табельный  номер] = @Vo
             tableMapping.ColumnMappings.Add("Марка и модель", "Марка и модель");
             tableMapping.ColumnMappings.Add("Гос.номер", "Гос_номер");
             tableMapping.ColumnMappings.Add("Гаражный номер", "Гаражный номер");
+            tableMapping.ColumnMappings.Add("номер водительского удостоверения", "Водительское удостоверение");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -12378,12 +12422,13 @@ FROM            [Путевой лист легкового автомобиля
             this._commandCollection[1].Connection = this.Connection;
             this._commandCollection[1].CommandText = @"SELECT        [Путевой лист легкового автомобиля].[ID_Путевого листа], [Путевой лист легкового автомобиля].[Номер путевого листа], 
                          [Путевой лист легкового автомобиля].[За период с], [Путевой лист легкового автомобиля].[За период по], [Личный состав].[табельный  номер], 
-                         [Личный состав].Фамилия + ' ' +[Личный состав].Имя + ' ' +[Личный состав].Отчество  AS 'ФИО', [Подвижной состав].[Марка и модель], [Подвижной состав].[Гос.номер], [Подвижной состав].[Гаражный номер], 
-                         [Путевой лист легкового автомобиля].ID_Автомобиль, [Путевой лист легкового автомобиля].ID_Водитель
+                         [Личный состав].Фамилия + ' ' + [Личный состав].Имя + ' ' + [Личный состав].Отчество AS 'ФИО', [Подвижной состав].[Марка и модель], 
+                         [Подвижной состав].[Гос.номер], [Подвижной состав].[Гаражный номер], [Путевой лист легкового автомобиля].ID_Автомобиль, 
+                         [Путевой лист легкового автомобиля].ID_Водитель, [Личный состав].[номер водительского удостоверения]
 FROM            [Путевой лист легкового автомобиля] INNER JOIN
                          [Личный состав] ON [Путевой лист легкового автомобиля].ID_Водитель = [Личный состав].[табельный  номер] INNER JOIN
                          [Подвижной состав] ON [Путевой лист легкового автомобиля].ID_Автомобиль = [Подвижной состав].ID
-WHERE [Путевой лист легкового автомобиля].[ID_Путевого листа] = @ID";
+WHERE        ([Путевой лист легкового автомобиля].[ID_Путевого листа] = @ID)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Путевого листа", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
