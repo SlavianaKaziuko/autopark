@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PutevoiListGruzavogo));
             this.lblGruzovoi = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.dtpHapka = new System.Windows.Forms.DateTimePicker();
@@ -83,22 +82,24 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnReport = new System.Windows.Forms.Button();
-            this.exitPic = new System.Windows.Forms.PictureBox();
-            this.llblMenu = new System.Windows.Forms.LinkLabel();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.навигацияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiToMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiExitApplication = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvZapravkaTCM)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.exitPic)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblGruzovoi
             // 
             this.lblGruzovoi.AutoSize = true;
             this.lblGruzovoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblGruzovoi.Location = new System.Drawing.Point(285, 9);
+            this.lblGruzovoi.Location = new System.Drawing.Point(285, 31);
             this.lblGruzovoi.Name = "lblGruzovoi";
             this.lblGruzovoi.Size = new System.Drawing.Size(164, 25);
             this.lblGruzovoi.TabIndex = 0;
@@ -106,7 +107,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(455, 13);
+            this.textBox1.Location = new System.Drawing.Point(455, 35);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(116, 21);
             this.textBox1.TabIndex = 1;
@@ -114,7 +115,7 @@
             // dtpHapka
             // 
             this.dtpHapka.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.dtpHapka.Location = new System.Drawing.Point(644, 13);
+            this.dtpHapka.Location = new System.Drawing.Point(644, 35);
             this.dtpHapka.Name = "dtpHapka";
             this.dtpHapka.Size = new System.Drawing.Size(233, 21);
             this.dtpHapka.TabIndex = 2;
@@ -495,7 +496,7 @@
             // 
             this.lblZadanieVoditel.AutoSize = true;
             this.lblZadanieVoditel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblZadanieVoditel.Location = new System.Drawing.Point(530, 435);
+            this.lblZadanieVoditel.Location = new System.Drawing.Point(530, 457);
             this.lblZadanieVoditel.Name = "lblZadanieVoditel";
             this.lblZadanieVoditel.Size = new System.Drawing.Size(158, 20);
             this.lblZadanieVoditel.TabIndex = 48;
@@ -504,7 +505,7 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(16, 458);
+            this.dataGridView1.Location = new System.Drawing.Point(16, 480);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(1206, 80);
             this.dataGridView1.TabIndex = 49;
@@ -534,7 +535,7 @@
             this.panel1.Controls.Add(this.lblPokazaniaSpidometra);
             this.panel1.Controls.Add(this.lblOperacii);
             this.panel1.Controls.Add(this.lblRabotaVoditelia);
-            this.panel1.Location = new System.Drawing.Point(495, 50);
+            this.panel1.Location = new System.Drawing.Point(495, 72);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(727, 199);
             this.panel1.TabIndex = 50;
@@ -549,7 +550,7 @@
             this.panel2.Controls.Add(this.txtMarka);
             this.panel2.Controls.Add(this.lblMarka);
             this.panel2.Controls.Add(this.lblAvtoPricep);
-            this.panel2.Location = new System.Drawing.Point(16, 50);
+            this.panel2.Location = new System.Drawing.Point(16, 72);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(457, 199);
             this.panel2.TabIndex = 51;
@@ -562,7 +563,7 @@
             this.panel3.Controls.Add(this.lblNomer);
             this.panel3.Controls.Add(this.lblFamilia);
             this.panel3.Controls.Add(this.lblVoditel);
-            this.panel3.Location = new System.Drawing.Point(16, 269);
+            this.panel3.Location = new System.Drawing.Point(16, 291);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(457, 114);
             this.panel3.TabIndex = 52;
@@ -578,7 +579,7 @@
             this.panel4.Controls.Add(this.lblOstatok);
             this.panel4.Controls.Add(this.lblZapravka);
             this.panel4.Controls.Add(this.lblDvizenieTSM);
-            this.panel4.Location = new System.Drawing.Point(495, 269);
+            this.panel4.Location = new System.Drawing.Point(495, 291);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(727, 149);
             this.panel4.TabIndex = 53;
@@ -612,35 +613,44 @@
             this.btnReport.UseVisualStyleBackColor = true;
             this.btnReport.Click += new System.EventHandler(this.btnReport_Click);
             // 
-            // exitPic
+            // menuStrip1
             // 
-            this.exitPic.Image = ((System.Drawing.Image)(resources.GetObject("exitPic.Image")));
-            this.exitPic.Location = new System.Drawing.Point(1190, 9);
-            this.exitPic.Name = "exitPic";
-            this.exitPic.Size = new System.Drawing.Size(32, 32);
-            this.exitPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.exitPic.TabIndex = 57;
-            this.exitPic.TabStop = false;
-            this.exitPic.Click += new System.EventHandler(this.exitPic_Click);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.навигацияToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1234, 24);
+            this.menuStrip1.TabIndex = 57;
+            this.menuStrip1.Text = "menuStrip1";
             // 
-            // llblMenu
+            // навигацияToolStripMenuItem
             // 
-            this.llblMenu.AutoSize = true;
-            this.llblMenu.Location = new System.Drawing.Point(2, -2);
-            this.llblMenu.Name = "llblMenu";
-            this.llblMenu.Size = new System.Drawing.Size(41, 15);
-            this.llblMenu.TabIndex = 58;
-            this.llblMenu.TabStop = true;
-            this.llblMenu.Text = "Меню";
-            this.llblMenu.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llblMenu_LinkClicked);
+            this.навигацияToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiToMenu,
+            this.tsmiExitApplication});
+            this.навигацияToolStripMenuItem.Name = "навигацияToolStripMenuItem";
+            this.навигацияToolStripMenuItem.Size = new System.Drawing.Size(78, 20);
+            this.навигацияToolStripMenuItem.Text = "Навигация";
+            // 
+            // tsmiToMenu
+            // 
+            this.tsmiToMenu.Name = "tsmiToMenu";
+            this.tsmiToMenu.Size = new System.Drawing.Size(197, 22);
+            this.tsmiToMenu.Text = "Вернуться к Меню";
+            this.tsmiToMenu.Click += new System.EventHandler(this.tsmiToMenu_Click);
+            // 
+            // tsmiExitApplication
+            // 
+            this.tsmiExitApplication.Name = "tsmiExitApplication";
+            this.tsmiExitApplication.Size = new System.Drawing.Size(197, 22);
+            this.tsmiExitApplication.Text = "Выйти из приложения";
+            this.tsmiExitApplication.Click += new System.EventHandler(this.tsmiExitApplication_Click);
             // 
             // PutevoiListGruzavogo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1234, 607);
-            this.Controls.Add(this.llblMenu);
-            this.Controls.Add(this.exitPic);
+            this.ClientSize = new System.Drawing.Size(1234, 605);
             this.Controls.Add(this.btnReport);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
@@ -653,7 +663,9 @@
             this.Controls.Add(this.dtpHapka);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.lblGruzovoi);
+            this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "PutevoiListGruzavogo";
             this.Text = "Путевой лист грузового автомобиля";
             this.Load += new System.EventHandler(this.PutevoiListGruzavogo_Load);
@@ -667,7 +679,8 @@
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.exitPic)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -729,7 +742,9 @@
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnReport;
-        private System.Windows.Forms.PictureBox exitPic;
-        private System.Windows.Forms.LinkLabel llblMenu;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem навигацияToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tsmiToMenu;
+        private System.Windows.Forms.ToolStripMenuItem tsmiExitApplication;
     }
 }

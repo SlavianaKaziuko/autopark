@@ -45,3 +45,11 @@ d:\Документы\AutoparkApp\AUTOPARKDB\bin\Debug\Путевые листы
 d:\Документы\AutoparkApp\AUTOPARKDB\bin\Debug\AUTOPARKDB.deploymanifest
 d:\Документы\AutoparkApp\AUTOPARKDB\bin\Debug\AUTOPARKDB.dbschema
 d:\Документы\AutoparkApp\AUTOPARKDB\obj\Debug\AUTOPARKDB.dbschema
+D:\autopark\AUTOPARKDB\bin\Debug\Путевые листы_Script.PreDeployment.sql
+D:\autopark\AUTOPARKDB\bin\Debug\Путевые листы_Script.PostDeployment.sql
+D:\autopark\AUTOPARKDB\bin\Debug\Путевые листы_Database.sqlsettings
+D:\autopark\AUTOPARKDB\bin\Debug\Путевые листы_Database.sqldeployment
+D:\autopark\AUTOPARKDB\bin\Debug\Путевые листы_Database.sqlcmdvars
+D:\autopark\AUTOPARKDB\bin\Debug\AUTOPARKDB.deploymanifest
+D:\autopark\AUTOPARKDB\bin\Debug\AUTOPARKDB.dbschema
+D:\autopark\AUTOPARKDB\obj\Debug\AUTOPARKDB.dbschema
