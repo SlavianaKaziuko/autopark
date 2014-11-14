@@ -86,7 +86,29 @@ namespace AUTOPARK
              var tableDannie = new AutoparkDBTableAdapters.PutevieGruzovieTableAdapter
             _bindingDannie.DataSource = tableDannie.GetData();
             _bindingDannie.Filter = "[ID_Путевого листа] = " + PutevoiId;
-            dgvPutevieLegkovie.DataSource = _bindingDannie;
+            dgvZadanieVoditelu.DataSource = _bindingDannie;
+
+
+
+              var dataGridViewColumn = dgvZadanieVoditelu.Columns["ID_Путевого листа"];
+            if (dataGridViewColumn != null)
+                dataGridViewColumn.Visible = false;
+            dataGridViewColumn = dgvZadanieVoditelu.Columns["id_Данных"];
+            if (dataGridViewColumn != null)
+                dataGridViewColumn.Visible = false;
+            var tablePutevoi = new AutoparkDB.TablePutevieGruzovieTableAdapter();
+            var res = tablePutevoi.QueryGetDataByID(id).ToList();
+            _number = res[0].Номер_путевого_листа;
+            _idauto = res[0].ID_Автомобиля;
+            _date  = res [0].Дата_путевого_листа;
+            _idvod = res[0].ID_Водителя;
+            _idviezd = res[0].ID_Работа_водителя_и_авто_выезд;
+            _idvozvrahenie = res[0].ID_Работа_водителя_и_авто_возвращение;
+            txtNumber.Text = _number;
+            cbNomerAuto.SelectedItem = _bindingAuto[_bindingAuto.Find("ID", _idauto)];
+            cbVodUdostoverenie.SelectedItem = _bindingVoditel[_bindingVoditel.Find("табельный_номер", _idvod)];
+            dtpStart.Value = _dateStart;
+            dtpEnd.Value = _dateEnd;
 
         }
 

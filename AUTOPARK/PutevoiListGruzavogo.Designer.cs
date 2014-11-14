@@ -74,7 +74,7 @@
             this.txtPriViezdiTCM = new System.Windows.Forms.TextBox();
             this.txtPriVozvracheniiTCM = new System.Windows.Forms.TextBox();
             this.lblZadanieVoditel = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvZadanieVoditelu = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -87,7 +87,7 @@
             this.tsmiToMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiExitApplication = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvZapravkaTCM)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvZadanieVoditelu)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -146,7 +146,6 @@
             this.txtMarka.Name = "txtMarka";
             this.txtMarka.Size = new System.Drawing.Size(131, 21);
             this.txtMarka.TabIndex = 5;
-            this.txtMarka.TextChanged += new System.EventHandler(this.txtMarka_TextChanged);
             // 
             // cbZnak
             // 
@@ -367,7 +366,6 @@
             this.dtpPogravikuViezd.Name = "dtpPogravikuViezd";
             this.dtpPogravikuViezd.Size = new System.Drawing.Size(136, 21);
             this.dtpPogravikuViezd.TabIndex = 29;
-            this.dtpPogravikuViezd.ValueChanged += new System.EventHandler(this.dateTimePicker2_ValueChanged);
             // 
             // dtpFiziheski
             // 
@@ -467,7 +465,6 @@
             this.lblPriVozvrachenii.Size = new System.Drawing.Size(97, 13);
             this.lblPriVozvrachenii.TabIndex = 44;
             this.lblPriVozvrachenii.Text = "при возвращении";
-            this.lblPriVozvrachenii.Click += new System.EventHandler(this.lblPriVozvrachenii_Click);
             // 
             // dgvZapravkaTCM
             // 
@@ -502,13 +499,13 @@
             this.lblZadanieVoditel.TabIndex = 48;
             this.lblZadanieVoditel.Text = "Задание водителю";
             // 
-            // dataGridView1
+            // dgvZadanieVoditelu
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(16, 480);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1206, 80);
-            this.dataGridView1.TabIndex = 49;
+            this.dgvZadanieVoditelu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvZadanieVoditelu.Location = new System.Drawing.Point(16, 480);
+            this.dgvZadanieVoditelu.Name = "dgvZadanieVoditelu";
+            this.dgvZadanieVoditelu.Size = new System.Drawing.Size(1206, 80);
+            this.dgvZadanieVoditelu.TabIndex = 49;
             // 
             // panel1
             // 
@@ -601,7 +598,6 @@
             this.btnCancel.TabIndex = 55;
             this.btnCancel.Text = "Отмена";
             this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnReport
             // 
@@ -611,7 +607,6 @@
             this.btnReport.TabIndex = 56;
             this.btnReport.Text = "Отчет";
             this.btnReport.UseVisualStyleBackColor = true;
-            this.btnReport.Click += new System.EventHandler(this.btnReport_Click);
             // 
             // menuStrip1
             // 
@@ -637,14 +632,12 @@
             this.tsmiToMenu.Name = "tsmiToMenu";
             this.tsmiToMenu.Size = new System.Drawing.Size(197, 22);
             this.tsmiToMenu.Text = "Вернуться к Меню";
-            this.tsmiToMenu.Click += new System.EventHandler(this.tsmiToMenu_Click);
             // 
             // tsmiExitApplication
             // 
             this.tsmiExitApplication.Name = "tsmiExitApplication";
             this.tsmiExitApplication.Size = new System.Drawing.Size(197, 22);
             this.tsmiExitApplication.Text = "Выйти из приложения";
-            this.tsmiExitApplication.Click += new System.EventHandler(this.tsmiExitApplication_Click);
             // 
             // PutevoiListGruzavogo
             // 
@@ -658,7 +651,7 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvZadanieVoditelu);
             this.Controls.Add(this.lblZadanieVoditel);
             this.Controls.Add(this.dtpHapka);
             this.Controls.Add(this.textBox1);
@@ -668,9 +661,8 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "PutevoiListGruzavogo";
             this.Text = "Путевой лист грузового автомобиля";
-            this.Load += new System.EventHandler(this.PutevoiListGruzavogo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvZapravkaTCM)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvZadanieVoditelu)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -734,7 +726,7 @@
         private System.Windows.Forms.TextBox txtPriViezdiTCM;
         private System.Windows.Forms.TextBox txtPriVozvracheniiTCM;
         private System.Windows.Forms.Label lblZadanieVoditel;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvZadanieVoditelu;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
