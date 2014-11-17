@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.lblGruzovoi = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtNumber = new System.Windows.Forms.TextBox();
             this.dtpHapka = new System.Windows.Forms.DateTimePicker();
             this.lblAvtoPricep = new System.Windows.Forms.Label();
             this.lblMarka = new System.Windows.Forms.Label();
@@ -105,12 +105,12 @@
             this.lblGruzovoi.TabIndex = 0;
             this.lblGruzovoi.Text = "Путевой лист №";
             // 
-            // textBox1
+            // txtNumber
             // 
-            this.textBox1.Location = new System.Drawing.Point(455, 35);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(116, 21);
-            this.textBox1.TabIndex = 1;
+            this.txtNumber.Location = new System.Drawing.Point(455, 35);
+            this.txtNumber.Name = "txtNumber";
+            this.txtNumber.Size = new System.Drawing.Size(116, 21);
+            this.txtNumber.TabIndex = 1;
             // 
             // dtpHapka
             // 
@@ -654,7 +654,7 @@
             this.Controls.Add(this.dgvZadanieVoditelu);
             this.Controls.Add(this.lblZadanieVoditel);
             this.Controls.Add(this.dtpHapka);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtNumber);
             this.Controls.Add(this.lblGruzovoi);
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -681,7 +681,7 @@
         #endregion
 
         private System.Windows.Forms.Label lblGruzovoi;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtNumber;
         private System.Windows.Forms.DateTimePicker dtpHapka;
         private System.Windows.Forms.Label lblAvtoPricep;
         private System.Windows.Forms.Label lblMarka;
