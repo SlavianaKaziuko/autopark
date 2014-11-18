@@ -589,6 +589,7 @@
             this.btnSave.TabIndex = 54;
             this.btnSave.Text = "Сохранить";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnCancel
             // 
@@ -598,6 +599,7 @@
             this.btnCancel.TabIndex = 55;
             this.btnCancel.Text = "Отмена";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnReport
             // 
@@ -607,6 +609,7 @@
             this.btnReport.TabIndex = 56;
             this.btnReport.Text = "Отчет";
             this.btnReport.UseVisualStyleBackColor = true;
+            this.btnReport.Click += new System.EventHandler(this.btnReport_Click);
             // 
             // menuStrip1
             // 
@@ -632,12 +635,14 @@
             this.tsmiToMenu.Name = "tsmiToMenu";
             this.tsmiToMenu.Size = new System.Drawing.Size(197, 22);
             this.tsmiToMenu.Text = "Вернуться к Меню";
+            this.tsmiToMenu.Click += new System.EventHandler(this.tsmiToMenu_Click);
             // 
             // tsmiExitApplication
             // 
             this.tsmiExitApplication.Name = "tsmiExitApplication";
             this.tsmiExitApplication.Size = new System.Drawing.Size(197, 22);
             this.tsmiExitApplication.Text = "Выйти из приложения";
+            this.tsmiExitApplication.Click += new System.EventHandler(this.tsmiExitApplication_Click);
             // 
             // PutevoiListGruzavogo
             // 

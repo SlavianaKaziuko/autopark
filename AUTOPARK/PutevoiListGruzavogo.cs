@@ -22,6 +22,7 @@ namespace AUTOPARK
         {
             InitializeComponent();
 
+            _modeIsNew = true;
             var tablep = new AutoparkDBTableAdapters.PodvijnoiTableAdapter();
             _bindingAuto.DataSource = tablep.GetData();
             if (_bindingAuto.Count == 0)
@@ -94,8 +95,6 @@ namespace AUTOPARK
             _idauto = res[0].ID_Автомобиля;
             _date = res[0].Дата_путевого_листа;
             _idvod = res[0].ID_Водителя;
-            _idviezd = res[0].ID_Работа_водителя_и_авто_выезд;
-            _idvozvrahenie = res[0].ID_Работа_водителя_и_авто_возвращение;
             txtNumber.Text = _number.ToString();
             cbZnak.SelectedItem = _bindingAuto[_bindingAuto.Find("ID", _idauto)];
             cbTabelniiNomer.SelectedItem = _bindingVoditel.Find("табельный_номер", _idvod);
@@ -110,16 +109,24 @@ namespace AUTOPARK
         {
         }
 
-        private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
-        {
-        }
-
         private void lblKolichestvo_Click(object sender, EventArgs e)
         {
         }
 
         private void lblPriVozvrachenii_Click(object sender, EventArgs e)
         {
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            if (_modeIsNew)
+            {
+                
+            }
+            else
+            {
+                
+            }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
