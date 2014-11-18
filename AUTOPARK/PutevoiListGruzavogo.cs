@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -95,7 +96,10 @@ namespace AUTOPARK
             _idauto = res[0].ID_Автомобиля;
             _date = res[0].Дата_путевого_листа;
             _idvod = res[0].ID_Водителя;
-            txtNumber.Text = _number.ToString();
+            txtNumber.Text = _number.ToString(CultureInfo.InvariantCulture);
+
+            var tableZadanie = new AutoparkDBTableAdapters.ZadanieVoditelTableAdapter();
+
             cbZnak.SelectedItem = _bindingAuto[_bindingAuto.Find("ID", _idauto)];
             cbTabelniiNomer.SelectedItem = _bindingVoditel.Find("табельный_номер", _idvod);
             dtpHapka.Value = _date;
