@@ -105,59 +105,41 @@ namespace AUTOPARK
             cbTabelniiNomer.SelectedItem = _bindingVoditel.Find("табельный_номер", _idvod);
             dtpHapka.Value = _date;
 
-        }
+            var tableDanniel = new AutoparkDBTableAdapters.PutevieGruzovieTableAdapter();
+            _bindingDannie.DataSource = tableDanniel.GetData();
+            _bindingDannie.Filter = "[ID_Путевого листа] = " + PutevoiId;
+            dgvZapravkaTCM.DataSource = _bindingDanniel;
 
-        /*
-          public PutevoiListGruzavogo(int id)
-          {
-              InitializeComponent();
-              var tableDanniel = new AutoparkDBTableAdapters.PutevieGruzovieTableAdapter();
-              _bindingDannie.DataSource = tableDanniel.GetData();
-              _bindingDannie.Filter = "[ID_Путевого листа] = " + PutevoiId;
-              dgvZapravkaTCM.DataSource = _bindingDanniel;
-
-              var dataGridViewColumn = dgvZapravkaTCM.Columns["ID_Путевого листа"];
-              if (dataGridViewColumn != null)
-                  dataGridViewColumn.Visible = false;
-              dataGridViewColumn = dgvZapravkaTCM.Columns["ID_Заправка ТСМ"];  
-              if (dataGridViewColumn != null)
-                  dataGridViewColumn.Visible = false;
+             dataGridViewColumn = dgvZapravkaTCM.Columns["ID_Путевого листа"];
+            if (dataGridViewColumn != null)
+                dataGridViewColumn.Visible = false;
+            dataGridViewColumn = dgvZapravkaTCM.Columns["ID_Заправка ТСМ"];
+            if (dataGridViewColumn != null)
+                dataGridViewColumn.Visible = false;
 
 
-          }*/
-
-
-        private void PutevoiListGruzavogo_Load(object sender, EventArgs e)
-        {
         }
 
         private void cbZnak_SelectedValueChanged(object sender, EventArgs e)               //  Комбобок cbZnak  (Автомобиль)
         {
             ////Вытягивание из таблицы binding строку,затем преобразовываем в тип данных DataRowView,
             ////вытягивание из массива данных(Row) и затем вытягивание ячейки 1 (ItemArray[1])
-            txtGaraz.Text = ((DataRowView)_bindingAuto[cbZnak.SelectedIndex]).Row.ItemArray[4].ToString();
-            txtMarka.Text = ((DataRowView)_bindingAuto[cbZnak.SelectedIndex]).Row.ItemArray[3].ToString();
+            txtGaraz.Text = ((DataRowView)_bindingAuto[cbZnak.SelectedIndex]).Row.ItemArray[3].ToString();
+            txtMarka.Text = ((DataRowView)_bindingAuto[cbZnak.SelectedIndex]).Row.ItemArray[4].ToString();
         }
 
         private void cbTabelniiNomer_SelectedValueChanger(object sender, EventArgs e)           //  Комбобок cbTabelniiNomer  (Автомобиль)
         {
             ////Вытягивание из таблицы binding строку,затем преобразовываем в тип данных DataRowView,
             ////вытягивание из массива данных(Row) и затем вытягивание ячейки 1 (ItemArray[1])
-
-            txtImia.Text = ((DataRowView)_bindingAuto[cbTabelniiNomer.SelectedIndex]).Row.ItemArray[5].ToString();
+            var zapis = ((DataRowView) _bindingVoditel[cbTabelniiNomer.SelectedIndex]).Row.ItemArray;
+            // Выбирает инициалы.т.е первую букву в фамилии и имени.
+            txtImia.Text = zapis[1] + @" " +
+                           (zapis[2].ToString().Length > 1 ? zapis[2].ToString().Substring(0, 1) + @". " : "") +   
+                           (zapis[3].ToString().Length > 1 ? zapis[3].ToString().Substring(0, 1) + @". " : "");
         }
 
-        private void txtMarka_TextChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void lblKolichestvo_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void lblPriVozvrachenii_Click(object sender, EventArgs e)
-        {
-        }
+       
 
         private void btnSave_Click(object sender, EventArgs e)
         {

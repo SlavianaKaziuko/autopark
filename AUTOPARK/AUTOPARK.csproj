@@ -151,7 +151,9 @@
     <EmbeddedResource Include="Spravochnik.resx">
       <DependentUpon>Spravochnik.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="app.config" />
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="AutoparkDB.xsc">
       <DependentUpon>AutoparkDB.xsd</DependentUpon>
     </None>

@@ -3501,11 +3501,13 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=First(Fields!Номер_путевого_листа.Value, "ReportHead")</Value>
+                <Value>=First(Fields!Номер_путевого_листа.Value, "ReportHead") + "-Л"</Value>
                 <Style />
               </TextRun>
             </TextRuns>
-            <Style />
+            <Style>
+              <TextAlign>Right</TextAlign>
+            </Style>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox15</rd:DefaultName>

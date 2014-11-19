@@ -1160,6 +1160,41 @@ WHERE  [ID_Путевого листа]=@IdPutevoi</CommandText>
               </DbSource>
             </Sources>
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DanieJournalLegkovieTableAdapter" GeneratorDataComponentClassName="DanieJournalLegkovieTableAdapter" Name="DanieJournalLegkovie" UserDataComponentName="DanieJournalLegkovieTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="Путевые_листыConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        [Данные Путевой лист легкового авто].Число, [Путевой лист легкового автомобиля].[Номер путевого листа], [Личный состав].Фамилия, [Личный состав].Имя, 
+                         [Личный состав].Отчество, [Данные Путевой лист легкового авто].[Остаток топлива при выезде], 
+                         [Данные Путевой лист легкового авто].[Остаток топлива при возвращении], [Данные Путевой лист легкового авто].[Время выезда], 
+                         [Данные Путевой лист легкового авто].[Время возвращения], [Данные Путевой лист легкового авто].[Показания спидометра при выезде], 
+                         [Данные Путевой лист легкового авто].[Показания спидометра при возвращении]
+FROM            [Личный состав] INNER JOIN
+                         [Путевой лист легкового автомобиля] ON [Личный состав].[табельный  номер] = [Путевой лист легкового автомобиля].ID_Водитель INNER JOIN
+                         [Подвижной состав] ON [Путевой лист легкового автомобиля].ID_Автомобиль = [Подвижной состав].ID INNER JOIN
+                         [Данные Путевой лист легкового авто] ON 
+                         [Путевой лист легкового автомобиля].[ID_Путевого листа] = [Данные Путевой лист легкового авто].[ID_Путевого листа]</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Число" DataSetColumn="Число" />
+              <Mapping SourceColumn="Номер путевого листа" DataSetColumn="Номер путевого листа" />
+              <Mapping SourceColumn="Фамилия" DataSetColumn="Фамилия" />
+              <Mapping SourceColumn="Имя" DataSetColumn="Имя" />
+              <Mapping SourceColumn="Отчество" DataSetColumn="Отчество" />
+              <Mapping SourceColumn="Остаток топлива при выезде" DataSetColumn="Остаток топлива при выезде" />
+              <Mapping SourceColumn="Остаток топлива при возвращении" DataSetColumn="Остаток топлива при возвращении" />
+              <Mapping SourceColumn="Время выезда" DataSetColumn="Время выезда" />
+              <Mapping SourceColumn="Время возвращения" DataSetColumn="Время возвращения" />
+              <Mapping SourceColumn="Показания спидометра при выезде" DataSetColumn="Показания спидометра при выезде" />
+              <Mapping SourceColumn="Показания спидометра при возвращении" DataSetColumn="Показания спидометра при возвращении" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -1745,6 +1780,47 @@ WHERE  [ID_Путевого листа]=@IdPutevoi</CommandText>
               </xs:element>
               <xs:element name="Вес_x0020_груза_x0020_т" msprop:Generator_ColumnVarNameInTable="columnВес_груза_т" msprop:Generator_ColumnPropNameInRow="Вес_груза_т" msprop:Generator_ColumnPropNameInTable="Вес_груза_тColumn" msprop:Generator_UserColumnName="Вес груза т" type="xs:double" minOccurs="0" />
               <xs:element name="Количество_x0020_поездок_x0020_с_x0020_грузом_x0020_час" msprop:Generator_ColumnVarNameInTable="columnКоличество_поездок_с_грузом_час" msprop:Generator_ColumnPropNameInRow="Количество_поездок_с_грузом_час" msprop:Generator_ColumnPropNameInTable="Количество_поездок_с_грузом_часColumn" msprop:Generator_UserColumnName="Количество поездок с грузом час" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="DanieJournalLegkovie" msprop:Generator_TableClassName="DanieJournalLegkovieDataTable" msprop:Generator_TableVarName="tableDanieJournalLegkovie" msprop:Generator_TablePropName="DanieJournalLegkovie" msprop:Generator_RowDeletingName="DanieJournalLegkovieRowDeleting" msprop:Generator_RowChangingName="DanieJournalLegkovieRowChanging" msprop:Generator_RowEvHandlerName="DanieJournalLegkovieRowChangeEventHandler" msprop:Generator_RowDeletedName="DanieJournalLegkovieRowDeleted" msprop:Generator_UserTableName="DanieJournalLegkovie" msprop:Generator_RowChangedName="DanieJournalLegkovieRowChanged" msprop:Generator_RowEvArgName="DanieJournalLegkovieRowChangeEvent" msprop:Generator_RowClassName="DanieJournalLegkovieRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Число" msprop:Generator_ColumnVarNameInTable="columnЧисло" msprop:Generator_ColumnPropNameInRow="Число" msprop:Generator_ColumnPropNameInTable="ЧислоColumn" msprop:Generator_UserColumnName="Число" type="xs:dateTime" />
+              <xs:element name="Номер_x0020_путевого_x0020_листа" msprop:Generator_ColumnVarNameInTable="columnНомер_путевого_листа" msprop:Generator_ColumnPropNameInRow="Номер_путевого_листа" msprop:Generator_ColumnPropNameInTable="Номер_путевого_листаColumn" msprop:Generator_UserColumnName="Номер путевого листа" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Фамилия" msprop:Generator_ColumnVarNameInTable="columnФамилия" msprop:Generator_ColumnPropNameInRow="Фамилия" msprop:Generator_ColumnPropNameInTable="ФамилияColumn" msprop:Generator_UserColumnName="Фамилия" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Имя" msprop:Generator_ColumnVarNameInTable="columnИмя" msprop:Generator_ColumnPropNameInRow="Имя" msprop:Generator_ColumnPropNameInTable="ИмяColumn" msprop:Generator_UserColumnName="Имя" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Отчество" msprop:Generator_ColumnVarNameInTable="columnОтчество" msprop:Generator_ColumnPropNameInRow="Отчество" msprop:Generator_ColumnPropNameInTable="ОтчествоColumn" msprop:Generator_UserColumnName="Отчество" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Остаток_x0020_топлива_x0020_при_x0020_выезде" msprop:Generator_ColumnVarNameInTable="columnОстаток_топлива_при_выезде" msprop:Generator_ColumnPropNameInRow="Остаток_топлива_при_выезде" msprop:Generator_ColumnPropNameInTable="Остаток_топлива_при_выездеColumn" msprop:Generator_UserColumnName="Остаток топлива при выезде" type="xs:double" />
+              <xs:element name="Остаток_x0020_топлива_x0020_при_x0020_возвращении" msprop:Generator_ColumnVarNameInTable="columnОстаток_топлива_при_возвращении" msprop:Generator_ColumnPropNameInRow="Остаток_топлива_при_возвращении" msprop:Generator_ColumnPropNameInTable="Остаток_топлива_при_возвращенииColumn" msprop:Generator_UserColumnName="Остаток топлива при возвращении" type="xs:double" />
+              <xs:element name="Время_x0020_выезда" msprop:Generator_ColumnVarNameInTable="columnВремя_выезда" msprop:Generator_ColumnPropNameInRow="Время_выезда" msprop:Generator_ColumnPropNameInTable="Время_выездаColumn" msprop:Generator_UserColumnName="Время выезда" type="xs:duration" />
+              <xs:element name="Время_x0020_возвращения" msprop:Generator_ColumnVarNameInTable="columnВремя_возвращения" msprop:Generator_ColumnPropNameInRow="Время_возвращения" msprop:Generator_ColumnPropNameInTable="Время_возвращенияColumn" msprop:Generator_UserColumnName="Время возвращения" type="xs:duration" />
+              <xs:element name="Показания_x0020_спидометра_x0020_при_x0020_выезде" msprop:Generator_ColumnVarNameInTable="columnПоказания_спидометра_при_выезде" msprop:Generator_ColumnPropNameInRow="Показания_спидометра_при_выезде" msprop:Generator_ColumnPropNameInTable="Показания_спидометра_при_выездеColumn" msprop:Generator_UserColumnName="Показания спидометра при выезде" type="xs:int" />
+              <xs:element name="Показания_x0020_спидометра_x0020_при_x0020_возвращении" msprop:Generator_ColumnVarNameInTable="columnПоказания_спидометра_при_возвращении" msprop:Generator_ColumnPropNameInRow="Показания_спидометра_при_возвращении" msprop:Generator_ColumnPropNameInTable="Показания_спидометра_при_возвращенииColumn" msprop:Generator_UserColumnName="Показания спидометра при возвращении" type="xs:int" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

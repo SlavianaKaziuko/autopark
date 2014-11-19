@@ -86,6 +86,10 @@
             this.навигацияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiToMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiExitApplication = new System.Windows.Forms.ToolStripMenuItem();
+            this.cbToplivoType = new System.Windows.Forms.ComboBox();
+            this.cbToplivoType2 = new System.Windows.Forms.ComboBox();
+            this.txtPriVozvracheniiTCM2 = new System.Windows.Forms.TextBox();
+            this.txtPriViezdiTCM2 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvZapravkaTCM)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvZadanieVoditelu)).BeginInit();
             this.panel1.SuspendLayout();
@@ -154,6 +158,7 @@
             this.cbZnak.Name = "cbZnak";
             this.cbZnak.Size = new System.Drawing.Size(138, 23);
             this.cbZnak.TabIndex = 6;
+            this.cbZnak.SelectedIndexChanged += new System.EventHandler(this.cbZnak_SelectedValueChanged);
             // 
             // txtGaraz
             // 
@@ -161,7 +166,6 @@
             this.txtGaraz.Name = "txtGaraz";
             this.txtGaraz.Size = new System.Drawing.Size(100, 21);
             this.txtGaraz.TabIndex = 7;
-           
             // 
             // lblZnak
             // 
@@ -227,6 +231,7 @@
             this.cbTabelniiNomer.Name = "cbTabelniiNomer";
             this.cbTabelniiNomer.Size = new System.Drawing.Size(146, 23);
             this.cbTabelniiNomer.TabIndex = 14;
+            this.cbTabelniiNomer.SelectedIndexChanged += new System.EventHandler(this.cbTabelniiNomer_SelectedValueChanger);
             // 
             // lblRabotaVoditelia
             // 
@@ -477,7 +482,7 @@
             // 
             // txtPriViezdiTCM
             // 
-            this.txtPriViezdiTCM.Location = new System.Drawing.Point(471, 93);
+            this.txtPriViezdiTCM.Location = new System.Drawing.Point(471, 82);
             this.txtPriViezdiTCM.Name = "txtPriViezdiTCM";
             this.txtPriViezdiTCM.Size = new System.Drawing.Size(83, 21);
             this.txtPriViezdiTCM.TabIndex = 46;
@@ -485,7 +490,7 @@
             // txtPriVozvracheniiTCM
             // 
             this.txtPriVozvracheniiTCM.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.txtPriVozvracheniiTCM.Location = new System.Drawing.Point(573, 93);
+            this.txtPriVozvracheniiTCM.Location = new System.Drawing.Point(573, 82);
             this.txtPriVozvracheniiTCM.Name = "txtPriVozvracheniiTCM";
             this.txtPriVozvracheniiTCM.Size = new System.Drawing.Size(94, 20);
             this.txtPriVozvracheniiTCM.TabIndex = 47;
@@ -569,6 +574,10 @@
             // panel4
             // 
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Controls.Add(this.cbToplivoType2);
+            this.panel4.Controls.Add(this.txtPriVozvracheniiTCM2);
+            this.panel4.Controls.Add(this.txtPriViezdiTCM2);
+            this.panel4.Controls.Add(this.cbToplivoType);
             this.panel4.Controls.Add(this.txtPriVozvracheniiTCM);
             this.panel4.Controls.Add(this.txtPriViezdiTCM);
             this.panel4.Controls.Add(this.dgvZapravkaTCM);
@@ -644,6 +653,45 @@
             this.tsmiExitApplication.Size = new System.Drawing.Size(197, 22);
             this.tsmiExitApplication.Text = "Выйти из приложения";
             this.tsmiExitApplication.Click += new System.EventHandler(this.tsmiExitApplication_Click);
+            // 
+            // cbToplivoType
+            // 
+            this.cbToplivoType.FormattingEnabled = true;
+            this.cbToplivoType.Items.AddRange(new object[] {
+            "д/т",
+            "суг",
+            "бен"});
+            this.cbToplivoType.Location = new System.Drawing.Point(416, 80);
+            this.cbToplivoType.Name = "cbToplivoType";
+            this.cbToplivoType.Size = new System.Drawing.Size(49, 23);
+            this.cbToplivoType.TabIndex = 48;
+            // 
+            // cbToplivoType2
+            // 
+            this.cbToplivoType2.FormattingEnabled = true;
+            this.cbToplivoType2.Items.AddRange(new object[] {
+            "д/т",
+            "суг",
+            "бен"});
+            this.cbToplivoType2.Location = new System.Drawing.Point(416, 107);
+            this.cbToplivoType2.Name = "cbToplivoType2";
+            this.cbToplivoType2.Size = new System.Drawing.Size(49, 23);
+            this.cbToplivoType2.TabIndex = 51;
+            // 
+            // txtPriVozvracheniiTCM2
+            // 
+            this.txtPriVozvracheniiTCM2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.txtPriVozvracheniiTCM2.Location = new System.Drawing.Point(573, 109);
+            this.txtPriVozvracheniiTCM2.Name = "txtPriVozvracheniiTCM2";
+            this.txtPriVozvracheniiTCM2.Size = new System.Drawing.Size(94, 20);
+            this.txtPriVozvracheniiTCM2.TabIndex = 50;
+            // 
+            // txtPriViezdiTCM2
+            // 
+            this.txtPriViezdiTCM2.Location = new System.Drawing.Point(471, 109);
+            this.txtPriViezdiTCM2.Name = "txtPriViezdiTCM2";
+            this.txtPriViezdiTCM2.Size = new System.Drawing.Size(83, 21);
+            this.txtPriViezdiTCM2.TabIndex = 49;
             // 
             // PutevoiListGruzavogo
             // 
@@ -744,5 +792,9 @@
         private System.Windows.Forms.ToolStripMenuItem навигацияToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tsmiToMenu;
         private System.Windows.Forms.ToolStripMenuItem tsmiExitApplication;
+        private System.Windows.Forms.ComboBox cbToplivoType2;
+        private System.Windows.Forms.TextBox txtPriVozvracheniiTCM2;
+        private System.Windows.Forms.TextBox txtPriViezdiTCM2;
+        private System.Windows.Forms.ComboBox cbToplivoType;
     }
 }
