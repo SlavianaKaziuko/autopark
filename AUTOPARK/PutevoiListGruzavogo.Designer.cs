@@ -161,6 +161,7 @@
             this.txtGaraz.Name = "txtGaraz";
             this.txtGaraz.Size = new System.Drawing.Size(100, 21);
             this.txtGaraz.TabIndex = 7;
+           
             // 
             // lblZnak
             // 

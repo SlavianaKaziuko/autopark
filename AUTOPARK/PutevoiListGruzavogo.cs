@@ -2,7 +2,7 @@
 using System.Globalization;
 using System.Linq;
 using System.Windows.Forms;
-
+using System.Data;
 namespace AUTOPARK
 {
     public partial class PutevoiListGruzavogo : Form
@@ -10,6 +10,7 @@ namespace AUTOPARK
         private readonly BindingSource _bindingAuto = new BindingSource();
         private readonly BindingSource _bindingVoditel = new BindingSource();
         private readonly BindingSource _bindingDannie = new BindingSource();
+        private readonly BindingSource _bindingDanniel = new BindingSource();
         private readonly int _number;
         private readonly int _idauto;
         private readonly int _idvod;
@@ -103,10 +104,47 @@ namespace AUTOPARK
             cbZnak.SelectedItem = _bindingAuto[_bindingAuto.Find("ID", _idauto)];
             cbTabelniiNomer.SelectedItem = _bindingVoditel.Find("табельный_номер", _idvod);
             dtpHapka.Value = _date;
+
         }
+
+        /*
+          public PutevoiListGruzavogo(int id)
+          {
+              InitializeComponent();
+              var tableDanniel = new AutoparkDBTableAdapters.PutevieGruzovieTableAdapter();
+              _bindingDannie.DataSource = tableDanniel.GetData();
+              _bindingDannie.Filter = "[ID_Путевого листа] = " + PutevoiId;
+              dgvZapravkaTCM.DataSource = _bindingDanniel;
+
+              var dataGridViewColumn = dgvZapravkaTCM.Columns["ID_Путевого листа"];
+              if (dataGridViewColumn != null)
+                  dataGridViewColumn.Visible = false;
+              dataGridViewColumn = dgvZapravkaTCM.Columns["ID_Заправка ТСМ"];  
+              if (dataGridViewColumn != null)
+                  dataGridViewColumn.Visible = false;
+
+
+          }*/
+
 
         private void PutevoiListGruzavogo_Load(object sender, EventArgs e)
         {
+        }
+
+        private void cbZnak_SelectedValueChanged(object sender, EventArgs e)               //  Комбобок cbZnak  (Автомобиль)
+        {
+            ////Вытягивание из таблицы binding строку,затем преобразовываем в тип данных DataRowView,
+            ////вытягивание из массива данных(Row) и затем вытягивание ячейки 1 (ItemArray[1])
+            txtGaraz.Text = ((DataRowView)_bindingAuto[cbZnak.SelectedIndex]).Row.ItemArray[4].ToString();
+            txtMarka.Text = ((DataRowView)_bindingAuto[cbZnak.SelectedIndex]).Row.ItemArray[3].ToString();
+        }
+
+        private void cbTabelniiNomer_SelectedValueChanger(object sender, EventArgs e)           //  Комбобок cbTabelniiNomer  (Автомобиль)
+        {
+            ////Вытягивание из таблицы binding строку,затем преобразовываем в тип данных DataRowView,
+            ////вытягивание из массива данных(Row) и затем вытягивание ячейки 1 (ItemArray[1])
+
+            txtImia.Text = ((DataRowView)_bindingAuto[cbTabelniiNomer.SelectedIndex]).Row.ItemArray[5].ToString();
         }
 
         private void txtMarka_TextChanged(object sender, EventArgs e)
@@ -156,5 +194,7 @@ namespace AUTOPARK
         {
             Environment.Exit(0); //Полный выход из программы если нажимаем на дверку в Путевых листах грузового авто
         }
+
+       
     }
 }
