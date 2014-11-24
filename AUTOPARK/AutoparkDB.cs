@@ -26,6 +26,14 @@ namespace AUTOPARK {
 }
 
 namespace AUTOPARK.AutoparkDBTableAdapters {
+    partial class PodvijnoiTableAdapter
+    {
+    }
+
+    partial class TablePutevieLegkovieTableAdapter
+    {
+    }
+
     partial class PutevoiListLegkTableAdapter
     {
     }

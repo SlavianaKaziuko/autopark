@@ -16,7 +16,7 @@
           <DataField>id_Данных</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="ID_Путевого_листа">
+        <Field Name="ID_Путевого листа">
           <DataField>ID_Путевого листа</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
@@ -24,57 +24,69 @@
           <DataField>Число</DataField>
           <rd:TypeName>System.DateTime</rd:TypeName>
         </Field>
-        <Field Name="Время_выезда">
+        <Field Name="Время выезда">
           <DataField>Время выезда</DataField>
           <rd:TypeName>System.TimeSpan</rd:TypeName>
         </Field>
-        <Field Name="Время_возвращения">
+        <Field Name="Время возвращения">
           <DataField>Время возвращения</DataField>
           <rd:TypeName>System.TimeSpan</rd:TypeName>
         </Field>
-        <Field Name="Время_в_наряде">
+        <Field Name="Время в наряде">
           <DataField>Время в наряде</DataField>
           <rd:TypeName>System.TimeSpan</rd:TypeName>
         </Field>
-        <Field Name="Показания_спидометра_при_выезде">
+        <Field Name="Показания спидометра при выезде">
           <DataField>Показания спидометра при выезде</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="Показания_спидометра_при_возвращении">
+        <Field Name="Показания спидометра при возвращении">
           <DataField>Показания спидометра при возвращении</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="Пробег_км">
+        <Field Name="Пробег км">
           <DataField>Пробег км</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="Остаток_топлива_при_выезде">
+        <Field Name="Остаток топлива при выезде">
           <DataField>Остаток топлива при выезде</DataField>
           <rd:TypeName>System.Double</rd:TypeName>
         </Field>
-        <Field Name="Остаток_топлива_при_возвращении">
+        <Field Name="Остаток топлива при возвращении">
           <DataField>Остаток топлива при возвращении</DataField>
           <rd:TypeName>System.Double</rd:TypeName>
         </Field>
-        <Field Name="Заправлено_топлива_л">
+        <Field Name="Заправлено топлива л">
           <DataField>Заправлено топлива л</DataField>
           <rd:TypeName>System.Double</rd:TypeName>
         </Field>
-        <Field Name="Дата_и__чека_АЗС">
+        <Field Name="Дата и № чека АЗС">
           <DataField>Дата и № чека АЗС</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="Расход_топлива_по_норме">
+        <Field Name="Расход топлива по норме">
           <DataField>Расход топлива по норме</DataField>
           <rd:TypeName>System.Double</rd:TypeName>
         </Field>
-        <Field Name="Расход_топлива_фактически">
+        <Field Name="Расход топлива фактически">
           <DataField>Расход топлива фактически</DataField>
           <rd:TypeName>System.Double</rd:TypeName>
         </Field>
-        <Field Name="Расход_топлива_экономия_перерасход">
+        <Field Name="Расход топлива экономия перерасход">
           <DataField>Расход топлива экономия перерасход</DataField>
           <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="Пробег км1">
+          <DataField>Пробег км</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Маршрут перевозки откуда">
+          <DataField>Маршрут перевозки откуда</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Маршрут перевозки куда">
+          <DataField>Маршрут перевозки куда</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>
       <Query>
@@ -83,7 +95,7 @@
       </Query>
       <rd:DataSetInfo>
         <rd:DataSetName>AutoparkDB</rd:DataSetName>
-        <rd:SchemaPath>D:\my\autopark\AUTOPARK\AutoparkDB.xsd</rd:SchemaPath>
+        <rd:SchemaPath>D:\autopark\AUTOPARK\AutoparkDB.xsd</rd:SchemaPath>
         <rd:TableName>Данные Путевой лист легкового авто</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
@@ -3920,7 +3932,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox16</rd:DefaultName>
         <Top>3.60735cm</Top>
-        <Left>7.26581cm</Left>
+        <Left>7.30109cm</Left>
         <Height>0.6cm</Height>
         <Width>6.73749cm</Width>
         <ZIndex>41</ZIndex>
