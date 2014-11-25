@@ -3703,7 +3703,9 @@
             <Style>None</Style>
           </Border>
           <BottomBorder>
+            <Color>Black</Color>
             <Style>Solid</Style>
+            <Width>1pt</Width>
           </BottomBorder>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
@@ -3976,7 +3978,9 @@
             <Style>None</Style>
           </Border>
           <BottomBorder>
+            <Color>Black</Color>
             <Style>Solid</Style>
+            <Width>1pt</Width>
           </BottomBorder>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>

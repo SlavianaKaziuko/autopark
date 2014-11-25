@@ -3311,7 +3311,7 @@
         <Top>10.55807cm</Top>
         <Left>23.0194cm</Left>
         <Height>0.6cm</Height>
-        <Width>5.43091cm</Width>
+        <Width>5.4309cm</Width>
         <ZIndex>42</ZIndex>
         <Style>
           <Border>
@@ -3457,7 +3457,7 @@
         <Top>10.55807cm</Top>
         <Left>15.166cm</Left>
         <Height>0.6cm</Height>
-        <Width>7.85341cm</Width>
+        <Width>7.8534cm</Width>
         <ZIndex>43</ZIndex>
         <Style>
           <Border>
@@ -3746,7 +3746,7 @@
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>0.23622in</Height>
+              <Height>0.35427in</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -3970,8 +3970,8 @@
         <DataSetName>RabotaVoditelAuto</DataSetName>
         <Top>6.71335cm</Top>
         <Left>13.32174cm</Left>
-        <Height>0.6cm</Height>
-        <Width>14.71088cm</Width>
+        <Height>0.89986cm</Height>
+        <Width>14.71087cm</Width>
         <ZIndex>45</ZIndex>
         <Style>
           <Border>
@@ -4056,7 +4056,7 @@
         <rd:DefaultName>Textbox18</rd:DefaultName>
         <Top>6.67807cm</Top>
         <Left>10.84949cm</Left>
-        <Height>0.56472cm</Height>
+        <Height>0.93514cm</Height>
         <Width>2.51388cm</Width>
         <ZIndex>47</ZIndex>
         <Style>
