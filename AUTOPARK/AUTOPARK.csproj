@@ -93,6 +93,12 @@
     <Compile Include="Journal.Designer.cs">
       <DependentUpon>Journal.cs</DependentUpon>
     </Compile>
+    <Compile Include="OtchetJournal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OtchetJournal.Designer.cs">
+      <DependentUpon>OtchetJournal.cs</DependentUpon>
+    </Compile>
     <Compile Include="OtchetLegkovogo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -141,6 +147,9 @@
     </Compile>
     <EmbeddedResource Include="Journal.resx">
       <DependentUpon>Journal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OtchetJournal.resx">
+      <DependentUpon>OtchetJournal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OtchetLegkovogo.resx">
       <DependentUpon>OtchetLegkovogo.cs</DependentUpon>

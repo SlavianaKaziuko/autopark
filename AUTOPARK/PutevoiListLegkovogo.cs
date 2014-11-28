@@ -1,5 +1,6 @@
 ﻿
 
+
 using System;
 using System.Data;
 using System.Drawing;
@@ -49,7 +50,7 @@ namespace AUTOPARK
             //var newLegkNumber = tablePutevoi.GetNewLegkNumber();
             //if (newLegkNumber != null)
             //    txtNumber.Text = newLegkNumber.Value.ToString(CultureInfo.InvariantCulture);
-            _dateStart = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
+            _dateStart = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);             //календарь 
             _dateEnd = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1).AddMonths(1).AddDays(-1);
         }
 

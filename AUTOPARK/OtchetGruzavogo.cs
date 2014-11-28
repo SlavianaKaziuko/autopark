@@ -32,6 +32,7 @@ namespace AUTOPARK
             this.view_Задание_водителю1TableAdapter.Fill(this.autoparkDB.View_Задание_водителю1);
 
             this.reportViewer1.RefreshReport();
+            this.reportViewer2.RefreshReport();
         }
     }
 }

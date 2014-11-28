@@ -26,6 +26,10 @@ namespace AUTOPARK {
 }
 
 namespace AUTOPARK.AutoparkDBTableAdapters {
+    partial class DanieJournalLegkovieTableAdapter
+    {
+    }
+
     partial class PodvijnoiTableAdapter
     {
     }

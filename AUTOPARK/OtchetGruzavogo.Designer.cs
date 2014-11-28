@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource4 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource5 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource6 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource7 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource8 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource9 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource10 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource11 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource12 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.viewЛичныйСоставBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.autoparkDB = new AUTOPARK.AutoparkDB();
             this.viewЗаданиеВодителю1BindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -53,6 +53,7 @@
             this.view_Подвижной_составTableAdapter = new AUTOPARK.AutoparkDBTableAdapters.View_Подвижной_составTableAdapter();
             this.viewЗаправкаТСМBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.view_Заправка_ТСМTableAdapter = new AUTOPARK.AutoparkDBTableAdapters.View_Заправка_ТСМTableAdapter();
+            this.reportViewer2 = new Microsoft.Reporting.WinForms.ReportViewer();
             ((System.ComponentModel.ISupportInitialize)(this.viewЛичныйСоставBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.autoparkDB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.viewЗаданиеВодителю1BindingSource)).BeginInit();
@@ -109,24 +110,24 @@
             // reportViewer1
             // 
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource1.Name = "DataSet1";
-            reportDataSource1.Value = this.viewЛичныйСоставBindingSource;
-            reportDataSource2.Name = "DataSet2";
-            reportDataSource2.Value = this.viewЗаданиеВодителю1BindingSource;
-            reportDataSource3.Name = "DataSet3";
-            reportDataSource3.Value = this.viewЗаправкаТСМBindingSource1;
-            reportDataSource4.Name = "DataSet5";
-            reportDataSource4.Value = this.viewДвижениеТСМBindingSource1;
-            reportDataSource5.Name = "DataSet6";
-            reportDataSource5.Value = this.viewПодвижнойСоставBindingSource;
-            reportDataSource6.Name = "DataSet4";
-            reportDataSource6.Value = this.viewРаботаВодителяИАвтоBindingSource1;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource3);
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource4);
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource5);
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource6);
+            reportDataSource7.Name = "DataSet1";
+            reportDataSource7.Value = this.viewЛичныйСоставBindingSource;
+            reportDataSource8.Name = "DataSet2";
+            reportDataSource8.Value = this.viewЗаданиеВодителю1BindingSource;
+            reportDataSource9.Name = "DataSet3";
+            reportDataSource9.Value = this.viewЗаправкаТСМBindingSource1;
+            reportDataSource10.Name = "DataSet5";
+            reportDataSource10.Value = this.viewДвижениеТСМBindingSource1;
+            reportDataSource11.Name = "DataSet6";
+            reportDataSource11.Value = this.viewПодвижнойСоставBindingSource;
+            reportDataSource12.Name = "DataSet4";
+            reportDataSource12.Value = this.viewРаботаВодителяИАвтоBindingSource1;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource7);
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource8);
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource9);
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource10);
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource11);
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource12);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "AUTOPARK.Report2.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
@@ -172,13 +173,22 @@
             // 
             this.view_Заправка_ТСМTableAdapter.ClearBeforeFill = true;
             // 
-            // Form2
+            // reportViewer2
+            // 
+            this.reportViewer2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.reportViewer2.Location = new System.Drawing.Point(0, 0);
+            this.reportViewer2.Name = "reportViewer2";
+            this.reportViewer2.Size = new System.Drawing.Size(675, 298);
+            this.reportViewer2.TabIndex = 1;
+            // 
+            // OtchetGruzavogo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(675, 298);
+            this.Controls.Add(this.reportViewer2);
             this.Controls.Add(this.reportViewer1);
-            this.Name = "Form2";
+            this.Name = "OtchetGruzavogo";
             this.Text = "Отчет Грузового авто";
             this.Load += new System.EventHandler(this.Form2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.viewЛичныйСоставBindingSource)).EndInit();
@@ -216,5 +226,6 @@
         private System.Windows.Forms.BindingSource viewЗаправкаТСМBindingSource1;
         private System.Windows.Forms.BindingSource viewДвижениеТСМBindingSource1;
         private System.Windows.Forms.BindingSource viewРаботаВодителяИАвтоBindingSource1;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer2;
     }
 }
