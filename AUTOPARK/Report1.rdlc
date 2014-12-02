@@ -16,7 +16,7 @@
           <DataField>id_Данных</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="ID_Путевого листа">
+        <Field Name="ID_Путевого_листа">
           <DataField>ID_Путевого листа</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
@@ -24,67 +24,67 @@
           <DataField>Число</DataField>
           <rd:TypeName>System.DateTime</rd:TypeName>
         </Field>
-        <Field Name="Время выезда">
+        <Field Name="Время_выезда">
           <DataField>Время выезда</DataField>
           <rd:TypeName>System.TimeSpan</rd:TypeName>
         </Field>
-        <Field Name="Время возвращения">
+        <Field Name="Время_возвращения">
           <DataField>Время возвращения</DataField>
           <rd:TypeName>System.TimeSpan</rd:TypeName>
         </Field>
-        <Field Name="Время в наряде">
+        <Field Name="Время_в_наряде">
           <DataField>Время в наряде</DataField>
           <rd:TypeName>System.TimeSpan</rd:TypeName>
         </Field>
-        <Field Name="Показания спидометра при выезде">
+        <Field Name="Показания_спидометра_при_выезде">
           <DataField>Показания спидометра при выезде</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="Показания спидометра при возвращении">
+        <Field Name="Показания_спидометра_при_возвращении">
           <DataField>Показания спидометра при возвращении</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="Пробег км">
+        <Field Name="Пробег_км">
           <DataField>Пробег км</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="Остаток топлива при выезде">
+        <Field Name="Остаток_топлива_при_выезде">
           <DataField>Остаток топлива при выезде</DataField>
           <rd:TypeName>System.Double</rd:TypeName>
         </Field>
-        <Field Name="Остаток топлива при возвращении">
+        <Field Name="Остаток_топлива_при_возвращении">
           <DataField>Остаток топлива при возвращении</DataField>
           <rd:TypeName>System.Double</rd:TypeName>
         </Field>
-        <Field Name="Заправлено топлива л">
+        <Field Name="Заправлено_топлива_л">
           <DataField>Заправлено топлива л</DataField>
           <rd:TypeName>System.Double</rd:TypeName>
         </Field>
-        <Field Name="Дата и № чека АЗС">
+        <Field Name="Дата_и__чека_АЗС">
           <DataField>Дата и № чека АЗС</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="Расход топлива по норме">
+        <Field Name="Расход_топлива_по_норме">
           <DataField>Расход топлива по норме</DataField>
           <rd:TypeName>System.Double</rd:TypeName>
         </Field>
-        <Field Name="Расход топлива фактически">
+        <Field Name="Расход_топлива_фактически">
           <DataField>Расход топлива фактически</DataField>
           <rd:TypeName>System.Double</rd:TypeName>
         </Field>
-        <Field Name="Расход топлива экономия перерасход">
+        <Field Name="Расход_топлива_экономия_перерасход">
           <DataField>Расход топлива экономия перерасход</DataField>
           <rd:TypeName>System.Double</rd:TypeName>
         </Field>
-        <Field Name="Пробег км1">
+        <Field Name="Пробег_км1">
           <DataField>Пробег км</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="Маршрут перевозки откуда">
+        <Field Name="Маршрут_перевозки_откуда">
           <DataField>Маршрут перевозки откуда</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="Маршрут перевозки куда">
+        <Field Name="Маршрут_перевозки_куда">
           <DataField>Маршрут перевозки куда</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>

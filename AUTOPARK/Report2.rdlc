@@ -16,7 +16,7 @@
           <DataField>ID</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="Марка и модель">
+        <Field Name="Марка_и_модель">
           <DataField>Марка и модель</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
@@ -24,35 +24,35 @@
           <DataField>Гос.номер</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="Гаражный номер">
+        <Field Name="Гаражный_номер">
           <DataField>Гаражный номер</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="Тип двигателя">
+        <Field Name="Тип_двигателя">
           <DataField>Тип двигателя</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="Год выпуска">
+        <Field Name="Год_выпуска">
           <DataField>Год выпуска</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="Инвентарный номер">
+        <Field Name="Инвентарный_номер">
           <DataField>Инвентарный номер</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="Вид топлива">
+        <Field Name="Вид_топлива">
           <DataField>Вид топлива</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="дата окончания страховки">
+        <Field Name="дата_окончания_страховки">
           <DataField>дата окончания страховки</DataField>
           <rd:TypeName>System.DateTime</rd:TypeName>
         </Field>
-        <Field Name="Тип назначения авто">
+        <Field Name="Тип_назначения_авто">
           <DataField>Тип назначения авто</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="В чье распоряжение занаряжена автомашина">
+        <Field Name="В_чье_распоряжение_занаряжена_автомашина">
           <DataField>В чье распоряжение занаряжена автомашина</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
@@ -76,7 +76,7 @@
           <DataField>id</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="ID_Путевого листа">
+        <Field Name="ID_Путевого_листа">
           <DataField>ID_Путевого листа</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
@@ -84,35 +84,35 @@
           <DataField>Заказчик</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="Дата и время прибытия">
+        <Field Name="Дата_и_время_прибытия">
           <DataField>Дата и время прибытия</DataField>
           <rd:TypeName>System.DateTime</rd:TypeName>
         </Field>
-        <Field Name="Дата и время убытия">
+        <Field Name="Дата_и_время_убытия">
           <DataField>Дата и время убытия</DataField>
           <rd:TypeName>System.DateTime</rd:TypeName>
         </Field>
-        <Field Name="Пункт отправления">
+        <Field Name="Пункт_отправления">
           <DataField>Пункт отправления</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="Пункт назначения">
+        <Field Name="Пункт_назначения">
           <DataField>Пункт назначения</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="Расстояние км">
+        <Field Name="Расстояние_км">
           <DataField>Расстояние км</DataField>
           <rd:TypeName>System.Double</rd:TypeName>
         </Field>
-        <Field Name="Наименование груза">
+        <Field Name="Наименование_груза">
           <DataField>Наименование груза</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="Вес груза т">
+        <Field Name="Вес_груза_т">
           <DataField>Вес груза т</DataField>
           <rd:TypeName>System.Double</rd:TypeName>
         </Field>
-        <Field Name="Количество поездок с грузом час">
+        <Field Name="Количество_поездок_с_грузом_час">
           <DataField>Количество поездок с грузом час</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
@@ -148,7 +148,7 @@
           <DataField>Отчество</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="номер водительского удостоверения">
+        <Field Name="номер_водительского_удостоверения">
           <DataField>номер водительского удостоверения</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
@@ -156,7 +156,7 @@
           <DataField>классность</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="срок действия мед_ справки">
+        <Field Name="срок_действия_мед_справки">
           <DataField>срок действия мед. справки</DataField>
           <rd:TypeName>System.DateTime</rd:TypeName>
         </Field>
@@ -180,19 +180,19 @@
     </DataSet>
     <DataSet Name="OstatokTCM">
       <Fields>
-        <Field Name="ID_Движение ТМЦ">
+        <Field Name="ID_Движение_ТМЦ">
           <DataField>ID_Движение ТМЦ</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="ID_Путевого листа">
+        <Field Name="ID_Путевого_листа">
           <DataField>ID_Путевого листа</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="Остаток ТСМ при выезде">
+        <Field Name="Остаток_ТСМ_при_выезде">
           <DataField>Остаток ТСМ при выезде</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="Остаток ТСМ при возвращении">
+        <Field Name="Остаток_ТСМ_при_возвращении">
           <DataField>Остаток ТСМ при возвращении</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
@@ -212,7 +212,7 @@
     </DataSet>
     <DataSet Name="ZapravkaTCM">
       <Fields>
-        <Field Name="ID_Заправка ТСМ">
+        <Field Name="ID_Заправка_ТСМ">
           <DataField>ID_Заправка ТСМ</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
@@ -220,7 +220,7 @@
           <DataField>Дата</DataField>
           <rd:TypeName>System.DateTime</rd:TypeName>
         </Field>
-        <Field Name="Марка ТСМ">
+        <Field Name="Марка_ТСМ">
           <DataField>Марка ТСМ</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
@@ -228,7 +228,7 @@
           <DataField>Количество</DataField>
           <rd:TypeName>System.Double</rd:TypeName>
         </Field>
-        <Field Name="ID_Путевого листа">
+        <Field Name="ID_Путевого_листа">
           <DataField>ID_Путевого листа</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
@@ -248,11 +248,11 @@
     </DataSet>
     <DataSet Name="RabotaVoditelAuto">
       <Fields>
-        <Field Name="ID_работа водителя и авто">
+        <Field Name="ID_работа_водителя_и_авто">
           <DataField>ID_работа водителя и авто</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="ID_Путевого листа">
+        <Field Name="ID_Путевого_листа">
           <DataField>ID_Путевого листа</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
@@ -260,27 +260,27 @@
           <DataField>Операции</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="Показания спидометра">
+        <Field Name="Показания_спидометра">
           <DataField>Показания спидометра</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="Дата и время фактически">
+        <Field Name="Дата_и_время_фактически">
           <DataField>Дата и время фактически</DataField>
           <rd:TypeName>System.DateTime</rd:TypeName>
         </Field>
-        <Field Name="Нулевой пробег">
+        <Field Name="Нулевой_пробег">
           <DataField>Нулевой пробег</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="Время работы двигателя час">
+        <Field Name="Время_работы_двигателя_час">
           <DataField>Время работы двигателя час</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="Время работы спецоборудования">
+        <Field Name="Время_работы_спецоборудования">
           <DataField>Время работы спецоборудования</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="Дата и время по графику">
+        <Field Name="Дата_и_время_по_графику">
           <DataField>Дата и время по графику</DataField>
           <rd:TypeName>System.DateTime</rd:TypeName>
         </Field>
@@ -2542,7 +2542,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Марка и модель.Value</Value>
+                              <Value>=Fields!Марка_и_модель.Value</Value>
                               <Style>
                                 <FontFamily>Times New Roman</FontFamily>
                                 <FontSize>8pt</FontSize>
@@ -2564,6 +2564,7 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -2601,14 +2602,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Гаражныйномер">
+                    <Textbox Name="Гаражный_номер">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Гаражный номер.Value</Value>
+                              <Value>=Fields!Гаражный_номер.Value</Value>
                               <Style>
                                 <FontFamily>Times New Roman</FontFamily>
                                 <FontSize>8pt</FontSize>
@@ -2618,7 +2619,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Гаражныйномер</rd:DefaultName>
+                      <rd:DefaultName>Гаражный_номер</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -2732,14 +2733,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Датаивремяприбытия">
+                    <Textbox Name="Дата_и_время_убытия">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Дата и время прибытия.Value</Value>
+                              <Value>=Fields!Дата_и_время_убытия.Value</Value>
                               <Style>
                                 <FontFamily>Times New Roman</FontFamily>
                                 <FontSize>8pt</FontSize>
@@ -2749,7 +2750,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Датаивремяприбытия</rd:DefaultName>
+                      <rd:DefaultName>Дата_и_время_убытия</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -2765,14 +2766,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Датаивремяубытия">
+                    <Textbox Name="Дата_и_время_прибытия">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Дата и время убытия.Value</Value>
+                              <Value>=Fields!Дата_и_время_прибытия.Value</Value>
                               <Style>
                                 <FontFamily>Times New Roman</FontFamily>
                                 <FontSize>8pt</FontSize>
@@ -2782,7 +2783,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Датаивремяубытия</rd:DefaultName>
+                      <rd:DefaultName>Дата_и_время_прибытия</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -2798,14 +2799,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Пунктотправления">
+                    <Textbox Name="Пункт_отправления">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Пункт отправления.Value</Value>
+                              <Value>=Fields!Пункт_отправления.Value</Value>
                               <Style>
                                 <FontFamily>Times New Roman</FontFamily>
                                 <FontSize>8pt</FontSize>
@@ -2815,7 +2816,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Пунктотправления</rd:DefaultName>
+                      <rd:DefaultName>Пункт_отправления</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -2831,14 +2832,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Пунктназначения">
+                    <Textbox Name="Пункт_назначения">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Пункт назначения.Value</Value>
+                              <Value>=Fields!Пункт_назначения.Value</Value>
                               <Style>
                                 <FontFamily>Times New Roman</FontFamily>
                                 <FontSize>8pt</FontSize>
@@ -2848,7 +2849,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Пунктназначения</rd:DefaultName>
+                      <rd:DefaultName>Пункт_назначения</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -2864,14 +2865,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Расстояниекм">
+                    <Textbox Name="Расстояние_км">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Расстояние км.Value</Value>
+                              <Value>=Fields!Расстояние_км.Value</Value>
                               <Style>
                                 <FontFamily>Times New Roman</FontFamily>
                                 <FontSize>8pt</FontSize>
@@ -2881,7 +2882,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Расстояниекм</rd:DefaultName>
+                      <rd:DefaultName>Расстояние_км</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -2897,14 +2898,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Наименованиегруза">
+                    <Textbox Name="Наименование_груза">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Наименование груза.Value</Value>
+                              <Value>=Fields!Наименование_груза.Value</Value>
                               <Style>
                                 <FontFamily>Times New Roman</FontFamily>
                                 <FontSize>8pt</FontSize>
@@ -2914,7 +2915,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Наименованиегруза</rd:DefaultName>
+                      <rd:DefaultName>Наименование_груза</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -2930,14 +2931,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Весгрузат">
+                    <Textbox Name="Вес_груза_т">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Вес груза т.Value</Value>
+                              <Value>=Fields!Вес_груза_т.Value</Value>
                               <Style>
                                 <FontFamily>Times New Roman</FontFamily>
                                 <FontSize>8pt</FontSize>
@@ -2947,7 +2948,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Весгрузат</rd:DefaultName>
+                      <rd:DefaultName>Вес_груза_т</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -2963,14 +2964,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Количествопоездоксгрузомчас">
+                    <Textbox Name="Количество_поездок_с_грузом_час">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Количество поездок с грузом час.Value</Value>
+                              <Value>=Fields!Количество_поездок_с_грузом_час.Value</Value>
                               <Style>
                                 <FontFamily>Times New Roman</FontFamily>
                                 <FontSize>8pt</FontSize>
@@ -2980,7 +2981,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Количествопоездоксгрузомчас</rd:DefaultName>
+                      <rd:DefaultName>Количество_поездок_с_грузом_час</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -3226,14 +3227,14 @@
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="ОстатокТСМпривыезде">
+                    <Textbox Name="Остаток_ТСМ_при_выезде">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Остаток ТСМ при выезде.Value</Value>
+                              <Value>=Fields!Остаток_ТСМ_при_выезде.Value</Value>
                               <Style>
                                 <FontFamily>Times New Roman</FontFamily>
                                 <FontSize>8pt</FontSize>
@@ -3243,7 +3244,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>ОстатокТСМпривыезде</rd:DefaultName>
+                      <rd:DefaultName>Остаток_ТСМ_при_выезде</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -3259,14 +3260,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="ОстатокТСМпривозвращении">
+                    <Textbox Name="Остаток_ТСМ_при_возвращении">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Остаток ТСМ при возвращении.Value</Value>
+                              <Value>=Fields!Остаток_ТСМ_при_возвращении.Value</Value>
                               <Style>
                                 <FontFamily>Times New Roman</FontFamily>
                                 <FontSize>8pt</FontSize>
@@ -3276,7 +3277,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>ОстатокТСМпривозвращении</rd:DefaultName>
+                      <rd:DefaultName>Остаток_ТСМ_при_возвращении</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -3371,14 +3372,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="МаркаТСМ">
+                    <Textbox Name="Марка_ТСМ">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Марка ТСМ.Value</Value>
+                              <Value>=Fields!Марка_ТСМ.Value</Value>
                               <Style>
                                 <FontFamily>Times New Roman</FontFamily>
                                 <FontSize>8pt</FontSize>
@@ -3388,7 +3389,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>МаркаТСМ</rd:DefaultName>
+                      <rd:DefaultName>Марка_ТСМ</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -3493,14 +3494,14 @@
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Показанияспидометра">
+                    <Textbox Name="Показания_спидометра">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Показания спидометра.Value</Value>
+                              <Value>=Fields!Показания_спидометра.Value</Value>
                               <Style>
                                 <FontFamily>Times New Roman</FontFamily>
                                 <FontSize>8pt</FontSize>
@@ -3510,7 +3511,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Показанияспидометра</rd:DefaultName>
+                      <rd:DefaultName>Показания_спидометра</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -3526,14 +3527,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Датаивремяпографику">
+                    <Textbox Name="Дата_и_время_по_графику">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Дата и время по графику.Value</Value>
+                              <Value>=Fields!Дата_и_время_по_графику.Value</Value>
                               <Style>
                                 <FontFamily>Times New Roman</FontFamily>
                                 <FontSize>8pt</FontSize>
@@ -3543,7 +3544,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Датаивремяпографику</rd:DefaultName>
+                      <rd:DefaultName>Дата_и_время_по_графику</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -3559,14 +3560,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Датаивремяфактически">
+                    <Textbox Name="Дата_и_время_фактически">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Дата и время фактически.Value</Value>
+                              <Value>=Fields!Дата_и_время_фактически.Value</Value>
                               <Style>
                                 <FontFamily>Times New Roman</FontFamily>
                                 <FontSize>8pt</FontSize>
@@ -3576,7 +3577,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Датаивремяфактически</rd:DefaultName>
+                      <rd:DefaultName>Дата_и_время_фактически</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -3592,14 +3593,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Нулевойпробег">
+                    <Textbox Name="Нулевой_пробег">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Нулевой пробег.Value</Value>
+                              <Value>=Fields!Нулевой_пробег.Value</Value>
                               <Style>
                                 <FontFamily>Times New Roman</FontFamily>
                                 <FontSize>8pt</FontSize>
@@ -3609,7 +3610,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Нулевойпробег</rd:DefaultName>
+                      <rd:DefaultName>Нулевой_пробег</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -3625,14 +3626,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Времяработыдвигателячас">
+                    <Textbox Name="Время_работы_двигателя_час">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Время работы двигателя час.Value</Value>
+                              <Value>=Fields!Время_работы_двигателя_час.Value</Value>
                               <Style>
                                 <FontFamily>Times New Roman</FontFamily>
                                 <FontSize>8pt</FontSize>
@@ -3642,7 +3643,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Времяработыдвигателячас</rd:DefaultName>
+                      <rd:DefaultName>Время_работы_двигателя_час</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -3658,14 +3659,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Времяработыспецоборудования">
+                    <Textbox Name="Время_работы_спецоборудования">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Время работы спецоборудования.Value</Value>
+                              <Value>=Fields!Время_работы_спецоборудования.Value</Value>
                               <Style>
                                 <FontFamily>Times New Roman</FontFamily>
                                 <FontSize>8pt</FontSize>
@@ -3675,7 +3676,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Времяработыспецоборудования</rd:DefaultName>
+                      <rd:DefaultName>Время_работы_спецоборудования</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -3757,7 +3758,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Показания спидометра.Value</Value>
+                              <Value>=Fields!Показания_спидометра.Value</Value>
                               <Style>
                                 <FontFamily>Times New Roman</FontFamily>
                                 <FontSize>8pt</FontSize>
@@ -3790,7 +3791,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Дата и время по графику.Value</Value>
+                              <Value>=Fields!Дата_и_время_по_графику.Value</Value>
                               <Style>
                                 <FontFamily>Times New Roman</FontFamily>
                                 <FontSize>8pt</FontSize>
@@ -3823,7 +3824,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Дата и время фактически.Value</Value>
+                              <Value>=Fields!Дата_и_время_фактически.Value</Value>
                               <Style>
                                 <FontFamily>Times New Roman</FontFamily>
                                 <FontSize>8pt</FontSize>
@@ -3856,7 +3857,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Нулевой пробег.Value</Value>
+                              <Value>=Fields!Нулевой_пробег.Value</Value>
                               <Style>
                                 <FontFamily>Times New Roman</FontFamily>
                                 <FontSize>8pt</FontSize>
@@ -3889,7 +3890,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Время работы двигателя час.Value</Value>
+                              <Value>=Fields!Время_работы_двигателя_час.Value</Value>
                               <Style>
                                 <FontFamily>Times New Roman</FontFamily>
                                 <FontSize>8pt</FontSize>
@@ -3922,7 +3923,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Время работы спецоборудования.Value</Value>
+                              <Value>=Fields!Время_работы_спецоборудования.Value</Value>
                               <Style>
                                 <FontFamily>Times New Roman</FontFamily>
                                 <FontSize>8pt</FontSize>
@@ -3970,7 +3971,7 @@
         <DataSetName>RabotaVoditelAuto</DataSetName>
         <Top>6.71335cm</Top>
         <Left>13.32174cm</Left>
-        <Height>0.89986cm</Height>
+        <Height>0.89985cm</Height>
         <Width>14.71087cm</Width>
         <ZIndex>45</ZIndex>
         <Style>

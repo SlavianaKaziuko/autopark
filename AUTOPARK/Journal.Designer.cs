@@ -152,7 +152,6 @@
             this.cbZnak.Name = "cbZnak";
             this.cbZnak.Size = new System.Drawing.Size(180, 21);
             this.cbZnak.TabIndex = 9;
-            this.cbZnak.SelectedIndexChanged += new System.EventHandler(this.cbZnak_SelectedIndexChanged);
             // 
             // txtAuto
             // 
@@ -297,7 +296,6 @@
             this.Controls.Add(this.lblMarka);
             this.Name = "Journal";
             this.Text = "Журнал учета выдачи путевых листов";
-            this.Load += new System.EventHandler(this.Journal_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvJournalDannie)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
