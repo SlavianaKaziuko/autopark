@@ -15,7 +15,7 @@ namespace AUTOPARK
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Menu());//Menu1
+            Application.Run(new Menu());//Menu
         }
     }
 }

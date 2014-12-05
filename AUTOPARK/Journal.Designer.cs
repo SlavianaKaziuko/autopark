@@ -52,14 +52,19 @@
             this.btnReport = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiToMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiExitApplication = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             ((System.ComponentModel.ISupportInitialize)(this.dgvJournalDannie)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblMarka
             // 
             this.lblMarka.AutoSize = true;
             this.lblMarka.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblMarka.Location = new System.Drawing.Point(18, 24);
+            this.lblMarka.Location = new System.Drawing.Point(12, 81);
             this.lblMarka.Name = "lblMarka";
             this.lblMarka.Size = new System.Drawing.Size(159, 20);
             this.lblMarka.TabIndex = 0;
@@ -69,7 +74,7 @@
             // 
             this.lblGosNomer.AutoSize = true;
             this.lblGosNomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblGosNomer.Location = new System.Drawing.Point(18, 56);
+            this.lblGosNomer.Location = new System.Drawing.Point(12, 113);
             this.lblGosNomer.Name = "lblGosNomer";
             this.lblGosNomer.Size = new System.Drawing.Size(54, 20);
             this.lblGosNomer.TabIndex = 1;
@@ -79,7 +84,7 @@
             // 
             this.lblPricep.AutoSize = true;
             this.lblPricep.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblPricep.Location = new System.Drawing.Point(18, 88);
+            this.lblPricep.Location = new System.Drawing.Point(12, 145);
             this.lblPricep.Name = "lblPricep";
             this.lblPricep.Size = new System.Drawing.Size(66, 20);
             this.lblPricep.TabIndex = 2;
@@ -89,7 +94,7 @@
             // 
             this.lblStrahovka.AutoSize = true;
             this.lblStrahovka.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblStrahovka.Location = new System.Drawing.Point(18, 119);
+            this.lblStrahovka.Location = new System.Drawing.Point(12, 176);
             this.lblStrahovka.Name = "lblStrahovka";
             this.lblStrahovka.Size = new System.Drawing.Size(213, 20);
             this.lblStrahovka.TabIndex = 3;
@@ -99,7 +104,7 @@
             // 
             this.lblMedKomissia.AutoSize = true;
             this.lblMedKomissia.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblMedKomissia.Location = new System.Drawing.Point(516, 124);
+            this.lblMedKomissia.Location = new System.Drawing.Point(510, 181);
             this.lblMedKomissia.Name = "lblMedKomissia";
             this.lblMedKomissia.Size = new System.Drawing.Size(302, 20);
             this.lblMedKomissia.TabIndex = 4;
@@ -109,7 +114,7 @@
             // 
             this.lblShoferAuto.AutoSize = true;
             this.lblShoferAuto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblShoferAuto.Location = new System.Drawing.Point(516, 24);
+            this.lblShoferAuto.Location = new System.Drawing.Point(510, 81);
             this.lblShoferAuto.Name = "lblShoferAuto";
             this.lblShoferAuto.Size = new System.Drawing.Size(161, 20);
             this.lblShoferAuto.TabIndex = 5;
@@ -119,7 +124,7 @@
             // 
             this.lblGaragniiNomer.AutoSize = true;
             this.lblGaragniiNomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblGaragniiNomer.Location = new System.Drawing.Point(18, 184);
+            this.lblGaragniiNomer.Location = new System.Drawing.Point(12, 241);
             this.lblGaragniiNomer.Name = "lblGaragniiNomer";
             this.lblGaragniiNomer.Size = new System.Drawing.Size(136, 20);
             this.lblGaragniiNomer.TabIndex = 6;
@@ -129,7 +134,7 @@
             // 
             this.lblKlassnost.AutoSize = true;
             this.lblKlassnost.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblKlassnost.Location = new System.Drawing.Point(516, 59);
+            this.lblKlassnost.Location = new System.Drawing.Point(510, 116);
             this.lblKlassnost.Name = "lblKlassnost";
             this.lblKlassnost.Size = new System.Drawing.Size(98, 20);
             this.lblKlassnost.TabIndex = 7;
@@ -139,7 +144,7 @@
             // 
             this.lblMarkaTCM.AutoSize = true;
             this.lblMarkaTCM.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblMarkaTCM.Location = new System.Drawing.Point(18, 151);
+            this.lblMarkaTCM.Location = new System.Drawing.Point(12, 208);
             this.lblMarkaTCM.Name = "lblMarkaTCM";
             this.lblMarkaTCM.Size = new System.Drawing.Size(94, 20);
             this.lblMarkaTCM.TabIndex = 8;
@@ -148,28 +153,28 @@
             // cbZnak
             // 
             this.cbZnak.FormattingEnabled = true;
-            this.cbZnak.Location = new System.Drawing.Point(259, 57);
+            this.cbZnak.Location = new System.Drawing.Point(253, 114);
             this.cbZnak.Name = "cbZnak";
             this.cbZnak.Size = new System.Drawing.Size(180, 21);
             this.cbZnak.TabIndex = 9;
             // 
             // txtAuto
             // 
-            this.txtAuto.Location = new System.Drawing.Point(259, 26);
+            this.txtAuto.Location = new System.Drawing.Point(253, 83);
             this.txtAuto.Name = "txtAuto";
             this.txtAuto.Size = new System.Drawing.Size(180, 20);
             this.txtAuto.TabIndex = 10;
             // 
             // txtPricep
             // 
-            this.txtPricep.Location = new System.Drawing.Point(259, 90);
+            this.txtPricep.Location = new System.Drawing.Point(253, 147);
             this.txtPricep.Name = "txtPricep";
             this.txtPricep.Size = new System.Drawing.Size(180, 20);
             this.txtPricep.TabIndex = 11;
             // 
             // txtStrahovka
             // 
-            this.txtStrahovka.Location = new System.Drawing.Point(330, 121);
+            this.txtStrahovka.Location = new System.Drawing.Point(324, 178);
             this.txtStrahovka.Name = "txtStrahovka";
             this.txtStrahovka.Size = new System.Drawing.Size(109, 20);
             this.txtStrahovka.TabIndex = 12;
@@ -177,21 +182,21 @@
             // cbMarkaTopliva
             // 
             this.cbMarkaTopliva.FormattingEnabled = true;
-            this.cbMarkaTopliva.Location = new System.Drawing.Point(330, 153);
+            this.cbMarkaTopliva.Location = new System.Drawing.Point(324, 210);
             this.cbMarkaTopliva.Name = "cbMarkaTopliva";
             this.cbMarkaTopliva.Size = new System.Drawing.Size(109, 21);
             this.cbMarkaTopliva.TabIndex = 14;
             // 
             // txtGarag
             // 
-            this.txtGarag.Location = new System.Drawing.Point(330, 184);
+            this.txtGarag.Location = new System.Drawing.Point(324, 241);
             this.txtGarag.Name = "txtGarag";
             this.txtGarag.Size = new System.Drawing.Size(109, 20);
             this.txtGarag.TabIndex = 16;
             // 
             // txtKlassnost
             // 
-            this.txtKlassnost.Location = new System.Drawing.Point(916, 59);
+            this.txtKlassnost.Location = new System.Drawing.Point(910, 116);
             this.txtKlassnost.Name = "txtKlassnost";
             this.txtKlassnost.Size = new System.Drawing.Size(105, 20);
             this.txtKlassnost.TabIndex = 17;
@@ -208,7 +213,7 @@
             // 
             this.lblVodUdostoverenir.AutoSize = true;
             this.lblVodUdostoverenir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblVodUdostoverenir.Location = new System.Drawing.Point(516, 90);
+            this.lblVodUdostoverenir.Location = new System.Drawing.Point(510, 147);
             this.lblVodUdostoverenir.Name = "lblVodUdostoverenir";
             this.lblVodUdostoverenir.Size = new System.Drawing.Size(240, 20);
             this.lblVodUdostoverenir.TabIndex = 20;
@@ -217,21 +222,21 @@
             // cbShofer
             // 
             this.cbShofer.FormattingEnabled = true;
-            this.cbShofer.Location = new System.Drawing.Point(809, 23);
+            this.cbShofer.Location = new System.Drawing.Point(803, 80);
             this.cbShofer.Name = "cbShofer";
             this.cbShofer.Size = new System.Drawing.Size(212, 21);
             this.cbShofer.TabIndex = 21;
             // 
             // txtVodUdoatoverenie
             // 
-            this.txtVodUdoatoverenie.Location = new System.Drawing.Point(809, 88);
+            this.txtVodUdoatoverenie.Location = new System.Drawing.Point(803, 145);
             this.txtVodUdoatoverenie.Name = "txtVodUdoatoverenie";
             this.txtVodUdoatoverenie.Size = new System.Drawing.Size(212, 20);
             this.txtVodUdoatoverenie.TabIndex = 22;
             // 
             // txtMedSpravka
             // 
-            this.txtMedSpravka.Location = new System.Drawing.Point(916, 121);
+            this.txtMedSpravka.Location = new System.Drawing.Point(910, 178);
             this.txtMedSpravka.Name = "txtMedSpravka";
             this.txtMedSpravka.Size = new System.Drawing.Size(105, 20);
             this.txtMedSpravka.TabIndex = 23;
@@ -265,6 +270,39 @@
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiToMenu,
+            this.tsmiExitApplication});
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(78, 20);
+            this.toolStripMenuItem1.Text = "Навигация";
+            // 
+            // tsmiToMenu
+            // 
+            this.tsmiToMenu.Name = "tsmiToMenu";
+            this.tsmiToMenu.Size = new System.Drawing.Size(197, 22);
+            this.tsmiToMenu.Text = "Вернуться к Меню";
+            this.tsmiToMenu.Click += new System.EventHandler(this.tsmiToMenu_Click_1);
+            // 
+            // tsmiExitApplication
+            // 
+            this.tsmiExitApplication.Name = "tsmiExitApplication";
+            this.tsmiExitApplication.Size = new System.Drawing.Size(197, 22);
+            this.tsmiExitApplication.Text = "Выйти из приложения";
+            this.tsmiExitApplication.Click += new System.EventHandler(this.tsmiExitApplication_Click_1);
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1046, 24);
+            this.menuStrip1.TabIndex = 27;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
             // Journal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -294,9 +332,13 @@
             this.Controls.Add(this.lblPricep);
             this.Controls.Add(this.lblGosNomer);
             this.Controls.Add(this.lblMarka);
+            this.Controls.Add(this.menuStrip1);
             this.Name = "Journal";
             this.Text = "Журнал учета выдачи путевых листов";
+            this.Load += new System.EventHandler(this.Journal_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvJournalDannie)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -328,5 +370,9 @@
         private System.Windows.Forms.Button btnReport;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem tsmiToMenu;
+        private System.Windows.Forms.ToolStripMenuItem tsmiExitApplication;
+        private System.Windows.Forms.MenuStrip menuStrip1;
     }
 }

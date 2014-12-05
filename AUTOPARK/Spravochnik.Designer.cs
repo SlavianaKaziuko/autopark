@@ -28,18 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Spravochnik));
             this.dgvSpravochnik = new System.Windows.Forms.DataGridView();
             this.btnSaveChanges = new System.Windows.Forms.Button();
-            this.exitPic = new System.Windows.Forms.PictureBox();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.навигацияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiToMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiExitApplication = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSpravochnik)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.exitPic)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvSpravochnik
             // 
             this.dgvSpravochnik.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSpravochnik.Location = new System.Drawing.Point(12, 12);
+            this.dgvSpravochnik.Location = new System.Drawing.Point(12, 86);
             this.dgvSpravochnik.Name = "dgvSpravochnik";
             this.dgvSpravochnik.Size = new System.Drawing.Size(1144, 217);
             this.dgvSpravochnik.TabIndex = 0;
@@ -47,7 +49,7 @@
             // 
             // btnSaveChanges
             // 
-            this.btnSaveChanges.Location = new System.Drawing.Point(1018, 235);
+            this.btnSaveChanges.Location = new System.Drawing.Point(1018, 309);
             this.btnSaveChanges.Name = "btnSaveChanges";
             this.btnSaveChanges.Size = new System.Drawing.Size(138, 23);
             this.btnSaveChanges.TabIndex = 1;
@@ -55,31 +57,57 @@
             this.btnSaveChanges.UseVisualStyleBackColor = true;
             this.btnSaveChanges.Click += new System.EventHandler(this.btnSaveChanges_Click);
             // 
-            // exitPic
+            // menuStrip1
             // 
-            this.exitPic.Image = ((System.Drawing.Image)(resources.GetObject("exitPic.Image")));
-            this.exitPic.Location = new System.Drawing.Point(1282, 12);
-            this.exitPic.Name = "exitPic";
-            this.exitPic.Size = new System.Drawing.Size(32, 32);
-            this.exitPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.exitPic.TabIndex = 58;
-            this.exitPic.TabStop = false;
-            this.exitPic.Click += new System.EventHandler(this.exitPic_Click);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.навигацияToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1287, 24);
+            this.menuStrip1.TabIndex = 2;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // навигацияToolStripMenuItem
+            // 
+            this.навигацияToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiToMenu,
+            this.tsmiExitApplication});
+            this.навигацияToolStripMenuItem.Name = "навигацияToolStripMenuItem";
+            this.навигацияToolStripMenuItem.Size = new System.Drawing.Size(78, 20);
+            this.навигацияToolStripMenuItem.Text = "Навигация";
+            // 
+            // tsmiToMenu
+            // 
+            this.tsmiToMenu.Name = "tsmiToMenu";
+            this.tsmiToMenu.Size = new System.Drawing.Size(197, 22);
+            this.tsmiToMenu.Text = "Вернуться к меню";
+            this.tsmiToMenu.Click += new System.EventHandler(this.tsmiToMenu_Click);
+            // 
+            // tsmiExitApplication
+            // 
+            this.tsmiExitApplication.Name = "tsmiExitApplication";
+            this.tsmiExitApplication.Size = new System.Drawing.Size(197, 22);
+            this.tsmiExitApplication.Text = "Выйти из приложения";
+            this.tsmiExitApplication.Click += new System.EventHandler(this.tsmiExitApplication_Click);
             // 
             // Spravochnik
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1326, 377);
-            this.Controls.Add(this.exitPic);
+            this.ClientSize = new System.Drawing.Size(1287, 377);
             this.Controls.Add(this.btnSaveChanges);
             this.Controls.Add(this.dgvSpravochnik);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Spravochnik";
             this.Text = "Справочник";
+            this.Load += new System.EventHandler(this.Spravochnik_Load);
             this.Resize += new System.EventHandler(this.Spravochnik_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSpravochnik)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.exitPic)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -87,6 +115,9 @@
 
         private System.Windows.Forms.DataGridView dgvSpravochnik;
         private System.Windows.Forms.Button btnSaveChanges;
-        private System.Windows.Forms.PictureBox exitPic;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem навигацияToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tsmiToMenu;
+        private System.Windows.Forms.ToolStripMenuItem tsmiExitApplication;
     }
 }

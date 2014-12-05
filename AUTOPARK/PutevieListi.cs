@@ -33,6 +33,15 @@ namespace AUTOPARK
                     _binding.DataSource = table.GetData();
                     break;
                 }
+                case "Журнал учета выдачи путевых листов":
+                {
+                    var table = new AutoparkDBTableAdapters.BannerJornalGruzovieTableAdapter();   //   Создание Журнала!!!
+                    _binding.DataSource = table.GetData();
+                    break;
+                }
+
+
+
             }
 
             dgvPutevii.DataSource = _binding;
@@ -69,6 +78,8 @@ namespace AUTOPARK
 
                 case "Путевые листы грузовых автомобилей":
                 {
+     
+                    
                     var form = new PutevoiListGruzavogo(); ////создание экземпляра формы PutevoiListGruzavogo
                     this.Hide(); //// скрытие текущей формы
                     form.ShowDialog(); //// открытие формы Spravochnik
@@ -77,6 +88,24 @@ namespace AUTOPARK
                     this.Show(); //// отображение главной формы после закрытия PutevoiListGruzavogo
                     break;
                 }
+
+                case "Журнал учета выдачи путевых листов":
+                {
+
+
+                    var form = new Journal (); ////создание экземпляра формы Журнала  !!!!!!!!!!!!!!
+                    this.Hide(); //// скрытие текущей формы
+                    form.ShowDialog(); //// открытие формы Spravochnik
+                    var table = new AutoparkDBTableAdapters.BannerJornalGruzovieTableAdapter();
+                    _binding.DataSource = table.GetData();
+                    this.Show(); //// отображение главной формы после закрытия PutevoiListGruzavogo
+                    break;
+                }
+
+
+
+
+
             }
             dgvPutevii.DataSource = _binding;
         }

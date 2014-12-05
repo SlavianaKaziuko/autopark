@@ -42,9 +42,11 @@ namespace AUTOPARK
             {
                 throw new Exception("Пожалуйста, заполните справочник \"Личный состав\"");
             }
-            cbTabelniiNomer.DataSource = _bindingVoditel;
-            cbTabelniiNomer.DisplayMember = "табельный_номер";
-            cbTabelniiNomer.ValueMember = "табельный_номер";
+            cbImia.DataSource = _bindingVoditel;
+            cbImia.DisplayMember = "ФИО";
+            cbImia.ValueMember = "табельный_номер";
+
+            
             var tablePutevoi = new AutoparkDBTableAdapters.PutevieGruzovieTableAdapter();
             //var newLegkNumber = tablePutevoi.GetNewLegkNumber();
             //if (newLegkNumber != null)
@@ -74,9 +76,9 @@ namespace AUTOPARK
             {
                 throw new Exception("Пожалуйста, заполните справочник \"Личный состав\"");
             }
-            cbTabelniiNomer.DataSource = _bindingVoditel;
-            cbTabelniiNomer.DisplayMember = "табельный_номер";
-            cbTabelniiNomer.ValueMember = "табельный_номер";
+            cbImia.DataSource = _bindingVoditel;
+            cbImia.DisplayMember = "ФИО";
+            cbImia.ValueMember = "табельный_номер";
 
             var tableDannie = new AutoparkDBTableAdapters.PutevieGruzovieTableAdapter();
             _bindingDannie.DataSource = tableDannie.GetData();
@@ -102,7 +104,7 @@ namespace AUTOPARK
             var tableZadanie = new AutoparkDBTableAdapters.ZadanieVoditelTableAdapter();
 
             cbZnak.SelectedItem = _bindingAuto[_bindingAuto.Find("ID", _idauto)];
-            cbTabelniiNomer.SelectedItem = _bindingVoditel.Find("табельный_номер", _idvod);
+            cbImia.SelectedItem = _bindingVoditel.Find("табельный_номер", _idvod);
             dtpHapka.Value = _date;
 
             var tableDanniel = new AutoparkDBTableAdapters.PutevieGruzovieTableAdapter();
@@ -128,17 +130,19 @@ namespace AUTOPARK
             txtMarka.Text = ((DataRowView)_bindingAuto[cbZnak.SelectedIndex]).Row.ItemArray[4].ToString();
         }
 
-        private void cbTabelniiNomer_SelectedValueChanger(object sender, EventArgs e)           //  Комбобок cbTabelniiNomer  (Автомобиль)
+        private void cbImia_SelectedValueChanger(object sender, EventArgs e)           //  Комбобок cbImia  (Автомобиль)
         {
             ////Вытягивание из таблицы binding строку,затем преобразовываем в тип данных DataRowView,
             ////вытягивание из массива данных(Row) и затем вытягивание ячейки 1 (ItemArray[1])
-            var zapis = ((DataRowView) _bindingVoditel[cbTabelniiNomer.SelectedIndex]).Row.ItemArray;
+          /*  var zapis = ((DataRowView)_bindingVoditel[cbImia.SelectedIndex]).Row.ItemArray;
             // Выбирает инициалы.т.е первую букву в фамилии и имени.
-            txtImia.Text = zapis[1] + @" " +
+           txt.Text = zapis[1] + @" " +
                            (zapis[2].ToString().Length > 1 ? zapis[2].ToString().Substring(0, 1) + @". " : "") +   
-                           (zapis[3].ToString().Length > 1 ? zapis[3].ToString().Substring(0, 1) + @". " : "");
+                           (zapis[3].ToString().Length > 1 ? zapis[3].ToString().Substring(0, 1) + @". " : ""); */
+            txtTabelniiNomer.Text = ((DataRowView)_bindingVoditel[cbImia.SelectedIndex]).Row.ItemArray[0].ToString();
+            txtKlass.Text = ((DataRowView)_bindingVoditel[cbImia.SelectedIndex]).Row.ItemArray[5].ToString();
         }
-
+    
        
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -174,8 +178,21 @@ namespace AUTOPARK
 
         private void tsmiExitApplication_Click(object sender, EventArgs e)
         {
-            Environment.Exit(0); //Полный выход из программы если нажимаем на дверку в Путевых листах грузового авто
+            Environment.Exit(0); //Полный выход из программы если нажимаем Навигация далее Выйти из приложения в Путевых листах грузового авто
         }
+
+        private void PutevoiListGruzavogo_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        
+
+       
+
+        
+
+       
 
        
     }

@@ -41,8 +41,6 @@
             this.lblVoditel = new System.Windows.Forms.Label();
             this.lblFamilia = new System.Windows.Forms.Label();
             this.lblNomer = new System.Windows.Forms.Label();
-            this.txtImia = new System.Windows.Forms.TextBox();
-            this.cbTabelniiNomer = new System.Windows.Forms.ComboBox();
             this.lblRabotaVoditelia = new System.Windows.Forms.Label();
             this.lblOperacii = new System.Windows.Forms.Label();
             this.lblPokazaniaSpidometra = new System.Windows.Forms.Label();
@@ -78,7 +76,15 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.txtKlass = new System.Windows.Forms.TextBox();
+            this.vblKlass = new System.Windows.Forms.Label();
+            this.cbImia = new System.Windows.Forms.ComboBox();
+            this.txtTabelniiNomer = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.cbToplivoType2 = new System.Windows.Forms.ComboBox();
+            this.txtPriVozvracheniiTCM2 = new System.Windows.Forms.TextBox();
+            this.txtPriViezdiTCM2 = new System.Windows.Forms.TextBox();
+            this.cbToplivoType = new System.Windows.Forms.ComboBox();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnReport = new System.Windows.Forms.Button();
@@ -86,10 +92,6 @@
             this.навигацияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiToMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiExitApplication = new System.Windows.Forms.ToolStripMenuItem();
-            this.cbToplivoType = new System.Windows.Forms.ComboBox();
-            this.cbToplivoType2 = new System.Windows.Forms.ComboBox();
-            this.txtPriVozvracheniiTCM2 = new System.Windows.Forms.TextBox();
-            this.txtPriViezdiTCM2 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvZapravkaTCM)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvZadanieVoditelu)).BeginInit();
             this.panel1.SuspendLayout();
@@ -213,25 +215,9 @@
             this.lblNomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lblNomer.Location = new System.Drawing.Point(206, 50);
             this.lblNomer.Name = "lblNomer";
-            this.lblNomer.Size = new System.Drawing.Size(147, 15);
+            this.lblNomer.Size = new System.Drawing.Size(112, 15);
             this.lblNomer.TabIndex = 12;
-            this.lblNomer.Text = "Табельный номер,класс";
-            // 
-            // txtImia
-            // 
-            this.txtImia.Location = new System.Drawing.Point(20, 70);
-            this.txtImia.Name = "txtImia";
-            this.txtImia.Size = new System.Drawing.Size(178, 21);
-            this.txtImia.TabIndex = 13;
-            // 
-            // cbTabelniiNomer
-            // 
-            this.cbTabelniiNomer.FormattingEnabled = true;
-            this.cbTabelniiNomer.Location = new System.Drawing.Point(204, 68);
-            this.cbTabelniiNomer.Name = "cbTabelniiNomer";
-            this.cbTabelniiNomer.Size = new System.Drawing.Size(146, 23);
-            this.cbTabelniiNomer.TabIndex = 14;
-            this.cbTabelniiNomer.SelectedIndexChanged += new System.EventHandler(this.cbTabelniiNomer_SelectedValueChanger);
+            this.lblNomer.Text = "Табельный номер\r\n";
             // 
             // lblRabotaVoditelia
             // 
@@ -561,8 +547,10 @@
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.cbTabelniiNomer);
-            this.panel3.Controls.Add(this.txtImia);
+            this.panel3.Controls.Add(this.txtKlass);
+            this.panel3.Controls.Add(this.vblKlass);
+            this.panel3.Controls.Add(this.cbImia);
+            this.panel3.Controls.Add(this.txtTabelniiNomer);
             this.panel3.Controls.Add(this.lblNomer);
             this.panel3.Controls.Add(this.lblFamilia);
             this.panel3.Controls.Add(this.lblVoditel);
@@ -570,6 +558,38 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(457, 114);
             this.panel3.TabIndex = 52;
+            // 
+            // txtKlass
+            // 
+            this.txtKlass.Location = new System.Drawing.Point(349, 72);
+            this.txtKlass.Name = "txtKlass";
+            this.txtKlass.Size = new System.Drawing.Size(50, 21);
+            this.txtKlass.TabIndex = 17;
+            // 
+            // vblKlass
+            // 
+            this.vblKlass.AutoSize = true;
+            this.vblKlass.Location = new System.Drawing.Point(346, 50);
+            this.vblKlass.Name = "vblKlass";
+            this.vblKlass.Size = new System.Drawing.Size(41, 15);
+            this.vblKlass.TabIndex = 16;
+            this.vblKlass.Text = "Класс";
+            // 
+            // cbImia
+            // 
+            this.cbImia.FormattingEnabled = true;
+            this.cbImia.Location = new System.Drawing.Point(25, 70);
+            this.cbImia.Name = "cbImia";
+            this.cbImia.Size = new System.Drawing.Size(138, 23);
+            this.cbImia.TabIndex = 15;
+            this.cbImia.SelectedIndexChanged += new System.EventHandler(this.cbImia_SelectedValueChanger);
+            // 
+            // txtTabelniiNomer
+            // 
+            this.txtTabelniiNomer.Location = new System.Drawing.Point(209, 70);
+            this.txtTabelniiNomer.Name = "txtTabelniiNomer";
+            this.txtTabelniiNomer.Size = new System.Drawing.Size(109, 21);
+            this.txtTabelniiNomer.TabIndex = 14;
             // 
             // panel4
             // 
@@ -590,6 +610,47 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(727, 149);
             this.panel4.TabIndex = 53;
+            // 
+            // cbToplivoType2
+            // 
+            this.cbToplivoType2.FormattingEnabled = true;
+            this.cbToplivoType2.Items.AddRange(new object[] {
+            "д/т",
+            "суг",
+            "бен",
+            "Н 80"});
+            this.cbToplivoType2.Location = new System.Drawing.Point(416, 107);
+            this.cbToplivoType2.Name = "cbToplivoType2";
+            this.cbToplivoType2.Size = new System.Drawing.Size(49, 23);
+            this.cbToplivoType2.TabIndex = 51;
+            // 
+            // txtPriVozvracheniiTCM2
+            // 
+            this.txtPriVozvracheniiTCM2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.txtPriVozvracheniiTCM2.Location = new System.Drawing.Point(573, 109);
+            this.txtPriVozvracheniiTCM2.Name = "txtPriVozvracheniiTCM2";
+            this.txtPriVozvracheniiTCM2.Size = new System.Drawing.Size(94, 20);
+            this.txtPriVozvracheniiTCM2.TabIndex = 50;
+            // 
+            // txtPriViezdiTCM2
+            // 
+            this.txtPriViezdiTCM2.Location = new System.Drawing.Point(471, 109);
+            this.txtPriViezdiTCM2.Name = "txtPriViezdiTCM2";
+            this.txtPriViezdiTCM2.Size = new System.Drawing.Size(83, 21);
+            this.txtPriViezdiTCM2.TabIndex = 49;
+            // 
+            // cbToplivoType
+            // 
+            this.cbToplivoType.FormattingEnabled = true;
+            this.cbToplivoType.Items.AddRange(new object[] {
+            "д/т",
+            "суг",
+            "бен",
+            "Н 80"});
+            this.cbToplivoType.Location = new System.Drawing.Point(416, 80);
+            this.cbToplivoType.Name = "cbToplivoType";
+            this.cbToplivoType.Size = new System.Drawing.Size(49, 23);
+            this.cbToplivoType.TabIndex = 48;
             // 
             // btnSave
             // 
@@ -639,6 +700,7 @@
             this.навигацияToolStripMenuItem.Name = "навигацияToolStripMenuItem";
             this.навигацияToolStripMenuItem.Size = new System.Drawing.Size(78, 20);
             this.навигацияToolStripMenuItem.Text = "Навигация";
+           
             // 
             // tsmiToMenu
             // 
@@ -653,45 +715,6 @@
             this.tsmiExitApplication.Size = new System.Drawing.Size(197, 22);
             this.tsmiExitApplication.Text = "Выйти из приложения";
             this.tsmiExitApplication.Click += new System.EventHandler(this.tsmiExitApplication_Click);
-            // 
-            // cbToplivoType
-            // 
-            this.cbToplivoType.FormattingEnabled = true;
-            this.cbToplivoType.Items.AddRange(new object[] {
-            "д/т",
-            "суг",
-            "бен"});
-            this.cbToplivoType.Location = new System.Drawing.Point(416, 80);
-            this.cbToplivoType.Name = "cbToplivoType";
-            this.cbToplivoType.Size = new System.Drawing.Size(49, 23);
-            this.cbToplivoType.TabIndex = 48;
-            // 
-            // cbToplivoType2
-            // 
-            this.cbToplivoType2.FormattingEnabled = true;
-            this.cbToplivoType2.Items.AddRange(new object[] {
-            "д/т",
-            "суг",
-            "бен"});
-            this.cbToplivoType2.Location = new System.Drawing.Point(416, 107);
-            this.cbToplivoType2.Name = "cbToplivoType2";
-            this.cbToplivoType2.Size = new System.Drawing.Size(49, 23);
-            this.cbToplivoType2.TabIndex = 51;
-            // 
-            // txtPriVozvracheniiTCM2
-            // 
-            this.txtPriVozvracheniiTCM2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.txtPriVozvracheniiTCM2.Location = new System.Drawing.Point(573, 109);
-            this.txtPriVozvracheniiTCM2.Name = "txtPriVozvracheniiTCM2";
-            this.txtPriVozvracheniiTCM2.Size = new System.Drawing.Size(94, 20);
-            this.txtPriVozvracheniiTCM2.TabIndex = 50;
-            // 
-            // txtPriViezdiTCM2
-            // 
-            this.txtPriViezdiTCM2.Location = new System.Drawing.Point(471, 109);
-            this.txtPriViezdiTCM2.Name = "txtPriViezdiTCM2";
-            this.txtPriViezdiTCM2.Size = new System.Drawing.Size(83, 21);
-            this.txtPriViezdiTCM2.TabIndex = 49;
             // 
             // PutevoiListGruzavogo
             // 
@@ -715,6 +738,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "PutevoiListGruzavogo";
             this.Text = "Путевой лист грузового автомобиля";
+            this.Load += new System.EventHandler(this.PutevoiListGruzavogo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvZapravkaTCM)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvZadanieVoditelu)).EndInit();
             this.panel1.ResumeLayout(false);
@@ -747,8 +771,6 @@
         private System.Windows.Forms.Label lblVoditel;
         private System.Windows.Forms.Label lblFamilia;
         private System.Windows.Forms.Label lblNomer;
-        private System.Windows.Forms.TextBox txtImia;
-        private System.Windows.Forms.ComboBox cbTabelniiNomer;
         private System.Windows.Forms.Label lblRabotaVoditelia;
         private System.Windows.Forms.Label lblOperacii;
         private System.Windows.Forms.Label lblPokazaniaSpidometra;
@@ -796,5 +818,9 @@
         private System.Windows.Forms.TextBox txtPriVozvracheniiTCM2;
         private System.Windows.Forms.TextBox txtPriViezdiTCM2;
         private System.Windows.Forms.ComboBox cbToplivoType;
+        private System.Windows.Forms.TextBox txtTabelniiNomer;
+        private System.Windows.Forms.TextBox txtKlass;
+        private System.Windows.Forms.Label vblKlass;
+        private System.Windows.Forms.ComboBox cbImia;
     }
 }

@@ -224,7 +224,7 @@ namespace AUTOPARK
 
         private void tsmiExitApplication_Click(object sender, EventArgs e)
         {
-            Environment.Exit(0);  //Полный выход из программы если нажимаем на дверку в Путевых листах легкового авто
+            Environment.Exit(0);  //Полный выход из программы если нажимаем на Навигацию далее Выйти из приложения
         }
 
         private void tsmiRefresh_Click(object sender, EventArgs e)

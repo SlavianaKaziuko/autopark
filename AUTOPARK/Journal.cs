@@ -50,6 +50,34 @@ namespace AUTOPARK
 
         }
 
+        private void tsmiToMenu_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tsmiExitApplication_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tsmiToMenu_Click_1(object sender, EventArgs e)
+        {
+            var form = new Menu(); ////создание экземпляра формы PutevieListi
+            Hide(); //// скрытие текущей формы
+            form.ShowDialog(); //// открытие формы PutevieListi
+            Close(); //// закрытие текущей формы
+        }
+
+        private void tsmiExitApplication_Click_1(object sender, EventArgs e)
+        {
+            Environment.Exit(0);  //Полный выход из программы если нажимаем на Навигацию далее Выйти из приложения
+        }
+
+        private void Journal_Load(object sender, EventArgs e)
+        {
+
+        }
+
         
     }
 }

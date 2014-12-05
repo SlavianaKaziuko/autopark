@@ -156,6 +156,7 @@
             this.Name = "Menu";
             this.Text = "ОАО \"Зенит\" Автопарк";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Menu_FormClosed);
+            this.Load += new System.EventHandler(this.Menu_Load);
             this.Spravochniki.ResumeLayout(false);
             this.Spravochniki.PerformLayout();
             this.groupListi.ResumeLayout(false);

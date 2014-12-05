@@ -87,9 +87,24 @@ namespace AUTOPARK
             MessageBox.Show(@"Введите корректные данные!"); ////если введены не верные параметры выбивает ошибку Введите корректные данные!
         }
 
-        private void exitPic_Click(object sender, EventArgs e)
+        private void Spravochnik_Load(object sender, EventArgs e)
         {
-            Environment.Exit(0);  //Полный выход из программы если нажимаем на картинку с дверкой в Справочниках (Личный состав,Подвижной состав,Нормы расхода ГСМ)
+
         }
+
+        private void tsmiToMenu_Click(object sender, EventArgs e)
+        {
+            var form = new Menu(); ////создание экземпляра формы Menu
+            Hide(); //// скрытие текущей формы
+            form.ShowDialog(); //// открытие формы Menu
+            Close(); //// закрытие текущей формы
+        }
+
+        private void tsmiExitApplication_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(0); //Полный выход из программы если нажимаем Навигация далее Выйти из приложения в Справочниках
+        }
+
+       
     }
 }

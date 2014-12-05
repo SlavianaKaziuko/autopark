@@ -17,7 +17,7 @@
 			<Metadata Name="CompatibilityMode" Value="100" />
 		</CustomData>
 		<CustomData Category="Permissions" Type="XmlPermissions">
-			<Metadata Name="FileName" Value="D:\MY\AUTOPARK\AUTOPARKDB\PROPERTIES\DATABASE.SQLPERMISSIONS" />
+			<Metadata Name="FileName" Value="D:\WORK\AUTOPARK\AUTOPARKDB\PROPERTIES\DATABASE.SQLPERMISSIONS" />
 		</CustomData>
 	</Header>
 	<Model>
@@ -462,6 +462,7 @@
 			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="22" />
 		</Element>
 		<Element Type="ISql100View" Name="[dbo].[View_Данные путевой лист легкового авто]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Property Name="QueryScript">
 				<Value><![CDATA[
 SELECT     Число, [Время выезда] AS Время_выезда, [Время возвращения] AS Время_возвращения, [Время в наряде] AS Время_в_наряде, 
@@ -479,7 +480,6 @@ SELECT     Число, [Время выезда] AS Время_выезда, [В
                        '' AS Подпись_штамп_лица_ответственного_за_оформление_путевого_листа
 FROM         dbo.[Данные Путевой лист легкового авто]]]></Value>
 			</Property>
-			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="Columns">
 				<Entry>
 					<Element Type="ISql90ComputedColumn" Name="[dbo].[View_Данные путевой лист легкового авто].[Число]">
@@ -686,12 +686,12 @@ FROM         dbo.[Данные Путевой лист легкового авт
 			</Annotation>
 		</Element>
 		<Element Type="ISql100View" Name="[dbo].[View_Движение  ТСМ]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Property Name="QueryScript">
 				<Value><![CDATA[
 SELECT     [Остаток ТСМ при выезде] AS Остаток_ТСМ_при_выезде, [Остаток ТСМ при возвращении] AS Остаток_ТСМ_при_возвращении
 FROM         dbo.[Движение ТСМ]]]></Value>
 			</Property>
-			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="Columns">
 				<Entry>
 					<Element Type="ISql90ComputedColumn" Name="[dbo].[View_Движение  ТСМ].[Остаток_ТСМ_при_выезде]">
@@ -736,6 +736,7 @@ FROM         dbo.[Движение ТСМ]]]></Value>
 			</Annotation>
 		</Element>
 		<Element Type="ISql100View" Name="[dbo].[View_Задание водителю]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Property Name="QueryScript">
 				<Value><![CDATA[
 SELECT     Заказчик, [Дата и время прибытия] AS Дата_и_время_прибытия, [Дата и время убытия] AS Дата_и_время_убытия, [Пункт отправления] AS Пункт_отправления, 
@@ -743,7 +744,6 @@ SELECT     Заказчик, [Дата и время прибытия] AS Дат
                       [Количество поездок с грузом час] AS Количество_поездок_с_грузом_час
 FROM         dbo.[Задание водителю]]]></Value>
 			</Property>
-			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="Columns">
 				<Entry>
 					<Element Type="ISql90ComputedColumn" Name="[dbo].[View_Задание водителю].[Заказчик]">
@@ -872,12 +872,12 @@ FROM         dbo.[Задание водителю]]]></Value>
 			</Annotation>
 		</Element>
 		<Element Type="ISql100View" Name="[dbo].[View_Заправка ТСМ]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Property Name="QueryScript">
 				<Value><![CDATA[
 SELECT     Дата, [Марка ТСМ] AS Марка_ТСМ, Количество
 FROM         dbo.[Заправка ТСМ]]]></Value>
 			</Property>
-			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="Columns">
 				<Entry>
 					<Element Type="ISql90ComputedColumn" Name="[dbo].[View_Заправка ТСМ].[Дата]">
@@ -934,12 +934,12 @@ FROM         dbo.[Заправка ТСМ]]]></Value>
 			</Annotation>
 		</Element>
 		<Element Type="ISql100View" Name="[dbo].[View_Личный состав]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Property Name="QueryScript">
 				<Value><![CDATA[
 SELECT  [Фамилия] +' '+ [Имя] + ' '+ [Отчество] AS N'ФИО', [табельный  номер] AS Табельный_номер, классность AS Классность
 FROM         dbo.[Личный состав]]]></Value>
 			</Property>
-			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="Columns">
 				<Entry>
 					<Element Type="ISql90ComputedColumn" Name="[dbo].[View_Личный состав].[ФИО]" />
@@ -996,12 +996,12 @@ FROM         dbo.[Личный состав]]]></Value>
 			</Annotation>
 		</Element>
 		<Element Type="ISql100View" Name="[dbo].[View_Подвижной состав]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Property Name="QueryScript">
 				<Value><![CDATA[
 SELECT     [Марка и модель] AS Марка_и_модель, [Гос.номер] AS Гос_номер, [Гаражный номер] AS Гаражный_номер
 FROM         dbo.[Подвижной состав]]]></Value>
 			</Property>
-			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="Columns">
 				<Entry>
 					<Element Type="ISql90ComputedColumn" Name="[dbo].[View_Подвижной состав].[Марка_и_модель]">
@@ -1058,6 +1058,7 @@ FROM         dbo.[Подвижной состав]]]></Value>
 			</Annotation>
 		</Element>
 		<Element Type="ISql100View" Name="[dbo].[View_Работа водителя и авто]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Property Name="QueryScript">
 				<Value><![CDATA[
 SELECT     Операции, [Показания спидометра] AS Показания_спидометра, [Дата и время по графику] AS Дата_и_время_по_графику, 
@@ -1065,7 +1066,6 @@ SELECT     Операции, [Показания спидометра] AS Пок
                       [Время работы двигателя час] AS Время_работы_двигателя_час, [Время работы спецоборудования] AS Время_работы_спецоборудования
 FROM         dbo.[Работа водителя и автомобиля]]]></Value>
 			</Property>
-			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="Columns">
 				<Entry>
 					<Element Type="ISql90ComputedColumn" Name="[dbo].[View_Работа водителя и авто].[Операции]">
@@ -1170,13 +1170,13 @@ FROM         dbo.[Работа водителя и автомобиля]]]></Val
 			</Annotation>
 		</Element>
 		<Element Type="ISql100View" Name="[dbo].[View_Работа водителя и автомобиля]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Property Name="QueryScript">
 				<Value><![CDATA[ SELECT     Операции, [Показания спидометра] AS Показания_спидометра, [Дата и время по графику] AS Дата_и_время_по_графику, 
                       [Дата и время фактически] AS Дата_и_время_фактически, [Нулевой пробег] AS Нулевой_пробег, 
                       [Время работы двигателя час] AS Время_работы_двигателя_час, [Время работы спецоборудования] AS Время_работы_спецоборудования
 FROM         dbo.[Работа водителя и автомобиля]]]></Value>
 			</Property>
-			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="Columns">
 				<Entry>
 					<Element Type="ISql90ComputedColumn" Name="[dbo].[View_Работа водителя и автомобиля].[Операции]">
