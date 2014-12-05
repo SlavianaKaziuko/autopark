@@ -38,6 +38,8 @@
             this.linkJurnal = new System.Windows.Forms.LinkLabel();
             this.linkGruzovoi = new System.Windows.Forms.LinkLabel();
             this.linkLegkovoi = new System.Windows.Forms.LinkLabel();
+            this.lblOtdel = new System.Windows.Forms.LinkLabel();
+            this.lblVoditeliAuto = new System.Windows.Forms.LinkLabel();
             this.Spravochniki.SuspendLayout();
             this.groupListi.SuspendLayout();
             this.SuspendLayout();
@@ -57,12 +59,14 @@
             // 
             // Spravochniki
             // 
+            this.Spravochniki.Controls.Add(this.lblVoditeliAuto);
+            this.Spravochniki.Controls.Add(this.lblOtdel);
             this.Spravochniki.Controls.Add(this.linkNormy);
             this.Spravochniki.Controls.Add(this.linkPodvijnoi);
             this.Spravochniki.Controls.Add(this.linklichnii);
             this.Spravochniki.Location = new System.Drawing.Point(3, 176);
             this.Spravochniki.Name = "Spravochniki";
-            this.Spravochniki.Size = new System.Drawing.Size(177, 131);
+            this.Spravochniki.Size = new System.Drawing.Size(177, 190);
             this.Spravochniki.TabIndex = 1;
             this.Spravochniki.TabStop = false;
             this.Spravochniki.Text = "Справочники";
@@ -73,7 +77,7 @@
             this.linkNormy.AutoSize = true;
             this.linkNormy.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.linkNormy.LinkColor = System.Drawing.Color.Navy;
-            this.linkNormy.Location = new System.Drawing.Point(6, 90);
+            this.linkNormy.Location = new System.Drawing.Point(6, 156);
             this.linkNormy.Name = "linkNormy";
             this.linkNormy.Size = new System.Drawing.Size(164, 20);
             this.linkNormy.TabIndex = 2;
@@ -144,6 +148,31 @@
             this.linkLegkovoi.Text = "Путевые листы легковых автомобилей";
             this.linkLegkovoi.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkPutevieListi_LinkClicked);
             // 
+            // lblOtdel
+            // 
+            this.lblOtdel.AutoSize = true;
+            this.lblOtdel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblOtdel.LinkColor = System.Drawing.Color.Navy;
+            this.lblOtdel.Location = new System.Drawing.Point(6, 90);
+            this.lblOtdel.Name = "lblOtdel";
+            this.lblOtdel.Size = new System.Drawing.Size(71, 20);
+            this.lblOtdel.TabIndex = 3;
+            this.lblOtdel.TabStop = true;
+            this.lblOtdel.Text = "Отделы";
+            // 
+            // lblVoditeliAuto
+            // 
+            this.lblVoditeliAuto.AutoSize = true;
+            this.lblVoditeliAuto.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblVoditeliAuto.LinkColor = System.Drawing.Color.Navy;
+            this.lblVoditeliAuto.Location = new System.Drawing.Point(6, 121);
+            this.lblVoditeliAuto.Name = "lblVoditeliAuto";
+            this.lblVoditeliAuto.Size = new System.Drawing.Size(126, 20);
+            this.lblVoditeliAuto.TabIndex = 4;
+            this.lblVoditeliAuto.TabStop = true;
+            this.lblVoditeliAuto.Text = "Водители авто";
+            this.lblVoditeliAuto.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -175,6 +204,8 @@
         private System.Windows.Forms.LinkLabel linkLegkovoi;
         private System.Windows.Forms.LinkLabel linkJurnal;
         private System.Windows.Forms.LinkLabel linkGruzovoi;
+        private System.Windows.Forms.LinkLabel lblVoditeliAuto;
+        private System.Windows.Forms.LinkLabel lblOtdel;
     }
 }
 

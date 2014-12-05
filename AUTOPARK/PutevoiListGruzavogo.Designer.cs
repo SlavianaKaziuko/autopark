@@ -92,6 +92,9 @@
             this.навигацияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiToMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiExitApplication = new System.Windows.Forms.ToolStripMenuItem();
+            this.lblG = new System.Windows.Forms.Label();
+            this.lblOtdel = new System.Windows.Forms.Label();
+            this.cbOtdel = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvZapravkaTCM)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvZadanieVoditelu)).BeginInit();
             this.panel1.SuspendLayout();
@@ -115,13 +118,13 @@
             // 
             this.txtNumber.Location = new System.Drawing.Point(455, 35);
             this.txtNumber.Name = "txtNumber";
-            this.txtNumber.Size = new System.Drawing.Size(116, 21);
+            this.txtNumber.Size = new System.Drawing.Size(72, 21);
             this.txtNumber.TabIndex = 1;
             // 
             // dtpHapka
             // 
             this.dtpHapka.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.dtpHapka.Location = new System.Drawing.Point(644, 35);
+            this.dtpHapka.Location = new System.Drawing.Point(569, 35);
             this.dtpHapka.Name = "dtpHapka";
             this.dtpHapka.Size = new System.Drawing.Size(233, 21);
             this.dtpHapka.TabIndex = 2;
@@ -700,7 +703,6 @@
             this.навигацияToolStripMenuItem.Name = "навигацияToolStripMenuItem";
             this.навигацияToolStripMenuItem.Size = new System.Drawing.Size(78, 20);
             this.навигацияToolStripMenuItem.Text = "Навигация";
-           
             // 
             // tsmiToMenu
             // 
@@ -716,11 +718,41 @@
             this.tsmiExitApplication.Text = "Выйти из приложения";
             this.tsmiExitApplication.Click += new System.EventHandler(this.tsmiExitApplication_Click);
             // 
+            // lblG
+            // 
+            this.lblG.AutoSize = true;
+            this.lblG.Location = new System.Drawing.Point(533, 38);
+            this.lblG.Name = "lblG";
+            this.lblG.Size = new System.Drawing.Size(14, 15);
+            this.lblG.TabIndex = 58;
+            this.lblG.Text = "Г";
+            // 
+            // lblOtdel
+            // 
+            this.lblOtdel.AutoSize = true;
+            this.lblOtdel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblOtdel.Location = new System.Drawing.Point(908, 36);
+            this.lblOtdel.Name = "lblOtdel";
+            this.lblOtdel.Size = new System.Drawing.Size(53, 18);
+            this.lblOtdel.TabIndex = 59;
+            this.lblOtdel.Text = "Отдел";
+            // 
+            // cbOtdel
+            // 
+            this.cbOtdel.FormattingEnabled = true;
+            this.cbOtdel.Location = new System.Drawing.Point(967, 33);
+            this.cbOtdel.Name = "cbOtdel";
+            this.cbOtdel.Size = new System.Drawing.Size(121, 23);
+            this.cbOtdel.TabIndex = 60;
+            // 
             // PutevoiListGruzavogo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1234, 605);
+            this.Controls.Add(this.cbOtdel);
+            this.Controls.Add(this.lblOtdel);
+            this.Controls.Add(this.lblG);
             this.Controls.Add(this.btnReport);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
@@ -822,5 +854,8 @@
         private System.Windows.Forms.TextBox txtKlass;
         private System.Windows.Forms.Label vblKlass;
         private System.Windows.Forms.ComboBox cbImia;
+        private System.Windows.Forms.Label lblG;
+        private System.Windows.Forms.Label lblOtdel;
+        private System.Windows.Forms.ComboBox cbOtdel;
     }
 }

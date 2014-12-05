@@ -158,7 +158,7 @@ namespace AUTOPARK
             {
                 case "Путевые листы легковых автомобилей":
                 {
-                    var table = new AutoparkDBTableAdapters.TablePutevieLegkovieTableAdapter();
+                    var table = new AutoparkDBTableAdapters.PutevoiListLegkTableAdapter();
                     table.DeleteQueryById(rowid);
                     var tableData = new AutoparkDBTableAdapters.PutevieLegkovieTableAdapter();
                     _binding.DataSource = tableData.GetData();

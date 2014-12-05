@@ -83,29 +83,6 @@
 			</Relationship>
 			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="4" />
 		</Element>
-		<Element Type="ISql90ForeignKeyConstraint" Name="[dbo].[FK_Водители авто_id_отдела]">
-			<Relationship Name="Columns">
-				<Entry>
-					<References Name="[dbo].[Водители авто].[ID_Отдела]" />
-				</Entry>
-			</Relationship>
-			<Relationship Name="DefiningTable">
-				<Entry>
-					<References Name="[dbo].[Водители авто]" />
-				</Entry>
-			</Relationship>
-			<Relationship Name="ForeignColumns">
-				<Entry>
-					<References Name="[dbo].[Отделы].[ID]" />
-				</Entry>
-			</Relationship>
-			<Relationship Name="ForeignTable">
-				<Entry>
-					<References Name="[dbo].[Отделы]" />
-				</Entry>
-			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="5" />
-		</Element>
 		<Element Type="ISql90ForeignKeyConstraint" Name="[dbo].[FK_Данные Путевой лист легкового авто_Путевой лист грузового автомобиля]">
 			<Relationship Name="Columns">
 				<Entry>
@@ -127,7 +104,7 @@
 					<References Name="[dbo].[Путевой лист Грузового авто]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="6" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="5" />
 		</Element>
 		<Element Type="ISql90ForeignKeyConstraint" Name="[dbo].[FK_Данные Путевой лист легкового авто_Путевой лист легкового автомобиля]">
 			<Relationship Name="Columns">
@@ -150,7 +127,7 @@
 					<References Name="[dbo].[Путевой лист легкового автомобиля]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="7" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="6" />
 		</Element>
 		<Element Type="ISql90ForeignKeyConstraint" Name="[dbo].[FK_Движение ТСМ_Путевой лист Грузового авто]">
 			<Relationship Name="Columns">
@@ -173,7 +150,7 @@
 					<References Name="[dbo].[Путевой лист Грузового авто]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="8" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="7" />
 		</Element>
 		<Element Type="ISql90ForeignKeyConstraint" Name="[dbo].[FK_Задание водителю_Путевой лист Грузового авто]">
 			<Relationship Name="Columns">
@@ -196,7 +173,7 @@
 					<References Name="[dbo].[Путевой лист Грузового авто]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="9" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="8" />
 		</Element>
 		<Element Type="ISql90ForeignKeyConstraint" Name="[dbo].[FK_Путевой лист Грузового авто_личный состав]">
 			<Relationship Name="Columns">
@@ -219,7 +196,7 @@
 					<References Name="[dbo].[Личный состав]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="10" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="9" />
 		</Element>
 		<Element Type="ISql90ForeignKeyConstraint" Name="[dbo].[FK_Путевой лист Грузового авто_Подвижной состав]">
 			<Relationship Name="Columns">
@@ -240,6 +217,29 @@
 			<Relationship Name="ForeignTable">
 				<Entry>
 					<References Name="[dbo].[Подвижной состав]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="10" />
+		</Element>
+		<Element Type="ISql90ForeignKeyConstraint" Name="[dbo].[FK_Путевой лист грузового_id_отдела]">
+			<Relationship Name="Columns">
+				<Entry>
+					<References Name="[dbo].[Путевой лист Грузового авто].[ID_Отдела]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[Путевой лист Грузового авто]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignColumns">
+				<Entry>
+					<References Name="[dbo].[Отделы].[ID]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignTable">
+				<Entry>
+					<References Name="[dbo].[Отделы]" />
 				</Entry>
 			</Relationship>
 			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="11" />
@@ -290,6 +290,29 @@
 			</Relationship>
 			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="13" />
 		</Element>
+		<Element Type="ISql90ForeignKeyConstraint" Name="[dbo].[FK_Путевой лист легкового_id_отдела]">
+			<Relationship Name="Columns">
+				<Entry>
+					<References Name="[dbo].[Путевой лист легкового автомобиля].[ID_Отдела]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[Путевой лист легкового автомобиля]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignColumns">
+				<Entry>
+					<References Name="[dbo].[Отделы].[ID]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignTable">
+				<Entry>
+					<References Name="[dbo].[Отделы]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="14" />
+		</Element>
 		<Element Type="ISql100PrimaryKeyConstraint" Name="[dbo].[PK_Водители авто]">
 			<Relationship Name="ColumnSpecifications">
 				<Entry>
@@ -307,7 +330,7 @@
 					<References Name="[dbo].[Водители авто]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="14" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="15" />
 		</Element>
 		<Element Type="ISql100PrimaryKeyConstraint" Name="[dbo].[PK_Движение ТСМ_Путевой лист Грузового авто]">
 			<Relationship Name="ColumnSpecifications">
@@ -326,7 +349,7 @@
 					<References Name="[dbo].[Движение ТСМ]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="15" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="16" />
 		</Element>
 		<Element Type="ISql100PrimaryKeyConstraint" Name="[dbo].[PK_Задание водителю]">
 			<Relationship Name="ColumnSpecifications">
@@ -345,7 +368,7 @@
 					<References Name="[dbo].[Задание водителю]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="16" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="17" />
 		</Element>
 		<Element Type="ISql100PrimaryKeyConstraint" Name="[dbo].[PK_Заправка ТСМ]">
 			<Relationship Name="ColumnSpecifications">
@@ -364,7 +387,7 @@
 					<References Name="[dbo].[Заправка ТСМ]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="17" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="18" />
 		</Element>
 		<Element Type="ISql100PrimaryKeyConstraint" Name="[dbo].[PK_личный состав]">
 			<Relationship Name="ColumnSpecifications">
@@ -383,7 +406,7 @@
 					<References Name="[dbo].[Личный состав]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="18" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="19" />
 		</Element>
 		<Element Type="ISql100PrimaryKeyConstraint" Name="[dbo].[PK_Отделы]">
 			<Relationship Name="ColumnSpecifications">
@@ -402,7 +425,7 @@
 					<References Name="[dbo].[Отделы]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="19" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="20" />
 		</Element>
 		<Element Type="ISql100PrimaryKeyConstraint" Name="[dbo].[PK_Подвижной состав]">
 			<Relationship Name="ColumnSpecifications">
@@ -421,7 +444,7 @@
 					<References Name="[dbo].[Подвижной состав]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="20" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="21" />
 		</Element>
 		<Element Type="ISql100PrimaryKeyConstraint" Name="[dbo].[PK_Путевой лист легкового авто]">
 			<Relationship Name="ColumnSpecifications">
@@ -440,7 +463,7 @@
 					<References Name="[dbo].[Данные Путевой лист легкового авто]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="21" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="22" />
 		</Element>
 		<Element Type="ISql100PrimaryKeyConstraint" Name="[dbo].[PK_Работа водителя и автомобиля]">
 			<Relationship Name="ColumnSpecifications">
@@ -459,7 +482,7 @@
 					<References Name="[dbo].[Работа водителя и автомобиля]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="22" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="23" />
 		</Element>
 		<Element Type="ISql100View" Name="[dbo].[View_Данные путевой лист легкового авто]">
 			<Property Name="IsAnsiNullsOn" Value="True" />
@@ -1298,7 +1321,7 @@ FROM         dbo.[Работа водителя и автомобиля]]]></Val
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="14" />
+						<AttachedAnnotation Disambiguator="15" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -1331,22 +1354,6 @@ FROM         dbo.[Работа водителя и автомобиля]]]></Val
 							</Entry>
 						</Relationship>
 						<AttachedAnnotation Disambiguator="3" />
-					</Element>
-				</Entry>
-				<Entry>
-					<Element Type="ISql100SimpleColumn" Name="[dbo].[Водители авто].[ID_Отдела]">
-						<Relationship Name="TypeSpecifier">
-							<Entry>
-								<Element Type="ISql90TypeSpecifier">
-									<Relationship Name="Type">
-										<Entry>
-											<References ExternalSource="BuiltIns" Name="[int]" />
-										</Entry>
-									</Relationship>
-								</Element>
-							</Entry>
-						</Relationship>
-						<AttachedAnnotation Disambiguator="5" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -1389,7 +1396,7 @@ FROM         dbo.[Работа водителя и автомобиля]]]></Val
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="21" />
+						<AttachedAnnotation Disambiguator="22" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -1405,7 +1412,7 @@ FROM         dbo.[Работа водителя и автомобиля]]]></Val
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="7" />
+						<AttachedAnnotation Disambiguator="6" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -1681,7 +1688,7 @@ FROM         dbo.[Работа водителя и автомобиля]]]></Val
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="15" />
+						<AttachedAnnotation Disambiguator="16" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -1698,7 +1705,7 @@ FROM         dbo.[Работа водителя и автомобиля]]]></Val
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="8" />
+						<AttachedAnnotation Disambiguator="7" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -1759,7 +1766,7 @@ FROM         dbo.[Работа водителя и автомобиля]]]></Val
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="16" />
+						<AttachedAnnotation Disambiguator="17" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -1776,7 +1783,7 @@ FROM         dbo.[Работа водителя и автомобиля]]]></Val
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="9" />
+						<AttachedAnnotation Disambiguator="8" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -1943,7 +1950,7 @@ FROM         dbo.[Работа водителя и автомобиля]]]></Val
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="17" />
+						<AttachedAnnotation Disambiguator="18" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -2031,7 +2038,7 @@ FROM         dbo.[Работа водителя и автомобиля]]]></Val
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="18" />
+						<AttachedAnnotation Disambiguator="19" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -2153,7 +2160,7 @@ FROM         dbo.[Работа водителя и автомобиля]]]></Val
 								</Element>
 							</Entry>
 						</Relationship>
-						<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="23" />
+						<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="24" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -2319,7 +2326,7 @@ FROM         dbo.[Работа водителя и автомобиля]]]></Val
 					<References Name="[dbo].[Нормы расхода ГСМ на авто,тракторы]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="23" />
+			<AttachedAnnotation Disambiguator="24" />
 		</Element>
 		<Element Type="ISql100Table" Name="[dbo].[Отделы]">
 			<Property Name="IsAnsiNullsOn" Value="True" />
@@ -2339,7 +2346,7 @@ FROM         dbo.[Работа водителя и автомобиля]]]></Val
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="19" />
+						<AttachedAnnotation Disambiguator="20" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -2399,7 +2406,7 @@ FROM         dbo.[Работа водителя и автомобиля]]]></Val
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="20" />
+						<AttachedAnnotation Disambiguator="21" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -2570,7 +2577,7 @@ FROM         dbo.[Работа водителя и автомобиля]]]></Val
 					<References Name="[dbo].[Путевой лист Грузового авто]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="24" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="25" />
 		</Element>
 		<Element Type="ISql100PrimaryKeyConstraint" Name="[dbo].[Пут_легк_ID]">
 			<Relationship Name="ColumnSpecifications">
@@ -2589,7 +2596,7 @@ FROM         dbo.[Работа водителя и автомобиля]]]></Val
 					<References Name="[dbo].[Путевой лист легкового автомобиля]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="25" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="26" />
 		</Element>
 		<Element Type="ISql100Table" Name="[dbo].[Путевой лист Грузового авто]">
 			<Property Name="IsAnsiNullsOn" Value="True" />
@@ -2609,7 +2616,7 @@ FROM         dbo.[Работа водителя и автомобиля]]]></Val
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="24" />
+						<AttachedAnnotation Disambiguator="25" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -2658,12 +2665,28 @@ FROM         dbo.[Работа водителя и автомобиля]]]></Val
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="10" />
+						<AttachedAnnotation Disambiguator="9" />
 					</Element>
 				</Entry>
 				<Entry>
 					<Element Type="ISql100SimpleColumn" Name="[dbo].[Путевой лист Грузового авто].[ID_Автомобиля]">
 						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+						<AttachedAnnotation Disambiguator="10" />
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="ISql100SimpleColumn" Name="[dbo].[Путевой лист Грузового авто].[ID_Отдела]">
 						<Relationship Name="TypeSpecifier">
 							<Entry>
 								<Element Type="ISql90TypeSpecifier">
@@ -2703,7 +2726,7 @@ FROM         dbo.[Работа водителя и автомобиля]]]></Val
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="25" />
+						<AttachedAnnotation Disambiguator="26" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -2784,6 +2807,22 @@ FROM         dbo.[Работа водителя и автомобиля]]]></Val
 						<AttachedAnnotation Disambiguator="12" />
 					</Element>
 				</Entry>
+				<Entry>
+					<Element Type="ISql100SimpleColumn" Name="[dbo].[Путевой лист легкового автомобиля].[ID_Отдела]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+						<AttachedAnnotation Disambiguator="14" />
+					</Element>
+				</Entry>
 			</Relationship>
 			<Relationship Name="Owner">
 				<Entry>
@@ -2809,7 +2848,7 @@ FROM         dbo.[Работа водителя и автомобиля]]]></Val
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="22" />
+						<AttachedAnnotation Disambiguator="23" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -2825,7 +2864,7 @@ FROM         dbo.[Работа водителя и автомобиля]]]></Val
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="6" />
+						<AttachedAnnotation Disambiguator="5" />
 					</Element>
 				</Entry>
 				<Entry>
