@@ -160,7 +160,7 @@ namespace AUTOPARK
 
         private void btnReport_Click(object sender, EventArgs e)
         {
-            var f1 = new OtchetGruzavogo();
+            var f1 = new OtchetGruzavogo(PutevoiId);
             f1.Show();
         }
 

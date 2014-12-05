@@ -191,5 +191,8 @@
     <Build Include="Schema Objects\Schemas\dbo\Views\View_Данные путевой лист легкового авто.view.sql">
       <SubType>Code</SubType>
     </Build>
+    <Build Include="Schema Objects\Schemas\dbo\Tables\Отделы.table.sql">
+      <SubType>Code</SubType>
+    </Build>
   </ItemGroup>
 </Project>

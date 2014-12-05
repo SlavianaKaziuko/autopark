@@ -191,8 +191,36 @@ BEGIN
 SET IDENTITY_INSERT [dbo].[Заправка ТСМ] on
 	INSERT INTO [Заправка ТСМ] ([ID_Заправка ТСМ],[Дата],[Марка ТСМ],[Количество],[ID_Путевого листа]) 
 		VALUES 
-		(N'1',N'2014-10-20',N'ДТ',100,20),
-		(N'2',N'2014-10-21',N'СУГ',50,21)
+		(1,N'2014-10-20',N'ДТ',100,20),
+		(2,N'2014-10-21',N'СУГ',50,21)
   SET IDENTITY_INSERT [dbo].[Заправка ТСМ] OFF
+END 
+  
+
+  go
+PRINT(N'[Отделы]');
+go 
+
+IF NOT EXISTS (SELECT * FROM [dbo].[Отделы])
+BEGIN
+SET IDENTITY_INSERT [dbo].[Отделы] on
+	INSERT INTO [Отделы] ([ID],[Название отдела],[Аббревиатура]) 
+		VALUES 
+		(1,N'Погрузки',N'Погр'),
+		(2,N'Маркетинга',N'Марк')
+  SET IDENTITY_INSERT [dbo].[Отделы] OFF
+END 
+
+PRINT(N'[Водители авто]');
+go 
+
+IF NOT EXISTS (SELECT * FROM [dbo].[Водители авто])
+BEGIN
+SET IDENTITY_INSERT [dbo].[Водители авто] on
+	INSERT INTO [Водители авто] ([ID],[ID_Водитель],[ID_Авто],[ID_Отдела],[Date]) 
+		VALUES 
+		(1,125,1,1,N'2014-10-20'),
+		(1,4356,2,2,N'2014-10-20')
+  SET IDENTITY_INSERT [dbo].[Водители авто] OFF
 END 
   

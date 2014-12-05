@@ -1,38 +1,61 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
+using Microsoft.Reporting.WinForms;
 
 namespace AUTOPARK
 {
     public partial class OtchetGruzavogo : Form
     {
-        public OtchetGruzavogo()
+        private readonly BindingSource _bindingHead = new BindingSource();
+        private readonly BindingSource _bindingAuto = new BindingSource();
+        private readonly BindingSource _bindingVoditel = new BindingSource();
+        private readonly BindingSource _bindingDannie = new BindingSource();
+        private readonly BindingSource _bindingZadanie = new BindingSource();
+        private readonly BindingSource _bindingDannieOst = new BindingSource();
+        private readonly BindingSource _bindingDannieZapr = new BindingSource();
+        private readonly BindingSource _bindingVoditelWork = new BindingSource();
+
+        private int PutevoiId { get; set; }
+
+        public OtchetGruzavogo(int id)
         {
             InitializeComponent();
+            PutevoiId = id;
+            
+            var tablePutevoi = new AutoparkDBTableAdapters.TablePutevieGruzovieTableAdapter();
+            _bindingHead.DataSource = tablePutevoi.GetDataByID(PutevoiId);
+            var res = tablePutevoi.GetDataByID(id).ToList();
+            var idauto = res[0].ID_Автомобиля;
+            var idvod = res[0].ID_Водителя;
+
+            var tablep = new AutoparkDBTableAdapters.PodvijnoiTableAdapter();
+            _bindingAuto.DataSource = tablep.GetDataByID(idauto);
+
+            var tablel = new AutoparkDBTableAdapters.LichniiTableAdapter();
+            _bindingVoditel.DataSource = tablel.GetDataByID(idvod);
+
+            var tableDannie = new AutoparkDBTableAdapters.PutevieGruzovieTableAdapter();
+            _bindingDannie.DataSource = tableDannie.GetData();
+            _bindingDannie.Filter = "[ID_Путевого листа] = " + PutevoiId;
+
+            var tableZadanie = new AutoparkDBTableAdapters.ZadanieVoditelTableAdapter();
+            _bindingZadanie.DataSource = tableZadanie.GetDataByPutevoiId(PutevoiId);
+
+            var table = new AutoparkDBTableAdapters.PutListLegkovogoDannieTableAdapter();
+            _bindingDannie.DataSource = table.GetDataWithCalculating(PutevoiId);
         }
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "autoparkDB.View_Заправка_ТСМ". При необходимости она может быть перемещена или удалена.
-            this.view_Заправка_ТСМTableAdapter.Fill(this.autoparkDB.View_Заправка_ТСМ);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "autoparkDB.View_Подвижной_состав". При необходимости она может быть перемещена или удалена.
-            this.view_Подвижной_составTableAdapter.Fill(this.autoparkDB.View_Подвижной_состав);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "autoparkDB.View_Работа_водителя_и_авто". При необходимости она может быть перемещена или удалена.
-            this.view_Работа_водителя_и_автоTableAdapter.Fill(this.autoparkDB.View_Работа_водителя_и_авто);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "autoparkDB.View_Движение__ТСМ". При необходимости она может быть перемещена или удалена.
-            this.view_Движение__ТСМTableAdapter.Fill(this.autoparkDB.View_Движение__ТСМ);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "autoparkDB.View_Личный_состав". При необходимости она может быть перемещена или удалена.
-            this.view_Личный_составTableAdapter.Fill(this.autoparkDB.View_Личный_состав);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "autoparkDB.View_Задание_водителю1". При необходимости она может быть перемещена или удалена.
-            this.view_Задание_водителю1TableAdapter.Fill(this.autoparkDB.View_Задание_водителю1);
-
-            this.reportViewer1.RefreshReport();
-            this.reportViewer2.RefreshReport();
+            reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("ReportHead", _bindingHead));
+            reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("DannieAutoPricepPolupricep", _bindingAuto));
+            reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("ZadanieVoditel", _bindingZadanie));
+            reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("Voditel", _bindingVoditel));
+            reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("OstatokTCM", _bindingDannieOst));
+            reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("ZapravkaTCM", _bindingDannieZapr));
+            reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("RabotaVoditelAuto", _bindingVoditelWork));
+            reportViewer1.RefreshReport();
         }
     }
 }
