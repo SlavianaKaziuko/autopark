@@ -15,7 +15,8 @@ namespace AUTOPARK
         private readonly BindingSource _bindingAuto = new BindingSource();
         private readonly BindingSource _bindingVoditel = new BindingSource();
         private readonly BindingSource _bindingDannie = new BindingSource();
-        private readonly string _number;
+        private readonly int _number;
+        private readonly int _idotd;
         private readonly int _idauto;
         private readonly int _idvod;
         private readonly DateTime _dateStart;
@@ -96,9 +97,10 @@ namespace AUTOPARK
             _number = res[0].Номер_путевого_листа;
             _idauto = res[0].ID_Автомобиль;
             _idvod = res[0].ID_Водитель;
+            _idotd = res[0].ID_Отдела;
             _dateStart = res[0].За_период_с;
             _dateEnd = res[0].За_период_по;
-            txtNumber.Text = _number;
+            txtNumber.Text = _number.ToString(CultureInfo.InvariantCulture);
             cbNomerAuto.SelectedItem = _bindingAuto[_bindingAuto.Find("ID", _idauto)];
             cbVodUdostoverenie.SelectedItem = _bindingVoditel[_bindingVoditel.Find("табельный_номер", _idvod)];
             dtpStart.Value = _dateStart;
@@ -118,7 +120,7 @@ namespace AUTOPARK
                 MessageBox.Show(@"Пожалуйста, заполните справочник ""Личный состав""");
                 Close();
             }
-            txtNumber.Text = _number;
+            txtNumber.Text = _number.ToString(CultureInfo.InvariantCulture);
             cbNomerAuto.SelectedItem = _idauto;
             cbVodUdostoverenie.SelectedItem = _idvod;
             dtpStart.Value = _dateStart;
@@ -149,10 +151,10 @@ namespace AUTOPARK
             var tableDannie = new AutoparkDBTableAdapters.PutListLegkovogoDannieTableAdapter();
             if (_modeIsNew)
             {
-                PutevoiId = tablePutevoi.Insert(txtNumber.Text, dtpStart.Value, dtpEnd.Value,
+                PutevoiId = tablePutevoi.Insert(int.Parse(txtNumber.Text), dtpStart.Value, dtpEnd.Value,
                     int.Parse(((DataRowView) _bindingAuto[cbNomerAuto.SelectedIndex]).Row.ItemArray[0].ToString()),
-                    int.Parse(
-                        ((DataRowView) _bindingVoditel[cbVodUdostoverenie.SelectedIndex]).Row.ItemArray[0].ToString()));
+                    int.Parse(((DataRowView) _bindingVoditel[cbVodUdostoverenie.SelectedIndex]).Row.ItemArray[0].ToString()),
+                    int.Parse(((DataRowView)_bindingVoditel[cbVodUdostoverenie.SelectedIndex]).Row.ItemArray[0].ToString()));
                 _bindingDannie.DataSource = tableDannie.GetData();
                 _bindingDannie.Filter = "[ID_Путевого листа] = " + PutevoiId;
                 dgvPutevieLegkovie.DataSource = _bindingDannie;
@@ -162,11 +164,11 @@ namespace AUTOPARK
             }
             else
             {
-                tablePutevoi.Update(txtNumber.Text, dtpStart.Value, dtpEnd.Value,
+                tablePutevoi.Update(int.Parse(txtNumber.Text), dtpStart.Value, dtpEnd.Value,
                     int.Parse(((DataRowView) _bindingAuto[cbNomerAuto.SelectedIndex]).Row.ItemArray[0].ToString()),
-                    int.Parse(
-                        ((DataRowView) _bindingVoditel[cbVodUdostoverenie.SelectedIndex]).Row.ItemArray[0].ToString()),
-                    PutevoiId, _number, _dateStart, _dateEnd, _idauto, _idvod);
+                    int.Parse(((DataRowView) _bindingVoditel[cbVodUdostoverenie.SelectedIndex]).Row.ItemArray[0].ToString()),
+                    int.Parse(((DataRowView) _bindingVoditel[cbVodUdostoverenie.SelectedIndex]).Row.ItemArray[0].ToString()),
+                    PutevoiId, _number, _dateStart, _dateEnd, _idauto, _idvod,_idotd);
                 
                 tableDannie.Update((AutoparkDB.Данные_Путевой_лист_легкового_автоDataTable) _bindingDannie.DataSource);
                 _bindingDannie.DataSource = tableDannie.GetData();
