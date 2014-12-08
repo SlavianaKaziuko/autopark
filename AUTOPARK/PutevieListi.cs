@@ -137,6 +137,14 @@ namespace AUTOPARK
                     this.Show(); //// отображение главной формы после закрытия PutevoiListGruzavogo
                     break;
                 }
+               /* case "Журнал учета выдачи путевых листов":   //  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                {
+                    var form = new Journal(rowid); ////создание экземпляра формы Journal
+                    this.Hide(); //// скрытие текущей формы
+                    form.ShowDialog(); //// открытие формы Spravochnik
+                    this.Show(); //// отображение главной формы после закрытия Journal
+                    break;
+                }*/
             }
         }
 
@@ -173,6 +181,14 @@ namespace AUTOPARK
                     _binding.DataSource = tableData.GetData();
                     break;
                 }
+               /* case "Журнал учета выдачи путевых листов":    //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                {
+                    var table = new AutoparkDBTableAdapters.TablePutevieGruzovieTableAdapter();
+                    table.DeleteQueryById(rowid);
+                    var tableData = new AutoparkDBTableAdapters.PutevieGruzovieTableAdapter();
+                    _binding.DataSource = tableData.GetData();
+                    break;
+                }*/
             }
 
             dgvPutevii.DataSource = _binding;

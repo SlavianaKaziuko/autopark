@@ -41,6 +41,8 @@
             this.cbVodUdostoverenie = new System.Windows.Forms.ComboBox();
             this.dgvPutevieLegkovie = new System.Windows.Forms.DataGridView();
             this.pnlShapka = new System.Windows.Forms.Panel();
+            this.txtOtdel = new System.Windows.Forms.Label();
+            this.cbOtdel = new System.Windows.Forms.ComboBox();
             this.dtpEnd = new System.Windows.Forms.DateTimePicker();
             this.dtpStart = new System.Windows.Forms.DateTimePicker();
             this.txtKlassnost = new System.Windows.Forms.TextBox();
@@ -53,8 +55,6 @@
             this.tsmiToMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiExitApplication = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiRefresh = new System.Windows.Forms.ToolStripMenuItem();
-            this.cbOtdel = new System.Windows.Forms.ComboBox();
-            this.txtOtdel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPutevieLegkovie)).BeginInit();
             this.pnlShapka.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -203,6 +203,24 @@
             this.pnlShapka.Size = new System.Drawing.Size(766, 156);
             this.pnlShapka.TabIndex = 17;
             // 
+            // txtOtdel
+            // 
+            this.txtOtdel.AutoSize = true;
+            this.txtOtdel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.txtOtdel.Location = new System.Drawing.Point(582, 83);
+            this.txtOtdel.Name = "txtOtdel";
+            this.txtOtdel.Size = new System.Drawing.Size(53, 18);
+            this.txtOtdel.TabIndex = 21;
+            this.txtOtdel.Text = "Отдел";
+            // 
+            // cbOtdel
+            // 
+            this.cbOtdel.FormattingEnabled = true;
+            this.cbOtdel.Location = new System.Drawing.Point(641, 83);
+            this.cbOtdel.Name = "cbOtdel";
+            this.cbOtdel.Size = new System.Drawing.Size(121, 23);
+            this.cbOtdel.TabIndex = 20;
+            // 
             // dtpEnd
             // 
             this.dtpEnd.CustomFormat = "dd MMMM yyyy";
@@ -312,29 +330,11 @@
             this.tsmiRefresh.Text = "Обновить";
             this.tsmiRefresh.Click += new System.EventHandler(this.tsmiRefresh_Click);
             // 
-            // cbOtdel
-            // 
-            this.cbOtdel.FormattingEnabled = true;
-            this.cbOtdel.Location = new System.Drawing.Point(641, 83);
-            this.cbOtdel.Name = "cbOtdel";
-            this.cbOtdel.Size = new System.Drawing.Size(121, 23);
-            this.cbOtdel.TabIndex = 20;
-            // 
-            // txtOtdel
-            // 
-            this.txtOtdel.AutoSize = true;
-            this.txtOtdel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.txtOtdel.Location = new System.Drawing.Point(582, 83);
-            this.txtOtdel.Name = "txtOtdel";
-            this.txtOtdel.Size = new System.Drawing.Size(53, 18);
-            this.txtOtdel.TabIndex = 21;
-            this.txtOtdel.Text = "Отдел";
-            // 
             // PutListLegkovogoavto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1078, 559);
+            this.ClientSize = new System.Drawing.Size(1078, 579);
             this.Controls.Add(this.btnReport);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);

@@ -32,14 +32,14 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu));
             this.linklichnii = new System.Windows.Forms.LinkLabel();
             this.Spravochniki = new System.Windows.Forms.GroupBox();
+            this.lblVoditeliAuto = new System.Windows.Forms.LinkLabel();
+            this.lblOtdel = new System.Windows.Forms.LinkLabel();
             this.linkNormy = new System.Windows.Forms.LinkLabel();
             this.linkPodvijnoi = new System.Windows.Forms.LinkLabel();
             this.groupListi = new System.Windows.Forms.GroupBox();
             this.linkJurnal = new System.Windows.Forms.LinkLabel();
             this.linkGruzovoi = new System.Windows.Forms.LinkLabel();
             this.linkLegkovoi = new System.Windows.Forms.LinkLabel();
-            this.lblOtdel = new System.Windows.Forms.LinkLabel();
-            this.lblVoditeliAuto = new System.Windows.Forms.LinkLabel();
             this.Spravochniki.SuspendLayout();
             this.groupListi.SuspendLayout();
             this.SuspendLayout();
@@ -71,6 +71,32 @@
             this.Spravochniki.TabStop = false;
             this.Spravochniki.Text = "Справочники";
             this.Spravochniki.Enter += new System.EventHandler(this.Spravochniki_Enter);
+            // 
+            // lblVoditeliAuto
+            // 
+            this.lblVoditeliAuto.AutoSize = true;
+            this.lblVoditeliAuto.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblVoditeliAuto.LinkColor = System.Drawing.Color.Navy;
+            this.lblVoditeliAuto.Location = new System.Drawing.Point(6, 121);
+            this.lblVoditeliAuto.Name = "lblVoditeliAuto";
+            this.lblVoditeliAuto.Size = new System.Drawing.Size(126, 20);
+            this.lblVoditeliAuto.TabIndex = 4;
+            this.lblVoditeliAuto.TabStop = true;
+            this.lblVoditeliAuto.Text = "Водители авто";
+            this.lblVoditeliAuto.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
+            // lblOtdel
+            // 
+            this.lblOtdel.AutoSize = true;
+            this.lblOtdel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblOtdel.LinkColor = System.Drawing.Color.Navy;
+            this.lblOtdel.Location = new System.Drawing.Point(6, 90);
+            this.lblOtdel.Name = "lblOtdel";
+            this.lblOtdel.Size = new System.Drawing.Size(71, 20);
+            this.lblOtdel.TabIndex = 3;
+            this.lblOtdel.TabStop = true;
+            this.lblOtdel.Text = "Отделы";
+            this.lblOtdel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkSpravochniki_LinkClicked);
             // 
             // linkNormy
             // 
@@ -147,31 +173,6 @@
             this.linkLegkovoi.TabStop = true;
             this.linkLegkovoi.Text = "Путевые листы легковых автомобилей";
             this.linkLegkovoi.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkPutevieListi_LinkClicked);
-            // 
-            // lblOtdel
-            // 
-            this.lblOtdel.AutoSize = true;
-            this.lblOtdel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblOtdel.LinkColor = System.Drawing.Color.Navy;
-            this.lblOtdel.Location = new System.Drawing.Point(6, 90);
-            this.lblOtdel.Name = "lblOtdel";
-            this.lblOtdel.Size = new System.Drawing.Size(71, 20);
-            this.lblOtdel.TabIndex = 3;
-            this.lblOtdel.TabStop = true;
-            this.lblOtdel.Text = "Отделы";
-            // 
-            // lblVoditeliAuto
-            // 
-            this.lblVoditeliAuto.AutoSize = true;
-            this.lblVoditeliAuto.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblVoditeliAuto.LinkColor = System.Drawing.Color.Navy;
-            this.lblVoditeliAuto.Location = new System.Drawing.Point(6, 121);
-            this.lblVoditeliAuto.Name = "lblVoditeliAuto";
-            this.lblVoditeliAuto.Size = new System.Drawing.Size(126, 20);
-            this.lblVoditeliAuto.TabIndex = 4;
-            this.lblVoditeliAuto.TabStop = true;
-            this.lblVoditeliAuto.Text = "Водители авто";
-            this.lblVoditeliAuto.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // Menu
             // 

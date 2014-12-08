@@ -41,6 +41,15 @@ namespace AUTOPARK
                     _binding.DataSource = table.GetData();
                     break;
                 }
+
+                case "Отделы":
+                {
+                    var table = new AutoparkDBTableAdapters.OtdelTableAdapter();
+                    _binding.DataSource = table.GetData();
+                    break;
+                }
+
+
             }
 
             dgvSpravochnik.DataSource = _binding;
@@ -72,10 +81,17 @@ namespace AUTOPARK
                     table.Update((AutoparkDB._Нормы_расхода_ГСМ_на_авто_тракторыDataTable)_binding.DataSource);
                     break;
                 }
+
+                case "Отделы":
+                {
+                    var table = new AutoparkDBTableAdapters.OtdelTableAdapter();  // сохраняет все изменения в Отделы
+                    table.Update((AutoparkDB.ОтделыDataTable)_binding.DataSource);
+                    break;
+                }
             }
         }
 
-        private void Spravochnik_Resize(object sender, EventArgs e)
+        private void Spravochnik_Resize(object sender, EventArgs e)    //        растягивание формы и кнопки сохранить по высоте и ширине
         {
             dgvSpravochnik.Width = this.Width - 40;
             dgvSpravochnik.Height = this.Height - 100;
