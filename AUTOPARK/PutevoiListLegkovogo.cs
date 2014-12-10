@@ -47,10 +47,14 @@ namespace AUTOPARK
             cbVodUdostoverenie.DataSource = _bindingVoditel;
             cbVodUdostoverenie.DisplayMember = "ФИО";
             cbVodUdostoverenie.ValueMember = "табельный_номер";
-            var tablePutevoi = new AutoparkDBTableAdapters.PutevieLegkovieTableAdapter();
-            //var newLegkNumber = tablePutevoi.GetNewLegkNumber();
-            //if (newLegkNumber != null)
-            //    txtNumber.Text = newLegkNumber.Value.ToString(CultureInfo.InvariantCulture);
+            var tablePutevoi = new AutoparkDBTableAdapters.PutevoiListLegkTableAdapter();
+            var newLegkNumber = tablePutevoi.GetNewLegkNumber();
+            if (newLegkNumber != null)
+                _number = int.Parse(newLegkNumber.ToString());
+            var tableOtdeli = new AutoparkDBTableAdapters.OtdelTableAdapter();
+            cbOtdel.DataSource = tableOtdeli.GetData();
+            cbOtdel.DisplayMember = "Название отдела";
+            cbOtdel.ValueMember = "ID";
             _dateStart = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);             //календарь 
             _dateEnd = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1).AddMonths(1).AddDays(-1);
         }
@@ -103,6 +107,11 @@ namespace AUTOPARK
             txtNumber.Text = _number.ToString(CultureInfo.InvariantCulture);
             cbNomerAuto.SelectedItem = _bindingAuto[_bindingAuto.Find("ID", _idauto)];
             cbVodUdostoverenie.SelectedItem = _bindingVoditel[_bindingVoditel.Find("табельный_номер", _idvod)];
+            var tableOtdeli = new AutoparkDBTableAdapters.OtdelTableAdapter();
+            cbOtdel.DataSource = tableOtdeli.GetData();
+            cbOtdel.DisplayMember = "Название отдела";
+            cbOtdel.ValueMember = "ID";
+            cbOtdel.SelectedItem = _idotd;
             dtpStart.Value = _dateStart;
             dtpEnd.Value = _dateEnd;
         }

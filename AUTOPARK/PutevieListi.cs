@@ -23,7 +23,7 @@ namespace AUTOPARK
             {
                 case "Путевые листы легковых автомобилей":
                 {
-                        var table = new AutoparkDBTableAdapters.PutevieLegkovieTableAdapter();   //  Создание Путевых листов легкового авто
+                    var table = new AutoparkDBTableAdapters.PutevieLegkovieTableAdapter();   //  Создание Путевых листов легкового авто
                     _binding.DataSource = table.GetData();
                     break;
                 }
@@ -39,12 +39,19 @@ namespace AUTOPARK
                     _binding.DataSource = table.GetData();
                     break;
                 }
-
-
-
             }
 
             dgvPutevii.DataSource = _binding;
+
+            if (_name == "Путевые листы легковых автомобилей")
+            {
+                var dataGridViewColumn = dgvPutevii.Columns["ID_Автомобиль"];
+                if (dataGridViewColumn != null)
+                    dataGridViewColumn.Visible = false;
+                dataGridViewColumn = dgvPutevii.Columns["ID_Водитель"];
+                if (dataGridViewColumn != null)
+                    dataGridViewColumn.Visible = false;
+            }
         }
 
         private void dgvPutevii_DataError(object sender, DataGridViewDataErrorEventArgs e)

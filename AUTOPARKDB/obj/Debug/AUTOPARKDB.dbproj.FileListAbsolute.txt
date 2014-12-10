@@ -1,42 +1,3 @@
-C:\Users\s.kaziuko\Dropbox\Саша\Sasha\1\WORK2\AUTOPARK\AUTOPARKDB\sql\debug\AUTOPARKDB.deploymanifest
-C:\Users\s.kaziuko\Dropbox\Саша\Sasha\1\WORK2\AUTOPARK\AUTOPARKDB\sql\debug\AUTOPARKDB.dbschema
-C:\Users\s.kaziuko\Dropbox\Саша\Sasha\1\WORK2\AUTOPARK\AUTOPARKDB\obj\Debug\AUTOPARKDB.dbschema
-C:\Users\s.kaziuko\Dropbox\Саша\Sasha\1\WORK2\AUTOPARK\AUTOPARKDB\sql\debug\Путевые листы_Script.PreDeployment.sql
-C:\Users\s.kaziuko\Dropbox\Саша\Sasha\1\WORK2\AUTOPARK\AUTOPARKDB\sql\debug\Путевые листы_Script.PostDeployment.sql
-C:\Users\s.kaziuko\Dropbox\Саша\Sasha\1\WORK2\AUTOPARK\AUTOPARKDB\sql\debug\Путевые листы_Database.sqlsettings
-C:\Users\s.kaziuko\Dropbox\Саша\Sasha\1\WORK2\AUTOPARK\AUTOPARKDB\sql\debug\Путевые листы_Database.sqldeployment
-C:\Users\s.kaziuko\Dropbox\Саша\Sasha\1\WORK2\AUTOPARK\AUTOPARKDB\sql\debug\Путевые листы_Database.sqlcmdvars
-D:\my\autopark\AUTOPARK\AUTOPARKDB\sql\debug\Путевые листы_Script.PreDeployment.sql
-D:\my\autopark\AUTOPARK\AUTOPARKDB\sql\debug\Путевые листы_Script.PostDeployment.sql
-D:\my\autopark\AUTOPARK\AUTOPARKDB\sql\debug\Путевые листы_Database.sqlsettings
-D:\my\autopark\AUTOPARK\AUTOPARKDB\sql\debug\Путевые листы_Database.sqldeployment
-D:\my\autopark\AUTOPARK\AUTOPARKDB\sql\debug\Путевые листы_Database.sqlcmdvars
-D:\my\autopark\AUTOPARK\AUTOPARKDB\sql\debug\AUTOPARKDB.deploymanifest
-D:\my\autopark\AUTOPARK\AUTOPARKDB\sql\debug\AUTOPARKDB.dbschema
-D:\my\autopark\AUTOPARK\AUTOPARKDB\bin\Debug\Путевые листы_Script.PreDeployment.sql
-D:\my\autopark\AUTOPARK\AUTOPARKDB\bin\Debug\Путевые листы_Script.PostDeployment.sql
-D:\my\autopark\AUTOPARK\AUTOPARKDB\bin\Debug\Путевые листы_Database.sqlsettings
-D:\my\autopark\AUTOPARK\AUTOPARKDB\bin\Debug\Путевые листы_Database.sqldeployment
-D:\my\autopark\AUTOPARK\AUTOPARKDB\bin\Debug\Путевые листы_Database.sqlcmdvars
-D:\my\autopark\AUTOPARK\AUTOPARKDB\bin\Debug\AUTOPARKDB.deploymanifest
-D:\my\autopark\AUTOPARK\AUTOPARKDB\bin\Debug\AUTOPARKDB.dbschema
-D:\my\autopark\AUTOPARK\AUTOPARKDB\obj\Debug\AUTOPARKDB.dbschema
-D:\autopark\AUTOPARK\AUTOPARKDB\bin\Debug\Путевые листы_Script.PreDeployment.sql
-D:\autopark\AUTOPARK\AUTOPARKDB\bin\Debug\Путевые листы_Script.PostDeployment.sql
-D:\autopark\AUTOPARK\AUTOPARKDB\bin\Debug\Путевые листы_Database.sqlsettings
-D:\autopark\AUTOPARK\AUTOPARKDB\bin\Debug\Путевые листы_Database.sqldeployment
-D:\autopark\AUTOPARK\AUTOPARKDB\bin\Debug\Путевые листы_Database.sqlcmdvars
-D:\autopark\AUTOPARK\AUTOPARKDB\bin\Debug\AUTOPARKDB.deploymanifest
-D:\autopark\AUTOPARK\AUTOPARKDB\bin\Debug\AUTOPARKDB.dbschema
-D:\autopark\AUTOPARK\AUTOPARKDB\obj\Debug\AUTOPARKDB.dbschema
-D:\my\autopark\AUTOPARKDB\obj\Debug\AUTOPARKDB.dbschema
-D:\my\autopark\AUTOPARKDB\bin\Debug\Путевые листы_Script.PreDeployment.sql
-D:\my\autopark\AUTOPARKDB\bin\Debug\Путевые листы_Script.PostDeployment.sql
-D:\my\autopark\AUTOPARKDB\bin\Debug\Путевые листы_Database.sqlsettings
-D:\my\autopark\AUTOPARKDB\bin\Debug\Путевые листы_Database.sqldeployment
-D:\my\autopark\AUTOPARKDB\bin\Debug\Путевые листы_Database.sqlcmdvars
-D:\my\autopark\AUTOPARKDB\bin\Debug\AUTOPARKDB.deploymanifest
-D:\my\autopark\AUTOPARKDB\bin\Debug\AUTOPARKDB.dbschema
 d:\Документы\AutoparkApp\AUTOPARKDB\bin\Debug\Путевые листы_Script.PreDeployment.sql
 d:\Документы\AutoparkApp\AUTOPARKDB\bin\Debug\Путевые листы_Script.PostDeployment.sql
 d:\Документы\AutoparkApp\AUTOPARKDB\bin\Debug\Путевые листы_Database.sqlsettings
@@ -45,19 +6,3 @@ d:\Документы\AutoparkApp\AUTOPARKDB\bin\Debug\Путевые листы
 d:\Документы\AutoparkApp\AUTOPARKDB\bin\Debug\AUTOPARKDB.deploymanifest
 d:\Документы\AutoparkApp\AUTOPARKDB\bin\Debug\AUTOPARKDB.dbschema
 d:\Документы\AutoparkApp\AUTOPARKDB\obj\Debug\AUTOPARKDB.dbschema
-D:\autopark\AUTOPARKDB\bin\Debug\Путевые листы_Script.PreDeployment.sql
-D:\autopark\AUTOPARKDB\bin\Debug\Путевые листы_Script.PostDeployment.sql
-D:\autopark\AUTOPARKDB\bin\Debug\Путевые листы_Database.sqlsettings
-D:\autopark\AUTOPARKDB\bin\Debug\Путевые листы_Database.sqldeployment
-D:\autopark\AUTOPARKDB\bin\Debug\Путевые листы_Database.sqlcmdvars
-D:\autopark\AUTOPARKDB\bin\Debug\AUTOPARKDB.deploymanifest
-D:\autopark\AUTOPARKDB\bin\Debug\AUTOPARKDB.dbschema
-D:\autopark\AUTOPARKDB\obj\Debug\AUTOPARKDB.dbschema
-d:\WORK\AUTOPARK\AUTOPARKDB\bin\Debug\Путевые листы_Script.PreDeployment.sql
-d:\WORK\AUTOPARK\AUTOPARKDB\bin\Debug\Путевые листы_Script.PostDeployment.sql
-d:\WORK\AUTOPARK\AUTOPARKDB\bin\Debug\Путевые листы_Database.sqlsettings
-d:\WORK\AUTOPARK\AUTOPARKDB\bin\Debug\Путевые листы_Database.sqldeployment
-d:\WORK\AUTOPARK\AUTOPARKDB\bin\Debug\Путевые листы_Database.sqlcmdvars
-d:\WORK\AUTOPARK\AUTOPARKDB\bin\Debug\AUTOPARKDB.deploymanifest
-d:\WORK\AUTOPARK\AUTOPARKDB\bin\Debug\AUTOPARKDB.dbschema
-d:\WORK\AUTOPARK\AUTOPARKDB\obj\Debug\AUTOPARKDB.dbschema

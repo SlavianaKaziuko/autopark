@@ -41,15 +41,15 @@
             // dgvSpravochnik
             // 
             this.dgvSpravochnik.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSpravochnik.Location = new System.Drawing.Point(12, 86);
+            this.dgvSpravochnik.Location = new System.Drawing.Point(12, 27);
             this.dgvSpravochnik.Name = "dgvSpravochnik";
-            this.dgvSpravochnik.Size = new System.Drawing.Size(1144, 217);
+            this.dgvSpravochnik.Size = new System.Drawing.Size(764, 309);
             this.dgvSpravochnik.TabIndex = 0;
             this.dgvSpravochnik.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgvSpravochnik_DataError);
             // 
             // btnSaveChanges
             // 
-            this.btnSaveChanges.Location = new System.Drawing.Point(1018, 309);
+            this.btnSaveChanges.Location = new System.Drawing.Point(638, 342);
             this.btnSaveChanges.Name = "btnSaveChanges";
             this.btnSaveChanges.Size = new System.Drawing.Size(138, 23);
             this.btnSaveChanges.TabIndex = 1;
@@ -63,7 +63,7 @@
             this.навигацияToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1287, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(791, 24);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -94,7 +94,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1287, 377);
+            this.ClientSize = new System.Drawing.Size(791, 377);
             this.Controls.Add(this.btnSaveChanges);
             this.Controls.Add(this.dgvSpravochnik);
             this.Controls.Add(this.menuStrip1);

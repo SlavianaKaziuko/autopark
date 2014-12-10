@@ -94,7 +94,7 @@ namespace AUTOPARK
         private void Spravochnik_Resize(object sender, EventArgs e)    //        растягивание формы и кнопки сохранить по высоте и ширине
         {
             dgvSpravochnik.Width = this.Width - 40;
-            dgvSpravochnik.Height = this.Height - 100;
+            dgvSpravochnik.Height = this.Height - 115;
             btnSaveChanges.Location = new Point(this.Width - 170, this.Height - 75);
         }
 

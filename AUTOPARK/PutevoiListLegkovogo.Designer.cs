@@ -55,6 +55,7 @@
             this.tsmiToMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiExitApplication = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiRefresh = new System.Windows.Forms.ToolStripMenuItem();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPutevieLegkovie)).BeginInit();
             this.pnlShapka.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -78,6 +79,7 @@
             this.txtNumber.Name = "txtNumber";
             this.txtNumber.Size = new System.Drawing.Size(130, 23);
             this.txtNumber.TabIndex = 1;
+            this.txtNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // lblperiod
             // 
@@ -181,6 +183,7 @@
             // 
             // pnlShapka
             // 
+            this.pnlShapka.Controls.Add(this.label1);
             this.pnlShapka.Controls.Add(this.txtOtdel);
             this.pnlShapka.Controls.Add(this.cbOtdel);
             this.pnlShapka.Controls.Add(this.dtpEnd);
@@ -296,7 +299,7 @@
             this.tsmiRefresh});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1078, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1008, 24);
             this.menuStrip1.TabIndex = 24;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -330,11 +333,21 @@
             this.tsmiRefresh.Text = "Обновить";
             this.tsmiRefresh.Click += new System.EventHandler(this.tsmiRefresh_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(587, 25);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(18, 17);
+            this.label1.TabIndex = 22;
+            this.label1.Text = "Л";
+            // 
             // PutListLegkovogoavto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1078, 579);
+            this.ClientSize = new System.Drawing.Size(1008, 522);
             this.Controls.Add(this.btnReport);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
@@ -387,6 +400,7 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiRefresh;
         private System.Windows.Forms.Label txtOtdel;
         private System.Windows.Forms.ComboBox cbOtdel;
+        private System.Windows.Forms.Label label1;
 
     }
 }
