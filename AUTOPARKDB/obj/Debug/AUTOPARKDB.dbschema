@@ -313,6 +313,191 @@
 			</Relationship>
 			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="14" />
 		</Element>
+		<Element Type="ISql100Procedure" Name="[dbo].[GetMileageGruz]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+DECLARE @result int
+SELECT TOP (1) @result = d.[Показания спидометра] FROM [Работа водителя и автомобиля] AS d
+JOIN [Путевой лист Грузового авто] AS p ON p.[ID_Путевого листа]=d.[ID_Путевого листа]
+WHERE p.[ID_Автомобиля] = @Auto
+	AND d.[Дата и время по графику] <= @DateAt
+ORDER BY d.[Дата и время по графику] DESC
+SELECT ISNULL(@result,0) AS  N'Километраж'
+RETURN 0]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Работа водителя и автомобиля]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Путевой лист Грузового авто]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Путевой лист Грузового авто].[ID_Путевого листа]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Работа водителя и автомобиля].[ID_Путевого листа]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Работа водителя и автомобиля].[Показания спидометра]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Путевой лист Грузового авто].[ID_Автомобиля]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[GetMileageGruz].[@Auto]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Работа водителя и автомобиля].[Дата и время по графику]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[GetMileageGruz].[@DateAt]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Owner">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="ISql100SubroutineParameter" Name="[dbo].[GetMileageGruz].[@Auto]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="ISql100SubroutineParameter" Name="[dbo].[GetMileageGruz].[@DateAt]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[datetime]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="452" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[GetMileageGruz]&#xD;&#xA;&#x9;@Auto int, &#xD;&#xA;&#x9;@DateAt datetime&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="ISql100Procedure" Name="[dbo].[GetMileageLegk]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+DECLARE @result int
+SELECT TOP (1) @result = d.[Показания спидометра при возвращении] FROM [Данные Путевой лист легкового авто] AS d
+JOIN [Путевой лист легкового автомобиля] AS p ON p.[ID_Путевого листа]=d.[ID_Путевого листа]
+WHERE p.[ID_Автомобиль] = @Auto
+	AND (d.[Число]< @DateAt
+	OR (d.[Число]= @DateAt AND d.[Время возвращения] < CONVERT(time, @DateAt)))
+ORDER BY d.[Число] DESC
+SELECT ISNULL(@result,0) AS  N'Километраж'
+RETURN 0]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Данные Путевой лист легкового авто]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Путевой лист легкового автомобиля]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Путевой лист легкового автомобиля].[ID_Путевого листа]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Данные Путевой лист легкового авто].[ID_Путевого листа]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Данные Путевой лист легкового авто].[Показания спидометра при возвращении]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Путевой лист легкового автомобиля].[ID_Автомобиль]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[GetMileageLegk].[@Auto]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Данные Путевой лист легкового авто].[Число]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[GetMileageLegk].[@DateAt]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Данные Путевой лист легкового авто].[Время возвращения]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[time]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Owner">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="ISql100SubroutineParameter" Name="[dbo].[GetMileageLegk].[@Auto]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="ISql100SubroutineParameter" Name="[dbo].[GetMileageLegk].[@DateAt]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[datetime]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="521" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[GetMileageLegk]&#xD;&#xA;&#x9;@Auto int, &#xD;&#xA;&#x9;@DateAt datetime&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
 		<Element Type="ISql100PrimaryKeyConstraint" Name="[dbo].[PK_Водители авто]">
 			<Relationship Name="ColumnSpecifications">
 				<Entry>

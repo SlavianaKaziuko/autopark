@@ -2,22 +2,8 @@
     
     
     public partial class AutoparkDB {
-        partial class ОтделыDataTable
+        partial class Данные_Путевой_лист_легкового_автоDataTable
         {
         }
-    
-        partial class Путевые_листы_легковыеDataTable
-        {
-        }
-    }
-}
-
-namespace AUTOPARK.AutoparkDBTableAdapters {
-    partial class PutevieLegkovieTableAdapter
-    {
-    }
-    
-    
-    public partial class OtdelTableAdapter {
     }
 }

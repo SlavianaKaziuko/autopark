@@ -1,7 +1,4 @@
-﻿
-
-
-using System;
+﻿using System;
 using System.Data;
 using System.Drawing;
 using System.Globalization;
@@ -15,12 +12,13 @@ namespace AUTOPARK
         private readonly BindingSource _bindingAuto = new BindingSource();
         private readonly BindingSource _bindingVoditel = new BindingSource();
         private readonly BindingSource _bindingDannie = new BindingSource();
-        private readonly int _number;
-        private readonly int _idotd;
-        private readonly int _idauto;
-        private readonly int _idvod;
-        private readonly DateTime _dateStart;
-        private readonly DateTime _dateEnd;
+        private readonly BindingSource _bindingOtdel = new BindingSource();
+        private int _number;
+        private int _idotd;
+        private int _idauto;
+        private int _idvod;
+        private DateTime _dateStart;
+        private DateTime _dateEnd;
         private readonly bool _modeIsNew; ////true - add, false - update
         private int PutevoiId { get; set; }
 
@@ -52,7 +50,8 @@ namespace AUTOPARK
             if (newLegkNumber != null)
                 _number = int.Parse(newLegkNumber.ToString());
             var tableOtdeli = new AutoparkDBTableAdapters.OtdelTableAdapter();
-            cbOtdel.DataSource = tableOtdeli.GetData();
+            _bindingOtdel.DataSource = tableOtdeli.GetData();
+            cbOtdel.DataSource = _bindingOtdel;
             cbOtdel.DisplayMember = "Название отдела";
             cbOtdel.ValueMember = "ID";
             _dateStart = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);             //календарь 
@@ -85,6 +84,12 @@ namespace AUTOPARK
             cbVodUdostoverenie.DisplayMember = "ФИО";
             cbVodUdostoverenie.ValueMember = "табельный_номер";
 
+            var tableOtdeli = new AutoparkDBTableAdapters.OtdelTableAdapter();
+            _bindingOtdel.DataSource = tableOtdeli.GetData();
+            cbOtdel.DataSource = _bindingOtdel;
+            cbOtdel.DisplayMember = "Название отдела";
+            cbOtdel.ValueMember = "ID";
+
             var tableDannie = new AutoparkDBTableAdapters.PutListLegkovogoDannieTableAdapter();
             _bindingDannie.DataSource = tableDannie.GetData();
             _bindingDannie.Filter = "[ID_Путевого листа] = " + PutevoiId;
@@ -104,13 +109,10 @@ namespace AUTOPARK
             _idotd = res[0].ID_Отдела;
             _dateStart = res[0].За_период_с;
             _dateEnd = res[0].За_период_по;
+
             txtNumber.Text = _number.ToString(CultureInfo.InvariantCulture);
             cbNomerAuto.SelectedItem = _bindingAuto[_bindingAuto.Find("ID", _idauto)];
             cbVodUdostoverenie.SelectedItem = _bindingVoditel[_bindingVoditel.Find("табельный_номер", _idvod)];
-            var tableOtdeli = new AutoparkDBTableAdapters.OtdelTableAdapter();
-            cbOtdel.DataSource = tableOtdeli.GetData();
-            cbOtdel.DisplayMember = "Название отдела";
-            cbOtdel.ValueMember = "ID";
             cbOtdel.SelectedItem = _idotd;
             dtpStart.Value = _dateStart;
             dtpEnd.Value = _dateEnd;
@@ -163,7 +165,7 @@ namespace AUTOPARK
                 PutevoiId = tablePutevoi.Insert(int.Parse(txtNumber.Text), dtpStart.Value, dtpEnd.Value,
                     int.Parse(((DataRowView) _bindingAuto[cbNomerAuto.SelectedIndex]).Row.ItemArray[0].ToString()),
                     int.Parse(((DataRowView) _bindingVoditel[cbVodUdostoverenie.SelectedIndex]).Row.ItemArray[0].ToString()),
-                    int.Parse(((DataRowView)_bindingVoditel[cbVodUdostoverenie.SelectedIndex]).Row.ItemArray[0].ToString()));
+                    int.Parse(((DataRowView)_bindingOtdel[cbOtdel.SelectedIndex]).Row.ItemArray[0].ToString()));
                 _bindingDannie.DataSource = tableDannie.GetData();
                 _bindingDannie.Filter = "[ID_Путевого листа] = " + PutevoiId;
                 dgvPutevieLegkovie.DataSource = _bindingDannie;
@@ -176,13 +178,19 @@ namespace AUTOPARK
                 tablePutevoi.Update(int.Parse(txtNumber.Text), dtpStart.Value, dtpEnd.Value,
                     int.Parse(((DataRowView) _bindingAuto[cbNomerAuto.SelectedIndex]).Row.ItemArray[0].ToString()),
                     int.Parse(((DataRowView) _bindingVoditel[cbVodUdostoverenie.SelectedIndex]).Row.ItemArray[0].ToString()),
-                    int.Parse(((DataRowView) _bindingVoditel[cbVodUdostoverenie.SelectedIndex]).Row.ItemArray[0].ToString()),
+                    int.Parse(((DataRowView) _bindingOtdel[cbOtdel.SelectedIndex]).Row.ItemArray[0].ToString()),
                     PutevoiId, _number, _dateStart, _dateEnd, _idauto, _idvod,_idotd);
                 
                 tableDannie.Update((AutoparkDB.Данные_Путевой_лист_легкового_автоDataTable) _bindingDannie.DataSource);
                 _bindingDannie.DataSource = tableDannie.GetData();
                 _bindingDannie.Filter = "[ID_Путевого листа] = " + PutevoiId;
                 dgvPutevieLegkovie.DataSource = _bindingDannie;
+                _number = int.Parse(txtNumber.Text);
+                _idauto = int.Parse(((DataRowView)_bindingAuto[cbNomerAuto.SelectedIndex]).Row.ItemArray[0].ToString());
+                _idvod = int.Parse(((DataRowView)_bindingVoditel[cbVodUdostoverenie.SelectedIndex]).Row.ItemArray[0].ToString());
+                _idotd = int.Parse(((DataRowView)_bindingOtdel[cbOtdel.SelectedIndex]).Row.ItemArray[0].ToString());
+                _dateStart = dtpStart.Value;
+                _dateEnd = dtpEnd.Value;
             }
             btnCancel.Visible = false;
         }
@@ -190,17 +198,15 @@ namespace AUTOPARK
         private void dgvPutevieLegkovie_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
             if (dgvPutevieLegkovie.CurrentRow == null) return;
-            if (dgvPutevieLegkovie.CurrentRow.Index==0 && _bindingDannie.Count!=0) return;
+//            if (dgvPutevieLegkovie.CurrentRow.Index==0 && _bindingDannie.Count!=0) return;
+            if (!dgvPutevieLegkovie.IsCurrentCellInEditMode) return;
             dgvPutevieLegkovie.CurrentRow.Cells["ID_Путевого листа"].Value = PutevoiId;
             dgvPutevieLegkovie.CurrentRow.Cells["Время выезда"].Value = new TimeSpan(8, 15, 0);
             dgvPutevieLegkovie.CurrentRow.Cells["Время возвращения"].Value = new TimeSpan(17, 0, 0);
             dgvPutevieLegkovie.CurrentRow.Cells["Время в наряде"].Value = new TimeSpan(8, 45, 0);
-            if (dgvPutevieLegkovie.RowCount > 1)
-            {
-                dgvPutevieLegkovie.CurrentRow.Cells["Показания спидометра при выезде"].Value =
-                    dgvPutevieLegkovie.Rows[dgvPutevieLegkovie.CurrentRow.Index-1].Cells[
-                        "Показания спидометра при возвращении"].Value;
-            }
+            var queriesResult = new AutoparkDBTableAdapters.QueriesTableAdapter();
+            dgvPutevieLegkovie.CurrentRow.Cells["Показания спидометра при выезде"].Value =
+                queriesResult.GetMileageLegk(_idauto, _dateEnd);
         }
 
         private void btnCancel_Click(object sender, EventArgs e)        // Кнопка Отмена 
@@ -244,6 +250,27 @@ namespace AUTOPARK
             _bindingDannie.DataSource = tableDannie.GetData();
             _bindingDannie.Filter = "[ID_Путевого листа] = " + PutevoiId;
             dgvPutevieLegkovie.DataSource = _bindingDannie;
+        }
+
+        private void dgvPutevieLegkovie_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            var res = MessageBox.Show(@"Отменить редактирование ячейки", "", MessageBoxButtons.OKCancel);
+            if (res == DialogResult.OK)
+            {
+                dgvPutevieLegkovie.EndEdit();
+            }
+        }
+
+        private void dgvPutevieLegkovie_CellLeave(object sender, DataGridViewCellEventArgs e)
+        {
+            var dataGridViewCell = ((DataGridView) sender).CurrentCell;
+            if (dataGridViewCell.OwningColumn.Name != "Показания спидометра при возвращении" || dataGridViewCell.OwningColumn.Name != "Показания спидометра при выезде") return;
+            var dataGridViewRow = ((DataGridView)sender).CurrentRow;
+            if (dataGridViewRow != null)
+                dataGridViewRow.Cells["Пробег км"].Value =
+                    int.Parse(
+                        dataGridViewRow.Cells["Показания спидометра при возвращении"].EditedFormattedValue.ToString()) -
+                    int.Parse(dataGridViewRow.Cells["Показания спидометра при выезде"].EditedFormattedValue.ToString());
         }
 
     }

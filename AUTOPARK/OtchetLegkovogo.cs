@@ -16,7 +16,7 @@ namespace AUTOPARK
              PutevoiId = id;
 
             var table = new AutoparkDBTableAdapters.PutListLegkovogoDannieTableAdapter();
-            _bindingDannie.DataSource = table.GetDataWithCalculating(PutevoiId);
+            _bindingDannie.DataSource = table.GetDataById(PutevoiId);
 
             var tablePutevoi = new AutoparkDBTableAdapters.PutevieLegkovieTableAdapter();
             _bindingHead.DataSource = tablePutevoi.GetDataByID(PutevoiId);

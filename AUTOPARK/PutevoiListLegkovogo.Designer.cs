@@ -41,6 +41,7 @@
             this.cbVodUdostoverenie = new System.Windows.Forms.ComboBox();
             this.dgvPutevieLegkovie = new System.Windows.Forms.DataGridView();
             this.pnlShapka = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.txtOtdel = new System.Windows.Forms.Label();
             this.cbOtdel = new System.Windows.Forms.ComboBox();
             this.dtpEnd = new System.Windows.Forms.DateTimePicker();
@@ -55,7 +56,6 @@
             this.tsmiToMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiExitApplication = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiRefresh = new System.Windows.Forms.ToolStripMenuItem();
-            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPutevieLegkovie)).BeginInit();
             this.pnlShapka.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -179,6 +179,8 @@
             this.dgvPutevieLegkovie.Name = "dgvPutevieLegkovie";
             this.dgvPutevieLegkovie.Size = new System.Drawing.Size(981, 278);
             this.dgvPutevieLegkovie.TabIndex = 16;
+            this.dgvPutevieLegkovie.CellLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPutevieLegkovie_CellLeave);
+            this.dgvPutevieLegkovie.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgvPutevieLegkovie_DataError);
             this.dgvPutevieLegkovie.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dgvPutevieLegkovie_RowsAdded);
             // 
             // pnlShapka
@@ -205,6 +207,16 @@
             this.pnlShapka.Name = "pnlShapka";
             this.pnlShapka.Size = new System.Drawing.Size(766, 156);
             this.pnlShapka.TabIndex = 17;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(587, 25);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(18, 17);
+            this.label1.TabIndex = 22;
+            this.label1.Text = "Л";
             // 
             // txtOtdel
             // 
@@ -332,16 +344,6 @@
             this.tsmiRefresh.Size = new System.Drawing.Size(73, 20);
             this.tsmiRefresh.Text = "Обновить";
             this.tsmiRefresh.Click += new System.EventHandler(this.tsmiRefresh_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(587, 25);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(18, 17);
-            this.label1.TabIndex = 22;
-            this.label1.Text = "Л";
             // 
             // PutListLegkovogoavto
             // 
