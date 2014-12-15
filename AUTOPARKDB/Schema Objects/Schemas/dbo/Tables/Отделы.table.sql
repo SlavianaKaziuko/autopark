@@ -1,6 +1,6 @@
-﻿CREATE TABLE [dbo].[Отделы]
+﻿ CREATE TABLE [dbo].[Отделы]
 (
-	ID [int] IDENTITY(1,1) NOT NULL CONSTRAINT [PK_Отделы] PRIMARY KEY, 
-	[Название отдела] nvarchar(100) NULL,
-	[Аббревиатура] nvarchar(20) NULL
+ [Код] [int] NOT NULL CONSTRAINT [PK_Отделы] PRIMARY KEY, 
+ [Подразделение] nvarchar(20) NULL,
+ [Полное название] nvarchar(20) NULL
 )
