@@ -42,8 +42,8 @@ namespace AUTOPARK
             var tableZadanie = new AutoparkDBTableAdapters.ZadanieVoditelTableAdapter();
             _bindingZadanie.DataSource = tableZadanie.GetDataByPutevoiId(PutevoiId);
 
-            var table = new AutoparkDBTableAdapters.Работа_водителя_и_автомобиляTableAdapter();
-            _bindingVoditelWork.DataSource = table.GetDataByID(PutevoiId);
+            var table = new AutoparkDBTableAdapters.AutoVodWorkTableAdapter();
+            _bindingVoditelWork.DataSource = table.GetDataByPutevoiID(PutevoiId);
         }
 
         private void Form2_Load(object sender, EventArgs e)

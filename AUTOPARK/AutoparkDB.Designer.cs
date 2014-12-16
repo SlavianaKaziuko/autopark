@@ -86,6 +86,8 @@ namespace AUTOPARK {
         
         private global::System.Data.DataRelation relationFK_Путевой_лист_легкового_id_отдела;
         
+        private global::System.Data.DataRelation relationFK_Путевой_лист_Грузового_авто_id_отдела;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -620,6 +622,7 @@ namespace AUTOPARK {
             this.relationFK_Путевой_лист_легкового_автомобиля_личный_состав = this.Relations["FK_Путевой лист легкового автомобиля_личный состав"];
             this.relationFK_Данные_Путевой_лист_легкового_авто_Путевой_лист_легкового_автомобиля = this.Relations["FK_Данные Путевой лист легкового авто_Путевой лист легкового автомобиля"];
             this.relationFK_Путевой_лист_легкового_id_отдела = this.Relations["FK_Путевой лист легкового_id_отдела"];
+            this.relationFK_Путевой_лист_Грузового_авто_id_отдела = this.Relations["FK_Путевой лист Грузового авто_id_отдела"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -720,6 +723,10 @@ namespace AUTOPARK {
                         this.tableОтделы.КодColumn}, new global::System.Data.DataColumn[] {
                         this.tablePutevoiListLegkTable.ID_ОтделаColumn}, false);
             this.Relations.Add(this.relationFK_Путевой_лист_легкового_id_отдела);
+            this.relationFK_Путевой_лист_Грузового_авто_id_отдела = new global::System.Data.DataRelation("FK_Путевой лист Грузового авто_id_отдела", new global::System.Data.DataColumn[] {
+                        this.tableОтделы.КодColumn}, new global::System.Data.DataColumn[] {
+                        this.tableПутевой_лист_Грузового_авто.ID_ОтделаColumn}, false);
+            this.Relations.Add(this.relationFK_Путевой_лист_Грузового_авто_id_отдела);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3015,6 +3022,8 @@ namespace AUTOPARK {
             
             private global::System.Data.DataColumn columnID_Автомобиля;
             
+            private global::System.Data.DataColumn columnID_Отдела;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public Путевой_лист_Грузового_автоDataTable() {
@@ -3090,6 +3099,14 @@ namespace AUTOPARK {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ID_ОтделаColumn {
+                get {
+                    return this.columnID_Отдела;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -3125,12 +3142,13 @@ namespace AUTOPARK {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public Путевой_лист_Грузового_автоRow AddПутевой_лист_Грузового_автоRow(int Номер_путевого_листа, System.DateTime Дата_путевого_листа, Личный_составRow parentЛичный_составRowByFK_Путевой_лист_Грузового_авто_личный_состав2, Подвижной_составRow parentПодвижной_составRowByFK_Путевой_лист_Грузового_авто_Подвижной_состав) {
+            public Путевой_лист_Грузового_автоRow AddПутевой_лист_Грузового_автоRow(int Номер_путевого_листа, System.DateTime Дата_путевого_листа, Личный_составRow parentЛичный_составRowByFK_Путевой_лист_Грузового_авто_личный_состав2, Подвижной_составRow parentПодвижной_составRowByFK_Путевой_лист_Грузового_авто_Подвижной_состав, ОтделыRow parentОтделыRowByFK_Путевой_лист_Грузового_авто_id_отдела) {
                 Путевой_лист_Грузового_автоRow rowПутевой_лист_Грузового_автоRow = ((Путевой_лист_Грузового_автоRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         Номер_путевого_листа,
                         Дата_путевого_листа,
+                        null,
                         null,
                         null};
                 if ((parentЛичный_составRowByFK_Путевой_лист_Грузового_авто_личный_состав2 != null)) {
@@ -3138,6 +3156,9 @@ namespace AUTOPARK {
                 }
                 if ((parentПодвижной_составRowByFK_Путевой_лист_Грузового_авто_Подвижной_состав != null)) {
                     columnValuesArray[4] = parentПодвижной_составRowByFK_Путевой_лист_Грузового_авто_Подвижной_состав[0];
+                }
+                if ((parentОтделыRowByFK_Путевой_лист_Грузового_авто_id_отдела != null)) {
+                    columnValuesArray[5] = parentОтделыRowByFK_Путевой_лист_Грузового_авто_id_отдела[0];
                 }
                 rowПутевой_лист_Грузового_автоRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowПутевой_лист_Грузового_автоRow);
@@ -3173,6 +3194,7 @@ namespace AUTOPARK {
                 this.columnДата_путевого_листа = base.Columns["Дата путевого листа"];
                 this.columnID_Водителя = base.Columns["ID_Водителя"];
                 this.columnID_Автомобиля = base.Columns["ID_Автомобиля"];
+                this.columnID_Отдела = base.Columns["ID_Отдела"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3188,6 +3210,8 @@ namespace AUTOPARK {
                 base.Columns.Add(this.columnID_Водителя);
                 this.columnID_Автомобиля = new global::System.Data.DataColumn("ID_Автомобиля", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnID_Автомобиля);
+                this.columnID_Отдела = new global::System.Data.DataColumn("ID_Отдела", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnID_Отдела);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID_Путевого_листа}, true));
                 this.columnID_Путевого_листа.AutoIncrement = true;
@@ -8800,6 +8824,23 @@ namespace AUTOPARK {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int ID_Отдела {
+                get {
+                    try {
+                        return ((int)(this[this.tableПутевой_лист_Грузового_авто.ID_ОтделаColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ID_Отдела\' in table \'Путевой лист Грузового авто\' is DBNull" +
+                                ".", e);
+                    }
+                }
+                set {
+                    this[this.tableПутевой_лист_Грузового_авто.ID_ОтделаColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public Подвижной_составRow Подвижной_составRow {
                 get {
                     return ((Подвижной_составRow)(this.GetParentRow(this.Table.ParentRelations["FK_Путевой лист Грузового авто_Подвижной состав"])));
@@ -8829,6 +8870,29 @@ namespace AUTOPARK {
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["FK_Путевой лист Грузового авто_личный состав3"]);
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public ОтделыRow ОтделыRow {
+                get {
+                    return ((ОтделыRow)(this.GetParentRow(this.Table.ParentRelations["FK_Путевой лист Грузового авто_id_отдела"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_Путевой лист Грузового авто_id_отдела"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsID_ОтделаNull() {
+                return this.IsNull(this.tableПутевой_лист_Грузового_авто.ID_ОтделаColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetID_ОтделаNull() {
+                this[this.tableПутевой_лист_Грузового_авто.ID_ОтделаColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -11586,6 +11650,17 @@ namespace AUTOPARK {
                 }
                 else {
                     return ((PutevoiListLegkTableRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Путевой лист легкового_id_отдела"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public Путевой_лист_Грузового_автоRow[] GetПутевой_лист_Грузового_автоRows() {
+                if ((this.Table.ChildRelations["FK_Путевой лист Грузового авто_id_отдела"] == null)) {
+                    return new Путевой_лист_Грузового_автоRow[0];
+                }
+                else {
+                    return ((Путевой_лист_Грузового_автоRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Путевой лист Грузового авто_id_отдела"])));
                 }
             }
         }
@@ -14379,51 +14454,46 @@ FROM            [Путевой лист Грузового авто] INNER JOIN
             tableMapping.ColumnMappings.Add("Дата путевого листа", "Дата путевого листа");
             tableMapping.ColumnMappings.Add("ID_Водителя", "ID_Водителя");
             tableMapping.ColumnMappings.Add("ID_Автомобиля", "ID_Автомобиля");
+            tableMapping.ColumnMappings.Add("ID_Отдела", "ID_Отдела");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [Путевой лист Грузового авто] WHERE (([ID_Путевого листа] = @Original_ID_Путевого_листа) AND ([Номер путевого листа] = @Original_Номер_путевого_листа) AND ([Дата путевого листа] = @Original_Дата_путевого_листа) AND ([ID_Водителя] = @Original_ID_Водителя) AND ([ID_Автомобиля] = @Original_ID_Автомобиля) AND ((@IsNull_ID_Работа_водителя_и_авто_выезд = 1 AND [ID_Работа водителя и авто выезд] IS NULL) OR ([ID_Работа водителя и авто выезд] = @Original_ID_Работа_водителя_и_авто_выезд)) AND ((@IsNull_ID_Работа_водителя_и_авто_возвращение = 1 AND [ID_Работа водителя и авто возвращение] IS NULL) OR ([ID_Работа водителя и авто возвращение] = @Original_ID_Работа_водителя_и_авто_возвращение)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [Путевой лист Грузового авто] WHERE (([ID_Путевого листа] = @Original_ID_Путевого_листа) AND ([Номер путевого листа] = @Original_Номер_путевого_листа) AND ([Дата путевого листа] = @Original_Дата_путевого_листа) AND ([ID_Водителя] = @Original_ID_Водителя) AND ([ID_Автомобиля] = @Original_ID_Автомобиля) AND ((@IsNull_ID_Отдела = 1 AND [ID_Отдела] IS NULL) OR ([ID_Отдела] = @Original_ID_Отдела)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_Путевого_листа", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Путевого листа", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Номер_путевого_листа", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Номер путевого листа", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Дата_путевого_листа", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Дата путевого листа", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_Водителя", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Водителя", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_Автомобиля", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Автомобиля", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ID_Работа_водителя_и_авто_выезд", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Работа водителя и авто выезд", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_Работа_водителя_и_авто_выезд", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Работа водителя и авто выезд", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ID_Работа_водителя_и_авто_возвращение", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Работа водителя и авто возвращение", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_Работа_водителя_и_авто_возвращение", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Работа водителя и авто возвращение", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ID_Отдела", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Отдела", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_Отдела", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Отдела", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [Путевой лист Грузового авто] ([Номер путевого листа], [Дата путевого листа], [ID_Водителя], [ID_Автомобиля], [ID_Работа водителя и авто выезд], [ID_Работа водителя и авто возвращение]) VALUES (@Номер_путевого_листа, @Дата_путевого_листа, @ID_Водителя, @ID_Автомобиля, @ID_Работа_водителя_и_авто_выезд, @ID_Работа_водителя_и_авто_возвращение);
-SELECT [ID_Путевого листа], [Номер путевого листа], [Дата путевого листа], ID_Водителя, ID_Автомобиля, [ID_Работа водителя и авто выезд], [ID_Работа водителя и авто возвращение] FROM [Путевой лист Грузового авто] WHERE ([ID_Путевого листа] = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [Путевой лист Грузового авто] ([Номер путевого листа], [Дата путевого листа], [ID_Водителя], [ID_Автомобиля], [ID_Отдела]) VALUES (@Номер_путевого_листа, @Дата_путевого_листа, @ID_Водителя, @ID_Автомобиля, @ID_Отдела);
+SELECT [ID_Путевого листа], [Номер путевого листа], [Дата путевого листа], ID_Водителя, ID_Автомобиля, ID_Отдела FROM [Путевой лист Грузового авто] WHERE ([ID_Путевого листа] = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Номер_путевого_листа", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Номер путевого листа", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Дата_путевого_листа", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Дата путевого листа", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_Водителя", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Водителя", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_Автомобиля", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Автомобиля", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_Работа_водителя_и_авто_выезд", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Работа водителя и авто выезд", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_Работа_водителя_и_авто_возвращение", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Работа водителя и авто возвращение", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_Отдела", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Отдела", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [Путевой лист Грузового авто] SET [Номер путевого листа] = @Номер_путевого_листа, [Дата путевого листа] = @Дата_путевого_листа, [ID_Водителя] = @ID_Водителя, [ID_Автомобиля] = @ID_Автомобиля, [ID_Работа водителя и авто выезд] = @ID_Работа_водителя_и_авто_выезд, [ID_Работа водителя и авто возвращение] = @ID_Работа_водителя_и_авто_возвращение WHERE (([ID_Путевого листа] = @Original_ID_Путевого_листа) AND ([Номер путевого листа] = @Original_Номер_путевого_листа) AND ([Дата путевого листа] = @Original_Дата_путевого_листа) AND ([ID_Водителя] = @Original_ID_Водителя) AND ([ID_Автомобиля] = @Original_ID_Автомобиля) AND ((@IsNull_ID_Работа_водителя_и_авто_выезд = 1 AND [ID_Работа водителя и авто выезд] IS NULL) OR ([ID_Работа водителя и авто выезд] = @Original_ID_Работа_водителя_и_авто_выезд)) AND ((@IsNull_ID_Работа_водителя_и_авто_возвращение = 1 AND [ID_Работа водителя и авто возвращение] IS NULL) OR ([ID_Работа водителя и авто возвращение] = @Original_ID_Работа_водителя_и_авто_возвращение)));
-SELECT [ID_Путевого листа], [Номер путевого листа], [Дата путевого листа], ID_Водителя, ID_Автомобиля, [ID_Работа водителя и авто выезд], [ID_Работа водителя и авто возвращение] FROM [Путевой лист Грузового авто] WHERE ([ID_Путевого листа] = @ID_Путевого_листа)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [Путевой лист Грузового авто] SET [Номер путевого листа] = @Номер_путевого_листа, [Дата путевого листа] = @Дата_путевого_листа, [ID_Водителя] = @ID_Водителя, [ID_Автомобиля] = @ID_Автомобиля, [ID_Отдела] = @ID_Отдела WHERE (([ID_Путевого листа] = @Original_ID_Путевого_листа) AND ([Номер путевого листа] = @Original_Номер_путевого_листа) AND ([Дата путевого листа] = @Original_Дата_путевого_листа) AND ([ID_Водителя] = @Original_ID_Водителя) AND ([ID_Автомобиля] = @Original_ID_Автомобиля) AND ((@IsNull_ID_Отдела = 1 AND [ID_Отдела] IS NULL) OR ([ID_Отдела] = @Original_ID_Отдела)));
+SELECT [ID_Путевого листа], [Номер путевого листа], [Дата путевого листа], ID_Водителя, ID_Автомобиля, ID_Отдела FROM [Путевой лист Грузового авто] WHERE ([ID_Путевого листа] = @ID_Путевого_листа)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Номер_путевого_листа", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Номер путевого листа", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Дата_путевого_листа", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Дата путевого листа", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_Водителя", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Водителя", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_Автомобиля", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Автомобиля", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_Работа_водителя_и_авто_выезд", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Работа водителя и авто выезд", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_Работа_водителя_и_авто_возвращение", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Работа водителя и авто возвращение", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_Отдела", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Отдела", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_Путевого_листа", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Путевого листа", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Номер_путевого_листа", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Номер путевого листа", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Дата_путевого_листа", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Дата путевого листа", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_Водителя", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Водителя", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_Автомобиля", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Автомобиля", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ID_Работа_водителя_и_авто_выезд", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Работа водителя и авто выезд", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_Работа_водителя_и_авто_выезд", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Работа водителя и авто выезд", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ID_Работа_водителя_и_авто_возвращение", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Работа водителя и авто возвращение", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_Работа_водителя_и_авто_возвращение", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Работа водителя и авто возвращение", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ID_Отдела", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Отдела", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_Отдела", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Отдела", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_Путевого_листа", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Путевого листа", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -14437,11 +14507,12 @@ SELECT [ID_Путевого листа], [Номер путевого листа
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[4];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT [ID_Путевого листа], [Номер путевого листа], [Дата путевого листа], ID_Вод" +
-                "ителя, ID_Автомобиля FROM [Путевой лист Грузового авто]";
+            this._commandCollection[0].CommandText = "SELECT        [ID_Путевого листа], [Номер путевого листа], [Дата путевого листа]," +
+                " ID_Водителя, ID_Автомобиля, ID_Отдела\r\nFROM            [Путевой лист Грузового " +
+                "авто]";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
@@ -14451,11 +14522,17 @@ SELECT [ID_Путевого листа], [Номер путевого листа
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_Путевого_листа", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Путевого листа", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT [ID_Путевого листа], [Номер путевого листа], [Дата путевого листа], ID_Авт" +
-                "омобиля, ID_Водителя FROM [Путевой лист Грузового авто] WHERE ([ID_Путевого лист" +
-                "а] = @ID)";
+            this._commandCollection[2].CommandText = "SELECT ID_Автомобиля, ID_Водителя, ID_Отдела, [ID_Путевого листа], [Дата путевого" +
+                " листа], [Номер путевого листа] FROM [Путевой лист Грузового авто] WHERE ([ID_Пу" +
+                "тевого листа] = @ID)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Путевого листа", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = "SELECT        ISNULL(MAX([Номер путевого листа]), 0) + 1 AS newID\r\nFROM          " +
+                "  [Путевой лист Грузового авто]\r\nWHERE        (YEAR([Дата путевого листа]) = YEA" +
+                "R(GETDATE()))";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -14541,27 +14618,19 @@ SELECT [ID_Путевого листа], [Номер путевого листа
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_ID_Путевого_листа, int Original_Номер_путевого_листа, System.DateTime Original_Дата_путевого_листа, int Original_ID_Водителя, int Original_ID_Автомобиля, global::System.Nullable<int> Original_ID_Работа_водителя_и_авто_выезд, global::System.Nullable<int> Original_ID_Работа_водителя_и_авто_возвращение) {
+        public virtual int Delete(int Original_ID_Путевого_листа, int Original_Номер_путевого_листа, System.DateTime Original_Дата_путевого_листа, int Original_ID_Водителя, int Original_ID_Автомобиля, global::System.Nullable<int> Original_ID_Отдела) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ID_Путевого_листа));
             this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_Номер_путевого_листа));
             this.Adapter.DeleteCommand.Parameters[2].Value = ((System.DateTime)(Original_Дата_путевого_листа));
             this.Adapter.DeleteCommand.Parameters[3].Value = ((int)(Original_ID_Водителя));
             this.Adapter.DeleteCommand.Parameters[4].Value = ((int)(Original_ID_Автомобиля));
-            if ((Original_ID_Работа_водителя_и_авто_выезд.HasValue == true)) {
+            if ((Original_ID_Отдела.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((int)(Original_ID_Работа_водителя_и_авто_выезд.Value));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((int)(Original_ID_Отдела.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            if ((Original_ID_Работа_водителя_и_авто_возвращение.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((int)(Original_ID_Работа_водителя_и_авто_возвращение.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -14583,22 +14652,16 @@ SELECT [ID_Путевого листа], [Номер путевого листа
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int Номер_путевого_листа, System.DateTime Дата_путевого_листа, int ID_Водителя, int ID_Автомобиля, global::System.Nullable<int> ID_Работа_водителя_и_авто_выезд, global::System.Nullable<int> ID_Работа_водителя_и_авто_возвращение) {
+        public virtual int Insert(int Номер_путевого_листа, System.DateTime Дата_путевого_листа, int ID_Водителя, int ID_Автомобиля, global::System.Nullable<int> ID_Отдела) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((int)(Номер_путевого_листа));
             this.Adapter.InsertCommand.Parameters[1].Value = ((System.DateTime)(Дата_путевого_листа));
             this.Adapter.InsertCommand.Parameters[2].Value = ((int)(ID_Водителя));
             this.Adapter.InsertCommand.Parameters[3].Value = ((int)(ID_Автомобиля));
-            if ((ID_Работа_водителя_и_авто_выезд.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((int)(ID_Работа_водителя_и_авто_выезд.Value));
+            if ((ID_Отдела.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((int)(ID_Отдела.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            if ((ID_Работа_водителя_и_авто_возвращение.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((int)(ID_Работа_водителя_и_авто_возвращение.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -14620,45 +14683,31 @@ SELECT [ID_Путевого листа], [Номер путевого листа
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int Номер_путевого_листа, System.DateTime Дата_путевого_листа, int ID_Водителя, int ID_Автомобиля, global::System.Nullable<int> ID_Работа_водителя_и_авто_выезд, global::System.Nullable<int> ID_Работа_водителя_и_авто_возвращение, int Original_ID_Путевого_листа, int Original_Номер_путевого_листа, System.DateTime Original_Дата_путевого_листа, int Original_ID_Водителя, int Original_ID_Автомобиля, global::System.Nullable<int> Original_ID_Работа_водителя_и_авто_выезд, global::System.Nullable<int> Original_ID_Работа_водителя_и_авто_возвращение, int ID_Путевого_листа) {
+        public virtual int Update(int Номер_путевого_листа, System.DateTime Дата_путевого_листа, int ID_Водителя, int ID_Автомобиля, global::System.Nullable<int> ID_Отдела, int Original_ID_Путевого_листа, int Original_Номер_путевого_листа, System.DateTime Original_Дата_путевого_листа, int Original_ID_Водителя, int Original_ID_Автомобиля, global::System.Nullable<int> Original_ID_Отдела, int ID_Путевого_листа) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(Номер_путевого_листа));
             this.Adapter.UpdateCommand.Parameters[1].Value = ((System.DateTime)(Дата_путевого_листа));
             this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(ID_Водителя));
             this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(ID_Автомобиля));
-            if ((ID_Работа_водителя_и_авто_выезд.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(ID_Работа_водителя_и_авто_выезд.Value));
+            if ((ID_Отдела.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(ID_Отдела.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
-            if ((ID_Работа_водителя_и_авто_возвращение.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(ID_Работа_водителя_и_авто_возвращение.Value));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_ID_Путевого_листа));
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_Номер_путевого_листа));
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((System.DateTime)(Original_Дата_путевого_листа));
+            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_ID_Водителя));
+            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_ID_Автомобиля));
+            if ((Original_ID_Отдела.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(Original_ID_Отдела.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_ID_Путевого_листа));
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_Номер_путевого_листа));
-            this.Adapter.UpdateCommand.Parameters[8].Value = ((System.DateTime)(Original_Дата_путевого_листа));
-            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_ID_Водителя));
-            this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_ID_Автомобиля));
-            if ((Original_ID_Работа_водителя_и_авто_выезд.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(Original_ID_Работа_водителя_и_авто_выезд.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
-            }
-            if ((Original_ID_Работа_водителя_и_авто_возвращение.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((int)(Original_ID_Работа_водителя_и_авто_возвращение.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
-            }
-            this.Adapter.UpdateCommand.Parameters[15].Value = ((int)(ID_Путевого_листа));
+            this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(ID_Путевого_листа));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -14679,8 +14728,8 @@ SELECT [ID_Путевого листа], [Номер путевого листа
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int Номер_путевого_листа, System.DateTime Дата_путевого_листа, int ID_Водителя, int ID_Автомобиля, global::System.Nullable<int> ID_Работа_водителя_и_авто_выезд, global::System.Nullable<int> ID_Работа_водителя_и_авто_возвращение, int Original_ID_Путевого_листа, int Original_Номер_путевого_листа, System.DateTime Original_Дата_путевого_листа, int Original_ID_Водителя, int Original_ID_Автомобиля, global::System.Nullable<int> Original_ID_Работа_водителя_и_авто_выезд, global::System.Nullable<int> Original_ID_Работа_водителя_и_авто_возвращение) {
-            return this.Update(Номер_путевого_листа, Дата_путевого_листа, ID_Водителя, ID_Автомобиля, ID_Работа_водителя_и_авто_выезд, ID_Работа_водителя_и_авто_возвращение, Original_ID_Путевого_листа, Original_Номер_путевого_листа, Original_Дата_путевого_листа, Original_ID_Водителя, Original_ID_Автомобиля, Original_ID_Работа_водителя_и_авто_выезд, Original_ID_Работа_водителя_и_авто_возвращение, Original_ID_Путевого_листа);
+        public virtual int Update(int Номер_путевого_листа, System.DateTime Дата_путевого_листа, int ID_Водителя, int ID_Автомобиля, global::System.Nullable<int> ID_Отдела, int Original_ID_Путевого_листа, int Original_Номер_путевого_листа, System.DateTime Original_Дата_путевого_листа, int Original_ID_Водителя, int Original_ID_Автомобиля, global::System.Nullable<int> Original_ID_Отдела) {
+            return this.Update(Номер_путевого_листа, Дата_путевого_листа, ID_Водителя, ID_Автомобиля, ID_Отдела, Original_ID_Путевого_листа, Original_Номер_путевого_листа, Original_Дата_путевого_листа, Original_ID_Водителя, Original_ID_Автомобиля, Original_ID_Отдела, Original_ID_Путевого_листа);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -14705,6 +14754,34 @@ SELECT [ID_Путевого листа], [Номер путевого листа
                 }
             }
             return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual global::System.Nullable<int> GetNewPutevoiId() {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[3];
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            object returnValue;
+            try {
+                returnValue = command.ExecuteScalar();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            if (((returnValue == null) 
+                        || (returnValue.GetType() == typeof(global::System.DBNull)))) {
+                return new global::System.Nullable<int>();
+            }
+            else {
+                return new global::System.Nullable<int>(((int)(returnValue)));
+            }
         }
     }
     
@@ -15501,9 +15578,9 @@ SELECT [табельный  номер], Фамилия, Имя, Отчеств�
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "табельный  номер", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT        классность,Фамилия +\' \'+Имя +\' \'+Отчество AS \'ФИО\', [номер водитель" +
-                "ского удостоверения], [срок действия мед. справки], [табельный  номер], [классно" +
-                "сть]\r\nFROM            [Личный состав]";
+            this._commandCollection[2].CommandText = "SELECT        классность,Фамилия, Имя, Отчество, Фамилия +\' \'+Имя +\' \'+Отчество A" +
+                "S \'ФИО\', [номер водительского удостоверения], [срок действия мед. справки], [таб" +
+                "ельный  номер], [классность]\r\nFROM            [Личный состав]";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -17111,7 +17188,7 @@ FROM            [Личный состав] CROSS JOIN
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class Движение_ТСМTableAdapter : global::System.ComponentModel.Component {
+    public partial class DvizhenieTCMTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -17125,7 +17202,7 @@ FROM            [Личный состав] CROSS JOIN
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public Движение_ТСМTableAdapter() {
+        public DvizhenieTCMTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -17314,7 +17391,7 @@ SELECT [ID_Движение ТМЦ], [ID_Путевого листа], [Оста
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillByID(AutoparkDB.Движение_ТСМDataTable dataTable, int ID) {
+        public virtual int FillByPutevoiID(AutoparkDB.Движение_ТСМDataTable dataTable, int ID) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(ID));
             if ((this.ClearBeforeFill == true)) {
@@ -17328,7 +17405,7 @@ SELECT [ID_Движение ТМЦ], [ID_Путевого листа], [Оста
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual AutoparkDB.Движение_ТСМDataTable GetDataByID(int ID) {
+        public virtual AutoparkDB.Движение_ТСМDataTable GetDataByPutevoiID(int ID) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(ID));
             AutoparkDB.Движение_ТСМDataTable dataTable = new AutoparkDB.Движение_ТСМDataTable();
@@ -17505,7 +17582,7 @@ SELECT [ID_Движение ТМЦ], [ID_Путевого листа], [Оста
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class Заправка_ТСМTableAdapter : global::System.ComponentModel.Component {
+    public partial class ZapravkaTCMTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -17519,7 +17596,7 @@ SELECT [ID_Движение ТМЦ], [ID_Путевого листа], [Оста
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public Заправка_ТСМTableAdapter() {
+        public ZapravkaTCMTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -17718,7 +17795,7 @@ SELECT [ID_Заправка ТСМ], Дата, [Марка ТСМ], Количе
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillByID(AutoparkDB.Заправка_ТСМDataTable dataTable, global::System.Nullable<int> ID) {
+        public virtual int FillByPutevoiID(AutoparkDB.Заправка_ТСМDataTable dataTable, global::System.Nullable<int> ID) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
             if ((ID.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((int)(ID.Value));
@@ -17737,7 +17814,7 @@ SELECT [ID_Заправка ТСМ], Дата, [Марка ТСМ], Количе
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual AutoparkDB.Заправка_ТСМDataTable GetDataByID(global::System.Nullable<int> ID) {
+        public virtual AutoparkDB.Заправка_ТСМDataTable GetDataByPutevoiID(global::System.Nullable<int> ID) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
             if ((ID.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((int)(ID.Value));
@@ -17975,7 +18052,7 @@ SELECT [ID_Заправка ТСМ], Дата, [Марка ТСМ], Количе
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class Работа_водителя_и_автомобиляTableAdapter : global::System.ComponentModel.Component {
+    public partial class AutoVodWorkTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -17989,7 +18066,7 @@ SELECT [ID_Заправка ТСМ], Дата, [Марка ТСМ], Количе
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public Работа_водителя_и_автомобиляTableAdapter() {
+        public AutoVodWorkTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -18203,9 +18280,9 @@ FROM            [Работа водителя и автомобиля]";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = @"SELECT [ID_Путевого листа], [ID_работа водителя и авто], [Время работы двигателя час], [Время работы спецоборудования], [Дата и время по графику], [Дата и время фактически], [Нулевой пробег], Операции, [Показания спидометра] FROM [Работа водителя и автомобиля] WHERE ([ID_Путевого листа] = @ID)";
+            this._commandCollection[1].CommandText = @"SELECT [ID_Путевого листа], [ID_работа водителя и авто], [Время работы двигателя час], [Время работы спецоборудования], [Дата и время по графику], [Дата и время фактически], [Нулевой пробег], Операции, [Показания спидометра] FROM [Работа водителя и автомобиля] WHERE ([ID_Путевого листа] = @IDPutevoi)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Путевого листа", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IDPutevoi", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Путевого листа", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -18236,10 +18313,10 @@ FROM            [Работа водителя и автомобиля]";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillByID(AutoparkDB.Работа_водителя_и_автомобиляDataTable dataTable, global::System.Nullable<int> ID) {
+        public virtual int FillByPutevoiID(AutoparkDB.Работа_водителя_и_автомобиляDataTable dataTable, global::System.Nullable<int> IDPutevoi) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
-            if ((ID.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((int)(ID.Value));
+            if ((IDPutevoi.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((int)(IDPutevoi.Value));
             }
             else {
                 this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
@@ -18255,10 +18332,10 @@ FROM            [Работа водителя и автомобиля]";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual AutoparkDB.Работа_водителя_и_автомобиляDataTable GetDataByID(global::System.Nullable<int> ID) {
+        public virtual AutoparkDB.Работа_водителя_и_автомобиляDataTable GetDataByPutevoiID(global::System.Nullable<int> IDPutevoi) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
-            if ((ID.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((int)(ID.Value));
+            if ((IDPutevoi.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((int)(IDPutevoi.Value));
             }
             else {
                 this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
@@ -20213,11 +20290,11 @@ SELECT Код, Подразделение, [Полное название] FROM 
         
         private ZadanieVoditelTableAdapter _zadanieVoditelTableAdapter;
         
-        private Движение_ТСМTableAdapter _движение_ТСМTableAdapter;
+        private DvizhenieTCMTableAdapter _dvizhenieTCMTableAdapter;
         
-        private Заправка_ТСМTableAdapter _заправка_ТСМTableAdapter;
+        private ZapravkaTCMTableAdapter _zapravkaTCMTableAdapter;
         
-        private Работа_водителя_и_автомобиляTableAdapter _работа_водителя_и_автомобиляTableAdapter;
+        private AutoVodWorkTableAdapter _autoVodWorkTableAdapter;
         
         private PutListLegkovogoDannieTableAdapter _putListLegkovogoDannieTableAdapter;
         
@@ -20327,12 +20404,12 @@ SELECT Код, Подразделение, [Полное название] FROM 
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public Движение_ТСМTableAdapter Движение_ТСМTableAdapter {
+        public DvizhenieTCMTableAdapter DvizhenieTCMTableAdapter {
             get {
-                return this._движение_ТСМTableAdapter;
+                return this._dvizhenieTCMTableAdapter;
             }
             set {
-                this._движение_ТСМTableAdapter = value;
+                this._dvizhenieTCMTableAdapter = value;
             }
         }
         
@@ -20341,12 +20418,12 @@ SELECT Код, Подразделение, [Полное название] FROM 
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public Заправка_ТСМTableAdapter Заправка_ТСМTableAdapter {
+        public ZapravkaTCMTableAdapter ZapravkaTCMTableAdapter {
             get {
-                return this._заправка_ТСМTableAdapter;
+                return this._zapravkaTCMTableAdapter;
             }
             set {
-                this._заправка_ТСМTableAdapter = value;
+                this._zapravkaTCMTableAdapter = value;
             }
         }
         
@@ -20355,12 +20432,12 @@ SELECT Код, Подразделение, [Полное название] FROM 
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public Работа_водителя_и_автомобиляTableAdapter Работа_водителя_и_автомобиляTableAdapter {
+        public AutoVodWorkTableAdapter AutoVodWorkTableAdapter {
             get {
-                return this._работа_водителя_и_автомобиляTableAdapter;
+                return this._autoVodWorkTableAdapter;
             }
             set {
-                this._работа_водителя_и_автомобиляTableAdapter = value;
+                this._autoVodWorkTableAdapter = value;
             }
         }
         
@@ -20435,17 +20512,17 @@ SELECT Код, Подразделение, [Полное название] FROM 
                             && (this._zadanieVoditelTableAdapter.Connection != null))) {
                     return this._zadanieVoditelTableAdapter.Connection;
                 }
-                if (((this._движение_ТСМTableAdapter != null) 
-                            && (this._движение_ТСМTableAdapter.Connection != null))) {
-                    return this._движение_ТСМTableAdapter.Connection;
+                if (((this._dvizhenieTCMTableAdapter != null) 
+                            && (this._dvizhenieTCMTableAdapter.Connection != null))) {
+                    return this._dvizhenieTCMTableAdapter.Connection;
                 }
-                if (((this._заправка_ТСМTableAdapter != null) 
-                            && (this._заправка_ТСМTableAdapter.Connection != null))) {
-                    return this._заправка_ТСМTableAdapter.Connection;
+                if (((this._zapravkaTCMTableAdapter != null) 
+                            && (this._zapravkaTCMTableAdapter.Connection != null))) {
+                    return this._zapravkaTCMTableAdapter.Connection;
                 }
-                if (((this._работа_водителя_и_автомобиляTableAdapter != null) 
-                            && (this._работа_водителя_и_автомобиляTableAdapter.Connection != null))) {
-                    return this._работа_водителя_и_автомобиляTableAdapter.Connection;
+                if (((this._autoVodWorkTableAdapter != null) 
+                            && (this._autoVodWorkTableAdapter.Connection != null))) {
+                    return this._autoVodWorkTableAdapter.Connection;
                 }
                 if (((this._putListLegkovogoDannieTableAdapter != null) 
                             && (this._putListLegkovogoDannieTableAdapter.Connection != null))) {
@@ -20486,13 +20563,13 @@ SELECT Код, Подразделение, [Полное название] FROM 
                 if ((this._zadanieVoditelTableAdapter != null)) {
                     count = (count + 1);
                 }
-                if ((this._движение_ТСМTableAdapter != null)) {
+                if ((this._dvizhenieTCMTableAdapter != null)) {
                     count = (count + 1);
                 }
-                if ((this._заправка_ТСМTableAdapter != null)) {
+                if ((this._zapravkaTCMTableAdapter != null)) {
                     count = (count + 1);
                 }
-                if ((this._работа_водителя_и_автомобиляTableAdapter != null)) {
+                if ((this._autoVodWorkTableAdapter != null)) {
                     count = (count + 1);
                 }
                 if ((this._putListLegkovogoDannieTableAdapter != null)) {
@@ -20557,30 +20634,30 @@ SELECT Код, Подразделение, [Полное название] FROM 
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._движение_ТСМTableAdapter != null)) {
+            if ((this._dvizhenieTCMTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.Движение_ТСМ.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._движение_ТСМTableAdapter.Update(updatedRows));
+                    result = (result + this._dvizhenieTCMTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._заправка_ТСМTableAdapter != null)) {
+            if ((this._zapravkaTCMTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.Заправка_ТСМ.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._заправка_ТСМTableAdapter.Update(updatedRows));
+                    result = (result + this._zapravkaTCMTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._работа_водителя_и_автомобиляTableAdapter != null)) {
+            if ((this._autoVodWorkTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.Работа_водителя_и_автомобиля.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._работа_водителя_и_автомобиляTableAdapter.Update(updatedRows));
+                    result = (result + this._autoVodWorkTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -20661,27 +20738,27 @@ SELECT Код, Подразделение, [Полное название] FROM 
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._движение_ТСМTableAdapter != null)) {
+            if ((this._dvizhenieTCMTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.Движение_ТСМ.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._движение_ТСМTableAdapter.Update(addedRows));
+                    result = (result + this._dvizhenieTCMTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._заправка_ТСМTableAdapter != null)) {
+            if ((this._zapravkaTCMTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.Заправка_ТСМ.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._заправка_ТСМTableAdapter.Update(addedRows));
+                    result = (result + this._zapravkaTCMTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._работа_водителя_и_автомобиляTableAdapter != null)) {
+            if ((this._autoVodWorkTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.Работа_водителя_и_автомобиля.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._работа_водителя_и_автомобиляTableAdapter.Update(addedRows));
+                    result = (result + this._autoVodWorkTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -20743,27 +20820,27 @@ SELECT Код, Подразделение, [Полное название] FROM 
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._работа_водителя_и_автомобиляTableAdapter != null)) {
+            if ((this._autoVodWorkTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.Работа_водителя_и_автомобиля.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._работа_водителя_и_автомобиляTableAdapter.Update(deletedRows));
+                    result = (result + this._autoVodWorkTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._заправка_ТСМTableAdapter != null)) {
+            if ((this._zapravkaTCMTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.Заправка_ТСМ.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._заправка_ТСМTableAdapter.Update(deletedRows));
+                    result = (result + this._zapravkaTCMTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._движение_ТСМTableAdapter != null)) {
+            if ((this._dvizhenieTCMTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.Движение_ТСМ.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._движение_ТСМTableAdapter.Update(deletedRows));
+                    result = (result + this._dvizhenieTCMTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -20876,18 +20953,18 @@ SELECT Код, Подразделение, [Полное название] FROM 
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
-            if (((this._движение_ТСМTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._движение_ТСМTableAdapter.Connection) == false))) {
+            if (((this._dvizhenieTCMTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._dvizhenieTCMTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
-            if (((this._заправка_ТСМTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._заправка_ТСМTableAdapter.Connection) == false))) {
+            if (((this._zapravkaTCMTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._zapravkaTCMTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
-            if (((this._работа_водителя_и_автомобиляTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._работа_водителя_и_автомобиляTableAdapter.Connection) == false))) {
+            if (((this._autoVodWorkTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._autoVodWorkTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
@@ -20987,31 +21064,31 @@ SELECT Код, Подразделение, [Полное название] FROM 
                         adaptersWithAcceptChangesDuringUpdate.Add(this._zadanieVoditelTableAdapter.Adapter);
                     }
                 }
-                if ((this._движение_ТСМTableAdapter != null)) {
-                    revertConnections.Add(this._движение_ТСМTableAdapter, this._движение_ТСМTableAdapter.Connection);
-                    this._движение_ТСМTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._движение_ТСМTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._движение_ТСМTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._движение_ТСМTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._движение_ТСМTableAdapter.Adapter);
+                if ((this._dvizhenieTCMTableAdapter != null)) {
+                    revertConnections.Add(this._dvizhenieTCMTableAdapter, this._dvizhenieTCMTableAdapter.Connection);
+                    this._dvizhenieTCMTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._dvizhenieTCMTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._dvizhenieTCMTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._dvizhenieTCMTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._dvizhenieTCMTableAdapter.Adapter);
                     }
                 }
-                if ((this._заправка_ТСМTableAdapter != null)) {
-                    revertConnections.Add(this._заправка_ТСМTableAdapter, this._заправка_ТСМTableAdapter.Connection);
-                    this._заправка_ТСМTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._заправка_ТСМTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._заправка_ТСМTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._заправка_ТСМTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._заправка_ТСМTableAdapter.Adapter);
+                if ((this._zapravkaTCMTableAdapter != null)) {
+                    revertConnections.Add(this._zapravkaTCMTableAdapter, this._zapravkaTCMTableAdapter.Connection);
+                    this._zapravkaTCMTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._zapravkaTCMTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._zapravkaTCMTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._zapravkaTCMTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._zapravkaTCMTableAdapter.Adapter);
                     }
                 }
-                if ((this._работа_водителя_и_автомобиляTableAdapter != null)) {
-                    revertConnections.Add(this._работа_водителя_и_автомобиляTableAdapter, this._работа_водителя_и_автомобиляTableAdapter.Connection);
-                    this._работа_водителя_и_автомобиляTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._работа_водителя_и_автомобиляTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._работа_водителя_и_автомобиляTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._работа_водителя_и_автомобиляTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._работа_водителя_и_автомобиляTableAdapter.Adapter);
+                if ((this._autoVodWorkTableAdapter != null)) {
+                    revertConnections.Add(this._autoVodWorkTableAdapter, this._autoVodWorkTableAdapter.Connection);
+                    this._autoVodWorkTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._autoVodWorkTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._autoVodWorkTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._autoVodWorkTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._autoVodWorkTableAdapter.Adapter);
                     }
                 }
                 if ((this._putListLegkovogoDannieTableAdapter != null)) {
@@ -21114,17 +21191,17 @@ SELECT Код, Подразделение, [Полное название] FROM 
                     this._zadanieVoditelTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._zadanieVoditelTableAdapter]));
                     this._zadanieVoditelTableAdapter.Transaction = null;
                 }
-                if ((this._движение_ТСМTableAdapter != null)) {
-                    this._движение_ТСМTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._движение_ТСМTableAdapter]));
-                    this._движение_ТСМTableAdapter.Transaction = null;
+                if ((this._dvizhenieTCMTableAdapter != null)) {
+                    this._dvizhenieTCMTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._dvizhenieTCMTableAdapter]));
+                    this._dvizhenieTCMTableAdapter.Transaction = null;
                 }
-                if ((this._заправка_ТСМTableAdapter != null)) {
-                    this._заправка_ТСМTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._заправка_ТСМTableAdapter]));
-                    this._заправка_ТСМTableAdapter.Transaction = null;
+                if ((this._zapravkaTCMTableAdapter != null)) {
+                    this._zapravkaTCMTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._zapravkaTCMTableAdapter]));
+                    this._zapravkaTCMTableAdapter.Transaction = null;
                 }
-                if ((this._работа_водителя_и_автомобиляTableAdapter != null)) {
-                    this._работа_водителя_и_автомобиляTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._работа_водителя_и_автомобиляTableAdapter]));
-                    this._работа_водителя_и_автомобиляTableAdapter.Transaction = null;
+                if ((this._autoVodWorkTableAdapter != null)) {
+                    this._autoVodWorkTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._autoVodWorkTableAdapter]));
+                    this._autoVodWorkTableAdapter.Transaction = null;
                 }
                 if ((this._putListLegkovogoDannieTableAdapter != null)) {
                     this._putListLegkovogoDannieTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._putListLegkovogoDannieTableAdapter]));

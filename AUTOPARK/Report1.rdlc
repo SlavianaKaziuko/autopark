@@ -3513,7 +3513,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=First(Fields!Номер_путевого_листа.Value, "ReportHead") + "-Л"</Value>
+                <Value>=First(Fields!Номер_путевого_листа.Value, "ReportHead")</Value>
                 <Style />
               </TextRun>
             </TextRuns>

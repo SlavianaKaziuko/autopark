@@ -218,6 +218,18 @@ namespace AUTOPARK
             this.Close(); //// закрытие текущей формы
         }
 
+        private void PutevieListi_Load(object sender, EventArgs e)
+        {
+            ////заполнение combobox значениями годов, начиная с 2014 по следующий за текущим год
+            var years = new List<int> { 2014 };
+            for (var y = years.First(); y <= DateTime.Now.AddYears(1).Year; y++)
+            {
+                years.Add(y);
+            }
+            cbYears.DataSource = years;
+
+        }
+
         private void tsmiExitApplication_Click(object sender, EventArgs e)
         {
             Environment.Exit(0);  //Полный выход из программы если нажимаем на дверку в Путевых листах легкового авто

@@ -36,6 +36,8 @@
             this.навигацияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiToMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiExitApplication = new System.Windows.Forms.ToolStripMenuItem();
+            this.cbYears = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPutevii)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -45,11 +47,11 @@
             this.dgvPutevii.AllowUserToAddRows = false;
             this.dgvPutevii.AllowUserToDeleteRows = false;
             this.dgvPutevii.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPutevii.Location = new System.Drawing.Point(12, 27);
+            this.dgvPutevii.Location = new System.Drawing.Point(12, 69);
             this.dgvPutevii.MultiSelect = false;
             this.dgvPutevii.Name = "dgvPutevii";
             this.dgvPutevii.ReadOnly = true;
-            this.dgvPutevii.Size = new System.Drawing.Size(821, 365);
+            this.dgvPutevii.Size = new System.Drawing.Size(821, 323);
             this.dgvPutevii.TabIndex = 0;
             this.dgvPutevii.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgvPutevii_DataError);
             // 
@@ -116,11 +118,32 @@
             this.tsmiExitApplication.Text = "Выйти из приложения";
             this.tsmiExitApplication.Click += new System.EventHandler(this.tsmiExitApplication_Click);
             // 
+            // cbYears
+            // 
+            this.cbYears.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.cbYears.FormattingEnabled = true;
+            this.cbYears.Location = new System.Drawing.Point(68, 27);
+            this.cbYears.Name = "cbYears";
+            this.cbYears.Size = new System.Drawing.Size(121, 24);
+            this.cbYears.TabIndex = 5;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(12, 30);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(50, 17);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "За год";
+            // 
             // PutevieListi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(845, 435);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.cbYears);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnAdd);
@@ -129,6 +152,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "PutevieListi";
             this.Text = "Путевые листы";
+            this.Load += new System.EventHandler(this.PutevieListi_Load);
             this.Resize += new System.EventHandler(this.PutevieListi_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPutevii)).EndInit();
             this.menuStrip1.ResumeLayout(false);
@@ -148,5 +172,7 @@
         private System.Windows.Forms.ToolStripMenuItem навигацияToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tsmiToMenu;
         private System.Windows.Forms.ToolStripMenuItem tsmiExitApplication;
+        private System.Windows.Forms.ComboBox cbYears;
+        private System.Windows.Forms.Label label1;
     }
 }

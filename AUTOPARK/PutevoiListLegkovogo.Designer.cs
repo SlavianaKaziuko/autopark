@@ -65,7 +65,7 @@
             // 
             this.lblLegkovoi.AutoSize = true;
             this.lblLegkovoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblLegkovoi.Location = new System.Drawing.Point(68, 20);
+            this.lblLegkovoi.Location = new System.Drawing.Point(195, 20);
             this.lblLegkovoi.Name = "lblLegkovoi";
             this.lblLegkovoi.Size = new System.Drawing.Size(382, 25);
             this.lblLegkovoi.TabIndex = 0;
@@ -74,7 +74,7 @@
             // txtNumber
             // 
             this.txtNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.txtNumber.Location = new System.Drawing.Point(456, 22);
+            this.txtNumber.Location = new System.Drawing.Point(583, 22);
             this.txtNumber.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtNumber.Name = "txtNumber";
             this.txtNumber.Size = new System.Drawing.Size(130, 24);
@@ -85,7 +85,7 @@
             // 
             this.lblperiod.AutoSize = true;
             this.lblperiod.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.lblperiod.Location = new System.Drawing.Point(82, 52);
+            this.lblperiod.Location = new System.Drawing.Point(209, 52);
             this.lblperiod.Name = "lblperiod";
             this.lblperiod.Size = new System.Drawing.Size(90, 18);
             this.lblperiod.TabIndex = 2;
@@ -95,7 +95,7 @@
             // 
             this.lblpo.AutoSize = true;
             this.lblpo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.lblpo.Location = new System.Drawing.Point(364, 52);
+            this.lblpo.Location = new System.Drawing.Point(491, 52);
             this.lblpo.Name = "lblpo";
             this.lblpo.Size = new System.Drawing.Size(25, 18);
             this.lblpo.TabIndex = 4;
@@ -105,7 +105,7 @@
             // 
             this.lblvoditel.AutoSize = true;
             this.lblvoditel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.lblvoditel.Location = new System.Drawing.Point(26, 118);
+            this.lblvoditel.Location = new System.Drawing.Point(26, 116);
             this.lblvoditel.Name = "lblvoditel";
             this.lblvoditel.Size = new System.Drawing.Size(76, 18);
             this.lblvoditel.TabIndex = 8;
@@ -114,7 +114,7 @@
             // txtVoditel
             // 
             this.txtVoditel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.txtVoditel.Location = new System.Drawing.Point(489, 115);
+            this.txtVoditel.Location = new System.Drawing.Point(568, 113);
             this.txtVoditel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtVoditel.Name = "txtVoditel";
             this.txtVoditel.Size = new System.Drawing.Size(116, 24);
@@ -124,7 +124,7 @@
             // 
             this.lblVodUdostoverenie.AutoSize = true;
             this.lblVodUdostoverenie.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.lblVodUdostoverenie.Location = new System.Drawing.Point(265, 118);
+            this.lblVodUdostoverenie.Location = new System.Drawing.Point(344, 116);
             this.lblVodUdostoverenie.Name = "lblVodUdostoverenie";
             this.lblVodUdostoverenie.Size = new System.Drawing.Size(218, 18);
             this.lblVodUdostoverenie.TabIndex = 10;
@@ -134,7 +134,7 @@
             // 
             this.lblAvto.AutoSize = true;
             this.lblAvto.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.lblAvto.Location = new System.Drawing.Point(117, 83);
+            this.lblAvto.Location = new System.Drawing.Point(196, 81);
             this.lblAvto.Name = "lblAvto";
             this.lblAvto.Size = new System.Drawing.Size(95, 18);
             this.lblAvto.TabIndex = 12;
@@ -143,7 +143,7 @@
             // txtAvto
             // 
             this.txtAvto.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.txtAvto.Location = new System.Drawing.Point(364, 82);
+            this.txtAvto.Location = new System.Drawing.Point(443, 80);
             this.txtAvto.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtAvto.Name = "txtAvto";
             this.txtAvto.ReadOnly = true;
@@ -154,7 +154,7 @@
             // 
             this.cbNomerAuto.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.cbNomerAuto.FormattingEnabled = true;
-            this.cbNomerAuto.Location = new System.Drawing.Point(218, 82);
+            this.cbNomerAuto.Location = new System.Drawing.Point(297, 80);
             this.cbNomerAuto.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbNomerAuto.Name = "cbNomerAuto";
             this.cbNomerAuto.Size = new System.Drawing.Size(140, 26);
@@ -168,7 +168,7 @@
             this.cbVodUdostoverenie.Location = new System.Drawing.Point(108, 113);
             this.cbVodUdostoverenie.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbVodUdostoverenie.Name = "cbVodUdostoverenie";
-            this.cbVodUdostoverenie.Size = new System.Drawing.Size(140, 26);
+            this.cbVodUdostoverenie.Size = new System.Drawing.Size(230, 26);
             this.cbVodUdostoverenie.TabIndex = 15;
             this.cbVodUdostoverenie.SelectedIndexChanged += new System.EventHandler(this.cbVodUdostoverenie_SelectedValueChanged);
             // 
@@ -203,16 +203,16 @@
             this.pnlShapka.Controls.Add(this.lblperiod);
             this.pnlShapka.Controls.Add(this.txtNumber);
             this.pnlShapka.Controls.Add(this.lblLegkovoi);
-            this.pnlShapka.Location = new System.Drawing.Point(123, 26);
+            this.pnlShapka.Location = new System.Drawing.Point(99, 26);
             this.pnlShapka.Name = "pnlShapka";
-            this.pnlShapka.Size = new System.Drawing.Size(790, 156);
+            this.pnlShapka.Size = new System.Drawing.Size(881, 156);
             this.pnlShapka.TabIndex = 17;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(587, 25);
+            this.label1.Location = new System.Drawing.Point(714, 25);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(19, 18);
             this.label1.TabIndex = 22;
@@ -222,7 +222,7 @@
             // 
             this.txtOtdel.AutoSize = true;
             this.txtOtdel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.txtOtdel.Location = new System.Drawing.Point(552, 86);
+            this.txtOtdel.Location = new System.Drawing.Point(631, 84);
             this.txtOtdel.Name = "txtOtdel";
             this.txtOtdel.Size = new System.Drawing.Size(53, 18);
             this.txtOtdel.TabIndex = 21;
@@ -232,7 +232,7 @@
             // 
             this.cbOtdel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.cbOtdel.FormattingEnabled = true;
-            this.cbOtdel.Location = new System.Drawing.Point(611, 83);
+            this.cbOtdel.Location = new System.Drawing.Point(690, 81);
             this.cbOtdel.Name = "cbOtdel";
             this.cbOtdel.Size = new System.Drawing.Size(151, 26);
             this.cbOtdel.TabIndex = 20;
@@ -242,7 +242,7 @@
             this.dtpEnd.CustomFormat = "dd MMMM yyyy";
             this.dtpEnd.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.dtpEnd.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpEnd.Location = new System.Drawing.Point(395, 51);
+            this.dtpEnd.Location = new System.Drawing.Point(522, 51);
             this.dtpEnd.Name = "dtpEnd";
             this.dtpEnd.Size = new System.Drawing.Size(162, 24);
             this.dtpEnd.TabIndex = 19;
@@ -252,7 +252,7 @@
             this.dtpStart.CustomFormat = "dd MMMM yyyy";
             this.dtpStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.dtpStart.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpStart.Location = new System.Drawing.Point(178, 51);
+            this.dtpStart.Location = new System.Drawing.Point(305, 51);
             this.dtpStart.Name = "dtpStart";
             this.dtpStart.Size = new System.Drawing.Size(162, 24);
             this.dtpStart.TabIndex = 18;
@@ -260,7 +260,7 @@
             // txtKlassnost
             // 
             this.txtKlassnost.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.txtKlassnost.Location = new System.Drawing.Point(725, 115);
+            this.txtKlassnost.Location = new System.Drawing.Point(804, 113);
             this.txtKlassnost.Name = "txtKlassnost";
             this.txtKlassnost.Size = new System.Drawing.Size(37, 24);
             this.txtKlassnost.TabIndex = 17;
@@ -269,7 +269,7 @@
             // 
             this.lblKlassnost.AutoSize = true;
             this.lblKlassnost.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.lblKlassnost.Location = new System.Drawing.Point(628, 118);
+            this.lblKlassnost.Location = new System.Drawing.Point(707, 116);
             this.lblKlassnost.Name = "lblKlassnost";
             this.lblKlassnost.Size = new System.Drawing.Size(91, 18);
             this.lblKlassnost.TabIndex = 16;

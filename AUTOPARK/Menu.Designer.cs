@@ -83,7 +83,6 @@
             this.lblVoditeliAuto.TabIndex = 4;
             this.lblVoditeliAuto.TabStop = true;
             this.lblVoditeliAuto.Text = "Водители авто";
-            this.lblVoditeliAuto.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // lblOtdel
             // 
@@ -186,7 +185,6 @@
             this.Name = "Menu";
             this.Text = "ОАО \"Зенит\" Автопарк";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Menu_FormClosed);
-            this.Load += new System.EventHandler(this.Menu_Load);
             this.Spravochniki.ResumeLayout(false);
             this.Spravochniki.PerformLayout();
             this.groupListi.ResumeLayout(false);

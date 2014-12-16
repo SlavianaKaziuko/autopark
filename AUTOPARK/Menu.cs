@@ -41,17 +41,5 @@ namespace AUTOPARK
             Environment.Exit(0);
         }
 
-        private void Menu_Load(object sender, EventArgs e)
-        {
-
-
-        }
-
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-
-        }
-
-        
     }
 }

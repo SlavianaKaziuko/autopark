@@ -151,6 +151,7 @@
             // 
             // txtMarka
             // 
+            this.txtMarka.Enabled = false;
             this.txtMarka.Location = new System.Drawing.Point(20, 135);
             this.txtMarka.Name = "txtMarka";
             this.txtMarka.Size = new System.Drawing.Size(131, 21);
@@ -167,7 +168,8 @@
             // 
             // txtGaraz
             // 
-            this.txtGaraz.Location = new System.Drawing.Point(336, 137);
+            this.txtGaraz.Enabled = false;
+            this.txtGaraz.Location = new System.Drawing.Point(336, 135);
             this.txtGaraz.Name = "txtGaraz";
             this.txtGaraz.Size = new System.Drawing.Size(100, 21);
             this.txtGaraz.TabIndex = 7;
@@ -357,6 +359,8 @@
             // 
             // dtpPogravikuViezd
             // 
+            this.dtpPogravikuViezd.CustomFormat = "dd/MM HH:mm";
+            this.dtpPogravikuViezd.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpPogravikuViezd.Location = new System.Drawing.Point(300, 108);
             this.dtpPogravikuViezd.Name = "dtpPogravikuViezd";
             this.dtpPogravikuViezd.Size = new System.Drawing.Size(136, 21);
@@ -364,6 +368,8 @@
             // 
             // dtpFiziheski
             // 
+            this.dtpFiziheski.CustomFormat = "dd/MM HH:mm";
+            this.dtpFiziheski.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpFiziheski.Location = new System.Drawing.Point(300, 150);
             this.dtpFiziheski.Name = "dtpFiziheski";
             this.dtpFiziheski.Size = new System.Drawing.Size(135, 21);
@@ -466,7 +472,7 @@
             this.dgvZapravkaTCM.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvZapravkaTCM.Location = new System.Drawing.Point(47, 66);
             this.dgvZapravkaTCM.Name = "dgvZapravkaTCM";
-            this.dgvZapravkaTCM.Size = new System.Drawing.Size(338, 60);
+            this.dgvZapravkaTCM.Size = new System.Drawing.Size(338, 64);
             this.dgvZapravkaTCM.TabIndex = 45;
             // 
             // txtPriViezdiTCM
@@ -564,7 +570,9 @@
             // 
             // txtKlass
             // 
-            this.txtKlass.Location = new System.Drawing.Point(349, 72);
+            this.txtKlass.Enabled = false;
+            this.txtKlass.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.txtKlass.Location = new System.Drawing.Point(349, 70);
             this.txtKlass.Name = "txtKlass";
             this.txtKlass.Size = new System.Drawing.Size(50, 21);
             this.txtKlass.TabIndex = 17;
@@ -574,12 +582,13 @@
             this.vblKlass.AutoSize = true;
             this.vblKlass.Location = new System.Drawing.Point(346, 50);
             this.vblKlass.Name = "vblKlass";
-            this.vblKlass.Size = new System.Drawing.Size(41, 15);
+            this.vblKlass.Size = new System.Drawing.Size(75, 15);
             this.vblKlass.TabIndex = 16;
-            this.vblKlass.Text = "Класс";
+            this.vblKlass.Text = "Классность";
             // 
             // cbImia
             // 
+            this.cbImia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.cbImia.FormattingEnabled = true;
             this.cbImia.Location = new System.Drawing.Point(25, 70);
             this.cbImia.Name = "cbImia";
@@ -589,6 +598,8 @@
             // 
             // txtTabelniiNomer
             // 
+            this.txtTabelniiNomer.Enabled = false;
+            this.txtTabelniiNomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.txtTabelniiNomer.Location = new System.Drawing.Point(209, 70);
             this.txtTabelniiNomer.Name = "txtTabelniiNomer";
             this.txtTabelniiNomer.Size = new System.Drawing.Size(109, 21);
@@ -616,6 +627,14 @@
             // 
             // cbToplivoType2
             // 
+            this.cbToplivoType2.AutoCompleteCustomSource.AddRange(new string[] {
+            "АИ-95",
+            "ДТ Арктика",
+            "АИ-92",
+            "ДТ Евро 5",
+            "Д/Т",
+            "СУГ",
+            "Н80"});
             this.cbToplivoType2.FormattingEnabled = true;
             this.cbToplivoType2.Items.AddRange(new object[] {
             "д/т",
@@ -644,6 +663,14 @@
             // 
             // cbToplivoType
             // 
+            this.cbToplivoType.AutoCompleteCustomSource.AddRange(new string[] {
+            "АИ-95",
+            "ДТ Арктика",
+            "АИ-92",
+            "ДТ Евро 5",
+            "Д/Т",
+            "СУГ",
+            "Н80"});
             this.cbToplivoType.FormattingEnabled = true;
             this.cbToplivoType.Items.AddRange(new object[] {
             "д/т",

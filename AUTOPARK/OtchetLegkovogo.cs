@@ -15,11 +15,11 @@ namespace AUTOPARK
             InitializeComponent();
              PutevoiId = id;
 
-            var table = new AutoparkDBTableAdapters.PutListLegkovogoDannieTableAdapter();
-            _bindingDannie.DataSource = table.GetDataById(PutevoiId);
-
             var tablePutevoi = new AutoparkDBTableAdapters.PutevieLegkovieTableAdapter();
             _bindingHead.DataSource = tablePutevoi.GetDataByID(PutevoiId);
+
+            var table = new AutoparkDBTableAdapters.PutListLegkovogoDannieTableAdapter();
+            _bindingDannie.DataSource = table.GetDataById(PutevoiId);
         }
 
         private void Form1_Load(object sender, EventArgs e)
