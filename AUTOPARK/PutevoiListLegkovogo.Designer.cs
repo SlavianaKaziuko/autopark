@@ -73,18 +73,18 @@
             // 
             // txtNumber
             // 
-            this.txtNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.txtNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.txtNumber.Location = new System.Drawing.Point(456, 22);
             this.txtNumber.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtNumber.Name = "txtNumber";
-            this.txtNumber.Size = new System.Drawing.Size(130, 23);
+            this.txtNumber.Size = new System.Drawing.Size(130, 24);
             this.txtNumber.TabIndex = 1;
             this.txtNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // lblperiod
             // 
             this.lblperiod.AutoSize = true;
-            this.lblperiod.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblperiod.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.lblperiod.Location = new System.Drawing.Point(82, 52);
             this.lblperiod.Name = "lblperiod";
             this.lblperiod.Size = new System.Drawing.Size(90, 18);
@@ -94,7 +94,7 @@
             // lblpo
             // 
             this.lblpo.AutoSize = true;
-            this.lblpo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblpo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.lblpo.Location = new System.Drawing.Point(364, 52);
             this.lblpo.Name = "lblpo";
             this.lblpo.Size = new System.Drawing.Size(25, 18);
@@ -104,8 +104,8 @@
             // lblvoditel
             // 
             this.lblvoditel.AutoSize = true;
-            this.lblvoditel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblvoditel.Location = new System.Drawing.Point(26, 114);
+            this.lblvoditel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.lblvoditel.Location = new System.Drawing.Point(26, 118);
             this.lblvoditel.Name = "lblvoditel";
             this.lblvoditel.Size = new System.Drawing.Size(76, 18);
             this.lblvoditel.TabIndex = 8;
@@ -113,18 +113,18 @@
             // 
             // txtVoditel
             // 
-            this.txtVoditel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.txtVoditel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.txtVoditel.Location = new System.Drawing.Point(489, 115);
             this.txtVoditel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtVoditel.Name = "txtVoditel";
-            this.txtVoditel.Size = new System.Drawing.Size(116, 23);
+            this.txtVoditel.Size = new System.Drawing.Size(116, 24);
             this.txtVoditel.TabIndex = 9;
             // 
             // lblVodUdostoverenie
             // 
             this.lblVodUdostoverenie.AutoSize = true;
-            this.lblVodUdostoverenie.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblVodUdostoverenie.Location = new System.Drawing.Point(265, 114);
+            this.lblVodUdostoverenie.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.lblVodUdostoverenie.Location = new System.Drawing.Point(265, 118);
             this.lblVodUdostoverenie.Name = "lblVodUdostoverenie";
             this.lblVodUdostoverenie.Size = new System.Drawing.Size(218, 18);
             this.lblVodUdostoverenie.TabIndex = 10;
@@ -133,7 +133,7 @@
             // lblAvto
             // 
             this.lblAvto.AutoSize = true;
-            this.lblAvto.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblAvto.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.lblAvto.Location = new System.Drawing.Point(117, 83);
             this.lblAvto.Name = "lblAvto";
             this.lblAvto.Size = new System.Drawing.Size(95, 18);
@@ -142,33 +142,33 @@
             // 
             // txtAvto
             // 
-            this.txtAvto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.txtAvto.Location = new System.Drawing.Point(367, 84);
+            this.txtAvto.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.txtAvto.Location = new System.Drawing.Point(364, 82);
             this.txtAvto.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtAvto.Name = "txtAvto";
             this.txtAvto.ReadOnly = true;
-            this.txtAvto.Size = new System.Drawing.Size(116, 23);
+            this.txtAvto.Size = new System.Drawing.Size(116, 24);
             this.txtAvto.TabIndex = 13;
             // 
             // cbNomerAuto
             // 
-            this.cbNomerAuto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.cbNomerAuto.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.cbNomerAuto.FormattingEnabled = true;
             this.cbNomerAuto.Location = new System.Drawing.Point(218, 82);
             this.cbNomerAuto.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbNomerAuto.Name = "cbNomerAuto";
-            this.cbNomerAuto.Size = new System.Drawing.Size(140, 24);
+            this.cbNomerAuto.Size = new System.Drawing.Size(140, 26);
             this.cbNomerAuto.TabIndex = 14;
             this.cbNomerAuto.SelectedValueChanged += new System.EventHandler(this.cbNomerAuto_SelectedValueChanged);
             // 
             // cbVodUdostoverenie
             // 
-            this.cbVodUdostoverenie.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.cbVodUdostoverenie.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.cbVodUdostoverenie.FormattingEnabled = true;
             this.cbVodUdostoverenie.Location = new System.Drawing.Point(108, 113);
             this.cbVodUdostoverenie.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbVodUdostoverenie.Name = "cbVodUdostoverenie";
-            this.cbVodUdostoverenie.Size = new System.Drawing.Size(140, 24);
+            this.cbVodUdostoverenie.Size = new System.Drawing.Size(140, 26);
             this.cbVodUdostoverenie.TabIndex = 15;
             this.cbVodUdostoverenie.SelectedIndexChanged += new System.EventHandler(this.cbVodUdostoverenie_SelectedValueChanged);
             // 
@@ -205,24 +205,24 @@
             this.pnlShapka.Controls.Add(this.lblLegkovoi);
             this.pnlShapka.Location = new System.Drawing.Point(123, 26);
             this.pnlShapka.Name = "pnlShapka";
-            this.pnlShapka.Size = new System.Drawing.Size(766, 156);
+            this.pnlShapka.Size = new System.Drawing.Size(790, 156);
             this.pnlShapka.TabIndex = 17;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.Location = new System.Drawing.Point(587, 25);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(18, 17);
+            this.label1.Size = new System.Drawing.Size(19, 18);
             this.label1.TabIndex = 22;
             this.label1.Text = "Л";
             // 
             // txtOtdel
             // 
             this.txtOtdel.AutoSize = true;
-            this.txtOtdel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.txtOtdel.Location = new System.Drawing.Point(582, 83);
+            this.txtOtdel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.txtOtdel.Location = new System.Drawing.Point(552, 86);
             this.txtOtdel.Name = "txtOtdel";
             this.txtOtdel.Size = new System.Drawing.Size(53, 18);
             this.txtOtdel.TabIndex = 21;
@@ -230,44 +230,45 @@
             // 
             // cbOtdel
             // 
+            this.cbOtdel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.cbOtdel.FormattingEnabled = true;
-            this.cbOtdel.Location = new System.Drawing.Point(641, 83);
+            this.cbOtdel.Location = new System.Drawing.Point(611, 83);
             this.cbOtdel.Name = "cbOtdel";
-            this.cbOtdel.Size = new System.Drawing.Size(121, 23);
+            this.cbOtdel.Size = new System.Drawing.Size(151, 26);
             this.cbOtdel.TabIndex = 20;
             // 
             // dtpEnd
             // 
             this.dtpEnd.CustomFormat = "dd MMMM yyyy";
-            this.dtpEnd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.dtpEnd.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.dtpEnd.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpEnd.Location = new System.Drawing.Point(395, 52);
+            this.dtpEnd.Location = new System.Drawing.Point(395, 51);
             this.dtpEnd.Name = "dtpEnd";
-            this.dtpEnd.Size = new System.Drawing.Size(162, 23);
+            this.dtpEnd.Size = new System.Drawing.Size(162, 24);
             this.dtpEnd.TabIndex = 19;
             // 
             // dtpStart
             // 
             this.dtpStart.CustomFormat = "dd MMMM yyyy";
-            this.dtpStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.dtpStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.dtpStart.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpStart.Location = new System.Drawing.Point(178, 52);
+            this.dtpStart.Location = new System.Drawing.Point(178, 51);
             this.dtpStart.Name = "dtpStart";
-            this.dtpStart.Size = new System.Drawing.Size(162, 23);
+            this.dtpStart.Size = new System.Drawing.Size(162, 24);
             this.dtpStart.TabIndex = 18;
             // 
             // txtKlassnost
             // 
-            this.txtKlassnost.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.txtKlassnost.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.txtKlassnost.Location = new System.Drawing.Point(725, 115);
             this.txtKlassnost.Name = "txtKlassnost";
-            this.txtKlassnost.Size = new System.Drawing.Size(37, 23);
+            this.txtKlassnost.Size = new System.Drawing.Size(37, 24);
             this.txtKlassnost.TabIndex = 17;
             // 
             // lblKlassnost
             // 
             this.lblKlassnost.AutoSize = true;
-            this.lblKlassnost.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblKlassnost.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.lblKlassnost.Location = new System.Drawing.Point(628, 118);
             this.lblKlassnost.Name = "lblKlassnost";
             this.lblKlassnost.Size = new System.Drawing.Size(91, 18);

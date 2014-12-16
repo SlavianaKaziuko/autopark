@@ -52,8 +52,8 @@ namespace AUTOPARK
             var tableOtdeli = new AutoparkDBTableAdapters.OtdelTableAdapter();
             _bindingOtdel.DataSource = tableOtdeli.GetData();
             cbOtdel.DataSource = _bindingOtdel;
-            cbOtdel.DisplayMember = "Название отдела";
-            cbOtdel.ValueMember = "ID";
+            cbOtdel.DisplayMember = "Подразделение";
+            cbOtdel.ValueMember = "Код";
             _dateStart = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);             //календарь 
             _dateEnd = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1).AddMonths(1).AddDays(-1);
         }
@@ -87,8 +87,8 @@ namespace AUTOPARK
             var tableOtdeli = new AutoparkDBTableAdapters.OtdelTableAdapter();
             _bindingOtdel.DataSource = tableOtdeli.GetData();
             cbOtdel.DataSource = _bindingOtdel;
-            cbOtdel.DisplayMember = "Название отдела";
-            cbOtdel.ValueMember = "ID";
+            cbOtdel.DisplayMember = "Подразделение";
+            cbOtdel.ValueMember = "Код";
 
             var tableDannie = new AutoparkDBTableAdapters.PutListLegkovogoDannieTableAdapter();
             _bindingDannie.DataSource = tableDannie.GetData();
@@ -113,7 +113,7 @@ namespace AUTOPARK
             txtNumber.Text = _number.ToString(CultureInfo.InvariantCulture);
             cbNomerAuto.SelectedItem = _bindingAuto[_bindingAuto.Find("ID", _idauto)];
             cbVodUdostoverenie.SelectedItem = _bindingVoditel[_bindingVoditel.Find("табельный_номер", _idvod)];
-            cbOtdel.SelectedItem = _idotd;
+            cbOtdel.SelectedItem = _bindingOtdel[_bindingOtdel.Find("Код", _idotd)];
             dtpStart.Value = _dateStart;
             dtpEnd.Value = _dateEnd;
         }
@@ -136,9 +136,6 @@ namespace AUTOPARK
             cbVodUdostoverenie.SelectedItem = _idvod;
             dtpStart.Value = _dateStart;
             dtpEnd.Value = _dateEnd;
-            //var dataGridViewColumn = dgvPutevieLegkovie.Columns["Число"];
-            //if (dataGridViewColumn != null)
-            //    dataGridViewColumn.
         }
 
         private void cbNomerAuto_SelectedValueChanged(object sender, EventArgs e)               //  Комбобок cbNomerAuto  (Автомобиль)
@@ -254,11 +251,15 @@ namespace AUTOPARK
 
         private void dgvPutevieLegkovie_DataError(object sender, DataGridViewDataErrorEventArgs e)
         {
-            var res = MessageBox.Show(@"Отменить редактирование ячейки", "", MessageBoxButtons.OKCancel);
-            if (res == DialogResult.OK)
-            {
-                dgvPutevieLegkovie.EndEdit();
-            }
+            var res =
+                MessageBox.Show(
+                    String.Format(@"Введите ""Число"" в корретном формате {0}\nили отмените редактирование ячейки",
+                        CultureInfo.CurrentCulture.DateTimeFormat.ShortDatePattern), "",
+                    MessageBoxButtons.RetryCancel);
+            if (res != DialogResult.Cancel) return;
+            if (dgvPutevieLegkovie.CurrentRow == null) return;
+            var id = dgvPutevieLegkovie.CurrentRow.Index;
+            dgvPutevieLegkovie.Rows.RemoveAt(id);
         }
 
         private void dgvPutevieLegkovie_CellLeave(object sender, DataGridViewCellEventArgs e)

@@ -65,10 +65,9 @@ namespace AUTOPARK
             {
                 case "Путевые листы легковых автомобилей":
                     {
-                        Form form;
                         try
                         {
-                            form = new PutListLegkovogoavto(); ////PutListLegkovogoavto
+                            Form form = new PutListLegkovogoavto();
                             form.ShowDialog(); //// открытие формы Spravochnik
                             this.Hide(); //// скрытие текущей формы
                             var table = new AutoparkDBTableAdapters.PutevieLegkovieTableAdapter();
