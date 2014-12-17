@@ -46,8 +46,6 @@ namespace AUTOPARK
             }
 
             dgvSpravochnik.DataSource = _binding;
-            //var dataGridViewColumn = dgvSpravochnik.Columns["ФИО"];
-            //if (dataGridViewColumn != null) dataGridViewColumn.Visible = false;
         }
 
         private void btnSaveChanges_Click(object sender, EventArgs e)
@@ -91,7 +89,7 @@ namespace AUTOPARK
             //        растягивание формы и кнопки сохранить по высоте и ширине
         {
             dgvSpravochnik.Width = this.Width - 40;
-            dgvSpravochnik.Height = this.Height - 115;
+            dgvSpravochnik.Height = this.Height - dgvSpravochnik.Location.X - 500;
             btnSaveChanges.Location = new Point(this.Width - 170, this.Height - 75);
         }
 

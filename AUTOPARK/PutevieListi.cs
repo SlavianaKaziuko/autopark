@@ -203,7 +203,7 @@ namespace AUTOPARK
         private void PutevieListi_Resize(object sender, EventArgs e)
         {
             dgvPutevii.Width = this.Width - 40;
-            dgvPutevii.Height = this.Height - 100;
+            dgvPutevii.Height = this.Height - dgvPutevii.Location.Y - 100;
 
             btnAdd.Location = new Point(this.Width - 300, this.Height - 73);
             btnEdit.Location = new Point(this.Width - 214, this.Height - 73);

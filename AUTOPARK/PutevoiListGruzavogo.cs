@@ -142,8 +142,8 @@ namespace AUTOPARK
            txt.Text = zapis[1] + @" " +
                            (zapis[2].ToString().Length > 1 ? zapis[2].ToString().Substring(0, 1) + @". " : "") +   
                            (zapis[3].ToString().Length > 1 ? zapis[3].ToString().Substring(0, 1) + @". " : ""); */
-            txtTabelniiNomer.Text = ((DataRowView)_bindingVoditel[cbImia.SelectedIndex]).Row.ItemArray[0].ToString();
-            txtKlass.Text = ((DataRowView)_bindingVoditel[cbImia.SelectedIndex]).Row.ItemArray[5].ToString();
+            txtTabelniiNomer.Text = ((DataRowView)_bindingVoditel[cbImia.SelectedIndex]).Row["табельный_номер"].ToString();
+            txtKlass.Text = ((DataRowView)_bindingVoditel[cbImia.SelectedIndex]).Row["классность"].ToString();
         }
     
        
@@ -188,8 +188,10 @@ namespace AUTOPARK
         private void PutevoiListGruzavogo_Resize(object sender, EventArgs e)
         {
             dgvZadanieVoditelu.Width = this.Width - 40;
-            dgvZadanieVoditelu.Height = this.Height - dgvZadanieVoditelu.Location.Y - 115;
-            btnSave.Location = new Point(this.Width - 170, this.Height - 75);
+            dgvZadanieVoditelu.Height = this.Height - dgvZadanieVoditelu.Location.Y - 85;
+            btnSave.Location = new Point(btnSave.Location.X, this.Height - 70);
+            btnCancel.Location = new Point(btnCancel.Location.X, this.Height - 70);
+            btnReport.Location = new Point(btnReport.Location.X, this.Height - 70);
         }
     }
 }
