@@ -636,11 +636,6 @@
             "СУГ",
             "Н80"});
             this.cbToplivoType2.FormattingEnabled = true;
-            this.cbToplivoType2.Items.AddRange(new object[] {
-            "д/т",
-            "суг",
-            "бен",
-            "Н 80"});
             this.cbToplivoType2.Location = new System.Drawing.Point(416, 107);
             this.cbToplivoType2.Name = "cbToplivoType2";
             this.cbToplivoType2.Size = new System.Drawing.Size(49, 23);
@@ -672,11 +667,6 @@
             "СУГ",
             "Н80"});
             this.cbToplivoType.FormattingEnabled = true;
-            this.cbToplivoType.Items.AddRange(new object[] {
-            "д/т",
-            "суг",
-            "бен",
-            "Н 80"});
             this.cbToplivoType.Location = new System.Drawing.Point(416, 80);
             this.cbToplivoType.Name = "cbToplivoType";
             this.cbToplivoType.Size = new System.Drawing.Size(49, 23);
@@ -798,6 +788,7 @@
             this.Name = "PutevoiListGruzavogo";
             this.Text = "Путевой лист грузового автомобиля";
             this.Load += new System.EventHandler(this.PutevoiListGruzavogo_Load);
+            this.Resize += new System.EventHandler(this.PutevoiListGruzavogo_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.dgvZapravkaTCM)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvZadanieVoditelu)).EndInit();
             this.panel1.ResumeLayout(false);

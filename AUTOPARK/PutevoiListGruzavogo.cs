@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Drawing;
 using System.Globalization;
 using System.Linq;
 using System.Windows.Forms;
@@ -14,7 +16,7 @@ namespace AUTOPARK
         private readonly BindingSource _bindingZapravka = new BindingSource();
         private readonly BindingSource _bindingDvizhenie = new BindingSource();
         private readonly int _number;
-        private readonly int _idauto;
+        private int _idauto;
         private readonly int _idvod;
         private readonly DateTime _date;
         private readonly int _idotdel;
@@ -27,6 +29,7 @@ namespace AUTOPARK
             PrepareComboBoxDataSources();
 
             _modeIsNew = true;
+            _idauto = int.Parse(cbZnak.SelectedValue.ToString());
             var tablePutevoi = new AutoparkDBTableAdapters.TablePutevieGruzovieTableAdapter();
             var newLegkNumber = tablePutevoi.GetNewPutevoiId();
             if (newLegkNumber != null)
@@ -83,9 +86,9 @@ namespace AUTOPARK
             {
                 throw new Exception("Пожалуйста, заполните справочник \"Подвижной состав\"");
             }
-            cbZnak.DataSource = _bindingAuto;
             cbZnak.DisplayMember = "Гос_номер";
             cbZnak.ValueMember = "ID";
+            cbZnak.DataSource = _bindingAuto;
 
             var tablel = new AutoparkDBTableAdapters.LichniiTableAdapter();
             _bindingVoditel.DataSource = tablel.GetDataSpisokVoditeli();
@@ -118,8 +121,16 @@ namespace AUTOPARK
         {
             ////Вытягивание из таблицы binding строку,затем преобразовываем в тип данных DataRowView,
             ////вытягивание из массива данных(Row) и затем вытягивание ячейки 1 (ItemArray[1])
-            txtGaraz.Text = ((DataRowView)_bindingAuto[cbZnak.SelectedIndex]).Row.ItemArray[3].ToString();
-            txtMarka.Text = ((DataRowView)_bindingAuto[cbZnak.SelectedIndex]).Row.ItemArray[4].ToString();
+            _idauto = int.Parse(cbZnak.SelectedValue.ToString());
+            txtGaraz.Text = ((DataRowView)_bindingAuto[_bindingAuto.Find("ID", _idauto)])["Гаражный номер"].ToString();
+            txtMarka.Text = ((DataRowView)_bindingAuto[_bindingAuto.Find("ID", _idauto)])["Марка и модель"].ToString();
+            var toplivo = new List<string>
+            {
+                ((DataRowView) _bindingAuto[_bindingAuto.Find("ID", _idauto)])["Вид топлива"].ToString(),
+                ((DataRowView) _bindingAuto[_bindingAuto.Find("ID", _idauto)])["Дополнительный вид топлива"].ToString()
+            };
+            cbToplivoType.DataSource = toplivo;
+            cbToplivoType2.DataSource = toplivo;
         }
 
         private void cbImia_SelectedValueChanger(object sender, EventArgs e)           //  Комбобок cbImia  (Автомобиль)
@@ -172,6 +183,13 @@ namespace AUTOPARK
         private void tsmiExitApplication_Click(object sender, EventArgs e)
         {
             Environment.Exit(0); //Полный выход из программы если нажимаем Навигация далее Выйти из приложения в Путевых листах грузового авто
+        }
+
+        private void PutevoiListGruzavogo_Resize(object sender, EventArgs e)
+        {
+            dgvZadanieVoditelu.Width = this.Width - 40;
+            dgvZadanieVoditelu.Height = this.Height - dgvZadanieVoditelu.Location.Y - 115;
+            btnSave.Location = new Point(this.Width - 170, this.Height - 75);
         }
     }
 }

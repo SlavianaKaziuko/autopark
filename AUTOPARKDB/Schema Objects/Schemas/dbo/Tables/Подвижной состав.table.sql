@@ -7,7 +7,8 @@
 	[Тип двигателя] [nvarchar](50) NULL,
 	[Год выпуска] [int] NULL,
 	[Инвентарный номер] [nvarchar](50) NULL,
-	[Вид топлива] [nvarchar](50) NULL,
+	[Вид топлива] [nvarchar](20) NULL,
+	[Дополнительный вид топлива] [nvarchar](20) NULL,
 	[дата окончания страховки] [date] NULL,
 	[Тип назначения авто] NCHAR NULL
 )

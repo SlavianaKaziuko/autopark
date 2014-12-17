@@ -115,6 +115,9 @@ namespace AUTOPARK
                     dataGridViewColumn = dgvSpravochnik.Columns["Вид топлива"];
                     if (dataGridViewColumn != null)
                         dataGridViewColumn.Visible = false;
+                    dataGridViewColumn = dgvSpravochnik.Columns["Дополнительный вид топлива"];
+                    if (dataGridViewColumn != null)
+                        dataGridViewColumn.Visible = false;
                     var gridViewColumn = dgvSpravochnik.Columns["Гос_номер"];
                     if (gridViewColumn != null)
                         gridViewColumn.DefaultCellStyle.Format = "[0-9]{4}[A-Z]{2}-[0-9]{1}";
@@ -122,13 +125,33 @@ namespace AUTOPARK
                     {
                         DataSource = new List<string>
                         {
-                            "АИ-95","ДТ Арктика","АИ-92","ДТ Евро 5","Д/Т","СУГ","Н80"
+                            "АИ-92",
+                            "Д/Т",
+                            "СУГ"
                         },
                         AutoComplete = true,
-                        Name = "Тип топлива"
+                        Name = "Тип топлива",
+                        DisplayIndex = 5
                     };
                     dgvSpravochnik.Columns.Add(dc);
-                    
+                    var dcDop = new DataGridViewComboBoxColumn
+                    {
+                        DataSource = new List<string>
+                        {
+                            "АИ-92",
+                            "Д/Т",
+                            "СУГ"
+                        },
+                        AutoComplete = true,
+                        Name = "Дополнительный тип топлива",
+                        DisplayIndex = 6
+                    };                    
+                    dgvSpravochnik.Columns.Add(dcDop);
+                    foreach (DataGridViewRow row in dgvSpravochnik.Rows)
+                    {
+                        row.Cells["Тип топлива"].Value = row.Cells["Вид топлива"].Value;
+                        row.Cells["Дополнительный тип топлива"].Value = row.Cells["Дополнительный вид топлива"].Value;
+                    }
                     break;
                 case "Нормы расхода ГСМ":
                     dataGridViewColumn = dgvSpravochnik.Columns["ID"];
@@ -199,6 +222,12 @@ namespace AUTOPARK
                         {
                             if (dgvSpravochnik.CurrentRow != null)
                                 dgvSpravochnik.CurrentRow.Cells["Вид топлива"].Value = e.FormattedValue;
+                            break;
+                        }
+                        case "Дополнительный тип топлива":
+                        {
+                            if (dgvSpravochnik.CurrentRow != null)
+                                dgvSpravochnik.CurrentRow.Cells["Дополнительный вид топлива"].Value = e.FormattedValue;
                             break;
                         }
                     }

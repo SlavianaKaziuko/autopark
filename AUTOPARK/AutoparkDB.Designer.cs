@@ -958,6 +958,8 @@ namespace AUTOPARK {
             
             private global::System.Data.DataColumn columnВид_топлива;
             
+            private global::System.Data.DataColumn columnДополнительный_вид_топлива;
+            
             private global::System.Data.DataColumn columnдата_окончания_страховки;
             
             private global::System.Data.DataColumn columnТип_назначения_авто;
@@ -1055,6 +1057,14 @@ namespace AUTOPARK {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Дополнительный_вид_топливаColumn {
+                get {
+                    return this.columnДополнительный_вид_топлива;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public global::System.Data.DataColumn дата_окончания_страховкиColumn {
                 get {
                     return this.columnдата_окончания_страховки;
@@ -1114,7 +1124,7 @@ namespace AUTOPARK {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public Подвижной_составRow AddПодвижной_составRow(string Марка_и_модель, string Гаражный_номер, string Тип_двигателя, int Год_выпуска, string Инвентарный_номер, string Вид_топлива, System.DateTime дата_окончания_страховки, string Тип_назначения_авто, string Гос_номер) {
+            public Подвижной_составRow AddПодвижной_составRow(string Марка_и_модель, string Гаражный_номер, string Тип_двигателя, int Год_выпуска, string Инвентарный_номер, string Вид_топлива, string Дополнительный_вид_топлива, System.DateTime дата_окончания_страховки, string Тип_назначения_авто, string Гос_номер) {
                 Подвижной_составRow rowПодвижной_составRow = ((Подвижной_составRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -1124,6 +1134,7 @@ namespace AUTOPARK {
                         Год_выпуска,
                         Инвентарный_номер,
                         Вид_топлива,
+                        Дополнительный_вид_топлива,
                         дата_окончания_страховки,
                         Тип_назначения_авто,
                         Гос_номер};
@@ -1163,6 +1174,7 @@ namespace AUTOPARK {
                 this.columnГод_выпуска = base.Columns["Год выпуска"];
                 this.columnИнвентарный_номер = base.Columns["Инвентарный номер"];
                 this.columnВид_топлива = base.Columns["Вид топлива"];
+                this.columnДополнительный_вид_топлива = base.Columns["Дополнительный вид топлива"];
                 this.columnдата_окончания_страховки = base.Columns["дата окончания страховки"];
                 this.columnТип_назначения_авто = base.Columns["Тип назначения авто"];
                 this.columnГос_номер = base.Columns["Гос_номер"];
@@ -1185,6 +1197,8 @@ namespace AUTOPARK {
                 base.Columns.Add(this.columnИнвентарный_номер);
                 this.columnВид_топлива = new global::System.Data.DataColumn("Вид топлива", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnВид_топлива);
+                this.columnДополнительный_вид_топлива = new global::System.Data.DataColumn("Дополнительный вид топлива", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnДополнительный_вид_топлива);
                 this.columnдата_окончания_страховки = new global::System.Data.DataColumn("дата окончания страховки", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnдата_окончания_страховки);
                 this.columnТип_назначения_авто = new global::System.Data.DataColumn("Тип назначения авто", typeof(string), null, global::System.Data.MappingType.Element);
@@ -7674,6 +7688,23 @@ namespace AUTOPARK {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Дополнительный_вид_топлива {
+                get {
+                    try {
+                        return ((string)(this[this.tableПодвижной_состав.Дополнительный_вид_топливаColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Дополнительный вид топлива\' in table \'Подвижной состав\' is " +
+                                "DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableПодвижной_состав.Дополнительный_вид_топливаColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public System.DateTime дата_окончания_страховки {
                 get {
                     try {
@@ -7775,6 +7806,18 @@ namespace AUTOPARK {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetВид_топливаNull() {
                 this[this.tableПодвижной_состав.Вид_топливаColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsДополнительный_вид_топливаNull() {
+                return this.IsNull(this.tableПодвижной_состав.Дополнительный_вид_топливаColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetДополнительный_вид_топливаNull() {
+                this[this.tableПодвижной_состав.Дополнительный_вид_топливаColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -12378,10 +12421,12 @@ namespace AUTOPARK.AutoparkDBTableAdapters {
             tableMapping.ColumnMappings.Add("дата окончания страховки", "дата окончания страховки");
             tableMapping.ColumnMappings.Add("Тип назначения авто", "Тип назначения авто");
             tableMapping.ColumnMappings.Add("Гос.номер", "Гос_номер");
+            tableMapping.ColumnMappings.Add("[Дополнительный вид топлива]", "Дополнительный вид топлива");
+            tableMapping.ColumnMappings.Add("Дополнительный вид топлива", "Дополнительный вид топлива");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [Подвижной состав] WHERE (([ID] = @Original_ID) AND ([Марка и модель] = @Original_Марка_и_модель) AND ([Гос.номер] = @p2) AND ((@IsNull_Гаражный_номер = 1 AND [Гаражный номер] IS NULL) OR ([Гаражный номер] = @Original_Гаражный_номер)) AND ((@IsNull_Тип_двигателя = 1 AND [Тип двигателя] IS NULL) OR ([Тип двигателя] = @Original_Тип_двигателя)) AND ((@IsNull_Год_выпуска = 1 AND [Год выпуска] IS NULL) OR ([Год выпуска] = @Original_Год_выпуска)) AND ((@IsNull_Инвентарный_номер = 1 AND [Инвентарный номер] IS NULL) OR ([Инвентарный номер] = @Original_Инвентарный_номер)) AND ((@IsNull_Вид_топлива = 1 AND [Вид топлива] IS NULL) OR ([Вид топлива] = @Original_Вид_топлива)) AND ((@IsNull_дата_окончания_страховки = 1 AND [дата окончания страховки] IS NULL) OR ([дата окончания страховки] = @Original_дата_окончания_страховки)) AND ((@IsNull_Тип_назначения_авто = 1 AND [Тип назначения авто] IS NULL) OR ([Тип назначения авто] = @Original_Тип_назначения_авто)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [Подвижной состав] WHERE (([ID] = @Original_ID) AND ([Марка и модель] = @Original_Марка_и_модель) AND ([Гос.номер] = @p2) AND ((@IsNull_Гаражный_номер = 1 AND [Гаражный номер] IS NULL) OR ([Гаражный номер] = @Original_Гаражный_номер)) AND ((@IsNull_Тип_двигателя = 1 AND [Тип двигателя] IS NULL) OR ([Тип двигателя] = @Original_Тип_двигателя)) AND ((@IsNull_Год_выпуска = 1 AND [Год выпуска] IS NULL) OR ([Год выпуска] = @Original_Год_выпуска)) AND ((@IsNull_Инвентарный_номер = 1 AND [Инвентарный номер] IS NULL) OR ([Инвентарный номер] = @Original_Инвентарный_номер)) AND ((@IsNull_Вид_топлива = 1 AND [Вид топлива] IS NULL) OR ([Вид топлива] = @Original_Вид_топлива)) AND ((@IsNull_Дополнительный_вид_топлива = 1 AND [Дополнительный вид топлива] IS NULL) OR ([Дополнительный вид топлива] = @Original_Дополнительный_вид_топлива)) AND ((@IsNull_дата_окончания_страховки = 1 AND [дата окончания страховки] IS NULL) OR ([дата окончания страховки] = @Original_дата_окончания_страховки)) AND ((@IsNull_Тип_назначения_авто = 1 AND [Тип назначения авто] IS NULL) OR ([Тип назначения авто] = @Original_Тип_назначения_авто)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Марка_и_модель", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Марка и модель", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -12396,14 +12441,16 @@ namespace AUTOPARK.AutoparkDBTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Инвентарный_номер", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Инвентарный номер", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Вид_топлива", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Вид топлива", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Вид_топлива", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Вид топлива", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Дополнительный_вид_топлива", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Дополнительный вид топлива", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Дополнительный_вид_топлива", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Дополнительный вид топлива", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_дата_окончания_страховки", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "дата окончания страховки", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_дата_окончания_страховки", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "дата окончания страховки", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Тип_назначения_авто", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Тип назначения авто", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Тип_назначения_авто", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Тип назначения авто", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [Подвижной состав] ([Марка и модель], [Гос.номер], [Гаражный номер], [Тип двигателя], [Год выпуска], [Инвентарный номер], [Вид топлива], [дата окончания страховки], [Тип назначения авто]) VALUES (@Марка_и_модель, @p1, @Гаражный_номер, @Тип_двигателя, @Год_выпуска, @Инвентарный_номер, @Вид_топлива, @дата_окончания_страховки, @Тип_назначения_авто);
-SELECT ID, [Марка и модель], [Гос.номер], [Гаражный номер], [Тип двигателя], [Год выпуска], [Инвентарный номер], [Вид топлива], [дата окончания страховки], [Тип назначения авто] FROM [Подвижной состав] WHERE (ID = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [Подвижной состав] ([Марка и модель], [Гос.номер], [Гаражный номер], [Тип двигателя], [Год выпуска], [Инвентарный номер], [Вид топлива], [Дополнительный вид топлива], [дата окончания страховки], [Тип назначения авто]) VALUES (@Марка_и_модель, @p1, @Гаражный_номер, @Тип_двигателя, @Год_выпуска, @Инвентарный_номер, @Вид_топлива, @Дополнительный_вид_топлива, @дата_окончания_страховки, @Тип_назначения_авто);
+SELECT ID, [Марка и модель], [Гос.номер], [Гаражный номер], [Тип двигателя], [Год выпуска], [Инвентарный номер], [Вид топлива], [Дополнительный вид топлива], [дата окончания страховки], [Тип назначения авто] FROM [Подвижной состав] WHERE (ID = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Марка_и_модель", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Марка и модель", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p1", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Гос.номер", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -12412,6 +12459,7 @@ SELECT ID, [Марка и модель], [Гос.номер], [Гаражный 
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Год_выпуска", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Год выпуска", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Инвентарный_номер", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Инвентарный номер", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Вид_топлива", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Вид топлива", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Дополнительный_вид_топлива", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Дополнительный вид топлива", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@дата_окончания_страховки", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "дата окончания страховки", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Тип_назначения_авто", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Тип назначения авто", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
@@ -12419,22 +12467,26 @@ SELECT ID, [Марка и модель], [Гос.номер], [Гаражный 
             this._adapter.UpdateCommand.CommandText = "UPDATE [Подвижной состав] SET [Марка и модель] = @Марка_и_модель, [Гос.номер] = @" +
                 "p1, [Гаражный номер] = @Гаражный_номер, [Тип двигателя] = @Тип_двигателя, [Год в" +
                 "ыпуска] = @Год_выпуска, [Инвентарный номер] = @Инвентарный_номер, [Вид топлива] " +
-                "= @Вид_топлива, [дата окончания страховки] = @дата_окончания_страховки, [Тип наз" +
-                "начения авто] = @Тип_назначения_авто WHERE (([ID] = @Original_ID) AND ([Марка и " +
-                "модель] = @Original_Марка_и_модель) AND ([Гос.номер] = @p2) AND ((@IsNull_Гаражн" +
-                "ый_номер = 1 AND [Гаражный номер] IS NULL) OR ([Гаражный номер] = @Original_Гара" +
-                "жный_номер)) AND ((@IsNull_Тип_двигателя = 1 AND [Тип двигателя] IS NULL) OR ([Т" +
-                "ип двигателя] = @Original_Тип_двигателя)) AND ((@IsNull_Год_выпуска = 1 AND [Год" +
-                " выпуска] IS NULL) OR ([Год выпуска] = @Original_Год_выпуска)) AND ((@IsNull_Инв" +
-                "ентарный_номер = 1 AND [Инвентарный номер] IS NULL) OR ([Инвентарный номер] = @O" +
-                "riginal_Инвентарный_номер)) AND ((@IsNull_Вид_топлива = 1 AND [Вид топлива] IS N" +
-                "ULL) OR ([Вид топлива] = @Original_Вид_топлива)) AND ((@IsNull_дата_окончания_ст" +
-                "раховки = 1 AND [дата окончания страховки] IS NULL) OR ([дата окончания страховк" +
-                "и] = @Original_дата_окончания_страховки)) AND ((@IsNull_Тип_назначения_авто = 1 " +
-                "AND [Тип назначения авто] IS NULL) OR ([Тип назначения авто] = @Original_Тип_наз" +
-                "начения_авто)));\r\nSELECT ID, [Марка и модель], [Гос.номер], [Гаражный номер], [Т" +
-                "ип двигателя], [Год выпуска], [Инвентарный номер], [Вид топлива], [дата окончани" +
-                "я страховки], [Тип назначения авто] FROM [Подвижной состав] WHERE (ID = @ID)";
+                "= @Вид_топлива, [Дополнительный вид топлива] = @Дополнительный_вид_топлива, [дат" +
+                "а окончания страховки] = @дата_окончания_страховки, [Тип назначения авто] = @Тип" +
+                "_назначения_авто WHERE (([ID] = @Original_ID) AND ([Марка и модель] = @Original_" +
+                "Марка_и_модель) AND ([Гос.номер] = @p2) AND ((@IsNull_Гаражный_номер = 1 AND [Га" +
+                "ражный номер] IS NULL) OR ([Гаражный номер] = @Original_Гаражный_номер)) AND ((@" +
+                "IsNull_Тип_двигателя = 1 AND [Тип двигателя] IS NULL) OR ([Тип двигателя] = @Ori" +
+                "ginal_Тип_двигателя)) AND ((@IsNull_Год_выпуска = 1 AND [Год выпуска] IS NULL) O" +
+                "R ([Год выпуска] = @Original_Год_выпуска)) AND ((@IsNull_Инвентарный_номер = 1 A" +
+                "ND [Инвентарный номер] IS NULL) OR ([Инвентарный номер] = @Original_Инвентарный_" +
+                "номер)) AND ((@IsNull_Вид_топлива = 1 AND [Вид топлива] IS NULL) OR ([Вид топлив" +
+                "а] = @Original_Вид_топлива)) AND ((@IsNull_Дополнительный_вид_топлива = 1 AND [Д" +
+                "ополнительный вид топлива] IS NULL) OR ([Дополнительный вид топлива] = @Original" +
+                "_Дополнительный_вид_топлива)) AND ((@IsNull_дата_окончания_страховки = 1 AND [да" +
+                "та окончания страховки] IS NULL) OR ([дата окончания страховки] = @Original_дата" +
+                "_окончания_страховки)) AND ((@IsNull_Тип_назначения_авто = 1 AND [Тип назначения" +
+                " авто] IS NULL) OR ([Тип назначения авто] = @Original_Тип_назначения_авто)));\r\nS" +
+                "ELECT ID, [Марка и модель], [Гос.номер], [Гаражный номер], [Тип двигателя], [Год" +
+                " выпуска], [Инвентарный номер], [Вид топлива], [Дополнительный вид топлива], [да" +
+                "та окончания страховки], [Тип назначения авто] FROM [Подвижной состав] WHERE (ID" +
+                " = @ID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Марка_и_модель", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Марка и модель", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p1", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Гос.номер", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -12443,6 +12495,7 @@ SELECT ID, [Марка и модель], [Гос.номер], [Гаражный 
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Год_выпуска", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Год выпуска", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Инвентарный_номер", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Инвентарный номер", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Вид_топлива", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Вид топлива", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Дополнительный_вид_топлива", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Дополнительный вид топлива", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@дата_окончания_страховки", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "дата окончания страховки", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Тип_назначения_авто", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Тип назначения авто", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -12458,6 +12511,8 @@ SELECT ID, [Марка и модель], [Гос.номер], [Гаражный 
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Инвентарный_номер", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Инвентарный номер", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Вид_топлива", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Вид топлива", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Вид_топлива", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Вид топлива", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Дополнительный_вид_топлива", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Дополнительный вид топлива", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Дополнительный_вид_топлива", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Дополнительный вид топлива", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_дата_окончания_страховки", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "дата окончания страховки", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_дата_окончания_страховки", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "дата окончания страховки", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Тип_назначения_авто", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Тип назначения авто", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -12478,25 +12533,20 @@ SELECT ID, [Марка и модель], [Гос.номер], [Гаражный 
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        ID, [Марка и модель], [Гос.номер], [Гаражный номер], [Тип двигателя" +
-                "], [Год выпуска], [Инвентарный номер], [Вид топлива], [дата окончания страховки]" +
-                ", \r\n                         [Тип назначения авто]\r\nFROM            [Подвижной с" +
-                "остав]";
+            this._commandCollection[0].CommandText = @"SELECT        ID, [Марка и модель], [Гос.номер], [Гаражный номер], [Тип двигателя], [Год выпуска], [Инвентарный номер], [Вид топлива],[Дополнительный вид топлива], [дата окончания страховки], 
+                         [Тип назначения авто]
+FROM            [Подвижной состав]";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT ID, [Вид топлива], [Гаражный номер], [Год выпуска], [Гос.номер], [Инвентар" +
-                "ный номер], [Марка и модель], [Тип двигателя], [Тип назначения авто], [дата окон" +
-                "чания страховки] FROM [Подвижной состав] WHERE (ID = @ID)";
+            this._commandCollection[1].CommandText = @"SELECT ID, [Вид топлива],[Дополнительный вид топлива], [Гаражный номер], [Год выпуска], [Гос.номер], [Дополнительный вид топлива], [Инвентарный номер], [Марка и модель], [Тип двигателя], [Тип назначения авто], [дата окончания страховки] FROM [Подвижной состав] WHERE (ID = @ID)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT ID, [Вид топлива], [Гаражный номер], [Год выпуска], [Гос.номер], [Инвентар" +
-                "ный номер], [Марка и модель], [Тип двигателя], [Тип назначения авто], [дата окон" +
-                "чания страховки] FROM [Подвижной состав] WHERE ([Тип назначения авто] = @type)";
+            this._commandCollection[2].CommandText = @"SELECT ID, [Вид топлива], [Дополнительный вид топлива], [Гаражный номер], [Год выпуска], [Гос.номер], [Дополнительный вид топлива], [Инвентарный номер], [Марка и модель], [Тип двигателя], [Тип назначения авто], [дата окончания страховки] FROM [Подвижной состав] WHERE ([Тип назначения авто] = @type)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@type", global::System.Data.SqlDbType.Char, 1, global::System.Data.ParameterDirection.Input, 0, 0, "Тип назначения авто", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@type", global::System.Data.SqlDbType.NChar, 1, global::System.Data.ParameterDirection.Input, 0, 0, "Тип назначения авто", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -12618,7 +12668,7 @@ SELECT ID, [Марка и модель], [Гос.номер], [Гаражный 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_ID, string Original_Марка_и_модель, string p2, string Original_Гаражный_номер, string Original_Тип_двигателя, global::System.Nullable<int> Original_Год_выпуска, string Original_Инвентарный_номер, string Original_Вид_топлива, global::System.Nullable<global::System.DateTime> Original_дата_окончания_страховки, string Original_Тип_назначения_авто) {
+        public virtual int Delete(int Original_ID, string Original_Марка_и_модель, string p2, string Original_Гаражный_номер, string Original_Тип_двигателя, global::System.Nullable<int> Original_Год_выпуска, string Original_Инвентарный_номер, string Original_Вид_топлива, string Original_Дополнительный_вид_топлива, global::System.Nullable<global::System.DateTime> Original_дата_окончания_страховки, string Original_Тип_назначения_авто) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ID));
             if ((Original_Марка_и_модель == null)) {
                 throw new global::System.ArgumentNullException("Original_Марка_и_модель");
@@ -12672,21 +12722,29 @@ SELECT ID, [Марка и модель], [Гос.номер], [Гаражный 
                 this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(0));
                 this.Adapter.DeleteCommand.Parameters[12].Value = ((string)(Original_Вид_топлива));
             }
-            if ((Original_дата_окончания_страховки.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[14].Value = ((System.DateTime)(Original_дата_окончания_страховки.Value));
-            }
-            else {
+            if ((Original_Дополнительный_вид_топлива == null)) {
                 this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[14].Value = global::System.DBNull.Value;
             }
-            if ((Original_Тип_назначения_авто == null)) {
+            else {
+                this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[14].Value = ((string)(Original_Дополнительный_вид_топлива));
+            }
+            if ((Original_дата_окончания_страховки.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[16].Value = ((System.DateTime)(Original_дата_окончания_страховки.Value));
+            }
+            else {
                 this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[16].Value = global::System.DBNull.Value;
             }
+            if ((Original_Тип_назначения_авто == null)) {
+                this.Adapter.DeleteCommand.Parameters[17].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[18].Value = global::System.DBNull.Value;
+            }
             else {
-                this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[16].Value = ((string)(Original_Тип_назначения_авто));
+                this.Adapter.DeleteCommand.Parameters[17].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[18].Value = ((string)(Original_Тип_назначения_авто));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -12708,7 +12766,7 @@ SELECT ID, [Марка и модель], [Гос.номер], [Гаражный 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Марка_и_модель, string p1, string Гаражный_номер, string Тип_двигателя, global::System.Nullable<int> Год_выпуска, string Инвентарный_номер, string Вид_топлива, global::System.Nullable<global::System.DateTime> дата_окончания_страховки, string Тип_назначения_авто) {
+        public virtual int Insert(string Марка_и_модель, string p1, string Гаражный_номер, string Тип_двигателя, global::System.Nullable<int> Год_выпуска, string Инвентарный_номер, string Вид_топлива, string Дополнительный_вид_топлива, global::System.Nullable<global::System.DateTime> дата_окончания_страховки, string Тип_назначения_авто) {
             if ((Марка_и_модель == null)) {
                 throw new global::System.ArgumentNullException("Марка_и_модель");
             }
@@ -12751,17 +12809,23 @@ SELECT ID, [Марка и модель], [Гос.номер], [Гаражный 
             else {
                 this.Adapter.InsertCommand.Parameters[6].Value = ((string)(Вид_топлива));
             }
-            if ((дата_окончания_страховки.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[7].Value = ((System.DateTime)(дата_окончания_страховки.Value));
-            }
-            else {
+            if ((Дополнительный_вид_топлива == null)) {
                 this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
-            if ((Тип_назначения_авто == null)) {
-                this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
+            else {
+                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(Дополнительный_вид_топлива));
+            }
+            if ((дата_окончания_страховки.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[8].Value = ((System.DateTime)(дата_окончания_страховки.Value));
             }
             else {
-                this.Adapter.InsertCommand.Parameters[8].Value = ((string)(Тип_назначения_авто));
+                this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            if ((Тип_назначения_авто == null)) {
+                this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[9].Value = ((string)(Тип_назначения_авто));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -12791,6 +12855,7 @@ SELECT ID, [Марка и модель], [Гос.номер], [Гаражный 
                     global::System.Nullable<int> Год_выпуска, 
                     string Инвентарный_номер, 
                     string Вид_топлива, 
+                    string Дополнительный_вид_топлива, 
                     global::System.Nullable<global::System.DateTime> дата_окончания_страховки, 
                     string Тип_назначения_авто, 
                     int Original_ID, 
@@ -12801,6 +12866,7 @@ SELECT ID, [Марка и модель], [Гос.номер], [Гаражный 
                     global::System.Nullable<int> Original_Год_выпуска, 
                     string Original_Инвентарный_номер, 
                     string Original_Вид_топлива, 
+                    string Original_Дополнительный_вид_топлива, 
                     global::System.Nullable<global::System.DateTime> Original_дата_окончания_страховки, 
                     string Original_Тип_назначения_авто, 
                     int ID) {
@@ -12846,88 +12912,102 @@ SELECT ID, [Марка и модель], [Гос.номер], [Гаражный 
             else {
                 this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Вид_топлива));
             }
-            if ((дата_окончания_страховки.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((System.DateTime)(дата_окончания_страховки.Value));
-            }
-            else {
+            if ((Дополнительный_вид_топлива == null)) {
                 this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
-            if ((Тип_назначения_авто == null)) {
-                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
+            else {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Дополнительный_вид_топлива));
+            }
+            if ((дата_окончания_страховки.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((System.DateTime)(дата_окончания_страховки.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Тип_назначения_авто));
+                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_ID));
+            if ((Тип_назначения_авто == null)) {
+                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Тип_назначения_авто));
+            }
+            this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_ID));
             if ((Original_Марка_и_модель == null)) {
                 throw new global::System.ArgumentNullException("Original_Марка_и_модель");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_Марка_и_модель));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_Марка_и_модель));
             }
             if ((p2 == null)) {
                 throw new global::System.ArgumentNullException("p2");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(p2));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(p2));
             }
             if ((Original_Гаражный_номер == null)) {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_Гаражный_номер));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(Original_Гаражный_номер));
             }
             if ((Original_Тип_двигателя == null)) {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(Original_Тип_двигателя));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(Original_Тип_двигателя));
             }
             if ((Original_Год_выпуска.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((int)(Original_Год_выпуска.Value));
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((int)(Original_Год_выпуска.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
             }
             if ((Original_Инвентарный_номер == null)) {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((string)(Original_Инвентарный_номер));
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((string)(Original_Инвентарный_номер));
             }
             if ((Original_Вид_топлива == null)) {
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[21].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((string)(Original_Вид_топлива));
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((string)(Original_Вид_топлива));
+            }
+            if ((Original_Дополнительный_вид_топлива == null)) {
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[24].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((string)(Original_Дополнительный_вид_топлива));
             }
             if ((Original_дата_окончания_страховки.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[23].Value = ((System.DateTime)(Original_дата_окончания_страховки.Value));
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((System.DateTime)(Original_дата_окончания_страховки.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[23].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[26].Value = global::System.DBNull.Value;
             }
             if ((Original_Тип_назначения_авто == null)) {
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[25].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[28].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[25].Value = ((string)(Original_Тип_назначения_авто));
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[28].Value = ((string)(Original_Тип_назначения_авто));
             }
-            this.Adapter.UpdateCommand.Parameters[26].Value = ((int)(ID));
+            this.Adapter.UpdateCommand.Parameters[29].Value = ((int)(ID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -12956,6 +13036,7 @@ SELECT ID, [Марка и модель], [Гос.номер], [Гаражный 
                     global::System.Nullable<int> Год_выпуска, 
                     string Инвентарный_номер, 
                     string Вид_топлива, 
+                    string Дополнительный_вид_топлива, 
                     global::System.Nullable<global::System.DateTime> дата_окончания_страховки, 
                     string Тип_назначения_авто, 
                     int Original_ID, 
@@ -12966,9 +13047,10 @@ SELECT ID, [Марка и модель], [Гос.номер], [Гаражный 
                     global::System.Nullable<int> Original_Год_выпуска, 
                     string Original_Инвентарный_номер, 
                     string Original_Вид_топлива, 
+                    string Original_Дополнительный_вид_топлива, 
                     global::System.Nullable<global::System.DateTime> Original_дата_окончания_страховки, 
                     string Original_Тип_назначения_авто) {
-            return this.Update(Марка_и_модель, p1, Гаражный_номер, Тип_двигателя, Год_выпуска, Инвентарный_номер, Вид_топлива, дата_окончания_страховки, Тип_назначения_авто, Original_ID, Original_Марка_и_модель, p2, Original_Гаражный_номер, Original_Тип_двигателя, Original_Год_выпуска, Original_Инвентарный_номер, Original_Вид_топлива, Original_дата_окончания_страховки, Original_Тип_назначения_авто, Original_ID);
+            return this.Update(Марка_и_модель, p1, Гаражный_номер, Тип_двигателя, Год_выпуска, Инвентарный_номер, Вид_топлива, Дополнительный_вид_топлива, дата_окончания_страховки, Тип_назначения_авто, Original_ID, Original_Марка_и_модель, p2, Original_Гаражный_номер, Original_Тип_двигателя, Original_Год_выпуска, Original_Инвентарный_номер, Original_Вид_топлива, Original_Дополнительный_вид_топлива, Original_дата_окончания_страховки, Original_Тип_назначения_авто, Original_ID);
         }
     }
     
