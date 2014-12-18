@@ -182,6 +182,7 @@
             this.ClientSize = new System.Drawing.Size(885, 409);
             this.Controls.Add(this.groupListi);
             this.Controls.Add(this.Spravochniki);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Menu";
             this.Text = "ОАО \"Зенит\" Автопарк";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Menu_FormClosed);
