@@ -152,12 +152,6 @@
     <Build Include="Schema Objects\Schemas\dbo\Tables\Личный состав.table.sql">
       <SubType>Code</SubType>
     </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Tables\Движение ТСМ.table.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Tables\Работа водителя и автомобиля.table.sql">
-      <SubType>Code</SubType>
-    </Build>
     <Build Include="Schema Objects\Schemas\dbo\Tables\Водители авто.table.sql">
       <SubType>Code</SubType>
     </Build>
@@ -177,6 +171,18 @@
     <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\GetMileageGruz.proc.sql">
       <SubType>Code</SubType>
       <CopyToOutputDirectory>DoNotCopy</CopyToOutputDirectory>
+    </Build>
+    <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\GetToplivoLegk.proc.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\GetToplivoGruz.proc.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\GetNewNumberLegv.proc.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\GetNewNumberGruz.proc.sql">
+      <SubType>Code</SubType>
     </Build>
   </ItemGroup>
 </Project>

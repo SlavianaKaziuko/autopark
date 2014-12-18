@@ -41,15 +41,12 @@ namespace AUTOPARK
 
             var tableZadanie = new AutoparkDBTableAdapters.ZadanieVoditelTableAdapter();
             _bindingZadanie.DataSource = tableZadanie.GetDataByPutevoiId(PutevoiId);
-
-            var table = new AutoparkDBTableAdapters.AutoVodWorkTableAdapter();
-            _bindingVoditelWork.DataSource = table.GetDataByPutevoiID(PutevoiId);
         }
 
         private void Form2_Load(object sender, EventArgs e)
         {
             reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("ReportHead", _bindingHead));
-            reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("DannieAutoPricepPolupricep", _bindingAuto));
+            reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("DannieAuto", _bindingAuto));
             reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("ZadanieVoditel", _bindingZadanie));
             reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("Voditel", _bindingVoditel));
             reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("OstatokTCM", _bindingDannieOst));

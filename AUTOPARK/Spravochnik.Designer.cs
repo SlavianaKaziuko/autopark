@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Spravochnik));
             this.dgvSpravochnik = new System.Windows.Forms.DataGridView();
             this.btnSaveChanges = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -99,6 +100,7 @@
             this.Controls.Add(this.btnSaveChanges);
             this.Controls.Add(this.dgvSpravochnik);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Spravochnik";
             this.Text = "Справочник";

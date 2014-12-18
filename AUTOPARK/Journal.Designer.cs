@@ -284,14 +284,14 @@
             this.tsmiToMenu.Name = "tsmiToMenu";
             this.tsmiToMenu.Size = new System.Drawing.Size(197, 22);
             this.tsmiToMenu.Text = "Вернуться к Меню";
-            this.tsmiToMenu.Click += new System.EventHandler(this.tsmiToMenu_Click_1);
+            this.tsmiToMenu.Click += new System.EventHandler(this.tsmiToMenu_Click);
             // 
             // tsmiExitApplication
             // 
             this.tsmiExitApplication.Name = "tsmiExitApplication";
             this.tsmiExitApplication.Size = new System.Drawing.Size(197, 22);
             this.tsmiExitApplication.Text = "Выйти из приложения";
-            this.tsmiExitApplication.Click += new System.EventHandler(this.tsmiExitApplication_Click_1);
+            this.tsmiExitApplication.Click += new System.EventHandler(this.tsmiExitApplication_Click);
             // 
             // menuStrip1
             // 

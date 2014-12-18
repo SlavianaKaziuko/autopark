@@ -14,7 +14,7 @@ namespace AUTOPARK
         private readonly BindingSource _bindingOtdel = new BindingSource();
         private readonly BindingSource _bindingZadanie = new BindingSource();
         private readonly BindingSource _bindingZapravka = new BindingSource();
-        private readonly BindingSource _bindingDvizhenie = new BindingSource();
+        private readonly List<AutoparkDB.Путевой_лист_Грузового_автоRow> mainInfo;
         private readonly int _number;
         private int _idauto;
         private readonly int _idvod;
@@ -30,11 +30,12 @@ namespace AUTOPARK
 
             _modeIsNew = true;
             _idauto = int.Parse(cbZnak.SelectedValue.ToString());
-            var tablePutevoi = new AutoparkDBTableAdapters.TablePutevieGruzovieTableAdapter();
-            var newLegkNumber = tablePutevoi.GetNewPutevoiId();
+            var queries = new AutoparkDBTableAdapters.QueriesTableAdapter();
+            var newLegkNumber = queries.GetNewNumberGruz();
             if (newLegkNumber != null)
                 _number = int.Parse(newLegkNumber.ToString());
             _date = DateTime.Today;
+            mainInfo = new List<AutoparkDB.Путевой_лист_Грузового_автоRow>();
         }
 
         public PutevoiListGruzavogo(int id)
@@ -45,12 +46,12 @@ namespace AUTOPARK
             PutevoiId = id;
             
             var tablePutevoi = new AutoparkDBTableAdapters.TablePutevieGruzovieTableAdapter();
-            var res = tablePutevoi.GetDataByID(id).ToList();
-            _number = res[0].Номер_путевого_листа;
-            _idauto = res[0].ID_Автомобиля;
-            _date = res[0].Дата_путевого_листа;
-            _idvod = res[0].ID_Водителя;
-            _idotdel = res[0].ID_Отдела;
+            mainInfo = tablePutevoi.GetDataByID(id).ToList();
+            _number = mainInfo[0].Номер_путевого_листа;
+            _idauto = mainInfo[0].ID_Автомобиля;
+            _date = mainInfo[0].Дата_путевого_листа;
+            _idvod = mainInfo[0].ID_Водителя;
+            _idotdel = mainInfo[0].ID_Отдела;
 
             var tableZadanie = new AutoparkDBTableAdapters.ZadanieVoditelTableAdapter();
             _bindingZadanie.DataSource = tableZadanie.GetDataByPutevoiId(PutevoiId);
@@ -59,9 +60,6 @@ namespace AUTOPARK
             var tableZapravka = new AutoparkDBTableAdapters.ZapravkaTCMTableAdapter();
             _bindingZapravka.DataSource = tableZapravka.GetDataByPutevoiID(PutevoiId);
             dgvZapravkaTCM.DataSource = _bindingZapravka;
-
-            var tableDvizhenie = new AutoparkDBTableAdapters.DvizhenieTCMTableAdapter();
-            _bindingDvizhenie.DataSource = tableDvizhenie.GetDataByPutevoiID(PutevoiId);
             
             
             var dataGridViewColumn = dgvZadanieVoditelu.Columns["ID_Путевого листа"];
@@ -111,23 +109,40 @@ namespace AUTOPARK
         {
             dgvZadanieVoditelu.DataSource = _bindingZadanie;
             txtNumber.Text = _number.ToString(CultureInfo.InvariantCulture);
-            cbZnak.SelectedItem = _bindingAuto[_bindingAuto.Find("ID", _idauto)];
+            cbZnak.SelectedItem = _bindingAuto.Find("ID", _idauto);
             cbImia.SelectedItem = _bindingVoditel.Find("табельный_номер", _idvod);
             cbOtdel.SelectedItem = _bindingOtdel.Find("Код", _idotdel);
             dtpHapka.Value = _date;
+            if (_modeIsNew) return;
+            txtViezdSpidometr.Text = mainInfo[0].Показания_спидометра_при_выезде.ToString(CultureInfo.InvariantCulture);
+            txtVozvrahenieSpidometr.Text = mainInfo[0].Показания_спидометра_при_возвращении.ToString(CultureInfo.InvariantCulture);
+            dtpPoGraphViezd.Value = mainInfo[0].Дата_Время_выезда_граф;
+            dtpPoGraphVozvr.Value = mainInfo[0].Дата_Время_возвращения_граф;
+            dtpFactViezd.Value = mainInfo[0].Дата_Время_выезда_факт;
+            dtpFactVozvr.Value = mainInfo[0].Дата_Время_возвращения_факт;
+            txtNulevoiProbegViezd.Text = mainInfo[0].Нулевой_пробег_выезд.ToString(CultureInfo.InvariantCulture);
+            txtNulevoiProbegVozvrahenie.Text = mainInfo[0].Нулевой_пробег_возвр.ToString(CultureInfo.InvariantCulture);
+            cbToplivoType.SelectedIndex = 0;
+            cbToplivoType.Enabled = false;
+            cbToplivoType2.SelectedIndex = 1;
+            cbToplivoType2.Enabled = false;
+            txtPriViezdiTCM.Text = mainInfo[0].Остаток_ТСМ1_выезд.ToString(CultureInfo.InvariantCulture);
+            txtPriViezdiTCM2.Text = mainInfo[0].Остаток_ТСМ2_выезд.ToString(CultureInfo.InvariantCulture);
+            txtPriVozvracheniiTCM.Text = mainInfo[0].Остаток_ТСМ1_возвр.ToString(CultureInfo.InvariantCulture);
+            txtPriVozvracheniiTCM2.Text = mainInfo[0].Остаток_ТСМ2_возвр.ToString(CultureInfo.InvariantCulture);
         }
 
         private void cbZnak_SelectedValueChanged(object sender, EventArgs e)               //  Комбобок cbZnak  (Автомобиль)
         {
             ////Вытягивание из таблицы binding строку,затем преобразовываем в тип данных DataRowView,
             ////вытягивание из массива данных(Row) и затем вытягивание ячейки 1 (ItemArray[1])
-            _idauto = int.Parse(cbZnak.SelectedValue.ToString());
-            txtGaraz.Text = ((DataRowView)_bindingAuto[_bindingAuto.Find("ID", _idauto)])["Гаражный номер"].ToString();
-            txtMarka.Text = ((DataRowView)_bindingAuto[_bindingAuto.Find("ID", _idauto)])["Марка и модель"].ToString();
+            var id = int.Parse(cbZnak.SelectedValue.ToString());
+            txtGaraz.Text = ((DataRowView)_bindingAuto[_bindingAuto.Find("ID", id)])["Гаражный номер"].ToString();
+            txtMarka.Text = ((DataRowView)_bindingAuto[_bindingAuto.Find("ID", id)])["Марка и модель"].ToString();
             var toplivo = new List<string>
             {
-                ((DataRowView) _bindingAuto[_bindingAuto.Find("ID", _idauto)])["Вид топлива"].ToString(),
-                ((DataRowView) _bindingAuto[_bindingAuto.Find("ID", _idauto)])["Дополнительный вид топлива"].ToString()
+                ((DataRowView) _bindingAuto[_bindingAuto.Find("ID", id)])["Вид топлива"].ToString(),
+                ((DataRowView) _bindingAuto[_bindingAuto.Find("ID", id)])["Дополнительный вид топлива"].ToString()
             };
             cbToplivoType.DataSource = toplivo;
             cbToplivoType2.DataSource = toplivo;

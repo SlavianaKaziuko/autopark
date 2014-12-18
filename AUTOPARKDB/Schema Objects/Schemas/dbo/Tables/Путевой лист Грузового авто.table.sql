@@ -1,9 +1,25 @@
 ﻿CREATE TABLE [dbo].[Путевой лист Грузового авто]
 (
-	[ID_Путевого листа] [int] IDENTITY(1,1) NOT NULL CONSTRAINT [Пут_груз_ID]  PRIMARY KEY ([ID_Путевого листа]),
-	[Номер путевого листа] [int] NOT NULL,
-	[Дата путевого листа] [date] NOT NULL,
-	[ID_Водителя] [int] NOT NULL  CONSTRAINT [FK_Путевой лист Грузового авто_личный состав] FOREIGN KEY([ID_Водителя]) REFERENCES [dbo].[Личный состав] ([табельный  номер]),
-	[ID_Автомобиля] [int] NOT NULL  CONSTRAINT [FK_Путевой лист Грузового авто_Подвижной состав] FOREIGN KEY([ID_Автомобиля]) REFERENCES [dbo].[Подвижной состав] ([ID]),
-	[ID_Отдела] [int] NULL CONSTRAINT [FK_Путевой лист Грузового авто_id_отдела] FOREIGN KEY ([ID_Отдела]) REFERENCES [Отделы] ([Код])
+	[ID_Путевого листа] int IDENTITY(1,1) NOT NULL CONSTRAINT [Пут_груз_ID]  PRIMARY KEY ([ID_Путевого листа]),
+	[Номер путевого листа] int NOT NULL,
+	[Дата путевого листа] date NOT NULL,
+	[Показания_спидометра_при_выезде] int NULL,
+	[Показания_спидометра_при_возвращении] int NULL,
+	[Дата_Время_выезда_граф] datetime NULL,
+	[Дата_Время_выезда_факт] datetime NULL,
+	[Дата_Время_возвращения_граф] datetime NULL,
+	[Дата_Время_возвращения_факт] datetime NULL,
+	[Нулевой_пробег_выезд] int NULL,
+	[Нулевой_пробег_возвр] int NULL,
+	[Время_работы_двигателя_выезд] float NULL,
+	[Время_работы_двигателя_возвр] float NULL,
+	[Время_работы_спецоборудования_выезд] float NULL,
+	[Время_работы_спецоборудования_возвр] float NULL,
+	[Остаток_ТСМ1_выезд] float NULL,
+	[Остаток_ТСМ1_возвр] float NULL,
+	[Остаток_ТСМ2_выезд] float NULL,
+	[Остаток_ТСМ2_возвр] float NULL,
+	[ID_Водителя] int NOT NULL  CONSTRAINT [FK_Путевой лист Грузового авто_личный состав] FOREIGN KEY([ID_Водителя]) REFERENCES [dbo].[Личный состав] ([табельный  номер]),
+	[ID_Автомобиля] int NOT NULL  CONSTRAINT [FK_Путевой лист Грузового авто_Подвижной состав] FOREIGN KEY([ID_Автомобиля]) REFERENCES [dbo].[Подвижной состав] ([ID]),
+	[ID_Отдела] int NULL CONSTRAINT [FK_Путевой лист Грузового авто_id_отдела] FOREIGN KEY ([ID_Отдела]) REFERENCES [Отделы] ([Код])
 )

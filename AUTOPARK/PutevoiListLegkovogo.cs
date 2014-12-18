@@ -26,8 +26,8 @@ namespace AUTOPARK
         {
             InitializeComponent();
 
-            var tablePutevoi = new AutoparkDBTableAdapters.PutevoiListLegkTableAdapter();
-            var newLegkNumber = tablePutevoi.GetNewLegkNumber();
+            var queries = new AutoparkDBTableAdapters.QueriesTableAdapter();
+            var newLegkNumber = queries.GetNewNumberLegv();
             if (newLegkNumber != null)
                 _number = int.Parse(newLegkNumber.ToString());
 

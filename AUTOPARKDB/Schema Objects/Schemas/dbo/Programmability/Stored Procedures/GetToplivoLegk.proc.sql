@@ -1,8 +1,8 @@
-﻿CREATE PROCEDURE [dbo].[GetMileageLegk]
+﻿CREATE PROCEDURE [dbo].[GetToplivoLegk]
 	@Auto int, 
 	@DateAt datetime
 AS
-SELECT TOP (1) ISNULL(d.[Показания спидометра при возвращении],0) AS  N'Километраж' FROM [Данные Путевой лист легкового авто] AS d
+SELECT TOP (1) ISNULL(d.[Остаток топлива при возвращении],0) AS  N'Топливо' FROM [Данные Путевой лист легкового авто] AS d
 JOIN [Путевой лист легкового автомобиля] AS p ON p.[ID_Путевого листа]=d.[ID_Путевого листа]
 WHERE p.[ID_Автомобиль] = @Auto
 	AND (d.[Число]< @DateAt
