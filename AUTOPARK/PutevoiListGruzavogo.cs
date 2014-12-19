@@ -35,6 +35,7 @@ namespace AUTOPARK
             if (newLegkNumber != null)
                 _number = int.Parse(newLegkNumber.ToString());
             _date = DateTime.Today;
+            txtViezdSpidometr.Text = queries.GetMileageGruz(_idauto, _date).ToString();
             mainInfo = new List<AutoparkDB.Путевой_лист_Грузового_автоRow>();
         }
 
@@ -113,7 +114,14 @@ namespace AUTOPARK
             cbImia.SelectedItem = _bindingVoditel.Find("табельный_номер", _idvod);
             cbOtdel.SelectedItem = _bindingOtdel.Find("Код", _idotdel);
             dtpHapka.Value = _date;
-            if (_modeIsNew) return;
+            cbToplivoType.SelectedIndex = 0;
+            cbToplivoType.Enabled = false;
+            cbToplivoType2.SelectedIndex = 1;
+            cbToplivoType2.Enabled = false;
+            if (_modeIsNew)
+            {
+                return;
+            }
             txtViezdSpidometr.Text = mainInfo[0].Показания_спидометра_при_выезде.ToString(CultureInfo.InvariantCulture);
             txtVozvrahenieSpidometr.Text = mainInfo[0].Показания_спидометра_при_возвращении.ToString(CultureInfo.InvariantCulture);
             dtpPoGraphViezd.Value = mainInfo[0].Дата_Время_выезда_граф;
@@ -122,14 +130,14 @@ namespace AUTOPARK
             dtpFactVozvr.Value = mainInfo[0].Дата_Время_возвращения_факт;
             txtNulevoiProbegViezd.Text = mainInfo[0].Нулевой_пробег_выезд.ToString(CultureInfo.InvariantCulture);
             txtNulevoiProbegVozvrahenie.Text = mainInfo[0].Нулевой_пробег_возвр.ToString(CultureInfo.InvariantCulture);
-            cbToplivoType.SelectedIndex = 0;
-            cbToplivoType.Enabled = false;
-            cbToplivoType2.SelectedIndex = 1;
-            cbToplivoType2.Enabled = false;
             txtPriViezdiTCM.Text = mainInfo[0].Остаток_ТСМ1_выезд.ToString(CultureInfo.InvariantCulture);
             txtPriViezdiTCM2.Text = mainInfo[0].Остаток_ТСМ2_выезд.ToString(CultureInfo.InvariantCulture);
             txtPriVozvracheniiTCM.Text = mainInfo[0].Остаток_ТСМ1_возвр.ToString(CultureInfo.InvariantCulture);
             txtPriVozvracheniiTCM2.Text = mainInfo[0].Остаток_ТСМ2_возвр.ToString(CultureInfo.InvariantCulture);
+            txtVremiaDvigViezd.Text = mainInfo[0].Время_работы_двигателя_выезд.ToString(CultureInfo.InvariantCulture);
+            txtVremiaDvigVozvr.Text = mainInfo[0].Время_работы_двигателя_возвр.ToString(CultureInfo.InvariantCulture);
+            txtVremiaOborudViezd.Text = mainInfo[0].Время_работы_спецоборудования_выезд.ToString(CultureInfo.InvariantCulture);
+            txtVremiaOborudVozvr.Text = mainInfo[0].Время_работы_спецоборудования_возвр.ToString(CultureInfo.InvariantCulture);
         }
 
         private void cbZnak_SelectedValueChanged(object sender, EventArgs e)               //  Комбобок cbZnak  (Автомобиль)

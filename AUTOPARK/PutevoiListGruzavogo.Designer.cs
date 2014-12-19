@@ -60,10 +60,10 @@
             this.dtpPoGraphVozvr = new System.Windows.Forms.DateTimePicker();
             this.txtNulevoiProbegViezd = new System.Windows.Forms.TextBox();
             this.txtNulevoiProbegVozvrahenie = new System.Windows.Forms.TextBox();
-            this.txtVremiaViezd = new System.Windows.Forms.TextBox();
-            this.txtVremzViezdOborudovanie = new System.Windows.Forms.TextBox();
-            this.txtVozvrahenieDvtgateli = new System.Windows.Forms.TextBox();
-            this.txtVozvrahenieOborudovanie = new System.Windows.Forms.TextBox();
+            this.txtVremiaDvigViezd = new System.Windows.Forms.TextBox();
+            this.txtVremiaOborudViezd = new System.Windows.Forms.TextBox();
+            this.txtVremiaDvigVozvr = new System.Windows.Forms.TextBox();
+            this.txtVremiaOborudVozvr = new System.Windows.Forms.TextBox();
             this.lblDvizenieTSM = new System.Windows.Forms.Label();
             this.lblZapravka = new System.Windows.Forms.Label();
             this.lblOstatok = new System.Windows.Forms.Label();
@@ -75,6 +75,8 @@
             this.lblZadanieVoditel = new System.Windows.Forms.Label();
             this.dgvZadanieVoditelu = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.dtpFactVozvr = new System.Windows.Forms.DateTimePicker();
+            this.dtpFactViezd = new System.Windows.Forms.DateTimePicker();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.txtKlass = new System.Windows.Forms.TextBox();
@@ -96,8 +98,6 @@
             this.lblG = new System.Windows.Forms.Label();
             this.lblOtdel = new System.Windows.Forms.Label();
             this.cbOtdel = new System.Windows.Forms.ComboBox();
-            this.dtpFactVozvr = new System.Windows.Forms.DateTimePicker();
-            this.dtpFactViezd = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dgvZapravkaTCM)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvZadanieVoditelu)).BeginInit();
             this.panel1.SuspendLayout();
@@ -123,13 +123,16 @@
             this.txtNumber.Name = "txtNumber";
             this.txtNumber.Size = new System.Drawing.Size(72, 21);
             this.txtNumber.TabIndex = 1;
+            this.txtNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // dtpHapka
             // 
+            this.dtpHapka.CustomFormat = "dd MMMM yyyy";
             this.dtpHapka.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.dtpHapka.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpHapka.Location = new System.Drawing.Point(569, 35);
             this.dtpHapka.Name = "dtpHapka";
-            this.dtpHapka.Size = new System.Drawing.Size(233, 21);
+            this.dtpHapka.Size = new System.Drawing.Size(166, 21);
             this.dtpHapka.TabIndex = 2;
             // 
             // lblAvtoPricep
@@ -330,7 +333,7 @@
             // 
             this.lblViezd.AutoSize = true;
             this.lblViezd.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblViezd.Location = new System.Drawing.Point(16, 116);
+            this.lblViezd.Location = new System.Drawing.Point(17, 121);
             this.lblViezd.Name = "lblViezd";
             this.lblViezd.Size = new System.Drawing.Size(90, 13);
             this.lblViezd.TabIndex = 25;
@@ -340,7 +343,7 @@
             // 
             this.lblVozvrahenie.AutoSize = true;
             this.lblVozvrahenie.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblVozvrahenie.Location = new System.Drawing.Point(17, 150);
+            this.lblVozvrahenie.Location = new System.Drawing.Point(17, 155);
             this.lblVozvrahenie.Name = "lblVozvrahenie";
             this.lblVozvrahenie.Size = new System.Drawing.Size(119, 13);
             this.lblVozvrahenie.TabIndex = 26;
@@ -364,7 +367,7 @@
             // 
             this.dtpPoGraphViezd.CustomFormat = "dd/MM HH:mm";
             this.dtpPoGraphViezd.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpPoGraphViezd.Location = new System.Drawing.Point(245, 114);
+            this.dtpPoGraphViezd.Location = new System.Drawing.Point(245, 115);
             this.dtpPoGraphViezd.Name = "dtpPoGraphViezd";
             this.dtpPoGraphViezd.Size = new System.Drawing.Size(88, 21);
             this.dtpPoGraphViezd.TabIndex = 29;
@@ -373,14 +376,14 @@
             // 
             this.dtpPoGraphVozvr.CustomFormat = "dd/MM HH:mm";
             this.dtpPoGraphVozvr.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpPoGraphVozvr.Location = new System.Drawing.Point(245, 148);
+            this.dtpPoGraphVozvr.Location = new System.Drawing.Point(245, 150);
             this.dtpPoGraphVozvr.Name = "dtpPoGraphVozvr";
             this.dtpPoGraphVozvr.Size = new System.Drawing.Size(88, 21);
             this.dtpPoGraphVozvr.TabIndex = 30;
             // 
             // txtNulevoiProbegViezd
             // 
-            this.txtNulevoiProbegViezd.Location = new System.Drawing.Point(456, 109);
+            this.txtNulevoiProbegViezd.Location = new System.Drawing.Point(456, 115);
             this.txtNulevoiProbegViezd.Name = "txtNulevoiProbegViezd";
             this.txtNulevoiProbegViezd.Size = new System.Drawing.Size(114, 21);
             this.txtNulevoiProbegViezd.TabIndex = 31;
@@ -392,33 +395,33 @@
             this.txtNulevoiProbegVozvrahenie.Size = new System.Drawing.Size(114, 21);
             this.txtNulevoiProbegVozvrahenie.TabIndex = 32;
             // 
-            // txtVremiaViezd
+            // txtVremiaDvigViezd
             // 
-            this.txtVremiaViezd.Location = new System.Drawing.Point(591, 111);
-            this.txtVremiaViezd.Name = "txtVremiaViezd";
-            this.txtVremiaViezd.Size = new System.Drawing.Size(43, 21);
-            this.txtVremiaViezd.TabIndex = 33;
+            this.txtVremiaDvigViezd.Location = new System.Drawing.Point(591, 115);
+            this.txtVremiaDvigViezd.Name = "txtVremiaDvigViezd";
+            this.txtVremiaDvigViezd.Size = new System.Drawing.Size(43, 21);
+            this.txtVremiaDvigViezd.TabIndex = 33;
             // 
-            // txtVremzViezdOborudovanie
+            // txtVremiaOborudViezd
             // 
-            this.txtVremzViezdOborudovanie.Location = new System.Drawing.Point(656, 111);
-            this.txtVremzViezdOborudovanie.Name = "txtVremzViezdOborudovanie";
-            this.txtVremzViezdOborudovanie.Size = new System.Drawing.Size(46, 21);
-            this.txtVremzViezdOborudovanie.TabIndex = 34;
+            this.txtVremiaOborudViezd.Location = new System.Drawing.Point(656, 113);
+            this.txtVremiaOborudViezd.Name = "txtVremiaOborudViezd";
+            this.txtVremiaOborudViezd.Size = new System.Drawing.Size(46, 21);
+            this.txtVremiaOborudViezd.TabIndex = 34;
             // 
-            // txtVozvrahenieDvtgateli
+            // txtVremiaDvigVozvr
             // 
-            this.txtVozvrahenieDvtgateli.Location = new System.Drawing.Point(591, 150);
-            this.txtVozvrahenieDvtgateli.Name = "txtVozvrahenieDvtgateli";
-            this.txtVozvrahenieDvtgateli.Size = new System.Drawing.Size(43, 21);
-            this.txtVozvrahenieDvtgateli.TabIndex = 35;
+            this.txtVremiaDvigVozvr.Location = new System.Drawing.Point(591, 150);
+            this.txtVremiaDvigVozvr.Name = "txtVremiaDvigVozvr";
+            this.txtVremiaDvigVozvr.Size = new System.Drawing.Size(43, 21);
+            this.txtVremiaDvigVozvr.TabIndex = 35;
             // 
-            // txtVozvrahenieOborudovanie
+            // txtVremiaOborudVozvr
             // 
-            this.txtVozvrahenieOborudovanie.Location = new System.Drawing.Point(656, 150);
-            this.txtVozvrahenieOborudovanie.Name = "txtVozvrahenieOborudovanie";
-            this.txtVozvrahenieOborudovanie.Size = new System.Drawing.Size(46, 21);
-            this.txtVozvrahenieOborudovanie.TabIndex = 36;
+            this.txtVremiaOborudVozvr.Location = new System.Drawing.Point(656, 150);
+            this.txtVremiaOborudVozvr.Name = "txtVremiaOborudVozvr";
+            this.txtVremiaOborudVozvr.Size = new System.Drawing.Size(46, 21);
+            this.txtVremiaOborudVozvr.TabIndex = 36;
             // 
             // lblDvizenieTSM
             // 
@@ -516,10 +519,10 @@
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.dtpFactVozvr);
             this.panel1.Controls.Add(this.dtpFactViezd);
-            this.panel1.Controls.Add(this.txtVozvrahenieOborudovanie);
-            this.panel1.Controls.Add(this.txtVozvrahenieDvtgateli);
-            this.panel1.Controls.Add(this.txtVremzViezdOborudovanie);
-            this.panel1.Controls.Add(this.txtVremiaViezd);
+            this.panel1.Controls.Add(this.txtVremiaOborudVozvr);
+            this.panel1.Controls.Add(this.txtVremiaDvigVozvr);
+            this.panel1.Controls.Add(this.txtVremiaOborudViezd);
+            this.panel1.Controls.Add(this.txtVremiaDvigViezd);
             this.panel1.Controls.Add(this.txtNulevoiProbegVozvrahenie);
             this.panel1.Controls.Add(this.txtNulevoiProbegViezd);
             this.panel1.Controls.Add(this.dtpPoGraphVozvr);
@@ -542,6 +545,24 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(727, 199);
             this.panel1.TabIndex = 50;
+            // 
+            // dtpFactVozvr
+            // 
+            this.dtpFactVozvr.CustomFormat = "dd/MM HH:mm";
+            this.dtpFactVozvr.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpFactVozvr.Location = new System.Drawing.Point(348, 150);
+            this.dtpFactVozvr.Name = "dtpFactVozvr";
+            this.dtpFactVozvr.Size = new System.Drawing.Size(88, 21);
+            this.dtpFactVozvr.TabIndex = 38;
+            // 
+            // dtpFactViezd
+            // 
+            this.dtpFactViezd.CustomFormat = "dd/MM HH:mm";
+            this.dtpFactViezd.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpFactViezd.Location = new System.Drawing.Point(348, 115);
+            this.dtpFactViezd.Name = "dtpFactViezd";
+            this.dtpFactViezd.Size = new System.Drawing.Size(88, 21);
+            this.dtpFactViezd.TabIndex = 37;
             // 
             // panel2
             // 
@@ -745,9 +766,9 @@
             this.lblG.AutoSize = true;
             this.lblG.Location = new System.Drawing.Point(533, 38);
             this.lblG.Name = "lblG";
-            this.lblG.Size = new System.Drawing.Size(14, 15);
+            this.lblG.Size = new System.Drawing.Size(18, 15);
             this.lblG.TabIndex = 58;
-            this.lblG.Text = "Г";
+            this.lblG.Text = "-Г";
             // 
             // lblOtdel
             // 
@@ -766,24 +787,6 @@
             this.cbOtdel.Name = "cbOtdel";
             this.cbOtdel.Size = new System.Drawing.Size(121, 23);
             this.cbOtdel.TabIndex = 60;
-            // 
-            // dtpFactVozvr
-            // 
-            this.dtpFactVozvr.CustomFormat = "dd/MM HH:mm";
-            this.dtpFactVozvr.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpFactVozvr.Location = new System.Drawing.Point(348, 148);
-            this.dtpFactVozvr.Name = "dtpFactVozvr";
-            this.dtpFactVozvr.Size = new System.Drawing.Size(88, 21);
-            this.dtpFactVozvr.TabIndex = 38;
-            // 
-            // dtpFactViezd
-            // 
-            this.dtpFactViezd.CustomFormat = "dd/MM HH:mm";
-            this.dtpFactViezd.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpFactViezd.Location = new System.Drawing.Point(348, 114);
-            this.dtpFactViezd.Name = "dtpFactViezd";
-            this.dtpFactViezd.Size = new System.Drawing.Size(88, 21);
-            this.dtpFactViezd.TabIndex = 37;
             // 
             // PutevoiListGruzavogo
             // 
@@ -863,10 +866,10 @@
         private System.Windows.Forms.DateTimePicker dtpPoGraphVozvr;
         private System.Windows.Forms.TextBox txtNulevoiProbegViezd;
         private System.Windows.Forms.TextBox txtNulevoiProbegVozvrahenie;
-        private System.Windows.Forms.TextBox txtVremiaViezd;
-        private System.Windows.Forms.TextBox txtVremzViezdOborudovanie;
-        private System.Windows.Forms.TextBox txtVozvrahenieDvtgateli;
-        private System.Windows.Forms.TextBox txtVozvrahenieOborudovanie;
+        private System.Windows.Forms.TextBox txtVremiaDvigViezd;
+        private System.Windows.Forms.TextBox txtVremiaOborudViezd;
+        private System.Windows.Forms.TextBox txtVremiaDvigVozvr;
+        private System.Windows.Forms.TextBox txtVremiaOborudVozvr;
         private System.Windows.Forms.Label lblDvizenieTSM;
         private System.Windows.Forms.Label lblZapravka;
         private System.Windows.Forms.Label lblOstatok;
