@@ -84,10 +84,10 @@
             this.cbImia = new System.Windows.Forms.ComboBox();
             this.txtTabelniiNomer = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.cbToplivoType2 = new System.Windows.Forms.ComboBox();
+            this.lblToplivo2 = new System.Windows.Forms.Label();
+            this.lblToplivo1 = new System.Windows.Forms.Label();
             this.txtPriVozvracheniiTCM2 = new System.Windows.Forms.TextBox();
             this.txtPriViezdiTCM2 = new System.Windows.Forms.TextBox();
-            this.cbToplivoType = new System.Windows.Forms.ComboBox();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnReport = new System.Windows.Forms.Button();
@@ -362,6 +362,7 @@
             this.txtVozvrahenieSpidometr.Name = "txtVozvrahenieSpidometr";
             this.txtVozvrahenieSpidometr.Size = new System.Drawing.Size(82, 21);
             this.txtVozvrahenieSpidometr.TabIndex = 28;
+            this.txtVozvrahenieSpidometr.Text = "0";
             // 
             // dtpPoGraphViezd
             // 
@@ -387,6 +388,7 @@
             this.txtNulevoiProbegViezd.Name = "txtNulevoiProbegViezd";
             this.txtNulevoiProbegViezd.Size = new System.Drawing.Size(114, 21);
             this.txtNulevoiProbegViezd.TabIndex = 31;
+            this.txtNulevoiProbegViezd.Text = "0";
             // 
             // txtNulevoiProbegVozvrahenie
             // 
@@ -394,6 +396,7 @@
             this.txtNulevoiProbegVozvrahenie.Name = "txtNulevoiProbegVozvrahenie";
             this.txtNulevoiProbegVozvrahenie.Size = new System.Drawing.Size(114, 21);
             this.txtNulevoiProbegVozvrahenie.TabIndex = 32;
+            this.txtNulevoiProbegVozvrahenie.Text = "0";
             // 
             // txtVremiaDvigViezd
             // 
@@ -401,6 +404,7 @@
             this.txtVremiaDvigViezd.Name = "txtVremiaDvigViezd";
             this.txtVremiaDvigViezd.Size = new System.Drawing.Size(43, 21);
             this.txtVremiaDvigViezd.TabIndex = 33;
+            this.txtVremiaDvigViezd.Text = "0";
             // 
             // txtVremiaOborudViezd
             // 
@@ -408,6 +412,7 @@
             this.txtVremiaOborudViezd.Name = "txtVremiaOborudViezd";
             this.txtVremiaOborudViezd.Size = new System.Drawing.Size(46, 21);
             this.txtVremiaOborudViezd.TabIndex = 34;
+            this.txtVremiaOborudViezd.Text = "0";
             // 
             // txtVremiaDvigVozvr
             // 
@@ -415,6 +420,7 @@
             this.txtVremiaDvigVozvr.Name = "txtVremiaDvigVozvr";
             this.txtVremiaDvigVozvr.Size = new System.Drawing.Size(43, 21);
             this.txtVremiaDvigVozvr.TabIndex = 35;
+            this.txtVremiaDvigVozvr.Text = "0";
             // 
             // txtVremiaOborudVozvr
             // 
@@ -422,6 +428,7 @@
             this.txtVremiaOborudVozvr.Name = "txtVremiaOborudVozvr";
             this.txtVremiaOborudVozvr.Size = new System.Drawing.Size(46, 21);
             this.txtVremiaOborudVozvr.TabIndex = 36;
+            this.txtVremiaOborudVozvr.Text = "0";
             // 
             // lblDvizenieTSM
             // 
@@ -476,9 +483,9 @@
             // dgvZapravkaTCM
             // 
             this.dgvZapravkaTCM.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvZapravkaTCM.Location = new System.Drawing.Point(47, 66);
+            this.dgvZapravkaTCM.Location = new System.Drawing.Point(20, 66);
             this.dgvZapravkaTCM.Name = "dgvZapravkaTCM";
-            this.dgvZapravkaTCM.Size = new System.Drawing.Size(338, 64);
+            this.dgvZapravkaTCM.Size = new System.Drawing.Size(370, 64);
             this.dgvZapravkaTCM.TabIndex = 45;
             // 
             // txtPriViezdiTCM
@@ -495,6 +502,7 @@
             this.txtPriVozvracheniiTCM.Name = "txtPriVozvracheniiTCM";
             this.txtPriVozvracheniiTCM.Size = new System.Drawing.Size(94, 20);
             this.txtPriVozvracheniiTCM.TabIndex = 47;
+            this.txtPriVozvracheniiTCM.Text = "0";
             // 
             // lblZadanieVoditel
             // 
@@ -513,6 +521,7 @@
             this.dgvZadanieVoditelu.Name = "dgvZadanieVoditelu";
             this.dgvZadanieVoditelu.Size = new System.Drawing.Size(1206, 80);
             this.dgvZadanieVoditelu.TabIndex = 49;
+            this.dgvZadanieVoditelu.RowLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvZadanieVoditelu_RowLeave);
             // 
             // panel1
             // 
@@ -634,10 +643,10 @@
             // panel4
             // 
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel4.Controls.Add(this.cbToplivoType2);
+            this.panel4.Controls.Add(this.lblToplivo2);
+            this.panel4.Controls.Add(this.lblToplivo1);
             this.panel4.Controls.Add(this.txtPriVozvracheniiTCM2);
             this.panel4.Controls.Add(this.txtPriViezdiTCM2);
-            this.panel4.Controls.Add(this.cbToplivoType);
             this.panel4.Controls.Add(this.txtPriVozvracheniiTCM);
             this.panel4.Controls.Add(this.txtPriViezdiTCM);
             this.panel4.Controls.Add(this.dgvZapravkaTCM);
@@ -651,21 +660,21 @@
             this.panel4.Size = new System.Drawing.Size(727, 149);
             this.panel4.TabIndex = 53;
             // 
-            // cbToplivoType2
+            // lblToplivo2
             // 
-            this.cbToplivoType2.AutoCompleteCustomSource.AddRange(new string[] {
-            "АИ-95",
-            "ДТ Арктика",
-            "АИ-92",
-            "ДТ Евро 5",
-            "Д/Т",
-            "СУГ",
-            "Н80"});
-            this.cbToplivoType2.FormattingEnabled = true;
-            this.cbToplivoType2.Location = new System.Drawing.Point(416, 107);
-            this.cbToplivoType2.Name = "cbToplivoType2";
-            this.cbToplivoType2.Size = new System.Drawing.Size(49, 23);
-            this.cbToplivoType2.TabIndex = 51;
+            this.lblToplivo2.AutoSize = true;
+            this.lblToplivo2.Location = new System.Drawing.Point(424, 110);
+            this.lblToplivo2.Name = "lblToplivo2";
+            this.lblToplivo2.Size = new System.Drawing.Size(0, 15);
+            this.lblToplivo2.TabIndex = 53;
+            // 
+            // lblToplivo1
+            // 
+            this.lblToplivo1.AutoSize = true;
+            this.lblToplivo1.Location = new System.Drawing.Point(424, 85);
+            this.lblToplivo1.Name = "lblToplivo1";
+            this.lblToplivo1.Size = new System.Drawing.Size(0, 15);
+            this.lblToplivo1.TabIndex = 52;
             // 
             // txtPriVozvracheniiTCM2
             // 
@@ -674,6 +683,7 @@
             this.txtPriVozvracheniiTCM2.Name = "txtPriVozvracheniiTCM2";
             this.txtPriVozvracheniiTCM2.Size = new System.Drawing.Size(94, 20);
             this.txtPriVozvracheniiTCM2.TabIndex = 50;
+            this.txtPriVozvracheniiTCM2.Text = "0";
             // 
             // txtPriViezdiTCM2
             // 
@@ -681,22 +691,6 @@
             this.txtPriViezdiTCM2.Name = "txtPriViezdiTCM2";
             this.txtPriViezdiTCM2.Size = new System.Drawing.Size(83, 21);
             this.txtPriViezdiTCM2.TabIndex = 49;
-            // 
-            // cbToplivoType
-            // 
-            this.cbToplivoType.AutoCompleteCustomSource.AddRange(new string[] {
-            "АИ-95",
-            "ДТ Арктика",
-            "АИ-92",
-            "ДТ Евро 5",
-            "Д/Т",
-            "СУГ",
-            "Н80"});
-            this.cbToplivoType.FormattingEnabled = true;
-            this.cbToplivoType.Location = new System.Drawing.Point(416, 80);
-            this.cbToplivoType.Name = "cbToplivoType";
-            this.cbToplivoType.Size = new System.Drawing.Size(49, 23);
-            this.cbToplivoType.TabIndex = 48;
             // 
             // btnSave
             // 
@@ -891,10 +885,8 @@
         private System.Windows.Forms.ToolStripMenuItem навигацияToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tsmiToMenu;
         private System.Windows.Forms.ToolStripMenuItem tsmiExitApplication;
-        private System.Windows.Forms.ComboBox cbToplivoType2;
         private System.Windows.Forms.TextBox txtPriVozvracheniiTCM2;
         private System.Windows.Forms.TextBox txtPriViezdiTCM2;
-        private System.Windows.Forms.ComboBox cbToplivoType;
         private System.Windows.Forms.TextBox txtTabelniiNomer;
         private System.Windows.Forms.TextBox txtKlass;
         private System.Windows.Forms.Label vblKlass;
@@ -904,5 +896,7 @@
         private System.Windows.Forms.ComboBox cbOtdel;
         private System.Windows.Forms.DateTimePicker dtpFactVozvr;
         private System.Windows.Forms.DateTimePicker dtpFactViezd;
+        private System.Windows.Forms.Label lblToplivo2;
+        private System.Windows.Forms.Label lblToplivo1;
     }
 }

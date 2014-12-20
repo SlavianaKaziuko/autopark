@@ -25,6 +25,8 @@ namespace AUTOPARK
         public PutListLegkovogoavto()
         {
             InitializeComponent();
+            _modeIsNew = true;
+            PrepareComboBoxDataSources();
 
             var queries = new AutoparkDBTableAdapters.QueriesTableAdapter();
             var newLegkNumber = queries.GetNewNumberLegv();
@@ -144,13 +146,12 @@ namespace AUTOPARK
             var tableDannie = new AutoparkDBTableAdapters.PutListLegkovogoDannieTableAdapter();
             if (_modeIsNew)
             {
-                PutevoiId = tablePutevoi.Insert(int.Parse(txtNumber.Text), dtpStart.Value, dtpEnd.Value,
+                PutevoiId = int.Parse(tablePutevoi.InsertQuery(int.Parse(txtNumber.Text), dtpStart.Value, dtpEnd.Value,
                     int.Parse(((DataRowView) _bindingAuto[cbNomerAuto.SelectedIndex]).Row.ItemArray[0].ToString()),
                     int.Parse(
                         ((DataRowView) _bindingVoditel[cbVodUdostoverenie.SelectedIndex]).Row.ItemArray[0].ToString()),
-                    int.Parse(((DataRowView) _bindingOtdel[cbOtdel.SelectedIndex]).Row.ItemArray[0].ToString()));
-                _bindingDannie.DataSource = tableDannie.GetData();
-                _bindingDannie.Filter = "[ID_Путевого листа] = " + PutevoiId;
+                    int.Parse(((DataRowView) _bindingOtdel[cbOtdel.SelectedIndex]).Row.ItemArray[0].ToString())).ToString());
+                _bindingDannie.DataSource = tableDannie.GetDataById(PutevoiId);
                 dgvPutevieLegkovie.DataSource = _bindingDannie;
                 var dataGridViewColumn = dgvPutevieLegkovie.Columns["ID_Путевого листа"];
                 if (dataGridViewColumn != null)
