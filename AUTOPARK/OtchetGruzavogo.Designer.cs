@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
@@ -36,6 +37,17 @@
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource6 = new Microsoft.Reporting.WinForms.ReportDataSource();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OtchetGruzavogo));
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.AutoparkDB = new AUTOPARK.AutoparkDB();
+            this.Подвижной_составBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.PodvijnoiTableAdapter = new AUTOPARK.AutoparkDBTableAdapters.PodvijnoiTableAdapter();
+            this.Задание_водителюBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ZadanieVoditelTableAdapter = new AUTOPARK.AutoparkDBTableAdapters.ZadanieVoditelTableAdapter();
+            this.Личный_составBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.LichniiTableAdapter = new AUTOPARK.AutoparkDBTableAdapters.LichniiTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.AutoparkDB)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Подвижной_составBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Задание_водителюBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Личный_составBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // reportViewer1
@@ -59,11 +71,43 @@
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource4);
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource5);
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource6);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "AUTOPARK.Report2.rdlc";
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "AUTOPARK.ReportGruz.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.Size = new System.Drawing.Size(892, 420);
             this.reportViewer1.TabIndex = 0;
+            // 
+            // AutoparkDB
+            // 
+            this.AutoparkDB.DataSetName = "AutoparkDB";
+            this.AutoparkDB.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // Подвижной_составBindingSource
+            // 
+            this.Подвижной_составBindingSource.DataMember = "Подвижной состав";
+            this.Подвижной_составBindingSource.DataSource = this.AutoparkDB;
+            // 
+            // PodvijnoiTableAdapter
+            // 
+            this.PodvijnoiTableAdapter.ClearBeforeFill = true;
+            // 
+            // Задание_водителюBindingSource
+            // 
+            this.Задание_водителюBindingSource.DataMember = "Задание водителю";
+            this.Задание_водителюBindingSource.DataSource = this.AutoparkDB;
+            // 
+            // ZadanieVoditelTableAdapter
+            // 
+            this.ZadanieVoditelTableAdapter.ClearBeforeFill = true;
+            // 
+            // Личный_составBindingSource
+            // 
+            this.Личный_составBindingSource.DataMember = "Личный состав";
+            this.Личный_составBindingSource.DataSource = this.AutoparkDB;
+            // 
+            // LichniiTableAdapter
+            // 
+            this.LichniiTableAdapter.ClearBeforeFill = true;
             // 
             // OtchetGruzavogo
             // 
@@ -75,6 +119,10 @@
             this.Name = "OtchetGruzavogo";
             this.Text = "Отчет Грузового авто";
             this.Load += new System.EventHandler(this.Form2_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.AutoparkDB)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Подвижной_составBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Задание_водителюBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Личный_составBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -82,5 +130,12 @@
         #endregion
 
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
+        private AutoparkDB AutoparkDB;
+        private System.Windows.Forms.BindingSource Подвижной_составBindingSource;
+        private AutoparkDBTableAdapters.PodvijnoiTableAdapter PodvijnoiTableAdapter;
+        private System.Windows.Forms.BindingSource Задание_водителюBindingSource;
+        private AutoparkDBTableAdapters.ZadanieVoditelTableAdapter ZadanieVoditelTableAdapter;
+        private System.Windows.Forms.BindingSource Личный_составBindingSource;
+        private AutoparkDBTableAdapters.LichniiTableAdapter LichniiTableAdapter;
     }
 }
