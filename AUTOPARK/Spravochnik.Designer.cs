@@ -47,6 +47,7 @@
             this.dgvSpravochnik.Size = new System.Drawing.Size(764, 309);
             this.dgvSpravochnik.TabIndex = 0;
             this.dgvSpravochnik.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.dgvSpravochnik_CellValidating);
+            this.dgvSpravochnik.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSpravochnik_CellValueChanged);
             this.dgvSpravochnik.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgvSpravochnik_DataError);
             // 
             // btnSaveChanges

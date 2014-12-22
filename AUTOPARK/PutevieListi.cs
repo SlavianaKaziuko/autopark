@@ -10,6 +10,7 @@ namespace AUTOPARK
     {
         private readonly string _name;
         private readonly BindingSource _binding = new BindingSource(); // Инициализирует новый экземпляр класса BindingSource значения свойств по умолчанию.
+        private readonly BindingSource _bindingAuto = new BindingSource();
 
       
         public PutevieListi(string name)
@@ -17,39 +18,40 @@ namespace AUTOPARK
             InitializeComponent();
             _name = name;
             Text = _name;
+            var tableAuto = new AutoparkDBTableAdapters.PodvijnoiTableAdapter();
             switch (_name)
             {
                 case "Путевые листы легковых автомобилей":
                 {
                     var table = new AutoparkDBTableAdapters.PutevieLegkovieTableAdapter();   //  Создание Путевых листов легкового авто
                     _binding.DataSource = table.GetData();
+                    _bindingAuto.DataSource = tableAuto.GetDataByType("Л");
                     break;
                 }
                 case "Путевые листы грузовых автомобилей":
                 {
-                        var table = new AutoparkDBTableAdapters.PutevieGruzovieTableAdapter();   //   Создание Путевых листов грузового авто
+                    var table = new AutoparkDBTableAdapters.PutevieGruzovieTableAdapter();   //   Создание Путевых листов грузового авто
                     _binding.DataSource = table.GetData();
+                    _bindingAuto.DataSource = tableAuto.GetDataByType("Г"); 
                     break;
                 }
                 case "Журнал учета выдачи путевых листов":
                 {
-                    var table = new AutoparkDBTableAdapters.BannerJornalGruzovieTableAdapter();   //   Создание Журнала!!!
-                    _binding.DataSource = table.GetData();
+                    //var table = new AutoparkDBTableAdapters.BannerJornalGruzovieTableAdapter();   //   Создание Журнала!!!
+                    //_binding.DataSource = table.GetData();
                     break;
                 }
             }
 
             dgvPutevii.DataSource = _binding;
 
-            if (_name == "Путевые листы легковых автомобилей")
-            {
-                var dataGridViewColumn = dgvPutevii.Columns["ID_Автомобиль"];
-                if (dataGridViewColumn != null)
-                    dataGridViewColumn.Visible = false;
-                dataGridViewColumn = dgvPutevii.Columns["ID_Водитель"];
-                if (dataGridViewColumn != null)
-                    dataGridViewColumn.Visible = false;
-            }
+            if (_name != "Путевые листы легковых автомобилей") return;
+            var dataGridViewColumn = dgvPutevii.Columns["ID_Автомобиль"];
+            if (dataGridViewColumn != null)
+                dataGridViewColumn.Visible = false;
+            dataGridViewColumn = dgvPutevii.Columns["ID_Водитель"];
+            if (dataGridViewColumn != null)
+                dataGridViewColumn.Visible = false;
         }
 
         private void dgvPutevii_DataError(object sender, DataGridViewDataErrorEventArgs e)
@@ -100,8 +102,8 @@ namespace AUTOPARK
                     var form = new Journal (); ////создание экземпляра формы Журнала  !!!!!!!!!!!!!!
                     this.Hide(); //// скрытие текущей формы
                     form.ShowDialog(); //// открытие формы Spravochnik
-                    var table = new AutoparkDBTableAdapters.BannerJornalGruzovieTableAdapter();
-                    _binding.DataSource = table.GetData();
+                    //var table = new AutoparkDBTableAdapters.BannerJornalGruzovieTableAdapter();
+                    //_binding.DataSource = table.GetData();
                     this.Show(); //// отображение главной формы после закрытия PutevoiListGruzavogo
                     break;
                 }
@@ -226,11 +228,54 @@ namespace AUTOPARK
             }
             cbYears.DataSource = years;
 
+            cbAuto.DisplayMember = "Гос_номер";
+            cbAuto.ValueMember = "ID";
+            cbAuto.DataSource = _bindingAuto;
         }
 
         private void tsmiExitApplication_Click(object sender, EventArgs e)
         {
             Environment.Exit(0);  //Полный выход из программы если нажимаем на дверку в Путевых листах легкового авто
+        }
+
+        private void cbAuto_SelectedValueChanged(object sender, EventArgs e)
+        {
+            switch (_name)
+            {
+                case "Путевые листы легковых автомобилей":
+                    {
+                        var table = new AutoparkDBTableAdapters.PutevieLegkovieTableAdapter();   //  Создание Путевых листов легкового авто
+                        _binding.DataSource = table.GetData();
+                        break;
+                    }
+                case "Путевые листы грузовых автомобилей":
+                    {
+                        var table = new AutoparkDBTableAdapters.PutevieGruzovieTableAdapter();   //   Создание Путевых листов грузового авто
+                        _binding.DataSource = table.GetData();
+                        break;
+                    }
+            }
+
+            dgvPutevii.DataSource = _binding;
+        }
+
+        private void btnOtchet_Click(object sender, EventArgs e)
+        {
+            switch (_name)
+            {
+                case "Путевые листы легковых автомобилей":
+                    {
+                        var f1 = new OtchetJournal(new DateTime(2014, 1, 1), new DateTime(2014, 12, 31), int.Parse(cbAuto.SelectedValue.ToString()), 'Л');
+                        f1.Show();
+                        break;
+                    }
+                case "Путевые листы грузовых автомобилей":
+                    {
+                        var f1 = new OtchetJournal(new DateTime(2014, 1, 1), new DateTime(2014, 12, 31), int.Parse(cbAuto.SelectedValue.ToString()),'Г');
+                        f1.Show();
+                        break;
+                    }
+            }
         }
     }
 }

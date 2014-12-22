@@ -2,7 +2,9 @@
 (
 	[ID_Путевого листа] int IDENTITY(1,1) NOT NULL CONSTRAINT [Пут_груз_ID]  PRIMARY KEY ([ID_Путевого листа]),
 	[Номер путевого листа] int NOT NULL,
-	[Дата путевого листа] date NOT NULL,
+	[Дата путевого листа] datetime NOT NULL,
+	[Пункт_отправления] nvarchar(50) NULL,
+	[Пункт_назначения] nvarchar(50) NULL,
 	[Показания_спидометра_при_выезде] int NULL,
 	[Показания_спидометра_при_возвращении] int NULL,
 	[Дата_Время_выезда_граф] datetime NULL,

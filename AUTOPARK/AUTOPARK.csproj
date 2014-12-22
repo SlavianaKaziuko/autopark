@@ -149,6 +149,7 @@
     <Compile Include="Spravochnik.Designer.cs">
       <DependentUpon>Spravochnik.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ReportLegkJournal.rdlc" />
     <EmbeddedResource Include="Journal.resx">
       <DependentUpon>Journal.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -184,9 +185,9 @@
     <EmbeddedResource Include="PutevoiListLegkovogo.resx">
       <DependentUpon>PutevoiListLegkovogo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Report1.rdlc" />
-    <EmbeddedResource Include="Report2.rdlc" />
-    <EmbeddedResource Include="Report3.rdlc" />
+    <EmbeddedResource Include="ReportLegk.rdlc" />
+    <EmbeddedResource Include="ReportGruz.rdlc" />
+    <EmbeddedResource Include="ReportJournal.rdlc" />
     <EmbeddedResource Include="Spravochnik.resx">
       <DependentUpon>Spravochnik.cs</DependentUpon>
     </EmbeddedResource>

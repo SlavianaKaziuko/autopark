@@ -40,6 +40,7 @@
             this.linkJurnal = new System.Windows.Forms.LinkLabel();
             this.linkGruzovoi = new System.Windows.Forms.LinkLabel();
             this.linkLegkovoi = new System.Windows.Forms.LinkLabel();
+            this.llblSpravka = new System.Windows.Forms.LinkLabel();
             this.Spravochniki.SuspendLayout();
             this.groupListi.SuspendLayout();
             this.SuspendLayout();
@@ -66,7 +67,7 @@
             this.Spravochniki.Controls.Add(this.linklichnii);
             this.Spravochniki.Location = new System.Drawing.Point(3, 176);
             this.Spravochniki.Name = "Spravochniki";
-            this.Spravochniki.Size = new System.Drawing.Size(177, 190);
+            this.Spravochniki.Size = new System.Drawing.Size(196, 190);
             this.Spravochniki.TabIndex = 1;
             this.Spravochniki.TabStop = false;
             this.Spravochniki.Text = "Справочники";
@@ -83,6 +84,7 @@
             this.lblVoditeliAuto.TabIndex = 4;
             this.lblVoditeliAuto.TabStop = true;
             this.lblVoditeliAuto.Text = "Водители авто";
+            this.lblVoditeliAuto.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkSpravochniki_LinkClicked);
             // 
             // lblOtdel
             // 
@@ -173,6 +175,19 @@
             this.linkLegkovoi.Text = "Путевые листы легковых автомобилей";
             this.linkLegkovoi.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkPutevieListi_LinkClicked);
             // 
+            // llblSpravka
+            // 
+            this.llblSpravka.AutoSize = true;
+            this.llblSpravka.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.llblSpravka.LinkColor = System.Drawing.Color.Navy;
+            this.llblSpravka.Location = new System.Drawing.Point(432, 380);
+            this.llblSpravka.Name = "llblSpravka";
+            this.llblSpravka.Size = new System.Drawing.Size(441, 20);
+            this.llblSpravka.TabIndex = 5;
+            this.llblSpravka.TabStop = true;
+            this.llblSpravka.Text = "Список водителей с истекающей медицинской справкой";
+            this.llblSpravka.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkSpravochniki_LinkClicked);
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -180,6 +195,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(885, 409);
+            this.Controls.Add(this.llblSpravka);
             this.Controls.Add(this.groupListi);
             this.Controls.Add(this.Spravochniki);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -191,6 +207,7 @@
             this.groupListi.ResumeLayout(false);
             this.groupListi.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -206,6 +223,7 @@
         private System.Windows.Forms.LinkLabel linkGruzovoi;
         private System.Windows.Forms.LinkLabel lblVoditeliAuto;
         private System.Windows.Forms.LinkLabel lblOtdel;
+        private System.Windows.Forms.LinkLabel llblSpravka;
     }
 }
 

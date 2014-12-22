@@ -39,6 +39,13 @@
             this.tsmiExitApplication = new System.Windows.Forms.ToolStripMenuItem();
             this.cbYears = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cbAuto = new System.Windows.Forms.ComboBox();
+            this.btnOtchet = new System.Windows.Forms.Button();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPutevii)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -48,19 +55,19 @@
             this.dgvPutevii.AllowUserToAddRows = false;
             this.dgvPutevii.AllowUserToDeleteRows = false;
             this.dgvPutevii.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPutevii.Location = new System.Drawing.Point(12, 69);
+            this.dgvPutevii.Location = new System.Drawing.Point(14, 80);
             this.dgvPutevii.MultiSelect = false;
             this.dgvPutevii.Name = "dgvPutevii";
             this.dgvPutevii.ReadOnly = true;
-            this.dgvPutevii.Size = new System.Drawing.Size(821, 323);
+            this.dgvPutevii.Size = new System.Drawing.Size(958, 373);
             this.dgvPutevii.TabIndex = 0;
             this.dgvPutevii.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgvPutevii_DataError);
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(571, 400);
+            this.btnAdd.Location = new System.Drawing.Point(666, 462);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(75, 23);
+            this.btnAdd.Size = new System.Drawing.Size(87, 27);
             this.btnAdd.TabIndex = 1;
             this.btnAdd.Text = "Добавить";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -68,9 +75,9 @@
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(652, 400);
+            this.btnEdit.Location = new System.Drawing.Point(761, 462);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(100, 23);
+            this.btnEdit.Size = new System.Drawing.Size(117, 27);
             this.btnEdit.TabIndex = 2;
             this.btnEdit.Text = "Редактировать";
             this.btnEdit.UseVisualStyleBackColor = true;
@@ -78,9 +85,9 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(758, 400);
+            this.btnDelete.Location = new System.Drawing.Point(884, 462);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnDelete.Size = new System.Drawing.Size(87, 27);
             this.btnDelete.TabIndex = 3;
             this.btnDelete.Text = "Удалить";
             this.btnDelete.UseVisualStyleBackColor = true;
@@ -92,7 +99,8 @@
             this.навигацияToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(845, 24);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(986, 24);
             this.menuStrip1.TabIndex = 4;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -121,28 +129,102 @@
             // 
             // cbYears
             // 
-            this.cbYears.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.cbYears.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.cbYears.FormattingEnabled = true;
-            this.cbYears.Location = new System.Drawing.Point(68, 27);
+            this.cbYears.Location = new System.Drawing.Point(79, 31);
             this.cbYears.Name = "cbYears";
-            this.cbYears.Size = new System.Drawing.Size(121, 24);
+            this.cbYears.Size = new System.Drawing.Size(140, 25);
             this.cbYears.TabIndex = 5;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(12, 30);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(15, 35);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(50, 17);
+            this.label1.Size = new System.Drawing.Size(49, 19);
             this.label1.TabIndex = 6;
             this.label1.Text = "За год";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Location = new System.Drawing.Point(250, 35);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(87, 19);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "Автомобиль";
+            // 
+            // cbAuto
+            // 
+            this.cbAuto.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.cbAuto.FormattingEnabled = true;
+            this.cbAuto.Location = new System.Drawing.Point(358, 31);
+            this.cbAuto.Name = "cbAuto";
+            this.cbAuto.Size = new System.Drawing.Size(140, 25);
+            this.cbAuto.TabIndex = 7;
+            this.cbAuto.SelectedValueChanged += new System.EventHandler(this.cbAuto_SelectedValueChanged);
+            // 
+            // btnOtchet
+            // 
+            this.btnOtchet.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnOtchet.Location = new System.Drawing.Point(884, 31);
+            this.btnOtchet.Name = "btnOtchet";
+            this.btnOtchet.Size = new System.Drawing.Size(87, 29);
+            this.btnOtchet.TabIndex = 9;
+            this.btnOtchet.Text = "Отчёт";
+            this.btnOtchet.UseVisualStyleBackColor = true;
+            this.btnOtchet.Click += new System.EventHandler(this.btnOtchet_Click);
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.CustomFormat = "dd MMMM yyyy";
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker1.Location = new System.Drawing.Point(533, 33);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(152, 23);
+            this.dateTimePicker1.TabIndex = 10;
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.CustomFormat = "dd MMMM yyyy";
+            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker2.Location = new System.Drawing.Point(726, 33);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(152, 23);
+            this.dateTimePicker2.TabIndex = 11;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(699, 37);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(21, 15);
+            this.label3.TabIndex = 12;
+            this.label3.Text = "по";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(514, 37);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(13, 15);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "с";
+            // 
             // PutevieListi
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(845, 435);
+            this.ClientSize = new System.Drawing.Size(986, 502);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.dateTimePicker2);
+            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.btnOtchet);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.cbAuto);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cbYears);
             this.Controls.Add(this.btnDelete);
@@ -150,6 +232,7 @@
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.dgvPutevii);
             this.Controls.Add(this.menuStrip1);
+            this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "PutevieListi";
@@ -176,5 +259,12 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiExitApplication;
         private System.Windows.Forms.ComboBox cbYears;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox cbAuto;
+        private System.Windows.Forms.Button btnOtchet;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
     }
 }

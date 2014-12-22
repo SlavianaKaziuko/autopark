@@ -40,12 +40,6 @@ namespace AUTOPARK {
         
         private Задание_водителюDataTable tableЗадание_водителю;
         
-        private DanieJournalLegkovieDataTable tableDanieJournalLegkovie;
-        
-        private DanieJournalGruzovieDataTable tableDanieJournalGruzovie;
-        
-        private BannerJornalGruzovieDataTable tableBannerJornalGruzovie;
-        
         private Заправка_ТСМDataTable tableЗаправка_ТСМ;
         
         private Данные_Путевой_лист_легкового_автоDataTable tableДанные_Путевой_лист_легкового_авто;
@@ -53,6 +47,14 @@ namespace AUTOPARK {
         private ОтделыDataTable tableОтделы;
         
         private Путевой_лист_Грузового_автоDataTable tableПутевой_лист_Грузового_авто;
+        
+        private DanieJournalDataTable tableDanieJournal;
+        
+        private HeaderJournalDataTable tableHeaderJournal;
+        
+        private Личный_состав_СправкиDataTable tableЛичный_состав_Справки;
+        
+        private Водители_автоDataTable tableВодители_авто;
         
         private global::System.Data.DataRelation relationFK_Путевой_лист_легкового_автомобиля_Подвижной_состав1;
         
@@ -75,6 +77,16 @@ namespace AUTOPARK {
         private global::System.Data.DataRelation relationFK_Путевой_лист_Грузового_авто_Подвижной_состав1;
         
         private global::System.Data.DataRelation relationПутевой_лист_Грузового_авто_Заправка_ТСМ;
+        
+        private global::System.Data.DataRelation relationFK_Путевой_лист_легкового_автомобиля_личный_состав;
+        
+        private global::System.Data.DataRelation relationFK_Путевой_лист_Грузового_авто_личный_состав2;
+        
+        private global::System.Data.DataRelation relationFK_Водители_авто_id_авто;
+        
+        private global::System.Data.DataRelation relationFK_Водители_авто_id_водитель;
+        
+        private global::System.Data.DataRelation relationFK_Водители_авто_id_водитель1;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -128,15 +140,6 @@ namespace AUTOPARK {
                 if ((ds.Tables["Задание водителю"] != null)) {
                     base.Tables.Add(new Задание_водителюDataTable(ds.Tables["Задание водителю"]));
                 }
-                if ((ds.Tables["DanieJournalLegkovie"] != null)) {
-                    base.Tables.Add(new DanieJournalLegkovieDataTable(ds.Tables["DanieJournalLegkovie"]));
-                }
-                if ((ds.Tables["DanieJournalGruzovie"] != null)) {
-                    base.Tables.Add(new DanieJournalGruzovieDataTable(ds.Tables["DanieJournalGruzovie"]));
-                }
-                if ((ds.Tables["BannerJornalGruzovie"] != null)) {
-                    base.Tables.Add(new BannerJornalGruzovieDataTable(ds.Tables["BannerJornalGruzovie"]));
-                }
                 if ((ds.Tables["Заправка ТСМ"] != null)) {
                     base.Tables.Add(new Заправка_ТСМDataTable(ds.Tables["Заправка ТСМ"]));
                 }
@@ -148,6 +151,18 @@ namespace AUTOPARK {
                 }
                 if ((ds.Tables["Путевой лист Грузового авто"] != null)) {
                     base.Tables.Add(new Путевой_лист_Грузового_автоDataTable(ds.Tables["Путевой лист Грузового авто"]));
+                }
+                if ((ds.Tables["DanieJournal"] != null)) {
+                    base.Tables.Add(new DanieJournalDataTable(ds.Tables["DanieJournal"]));
+                }
+                if ((ds.Tables["HeaderJournal"] != null)) {
+                    base.Tables.Add(new HeaderJournalDataTable(ds.Tables["HeaderJournal"]));
+                }
+                if ((ds.Tables["Личный состав Справки"] != null)) {
+                    base.Tables.Add(new Личный_состав_СправкиDataTable(ds.Tables["Личный состав Справки"]));
+                }
+                if ((ds.Tables["Водители авто"] != null)) {
+                    base.Tables.Add(new Водители_автоDataTable(ds.Tables["Водители авто"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -251,36 +266,6 @@ namespace AUTOPARK {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public DanieJournalLegkovieDataTable DanieJournalLegkovie {
-            get {
-                return this.tableDanieJournalLegkovie;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Browsable(false)]
-        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public DanieJournalGruzovieDataTable DanieJournalGruzovie {
-            get {
-                return this.tableDanieJournalGruzovie;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Browsable(false)]
-        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public BannerJornalGruzovieDataTable BannerJornalGruzovie {
-            get {
-                return this.tableBannerJornalGruzovie;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Browsable(false)]
-        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
         public Заправка_ТСМDataTable Заправка_ТСМ {
             get {
                 return this.tableЗаправка_ТСМ;
@@ -314,6 +299,46 @@ namespace AUTOPARK {
         public Путевой_лист_Грузового_автоDataTable Путевой_лист_Грузового_авто {
             get {
                 return this.tableПутевой_лист_Грузового_авто;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public DanieJournalDataTable DanieJournal {
+            get {
+                return this.tableDanieJournal;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public HeaderJournalDataTable HeaderJournal {
+            get {
+                return this.tableHeaderJournal;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public Личный_состав_СправкиDataTable Личный_состав_Справки {
+            get {
+                return this.tableЛичный_состав_Справки;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public Водители_автоDataTable Водители_авто {
+            get {
+                return this.tableВодители_авто;
             }
         }
         
@@ -408,15 +433,6 @@ namespace AUTOPARK {
                 if ((ds.Tables["Задание водителю"] != null)) {
                     base.Tables.Add(new Задание_водителюDataTable(ds.Tables["Задание водителю"]));
                 }
-                if ((ds.Tables["DanieJournalLegkovie"] != null)) {
-                    base.Tables.Add(new DanieJournalLegkovieDataTable(ds.Tables["DanieJournalLegkovie"]));
-                }
-                if ((ds.Tables["DanieJournalGruzovie"] != null)) {
-                    base.Tables.Add(new DanieJournalGruzovieDataTable(ds.Tables["DanieJournalGruzovie"]));
-                }
-                if ((ds.Tables["BannerJornalGruzovie"] != null)) {
-                    base.Tables.Add(new BannerJornalGruzovieDataTable(ds.Tables["BannerJornalGruzovie"]));
-                }
                 if ((ds.Tables["Заправка ТСМ"] != null)) {
                     base.Tables.Add(new Заправка_ТСМDataTable(ds.Tables["Заправка ТСМ"]));
                 }
@@ -428,6 +444,18 @@ namespace AUTOPARK {
                 }
                 if ((ds.Tables["Путевой лист Грузового авто"] != null)) {
                     base.Tables.Add(new Путевой_лист_Грузового_автоDataTable(ds.Tables["Путевой лист Грузового авто"]));
+                }
+                if ((ds.Tables["DanieJournal"] != null)) {
+                    base.Tables.Add(new DanieJournalDataTable(ds.Tables["DanieJournal"]));
+                }
+                if ((ds.Tables["HeaderJournal"] != null)) {
+                    base.Tables.Add(new HeaderJournalDataTable(ds.Tables["HeaderJournal"]));
+                }
+                if ((ds.Tables["Личный состав Справки"] != null)) {
+                    base.Tables.Add(new Личный_состав_СправкиDataTable(ds.Tables["Личный состав Справки"]));
+                }
+                if ((ds.Tables["Водители авто"] != null)) {
+                    base.Tables.Add(new Водители_автоDataTable(ds.Tables["Водители авто"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -510,24 +538,6 @@ namespace AUTOPARK {
                     this.tableЗадание_водителю.InitVars();
                 }
             }
-            this.tableDanieJournalLegkovie = ((DanieJournalLegkovieDataTable)(base.Tables["DanieJournalLegkovie"]));
-            if ((initTable == true)) {
-                if ((this.tableDanieJournalLegkovie != null)) {
-                    this.tableDanieJournalLegkovie.InitVars();
-                }
-            }
-            this.tableDanieJournalGruzovie = ((DanieJournalGruzovieDataTable)(base.Tables["DanieJournalGruzovie"]));
-            if ((initTable == true)) {
-                if ((this.tableDanieJournalGruzovie != null)) {
-                    this.tableDanieJournalGruzovie.InitVars();
-                }
-            }
-            this.tableBannerJornalGruzovie = ((BannerJornalGruzovieDataTable)(base.Tables["BannerJornalGruzovie"]));
-            if ((initTable == true)) {
-                if ((this.tableBannerJornalGruzovie != null)) {
-                    this.tableBannerJornalGruzovie.InitVars();
-                }
-            }
             this.tableЗаправка_ТСМ = ((Заправка_ТСМDataTable)(base.Tables["Заправка ТСМ"]));
             if ((initTable == true)) {
                 if ((this.tableЗаправка_ТСМ != null)) {
@@ -552,6 +562,30 @@ namespace AUTOPARK {
                     this.tableПутевой_лист_Грузового_авто.InitVars();
                 }
             }
+            this.tableDanieJournal = ((DanieJournalDataTable)(base.Tables["DanieJournal"]));
+            if ((initTable == true)) {
+                if ((this.tableDanieJournal != null)) {
+                    this.tableDanieJournal.InitVars();
+                }
+            }
+            this.tableHeaderJournal = ((HeaderJournalDataTable)(base.Tables["HeaderJournal"]));
+            if ((initTable == true)) {
+                if ((this.tableHeaderJournal != null)) {
+                    this.tableHeaderJournal.InitVars();
+                }
+            }
+            this.tableЛичный_состав_Справки = ((Личный_состав_СправкиDataTable)(base.Tables["Личный состав Справки"]));
+            if ((initTable == true)) {
+                if ((this.tableЛичный_состав_Справки != null)) {
+                    this.tableЛичный_состав_Справки.InitVars();
+                }
+            }
+            this.tableВодители_авто = ((Водители_автоDataTable)(base.Tables["Водители авто"]));
+            if ((initTable == true)) {
+                if ((this.tableВодители_авто != null)) {
+                    this.tableВодители_авто.InitVars();
+                }
+            }
             this.relationFK_Путевой_лист_легкового_автомобиля_Подвижной_состав1 = this.Relations["FK_Путевой лист легкового автомобиля_Подвижной состав1"];
             this.relationFK_Путевой_лист_легкового_автомобиля_личный_состав4 = this.Relations["FK_Путевой лист легкового автомобиля_личный состав4"];
             this.relationFK_Путевой_лист_Грузового_авто_личный_состав1 = this.Relations["FK_Путевой лист Грузового авто_личный состав1"];
@@ -563,6 +597,11 @@ namespace AUTOPARK {
             this.relationFK_Путевой_лист_Грузового_авто_личный_состав3 = this.Relations["FK_Путевой лист Грузового авто_личный состав3"];
             this.relationFK_Путевой_лист_Грузового_авто_Подвижной_состав1 = this.Relations["FK_Путевой лист Грузового авто_Подвижной состав1"];
             this.relationПутевой_лист_Грузового_авто_Заправка_ТСМ = this.Relations["Путевой лист Грузового авто_Заправка ТСМ"];
+            this.relationFK_Путевой_лист_легкового_автомобиля_личный_состав = this.Relations["FK_Путевой лист легкового автомобиля_личный состав"];
+            this.relationFK_Путевой_лист_Грузового_авто_личный_состав2 = this.Relations["FK_Путевой лист Грузового авто_личный состав2"];
+            this.relationFK_Водители_авто_id_авто = this.Relations["FK_Водители авто_id_авто"];
+            this.relationFK_Водители_авто_id_водитель = this.Relations["FK_Водители авто_id_водитель"];
+            this.relationFK_Водители_авто_id_водитель1 = this.Relations["FK_Водители авто_id_водитель1"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -589,12 +628,6 @@ namespace AUTOPARK {
             base.Tables.Add(this.tableЛичный_состав);
             this.tableЗадание_водителю = new Задание_водителюDataTable();
             base.Tables.Add(this.tableЗадание_водителю);
-            this.tableDanieJournalLegkovie = new DanieJournalLegkovieDataTable();
-            base.Tables.Add(this.tableDanieJournalLegkovie);
-            this.tableDanieJournalGruzovie = new DanieJournalGruzovieDataTable();
-            base.Tables.Add(this.tableDanieJournalGruzovie);
-            this.tableBannerJornalGruzovie = new BannerJornalGruzovieDataTable();
-            base.Tables.Add(this.tableBannerJornalGruzovie);
             this.tableЗаправка_ТСМ = new Заправка_ТСМDataTable();
             base.Tables.Add(this.tableЗаправка_ТСМ);
             this.tableДанные_Путевой_лист_легкового_авто = new Данные_Путевой_лист_легкового_автоDataTable();
@@ -603,6 +636,14 @@ namespace AUTOPARK {
             base.Tables.Add(this.tableОтделы);
             this.tableПутевой_лист_Грузового_авто = new Путевой_лист_Грузового_автоDataTable();
             base.Tables.Add(this.tableПутевой_лист_Грузового_авто);
+            this.tableDanieJournal = new DanieJournalDataTable();
+            base.Tables.Add(this.tableDanieJournal);
+            this.tableHeaderJournal = new HeaderJournalDataTable();
+            base.Tables.Add(this.tableHeaderJournal);
+            this.tableЛичный_состав_Справки = new Личный_состав_СправкиDataTable();
+            base.Tables.Add(this.tableЛичный_состав_Справки);
+            this.tableВодители_авто = new Водители_автоDataTable();
+            base.Tables.Add(this.tableВодители_авто);
             this.relationFK_Путевой_лист_легкового_автомобиля_Подвижной_состав1 = new global::System.Data.DataRelation("FK_Путевой лист легкового автомобиля_Подвижной состав1", new global::System.Data.DataColumn[] {
                         this.tableПодвижной_состав.IDColumn}, new global::System.Data.DataColumn[] {
                         this.tablePutevoiListLegkTable.ID_АвтомобильColumn}, false);
@@ -647,6 +688,26 @@ namespace AUTOPARK {
                         this.tableПутевой_лист_Грузового_авто.ID_Путевого_листаColumn}, new global::System.Data.DataColumn[] {
                         this.tableЗаправка_ТСМ.ID_Путевого_листаColumn}, false);
             this.Relations.Add(this.relationПутевой_лист_Грузового_авто_Заправка_ТСМ);
+            this.relationFK_Путевой_лист_легкового_автомобиля_личный_состав = new global::System.Data.DataRelation("FK_Путевой лист легкового автомобиля_личный состав", new global::System.Data.DataColumn[] {
+                        this.tableЛичный_состав_Справки.табельный__номерColumn}, new global::System.Data.DataColumn[] {
+                        this.tablePutevoiListLegkTable.ID_ВодительColumn}, false);
+            this.Relations.Add(this.relationFK_Путевой_лист_легкового_автомобиля_личный_состав);
+            this.relationFK_Путевой_лист_Грузового_авто_личный_состав2 = new global::System.Data.DataRelation("FK_Путевой лист Грузового авто_личный состав2", new global::System.Data.DataColumn[] {
+                        this.tableЛичный_состав_Справки.табельный__номерColumn}, new global::System.Data.DataColumn[] {
+                        this.tableПутевой_лист_Грузового_авто.ID_ВодителяColumn}, false);
+            this.Relations.Add(this.relationFK_Путевой_лист_Грузового_авто_личный_состав2);
+            this.relationFK_Водители_авто_id_авто = new global::System.Data.DataRelation("FK_Водители авто_id_авто", new global::System.Data.DataColumn[] {
+                        this.tableПодвижной_состав.IDColumn}, new global::System.Data.DataColumn[] {
+                        this.tableВодители_авто.ID_АвтоColumn}, false);
+            this.Relations.Add(this.relationFK_Водители_авто_id_авто);
+            this.relationFK_Водители_авто_id_водитель = new global::System.Data.DataRelation("FK_Водители авто_id_водитель", new global::System.Data.DataColumn[] {
+                        this.tableЛичный_состав.табельный_номерColumn}, new global::System.Data.DataColumn[] {
+                        this.tableВодители_авто.ID_ВодительColumn}, false);
+            this.Relations.Add(this.relationFK_Водители_авто_id_водитель);
+            this.relationFK_Водители_авто_id_водитель1 = new global::System.Data.DataRelation("FK_Водители авто_id_водитель1", new global::System.Data.DataColumn[] {
+                        this.tableЛичный_состав_Справки.табельный__номерColumn}, new global::System.Data.DataColumn[] {
+                        this.tableВодители_авто.ID_ВодительColumn}, false);
+            this.Relations.Add(this.relationFK_Водители_авто_id_водитель1);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -699,24 +760,6 @@ namespace AUTOPARK {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializeDanieJournalLegkovie() {
-            return false;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializeDanieJournalGruzovie() {
-            return false;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializeBannerJornalGruzovie() {
-            return false;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private bool ShouldSerializeЗаправка_ТСМ() {
             return false;
         }
@@ -736,6 +779,30 @@ namespace AUTOPARK {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private bool ShouldSerializeПутевой_лист_Грузового_авто() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializeDanieJournal() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializeHeaderJournal() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializeЛичный_состав_Справки() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializeВодители_авто() {
             return false;
         }
         
@@ -819,15 +886,6 @@ namespace AUTOPARK {
         public delegate void Задание_водителюRowChangeEventHandler(object sender, Задание_водителюRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void DanieJournalLegkovieRowChangeEventHandler(object sender, DanieJournalLegkovieRowChangeEvent e);
-        
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void DanieJournalGruzovieRowChangeEventHandler(object sender, DanieJournalGruzovieRowChangeEvent e);
-        
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void BannerJornalGruzovieRowChangeEventHandler(object sender, BannerJornalGruzovieRowChangeEvent e);
-        
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void Заправка_ТСМRowChangeEventHandler(object sender, Заправка_ТСМRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -838,6 +896,18 @@ namespace AUTOPARK {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void Путевой_лист_Грузового_автоRowChangeEventHandler(object sender, Путевой_лист_Грузового_автоRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void DanieJournalRowChangeEventHandler(object sender, DanieJournalRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void HeaderJournalRowChangeEventHandler(object sender, HeaderJournalRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void Личный_состав_СправкиRowChangeEventHandler(object sender, Личный_состав_СправкиRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void Водители_автоRowChangeEventHandler(object sender, Водители_автоRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -4054,1256 +4124,6 @@ namespace AUTOPARK {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class DanieJournalLegkovieDataTable : global::System.Data.TypedTableBase<DanieJournalLegkovieRow> {
-            
-            private global::System.Data.DataColumn columnЧисло;
-            
-            private global::System.Data.DataColumn columnНомер_путевого_листа;
-            
-            private global::System.Data.DataColumn columnОстаток_топлива_при_выезде;
-            
-            private global::System.Data.DataColumn columnОстаток_топлива_при_возвращении;
-            
-            private global::System.Data.DataColumn columnВремя_выезда;
-            
-            private global::System.Data.DataColumn columnВремя_возвращения;
-            
-            private global::System.Data.DataColumn columnПоказания_спидометра_при_выезде;
-            
-            private global::System.Data.DataColumn columnПоказания_спидометра_при_возвращении;
-            
-            private global::System.Data.DataColumn columnВ_чье_распоряжение_занаряжена_автомашина;
-            
-            private global::System.Data.DataColumn columnМаршрут_перевозки_откуда;
-            
-            private global::System.Data.DataColumn columnМаршрут_перевозки_куда;
-            
-            private global::System.Data.DataColumn columnЗаправлено_топлива_л;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public DanieJournalLegkovieDataTable() {
-                this.TableName = "DanieJournalLegkovie";
-                this.BeginInit();
-                this.InitClass();
-                this.EndInit();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal DanieJournalLegkovieDataTable(global::System.Data.DataTable table) {
-                this.TableName = table.TableName;
-                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
-                    this.CaseSensitive = table.CaseSensitive;
-                }
-                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
-                    this.Locale = table.Locale;
-                }
-                if ((table.Namespace != table.DataSet.Namespace)) {
-                    this.Namespace = table.Namespace;
-                }
-                this.Prefix = table.Prefix;
-                this.MinimumCapacity = table.MinimumCapacity;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected DanieJournalLegkovieDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
-                    base(info, context) {
-                this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn ЧислоColumn {
-                get {
-                    return this.columnЧисло;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Номер_путевого_листаColumn {
-                get {
-                    return this.columnНомер_путевого_листа;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Остаток_топлива_при_выездеColumn {
-                get {
-                    return this.columnОстаток_топлива_при_выезде;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Остаток_топлива_при_возвращенииColumn {
-                get {
-                    return this.columnОстаток_топлива_при_возвращении;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Время_выездаColumn {
-                get {
-                    return this.columnВремя_выезда;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Время_возвращенияColumn {
-                get {
-                    return this.columnВремя_возвращения;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Показания_спидометра_при_выездеColumn {
-                get {
-                    return this.columnПоказания_спидометра_при_выезде;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Показания_спидометра_при_возвращенииColumn {
-                get {
-                    return this.columnПоказания_спидометра_при_возвращении;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn В_чье_распоряжение_занаряжена_автомашинаColumn {
-                get {
-                    return this.columnВ_чье_распоряжение_занаряжена_автомашина;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Маршрут_перевозки_откудаColumn {
-                get {
-                    return this.columnМаршрут_перевозки_откуда;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Маршрут_перевозки_кудаColumn {
-                get {
-                    return this.columnМаршрут_перевозки_куда;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Заправлено_топлива_лColumn {
-                get {
-                    return this.columnЗаправлено_топлива_л;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            [global::System.ComponentModel.Browsable(false)]
-            public int Count {
-                get {
-                    return this.Rows.Count;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public DanieJournalLegkovieRow this[int index] {
-                get {
-                    return ((DanieJournalLegkovieRow)(this.Rows[index]));
-                }
-            }
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event DanieJournalLegkovieRowChangeEventHandler DanieJournalLegkovieRowChanging;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event DanieJournalLegkovieRowChangeEventHandler DanieJournalLegkovieRowChanged;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event DanieJournalLegkovieRowChangeEventHandler DanieJournalLegkovieRowDeleting;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event DanieJournalLegkovieRowChangeEventHandler DanieJournalLegkovieRowDeleted;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void AddDanieJournalLegkovieRow(DanieJournalLegkovieRow row) {
-                this.Rows.Add(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public DanieJournalLegkovieRow AddDanieJournalLegkovieRow(System.DateTime Число, string Номер_путевого_листа, double Остаток_топлива_при_выезде, double Остаток_топлива_при_возвращении, System.TimeSpan Время_выезда, System.TimeSpan Время_возвращения, int Показания_спидометра_при_выезде, int Показания_спидометра_при_возвращении, string В_чье_распоряжение_занаряжена_автомашина, string Маршрут_перевозки_откуда, string Маршрут_перевозки_куда, double Заправлено_топлива_л) {
-                DanieJournalLegkovieRow rowDanieJournalLegkovieRow = ((DanieJournalLegkovieRow)(this.NewRow()));
-                object[] columnValuesArray = new object[] {
-                        Число,
-                        Номер_путевого_листа,
-                        Остаток_топлива_при_выезде,
-                        Остаток_топлива_при_возвращении,
-                        Время_выезда,
-                        Время_возвращения,
-                        Показания_спидометра_при_выезде,
-                        Показания_спидометра_при_возвращении,
-                        В_чье_распоряжение_занаряжена_автомашина,
-                        Маршрут_перевозки_откуда,
-                        Маршрут_перевозки_куда,
-                        Заправлено_топлива_л};
-                rowDanieJournalLegkovieRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowDanieJournalLegkovieRow);
-                return rowDanieJournalLegkovieRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public override global::System.Data.DataTable Clone() {
-                DanieJournalLegkovieDataTable cln = ((DanieJournalLegkovieDataTable)(base.Clone()));
-                cln.InitVars();
-                return cln;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Data.DataTable CreateInstance() {
-                return new DanieJournalLegkovieDataTable();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal void InitVars() {
-                this.columnЧисло = base.Columns["Число"];
-                this.columnНомер_путевого_листа = base.Columns["Номер путевого листа"];
-                this.columnОстаток_топлива_при_выезде = base.Columns["Остаток топлива при выезде"];
-                this.columnОстаток_топлива_при_возвращении = base.Columns["Остаток топлива при возвращении"];
-                this.columnВремя_выезда = base.Columns["Время выезда"];
-                this.columnВремя_возвращения = base.Columns["Время возвращения"];
-                this.columnПоказания_спидометра_при_выезде = base.Columns["Показания спидометра при выезде"];
-                this.columnПоказания_спидометра_при_возвращении = base.Columns["Показания спидометра при возвращении"];
-                this.columnВ_чье_распоряжение_занаряжена_автомашина = base.Columns["В чье распоряжение занаряжена автомашина"];
-                this.columnМаршрут_перевозки_откуда = base.Columns["Маршрут перевозки откуда"];
-                this.columnМаршрут_перевозки_куда = base.Columns["Маршрут перевозки куда"];
-                this.columnЗаправлено_топлива_л = base.Columns["Заправлено топлива л"];
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            private void InitClass() {
-                this.columnЧисло = new global::System.Data.DataColumn("Число", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnЧисло);
-                this.columnНомер_путевого_листа = new global::System.Data.DataColumn("Номер путевого листа", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnНомер_путевого_листа);
-                this.columnОстаток_топлива_при_выезде = new global::System.Data.DataColumn("Остаток топлива при выезде", typeof(double), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnОстаток_топлива_при_выезде);
-                this.columnОстаток_топлива_при_возвращении = new global::System.Data.DataColumn("Остаток топлива при возвращении", typeof(double), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnОстаток_топлива_при_возвращении);
-                this.columnВремя_выезда = new global::System.Data.DataColumn("Время выезда", typeof(global::System.TimeSpan), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnВремя_выезда);
-                this.columnВремя_возвращения = new global::System.Data.DataColumn("Время возвращения", typeof(global::System.TimeSpan), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnВремя_возвращения);
-                this.columnПоказания_спидометра_при_выезде = new global::System.Data.DataColumn("Показания спидометра при выезде", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnПоказания_спидометра_при_выезде);
-                this.columnПоказания_спидометра_при_возвращении = new global::System.Data.DataColumn("Показания спидометра при возвращении", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnПоказания_спидометра_при_возвращении);
-                this.columnВ_чье_распоряжение_занаряжена_автомашина = new global::System.Data.DataColumn("В чье распоряжение занаряжена автомашина", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnВ_чье_распоряжение_занаряжена_автомашина);
-                this.columnМаршрут_перевозки_откуда = new global::System.Data.DataColumn("Маршрут перевозки откуда", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnМаршрут_перевозки_откуда);
-                this.columnМаршрут_перевозки_куда = new global::System.Data.DataColumn("Маршрут перевозки куда", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnМаршрут_перевозки_куда);
-                this.columnЗаправлено_топлива_л = new global::System.Data.DataColumn("Заправлено топлива л", typeof(double), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnЗаправлено_топлива_л);
-                this.columnЧисло.AllowDBNull = false;
-                this.columnНомер_путевого_листа.MaxLength = 10;
-                this.columnОстаток_топлива_при_выезде.AllowDBNull = false;
-                this.columnОстаток_топлива_при_возвращении.AllowDBNull = false;
-                this.columnВремя_выезда.AllowDBNull = false;
-                this.columnВремя_возвращения.AllowDBNull = false;
-                this.columnПоказания_спидометра_при_выезде.AllowDBNull = false;
-                this.columnПоказания_спидометра_при_возвращении.AllowDBNull = false;
-                this.columnВ_чье_распоряжение_занаряжена_автомашина.MaxLength = 50;
-                this.columnМаршрут_перевозки_откуда.MaxLength = 50;
-                this.columnМаршрут_перевозки_куда.MaxLength = 50;
-                this.columnЗаправлено_топлива_л.AllowDBNull = false;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public DanieJournalLegkovieRow NewDanieJournalLegkovieRow() {
-                return ((DanieJournalLegkovieRow)(this.NewRow()));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new DanieJournalLegkovieRow(builder);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Type GetRowType() {
-                return typeof(DanieJournalLegkovieRow);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanged(e);
-                if ((this.DanieJournalLegkovieRowChanged != null)) {
-                    this.DanieJournalLegkovieRowChanged(this, new DanieJournalLegkovieRowChangeEvent(((DanieJournalLegkovieRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanging(e);
-                if ((this.DanieJournalLegkovieRowChanging != null)) {
-                    this.DanieJournalLegkovieRowChanging(this, new DanieJournalLegkovieRowChangeEvent(((DanieJournalLegkovieRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleted(e);
-                if ((this.DanieJournalLegkovieRowDeleted != null)) {
-                    this.DanieJournalLegkovieRowDeleted(this, new DanieJournalLegkovieRowChangeEvent(((DanieJournalLegkovieRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleting(e);
-                if ((this.DanieJournalLegkovieRowDeleting != null)) {
-                    this.DanieJournalLegkovieRowDeleting(this, new DanieJournalLegkovieRowChangeEvent(((DanieJournalLegkovieRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void RemoveDanieJournalLegkovieRow(DanieJournalLegkovieRow row) {
-                this.Rows.Remove(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
-                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                AutoparkDB ds = new AutoparkDB();
-                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
-                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
-                any1.MinOccurs = new decimal(0);
-                any1.MaxOccurs = decimal.MaxValue;
-                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any1);
-                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
-                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
-                any2.MinOccurs = new decimal(1);
-                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any2);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute1.Name = "namespace";
-                attribute1.FixedValue = ds.Namespace;
-                type.Attributes.Add(attribute1);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "DanieJournalLegkovieDataTable";
-                type.Attributes.Add(attribute2);
-                type.Particle = sequence;
-                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
-                if (xs.Contains(dsSchema.TargetNamespace)) {
-                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
-                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
-                    try {
-                        global::System.Xml.Schema.XmlSchema schema = null;
-                        dsSchema.Write(s1);
-                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
-                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
-                            s2.SetLength(0);
-                            schema.Write(s2);
-                            if ((s1.Length == s2.Length)) {
-                                s1.Position = 0;
-                                s2.Position = 0;
-                                for (; ((s1.Position != s1.Length) 
-                                            && (s1.ReadByte() == s2.ReadByte())); ) {
-                                    ;
-                                }
-                                if ((s1.Position == s1.Length)) {
-                                    return type;
-                                }
-                            }
-                        }
-                    }
-                    finally {
-                        if ((s1 != null)) {
-                            s1.Close();
-                        }
-                        if ((s2 != null)) {
-                            s2.Close();
-                        }
-                    }
-                }
-                xs.Add(dsSchema);
-                return type;
-            }
-        }
-        
-        /// <summary>
-        ///Represents the strongly named DataTable class.
-        ///</summary>
-        [global::System.Serializable()]
-        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class DanieJournalGruzovieDataTable : global::System.Data.TypedTableBase<DanieJournalGruzovieRow> {
-            
-            private global::System.Data.DataColumn columnНомер_путевого_листа;
-            
-            private global::System.Data.DataColumn columnДата_путевого_листа;
-            
-            private global::System.Data.DataColumn columnВ_чье_распоряжение_занаряжена_автомашина;
-            
-            private global::System.Data.DataColumn columnПункт_отправления;
-            
-            private global::System.Data.DataColumn columnПункт_назначения;
-            
-            private global::System.Data.DataColumn columnКоличество;
-            
-            private global::System.Data.DataColumn columnСпидометр_при_выезде;
-            
-            private global::System.Data.DataColumn columnСпидометр_при_возвращении;
-            
-            private global::System.Data.DataColumn columnВремя_выезда;
-            
-            private global::System.Data.DataColumn columnВремя_возвращения;
-            
-            private global::System.Data.DataColumn columnОстаток_ТСМ_при_выезде;
-            
-            private global::System.Data.DataColumn columnОстаток_ТСМ_при_возвращении;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public DanieJournalGruzovieDataTable() {
-                this.TableName = "DanieJournalGruzovie";
-                this.BeginInit();
-                this.InitClass();
-                this.EndInit();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal DanieJournalGruzovieDataTable(global::System.Data.DataTable table) {
-                this.TableName = table.TableName;
-                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
-                    this.CaseSensitive = table.CaseSensitive;
-                }
-                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
-                    this.Locale = table.Locale;
-                }
-                if ((table.Namespace != table.DataSet.Namespace)) {
-                    this.Namespace = table.Namespace;
-                }
-                this.Prefix = table.Prefix;
-                this.MinimumCapacity = table.MinimumCapacity;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected DanieJournalGruzovieDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
-                    base(info, context) {
-                this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Номер_путевого_листаColumn {
-                get {
-                    return this.columnНомер_путевого_листа;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Дата_путевого_листаColumn {
-                get {
-                    return this.columnДата_путевого_листа;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn В_чье_распоряжение_занаряжена_автомашинаColumn {
-                get {
-                    return this.columnВ_чье_распоряжение_занаряжена_автомашина;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Пункт_отправленияColumn {
-                get {
-                    return this.columnПункт_отправления;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Пункт_назначенияColumn {
-                get {
-                    return this.columnПункт_назначения;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn КоличествоColumn {
-                get {
-                    return this.columnКоличество;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Спидометр_при_выездеColumn {
-                get {
-                    return this.columnСпидометр_при_выезде;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Спидометр_при_возвращенииColumn {
-                get {
-                    return this.columnСпидометр_при_возвращении;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Время_выездаColumn {
-                get {
-                    return this.columnВремя_выезда;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Время_возвращенияColumn {
-                get {
-                    return this.columnВремя_возвращения;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Остаток_ТСМ_при_выездеColumn {
-                get {
-                    return this.columnОстаток_ТСМ_при_выезде;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Остаток_ТСМ_при_возвращенииColumn {
-                get {
-                    return this.columnОстаток_ТСМ_при_возвращении;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            [global::System.ComponentModel.Browsable(false)]
-            public int Count {
-                get {
-                    return this.Rows.Count;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public DanieJournalGruzovieRow this[int index] {
-                get {
-                    return ((DanieJournalGruzovieRow)(this.Rows[index]));
-                }
-            }
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event DanieJournalGruzovieRowChangeEventHandler DanieJournalGruzovieRowChanging;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event DanieJournalGruzovieRowChangeEventHandler DanieJournalGruzovieRowChanged;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event DanieJournalGruzovieRowChangeEventHandler DanieJournalGruzovieRowDeleting;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event DanieJournalGruzovieRowChangeEventHandler DanieJournalGruzovieRowDeleted;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void AddDanieJournalGruzovieRow(DanieJournalGruzovieRow row) {
-                this.Rows.Add(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public DanieJournalGruzovieRow AddDanieJournalGruzovieRow(int Номер_путевого_листа, System.DateTime Дата_путевого_листа, string В_чье_распоряжение_занаряжена_автомашина, string Пункт_отправления, string Пункт_назначения, double Количество, int Спидометр_при_выезде, int Спидометр_при_возвращении, System.TimeSpan Время_выезда, System.TimeSpan Время_возвращения, string Остаток_ТСМ_при_выезде, string Остаток_ТСМ_при_возвращении) {
-                DanieJournalGruzovieRow rowDanieJournalGruzovieRow = ((DanieJournalGruzovieRow)(this.NewRow()));
-                object[] columnValuesArray = new object[] {
-                        Номер_путевого_листа,
-                        Дата_путевого_листа,
-                        В_чье_распоряжение_занаряжена_автомашина,
-                        Пункт_отправления,
-                        Пункт_назначения,
-                        Количество,
-                        Спидометр_при_выезде,
-                        Спидометр_при_возвращении,
-                        Время_выезда,
-                        Время_возвращения,
-                        Остаток_ТСМ_при_выезде,
-                        Остаток_ТСМ_при_возвращении};
-                rowDanieJournalGruzovieRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowDanieJournalGruzovieRow);
-                return rowDanieJournalGruzovieRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public override global::System.Data.DataTable Clone() {
-                DanieJournalGruzovieDataTable cln = ((DanieJournalGruzovieDataTable)(base.Clone()));
-                cln.InitVars();
-                return cln;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Data.DataTable CreateInstance() {
-                return new DanieJournalGruzovieDataTable();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal void InitVars() {
-                this.columnНомер_путевого_листа = base.Columns["Номер путевого листа"];
-                this.columnДата_путевого_листа = base.Columns["Дата путевого листа"];
-                this.columnВ_чье_распоряжение_занаряжена_автомашина = base.Columns["В чье распоряжение занаряжена автомашина"];
-                this.columnПункт_отправления = base.Columns["Пункт отправления"];
-                this.columnПункт_назначения = base.Columns["Пункт назначения"];
-                this.columnКоличество = base.Columns["Количество"];
-                this.columnСпидометр_при_выезде = base.Columns["Спидометр при выезде"];
-                this.columnСпидометр_при_возвращении = base.Columns["Спидометр при возвращении"];
-                this.columnВремя_выезда = base.Columns["Время выезда"];
-                this.columnВремя_возвращения = base.Columns["Время возвращения"];
-                this.columnОстаток_ТСМ_при_выезде = base.Columns["Остаток ТСМ при выезде"];
-                this.columnОстаток_ТСМ_при_возвращении = base.Columns["Остаток ТСМ при возвращении"];
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            private void InitClass() {
-                this.columnНомер_путевого_листа = new global::System.Data.DataColumn("Номер путевого листа", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnНомер_путевого_листа);
-                this.columnДата_путевого_листа = new global::System.Data.DataColumn("Дата путевого листа", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnДата_путевого_листа);
-                this.columnВ_чье_распоряжение_занаряжена_автомашина = new global::System.Data.DataColumn("В чье распоряжение занаряжена автомашина", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnВ_чье_распоряжение_занаряжена_автомашина);
-                this.columnПункт_отправления = new global::System.Data.DataColumn("Пункт отправления", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnПункт_отправления);
-                this.columnПункт_назначения = new global::System.Data.DataColumn("Пункт назначения", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnПункт_назначения);
-                this.columnКоличество = new global::System.Data.DataColumn("Количество", typeof(double), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnКоличество);
-                this.columnСпидометр_при_выезде = new global::System.Data.DataColumn("Спидометр при выезде", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnСпидометр_при_выезде);
-                this.columnСпидометр_при_возвращении = new global::System.Data.DataColumn("Спидометр при возвращении", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnСпидометр_при_возвращении);
-                this.columnВремя_выезда = new global::System.Data.DataColumn("Время выезда", typeof(global::System.TimeSpan), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnВремя_выезда);
-                this.columnВремя_возвращения = new global::System.Data.DataColumn("Время возвращения", typeof(global::System.TimeSpan), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnВремя_возвращения);
-                this.columnОстаток_ТСМ_при_выезде = new global::System.Data.DataColumn("Остаток ТСМ при выезде", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnОстаток_ТСМ_при_выезде);
-                this.columnОстаток_ТСМ_при_возвращении = new global::System.Data.DataColumn("Остаток ТСМ при возвращении", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnОстаток_ТСМ_при_возвращении);
-                this.columnНомер_путевого_листа.AllowDBNull = false;
-                this.columnДата_путевого_листа.AllowDBNull = false;
-                this.columnВ_чье_распоряжение_занаряжена_автомашина.MaxLength = 50;
-                this.columnПункт_отправления.MaxLength = 100;
-                this.columnПункт_назначения.MaxLength = 100;
-                this.columnОстаток_ТСМ_при_выезде.AllowDBNull = false;
-                this.columnОстаток_ТСМ_при_выезде.MaxLength = 50;
-                this.columnОстаток_ТСМ_при_возвращении.MaxLength = 50;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public DanieJournalGruzovieRow NewDanieJournalGruzovieRow() {
-                return ((DanieJournalGruzovieRow)(this.NewRow()));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new DanieJournalGruzovieRow(builder);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Type GetRowType() {
-                return typeof(DanieJournalGruzovieRow);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanged(e);
-                if ((this.DanieJournalGruzovieRowChanged != null)) {
-                    this.DanieJournalGruzovieRowChanged(this, new DanieJournalGruzovieRowChangeEvent(((DanieJournalGruzovieRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanging(e);
-                if ((this.DanieJournalGruzovieRowChanging != null)) {
-                    this.DanieJournalGruzovieRowChanging(this, new DanieJournalGruzovieRowChangeEvent(((DanieJournalGruzovieRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleted(e);
-                if ((this.DanieJournalGruzovieRowDeleted != null)) {
-                    this.DanieJournalGruzovieRowDeleted(this, new DanieJournalGruzovieRowChangeEvent(((DanieJournalGruzovieRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleting(e);
-                if ((this.DanieJournalGruzovieRowDeleting != null)) {
-                    this.DanieJournalGruzovieRowDeleting(this, new DanieJournalGruzovieRowChangeEvent(((DanieJournalGruzovieRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void RemoveDanieJournalGruzovieRow(DanieJournalGruzovieRow row) {
-                this.Rows.Remove(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
-                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                AutoparkDB ds = new AutoparkDB();
-                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
-                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
-                any1.MinOccurs = new decimal(0);
-                any1.MaxOccurs = decimal.MaxValue;
-                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any1);
-                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
-                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
-                any2.MinOccurs = new decimal(1);
-                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any2);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute1.Name = "namespace";
-                attribute1.FixedValue = ds.Namespace;
-                type.Attributes.Add(attribute1);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "DanieJournalGruzovieDataTable";
-                type.Attributes.Add(attribute2);
-                type.Particle = sequence;
-                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
-                if (xs.Contains(dsSchema.TargetNamespace)) {
-                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
-                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
-                    try {
-                        global::System.Xml.Schema.XmlSchema schema = null;
-                        dsSchema.Write(s1);
-                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
-                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
-                            s2.SetLength(0);
-                            schema.Write(s2);
-                            if ((s1.Length == s2.Length)) {
-                                s1.Position = 0;
-                                s2.Position = 0;
-                                for (; ((s1.Position != s1.Length) 
-                                            && (s1.ReadByte() == s2.ReadByte())); ) {
-                                    ;
-                                }
-                                if ((s1.Position == s1.Length)) {
-                                    return type;
-                                }
-                            }
-                        }
-                    }
-                    finally {
-                        if ((s1 != null)) {
-                            s1.Close();
-                        }
-                        if ((s2 != null)) {
-                            s2.Close();
-                        }
-                    }
-                }
-                xs.Add(dsSchema);
-                return type;
-            }
-        }
-        
-        /// <summary>
-        ///Represents the strongly named DataTable class.
-        ///</summary>
-        [global::System.Serializable()]
-        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class BannerJornalGruzovieDataTable : global::System.Data.TypedTableBase<BannerJornalGruzovieRow> {
-            
-            private global::System.Data.DataColumn columnФамилия;
-            
-            private global::System.Data.DataColumn columnИмя;
-            
-            private global::System.Data.DataColumn columnОтчество;
-            
-            private global::System.Data.DataColumn columnсрок_действия_мед__справки;
-            
-            private global::System.Data.DataColumn columnклассность;
-            
-            private global::System.Data.DataColumn columnномер_водительского_удостоверения;
-            
-            private global::System.Data.DataColumn columnМарка_и_модель;
-            
-            private global::System.Data.DataColumn columnГос_номер;
-            
-            private global::System.Data.DataColumn columnГаражный_номер;
-            
-            private global::System.Data.DataColumn columnдата_окончания_страховки;
-            
-            private global::System.Data.DataColumn columnВид_топлива;
-            
-            private global::System.Data.DataColumn columnID;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public BannerJornalGruzovieDataTable() {
-                this.TableName = "BannerJornalGruzovie";
-                this.BeginInit();
-                this.InitClass();
-                this.EndInit();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal BannerJornalGruzovieDataTable(global::System.Data.DataTable table) {
-                this.TableName = table.TableName;
-                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
-                    this.CaseSensitive = table.CaseSensitive;
-                }
-                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
-                    this.Locale = table.Locale;
-                }
-                if ((table.Namespace != table.DataSet.Namespace)) {
-                    this.Namespace = table.Namespace;
-                }
-                this.Prefix = table.Prefix;
-                this.MinimumCapacity = table.MinimumCapacity;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected BannerJornalGruzovieDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
-                    base(info, context) {
-                this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn ФамилияColumn {
-                get {
-                    return this.columnФамилия;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn ИмяColumn {
-                get {
-                    return this.columnИмя;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn ОтчествоColumn {
-                get {
-                    return this.columnОтчество;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn срок_действия_мед__справкиColumn {
-                get {
-                    return this.columnсрок_действия_мед__справки;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn классностьColumn {
-                get {
-                    return this.columnклассность;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn номер_водительского_удостоверенияColumn {
-                get {
-                    return this.columnномер_водительского_удостоверения;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Марка_и_модельColumn {
-                get {
-                    return this.columnМарка_и_модель;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Гос_номерColumn {
-                get {
-                    return this.columnГос_номер;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Гаражный_номерColumn {
-                get {
-                    return this.columnГаражный_номер;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn дата_окончания_страховкиColumn {
-                get {
-                    return this.columnдата_окончания_страховки;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Вид_топливаColumn {
-                get {
-                    return this.columnВид_топлива;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn IDColumn {
-                get {
-                    return this.columnID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            [global::System.ComponentModel.Browsable(false)]
-            public int Count {
-                get {
-                    return this.Rows.Count;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public BannerJornalGruzovieRow this[int index] {
-                get {
-                    return ((BannerJornalGruzovieRow)(this.Rows[index]));
-                }
-            }
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event BannerJornalGruzovieRowChangeEventHandler BannerJornalGruzovieRowChanging;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event BannerJornalGruzovieRowChangeEventHandler BannerJornalGruzovieRowChanged;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event BannerJornalGruzovieRowChangeEventHandler BannerJornalGruzovieRowDeleting;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event BannerJornalGruzovieRowChangeEventHandler BannerJornalGruzovieRowDeleted;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void AddBannerJornalGruzovieRow(BannerJornalGruzovieRow row) {
-                this.Rows.Add(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public BannerJornalGruzovieRow AddBannerJornalGruzovieRow(string Фамилия, string Имя, string Отчество, System.DateTime срок_действия_мед__справки, int классность, string номер_водительского_удостоверения, string Марка_и_модель, string Гос_номер, string Гаражный_номер, System.DateTime дата_окончания_страховки, string Вид_топлива) {
-                BannerJornalGruzovieRow rowBannerJornalGruzovieRow = ((BannerJornalGruzovieRow)(this.NewRow()));
-                object[] columnValuesArray = new object[] {
-                        Фамилия,
-                        Имя,
-                        Отчество,
-                        срок_действия_мед__справки,
-                        классность,
-                        номер_водительского_удостоверения,
-                        Марка_и_модель,
-                        Гос_номер,
-                        Гаражный_номер,
-                        дата_окончания_страховки,
-                        Вид_топлива,
-                        null};
-                rowBannerJornalGruzovieRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowBannerJornalGruzovieRow);
-                return rowBannerJornalGruzovieRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public BannerJornalGruzovieRow FindByID(int ID) {
-                return ((BannerJornalGruzovieRow)(this.Rows.Find(new object[] {
-                            ID})));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public override global::System.Data.DataTable Clone() {
-                BannerJornalGruzovieDataTable cln = ((BannerJornalGruzovieDataTable)(base.Clone()));
-                cln.InitVars();
-                return cln;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Data.DataTable CreateInstance() {
-                return new BannerJornalGruzovieDataTable();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal void InitVars() {
-                this.columnФамилия = base.Columns["Фамилия"];
-                this.columnИмя = base.Columns["Имя"];
-                this.columnОтчество = base.Columns["Отчество"];
-                this.columnсрок_действия_мед__справки = base.Columns["срок действия мед_ справки"];
-                this.columnклассность = base.Columns["классность"];
-                this.columnномер_водительского_удостоверения = base.Columns["номер водительского удостоверения"];
-                this.columnМарка_и_модель = base.Columns["Марка и модель"];
-                this.columnГос_номер = base.Columns["Гос_номер"];
-                this.columnГаражный_номер = base.Columns["Гаражный номер"];
-                this.columnдата_окончания_страховки = base.Columns["дата окончания страховки"];
-                this.columnВид_топлива = base.Columns["Вид топлива"];
-                this.columnID = base.Columns["ID"];
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            private void InitClass() {
-                this.columnФамилия = new global::System.Data.DataColumn("Фамилия", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnФамилия);
-                this.columnИмя = new global::System.Data.DataColumn("Имя", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnИмя);
-                this.columnОтчество = new global::System.Data.DataColumn("Отчество", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnОтчество);
-                this.columnсрок_действия_мед__справки = new global::System.Data.DataColumn("срок действия мед_ справки", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnсрок_действия_мед__справки);
-                this.columnклассность = new global::System.Data.DataColumn("классность", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnклассность);
-                this.columnномер_водительского_удостоверения = new global::System.Data.DataColumn("номер водительского удостоверения", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnномер_водительского_удостоверения);
-                this.columnМарка_и_модель = new global::System.Data.DataColumn("Марка и модель", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnМарка_и_модель);
-                this.columnГос_номер = new global::System.Data.DataColumn("Гос_номер", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnГос_номер);
-                this.columnГаражный_номер = new global::System.Data.DataColumn("Гаражный номер", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnГаражный_номер);
-                this.columnдата_окончания_страховки = new global::System.Data.DataColumn("дата окончания страховки", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnдата_окончания_страховки);
-                this.columnВид_топлива = new global::System.Data.DataColumn("Вид топлива", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnВид_топлива);
-                this.columnID = new global::System.Data.DataColumn("ID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnID);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnID}, true));
-                this.columnФамилия.MaxLength = 50;
-                this.columnИмя.MaxLength = 50;
-                this.columnОтчество.MaxLength = 50;
-                this.columnсрок_действия_мед__справки.Caption = "срок действия мед. справки";
-                this.columnномер_водительского_удостоверения.MaxLength = 50;
-                this.columnМарка_и_модель.AllowDBNull = false;
-                this.columnМарка_и_модель.MaxLength = 50;
-                this.columnГос_номер.AllowDBNull = false;
-                this.columnГос_номер.Caption = "Гос.номер";
-                this.columnГос_номер.MaxLength = 50;
-                this.columnГаражный_номер.MaxLength = 50;
-                this.columnВид_топлива.MaxLength = 50;
-                this.columnID.AutoIncrement = true;
-                this.columnID.AutoIncrementSeed = -1;
-                this.columnID.AutoIncrementStep = -1;
-                this.columnID.AllowDBNull = false;
-                this.columnID.ReadOnly = true;
-                this.columnID.Unique = true;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public BannerJornalGruzovieRow NewBannerJornalGruzovieRow() {
-                return ((BannerJornalGruzovieRow)(this.NewRow()));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new BannerJornalGruzovieRow(builder);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Type GetRowType() {
-                return typeof(BannerJornalGruzovieRow);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanged(e);
-                if ((this.BannerJornalGruzovieRowChanged != null)) {
-                    this.BannerJornalGruzovieRowChanged(this, new BannerJornalGruzovieRowChangeEvent(((BannerJornalGruzovieRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanging(e);
-                if ((this.BannerJornalGruzovieRowChanging != null)) {
-                    this.BannerJornalGruzovieRowChanging(this, new BannerJornalGruzovieRowChangeEvent(((BannerJornalGruzovieRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleted(e);
-                if ((this.BannerJornalGruzovieRowDeleted != null)) {
-                    this.BannerJornalGruzovieRowDeleted(this, new BannerJornalGruzovieRowChangeEvent(((BannerJornalGruzovieRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleting(e);
-                if ((this.BannerJornalGruzovieRowDeleting != null)) {
-                    this.BannerJornalGruzovieRowDeleting(this, new BannerJornalGruzovieRowChangeEvent(((BannerJornalGruzovieRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void RemoveBannerJornalGruzovieRow(BannerJornalGruzovieRow row) {
-                this.Rows.Remove(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
-                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                AutoparkDB ds = new AutoparkDB();
-                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
-                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
-                any1.MinOccurs = new decimal(0);
-                any1.MaxOccurs = decimal.MaxValue;
-                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any1);
-                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
-                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
-                any2.MinOccurs = new decimal(1);
-                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any2);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute1.Name = "namespace";
-                attribute1.FixedValue = ds.Namespace;
-                type.Attributes.Add(attribute1);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "BannerJornalGruzovieDataTable";
-                type.Attributes.Add(attribute2);
-                type.Particle = sequence;
-                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
-                if (xs.Contains(dsSchema.TargetNamespace)) {
-                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
-                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
-                    try {
-                        global::System.Xml.Schema.XmlSchema schema = null;
-                        dsSchema.Write(s1);
-                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
-                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
-                            s2.SetLength(0);
-                            schema.Write(s2);
-                            if ((s1.Length == s2.Length)) {
-                                s1.Position = 0;
-                                s2.Position = 0;
-                                for (; ((s1.Position != s1.Length) 
-                                            && (s1.ReadByte() == s2.ReadByte())); ) {
-                                    ;
-                                }
-                                if ((s1.Position == s1.Length)) {
-                                    return type;
-                                }
-                            }
-                        }
-                    }
-                    finally {
-                        if ((s1 != null)) {
-                            s1.Close();
-                        }
-                        if ((s2 != null)) {
-                            s2.Close();
-                        }
-                    }
-                }
-                xs.Add(dsSchema);
-                return type;
-            }
-        }
-        
-        /// <summary>
-        ///Represents the strongly named DataTable class.
-        ///</summary>
-        [global::System.Serializable()]
-        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class Заправка_ТСМDataTable : global::System.Data.TypedTableBase<Заправка_ТСМRow> {
             
             private global::System.Data.DataColumn columnID_Заправка_ТСМ;
@@ -6491,6 +5311,10 @@ namespace AUTOPARK {
             
             private global::System.Data.DataColumn columnID_Отдела;
             
+            private global::System.Data.DataColumn columnПункт_отправления;
+            
+            private global::System.Data.DataColumn columnПункт_назначения;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public Путевой_лист_Грузового_автоDataTable() {
@@ -6702,6 +5526,22 @@ namespace AUTOPARK {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Пункт_отправленияColumn {
+                get {
+                    return this.columnПункт_отправления;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Пункт_назначенияColumn {
+                get {
+                    return this.columnПункт_назначения;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -6758,7 +5598,9 @@ namespace AUTOPARK {
                         double Остаток_ТСМ2_возвр, 
                         Личный_составRow parentЛичный_составRowByFK_Путевой_лист_Грузового_авто_личный_состав3, 
                         Подвижной_составRow parentПодвижной_составRowByFK_Путевой_лист_Грузового_авто_Подвижной_состав1, 
-                        ОтделыRow parentОтделыRowByFK_Путевой_лист_Грузового_авто_id_отдела1) {
+                        ОтделыRow parentОтделыRowByFK_Путевой_лист_Грузового_авто_id_отдела1, 
+                        string Пункт_отправления, 
+                        string Пункт_назначения) {
                 Путевой_лист_Грузового_автоRow rowПутевой_лист_Грузового_автоRow = ((Путевой_лист_Грузового_автоRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -6782,7 +5624,9 @@ namespace AUTOPARK {
                         Остаток_ТСМ2_возвр,
                         null,
                         null,
-                        null};
+                        null,
+                        Пункт_отправления,
+                        Пункт_назначения};
                 if ((parentЛичный_составRowByFK_Путевой_лист_Грузового_авто_личный_состав3 != null)) {
                     columnValuesArray[19] = parentЛичный_составRowByFK_Путевой_лист_Грузового_авто_личный_состав3[0];
                 }
@@ -6843,6 +5687,8 @@ namespace AUTOPARK {
                 this.columnID_Водителя = base.Columns["ID_Водителя"];
                 this.columnID_Автомобиля = base.Columns["ID_Автомобиля"];
                 this.columnID_Отдела = base.Columns["ID_Отдела"];
+                this.columnПункт_отправления = base.Columns["Пункт_отправления"];
+                this.columnПункт_назначения = base.Columns["Пункт_назначения"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6900,6 +5746,18 @@ namespace AUTOPARK {
                 base.Columns.Add(this.columnID_Автомобиля);
                 this.columnID_Отдела = new global::System.Data.DataColumn("ID_Отдела", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnID_Отдела);
+                this.columnПункт_отправления = new global::System.Data.DataColumn("Пункт_отправления", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnПункт_отправления.ExtendedProperties.Add("Generator_ColumnPropNameInRow", "Пункт_отправления");
+                this.columnПункт_отправления.ExtendedProperties.Add("Generator_ColumnPropNameInTable", "Пункт_отправленияColumn");
+                this.columnПункт_отправления.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "columnПункт_отправления");
+                this.columnПункт_отправления.ExtendedProperties.Add("Generator_UserColumnName", "Пункт_отправления");
+                base.Columns.Add(this.columnПункт_отправления);
+                this.columnПункт_назначения = new global::System.Data.DataColumn("Пункт_назначения", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnПункт_назначения.ExtendedProperties.Add("Generator_ColumnPropNameInRow", "Пункт_назначения");
+                this.columnПункт_назначения.ExtendedProperties.Add("Generator_ColumnPropNameInTable", "Пункт_назначенияColumn");
+                this.columnПункт_назначения.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "columnПункт_назначения");
+                this.columnПункт_назначения.ExtendedProperties.Add("Generator_UserColumnName", "Пункт_назначения");
+                base.Columns.Add(this.columnПункт_назначения);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID_Путевого_листа}, true));
                 this.columnID_Путевого_листа.AutoIncrement = true;
@@ -6912,6 +5770,8 @@ namespace AUTOPARK {
                 this.columnДата_путевого_листа.AllowDBNull = false;
                 this.columnID_Водителя.AllowDBNull = false;
                 this.columnID_Автомобиля.AllowDBNull = false;
+                this.columnПункт_отправления.MaxLength = 50;
+                this.columnПункт_назначения.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6998,6 +5858,1560 @@ namespace AUTOPARK {
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
                 attribute2.FixedValue = "Путевой_лист_Грузового_автоDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class DanieJournalDataTable : global::System.Data.TypedTableBase<DanieJournalRow> {
+            
+            private global::System.Data.DataColumn columnФИО;
+            
+            private global::System.Data.DataColumn columnПодразделение;
+            
+            private global::System.Data.DataColumn columnПункт_отправления;
+            
+            private global::System.Data.DataColumn columnПункт_назначения;
+            
+            private global::System.Data.DataColumn columnОстаток_ТСМ1_выезд;
+            
+            private global::System.Data.DataColumn columnОстаток_ТСМ1_возвр;
+            
+            private global::System.Data.DataColumn columnОстаток_ТСМ2_выезд;
+            
+            private global::System.Data.DataColumn columnОстаток_ТСМ2_возвр;
+            
+            private global::System.Data.DataColumn columnПоказания_спидометра_при_выезде;
+            
+            private global::System.Data.DataColumn columnПоказания_спидометра_при_возвращении;
+            
+            private global::System.Data.DataColumn columnДата_путевого_листа;
+            
+            private global::System.Data.DataColumn columnНомер_путевого_листа;
+            
+            private global::System.Data.DataColumn columnЗаправлено_ТСМ1;
+            
+            private global::System.Data.DataColumn columnЗаправлено_ТСМ2;
+            
+            private global::System.Data.DataColumn columnДата_Время_выезда_факт;
+            
+            private global::System.Data.DataColumn columnДата_Время_возвращения_факт;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public DanieJournalDataTable() {
+                this.TableName = "DanieJournal";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal DanieJournalDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected DanieJournalDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ФИОColumn {
+                get {
+                    return this.columnФИО;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ПодразделениеColumn {
+                get {
+                    return this.columnПодразделение;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Пункт_отправленияColumn {
+                get {
+                    return this.columnПункт_отправления;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Пункт_назначенияColumn {
+                get {
+                    return this.columnПункт_назначения;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Остаток_ТСМ1_выездColumn {
+                get {
+                    return this.columnОстаток_ТСМ1_выезд;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Остаток_ТСМ1_возврColumn {
+                get {
+                    return this.columnОстаток_ТСМ1_возвр;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Остаток_ТСМ2_выездColumn {
+                get {
+                    return this.columnОстаток_ТСМ2_выезд;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Остаток_ТСМ2_возврColumn {
+                get {
+                    return this.columnОстаток_ТСМ2_возвр;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Показания_спидометра_при_выездеColumn {
+                get {
+                    return this.columnПоказания_спидометра_при_выезде;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Показания_спидометра_при_возвращенииColumn {
+                get {
+                    return this.columnПоказания_спидометра_при_возвращении;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Дата_путевого_листаColumn {
+                get {
+                    return this.columnДата_путевого_листа;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Номер_путевого_листаColumn {
+                get {
+                    return this.columnНомер_путевого_листа;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Заправлено_ТСМ1Column {
+                get {
+                    return this.columnЗаправлено_ТСМ1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Заправлено_ТСМ2Column {
+                get {
+                    return this.columnЗаправлено_ТСМ2;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Дата_Время_выезда_фактColumn {
+                get {
+                    return this.columnДата_Время_выезда_факт;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Дата_Время_возвращения_фактColumn {
+                get {
+                    return this.columnДата_Время_возвращения_факт;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public DanieJournalRow this[int index] {
+                get {
+                    return ((DanieJournalRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event DanieJournalRowChangeEventHandler DanieJournalRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event DanieJournalRowChangeEventHandler DanieJournalRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event DanieJournalRowChangeEventHandler DanieJournalRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event DanieJournalRowChangeEventHandler DanieJournalRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddDanieJournalRow(DanieJournalRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public DanieJournalRow AddDanieJournalRow(
+                        string ФИО, 
+                        string Подразделение, 
+                        string Пункт_отправления, 
+                        string Пункт_назначения, 
+                        double Остаток_ТСМ1_выезд, 
+                        double Остаток_ТСМ1_возвр, 
+                        double Остаток_ТСМ2_выезд, 
+                        double Остаток_ТСМ2_возвр, 
+                        int Показания_спидометра_при_выезде, 
+                        int Показания_спидометра_при_возвращении, 
+                        System.DateTime Дата_путевого_листа, 
+                        int Номер_путевого_листа, 
+                        double Заправлено_ТСМ1, 
+                        double Заправлено_ТСМ2, 
+                        System.TimeSpan Дата_Время_выезда_факт, 
+                        System.TimeSpan Дата_Время_возвращения_факт) {
+                DanieJournalRow rowDanieJournalRow = ((DanieJournalRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        ФИО,
+                        Подразделение,
+                        Пункт_отправления,
+                        Пункт_назначения,
+                        Остаток_ТСМ1_выезд,
+                        Остаток_ТСМ1_возвр,
+                        Остаток_ТСМ2_выезд,
+                        Остаток_ТСМ2_возвр,
+                        Показания_спидометра_при_выезде,
+                        Показания_спидометра_при_возвращении,
+                        Дата_путевого_листа,
+                        Номер_путевого_листа,
+                        Заправлено_ТСМ1,
+                        Заправлено_ТСМ2,
+                        Дата_Время_выезда_факт,
+                        Дата_Время_возвращения_факт};
+                rowDanieJournalRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowDanieJournalRow);
+                return rowDanieJournalRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                DanieJournalDataTable cln = ((DanieJournalDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new DanieJournalDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnФИО = base.Columns["ФИО"];
+                this.columnПодразделение = base.Columns["Подразделение"];
+                this.columnПункт_отправления = base.Columns["Пункт_отправления"];
+                this.columnПункт_назначения = base.Columns["Пункт_назначения"];
+                this.columnОстаток_ТСМ1_выезд = base.Columns["Остаток_ТСМ1_выезд"];
+                this.columnОстаток_ТСМ1_возвр = base.Columns["Остаток_ТСМ1_возвр"];
+                this.columnОстаток_ТСМ2_выезд = base.Columns["Остаток_ТСМ2_выезд"];
+                this.columnОстаток_ТСМ2_возвр = base.Columns["Остаток_ТСМ2_возвр"];
+                this.columnПоказания_спидометра_при_выезде = base.Columns["Показания_спидометра_при_выезде"];
+                this.columnПоказания_спидометра_при_возвращении = base.Columns["Показания_спидометра_при_возвращении"];
+                this.columnДата_путевого_листа = base.Columns["Дата_путевого_листа"];
+                this.columnНомер_путевого_листа = base.Columns["Номер_путевого_листа"];
+                this.columnЗаправлено_ТСМ1 = base.Columns["Заправлено_ТСМ1"];
+                this.columnЗаправлено_ТСМ2 = base.Columns["Заправлено_ТСМ2"];
+                this.columnДата_Время_выезда_факт = base.Columns["Дата_Время_выезда_факт"];
+                this.columnДата_Время_возвращения_факт = base.Columns["Дата_Время_возвращения_факт"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnФИО = new global::System.Data.DataColumn("ФИО", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnФИО);
+                this.columnПодразделение = new global::System.Data.DataColumn("Подразделение", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnПодразделение);
+                this.columnПункт_отправления = new global::System.Data.DataColumn("Пункт_отправления", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnПункт_отправления.ExtendedProperties.Add("Generator_ColumnPropNameInRow", "Пункт_отправления");
+                this.columnПункт_отправления.ExtendedProperties.Add("Generator_ColumnPropNameInTable", "Пункт_отправленияColumn");
+                this.columnПункт_отправления.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "columnПункт_отправления");
+                this.columnПункт_отправления.ExtendedProperties.Add("Generator_UserColumnName", "Пункт_отправления");
+                base.Columns.Add(this.columnПункт_отправления);
+                this.columnПункт_назначения = new global::System.Data.DataColumn("Пункт_назначения", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnПункт_назначения.ExtendedProperties.Add("Generator_ColumnPropNameInRow", "Пункт_назначения");
+                this.columnПункт_назначения.ExtendedProperties.Add("Generator_ColumnPropNameInTable", "Пункт_назначенияColumn");
+                this.columnПункт_назначения.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "columnПункт_назначения");
+                this.columnПункт_назначения.ExtendedProperties.Add("Generator_UserColumnName", "Пункт_назначения");
+                base.Columns.Add(this.columnПункт_назначения);
+                this.columnОстаток_ТСМ1_выезд = new global::System.Data.DataColumn("Остаток_ТСМ1_выезд", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnОстаток_ТСМ1_выезд);
+                this.columnОстаток_ТСМ1_возвр = new global::System.Data.DataColumn("Остаток_ТСМ1_возвр", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnОстаток_ТСМ1_возвр);
+                this.columnОстаток_ТСМ2_выезд = new global::System.Data.DataColumn("Остаток_ТСМ2_выезд", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnОстаток_ТСМ2_выезд);
+                this.columnОстаток_ТСМ2_возвр = new global::System.Data.DataColumn("Остаток_ТСМ2_возвр", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnОстаток_ТСМ2_возвр);
+                this.columnПоказания_спидометра_при_выезде = new global::System.Data.DataColumn("Показания_спидометра_при_выезде", typeof(int), null, global::System.Data.MappingType.Element);
+                this.columnПоказания_спидометра_при_выезде.ExtendedProperties.Add("Generator_ColumnPropNameInRow", "Показания_спидометра_при_выезде");
+                this.columnПоказания_спидометра_при_выезде.ExtendedProperties.Add("Generator_ColumnPropNameInTable", "Показания_спидометра_при_выездеColumn");
+                this.columnПоказания_спидометра_при_выезде.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "columnПоказания_спидометра_при_выезде");
+                this.columnПоказания_спидометра_при_выезде.ExtendedProperties.Add("Generator_UserColumnName", "Показания_спидометра_при_выезде");
+                base.Columns.Add(this.columnПоказания_спидометра_при_выезде);
+                this.columnПоказания_спидометра_при_возвращении = new global::System.Data.DataColumn("Показания_спидометра_при_возвращении", typeof(int), null, global::System.Data.MappingType.Element);
+                this.columnПоказания_спидометра_при_возвращении.ExtendedProperties.Add("Generator_ColumnPropNameInRow", "Показания_спидометра_при_возвращении");
+                this.columnПоказания_спидометра_при_возвращении.ExtendedProperties.Add("Generator_ColumnPropNameInTable", "Показания_спидометра_при_возвращенииColumn");
+                this.columnПоказания_спидометра_при_возвращении.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "columnПоказания_спидометра_при_возвращении");
+                this.columnПоказания_спидометра_при_возвращении.ExtendedProperties.Add("Generator_UserColumnName", "Показания_спидометра_при_возвращении");
+                base.Columns.Add(this.columnПоказания_спидометра_при_возвращении);
+                this.columnДата_путевого_листа = new global::System.Data.DataColumn("Дата_путевого_листа", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                this.columnДата_путевого_листа.ExtendedProperties.Add("Generator_ColumnPropNameInRow", "Дата_путевого_листа");
+                this.columnДата_путевого_листа.ExtendedProperties.Add("Generator_ColumnPropNameInTable", "Дата_путевого_листаColumn");
+                this.columnДата_путевого_листа.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "columnДата_путевого_листа");
+                this.columnДата_путевого_листа.ExtendedProperties.Add("Generator_UserColumnName", "Дата_путевого_листа");
+                base.Columns.Add(this.columnДата_путевого_листа);
+                this.columnНомер_путевого_листа = new global::System.Data.DataColumn("Номер_путевого_листа", typeof(int), null, global::System.Data.MappingType.Element);
+                this.columnНомер_путевого_листа.ExtendedProperties.Add("Generator_ColumnPropNameInRow", "Номер_путевого_листа");
+                this.columnНомер_путевого_листа.ExtendedProperties.Add("Generator_ColumnPropNameInTable", "Номер_путевого_листаColumn");
+                this.columnНомер_путевого_листа.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "columnНомер_путевого_листа");
+                this.columnНомер_путевого_листа.ExtendedProperties.Add("Generator_UserColumnName", "Номер_путевого_листа");
+                base.Columns.Add(this.columnНомер_путевого_листа);
+                this.columnЗаправлено_ТСМ1 = new global::System.Data.DataColumn("Заправлено_ТСМ1", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnЗаправлено_ТСМ1);
+                this.columnЗаправлено_ТСМ2 = new global::System.Data.DataColumn("Заправлено_ТСМ2", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnЗаправлено_ТСМ2);
+                this.columnДата_Время_выезда_факт = new global::System.Data.DataColumn("Дата_Время_выезда_факт", typeof(global::System.TimeSpan), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnДата_Время_выезда_факт);
+                this.columnДата_Время_возвращения_факт = new global::System.Data.DataColumn("Дата_Время_возвращения_факт", typeof(global::System.TimeSpan), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnДата_Время_возвращения_факт);
+                this.columnФИО.ReadOnly = true;
+                this.columnФИО.MaxLength = 57;
+                this.columnПодразделение.MaxLength = 20;
+                this.columnПункт_отправления.MaxLength = 50;
+                this.columnПункт_назначения.MaxLength = 50;
+                this.columnДата_путевого_листа.AllowDBNull = false;
+                this.columnНомер_путевого_листа.AllowDBNull = false;
+                this.columnЗаправлено_ТСМ1.ReadOnly = true;
+                this.columnЗаправлено_ТСМ2.ReadOnly = true;
+                this.columnДата_Время_выезда_факт.ReadOnly = true;
+                this.columnДата_Время_возвращения_факт.ReadOnly = true;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public DanieJournalRow NewDanieJournalRow() {
+                return ((DanieJournalRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new DanieJournalRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(DanieJournalRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.DanieJournalRowChanged != null)) {
+                    this.DanieJournalRowChanged(this, new DanieJournalRowChangeEvent(((DanieJournalRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.DanieJournalRowChanging != null)) {
+                    this.DanieJournalRowChanging(this, new DanieJournalRowChangeEvent(((DanieJournalRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.DanieJournalRowDeleted != null)) {
+                    this.DanieJournalRowDeleted(this, new DanieJournalRowChangeEvent(((DanieJournalRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.DanieJournalRowDeleting != null)) {
+                    this.DanieJournalRowDeleting(this, new DanieJournalRowChangeEvent(((DanieJournalRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemoveDanieJournalRow(DanieJournalRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                AutoparkDB ds = new AutoparkDB();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "DanieJournalDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class HeaderJournalDataTable : global::System.Data.TypedTableBase<HeaderJournalRow> {
+            
+            private global::System.Data.DataColumn columnклассность;
+            
+            private global::System.Data.DataColumn columnФИО;
+            
+            private global::System.Data.DataColumn columnМарка_и_модель;
+            
+            private global::System.Data.DataColumn columnГаражный_номер;
+            
+            private global::System.Data.DataColumn columnдата_окончания_страховки;
+            
+            private global::System.Data.DataColumn columnВид_топлива;
+            
+            private global::System.Data.DataColumn columnномер_водительского_удостоверения;
+            
+            private global::System.Data.DataColumn columnсрок_действия_мед_справки;
+            
+            private global::System.Data.DataColumn columnГос_номер;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public HeaderJournalDataTable() {
+                this.TableName = "HeaderJournal";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal HeaderJournalDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected HeaderJournalDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn классностьColumn {
+                get {
+                    return this.columnклассность;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ФИОColumn {
+                get {
+                    return this.columnФИО;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Марка_и_модельColumn {
+                get {
+                    return this.columnМарка_и_модель;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Гаражный_номерColumn {
+                get {
+                    return this.columnГаражный_номер;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn дата_окончания_страховкиColumn {
+                get {
+                    return this.columnдата_окончания_страховки;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Вид_топливаColumn {
+                get {
+                    return this.columnВид_топлива;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn номер_водительского_удостоверенияColumn {
+                get {
+                    return this.columnномер_водительского_удостоверения;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn срок_действия_мед_справкиColumn {
+                get {
+                    return this.columnсрок_действия_мед_справки;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Гос_номерColumn {
+                get {
+                    return this.columnГос_номер;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public HeaderJournalRow this[int index] {
+                get {
+                    return ((HeaderJournalRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event HeaderJournalRowChangeEventHandler HeaderJournalRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event HeaderJournalRowChangeEventHandler HeaderJournalRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event HeaderJournalRowChangeEventHandler HeaderJournalRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event HeaderJournalRowChangeEventHandler HeaderJournalRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddHeaderJournalRow(HeaderJournalRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public HeaderJournalRow AddHeaderJournalRow(int классность, string ФИО, string Марка_и_модель, string Гаражный_номер, System.DateTime дата_окончания_страховки, string Вид_топлива, string номер_водительского_удостоверения, System.DateTime срок_действия_мед_справки, string Гос_номер) {
+                HeaderJournalRow rowHeaderJournalRow = ((HeaderJournalRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        классность,
+                        ФИО,
+                        Марка_и_модель,
+                        Гаражный_номер,
+                        дата_окончания_страховки,
+                        Вид_топлива,
+                        номер_водительского_удостоверения,
+                        срок_действия_мед_справки,
+                        Гос_номер};
+                rowHeaderJournalRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowHeaderJournalRow);
+                return rowHeaderJournalRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                HeaderJournalDataTable cln = ((HeaderJournalDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new HeaderJournalDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnклассность = base.Columns["классность"];
+                this.columnФИО = base.Columns["ФИО"];
+                this.columnМарка_и_модель = base.Columns["Марка_и_модель"];
+                this.columnГаражный_номер = base.Columns["Гаражный_номер"];
+                this.columnдата_окончания_страховки = base.Columns["дата_окончания_страховки"];
+                this.columnВид_топлива = base.Columns["Вид_топлива"];
+                this.columnномер_водительского_удостоверения = base.Columns["номер_водительского_удостоверения"];
+                this.columnсрок_действия_мед_справки = base.Columns["срок_действия_мед_справки"];
+                this.columnГос_номер = base.Columns["Гос_номер"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnклассность = new global::System.Data.DataColumn("классность", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnклассность);
+                this.columnФИО = new global::System.Data.DataColumn("ФИО", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnФИО);
+                this.columnМарка_и_модель = new global::System.Data.DataColumn("Марка_и_модель", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnМарка_и_модель.ExtendedProperties.Add("Generator_ColumnPropNameInRow", "Марка_и_модель");
+                this.columnМарка_и_модель.ExtendedProperties.Add("Generator_ColumnPropNameInTable", "Марка_и_модельColumn");
+                this.columnМарка_и_модель.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "columnМарка_и_модель");
+                this.columnМарка_и_модель.ExtendedProperties.Add("Generator_UserColumnName", "Марка_и_модель");
+                base.Columns.Add(this.columnМарка_и_модель);
+                this.columnГаражный_номер = new global::System.Data.DataColumn("Гаражный_номер", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnГаражный_номер.ExtendedProperties.Add("Generator_ColumnPropNameInRow", "Гаражный_номер");
+                this.columnГаражный_номер.ExtendedProperties.Add("Generator_ColumnPropNameInTable", "Гаражный_номерColumn");
+                this.columnГаражный_номер.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "columnГаражный_номер");
+                this.columnГаражный_номер.ExtendedProperties.Add("Generator_UserColumnName", "Гаражный_номер");
+                base.Columns.Add(this.columnГаражный_номер);
+                this.columnдата_окончания_страховки = new global::System.Data.DataColumn("дата_окончания_страховки", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                this.columnдата_окончания_страховки.ExtendedProperties.Add("Generator_ColumnPropNameInRow", "дата_окончания_страховки");
+                this.columnдата_окончания_страховки.ExtendedProperties.Add("Generator_ColumnPropNameInTable", "дата_окончания_страховкиColumn");
+                this.columnдата_окончания_страховки.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "columnдата_окончания_страховки");
+                this.columnдата_окончания_страховки.ExtendedProperties.Add("Generator_UserColumnName", "дата_окончания_страховки");
+                base.Columns.Add(this.columnдата_окончания_страховки);
+                this.columnВид_топлива = new global::System.Data.DataColumn("Вид_топлива", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnВид_топлива.ExtendedProperties.Add("Generator_ColumnPropNameInRow", "Вид_топлива");
+                this.columnВид_топлива.ExtendedProperties.Add("Generator_ColumnPropNameInTable", "Вид_топливаColumn");
+                this.columnВид_топлива.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "columnВид_топлива");
+                this.columnВид_топлива.ExtendedProperties.Add("Generator_UserColumnName", "Вид_топлива");
+                base.Columns.Add(this.columnВид_топлива);
+                this.columnномер_водительского_удостоверения = new global::System.Data.DataColumn("номер_водительского_удостоверения", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnномер_водительского_удостоверения.ExtendedProperties.Add("Generator_ColumnPropNameInRow", "номер_водительского_удостоверения");
+                this.columnномер_водительского_удостоверения.ExtendedProperties.Add("Generator_ColumnPropNameInTable", "номер_водительского_удостоверенияColumn");
+                this.columnномер_водительского_удостоверения.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "columnномер_водительского_удостоверения");
+                this.columnномер_водительского_удостоверения.ExtendedProperties.Add("Generator_UserColumnName", "номер_водительского_удостоверения");
+                base.Columns.Add(this.columnномер_водительского_удостоверения);
+                this.columnсрок_действия_мед_справки = new global::System.Data.DataColumn("срок_действия_мед_справки", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnсрок_действия_мед_справки);
+                this.columnГос_номер = new global::System.Data.DataColumn("Гос_номер", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnГос_номер);
+                this.columnФИО.ReadOnly = true;
+                this.columnФИО.MaxLength = 152;
+                this.columnМарка_и_модель.AllowDBNull = false;
+                this.columnМарка_и_модель.MaxLength = 50;
+                this.columnГаражный_номер.MaxLength = 50;
+                this.columnВид_топлива.MaxLength = 20;
+                this.columnномер_водительского_удостоверения.MaxLength = 50;
+                this.columnГос_номер.AllowDBNull = false;
+                this.columnГос_номер.MaxLength = 50;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public HeaderJournalRow NewHeaderJournalRow() {
+                return ((HeaderJournalRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new HeaderJournalRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(HeaderJournalRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.HeaderJournalRowChanged != null)) {
+                    this.HeaderJournalRowChanged(this, new HeaderJournalRowChangeEvent(((HeaderJournalRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.HeaderJournalRowChanging != null)) {
+                    this.HeaderJournalRowChanging(this, new HeaderJournalRowChangeEvent(((HeaderJournalRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.HeaderJournalRowDeleted != null)) {
+                    this.HeaderJournalRowDeleted(this, new HeaderJournalRowChangeEvent(((HeaderJournalRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.HeaderJournalRowDeleting != null)) {
+                    this.HeaderJournalRowDeleting(this, new HeaderJournalRowChangeEvent(((HeaderJournalRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemoveHeaderJournalRow(HeaderJournalRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                AutoparkDB ds = new AutoparkDB();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "HeaderJournalDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class Личный_состав_СправкиDataTable : global::System.Data.TypedTableBase<Личный_состав_СправкиRow> {
+            
+            private global::System.Data.DataColumn columnтабельный__номер;
+            
+            private global::System.Data.DataColumn columnФамилия;
+            
+            private global::System.Data.DataColumn columnИмя;
+            
+            private global::System.Data.DataColumn columnОтчество;
+            
+            private global::System.Data.DataColumn columnномер_водительского_удостоверения;
+            
+            private global::System.Data.DataColumn columnсрок_действия_мед__справки;
+            
+            private global::System.Data.DataColumn columnостаток_дней_до_окончания_срока_действия_справки;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public Личный_состав_СправкиDataTable() {
+                this.TableName = "Личный состав Справки";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal Личный_состав_СправкиDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected Личный_состав_СправкиDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn табельный__номерColumn {
+                get {
+                    return this.columnтабельный__номер;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ФамилияColumn {
+                get {
+                    return this.columnФамилия;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ИмяColumn {
+                get {
+                    return this.columnИмя;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ОтчествоColumn {
+                get {
+                    return this.columnОтчество;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn номер_водительского_удостоверенияColumn {
+                get {
+                    return this.columnномер_водительского_удостоверения;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn срок_действия_мед__справкиColumn {
+                get {
+                    return this.columnсрок_действия_мед__справки;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn остаток_дней_до_окончания_срока_действия_справкиColumn {
+                get {
+                    return this.columnостаток_дней_до_окончания_срока_действия_справки;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public Личный_состав_СправкиRow this[int index] {
+                get {
+                    return ((Личный_состав_СправкиRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event Личный_состав_СправкиRowChangeEventHandler Личный_состав_СправкиRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event Личный_состав_СправкиRowChangeEventHandler Личный_состав_СправкиRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event Личный_состав_СправкиRowChangeEventHandler Личный_состав_СправкиRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event Личный_состав_СправкиRowChangeEventHandler Личный_состав_СправкиRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddЛичный_состав_СправкиRow(Личный_состав_СправкиRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public Личный_состав_СправкиRow AddЛичный_состав_СправкиRow(int табельный__номер, string Фамилия, string Имя, string Отчество, string номер_водительского_удостоверения, System.DateTime срок_действия_мед__справки, int остаток_дней_до_окончания_срока_действия_справки) {
+                Личный_состав_СправкиRow rowЛичный_состав_СправкиRow = ((Личный_состав_СправкиRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        табельный__номер,
+                        Фамилия,
+                        Имя,
+                        Отчество,
+                        номер_водительского_удостоверения,
+                        срок_действия_мед__справки,
+                        остаток_дней_до_окончания_срока_действия_справки};
+                rowЛичный_состав_СправкиRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowЛичный_состав_СправкиRow);
+                return rowЛичный_состав_СправкиRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public Личный_состав_СправкиRow FindByтабельный__номер(int табельный__номер) {
+                return ((Личный_состав_СправкиRow)(this.Rows.Find(new object[] {
+                            табельный__номер})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                Личный_состав_СправкиDataTable cln = ((Личный_состав_СправкиDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new Личный_состав_СправкиDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnтабельный__номер = base.Columns["табельный  номер"];
+                this.columnФамилия = base.Columns["Фамилия"];
+                this.columnИмя = base.Columns["Имя"];
+                this.columnОтчество = base.Columns["Отчество"];
+                this.columnномер_водительского_удостоверения = base.Columns["номер водительского удостоверения"];
+                this.columnсрок_действия_мед__справки = base.Columns["срок действия мед_ справки"];
+                this.columnостаток_дней_до_окончания_срока_действия_справки = base.Columns["остаток дней до окончания срока действия справки"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnтабельный__номер = new global::System.Data.DataColumn("табельный  номер", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnтабельный__номер);
+                this.columnФамилия = new global::System.Data.DataColumn("Фамилия", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnФамилия);
+                this.columnИмя = new global::System.Data.DataColumn("Имя", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnИмя);
+                this.columnОтчество = new global::System.Data.DataColumn("Отчество", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnОтчество);
+                this.columnномер_водительского_удостоверения = new global::System.Data.DataColumn("номер водительского удостоверения", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnномер_водительского_удостоверения);
+                this.columnсрок_действия_мед__справки = new global::System.Data.DataColumn("срок действия мед_ справки", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnсрок_действия_мед__справки);
+                this.columnостаток_дней_до_окончания_срока_действия_справки = new global::System.Data.DataColumn("остаток дней до окончания срока действия справки", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnостаток_дней_до_окончания_срока_действия_справки);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnтабельный__номер}, true));
+                this.columnтабельный__номер.AllowDBNull = false;
+                this.columnтабельный__номер.Unique = true;
+                this.columnФамилия.MaxLength = 50;
+                this.columnИмя.MaxLength = 50;
+                this.columnОтчество.MaxLength = 50;
+                this.columnномер_водительского_удостоверения.MaxLength = 50;
+                this.columnсрок_действия_мед__справки.Caption = "срок действия мед. справки";
+                this.columnостаток_дней_до_окончания_срока_действия_справки.ReadOnly = true;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public Личный_состав_СправкиRow NewЛичный_состав_СправкиRow() {
+                return ((Личный_состав_СправкиRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new Личный_состав_СправкиRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(Личный_состав_СправкиRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.Личный_состав_СправкиRowChanged != null)) {
+                    this.Личный_состав_СправкиRowChanged(this, new Личный_состав_СправкиRowChangeEvent(((Личный_состав_СправкиRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.Личный_состав_СправкиRowChanging != null)) {
+                    this.Личный_состав_СправкиRowChanging(this, new Личный_состав_СправкиRowChangeEvent(((Личный_состав_СправкиRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.Личный_состав_СправкиRowDeleted != null)) {
+                    this.Личный_состав_СправкиRowDeleted(this, new Личный_состав_СправкиRowChangeEvent(((Личный_состав_СправкиRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.Личный_состав_СправкиRowDeleting != null)) {
+                    this.Личный_состав_СправкиRowDeleting(this, new Личный_состав_СправкиRowChangeEvent(((Личный_состав_СправкиRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemoveЛичный_состав_СправкиRow(Личный_состав_СправкиRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                AutoparkDB ds = new AutoparkDB();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "Личный_состав_СправкиDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class Водители_автоDataTable : global::System.Data.TypedTableBase<Водители_автоRow> {
+            
+            private global::System.Data.DataColumn columnID;
+            
+            private global::System.Data.DataColumn columnID_Водитель;
+            
+            private global::System.Data.DataColumn columnID_Авто;
+            
+            private global::System.Data.DataColumn columnDate;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public Водители_автоDataTable() {
+                this.TableName = "Водители авто";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal Водители_автоDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected Водители_автоDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn IDColumn {
+                get {
+                    return this.columnID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ID_ВодительColumn {
+                get {
+                    return this.columnID_Водитель;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ID_АвтоColumn {
+                get {
+                    return this.columnID_Авто;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DateColumn {
+                get {
+                    return this.columnDate;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public Водители_автоRow this[int index] {
+                get {
+                    return ((Водители_автоRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event Водители_автоRowChangeEventHandler Водители_автоRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event Водители_автоRowChangeEventHandler Водители_автоRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event Водители_автоRowChangeEventHandler Водители_автоRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event Водители_автоRowChangeEventHandler Водители_автоRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddВодители_автоRow(Водители_автоRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public Водители_автоRow AddВодители_автоRow(Личный_составRow parentЛичный_составRowByFK_Водители_авто_id_водитель, Подвижной_составRow parentПодвижной_составRowByFK_Водители_авто_id_авто, System.DateTime Date) {
+                Водители_автоRow rowВодители_автоRow = ((Водители_автоRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        null,
+                        null,
+                        null,
+                        Date};
+                if ((parentЛичный_составRowByFK_Водители_авто_id_водитель != null)) {
+                    columnValuesArray[1] = parentЛичный_составRowByFK_Водители_авто_id_водитель[0];
+                }
+                if ((parentПодвижной_составRowByFK_Водители_авто_id_авто != null)) {
+                    columnValuesArray[2] = parentПодвижной_составRowByFK_Водители_авто_id_авто[0];
+                }
+                rowВодители_автоRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowВодители_автоRow);
+                return rowВодители_автоRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public Водители_автоRow FindByID(int ID) {
+                return ((Водители_автоRow)(this.Rows.Find(new object[] {
+                            ID})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                Водители_автоDataTable cln = ((Водители_автоDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new Водители_автоDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnID = base.Columns["ID"];
+                this.columnID_Водитель = base.Columns["ID_Водитель"];
+                this.columnID_Авто = base.Columns["ID_Авто"];
+                this.columnDate = base.Columns["Date"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnID = new global::System.Data.DataColumn("ID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnID);
+                this.columnID_Водитель = new global::System.Data.DataColumn("ID_Водитель", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnID_Водитель);
+                this.columnID_Авто = new global::System.Data.DataColumn("ID_Авто", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnID_Авто);
+                this.columnDate = new global::System.Data.DataColumn("Date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDate);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnID}, true));
+                this.columnID.AutoIncrement = true;
+                this.columnID.AutoIncrementSeed = -1;
+                this.columnID.AutoIncrementStep = -1;
+                this.columnID.AllowDBNull = false;
+                this.columnID.ReadOnly = true;
+                this.columnID.Unique = true;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public Водители_автоRow NewВодители_автоRow() {
+                return ((Водители_автоRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new Водители_автоRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(Водители_автоRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.Водители_автоRowChanged != null)) {
+                    this.Водители_автоRowChanged(this, new Водители_автоRowChangeEvent(((Водители_автоRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.Водители_автоRowChanging != null)) {
+                    this.Водители_автоRowChanging(this, new Водители_автоRowChangeEvent(((Водители_автоRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.Водители_автоRowDeleted != null)) {
+                    this.Водители_автоRowDeleted(this, new Водители_автоRowChangeEvent(((Водители_автоRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.Водители_автоRowDeleting != null)) {
+                    this.Водители_автоRowDeleting(this, new Водители_автоRowChangeEvent(((Водители_автоRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemoveВодители_автоRow(Водители_автоRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                AutoparkDB ds = new AutoparkDB();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "Водители_автоDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -7331,6 +7745,17 @@ namespace AUTOPARK {
                 }
                 else {
                     return ((Путевой_лист_Грузового_автоRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Путевой лист Грузового авто_Подвижной состав1"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public Водители_автоRow[] GetВодители_автоRows() {
+                if ((this.Table.ChildRelations["FK_Водители авто_id_авто"] == null)) {
+                    return new Водители_автоRow[0];
+                }
+                else {
+                    return ((Водители_автоRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Водители авто_id_авто"])));
                 }
             }
         }
@@ -8388,6 +8813,17 @@ namespace AUTOPARK {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public Личный_состав_СправкиRow Личный_состав_СправкиRow {
+                get {
+                    return ((Личный_состав_СправкиRow)(this.GetParentRow(this.Table.ParentRelations["FK_Путевой лист легкового автомобиля_личный состав"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_Путевой лист легкового автомобиля_личный состав"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsНомер_путевого_листаNull() {
                 return this.IsNull(this.tablePutevoiListLegkTable.Номер_путевого_листаColumn);
             }
@@ -8718,6 +9154,17 @@ namespace AUTOPARK {
                     return ((Путевой_лист_Грузового_автоRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Путевой лист Грузового авто_личный состав3"])));
                 }
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public Водители_автоRow[] GetВодители_автоRows() {
+                if ((this.Table.ChildRelations["FK_Водители авто_id_водитель"] == null)) {
+                    return new Водители_автоRow[0];
+                }
+                else {
+                    return ((Водители_автоRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Водители авто_id_водитель"])));
+                }
+            }
         }
         
         /// <summary>
@@ -9020,835 +9467,6 @@ namespace AUTOPARK {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetКоличество_поездок_с_грузом_часNull() {
                 this[this.tableЗадание_водителю.Количество_поездок_с_грузом_часColumn] = global::System.Convert.DBNull;
-            }
-        }
-        
-        /// <summary>
-        ///Represents strongly named DataRow class.
-        ///</summary>
-        public partial class DanieJournalLegkovieRow : global::System.Data.DataRow {
-            
-            private DanieJournalLegkovieDataTable tableDanieJournalLegkovie;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal DanieJournalLegkovieRow(global::System.Data.DataRowBuilder rb) : 
-                    base(rb) {
-                this.tableDanieJournalLegkovie = ((DanieJournalLegkovieDataTable)(this.Table));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime Число {
-                get {
-                    return ((global::System.DateTime)(this[this.tableDanieJournalLegkovie.ЧислоColumn]));
-                }
-                set {
-                    this[this.tableDanieJournalLegkovie.ЧислоColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Номер_путевого_листа {
-                get {
-                    try {
-                        return ((string)(this[this.tableDanieJournalLegkovie.Номер_путевого_листаColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Номер путевого листа\' in table \'DanieJournalLegkovie\' is DB" +
-                                "Null.", e);
-                    }
-                }
-                set {
-                    this[this.tableDanieJournalLegkovie.Номер_путевого_листаColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public double Остаток_топлива_при_выезде {
-                get {
-                    return ((double)(this[this.tableDanieJournalLegkovie.Остаток_топлива_при_выездеColumn]));
-                }
-                set {
-                    this[this.tableDanieJournalLegkovie.Остаток_топлива_при_выездеColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public double Остаток_топлива_при_возвращении {
-                get {
-                    return ((double)(this[this.tableDanieJournalLegkovie.Остаток_топлива_при_возвращенииColumn]));
-                }
-                set {
-                    this[this.tableDanieJournalLegkovie.Остаток_топлива_при_возвращенииColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.TimeSpan Время_выезда {
-                get {
-                    return ((global::System.TimeSpan)(this[this.tableDanieJournalLegkovie.Время_выездаColumn]));
-                }
-                set {
-                    this[this.tableDanieJournalLegkovie.Время_выездаColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.TimeSpan Время_возвращения {
-                get {
-                    return ((global::System.TimeSpan)(this[this.tableDanieJournalLegkovie.Время_возвращенияColumn]));
-                }
-                set {
-                    this[this.tableDanieJournalLegkovie.Время_возвращенияColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int Показания_спидометра_при_выезде {
-                get {
-                    return ((int)(this[this.tableDanieJournalLegkovie.Показания_спидометра_при_выездеColumn]));
-                }
-                set {
-                    this[this.tableDanieJournalLegkovie.Показания_спидометра_при_выездеColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int Показания_спидометра_при_возвращении {
-                get {
-                    return ((int)(this[this.tableDanieJournalLegkovie.Показания_спидометра_при_возвращенииColumn]));
-                }
-                set {
-                    this[this.tableDanieJournalLegkovie.Показания_спидометра_при_возвращенииColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string В_чье_распоряжение_занаряжена_автомашина {
-                get {
-                    try {
-                        return ((string)(this[this.tableDanieJournalLegkovie.В_чье_распоряжение_занаряжена_автомашинаColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'В чье распоряжение занаряжена автомашина\' in table \'DanieJo" +
-                                "urnalLegkovie\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableDanieJournalLegkovie.В_чье_распоряжение_занаряжена_автомашинаColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Маршрут_перевозки_откуда {
-                get {
-                    try {
-                        return ((string)(this[this.tableDanieJournalLegkovie.Маршрут_перевозки_откудаColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Маршрут перевозки откуда\' in table \'DanieJournalLegkovie\' i" +
-                                "s DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableDanieJournalLegkovie.Маршрут_перевозки_откудаColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Маршрут_перевозки_куда {
-                get {
-                    try {
-                        return ((string)(this[this.tableDanieJournalLegkovie.Маршрут_перевозки_кудаColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Маршрут перевозки куда\' in table \'DanieJournalLegkovie\' is " +
-                                "DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableDanieJournalLegkovie.Маршрут_перевозки_кудаColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public double Заправлено_топлива_л {
-                get {
-                    return ((double)(this[this.tableDanieJournalLegkovie.Заправлено_топлива_лColumn]));
-                }
-                set {
-                    this[this.tableDanieJournalLegkovie.Заправлено_топлива_лColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsНомер_путевого_листаNull() {
-                return this.IsNull(this.tableDanieJournalLegkovie.Номер_путевого_листаColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetНомер_путевого_листаNull() {
-                this[this.tableDanieJournalLegkovie.Номер_путевого_листаColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsВ_чье_распоряжение_занаряжена_автомашинаNull() {
-                return this.IsNull(this.tableDanieJournalLegkovie.В_чье_распоряжение_занаряжена_автомашинаColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetВ_чье_распоряжение_занаряжена_автомашинаNull() {
-                this[this.tableDanieJournalLegkovie.В_чье_распоряжение_занаряжена_автомашинаColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsМаршрут_перевозки_откудаNull() {
-                return this.IsNull(this.tableDanieJournalLegkovie.Маршрут_перевозки_откудаColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetМаршрут_перевозки_откудаNull() {
-                this[this.tableDanieJournalLegkovie.Маршрут_перевозки_откудаColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsМаршрут_перевозки_кудаNull() {
-                return this.IsNull(this.tableDanieJournalLegkovie.Маршрут_перевозки_кудаColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetМаршрут_перевозки_кудаNull() {
-                this[this.tableDanieJournalLegkovie.Маршрут_перевозки_кудаColumn] = global::System.Convert.DBNull;
-            }
-        }
-        
-        /// <summary>
-        ///Represents strongly named DataRow class.
-        ///</summary>
-        public partial class DanieJournalGruzovieRow : global::System.Data.DataRow {
-            
-            private DanieJournalGruzovieDataTable tableDanieJournalGruzovie;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal DanieJournalGruzovieRow(global::System.Data.DataRowBuilder rb) : 
-                    base(rb) {
-                this.tableDanieJournalGruzovie = ((DanieJournalGruzovieDataTable)(this.Table));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int Номер_путевого_листа {
-                get {
-                    return ((int)(this[this.tableDanieJournalGruzovie.Номер_путевого_листаColumn]));
-                }
-                set {
-                    this[this.tableDanieJournalGruzovie.Номер_путевого_листаColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime Дата_путевого_листа {
-                get {
-                    return ((global::System.DateTime)(this[this.tableDanieJournalGruzovie.Дата_путевого_листаColumn]));
-                }
-                set {
-                    this[this.tableDanieJournalGruzovie.Дата_путевого_листаColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string В_чье_распоряжение_занаряжена_автомашина {
-                get {
-                    try {
-                        return ((string)(this[this.tableDanieJournalGruzovie.В_чье_распоряжение_занаряжена_автомашинаColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'В чье распоряжение занаряжена автомашина\' in table \'DanieJo" +
-                                "urnalGruzovie\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableDanieJournalGruzovie.В_чье_распоряжение_занаряжена_автомашинаColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Пункт_отправления {
-                get {
-                    try {
-                        return ((string)(this[this.tableDanieJournalGruzovie.Пункт_отправленияColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Пункт отправления\' in table \'DanieJournalGruzovie\' is DBNul" +
-                                "l.", e);
-                    }
-                }
-                set {
-                    this[this.tableDanieJournalGruzovie.Пункт_отправленияColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Пункт_назначения {
-                get {
-                    try {
-                        return ((string)(this[this.tableDanieJournalGruzovie.Пункт_назначенияColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Пункт назначения\' in table \'DanieJournalGruzovie\' is DBNull" +
-                                ".", e);
-                    }
-                }
-                set {
-                    this[this.tableDanieJournalGruzovie.Пункт_назначенияColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public double Количество {
-                get {
-                    try {
-                        return ((double)(this[this.tableDanieJournalGruzovie.КоличествоColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Количество\' in table \'DanieJournalGruzovie\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableDanieJournalGruzovie.КоличествоColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int Спидометр_при_выезде {
-                get {
-                    try {
-                        return ((int)(this[this.tableDanieJournalGruzovie.Спидометр_при_выездеColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Спидометр при выезде\' in table \'DanieJournalGruzovie\' is DB" +
-                                "Null.", e);
-                    }
-                }
-                set {
-                    this[this.tableDanieJournalGruzovie.Спидометр_при_выездеColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int Спидометр_при_возвращении {
-                get {
-                    try {
-                        return ((int)(this[this.tableDanieJournalGruzovie.Спидометр_при_возвращенииColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Спидометр при возвращении\' in table \'DanieJournalGruzovie\' " +
-                                "is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableDanieJournalGruzovie.Спидометр_при_возвращенииColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.TimeSpan Время_выезда {
-                get {
-                    try {
-                        return ((global::System.TimeSpan)(this[this.tableDanieJournalGruzovie.Время_выездаColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Время выезда\' in table \'DanieJournalGruzovie\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableDanieJournalGruzovie.Время_выездаColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.TimeSpan Время_возвращения {
-                get {
-                    try {
-                        return ((global::System.TimeSpan)(this[this.tableDanieJournalGruzovie.Время_возвращенияColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Время возвращения\' in table \'DanieJournalGruzovie\' is DBNul" +
-                                "l.", e);
-                    }
-                }
-                set {
-                    this[this.tableDanieJournalGruzovie.Время_возвращенияColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Остаток_ТСМ_при_выезде {
-                get {
-                    return ((string)(this[this.tableDanieJournalGruzovie.Остаток_ТСМ_при_выездеColumn]));
-                }
-                set {
-                    this[this.tableDanieJournalGruzovie.Остаток_ТСМ_при_выездеColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Остаток_ТСМ_при_возвращении {
-                get {
-                    try {
-                        return ((string)(this[this.tableDanieJournalGruzovie.Остаток_ТСМ_при_возвращенииColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Остаток ТСМ при возвращении\' in table \'DanieJournalGruzovie" +
-                                "\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableDanieJournalGruzovie.Остаток_ТСМ_при_возвращенииColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsВ_чье_распоряжение_занаряжена_автомашинаNull() {
-                return this.IsNull(this.tableDanieJournalGruzovie.В_чье_распоряжение_занаряжена_автомашинаColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetВ_чье_распоряжение_занаряжена_автомашинаNull() {
-                this[this.tableDanieJournalGruzovie.В_чье_распоряжение_занаряжена_автомашинаColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsПункт_отправленияNull() {
-                return this.IsNull(this.tableDanieJournalGruzovie.Пункт_отправленияColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetПункт_отправленияNull() {
-                this[this.tableDanieJournalGruzovie.Пункт_отправленияColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsПункт_назначенияNull() {
-                return this.IsNull(this.tableDanieJournalGruzovie.Пункт_назначенияColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetПункт_назначенияNull() {
-                this[this.tableDanieJournalGruzovie.Пункт_назначенияColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsКоличествоNull() {
-                return this.IsNull(this.tableDanieJournalGruzovie.КоличествоColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetКоличествоNull() {
-                this[this.tableDanieJournalGruzovie.КоличествоColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsСпидометр_при_выездеNull() {
-                return this.IsNull(this.tableDanieJournalGruzovie.Спидометр_при_выездеColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetСпидометр_при_выездеNull() {
-                this[this.tableDanieJournalGruzovie.Спидометр_при_выездеColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsСпидометр_при_возвращенииNull() {
-                return this.IsNull(this.tableDanieJournalGruzovie.Спидометр_при_возвращенииColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetСпидометр_при_возвращенииNull() {
-                this[this.tableDanieJournalGruzovie.Спидометр_при_возвращенииColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsВремя_выездаNull() {
-                return this.IsNull(this.tableDanieJournalGruzovie.Время_выездаColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetВремя_выездаNull() {
-                this[this.tableDanieJournalGruzovie.Время_выездаColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsВремя_возвращенияNull() {
-                return this.IsNull(this.tableDanieJournalGruzovie.Время_возвращенияColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetВремя_возвращенияNull() {
-                this[this.tableDanieJournalGruzovie.Время_возвращенияColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsОстаток_ТСМ_при_возвращенииNull() {
-                return this.IsNull(this.tableDanieJournalGruzovie.Остаток_ТСМ_при_возвращенииColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetОстаток_ТСМ_при_возвращенииNull() {
-                this[this.tableDanieJournalGruzovie.Остаток_ТСМ_при_возвращенииColumn] = global::System.Convert.DBNull;
-            }
-        }
-        
-        /// <summary>
-        ///Represents strongly named DataRow class.
-        ///</summary>
-        public partial class BannerJornalGruzovieRow : global::System.Data.DataRow {
-            
-            private BannerJornalGruzovieDataTable tableBannerJornalGruzovie;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal BannerJornalGruzovieRow(global::System.Data.DataRowBuilder rb) : 
-                    base(rb) {
-                this.tableBannerJornalGruzovie = ((BannerJornalGruzovieDataTable)(this.Table));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Фамилия {
-                get {
-                    try {
-                        return ((string)(this[this.tableBannerJornalGruzovie.ФамилияColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Фамилия\' in table \'BannerJornalGruzovie\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableBannerJornalGruzovie.ФамилияColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Имя {
-                get {
-                    try {
-                        return ((string)(this[this.tableBannerJornalGruzovie.ИмяColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Имя\' in table \'BannerJornalGruzovie\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableBannerJornalGruzovie.ИмяColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Отчество {
-                get {
-                    try {
-                        return ((string)(this[this.tableBannerJornalGruzovie.ОтчествоColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Отчество\' in table \'BannerJornalGruzovie\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableBannerJornalGruzovie.ОтчествоColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime срок_действия_мед__справки {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableBannerJornalGruzovie.срок_действия_мед__справкиColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'срок действия мед_ справки\' in table \'BannerJornalGruzovie\'" +
-                                " is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableBannerJornalGruzovie.срок_действия_мед__справкиColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int классность {
-                get {
-                    try {
-                        return ((int)(this[this.tableBannerJornalGruzovie.классностьColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'классность\' in table \'BannerJornalGruzovie\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableBannerJornalGruzovie.классностьColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string номер_водительского_удостоверения {
-                get {
-                    try {
-                        return ((string)(this[this.tableBannerJornalGruzovie.номер_водительского_удостоверенияColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'номер водительского удостоверения\' in table \'BannerJornalGr" +
-                                "uzovie\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableBannerJornalGruzovie.номер_водительского_удостоверенияColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Марка_и_модель {
-                get {
-                    return ((string)(this[this.tableBannerJornalGruzovie.Марка_и_модельColumn]));
-                }
-                set {
-                    this[this.tableBannerJornalGruzovie.Марка_и_модельColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Гос_номер {
-                get {
-                    return ((string)(this[this.tableBannerJornalGruzovie.Гос_номерColumn]));
-                }
-                set {
-                    this[this.tableBannerJornalGruzovie.Гос_номерColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Гаражный_номер {
-                get {
-                    try {
-                        return ((string)(this[this.tableBannerJornalGruzovie.Гаражный_номерColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Гаражный номер\' in table \'BannerJornalGruzovie\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableBannerJornalGruzovie.Гаражный_номерColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime дата_окончания_страховки {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableBannerJornalGruzovie.дата_окончания_страховкиColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'дата окончания страховки\' in table \'BannerJornalGruzovie\' i" +
-                                "s DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableBannerJornalGruzovie.дата_окончания_страховкиColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Вид_топлива {
-                get {
-                    try {
-                        return ((string)(this[this.tableBannerJornalGruzovie.Вид_топливаColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Вид топлива\' in table \'BannerJornalGruzovie\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableBannerJornalGruzovie.Вид_топливаColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int ID {
-                get {
-                    return ((int)(this[this.tableBannerJornalGruzovie.IDColumn]));
-                }
-                set {
-                    this[this.tableBannerJornalGruzovie.IDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsФамилияNull() {
-                return this.IsNull(this.tableBannerJornalGruzovie.ФамилияColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetФамилияNull() {
-                this[this.tableBannerJornalGruzovie.ФамилияColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsИмяNull() {
-                return this.IsNull(this.tableBannerJornalGruzovie.ИмяColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetИмяNull() {
-                this[this.tableBannerJornalGruzovie.ИмяColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsОтчествоNull() {
-                return this.IsNull(this.tableBannerJornalGruzovie.ОтчествоColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetОтчествоNull() {
-                this[this.tableBannerJornalGruzovie.ОтчествоColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Isсрок_действия_мед__справкиNull() {
-                return this.IsNull(this.tableBannerJornalGruzovie.срок_действия_мед__справкиColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Setсрок_действия_мед__справкиNull() {
-                this[this.tableBannerJornalGruzovie.срок_действия_мед__справкиColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsклассностьNull() {
-                return this.IsNull(this.tableBannerJornalGruzovie.классностьColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetклассностьNull() {
-                this[this.tableBannerJornalGruzovie.классностьColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Isномер_водительского_удостоверенияNull() {
-                return this.IsNull(this.tableBannerJornalGruzovie.номер_водительского_удостоверенияColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Setномер_водительского_удостоверенияNull() {
-                this[this.tableBannerJornalGruzovie.номер_водительского_удостоверенияColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsГаражный_номерNull() {
-                return this.IsNull(this.tableBannerJornalGruzovie.Гаражный_номерColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetГаражный_номерNull() {
-                this[this.tableBannerJornalGruzovie.Гаражный_номерColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Isдата_окончания_страховкиNull() {
-                return this.IsNull(this.tableBannerJornalGruzovie.дата_окончания_страховкиColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Setдата_окончания_страховкиNull() {
-                this[this.tableBannerJornalGruzovie.дата_окончания_страховкиColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsВид_топливаNull() {
-                return this.IsNull(this.tableBannerJornalGruzovie.Вид_топливаColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetВид_топливаNull() {
-                this[this.tableBannerJornalGruzovie.Вид_топливаColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -10977,6 +10595,40 @@ namespace AUTOPARK {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Пункт_отправления {
+                get {
+                    try {
+                        return ((string)(this[this.tableПутевой_лист_Грузового_авто.Пункт_отправленияColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Пункт_отправления\' in table \'Путевой лист Грузового авто\' i" +
+                                "s DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableПутевой_лист_Грузового_авто.Пункт_отправленияColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Пункт_назначения {
+                get {
+                    try {
+                        return ((string)(this[this.tableПутевой_лист_Грузового_авто.Пункт_назначенияColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Пункт_назначения\' in table \'Путевой лист Грузового авто\' is" +
+                                " DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableПутевой_лист_Грузового_авто.Пункт_назначенияColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public ОтделыRow ОтделыRow {
                 get {
                     return ((ОтделыRow)(this.GetParentRow(this.Table.ParentRelations["FK_Путевой лист Грузового авто_id_отдела1"])));
@@ -11005,6 +10657,17 @@ namespace AUTOPARK {
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["FK_Путевой лист Грузового авто_Подвижной состав1"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public Личный_состав_СправкиRow Личный_состав_СправкиRow {
+                get {
+                    return ((Личный_состав_СправкиRow)(this.GetParentRow(this.Table.ParentRelations["FK_Путевой лист Грузового авто_личный состав2"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_Путевой лист Грузового авто_личный состав2"]);
                 }
             }
             
@@ -11214,6 +10877,30 @@ namespace AUTOPARK {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsПункт_отправленияNull() {
+                return this.IsNull(this.tableПутевой_лист_Грузового_авто.Пункт_отправленияColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetПункт_отправленияNull() {
+                this[this.tableПутевой_лист_Грузового_авто.Пункт_отправленияColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsПункт_назначенияNull() {
+                return this.IsNull(this.tableПутевой_лист_Грузового_авто.Пункт_назначенияColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetПункт_назначенияNull() {
+                this[this.tableПутевой_лист_Грузового_авто.Пункт_назначенияColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public Задание_водителюRow[] GetЗадание_водителюRows() {
                 if ((this.Table.ChildRelations["FK_Задание водителю_Путевой лист Грузового авто1"] == null)) {
                     return new Задание_водителюRow[0];
@@ -11232,6 +10919,1047 @@ namespace AUTOPARK {
                 else {
                     return ((Заправка_ТСМRow[])(base.GetChildRows(this.Table.ChildRelations["Путевой лист Грузового авто_Заправка ТСМ"])));
                 }
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class DanieJournalRow : global::System.Data.DataRow {
+            
+            private DanieJournalDataTable tableDanieJournal;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal DanieJournalRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableDanieJournal = ((DanieJournalDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string ФИО {
+                get {
+                    try {
+                        return ((string)(this[this.tableDanieJournal.ФИОColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ФИО\' in table \'DanieJournal\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDanieJournal.ФИОColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Подразделение {
+                get {
+                    try {
+                        return ((string)(this[this.tableDanieJournal.ПодразделениеColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Подразделение\' in table \'DanieJournal\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDanieJournal.ПодразделениеColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Пункт_отправления {
+                get {
+                    try {
+                        return ((string)(this[this.tableDanieJournal.Пункт_отправленияColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Пункт_отправления\' in table \'DanieJournal\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDanieJournal.Пункт_отправленияColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Пункт_назначения {
+                get {
+                    try {
+                        return ((string)(this[this.tableDanieJournal.Пункт_назначенияColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Пункт_назначения\' in table \'DanieJournal\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDanieJournal.Пункт_назначенияColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double Остаток_ТСМ1_выезд {
+                get {
+                    try {
+                        return ((double)(this[this.tableDanieJournal.Остаток_ТСМ1_выездColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Остаток_ТСМ1_выезд\' in table \'DanieJournal\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDanieJournal.Остаток_ТСМ1_выездColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double Остаток_ТСМ1_возвр {
+                get {
+                    try {
+                        return ((double)(this[this.tableDanieJournal.Остаток_ТСМ1_возврColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Остаток_ТСМ1_возвр\' in table \'DanieJournal\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDanieJournal.Остаток_ТСМ1_возврColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double Остаток_ТСМ2_выезд {
+                get {
+                    try {
+                        return ((double)(this[this.tableDanieJournal.Остаток_ТСМ2_выездColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Остаток_ТСМ2_выезд\' in table \'DanieJournal\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDanieJournal.Остаток_ТСМ2_выездColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double Остаток_ТСМ2_возвр {
+                get {
+                    try {
+                        return ((double)(this[this.tableDanieJournal.Остаток_ТСМ2_возврColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Остаток_ТСМ2_возвр\' in table \'DanieJournal\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDanieJournal.Остаток_ТСМ2_возврColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int Показания_спидометра_при_выезде {
+                get {
+                    try {
+                        return ((int)(this[this.tableDanieJournal.Показания_спидометра_при_выездеColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Показания_спидометра_при_выезде\' in table \'DanieJournal\' is" +
+                                " DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDanieJournal.Показания_спидометра_при_выездеColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int Показания_спидометра_при_возвращении {
+                get {
+                    try {
+                        return ((int)(this[this.tableDanieJournal.Показания_спидометра_при_возвращенииColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Показания_спидометра_при_возвращении\' in table \'DanieJourna" +
+                                "l\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDanieJournal.Показания_спидометра_при_возвращенииColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime Дата_путевого_листа {
+                get {
+                    return ((global::System.DateTime)(this[this.tableDanieJournal.Дата_путевого_листаColumn]));
+                }
+                set {
+                    this[this.tableDanieJournal.Дата_путевого_листаColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int Номер_путевого_листа {
+                get {
+                    return ((int)(this[this.tableDanieJournal.Номер_путевого_листаColumn]));
+                }
+                set {
+                    this[this.tableDanieJournal.Номер_путевого_листаColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double Заправлено_ТСМ1 {
+                get {
+                    try {
+                        return ((double)(this[this.tableDanieJournal.Заправлено_ТСМ1Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Заправлено_ТСМ1\' in table \'DanieJournal\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDanieJournal.Заправлено_ТСМ1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double Заправлено_ТСМ2 {
+                get {
+                    try {
+                        return ((double)(this[this.tableDanieJournal.Заправлено_ТСМ2Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Заправлено_ТСМ2\' in table \'DanieJournal\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDanieJournal.Заправлено_ТСМ2Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.TimeSpan Дата_Время_выезда_факт {
+                get {
+                    try {
+                        return ((global::System.TimeSpan)(this[this.tableDanieJournal.Дата_Время_выезда_фактColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Дата_Время_выезда_факт\' in table \'DanieJournal\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDanieJournal.Дата_Время_выезда_фактColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.TimeSpan Дата_Время_возвращения_факт {
+                get {
+                    try {
+                        return ((global::System.TimeSpan)(this[this.tableDanieJournal.Дата_Время_возвращения_фактColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Дата_Время_возвращения_факт\' in table \'DanieJournal\' is DBN" +
+                                "ull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDanieJournal.Дата_Время_возвращения_фактColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsФИОNull() {
+                return this.IsNull(this.tableDanieJournal.ФИОColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetФИОNull() {
+                this[this.tableDanieJournal.ФИОColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsПодразделениеNull() {
+                return this.IsNull(this.tableDanieJournal.ПодразделениеColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetПодразделениеNull() {
+                this[this.tableDanieJournal.ПодразделениеColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsПункт_отправленияNull() {
+                return this.IsNull(this.tableDanieJournal.Пункт_отправленияColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetПункт_отправленияNull() {
+                this[this.tableDanieJournal.Пункт_отправленияColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsПункт_назначенияNull() {
+                return this.IsNull(this.tableDanieJournal.Пункт_назначенияColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetПункт_назначенияNull() {
+                this[this.tableDanieJournal.Пункт_назначенияColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsОстаток_ТСМ1_выездNull() {
+                return this.IsNull(this.tableDanieJournal.Остаток_ТСМ1_выездColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetОстаток_ТСМ1_выездNull() {
+                this[this.tableDanieJournal.Остаток_ТСМ1_выездColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsОстаток_ТСМ1_возврNull() {
+                return this.IsNull(this.tableDanieJournal.Остаток_ТСМ1_возврColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetОстаток_ТСМ1_возврNull() {
+                this[this.tableDanieJournal.Остаток_ТСМ1_возврColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsОстаток_ТСМ2_выездNull() {
+                return this.IsNull(this.tableDanieJournal.Остаток_ТСМ2_выездColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetОстаток_ТСМ2_выездNull() {
+                this[this.tableDanieJournal.Остаток_ТСМ2_выездColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsОстаток_ТСМ2_возврNull() {
+                return this.IsNull(this.tableDanieJournal.Остаток_ТСМ2_возврColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetОстаток_ТСМ2_возврNull() {
+                this[this.tableDanieJournal.Остаток_ТСМ2_возврColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsПоказания_спидометра_при_выездеNull() {
+                return this.IsNull(this.tableDanieJournal.Показания_спидометра_при_выездеColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetПоказания_спидометра_при_выездеNull() {
+                this[this.tableDanieJournal.Показания_спидометра_при_выездеColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsПоказания_спидометра_при_возвращенииNull() {
+                return this.IsNull(this.tableDanieJournal.Показания_спидометра_при_возвращенииColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetПоказания_спидометра_при_возвращенииNull() {
+                this[this.tableDanieJournal.Показания_спидометра_при_возвращенииColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsЗаправлено_ТСМ1Null() {
+                return this.IsNull(this.tableDanieJournal.Заправлено_ТСМ1Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetЗаправлено_ТСМ1Null() {
+                this[this.tableDanieJournal.Заправлено_ТСМ1Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsЗаправлено_ТСМ2Null() {
+                return this.IsNull(this.tableDanieJournal.Заправлено_ТСМ2Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetЗаправлено_ТСМ2Null() {
+                this[this.tableDanieJournal.Заправлено_ТСМ2Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsДата_Время_выезда_фактNull() {
+                return this.IsNull(this.tableDanieJournal.Дата_Время_выезда_фактColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetДата_Время_выезда_фактNull() {
+                this[this.tableDanieJournal.Дата_Время_выезда_фактColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsДата_Время_возвращения_фактNull() {
+                return this.IsNull(this.tableDanieJournal.Дата_Время_возвращения_фактColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetДата_Время_возвращения_фактNull() {
+                this[this.tableDanieJournal.Дата_Время_возвращения_фактColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class HeaderJournalRow : global::System.Data.DataRow {
+            
+            private HeaderJournalDataTable tableHeaderJournal;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal HeaderJournalRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableHeaderJournal = ((HeaderJournalDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int классность {
+                get {
+                    try {
+                        return ((int)(this[this.tableHeaderJournal.классностьColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'классность\' in table \'HeaderJournal\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableHeaderJournal.классностьColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string ФИО {
+                get {
+                    try {
+                        return ((string)(this[this.tableHeaderJournal.ФИОColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ФИО\' in table \'HeaderJournal\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableHeaderJournal.ФИОColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Марка_и_модель {
+                get {
+                    return ((string)(this[this.tableHeaderJournal.Марка_и_модельColumn]));
+                }
+                set {
+                    this[this.tableHeaderJournal.Марка_и_модельColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Гаражный_номер {
+                get {
+                    try {
+                        return ((string)(this[this.tableHeaderJournal.Гаражный_номерColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Гаражный_номер\' in table \'HeaderJournal\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableHeaderJournal.Гаражный_номерColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime дата_окончания_страховки {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableHeaderJournal.дата_окончания_страховкиColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'дата_окончания_страховки\' in table \'HeaderJournal\' is DBNul" +
+                                "l.", e);
+                    }
+                }
+                set {
+                    this[this.tableHeaderJournal.дата_окончания_страховкиColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Вид_топлива {
+                get {
+                    try {
+                        return ((string)(this[this.tableHeaderJournal.Вид_топливаColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Вид_топлива\' in table \'HeaderJournal\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableHeaderJournal.Вид_топливаColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string номер_водительского_удостоверения {
+                get {
+                    try {
+                        return ((string)(this[this.tableHeaderJournal.номер_водительского_удостоверенияColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'номер_водительского_удостоверения\' in table \'HeaderJournal\'" +
+                                " is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableHeaderJournal.номер_водительского_удостоверенияColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime срок_действия_мед_справки {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableHeaderJournal.срок_действия_мед_справкиColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'срок_действия_мед_справки\' in table \'HeaderJournal\' is DBNu" +
+                                "ll.", e);
+                    }
+                }
+                set {
+                    this[this.tableHeaderJournal.срок_действия_мед_справкиColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Гос_номер {
+                get {
+                    return ((string)(this[this.tableHeaderJournal.Гос_номерColumn]));
+                }
+                set {
+                    this[this.tableHeaderJournal.Гос_номерColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsклассностьNull() {
+                return this.IsNull(this.tableHeaderJournal.классностьColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetклассностьNull() {
+                this[this.tableHeaderJournal.классностьColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsФИОNull() {
+                return this.IsNull(this.tableHeaderJournal.ФИОColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetФИОNull() {
+                this[this.tableHeaderJournal.ФИОColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsГаражный_номерNull() {
+                return this.IsNull(this.tableHeaderJournal.Гаражный_номерColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetГаражный_номерNull() {
+                this[this.tableHeaderJournal.Гаражный_номерColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isдата_окончания_страховкиNull() {
+                return this.IsNull(this.tableHeaderJournal.дата_окончания_страховкиColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setдата_окончания_страховкиNull() {
+                this[this.tableHeaderJournal.дата_окончания_страховкиColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsВид_топливаNull() {
+                return this.IsNull(this.tableHeaderJournal.Вид_топливаColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetВид_топливаNull() {
+                this[this.tableHeaderJournal.Вид_топливаColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isномер_водительского_удостоверенияNull() {
+                return this.IsNull(this.tableHeaderJournal.номер_водительского_удостоверенияColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setномер_водительского_удостоверенияNull() {
+                this[this.tableHeaderJournal.номер_водительского_удостоверенияColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isсрок_действия_мед_справкиNull() {
+                return this.IsNull(this.tableHeaderJournal.срок_действия_мед_справкиColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setсрок_действия_мед_справкиNull() {
+                this[this.tableHeaderJournal.срок_действия_мед_справкиColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class Личный_состав_СправкиRow : global::System.Data.DataRow {
+            
+            private Личный_состав_СправкиDataTable tableЛичный_состав_Справки;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal Личный_состав_СправкиRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableЛичный_состав_Справки = ((Личный_состав_СправкиDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int табельный__номер {
+                get {
+                    return ((int)(this[this.tableЛичный_состав_Справки.табельный__номерColumn]));
+                }
+                set {
+                    this[this.tableЛичный_состав_Справки.табельный__номерColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Фамилия {
+                get {
+                    try {
+                        return ((string)(this[this.tableЛичный_состав_Справки.ФамилияColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Фамилия\' in table \'Личный состав Справки\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableЛичный_состав_Справки.ФамилияColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Имя {
+                get {
+                    try {
+                        return ((string)(this[this.tableЛичный_состав_Справки.ИмяColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Имя\' in table \'Личный состав Справки\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableЛичный_состав_Справки.ИмяColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Отчество {
+                get {
+                    try {
+                        return ((string)(this[this.tableЛичный_состав_Справки.ОтчествоColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Отчество\' in table \'Личный состав Справки\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableЛичный_состав_Справки.ОтчествоColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string номер_водительского_удостоверения {
+                get {
+                    try {
+                        return ((string)(this[this.tableЛичный_состав_Справки.номер_водительского_удостоверенияColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'номер водительского удостоверения\' in table \'Личный состав " +
+                                "Справки\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableЛичный_состав_Справки.номер_водительского_удостоверенияColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime срок_действия_мед__справки {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableЛичный_состав_Справки.срок_действия_мед__справкиColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'срок действия мед_ справки\' in table \'Личный состав Справки" +
+                                "\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableЛичный_состав_Справки.срок_действия_мед__справкиColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int остаток_дней_до_окончания_срока_действия_справки {
+                get {
+                    try {
+                        return ((int)(this[this.tableЛичный_состав_Справки.остаток_дней_до_окончания_срока_действия_справкиColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'остаток дней до окончания срока действия справки\' in table " +
+                                "\'Личный состав Справки\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableЛичный_состав_Справки.остаток_дней_до_окончания_срока_действия_справкиColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsФамилияNull() {
+                return this.IsNull(this.tableЛичный_состав_Справки.ФамилияColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetФамилияNull() {
+                this[this.tableЛичный_состав_Справки.ФамилияColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsИмяNull() {
+                return this.IsNull(this.tableЛичный_состав_Справки.ИмяColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetИмяNull() {
+                this[this.tableЛичный_состав_Справки.ИмяColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsОтчествоNull() {
+                return this.IsNull(this.tableЛичный_состав_Справки.ОтчествоColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetОтчествоNull() {
+                this[this.tableЛичный_состав_Справки.ОтчествоColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isномер_водительского_удостоверенияNull() {
+                return this.IsNull(this.tableЛичный_состав_Справки.номер_водительского_удостоверенияColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setномер_водительского_удостоверенияNull() {
+                this[this.tableЛичный_состав_Справки.номер_водительского_удостоверенияColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isсрок_действия_мед__справкиNull() {
+                return this.IsNull(this.tableЛичный_состав_Справки.срок_действия_мед__справкиColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setсрок_действия_мед__справкиNull() {
+                this[this.tableЛичный_состав_Справки.срок_действия_мед__справкиColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isостаток_дней_до_окончания_срока_действия_справкиNull() {
+                return this.IsNull(this.tableЛичный_состав_Справки.остаток_дней_до_окончания_срока_действия_справкиColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setостаток_дней_до_окончания_срока_действия_справкиNull() {
+                this[this.tableЛичный_состав_Справки.остаток_дней_до_окончания_срока_действия_справкиColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public PutevoiListLegkTableRow[] GetPutevoiListLegkTableRows() {
+                if ((this.Table.ChildRelations["FK_Путевой лист легкового автомобиля_личный состав"] == null)) {
+                    return new PutevoiListLegkTableRow[0];
+                }
+                else {
+                    return ((PutevoiListLegkTableRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Путевой лист легкового автомобиля_личный состав"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public Путевой_лист_Грузового_автоRow[] GetПутевой_лист_Грузового_автоRows() {
+                if ((this.Table.ChildRelations["FK_Путевой лист Грузового авто_личный состав2"] == null)) {
+                    return new Путевой_лист_Грузового_автоRow[0];
+                }
+                else {
+                    return ((Путевой_лист_Грузового_автоRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Путевой лист Грузового авто_личный состав2"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public Водители_автоRow[] GetВодители_автоRows() {
+                if ((this.Table.ChildRelations["FK_Водители авто_id_водитель1"] == null)) {
+                    return new Водители_автоRow[0];
+                }
+                else {
+                    return ((Водители_автоRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Водители авто_id_водитель1"])));
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class Водители_автоRow : global::System.Data.DataRow {
+            
+            private Водители_автоDataTable tableВодители_авто;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal Водители_автоRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableВодители_авто = ((Водители_автоDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int ID {
+                get {
+                    return ((int)(this[this.tableВодители_авто.IDColumn]));
+                }
+                set {
+                    this[this.tableВодители_авто.IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int ID_Водитель {
+                get {
+                    try {
+                        return ((int)(this[this.tableВодители_авто.ID_ВодительColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ID_Водитель\' in table \'Водители авто\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableВодители_авто.ID_ВодительColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int ID_Авто {
+                get {
+                    try {
+                        return ((int)(this[this.tableВодители_авто.ID_АвтоColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ID_Авто\' in table \'Водители авто\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableВодители_авто.ID_АвтоColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime Date {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableВодители_авто.DateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Date\' in table \'Водители авто\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableВодители_авто.DateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public Подвижной_составRow Подвижной_составRow {
+                get {
+                    return ((Подвижной_составRow)(this.GetParentRow(this.Table.ParentRelations["FK_Водители авто_id_авто"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_Водители авто_id_авто"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public Личный_составRow Личный_составRow {
+                get {
+                    return ((Личный_составRow)(this.GetParentRow(this.Table.ParentRelations["FK_Водители авто_id_водитель"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_Водители авто_id_водитель"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public Личный_состав_СправкиRow Личный_состав_СправкиRow {
+                get {
+                    return ((Личный_состав_СправкиRow)(this.GetParentRow(this.Table.ParentRelations["FK_Водители авто_id_водитель1"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_Водители авто_id_водитель1"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsID_ВодительNull() {
+                return this.IsNull(this.tableВодители_авто.ID_ВодительColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetID_ВодительNull() {
+                this[this.tableВодители_авто.ID_ВодительColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsID_АвтоNull() {
+                return this.IsNull(this.tableВодители_авто.ID_АвтоColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetID_АвтоNull() {
+                this[this.tableВодители_авто.ID_АвтоColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDateNull() {
+                return this.IsNull(this.tableВодители_авто.DateColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDateNull() {
+                this[this.tableВодители_авто.DateColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -11511,108 +12239,6 @@ namespace AUTOPARK {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class DanieJournalLegkovieRowChangeEvent : global::System.EventArgs {
-            
-            private DanieJournalLegkovieRow eventRow;
-            
-            private global::System.Data.DataRowAction eventAction;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public DanieJournalLegkovieRowChangeEvent(DanieJournalLegkovieRow row, global::System.Data.DataRowAction action) {
-                this.eventRow = row;
-                this.eventAction = action;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public DanieJournalLegkovieRow Row {
-                get {
-                    return this.eventRow;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataRowAction Action {
-                get {
-                    return this.eventAction;
-                }
-            }
-        }
-        
-        /// <summary>
-        ///Row event argument class
-        ///</summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class DanieJournalGruzovieRowChangeEvent : global::System.EventArgs {
-            
-            private DanieJournalGruzovieRow eventRow;
-            
-            private global::System.Data.DataRowAction eventAction;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public DanieJournalGruzovieRowChangeEvent(DanieJournalGruzovieRow row, global::System.Data.DataRowAction action) {
-                this.eventRow = row;
-                this.eventAction = action;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public DanieJournalGruzovieRow Row {
-                get {
-                    return this.eventRow;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataRowAction Action {
-                get {
-                    return this.eventAction;
-                }
-            }
-        }
-        
-        /// <summary>
-        ///Row event argument class
-        ///</summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class BannerJornalGruzovieRowChangeEvent : global::System.EventArgs {
-            
-            private BannerJornalGruzovieRow eventRow;
-            
-            private global::System.Data.DataRowAction eventAction;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public BannerJornalGruzovieRowChangeEvent(BannerJornalGruzovieRow row, global::System.Data.DataRowAction action) {
-                this.eventRow = row;
-                this.eventAction = action;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public BannerJornalGruzovieRow Row {
-                get {
-                    return this.eventRow;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataRowAction Action {
-                get {
-                    return this.eventAction;
-                }
-            }
-        }
-        
-        /// <summary>
-        ///Row event argument class
-        ///</summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public class Заправка_ТСМRowChangeEvent : global::System.EventArgs {
             
             private Заправка_ТСМRow eventRow;
@@ -11731,6 +12357,142 @@ namespace AUTOPARK {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public Путевой_лист_Грузового_автоRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class DanieJournalRowChangeEvent : global::System.EventArgs {
+            
+            private DanieJournalRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public DanieJournalRowChangeEvent(DanieJournalRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public DanieJournalRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class HeaderJournalRowChangeEvent : global::System.EventArgs {
+            
+            private HeaderJournalRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public HeaderJournalRowChangeEvent(HeaderJournalRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public HeaderJournalRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class Личный_состав_СправкиRowChangeEvent : global::System.EventArgs {
+            
+            private Личный_состав_СправкиRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public Личный_состав_СправкиRowChangeEvent(Личный_состав_СправкиRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public Личный_состав_СправкиRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class Водители_автоRowChangeEvent : global::System.EventArgs {
+            
+            private Водители_автоRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public Водители_автоRowChangeEvent(Водители_автоRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public Водители_автоRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -13577,7 +14339,7 @@ WHERE        ([Личный состав].[табельный  номер] = @Vo
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = @"SELECT        [Путевой лист легкового автомобиля].[ID_Путевого листа], [Путевой лист легкового автомобиля].[Номер путевого листа], 
@@ -13602,12 +14364,6 @@ FROM            [Путевой лист легкового автомобиля
 WHERE        ([Путевой лист легкового автомобиля].[ID_Путевого листа] = @ID)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Путевого листа", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT        ISNULL(MAX([Номер путевого листа]), 0) + 1 AS newID\r\nFROM          " +
-                "  [Путевой лист легкового автомобиля]\r\nWHERE        (YEAR([За период с]) = YEAR(" +
-                "GETDATE()))";
-            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -13658,34 +14414,6 @@ WHERE        ([Путевой лист легкового автомобиля].
             AutoparkDB.Путевые_листы_легковыеDataTable dataTable = new AutoparkDB.Путевые_листы_легковыеDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual object GetNewLegkNumber() {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
-            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
-            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                command.Connection.Open();
-            }
-            object returnValue;
-            try {
-                returnValue = command.ExecuteScalar();
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    command.Connection.Close();
-                }
-            }
-            if (((returnValue == null) 
-                        || (returnValue.GetType() == typeof(global::System.DBNull)))) {
-                return null;
-            }
-            else {
-                return ((object)(returnValue));
-            }
         }
     }
     
@@ -15715,593 +16443,6 @@ WHERE  [ID_Путевого листа]=@IdPutevoi";
                     global::System.Nullable<double> Original_Вес_груза_т, 
                     global::System.Nullable<int> Original_Количество_поездок_с_грузом_час) {
             return this.Update(ID_Путевого_листа, Заказчик, Дата_и_время_прибытия, Дата_и_время_убытия, Пункт_отправления, Пункт_назначения, Расстояние_км, Наименование_груза, Вес_груза_т, Количество_поездок_с_грузом_час, Original_id, Original_ID_Путевого_листа, Original_Заказчик, Original_Дата_и_время_прибытия, Original_Дата_и_время_убытия, Original_Пункт_отправления, Original_Пункт_назначения, Original_Расстояние_км, Original_Наименование_груза, Original_Вес_груза_т, Original_Количество_поездок_с_грузом_час, Original_id);
-        }
-    }
-    
-    /// <summary>
-    ///Represents the connection and commands used to retrieve and save data.
-    ///</summary>
-    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
-    [global::System.ComponentModel.ToolboxItem(true)]
-    [global::System.ComponentModel.DataObjectAttribute(true)]
-    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
-        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
-    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class DanieJournalLegkovieTableAdapter : global::System.ComponentModel.Component {
-        
-        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
-        
-        private global::System.Data.SqlClient.SqlConnection _connection;
-        
-        private global::System.Data.SqlClient.SqlTransaction _transaction;
-        
-        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
-        
-        private bool _clearBeforeFill;
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public DanieJournalLegkovieTableAdapter() {
-            this.ClearBeforeFill = true;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
-            get {
-                if ((this._adapter == null)) {
-                    this.InitAdapter();
-                }
-                return this._adapter;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public global::System.Data.SqlClient.SqlConnection Connection {
-            get {
-                if ((this._connection == null)) {
-                    this.InitConnection();
-                }
-                return this._connection;
-            }
-            set {
-                this._connection = value;
-                if ((this.Adapter.InsertCommand != null)) {
-                    this.Adapter.InsertCommand.Connection = value;
-                }
-                if ((this.Adapter.DeleteCommand != null)) {
-                    this.Adapter.DeleteCommand.Connection = value;
-                }
-                if ((this.Adapter.UpdateCommand != null)) {
-                    this.Adapter.UpdateCommand.Connection = value;
-                }
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    if ((this.CommandCollection[i] != null)) {
-                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
-                    }
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        internal global::System.Data.SqlClient.SqlTransaction Transaction {
-            get {
-                return this._transaction;
-            }
-            set {
-                this._transaction = value;
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    this.CommandCollection[i].Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.DeleteCommand != null))) {
-                    this.Adapter.DeleteCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.InsertCommand != null))) {
-                    this.Adapter.InsertCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.UpdateCommand != null))) {
-                    this.Adapter.UpdateCommand.Transaction = this._transaction;
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
-            get {
-                if ((this._commandCollection == null)) {
-                    this.InitCommandCollection();
-                }
-                return this._commandCollection;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public bool ClearBeforeFill {
-            get {
-                return this._clearBeforeFill;
-            }
-            set {
-                this._clearBeforeFill = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private void InitAdapter() {
-            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
-            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
-            tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "DanieJournalLegkovie";
-            tableMapping.ColumnMappings.Add("Число", "Число");
-            tableMapping.ColumnMappings.Add("Номер путевого листа", "Номер путевого листа");
-            tableMapping.ColumnMappings.Add("Остаток топлива при выезде", "Остаток топлива при выезде");
-            tableMapping.ColumnMappings.Add("Остаток топлива при возвращении", "Остаток топлива при возвращении");
-            tableMapping.ColumnMappings.Add("Время выезда", "Время выезда");
-            tableMapping.ColumnMappings.Add("Время возвращения", "Время возвращения");
-            tableMapping.ColumnMappings.Add("Показания спидометра при выезде", "Показания спидометра при выезде");
-            tableMapping.ColumnMappings.Add("Показания спидометра при возвращении", "Показания спидометра при возвращении");
-            tableMapping.ColumnMappings.Add("В чье распоряжение занаряжена автомашина", "В чье распоряжение занаряжена автомашина");
-            tableMapping.ColumnMappings.Add("Маршрут перевозки откуда", "Маршрут перевозки откуда");
-            tableMapping.ColumnMappings.Add("Маршрут перевозки куда", "Маршрут перевозки куда");
-            tableMapping.ColumnMappings.Add("Заправлено топлива л", "Заправлено топлива л");
-            this._adapter.TableMappings.Add(tableMapping);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private void InitConnection() {
-            this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::AUTOPARK.Properties.Settings.Default.Путевые_листыConnectionString;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
-            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT        [Данные Путевой лист легкового авто].Число, [Путевой лист легкового автомобиля].[Номер путевого листа], 
-                         [Данные Путевой лист легкового авто].[Остаток топлива при выезде], [Данные Путевой лист легкового авто].[Остаток топлива при возвращении], 
-                         [Данные Путевой лист легкового авто].[Время выезда], [Данные Путевой лист легкового авто].[Время возвращения], 
-                         [Данные Путевой лист легкового авто].[Показания спидометра при выезде], 
-                         [Данные Путевой лист легкового авто].[Показания спидометра при возвращении], [Подвижной состав].[В чье распоряжение занаряжена автомашина], 
-                         [Данные Путевой лист легкового авто].[Маршрут перевозки откуда], [Данные Путевой лист легкового авто].[Маршрут перевозки куда], 
-                         [Данные Путевой лист легкового авто].[Заправлено топлива л]
-FROM            [Путевой лист легкового автомобиля] INNER JOIN
-                         [Подвижной состав] ON [Путевой лист легкового автомобиля].ID_Автомобиль = [Подвижной состав].ID INNER JOIN
-                         [Данные Путевой лист легкового авто] ON 
-                         [Путевой лист легкового автомобиля].[ID_Путевого листа] = [Данные Путевой лист легкового авто].[ID_Путевого листа]";
-            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(AutoparkDB.DanieJournalLegkovieDataTable dataTable) {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual AutoparkDB.DanieJournalLegkovieDataTable GetData() {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            AutoparkDB.DanieJournalLegkovieDataTable dataTable = new AutoparkDB.DanieJournalLegkovieDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-    }
-    
-    /// <summary>
-    ///Represents the connection and commands used to retrieve and save data.
-    ///</summary>
-    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
-    [global::System.ComponentModel.ToolboxItem(true)]
-    [global::System.ComponentModel.DataObjectAttribute(true)]
-    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
-        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
-    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class DanieJournalGruzovieTableAdapter : global::System.ComponentModel.Component {
-        
-        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
-        
-        private global::System.Data.SqlClient.SqlConnection _connection;
-        
-        private global::System.Data.SqlClient.SqlTransaction _transaction;
-        
-        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
-        
-        private bool _clearBeforeFill;
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public DanieJournalGruzovieTableAdapter() {
-            this.ClearBeforeFill = true;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
-            get {
-                if ((this._adapter == null)) {
-                    this.InitAdapter();
-                }
-                return this._adapter;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public global::System.Data.SqlClient.SqlConnection Connection {
-            get {
-                if ((this._connection == null)) {
-                    this.InitConnection();
-                }
-                return this._connection;
-            }
-            set {
-                this._connection = value;
-                if ((this.Adapter.InsertCommand != null)) {
-                    this.Adapter.InsertCommand.Connection = value;
-                }
-                if ((this.Adapter.DeleteCommand != null)) {
-                    this.Adapter.DeleteCommand.Connection = value;
-                }
-                if ((this.Adapter.UpdateCommand != null)) {
-                    this.Adapter.UpdateCommand.Connection = value;
-                }
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    if ((this.CommandCollection[i] != null)) {
-                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
-                    }
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        internal global::System.Data.SqlClient.SqlTransaction Transaction {
-            get {
-                return this._transaction;
-            }
-            set {
-                this._transaction = value;
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    this.CommandCollection[i].Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.DeleteCommand != null))) {
-                    this.Adapter.DeleteCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.InsertCommand != null))) {
-                    this.Adapter.InsertCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.UpdateCommand != null))) {
-                    this.Adapter.UpdateCommand.Transaction = this._transaction;
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
-            get {
-                if ((this._commandCollection == null)) {
-                    this.InitCommandCollection();
-                }
-                return this._commandCollection;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public bool ClearBeforeFill {
-            get {
-                return this._clearBeforeFill;
-            }
-            set {
-                this._clearBeforeFill = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private void InitAdapter() {
-            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
-            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
-            tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "DanieJournalGruzovie";
-            tableMapping.ColumnMappings.Add("Номер путевого листа", "Номер путевого листа");
-            tableMapping.ColumnMappings.Add("Дата путевого листа", "Дата путевого листа");
-            tableMapping.ColumnMappings.Add("В чье распоряжение занаряжена автомашина", "В чье распоряжение занаряжена автомашина");
-            tableMapping.ColumnMappings.Add("Пункт отправления", "Пункт отправления");
-            tableMapping.ColumnMappings.Add("Пункт назначения", "Пункт назначения");
-            tableMapping.ColumnMappings.Add("Количество", "Количество");
-            tableMapping.ColumnMappings.Add("Спидометр при выезде", "Спидометр при выезде");
-            tableMapping.ColumnMappings.Add("Спидометр при возвращении", "Спидометр при возвращении");
-            tableMapping.ColumnMappings.Add("Время выезда", "Время выезда");
-            tableMapping.ColumnMappings.Add("Время возвращения", "Время возвращения");
-            tableMapping.ColumnMappings.Add("Остаток ТСМ при выезде", "Остаток ТСМ при выезде");
-            tableMapping.ColumnMappings.Add("Остаток ТСМ при возвращении", "Остаток ТСМ при возвращении");
-            this._adapter.TableMappings.Add(tableMapping);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private void InitConnection() {
-            this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::AUTOPARK.Properties.Settings.Default.Путевые_листыConnectionString;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
-            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT        [Путевой лист Грузового авто].[Номер путевого листа], [Путевой лист Грузового авто].[Дата путевого листа], 
-                         [Подвижной состав].[В чье распоряжение занаряжена автомашина], [Задание водителю].[Пункт отправления], [Задание водителю].[Пункт назначения], 
-                         [Заправка ТСМ].Количество, [Путевой лист Грузового авто].[Спидометр при выезде], [Путевой лист Грузового авто].[Спидометр при возвращении], 
-                         [Путевой лист Грузового авто].[Время выезда], [Путевой лист Грузового авто].[Время возвращения], [Движение ТСМ].[Остаток ТСМ при выезде], 
-                         [Движение ТСМ].[Остаток ТСМ при возвращении]
-FROM            [Путевой лист Грузового авто] INNER JOIN
-                         [Подвижной состав] ON [Путевой лист Грузового авто].ID_Автомобиля = [Подвижной состав].ID INNER JOIN
-                         [Задание водителю] ON [Путевой лист Грузового авто].[ID_Путевого листа] = [Задание водителю].[ID_Путевого листа] INNER JOIN
-                         [Заправка ТСМ] ON [Путевой лист Грузового авто].[ID_Путевого листа] = [Заправка ТСМ].[ID_Путевого листа] INNER JOIN
-                         [Движение ТСМ] ON [Путевой лист Грузового авто].[ID_Путевого листа] = [Движение ТСМ].[ID_Путевого листа]";
-            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(AutoparkDB.DanieJournalGruzovieDataTable dataTable) {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual AutoparkDB.DanieJournalGruzovieDataTable GetData() {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            AutoparkDB.DanieJournalGruzovieDataTable dataTable = new AutoparkDB.DanieJournalGruzovieDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-    }
-    
-    /// <summary>
-    ///Represents the connection and commands used to retrieve and save data.
-    ///</summary>
-    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
-    [global::System.ComponentModel.ToolboxItem(true)]
-    [global::System.ComponentModel.DataObjectAttribute(true)]
-    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
-        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
-    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class BannerJornalGruzovieTableAdapter : global::System.ComponentModel.Component {
-        
-        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
-        
-        private global::System.Data.SqlClient.SqlConnection _connection;
-        
-        private global::System.Data.SqlClient.SqlTransaction _transaction;
-        
-        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
-        
-        private bool _clearBeforeFill;
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public BannerJornalGruzovieTableAdapter() {
-            this.ClearBeforeFill = true;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
-            get {
-                if ((this._adapter == null)) {
-                    this.InitAdapter();
-                }
-                return this._adapter;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public global::System.Data.SqlClient.SqlConnection Connection {
-            get {
-                if ((this._connection == null)) {
-                    this.InitConnection();
-                }
-                return this._connection;
-            }
-            set {
-                this._connection = value;
-                if ((this.Adapter.InsertCommand != null)) {
-                    this.Adapter.InsertCommand.Connection = value;
-                }
-                if ((this.Adapter.DeleteCommand != null)) {
-                    this.Adapter.DeleteCommand.Connection = value;
-                }
-                if ((this.Adapter.UpdateCommand != null)) {
-                    this.Adapter.UpdateCommand.Connection = value;
-                }
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    if ((this.CommandCollection[i] != null)) {
-                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
-                    }
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        internal global::System.Data.SqlClient.SqlTransaction Transaction {
-            get {
-                return this._transaction;
-            }
-            set {
-                this._transaction = value;
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    this.CommandCollection[i].Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.DeleteCommand != null))) {
-                    this.Adapter.DeleteCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.InsertCommand != null))) {
-                    this.Adapter.InsertCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.UpdateCommand != null))) {
-                    this.Adapter.UpdateCommand.Transaction = this._transaction;
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
-            get {
-                if ((this._commandCollection == null)) {
-                    this.InitCommandCollection();
-                }
-                return this._commandCollection;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public bool ClearBeforeFill {
-            get {
-                return this._clearBeforeFill;
-            }
-            set {
-                this._clearBeforeFill = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private void InitAdapter() {
-            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
-            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
-            tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "BannerJornalGruzovie";
-            tableMapping.ColumnMappings.Add("Фамилия", "Фамилия");
-            tableMapping.ColumnMappings.Add("Имя", "Имя");
-            tableMapping.ColumnMappings.Add("Отчество", "Отчество");
-            tableMapping.ColumnMappings.Add("срок действия мед. справки", "срок действия мед_ справки");
-            tableMapping.ColumnMappings.Add("классность", "классность");
-            tableMapping.ColumnMappings.Add("номер водительского удостоверения", "номер водительского удостоверения");
-            tableMapping.ColumnMappings.Add("Марка и модель", "Марка и модель");
-            tableMapping.ColumnMappings.Add("Гос.номер", "Гос_номер");
-            tableMapping.ColumnMappings.Add("Гаражный номер", "Гаражный номер");
-            tableMapping.ColumnMappings.Add("дата окончания страховки", "дата окончания страховки");
-            tableMapping.ColumnMappings.Add("Вид топлива", "Вид топлива");
-            tableMapping.ColumnMappings.Add("ID", "ID");
-            this._adapter.TableMappings.Add(tableMapping);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private void InitConnection() {
-            this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::AUTOPARK.Properties.Settings.Default.Путевые_листыConnectionString;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
-            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT        [Личный состав].Фамилия, [Личный состав].Имя, [Личный состав].Отчество, [Личный состав].[срок действия мед. справки], [Личный состав].классность, 
-                         [Личный состав].[номер водительского удостоверения], [Подвижной состав].[Марка и модель], [Подвижной состав].[Гос.номер], 
-                         [Подвижной состав].[Гаражный номер], [Подвижной состав].[дата окончания страховки], [Подвижной состав].[Вид топлива], [Подвижной состав].ID
-FROM            [Личный состав] CROSS JOIN
-                         [Подвижной состав]";
-            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = @"SELECT        классность,Фамилия +' '+Имя +' '+Отчество AS 'ФИО', [номер водительского удостоверения], [срок действия мед_ справки], [Гос_номер], [классность],[Гаражный номер], [дата окончания страховки],[Марка и модель],[Вид топлива],ID
-FROM            [Личный состав] CROSS JOIN
-                         [Подвижной состав]";
-            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(AutoparkDB.BannerJornalGruzovieDataTable dataTable) {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual AutoparkDB.BannerJornalGruzovieDataTable GetData() {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            AutoparkDB.BannerJornalGruzovieDataTable dataTable = new AutoparkDB.BannerJornalGruzovieDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillSpisokVoditel(AutoparkDB.BannerJornalGruzovieDataTable dataTable) {
-            this.Adapter.SelectCommand = this.CommandCollection[1];
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual AutoparkDB.BannerJornalGruzovieDataTable GetDataSpisokVoditel() {
-            this.Adapter.SelectCommand = this.CommandCollection[1];
-            AutoparkDB.BannerJornalGruzovieDataTable dataTable = new AutoparkDB.BannerJornalGruzovieDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
         }
     }
     
@@ -18355,50 +18496,59 @@ SELECT Код, Подразделение, [Полное название] FROM 
             tableMapping.ColumnMappings.Add("ID_Водителя", "ID_Водителя");
             tableMapping.ColumnMappings.Add("ID_Автомобиля", "ID_Автомобиля");
             tableMapping.ColumnMappings.Add("ID_Отдела", "ID_Отдела");
+            tableMapping.ColumnMappings.Add("Пункт_отправления", "Пункт_отправления");
+            tableMapping.ColumnMappings.Add("Пункт_назначения", "Пункт_назначения");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
             this._adapter.DeleteCommand.CommandText = "DELETE FROM [Путевой лист Грузового авто] WHERE (([ID_Путевого листа] = @Original" +
                 "_ID_Путевого_листа) AND ([Номер путевого листа] = @Original_Номер_путевого_листа" +
-                ") AND ([Дата путевого листа] = @Original_Дата_путевого_листа) AND ((@IsNull_Пока" +
-                "зания_спидометра_при_выезде = 1 AND [Показания_спидометра_при_выезде] IS NULL) O" +
-                "R ([Показания_спидометра_при_выезде] = @Original_Показания_спидометра_при_выезде" +
-                ")) AND ((@IsNull_Показания_спидометра_при_возвращении = 1 AND [Показания_спидоме" +
-                "тра_при_возвращении] IS NULL) OR ([Показания_спидометра_при_возвращении] = @Orig" +
-                "inal_Показания_спидометра_при_возвращении)) AND ((@IsNull_Дата_Время_выезда_граф" +
-                " = 1 AND [Дата_Время_выезда_граф] IS NULL) OR ([Дата_Время_выезда_граф] = @Origi" +
-                "nal_Дата_Время_выезда_граф)) AND ((@IsNull_Дата_Время_выезда_факт = 1 AND [Дата_" +
-                "Время_выезда_факт] IS NULL) OR ([Дата_Время_выезда_факт] = @Original_Дата_Время_" +
-                "выезда_факт)) AND ((@IsNull_Дата_Время_возвращения_граф = 1 AND [Дата_Время_возв" +
-                "ращения_граф] IS NULL) OR ([Дата_Время_возвращения_граф] = @Original_Дата_Время_" +
-                "возвращения_граф)) AND ((@IsNull_Дата_Время_возвращения_факт = 1 AND [Дата_Время" +
-                "_возвращения_факт] IS NULL) OR ([Дата_Время_возвращения_факт] = @Original_Дата_В" +
-                "ремя_возвращения_факт)) AND ((@IsNull_Нулевой_пробег_выезд = 1 AND [Нулевой_проб" +
-                "ег_выезд] IS NULL) OR ([Нулевой_пробег_выезд] = @Original_Нулевой_пробег_выезд))" +
-                " AND ((@IsNull_Нулевой_пробег_возвр = 1 AND [Нулевой_пробег_возвр] IS NULL) OR (" +
-                "[Нулевой_пробег_возвр] = @Original_Нулевой_пробег_возвр)) AND ((@IsNull_Время_ра" +
-                "боты_двигателя_выезд = 1 AND [Время_работы_двигателя_выезд] IS NULL) OR ([Время_" +
-                "работы_двигателя_выезд] = @Original_Время_работы_двигателя_выезд)) AND ((@IsNull" +
-                "_Время_работы_двигателя_возвр = 1 AND [Время_работы_двигателя_возвр] IS NULL) OR" +
-                " ([Время_работы_двигателя_возвр] = @Original_Время_работы_двигателя_возвр)) AND " +
-                "((@IsNull_Время_работы_спецоборудования_выезд = 1 AND [Время_работы_спецоборудов" +
-                "ания_выезд] IS NULL) OR ([Время_работы_спецоборудования_выезд] = @Original_Время" +
-                "_работы_спецоборудования_выезд)) AND ((@IsNull_Время_работы_спецоборудования_воз" +
-                "вр = 1 AND [Время_работы_спецоборудования_возвр] IS NULL) OR ([Время_работы_спец" +
-                "оборудования_возвр] = @Original_Время_работы_спецоборудования_возвр)) AND ((@IsN" +
-                "ull_Остаток_ТСМ1_выезд = 1 AND [Остаток_ТСМ1_выезд] IS NULL) OR ([Остаток_ТСМ1_в" +
-                "ыезд] = @Original_Остаток_ТСМ1_выезд)) AND ((@IsNull_Остаток_ТСМ1_возвр = 1 AND " +
-                "[Остаток_ТСМ1_возвр] IS NULL) OR ([Остаток_ТСМ1_возвр] = @Original_Остаток_ТСМ1_" +
-                "возвр)) AND ((@IsNull_Остаток_ТСМ2_выезд = 1 AND [Остаток_ТСМ2_выезд] IS NULL) O" +
-                "R ([Остаток_ТСМ2_выезд] = @Original_Остаток_ТСМ2_выезд)) AND ((@IsNull_Остаток_Т" +
-                "СМ2_возвр = 1 AND [Остаток_ТСМ2_возвр] IS NULL) OR ([Остаток_ТСМ2_возвр] = @Orig" +
-                "inal_Остаток_ТСМ2_возвр)) AND ([ID_Водителя] = @Original_ID_Водителя) AND ([ID_А" +
-                "втомобиля] = @Original_ID_Автомобиля) AND ((@IsNull_ID_Отдела = 1 AND [ID_Отдела" +
-                "] IS NULL) OR ([ID_Отдела] = @Original_ID_Отдела)))";
+                ") AND ([Дата путевого листа] = @Original_Дата_путевого_листа) AND ((@IsNull_Пунк" +
+                "т_отправления = 1 AND [Пункт_отправления] IS NULL) OR ([Пункт_отправления] = @Or" +
+                "iginal_Пункт_отправления)) AND ((@IsNull_Пункт_назначения = 1 AND [Пункт_назначе" +
+                "ния] IS NULL) OR ([Пункт_назначения] = @Original_Пункт_назначения)) AND ((@IsNul" +
+                "l_Показания_спидометра_при_выезде = 1 AND [Показания_спидометра_при_выезде] IS N" +
+                "ULL) OR ([Показания_спидометра_при_выезде] = @Original_Показания_спидометра_при_" +
+                "выезде)) AND ((@IsNull_Показания_спидометра_при_возвращении = 1 AND [Показания_с" +
+                "пидометра_при_возвращении] IS NULL) OR ([Показания_спидометра_при_возвращении] =" +
+                " @Original_Показания_спидометра_при_возвращении)) AND ((@IsNull_Дата_Время_выезд" +
+                "а_граф = 1 AND [Дата_Время_выезда_граф] IS NULL) OR ([Дата_Время_выезда_граф] = " +
+                "@Original_Дата_Время_выезда_граф)) AND ((@IsNull_Дата_Время_выезда_факт = 1 AND " +
+                "[Дата_Время_выезда_факт] IS NULL) OR ([Дата_Время_выезда_факт] = @Original_Дата_" +
+                "Время_выезда_факт)) AND ((@IsNull_Дата_Время_возвращения_граф = 1 AND [Дата_Врем" +
+                "я_возвращения_граф] IS NULL) OR ([Дата_Время_возвращения_граф] = @Original_Дата_" +
+                "Время_возвращения_граф)) AND ((@IsNull_Дата_Время_возвращения_факт = 1 AND [Дата" +
+                "_Время_возвращения_факт] IS NULL) OR ([Дата_Время_возвращения_факт] = @Original_" +
+                "Дата_Время_возвращения_факт)) AND ((@IsNull_Нулевой_пробег_выезд = 1 AND [Нулево" +
+                "й_пробег_выезд] IS NULL) OR ([Нулевой_пробег_выезд] = @Original_Нулевой_пробег_в" +
+                "ыезд)) AND ((@IsNull_Нулевой_пробег_возвр = 1 AND [Нулевой_пробег_возвр] IS NULL" +
+                ") OR ([Нулевой_пробег_возвр] = @Original_Нулевой_пробег_возвр)) AND ((@IsNull_Вр" +
+                "емя_работы_двигателя_выезд = 1 AND [Время_работы_двигателя_выезд] IS NULL) OR ([" +
+                "Время_работы_двигателя_выезд] = @Original_Время_работы_двигателя_выезд)) AND ((@" +
+                "IsNull_Время_работы_двигателя_возвр = 1 AND [Время_работы_двигателя_возвр] IS NU" +
+                "LL) OR ([Время_работы_двигателя_возвр] = @Original_Время_работы_двигателя_возвр)" +
+                ") AND ((@IsNull_Время_работы_спецоборудования_выезд = 1 AND [Время_работы_спецоб" +
+                "орудования_выезд] IS NULL) OR ([Время_работы_спецоборудования_выезд] = @Original" +
+                "_Время_работы_спецоборудования_выезд)) AND ((@IsNull_Время_работы_спецоборудован" +
+                "ия_возвр = 1 AND [Время_работы_спецоборудования_возвр] IS NULL) OR ([Время_работ" +
+                "ы_спецоборудования_возвр] = @Original_Время_работы_спецоборудования_возвр)) AND " +
+                "((@IsNull_Остаток_ТСМ1_выезд = 1 AND [Остаток_ТСМ1_выезд] IS NULL) OR ([Остаток_" +
+                "ТСМ1_выезд] = @Original_Остаток_ТСМ1_выезд)) AND ((@IsNull_Остаток_ТСМ1_возвр = " +
+                "1 AND [Остаток_ТСМ1_возвр] IS NULL) OR ([Остаток_ТСМ1_возвр] = @Original_Остаток" +
+                "_ТСМ1_возвр)) AND ((@IsNull_Остаток_ТСМ2_выезд = 1 AND [Остаток_ТСМ2_выезд] IS N" +
+                "ULL) OR ([Остаток_ТСМ2_выезд] = @Original_Остаток_ТСМ2_выезд)) AND ((@IsNull_Ост" +
+                "аток_ТСМ2_возвр = 1 AND [Остаток_ТСМ2_возвр] IS NULL) OR ([Остаток_ТСМ2_возвр] =" +
+                " @Original_Остаток_ТСМ2_возвр)) AND ([ID_Водителя] = @Original_ID_Водителя) AND " +
+                "([ID_Автомобиля] = @Original_ID_Автомобиля) AND ((@IsNull_ID_Отдела = 1 AND [ID_" +
+                "Отдела] IS NULL) OR ([ID_Отдела] = @Original_ID_Отдела)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_Путевого_листа", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Путевого листа", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Номер_путевого_листа", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Номер путевого листа", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Дата_путевого_листа", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Дата путевого листа", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Пункт_отправления", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Пункт_отправления", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Пункт_отправления", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Пункт_отправления", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Пункт_назначения", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Пункт_назначения", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Пункт_назначения", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Пункт_назначения", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Показания_спидометра_при_выезде", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Показания_спидометра_при_выезде", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Показания_спидометра_при_выезде", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Показания_спидометра_при_выезде", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Показания_спидометра_при_возвращении", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Показания_спидометра_при_возвращении", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -18438,31 +18588,34 @@ SELECT Код, Подразделение, [Полное название] FROM 
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = "INSERT INTO [Путевой лист Грузового авто] ([Номер путевого листа], [Дата путевого" +
-                " листа], [Показания_спидометра_при_выезде], [Показания_спидометра_при_возвращени" +
-                "и], [Дата_Время_выезда_граф], [Дата_Время_выезда_факт], [Дата_Время_возвращения_" +
-                "граф], [Дата_Время_возвращения_факт], [Нулевой_пробег_выезд], [Нулевой_пробег_во" +
-                "звр], [Время_работы_двигателя_выезд], [Время_работы_двигателя_возвр], [Время_раб" +
-                "оты_спецоборудования_выезд], [Время_работы_спецоборудования_возвр], [Остаток_ТСМ" +
-                "1_выезд], [Остаток_ТСМ1_возвр], [Остаток_ТСМ2_выезд], [Остаток_ТСМ2_возвр], [ID_" +
-                "Водителя], [ID_Автомобиля], [ID_Отдела]) VALUES (@Номер_путевого_листа, @Дата_пу" +
-                "тевого_листа, @Показания_спидометра_при_выезде, @Показания_спидометра_при_возвра" +
+                " листа], [Пункт_отправления], [Пункт_назначения], [Показания_спидометра_при_выез" +
+                "де], [Показания_спидометра_при_возвращении], [Дата_Время_выезда_граф], [Дата_Вре" +
+                "мя_выезда_факт], [Дата_Время_возвращения_граф], [Дата_Время_возвращения_факт], [" +
+                "Нулевой_пробег_выезд], [Нулевой_пробег_возвр], [Время_работы_двигателя_выезд], [" +
+                "Время_работы_двигателя_возвр], [Время_работы_спецоборудования_выезд], [Время_раб" +
+                "оты_спецоборудования_возвр], [Остаток_ТСМ1_выезд], [Остаток_ТСМ1_возвр], [Остато" +
+                "к_ТСМ2_выезд], [Остаток_ТСМ2_возвр], [ID_Водителя], [ID_Автомобиля], [ID_Отдела]" +
+                ") VALUES (@Номер_путевого_листа, @Дата_путевого_листа, @Пункт_отправления, @Пунк" +
+                "т_назначения, @Показания_спидометра_при_выезде, @Показания_спидометра_при_возвра" +
                 "щении, @Дата_Время_выезда_граф, @Дата_Время_выезда_факт, @Дата_Время_возвращения" +
                 "_граф, @Дата_Время_возвращения_факт, @Нулевой_пробег_выезд, @Нулевой_пробег_возв" +
                 "р, @Время_работы_двигателя_выезд, @Время_работы_двигателя_возвр, @Время_работы_с" +
                 "пецоборудования_выезд, @Время_работы_спецоборудования_возвр, @Остаток_ТСМ1_выезд" +
                 ", @Остаток_ТСМ1_возвр, @Остаток_ТСМ2_выезд, @Остаток_ТСМ2_возвр, @ID_Водителя, @" +
                 "ID_Автомобиля, @ID_Отдела);\r\nSELECT [ID_Путевого листа], [Номер путевого листа]," +
-                " [Дата путевого листа], Показания_спидометра_при_выезде, Показания_спидометра_пр" +
-                "и_возвращении, Дата_Время_выезда_граф, Дата_Время_выезда_факт, Дата_Время_возвра" +
-                "щения_граф, Дата_Время_возвращения_факт, Нулевой_пробег_выезд, Нулевой_пробег_во" +
-                "звр, Время_работы_двигателя_выезд, Время_работы_двигателя_возвр, Время_работы_сп" +
-                "ецоборудования_выезд, Время_работы_спецоборудования_возвр, Остаток_ТСМ1_выезд, О" +
-                "статок_ТСМ1_возвр, Остаток_ТСМ2_выезд, Остаток_ТСМ2_возвр, ID_Водителя, ID_Автом" +
-                "обиля, ID_Отдела FROM [Путевой лист Грузового авто] WHERE ([ID_Путевого листа] =" +
-                " SCOPE_IDENTITY())";
+                " [Дата путевого листа], Пункт_отправления, Пункт_назначения, Показания_спидометр" +
+                "а_при_выезде, Показания_спидометра_при_возвращении, Дата_Время_выезда_граф, Дата" +
+                "_Время_выезда_факт, Дата_Время_возвращения_граф, Дата_Время_возвращения_факт, Ну" +
+                "левой_пробег_выезд, Нулевой_пробег_возвр, Время_работы_двигателя_выезд, Время_ра" +
+                "боты_двигателя_возвр, Время_работы_спецоборудования_выезд, Время_работы_спецобор" +
+                "удования_возвр, Остаток_ТСМ1_выезд, Остаток_ТСМ1_возвр, Остаток_ТСМ2_выезд, Оста" +
+                "ток_ТСМ2_возвр, ID_Водителя, ID_Автомобиля, ID_Отдела FROM [Путевой лист Грузово" +
+                "го авто] WHERE ([ID_Путевого листа] = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Номер_путевого_листа", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Номер путевого листа", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Дата_путевого_листа", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Дата путевого листа", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Пункт_отправления", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Пункт_отправления", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Пункт_назначения", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Пункт_назначения", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Показания_спидометра_при_выезде", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Показания_спидометра_при_выезде", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Показания_спидометра_при_возвращении", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Показания_спидометра_при_возвращении", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Дата_Время_выезда_граф", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Дата_Время_выезда_граф", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -18485,67 +18638,74 @@ SELECT Код, Подразделение, [Полное название] FROM 
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
             this._adapter.UpdateCommand.CommandText = "UPDATE [Путевой лист Грузового авто] SET [Номер путевого листа] = @Номер_путевого" +
-                "_листа, [Дата путевого листа] = @Дата_путевого_листа, [Показания_спидометра_при_" +
-                "выезде] = @Показания_спидометра_при_выезде, [Показания_спидометра_при_возвращени" +
-                "и] = @Показания_спидометра_при_возвращении, [Дата_Время_выезда_граф] = @Дата_Вре" +
-                "мя_выезда_граф, [Дата_Время_выезда_факт] = @Дата_Время_выезда_факт, [Дата_Время_" +
-                "возвращения_граф] = @Дата_Время_возвращения_граф, [Дата_Время_возвращения_факт] " +
-                "= @Дата_Время_возвращения_факт, [Нулевой_пробег_выезд] = @Нулевой_пробег_выезд, " +
-                "[Нулевой_пробег_возвр] = @Нулевой_пробег_возвр, [Время_работы_двигателя_выезд] =" +
-                " @Время_работы_двигателя_выезд, [Время_работы_двигателя_возвр] = @Время_работы_д" +
-                "вигателя_возвр, [Время_работы_спецоборудования_выезд] = @Время_работы_спецоборуд" +
-                "ования_выезд, [Время_работы_спецоборудования_возвр] = @Время_работы_спецоборудов" +
-                "ания_возвр, [Остаток_ТСМ1_выезд] = @Остаток_ТСМ1_выезд, [Остаток_ТСМ1_возвр] = @" +
-                "Остаток_ТСМ1_возвр, [Остаток_ТСМ2_выезд] = @Остаток_ТСМ2_выезд, [Остаток_ТСМ2_во" +
-                "звр] = @Остаток_ТСМ2_возвр, [ID_Водителя] = @ID_Водителя, [ID_Автомобиля] = @ID_" +
-                "Автомобиля, [ID_Отдела] = @ID_Отдела WHERE (([ID_Путевого листа] = @Original_ID_" +
-                "Путевого_листа) AND ([Номер путевого листа] = @Original_Номер_путевого_листа) AN" +
-                "D ([Дата путевого листа] = @Original_Дата_путевого_листа) AND ((@IsNull_Показани" +
-                "я_спидометра_при_выезде = 1 AND [Показания_спидометра_при_выезде] IS NULL) OR ([" +
-                "Показания_спидометра_при_выезде] = @Original_Показания_спидометра_при_выезде)) A" +
-                "ND ((@IsNull_Показания_спидометра_при_возвращении = 1 AND [Показания_спидометра_" +
-                "при_возвращении] IS NULL) OR ([Показания_спидометра_при_возвращении] = @Original" +
-                "_Показания_спидометра_при_возвращении)) AND ((@IsNull_Дата_Время_выезда_граф = 1" +
-                " AND [Дата_Время_выезда_граф] IS NULL) OR ([Дата_Время_выезда_граф] = @Original_" +
-                "Дата_Время_выезда_граф)) AND ((@IsNull_Дата_Время_выезда_факт = 1 AND [Дата_Врем" +
-                "я_выезда_факт] IS NULL) OR ([Дата_Время_выезда_факт] = @Original_Дата_Время_выез" +
-                "да_факт)) AND ((@IsNull_Дата_Время_возвращения_граф = 1 AND [Дата_Время_возвраще" +
-                "ния_граф] IS NULL) OR ([Дата_Время_возвращения_граф] = @Original_Дата_Время_возв" +
-                "ращения_граф)) AND ((@IsNull_Дата_Время_возвращения_факт = 1 AND [Дата_Время_воз" +
-                "вращения_факт] IS NULL) OR ([Дата_Время_возвращения_факт] = @Original_Дата_Время" +
-                "_возвращения_факт)) AND ((@IsNull_Нулевой_пробег_выезд = 1 AND [Нулевой_пробег_в" +
-                "ыезд] IS NULL) OR ([Нулевой_пробег_выезд] = @Original_Нулевой_пробег_выезд)) AND" +
-                " ((@IsNull_Нулевой_пробег_возвр = 1 AND [Нулевой_пробег_возвр] IS NULL) OR ([Нул" +
-                "евой_пробег_возвр] = @Original_Нулевой_пробег_возвр)) AND ((@IsNull_Время_работы" +
-                "_двигателя_выезд = 1 AND [Время_работы_двигателя_выезд] IS NULL) OR ([Время_рабо" +
-                "ты_двигателя_выезд] = @Original_Время_работы_двигателя_выезд)) AND ((@IsNull_Вре" +
-                "мя_работы_двигателя_возвр = 1 AND [Время_работы_двигателя_возвр] IS NULL) OR ([В" +
-                "ремя_работы_двигателя_возвр] = @Original_Время_работы_двигателя_возвр)) AND ((@I" +
-                "sNull_Время_работы_спецоборудования_выезд = 1 AND [Время_работы_спецоборудования" +
-                "_выезд] IS NULL) OR ([Время_работы_спецоборудования_выезд] = @Original_Время_раб" +
-                "оты_спецоборудования_выезд)) AND ((@IsNull_Время_работы_спецоборудования_возвр =" +
-                " 1 AND [Время_работы_спецоборудования_возвр] IS NULL) OR ([Время_работы_спецобор" +
-                "удования_возвр] = @Original_Время_работы_спецоборудования_возвр)) AND ((@IsNull_" +
-                "Остаток_ТСМ1_выезд = 1 AND [Остаток_ТСМ1_выезд] IS NULL) OR ([Остаток_ТСМ1_выезд" +
-                "] = @Original_Остаток_ТСМ1_выезд)) AND ((@IsNull_Остаток_ТСМ1_возвр = 1 AND [Ост" +
-                "аток_ТСМ1_возвр] IS NULL) OR ([Остаток_ТСМ1_возвр] = @Original_Остаток_ТСМ1_возв" +
-                "р)) AND ((@IsNull_Остаток_ТСМ2_выезд = 1 AND [Остаток_ТСМ2_выезд] IS NULL) OR ([" +
-                "Остаток_ТСМ2_выезд] = @Original_Остаток_ТСМ2_выезд)) AND ((@IsNull_Остаток_ТСМ2_" +
-                "возвр = 1 AND [Остаток_ТСМ2_возвр] IS NULL) OR ([Остаток_ТСМ2_возвр] = @Original" +
-                "_Остаток_ТСМ2_возвр)) AND ([ID_Водителя] = @Original_ID_Водителя) AND ([ID_Автом" +
-                "обиля] = @Original_ID_Автомобиля) AND ((@IsNull_ID_Отдела = 1 AND [ID_Отдела] IS" +
-                " NULL) OR ([ID_Отдела] = @Original_ID_Отдела)));\r\nSELECT [ID_Путевого листа], [Н" +
-                "омер путевого листа], [Дата путевого листа], Показания_спидометра_при_выезде, По" +
-                "казания_спидометра_при_возвращении, Дата_Время_выезда_граф, Дата_Время_выезда_фа" +
-                "кт, Дата_Время_возвращения_граф, Дата_Время_возвращения_факт, Нулевой_пробег_вые" +
-                "зд, Нулевой_пробег_возвр, Время_работы_двигателя_выезд, Время_работы_двигателя_в" +
-                "озвр, Время_работы_спецоборудования_выезд, Время_работы_спецоборудования_возвр, " +
-                "Остаток_ТСМ1_выезд, Остаток_ТСМ1_возвр, Остаток_ТСМ2_выезд, Остаток_ТСМ2_возвр, " +
-                "ID_Водителя, ID_Автомобиля, ID_Отдела FROM [Путевой лист Грузового авто] WHERE (" +
-                "[ID_Путевого листа] = @ID_Путевого_листа)";
+                "_листа, [Дата путевого листа] = @Дата_путевого_листа, [Пункт_отправления] = @Пун" +
+                "кт_отправления, [Пункт_назначения] = @Пункт_назначения, [Показания_спидометра_пр" +
+                "и_выезде] = @Показания_спидометра_при_выезде, [Показания_спидометра_при_возвраще" +
+                "нии] = @Показания_спидометра_при_возвращении, [Дата_Время_выезда_граф] = @Дата_В" +
+                "ремя_выезда_граф, [Дата_Время_выезда_факт] = @Дата_Время_выезда_факт, [Дата_Врем" +
+                "я_возвращения_граф] = @Дата_Время_возвращения_граф, [Дата_Время_возвращения_факт" +
+                "] = @Дата_Время_возвращения_факт, [Нулевой_пробег_выезд] = @Нулевой_пробег_выезд" +
+                ", [Нулевой_пробег_возвр] = @Нулевой_пробег_возвр, [Время_работы_двигателя_выезд]" +
+                " = @Время_работы_двигателя_выезд, [Время_работы_двигателя_возвр] = @Время_работы" +
+                "_двигателя_возвр, [Время_работы_спецоборудования_выезд] = @Время_работы_спецобор" +
+                "удования_выезд, [Время_работы_спецоборудования_возвр] = @Время_работы_спецоборуд" +
+                "ования_возвр, [Остаток_ТСМ1_выезд] = @Остаток_ТСМ1_выезд, [Остаток_ТСМ1_возвр] =" +
+                " @Остаток_ТСМ1_возвр, [Остаток_ТСМ2_выезд] = @Остаток_ТСМ2_выезд, [Остаток_ТСМ2_" +
+                "возвр] = @Остаток_ТСМ2_возвр, [ID_Водителя] = @ID_Водителя, [ID_Автомобиля] = @I" +
+                "D_Автомобиля, [ID_Отдела] = @ID_Отдела WHERE (([ID_Путевого листа] = @Original_I" +
+                "D_Путевого_листа) AND ([Номер путевого листа] = @Original_Номер_путевого_листа) " +
+                "AND ([Дата путевого листа] = @Original_Дата_путевого_листа) AND ((@IsNull_Пункт_" +
+                "отправления = 1 AND [Пункт_отправления] IS NULL) OR ([Пункт_отправления] = @Orig" +
+                "inal_Пункт_отправления)) AND ((@IsNull_Пункт_назначения = 1 AND [Пункт_назначени" +
+                "я] IS NULL) OR ([Пункт_назначения] = @Original_Пункт_назначения)) AND ((@IsNull_" +
+                "Показания_спидометра_при_выезде = 1 AND [Показания_спидометра_при_выезде] IS NUL" +
+                "L) OR ([Показания_спидометра_при_выезде] = @Original_Показания_спидометра_при_вы" +
+                "езде)) AND ((@IsNull_Показания_спидометра_при_возвращении = 1 AND [Показания_спи" +
+                "дометра_при_возвращении] IS NULL) OR ([Показания_спидометра_при_возвращении] = @" +
+                "Original_Показания_спидометра_при_возвращении)) AND ((@IsNull_Дата_Время_выезда_" +
+                "граф = 1 AND [Дата_Время_выезда_граф] IS NULL) OR ([Дата_Время_выезда_граф] = @O" +
+                "riginal_Дата_Время_выезда_граф)) AND ((@IsNull_Дата_Время_выезда_факт = 1 AND [Д" +
+                "ата_Время_выезда_факт] IS NULL) OR ([Дата_Время_выезда_факт] = @Original_Дата_Вр" +
+                "емя_выезда_факт)) AND ((@IsNull_Дата_Время_возвращения_граф = 1 AND [Дата_Время_" +
+                "возвращения_граф] IS NULL) OR ([Дата_Время_возвращения_граф] = @Original_Дата_Вр" +
+                "емя_возвращения_граф)) AND ((@IsNull_Дата_Время_возвращения_факт = 1 AND [Дата_В" +
+                "ремя_возвращения_факт] IS NULL) OR ([Дата_Время_возвращения_факт] = @Original_Да" +
+                "та_Время_возвращения_факт)) AND ((@IsNull_Нулевой_пробег_выезд = 1 AND [Нулевой_" +
+                "пробег_выезд] IS NULL) OR ([Нулевой_пробег_выезд] = @Original_Нулевой_пробег_вые" +
+                "зд)) AND ((@IsNull_Нулевой_пробег_возвр = 1 AND [Нулевой_пробег_возвр] IS NULL) " +
+                "OR ([Нулевой_пробег_возвр] = @Original_Нулевой_пробег_возвр)) AND ((@IsNull_Врем" +
+                "я_работы_двигателя_выезд = 1 AND [Время_работы_двигателя_выезд] IS NULL) OR ([Вр" +
+                "емя_работы_двигателя_выезд] = @Original_Время_работы_двигателя_выезд)) AND ((@Is" +
+                "Null_Время_работы_двигателя_возвр = 1 AND [Время_работы_двигателя_возвр] IS NULL" +
+                ") OR ([Время_работы_двигателя_возвр] = @Original_Время_работы_двигателя_возвр)) " +
+                "AND ((@IsNull_Время_работы_спецоборудования_выезд = 1 AND [Время_работы_спецобор" +
+                "удования_выезд] IS NULL) OR ([Время_работы_спецоборудования_выезд] = @Original_В" +
+                "ремя_работы_спецоборудования_выезд)) AND ((@IsNull_Время_работы_спецоборудования" +
+                "_возвр = 1 AND [Время_работы_спецоборудования_возвр] IS NULL) OR ([Время_работы_" +
+                "спецоборудования_возвр] = @Original_Время_работы_спецоборудования_возвр)) AND ((" +
+                "@IsNull_Остаток_ТСМ1_выезд = 1 AND [Остаток_ТСМ1_выезд] IS NULL) OR ([Остаток_ТС" +
+                "М1_выезд] = @Original_Остаток_ТСМ1_выезд)) AND ((@IsNull_Остаток_ТСМ1_возвр = 1 " +
+                "AND [Остаток_ТСМ1_возвр] IS NULL) OR ([Остаток_ТСМ1_возвр] = @Original_Остаток_Т" +
+                "СМ1_возвр)) AND ((@IsNull_Остаток_ТСМ2_выезд = 1 AND [Остаток_ТСМ2_выезд] IS NUL" +
+                "L) OR ([Остаток_ТСМ2_выезд] = @Original_Остаток_ТСМ2_выезд)) AND ((@IsNull_Остат" +
+                "ок_ТСМ2_возвр = 1 AND [Остаток_ТСМ2_возвр] IS NULL) OR ([Остаток_ТСМ2_возвр] = @" +
+                "Original_Остаток_ТСМ2_возвр)) AND ([ID_Водителя] = @Original_ID_Водителя) AND ([" +
+                "ID_Автомобиля] = @Original_ID_Автомобиля) AND ((@IsNull_ID_Отдела = 1 AND [ID_От" +
+                "дела] IS NULL) OR ([ID_Отдела] = @Original_ID_Отдела)));\r\nSELECT [ID_Путевого ли" +
+                "ста], [Номер путевого листа], [Дата путевого листа], Пункт_отправления, Пункт_на" +
+                "значения, Показания_спидометра_при_выезде, Показания_спидометра_при_возвращении," +
+                " Дата_Время_выезда_граф, Дата_Время_выезда_факт, Дата_Время_возвращения_граф, Да" +
+                "та_Время_возвращения_факт, Нулевой_пробег_выезд, Нулевой_пробег_возвр, Время_раб" +
+                "оты_двигателя_выезд, Время_работы_двигателя_возвр, Время_работы_спецоборудования" +
+                "_выезд, Время_работы_спецоборудования_возвр, Остаток_ТСМ1_выезд, Остаток_ТСМ1_во" +
+                "звр, Остаток_ТСМ2_выезд, Остаток_ТСМ2_возвр, ID_Водителя, ID_Автомобиля, ID_Отде" +
+                "ла FROM [Путевой лист Грузового авто] WHERE ([ID_Путевого листа] = @ID_Путевого_" +
+                "листа)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Номер_путевого_листа", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Номер путевого листа", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Дата_путевого_листа", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Дата путевого листа", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Пункт_отправления", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Пункт_отправления", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Пункт_назначения", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Пункт_назначения", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Показания_спидометра_при_выезде", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Показания_спидометра_при_выезде", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Показания_спидометра_при_возвращении", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Показания_спидометра_при_возвращении", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Дата_Время_выезда_граф", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Дата_Время_выезда_граф", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -18568,6 +18728,10 @@ SELECT Код, Подразделение, [Полное название] FROM 
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_Путевого_листа", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Путевого листа", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Номер_путевого_листа", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Номер путевого листа", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Дата_путевого_листа", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Дата путевого листа", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Пункт_отправления", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Пункт_отправления", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Пункт_отправления", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Пункт_отправления", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Пункт_назначения", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Пункт_назначения", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Пункт_назначения", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Пункт_назначения", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Показания_спидометра_при_выезде", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Показания_спидометра_при_выезде", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Показания_спидометра_при_выезде", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Показания_спидометра_при_выезде", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Показания_спидометра_при_возвращении", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Показания_спидометра_при_возвращении", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -18631,43 +18795,40 @@ SELECT Код, Подразделение, [Полное название] FROM 
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_Путевого_листа", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Путевого листа", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = @"SELECT        [ID_Путевого листа], [Номер путевого листа], [Дата путевого листа], Показания_спидометра_при_выезде, Показания_спидометра_при_возвращении, 
-                         Дата_Время_выезда_граф, Дата_Время_выезда_факт, Дата_Время_возвращения_граф, Дата_Время_возвращения_факт, Нулевой_пробег_выезд, 
-                         Нулевой_пробег_возвр, Время_работы_двигателя_выезд, Время_работы_двигателя_возвр, Время_работы_спецоборудования_выезд, 
-                         Время_работы_спецоборудования_возвр, Остаток_ТСМ1_выезд, Остаток_ТСМ1_возвр, Остаток_ТСМ2_выезд, Остаток_ТСМ2_возвр, ID_Водителя, 
-                         ID_Автомобиля, ID_Отдела
-FROM            [Путевой лист Грузового авто]
-WHERE        ([ID_Путевого листа] = @ID)";
+            this._commandCollection[2].CommandText = @"SELECT ID_Автомобиля, ID_Водителя, ID_Отдела, [ID_Путевого листа], Время_работы_двигателя_возвр, Время_работы_двигателя_выезд, Время_работы_спецоборудования_возвр, Время_работы_спецоборудования_выезд, [Дата путевого листа], Дата_Время_возвращения_граф, Дата_Время_возвращения_факт, Дата_Время_выезда_граф, Дата_Время_выезда_факт, [Номер путевого листа], Нулевой_пробег_возвр, Нулевой_пробег_выезд, Остаток_ТСМ1_возвр, Остаток_ТСМ1_выезд, Остаток_ТСМ2_возвр, Остаток_ТСМ2_выезд, Показания_спидометра_при_возвращении, Показания_спидометра_при_выезде, Пункт_назначения, Пункт_отправления FROM [Путевой лист Грузового авто] WHERE ([ID_Путевого листа] = @ID)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Путевого листа", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
             this._commandCollection[3].CommandText = "INSERT INTO [Путевой лист Грузового авто] ([Номер путевого листа], [Дата путевого" +
-                " листа], [Показания_спидометра_при_выезде], [Показания_спидометра_при_возвращени" +
-                "и], [Дата_Время_выезда_граф], [Дата_Время_выезда_факт], [Дата_Время_возвращения_" +
-                "граф], [Дата_Время_возвращения_факт], [Нулевой_пробег_выезд], [Нулевой_пробег_во" +
-                "звр], [Время_работы_двигателя_выезд], [Время_работы_двигателя_возвр], [Время_раб" +
-                "оты_спецоборудования_выезд], [Время_работы_спецоборудования_возвр], [Остаток_ТСМ" +
-                "1_выезд], [Остаток_ТСМ1_возвр], [Остаток_ТСМ2_выезд], [Остаток_ТСМ2_возвр], [ID_" +
-                "Водителя], [ID_Автомобиля], [ID_Отдела]) VALUES (@Номер_путевого_листа, @Дата_пу" +
-                "тевого_листа, @Показания_спидометра_при_выезде, @Показания_спидометра_при_возвра" +
+                " листа], [Пункт_отправления], [Пункт_назначения], [Показания_спидометра_при_выез" +
+                "де], [Показания_спидометра_при_возвращении], [Дата_Время_выезда_граф], [Дата_Вре" +
+                "мя_выезда_факт], [Дата_Время_возвращения_граф], [Дата_Время_возвращения_факт], [" +
+                "Нулевой_пробег_выезд], [Нулевой_пробег_возвр], [Время_работы_двигателя_выезд], [" +
+                "Время_работы_двигателя_возвр], [Время_работы_спецоборудования_выезд], [Время_раб" +
+                "оты_спецоборудования_возвр], [Остаток_ТСМ1_выезд], [Остаток_ТСМ1_возвр], [Остато" +
+                "к_ТСМ2_выезд], [Остаток_ТСМ2_возвр], [ID_Водителя], [ID_Автомобиля], [ID_Отдела]" +
+                ") VALUES (@Номер_путевого_листа, @Дата_путевого_листа, @Пункт_отправления, @Пунк" +
+                "т_назначения, @Показания_спидометра_при_выезде, @Показания_спидометра_при_возвра" +
                 "щении, @Дата_Время_выезда_граф, @Дата_Время_выезда_факт, @Дата_Время_возвращения" +
                 "_граф, @Дата_Время_возвращения_факт, @Нулевой_пробег_выезд, @Нулевой_пробег_возв" +
                 "р, @Время_работы_двигателя_выезд, @Время_работы_двигателя_возвр, @Время_работы_с" +
                 "пецоборудования_выезд, @Время_работы_спецоборудования_возвр, @Остаток_ТСМ1_выезд" +
                 ", @Остаток_ТСМ1_возвр, @Остаток_ТСМ2_выезд, @Остаток_ТСМ2_возвр, @ID_Водителя, @" +
                 "ID_Автомобиля, @ID_Отдела);\r\nSELECT [ID_Путевого листа], [Номер путевого листа]," +
-                " [Дата путевого листа], Показания_спидометра_при_выезде, Показания_спидометра_пр" +
-                "и_возвращении, Дата_Время_выезда_граф, Дата_Время_выезда_факт, Дата_Время_возвра" +
-                "щения_граф, Дата_Время_возвращения_факт, Нулевой_пробег_выезд, Нулевой_пробег_во" +
-                "звр, Время_работы_двигателя_выезд, Время_работы_двигателя_возвр, Время_работы_сп" +
-                "ецоборудования_выезд, Время_работы_спецоборудования_возвр, Остаток_ТСМ1_выезд, О" +
-                "статок_ТСМ1_возвр, Остаток_ТСМ2_выезд, Остаток_ТСМ2_возвр, ID_Водителя, ID_Автом" +
-                "обиля, ID_Отдела FROM [Путевой лист Грузового авто] WHERE ([ID_Путевого листа] =" +
-                " SCOPE_IDENTITY())";
+                " [Дата путевого листа], Пункт_отправления, Пункт_назначения, Показания_спидометр" +
+                "а_при_выезде, Показания_спидометра_при_возвращении, Дата_Время_выезда_граф, Дата" +
+                "_Время_выезда_факт, Дата_Время_возвращения_граф, Дата_Время_возвращения_факт, Ну" +
+                "левой_пробег_выезд, Нулевой_пробег_возвр, Время_работы_двигателя_выезд, Время_ра" +
+                "боты_двигателя_возвр, Время_работы_спецоборудования_выезд, Время_работы_спецобор" +
+                "удования_возвр, Остаток_ТСМ1_выезд, Остаток_ТСМ1_возвр, Остаток_ТСМ2_выезд, Оста" +
+                "ток_ТСМ2_возвр, ID_Водителя, ID_Автомобиля, ID_Отдела FROM [Путевой лист Грузово" +
+                "го авто] WHERE ([ID_Путевого листа] = SCOPE_IDENTITY())";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Номер_путевого_листа", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Номер путевого листа", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Дата_путевого_листа", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "Дата путевого листа", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Пункт_отправления", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Пункт_отправления", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Пункт_назначения", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Пункт_назначения", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Показания_спидометра_при_выезде", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Показания_спидометра_при_выезде", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Показания_спидометра_при_возвращении", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Показания_спидометра_при_возвращении", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Дата_Время_выезда_граф", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Дата_Время_выезда_граф", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -18776,6 +18937,8 @@ WHERE        ([ID_Путевого листа] = @ID)";
                     int Original_ID_Путевого_листа, 
                     int Original_Номер_путевого_листа, 
                     System.DateTime Original_Дата_путевого_листа, 
+                    string Original_Пункт_отправления, 
+                    string Original_Пункт_назначения, 
                     global::System.Nullable<int> Original_Показания_спидометра_при_выезде, 
                     global::System.Nullable<int> Original_Показания_спидометра_при_возвращении, 
                     global::System.Nullable<global::System.DateTime> Original_Дата_Время_выезда_граф, 
@@ -18798,143 +18961,159 @@ WHERE        ([ID_Путевого листа] = @ID)";
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ID_Путевого_листа));
             this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_Номер_путевого_листа));
             this.Adapter.DeleteCommand.Parameters[2].Value = ((System.DateTime)(Original_Дата_путевого_листа));
-            if ((Original_Показания_спидометра_при_выезде.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((int)(Original_Показания_спидометра_при_выезде.Value));
-            }
-            else {
+            if ((Original_Пункт_отправления == null)) {
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
-            if ((Original_Показания_спидометра_при_возвращении.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((int)(Original_Показания_спидометра_при_возвращении.Value));
-            }
             else {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_Пункт_отправления));
+            }
+            if ((Original_Пункт_назначения == null)) {
                 this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
-            if ((Original_Дата_Время_выезда_граф.HasValue == true)) {
+            else {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_Пункт_назначения));
+            }
+            if ((Original_Показания_спидометра_при_выезде.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((System.DateTime)(Original_Дата_Время_выезда_граф.Value));
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((int)(Original_Показания_спидометра_при_выезде.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
-            if ((Original_Дата_Время_выезда_факт.HasValue == true)) {
+            if ((Original_Показания_спидометра_при_возвращении.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[10].Value = ((System.DateTime)(Original_Дата_Время_выезда_факт.Value));
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((int)(Original_Показания_спидометра_при_возвращении.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
-            if ((Original_Дата_Время_возвращения_граф.HasValue == true)) {
+            if ((Original_Дата_Время_выезда_граф.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[12].Value = ((System.DateTime)(Original_Дата_Время_возвращения_граф.Value));
+                this.Adapter.DeleteCommand.Parameters[12].Value = ((System.DateTime)(Original_Дата_Время_выезда_граф.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
-            if ((Original_Дата_Время_возвращения_факт.HasValue == true)) {
+            if ((Original_Дата_Время_выезда_факт.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[14].Value = ((System.DateTime)(Original_Дата_Время_возвращения_факт.Value));
+                this.Adapter.DeleteCommand.Parameters[14].Value = ((System.DateTime)(Original_Дата_Время_выезда_факт.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[14].Value = global::System.DBNull.Value;
             }
-            if ((Original_Нулевой_пробег_выезд.HasValue == true)) {
+            if ((Original_Дата_Время_возвращения_граф.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[16].Value = ((int)(Original_Нулевой_пробег_выезд.Value));
+                this.Adapter.DeleteCommand.Parameters[16].Value = ((System.DateTime)(Original_Дата_Время_возвращения_граф.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[16].Value = global::System.DBNull.Value;
             }
-            if ((Original_Нулевой_пробег_возвр.HasValue == true)) {
+            if ((Original_Дата_Время_возвращения_факт.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[17].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[18].Value = ((int)(Original_Нулевой_пробег_возвр.Value));
+                this.Adapter.DeleteCommand.Parameters[18].Value = ((System.DateTime)(Original_Дата_Время_возвращения_факт.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[17].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[18].Value = global::System.DBNull.Value;
             }
-            if ((Original_Время_работы_двигателя_выезд.HasValue == true)) {
+            if ((Original_Нулевой_пробег_выезд.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[19].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[20].Value = ((double)(Original_Время_работы_двигателя_выезд.Value));
+                this.Adapter.DeleteCommand.Parameters[20].Value = ((int)(Original_Нулевой_пробег_выезд.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[19].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[20].Value = global::System.DBNull.Value;
             }
-            if ((Original_Время_работы_двигателя_возвр.HasValue == true)) {
+            if ((Original_Нулевой_пробег_возвр.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[21].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[22].Value = ((double)(Original_Время_работы_двигателя_возвр.Value));
+                this.Adapter.DeleteCommand.Parameters[22].Value = ((int)(Original_Нулевой_пробег_возвр.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[21].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[22].Value = global::System.DBNull.Value;
             }
-            if ((Original_Время_работы_спецоборудования_выезд.HasValue == true)) {
+            if ((Original_Время_работы_двигателя_выезд.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[23].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[24].Value = ((double)(Original_Время_работы_спецоборудования_выезд.Value));
+                this.Adapter.DeleteCommand.Parameters[24].Value = ((double)(Original_Время_работы_двигателя_выезд.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[23].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[24].Value = global::System.DBNull.Value;
             }
-            if ((Original_Время_работы_спецоборудования_возвр.HasValue == true)) {
+            if ((Original_Время_работы_двигателя_возвр.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[25].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[26].Value = ((double)(Original_Время_работы_спецоборудования_возвр.Value));
+                this.Adapter.DeleteCommand.Parameters[26].Value = ((double)(Original_Время_работы_двигателя_возвр.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[25].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[26].Value = global::System.DBNull.Value;
             }
-            if ((Original_Остаток_ТСМ1_выезд.HasValue == true)) {
+            if ((Original_Время_работы_спецоборудования_выезд.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[27].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[28].Value = ((double)(Original_Остаток_ТСМ1_выезд.Value));
+                this.Adapter.DeleteCommand.Parameters[28].Value = ((double)(Original_Время_работы_спецоборудования_выезд.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[27].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[28].Value = global::System.DBNull.Value;
             }
-            if ((Original_Остаток_ТСМ1_возвр.HasValue == true)) {
+            if ((Original_Время_работы_спецоборудования_возвр.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[29].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[30].Value = ((double)(Original_Остаток_ТСМ1_возвр.Value));
+                this.Adapter.DeleteCommand.Parameters[30].Value = ((double)(Original_Время_работы_спецоборудования_возвр.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[29].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[30].Value = global::System.DBNull.Value;
             }
-            if ((Original_Остаток_ТСМ2_выезд.HasValue == true)) {
+            if ((Original_Остаток_ТСМ1_выезд.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[31].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[32].Value = ((double)(Original_Остаток_ТСМ2_выезд.Value));
+                this.Adapter.DeleteCommand.Parameters[32].Value = ((double)(Original_Остаток_ТСМ1_выезд.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[31].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[32].Value = global::System.DBNull.Value;
             }
-            if ((Original_Остаток_ТСМ2_возвр.HasValue == true)) {
+            if ((Original_Остаток_ТСМ1_возвр.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[33].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[34].Value = ((double)(Original_Остаток_ТСМ2_возвр.Value));
+                this.Adapter.DeleteCommand.Parameters[34].Value = ((double)(Original_Остаток_ТСМ1_возвр.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[33].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[34].Value = global::System.DBNull.Value;
             }
-            this.Adapter.DeleteCommand.Parameters[35].Value = ((int)(Original_ID_Водителя));
-            this.Adapter.DeleteCommand.Parameters[36].Value = ((int)(Original_ID_Автомобиля));
-            if ((Original_ID_Отдела.HasValue == true)) {
+            if ((Original_Остаток_ТСМ2_выезд.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[35].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[36].Value = ((double)(Original_Остаток_ТСМ2_выезд.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[35].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[36].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Остаток_ТСМ2_возвр.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[37].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[38].Value = ((int)(Original_ID_Отдела.Value));
+                this.Adapter.DeleteCommand.Parameters[38].Value = ((double)(Original_Остаток_ТСМ2_возвр.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[37].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[38].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.DeleteCommand.Parameters[39].Value = ((int)(Original_ID_Водителя));
+            this.Adapter.DeleteCommand.Parameters[40].Value = ((int)(Original_ID_Автомобиля));
+            if ((Original_ID_Отдела.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[41].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[42].Value = ((int)(Original_ID_Отдела.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[41].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[42].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -18959,6 +19138,8 @@ WHERE        ([ID_Путевого листа] = @ID)";
         public virtual int Insert(
                     int Номер_путевого_листа, 
                     System.DateTime Дата_путевого_листа, 
+                    string Пункт_отправления, 
+                    string Пункт_назначения, 
                     global::System.Nullable<int> Показания_спидометра_при_выезде, 
                     global::System.Nullable<int> Показания_спидометра_при_возвращении, 
                     global::System.Nullable<global::System.DateTime> Дата_Время_выезда_граф, 
@@ -18980,109 +19161,121 @@ WHERE        ([ID_Путевого листа] = @ID)";
                     global::System.Nullable<int> ID_Отдела) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((int)(Номер_путевого_листа));
             this.Adapter.InsertCommand.Parameters[1].Value = ((System.DateTime)(Дата_путевого_листа));
-            if ((Показания_спидометра_при_выезде.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((int)(Показания_спидометра_при_выезде.Value));
-            }
-            else {
+            if ((Пункт_отправления == null)) {
                 this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            if ((Показания_спидометра_при_возвращении.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((int)(Показания_спидометра_при_возвращении.Value));
-            }
             else {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(Пункт_отправления));
+            }
+            if ((Пункт_назначения == null)) {
                 this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
-            if ((Дата_Время_выезда_граф.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((System.DateTime)(Дата_Время_выезда_граф.Value));
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(Пункт_назначения));
+            }
+            if ((Показания_спидометра_при_выезде.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((int)(Показания_спидометра_при_выезде.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
-            if ((Дата_Время_выезда_факт.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((System.DateTime)(Дата_Время_выезда_факт.Value));
+            if ((Показания_спидометра_при_возвращении.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[5].Value = ((int)(Показания_спидометра_при_возвращении.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
-            if ((Дата_Время_возвращения_граф.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((System.DateTime)(Дата_Время_возвращения_граф.Value));
+            if ((Дата_Время_выезда_граф.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[6].Value = ((System.DateTime)(Дата_Время_выезда_граф.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
-            if ((Дата_Время_возвращения_факт.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[7].Value = ((System.DateTime)(Дата_Время_возвращения_факт.Value));
+            if ((Дата_Время_выезда_факт.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[7].Value = ((System.DateTime)(Дата_Время_выезда_факт.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
-            if ((Нулевой_пробег_выезд.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[8].Value = ((int)(Нулевой_пробег_выезд.Value));
+            if ((Дата_Время_возвращения_граф.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[8].Value = ((System.DateTime)(Дата_Время_возвращения_граф.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
-            if ((Нулевой_пробег_возвр.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[9].Value = ((int)(Нулевой_пробег_возвр.Value));
+            if ((Дата_Время_возвращения_факт.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[9].Value = ((System.DateTime)(Дата_Время_возвращения_факт.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
-            if ((Время_работы_двигателя_выезд.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[10].Value = ((double)(Время_работы_двигателя_выезд.Value));
+            if ((Нулевой_пробег_выезд.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[10].Value = ((int)(Нулевой_пробег_выезд.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
-            if ((Время_работы_двигателя_возвр.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[11].Value = ((double)(Время_работы_двигателя_возвр.Value));
+            if ((Нулевой_пробег_возвр.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[11].Value = ((int)(Нулевой_пробег_возвр.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
-            if ((Время_работы_спецоборудования_выезд.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[12].Value = ((double)(Время_работы_спецоборудования_выезд.Value));
+            if ((Время_работы_двигателя_выезд.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[12].Value = ((double)(Время_работы_двигателя_выезд.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
-            if ((Время_работы_спецоборудования_возвр.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[13].Value = ((double)(Время_работы_спецоборудования_возвр.Value));
+            if ((Время_работы_двигателя_возвр.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[13].Value = ((double)(Время_работы_двигателя_возвр.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[13].Value = global::System.DBNull.Value;
             }
-            if ((Остаток_ТСМ1_выезд.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[14].Value = ((double)(Остаток_ТСМ1_выезд.Value));
+            if ((Время_работы_спецоборудования_выезд.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[14].Value = ((double)(Время_работы_спецоборудования_выезд.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[14].Value = global::System.DBNull.Value;
             }
-            if ((Остаток_ТСМ1_возвр.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[15].Value = ((double)(Остаток_ТСМ1_возвр.Value));
+            if ((Время_работы_спецоборудования_возвр.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[15].Value = ((double)(Время_работы_спецоборудования_возвр.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[15].Value = global::System.DBNull.Value;
             }
-            if ((Остаток_ТСМ2_выезд.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[16].Value = ((double)(Остаток_ТСМ2_выезд.Value));
+            if ((Остаток_ТСМ1_выезд.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[16].Value = ((double)(Остаток_ТСМ1_выезд.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[16].Value = global::System.DBNull.Value;
             }
-            if ((Остаток_ТСМ2_возвр.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[17].Value = ((double)(Остаток_ТСМ2_возвр.Value));
+            if ((Остаток_ТСМ1_возвр.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[17].Value = ((double)(Остаток_ТСМ1_возвр.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[17].Value = global::System.DBNull.Value;
             }
-            this.Adapter.InsertCommand.Parameters[18].Value = ((int)(ID_Водителя));
-            this.Adapter.InsertCommand.Parameters[19].Value = ((int)(ID_Автомобиля));
-            if ((ID_Отдела.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[20].Value = ((int)(ID_Отдела.Value));
+            if ((Остаток_ТСМ2_выезд.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[18].Value = ((double)(Остаток_ТСМ2_выезд.Value));
             }
             else {
-                this.Adapter.InsertCommand.Parameters[20].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[18].Value = global::System.DBNull.Value;
+            }
+            if ((Остаток_ТСМ2_возвр.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[19].Value = ((double)(Остаток_ТСМ2_возвр.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[19].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.InsertCommand.Parameters[20].Value = ((int)(ID_Водителя));
+            this.Adapter.InsertCommand.Parameters[21].Value = ((int)(ID_Автомобиля));
+            if ((ID_Отдела.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[22].Value = ((int)(ID_Отдела.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[22].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -19107,6 +19300,8 @@ WHERE        ([ID_Путевого листа] = @ID)";
         public virtual int Update(
                     int Номер_путевого_листа, 
                     System.DateTime Дата_путевого_листа, 
+                    string Пункт_отправления, 
+                    string Пункт_назначения, 
                     global::System.Nullable<int> Показания_спидометра_при_выезде, 
                     global::System.Nullable<int> Показания_спидометра_при_возвращении, 
                     global::System.Nullable<global::System.DateTime> Дата_Время_выезда_граф, 
@@ -19129,6 +19324,8 @@ WHERE        ([ID_Путевого листа] = @ID)";
                     int Original_ID_Путевого_листа, 
                     int Original_Номер_путевого_листа, 
                     System.DateTime Original_Дата_путевого_листа, 
+                    string Original_Пункт_отправления, 
+                    string Original_Пункт_назначения, 
                     global::System.Nullable<int> Original_Показания_спидометра_при_выезде, 
                     global::System.Nullable<int> Original_Показания_спидометра_при_возвращении, 
                     global::System.Nullable<global::System.DateTime> Original_Дата_Время_выезда_граф, 
@@ -19151,252 +19348,280 @@ WHERE        ([ID_Путевого листа] = @ID)";
                     int ID_Путевого_листа) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(Номер_путевого_листа));
             this.Adapter.UpdateCommand.Parameters[1].Value = ((System.DateTime)(Дата_путевого_листа));
-            if ((Показания_спидометра_при_выезде.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(Показания_спидометра_при_выезде.Value));
-            }
-            else {
+            if ((Пункт_отправления == null)) {
                 this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            if ((Показания_спидометра_при_возвращении.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Показания_спидометра_при_возвращении.Value));
-            }
             else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Пункт_отправления));
+            }
+            if ((Пункт_назначения == null)) {
                 this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
-            if ((Дата_Время_выезда_граф.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((System.DateTime)(Дата_Время_выезда_граф.Value));
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Пункт_назначения));
+            }
+            if ((Показания_спидометра_при_выезде.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Показания_спидометра_при_выезде.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
-            if ((Дата_Время_выезда_факт.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((System.DateTime)(Дата_Время_выезда_факт.Value));
+            if ((Показания_спидометра_при_возвращении.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Показания_спидометра_при_возвращении.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
-            if ((Дата_Время_возвращения_граф.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((System.DateTime)(Дата_Время_возвращения_граф.Value));
+            if ((Дата_Время_выезда_граф.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((System.DateTime)(Дата_Время_выезда_граф.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
-            if ((Дата_Время_возвращения_факт.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((System.DateTime)(Дата_Время_возвращения_факт.Value));
+            if ((Дата_Время_выезда_факт.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((System.DateTime)(Дата_Время_выезда_факт.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
-            if ((Нулевой_пробег_выезд.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Нулевой_пробег_выезд.Value));
+            if ((Дата_Время_возвращения_граф.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((System.DateTime)(Дата_Время_возвращения_граф.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
-            if ((Нулевой_пробег_возвр.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Нулевой_пробег_возвр.Value));
+            if ((Дата_Время_возвращения_факт.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((System.DateTime)(Дата_Время_возвращения_факт.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
-            if ((Время_работы_двигателя_выезд.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((double)(Время_работы_двигателя_выезд.Value));
+            if ((Нулевой_пробег_выезд.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Нулевой_пробег_выезд.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
-            if ((Время_работы_двигателя_возвр.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((double)(Время_работы_двигателя_возвр.Value));
+            if ((Нулевой_пробег_возвр.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(Нулевой_пробег_возвр.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
-            if ((Время_работы_спецоборудования_выезд.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((double)(Время_работы_спецоборудования_выезд.Value));
+            if ((Время_работы_двигателя_выезд.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((double)(Время_работы_двигателя_выезд.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
-            if ((Время_работы_спецоборудования_возвр.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((double)(Время_работы_спецоборудования_возвр.Value));
+            if ((Время_работы_двигателя_возвр.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((double)(Время_работы_двигателя_возвр.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
             }
-            if ((Остаток_ТСМ1_выезд.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((double)(Остаток_ТСМ1_выезд.Value));
+            if ((Время_работы_спецоборудования_выезд.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((double)(Время_работы_спецоборудования_выезд.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
             }
-            if ((Остаток_ТСМ1_возвр.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((double)(Остаток_ТСМ1_возвр.Value));
+            if ((Время_работы_спецоборудования_возвр.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((double)(Время_работы_спецоборудования_возвр.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
             }
-            if ((Остаток_ТСМ2_выезд.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((double)(Остаток_ТСМ2_выезд.Value));
+            if ((Остаток_ТСМ1_выезд.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((double)(Остаток_ТСМ1_выезд.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
             }
-            if ((Остаток_ТСМ2_возвр.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((double)(Остаток_ТСМ2_возвр.Value));
+            if ((Остаток_ТСМ1_возвр.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((double)(Остаток_ТСМ1_возвр.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[18].Value = ((int)(ID_Водителя));
-            this.Adapter.UpdateCommand.Parameters[19].Value = ((int)(ID_Автомобиля));
+            if ((Остаток_ТСМ2_выезд.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((double)(Остаток_ТСМ2_выезд.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
+            }
+            if ((Остаток_ТСМ2_возвр.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((double)(Остаток_ТСМ2_возвр.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[20].Value = ((int)(ID_Водителя));
+            this.Adapter.UpdateCommand.Parameters[21].Value = ((int)(ID_Автомобиля));
             if ((ID_Отдела.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((int)(ID_Отдела.Value));
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((int)(ID_Отдела.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[21].Value = ((int)(Original_ID_Путевого_листа));
-            this.Adapter.UpdateCommand.Parameters[22].Value = ((int)(Original_Номер_путевого_листа));
-            this.Adapter.UpdateCommand.Parameters[23].Value = ((System.DateTime)(Original_Дата_путевого_листа));
-            if ((Original_Показания_спидометра_при_выезде.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[25].Value = ((int)(Original_Показания_спидометра_при_выезде.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[25].Value = global::System.DBNull.Value;
-            }
-            if ((Original_Показания_спидометра_при_возвращении.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[27].Value = ((int)(Original_Показания_спидометра_при_возвращении.Value));
-            }
-            else {
+            this.Adapter.UpdateCommand.Parameters[23].Value = ((int)(Original_ID_Путевого_листа));
+            this.Adapter.UpdateCommand.Parameters[24].Value = ((int)(Original_Номер_путевого_листа));
+            this.Adapter.UpdateCommand.Parameters[25].Value = ((System.DateTime)(Original_Дата_путевого_листа));
+            if ((Original_Пункт_отправления == null)) {
                 this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[27].Value = global::System.DBNull.Value;
             }
-            if ((Original_Дата_Время_выезда_граф.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[28].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[29].Value = ((System.DateTime)(Original_Дата_Время_выезда_граф.Value));
-            }
             else {
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((string)(Original_Пункт_отправления));
+            }
+            if ((Original_Пункт_назначения == null)) {
                 this.Adapter.UpdateCommand.Parameters[28].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[29].Value = global::System.DBNull.Value;
             }
-            if ((Original_Дата_Время_выезда_факт.HasValue == true)) {
+            else {
+                this.Adapter.UpdateCommand.Parameters[28].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[29].Value = ((string)(Original_Пункт_назначения));
+            }
+            if ((Original_Показания_спидометра_при_выезде.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[30].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[31].Value = ((System.DateTime)(Original_Дата_Время_выезда_факт.Value));
+                this.Adapter.UpdateCommand.Parameters[31].Value = ((int)(Original_Показания_спидометра_при_выезде.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[30].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[31].Value = global::System.DBNull.Value;
             }
-            if ((Original_Дата_Время_возвращения_граф.HasValue == true)) {
+            if ((Original_Показания_спидометра_при_возвращении.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[32].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[33].Value = ((System.DateTime)(Original_Дата_Время_возвращения_граф.Value));
+                this.Adapter.UpdateCommand.Parameters[33].Value = ((int)(Original_Показания_спидометра_при_возвращении.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[32].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[33].Value = global::System.DBNull.Value;
             }
-            if ((Original_Дата_Время_возвращения_факт.HasValue == true)) {
+            if ((Original_Дата_Время_выезда_граф.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[34].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[35].Value = ((System.DateTime)(Original_Дата_Время_возвращения_факт.Value));
+                this.Adapter.UpdateCommand.Parameters[35].Value = ((System.DateTime)(Original_Дата_Время_выезда_граф.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[34].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[35].Value = global::System.DBNull.Value;
             }
-            if ((Original_Нулевой_пробег_выезд.HasValue == true)) {
+            if ((Original_Дата_Время_выезда_факт.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[36].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[37].Value = ((int)(Original_Нулевой_пробег_выезд.Value));
+                this.Adapter.UpdateCommand.Parameters[37].Value = ((System.DateTime)(Original_Дата_Время_выезда_факт.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[36].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[37].Value = global::System.DBNull.Value;
             }
-            if ((Original_Нулевой_пробег_возвр.HasValue == true)) {
+            if ((Original_Дата_Время_возвращения_граф.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[38].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[39].Value = ((int)(Original_Нулевой_пробег_возвр.Value));
+                this.Adapter.UpdateCommand.Parameters[39].Value = ((System.DateTime)(Original_Дата_Время_возвращения_граф.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[38].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[39].Value = global::System.DBNull.Value;
             }
-            if ((Original_Время_работы_двигателя_выезд.HasValue == true)) {
+            if ((Original_Дата_Время_возвращения_факт.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[40].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[41].Value = ((double)(Original_Время_работы_двигателя_выезд.Value));
+                this.Adapter.UpdateCommand.Parameters[41].Value = ((System.DateTime)(Original_Дата_Время_возвращения_факт.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[40].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[41].Value = global::System.DBNull.Value;
             }
-            if ((Original_Время_работы_двигателя_возвр.HasValue == true)) {
+            if ((Original_Нулевой_пробег_выезд.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[42].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[43].Value = ((double)(Original_Время_работы_двигателя_возвр.Value));
+                this.Adapter.UpdateCommand.Parameters[43].Value = ((int)(Original_Нулевой_пробег_выезд.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[42].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[43].Value = global::System.DBNull.Value;
             }
-            if ((Original_Время_работы_спецоборудования_выезд.HasValue == true)) {
+            if ((Original_Нулевой_пробег_возвр.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[44].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[45].Value = ((double)(Original_Время_работы_спецоборудования_выезд.Value));
+                this.Adapter.UpdateCommand.Parameters[45].Value = ((int)(Original_Нулевой_пробег_возвр.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[44].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[45].Value = global::System.DBNull.Value;
             }
-            if ((Original_Время_работы_спецоборудования_возвр.HasValue == true)) {
+            if ((Original_Время_работы_двигателя_выезд.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[46].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[47].Value = ((double)(Original_Время_работы_спецоборудования_возвр.Value));
+                this.Adapter.UpdateCommand.Parameters[47].Value = ((double)(Original_Время_работы_двигателя_выезд.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[46].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[47].Value = global::System.DBNull.Value;
             }
-            if ((Original_Остаток_ТСМ1_выезд.HasValue == true)) {
+            if ((Original_Время_работы_двигателя_возвр.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[48].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[49].Value = ((double)(Original_Остаток_ТСМ1_выезд.Value));
+                this.Adapter.UpdateCommand.Parameters[49].Value = ((double)(Original_Время_работы_двигателя_возвр.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[48].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[49].Value = global::System.DBNull.Value;
             }
-            if ((Original_Остаток_ТСМ1_возвр.HasValue == true)) {
+            if ((Original_Время_работы_спецоборудования_выезд.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[50].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[51].Value = ((double)(Original_Остаток_ТСМ1_возвр.Value));
+                this.Adapter.UpdateCommand.Parameters[51].Value = ((double)(Original_Время_работы_спецоборудования_выезд.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[50].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[51].Value = global::System.DBNull.Value;
             }
-            if ((Original_Остаток_ТСМ2_выезд.HasValue == true)) {
+            if ((Original_Время_работы_спецоборудования_возвр.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[52].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[53].Value = ((double)(Original_Остаток_ТСМ2_выезд.Value));
+                this.Adapter.UpdateCommand.Parameters[53].Value = ((double)(Original_Время_работы_спецоборудования_возвр.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[52].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[53].Value = global::System.DBNull.Value;
             }
-            if ((Original_Остаток_ТСМ2_возвр.HasValue == true)) {
+            if ((Original_Остаток_ТСМ1_выезд.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[54].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[55].Value = ((double)(Original_Остаток_ТСМ2_возвр.Value));
+                this.Adapter.UpdateCommand.Parameters[55].Value = ((double)(Original_Остаток_ТСМ1_выезд.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[54].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[55].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[56].Value = ((int)(Original_ID_Водителя));
-            this.Adapter.UpdateCommand.Parameters[57].Value = ((int)(Original_ID_Автомобиля));
-            if ((Original_ID_Отдела.HasValue == true)) {
+            if ((Original_Остаток_ТСМ1_возвр.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[56].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[57].Value = ((double)(Original_Остаток_ТСМ1_возвр.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[56].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[57].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Остаток_ТСМ2_выезд.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[58].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[59].Value = ((int)(Original_ID_Отдела.Value));
+                this.Adapter.UpdateCommand.Parameters[59].Value = ((double)(Original_Остаток_ТСМ2_выезд.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[58].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[59].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[60].Value = ((int)(ID_Путевого_листа));
+            if ((Original_Остаток_ТСМ2_возвр.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[60].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[61].Value = ((double)(Original_Остаток_ТСМ2_возвр.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[60].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[61].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[62].Value = ((int)(Original_ID_Водителя));
+            this.Adapter.UpdateCommand.Parameters[63].Value = ((int)(Original_ID_Автомобиля));
+            if ((Original_ID_Отдела.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[64].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[65].Value = ((int)(Original_ID_Отдела.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[64].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[65].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[66].Value = ((int)(ID_Путевого_листа));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -19420,6 +19645,8 @@ WHERE        ([ID_Путевого листа] = @ID)";
         public virtual int Update(
                     int Номер_путевого_листа, 
                     System.DateTime Дата_путевого_листа, 
+                    string Пункт_отправления, 
+                    string Пункт_назначения, 
                     global::System.Nullable<int> Показания_спидометра_при_выезде, 
                     global::System.Nullable<int> Показания_спидометра_при_возвращении, 
                     global::System.Nullable<global::System.DateTime> Дата_Время_выезда_граф, 
@@ -19442,6 +19669,8 @@ WHERE        ([ID_Путевого листа] = @ID)";
                     int Original_ID_Путевого_листа, 
                     int Original_Номер_путевого_листа, 
                     System.DateTime Original_Дата_путевого_листа, 
+                    string Original_Пункт_отправления, 
+                    string Original_Пункт_назначения, 
                     global::System.Nullable<int> Original_Показания_спидометра_при_выезде, 
                     global::System.Nullable<int> Original_Показания_спидометра_при_возвращении, 
                     global::System.Nullable<global::System.DateTime> Original_Дата_Время_выезда_граф, 
@@ -19461,7 +19690,7 @@ WHERE        ([ID_Путевого листа] = @ID)";
                     int Original_ID_Водителя, 
                     int Original_ID_Автомобиля, 
                     global::System.Nullable<int> Original_ID_Отдела) {
-            return this.Update(Номер_путевого_листа, Дата_путевого_листа, Показания_спидометра_при_выезде, Показания_спидометра_при_возвращении, Дата_Время_выезда_граф, Дата_Время_выезда_факт, Дата_Время_возвращения_граф, Дата_Время_возвращения_факт, Нулевой_пробег_выезд, Нулевой_пробег_возвр, Время_работы_двигателя_выезд, Время_работы_двигателя_возвр, Время_работы_спецоборудования_выезд, Время_работы_спецоборудования_возвр, Остаток_ТСМ1_выезд, Остаток_ТСМ1_возвр, Остаток_ТСМ2_выезд, Остаток_ТСМ2_возвр, ID_Водителя, ID_Автомобиля, ID_Отдела, Original_ID_Путевого_листа, Original_Номер_путевого_листа, Original_Дата_путевого_листа, Original_Показания_спидометра_при_выезде, Original_Показания_спидометра_при_возвращении, Original_Дата_Время_выезда_граф, Original_Дата_Время_выезда_факт, Original_Дата_Время_возвращения_граф, Original_Дата_Время_возвращения_факт, Original_Нулевой_пробег_выезд, Original_Нулевой_пробег_возвр, Original_Время_работы_двигателя_выезд, Original_Время_работы_двигателя_возвр, Original_Время_работы_спецоборудования_выезд, Original_Время_работы_спецоборудования_возвр, Original_Остаток_ТСМ1_выезд, Original_Остаток_ТСМ1_возвр, Original_Остаток_ТСМ2_выезд, Original_Остаток_ТСМ2_возвр, Original_ID_Водителя, Original_ID_Автомобиля, Original_ID_Отдела, Original_ID_Путевого_листа);
+            return this.Update(Номер_путевого_листа, Дата_путевого_листа, Пункт_отправления, Пункт_назначения, Показания_спидометра_при_выезде, Показания_спидометра_при_возвращении, Дата_Время_выезда_граф, Дата_Время_выезда_факт, Дата_Время_возвращения_граф, Дата_Время_возвращения_факт, Нулевой_пробег_выезд, Нулевой_пробег_возвр, Время_работы_двигателя_выезд, Время_работы_двигателя_возвр, Время_работы_спецоборудования_выезд, Время_работы_спецоборудования_возвр, Остаток_ТСМ1_выезд, Остаток_ТСМ1_возвр, Остаток_ТСМ2_выезд, Остаток_ТСМ2_возвр, ID_Водителя, ID_Автомобиля, ID_Отдела, Original_ID_Путевого_листа, Original_Номер_путевого_листа, Original_Дата_путевого_листа, Original_Пункт_отправления, Original_Пункт_назначения, Original_Показания_спидометра_при_выезде, Original_Показания_спидометра_при_возвращении, Original_Дата_Время_выезда_граф, Original_Дата_Время_выезда_факт, Original_Дата_Время_возвращения_граф, Original_Дата_Время_возвращения_факт, Original_Нулевой_пробег_выезд, Original_Нулевой_пробег_возвр, Original_Время_работы_двигателя_выезд, Original_Время_работы_двигателя_возвр, Original_Время_работы_спецоборудования_выезд, Original_Время_работы_спецоборудования_возвр, Original_Остаток_ТСМ1_выезд, Original_Остаток_ТСМ1_возвр, Original_Остаток_ТСМ2_выезд, Original_Остаток_ТСМ2_возвр, Original_ID_Водителя, Original_ID_Автомобиля, Original_ID_Отдела, Original_ID_Путевого_листа);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -19495,6 +19724,8 @@ WHERE        ([ID_Путевого листа] = @ID)";
         public virtual object InsertQuery(
                     int Номер_путевого_листа, 
                     string Дата_путевого_листа, 
+                    string Пункт_отправления, 
+                    string Пункт_назначения, 
                     global::System.Nullable<int> Показания_спидометра_при_выезде, 
                     global::System.Nullable<int> Показания_спидометра_при_возвращении, 
                     global::System.Nullable<global::System.DateTime> Дата_Время_выезда_граф, 
@@ -19522,109 +19753,121 @@ WHERE        ([ID_Путевого листа] = @ID)";
             else {
                 command.Parameters[1].Value = ((string)(Дата_путевого_листа));
             }
-            if ((Показания_спидометра_при_выезде.HasValue == true)) {
-                command.Parameters[2].Value = ((int)(Показания_спидометра_при_выезде.Value));
-            }
-            else {
+            if ((Пункт_отправления == null)) {
                 command.Parameters[2].Value = global::System.DBNull.Value;
             }
-            if ((Показания_спидометра_при_возвращении.HasValue == true)) {
-                command.Parameters[3].Value = ((int)(Показания_спидометра_при_возвращении.Value));
-            }
             else {
+                command.Parameters[2].Value = ((string)(Пункт_отправления));
+            }
+            if ((Пункт_назначения == null)) {
                 command.Parameters[3].Value = global::System.DBNull.Value;
             }
-            if ((Дата_Время_выезда_граф.HasValue == true)) {
-                command.Parameters[4].Value = ((System.DateTime)(Дата_Время_выезда_граф.Value));
+            else {
+                command.Parameters[3].Value = ((string)(Пункт_назначения));
+            }
+            if ((Показания_спидометра_при_выезде.HasValue == true)) {
+                command.Parameters[4].Value = ((int)(Показания_спидометра_при_выезде.Value));
             }
             else {
                 command.Parameters[4].Value = global::System.DBNull.Value;
             }
-            if ((Дата_Время_выезда_факт.HasValue == true)) {
-                command.Parameters[5].Value = ((System.DateTime)(Дата_Время_выезда_факт.Value));
+            if ((Показания_спидометра_при_возвращении.HasValue == true)) {
+                command.Parameters[5].Value = ((int)(Показания_спидометра_при_возвращении.Value));
             }
             else {
                 command.Parameters[5].Value = global::System.DBNull.Value;
             }
-            if ((Дата_Время_возвращения_граф.HasValue == true)) {
-                command.Parameters[6].Value = ((System.DateTime)(Дата_Время_возвращения_граф.Value));
+            if ((Дата_Время_выезда_граф.HasValue == true)) {
+                command.Parameters[6].Value = ((System.DateTime)(Дата_Время_выезда_граф.Value));
             }
             else {
                 command.Parameters[6].Value = global::System.DBNull.Value;
             }
-            if ((Дата_Время_возвращения_факт.HasValue == true)) {
-                command.Parameters[7].Value = ((System.DateTime)(Дата_Время_возвращения_факт.Value));
+            if ((Дата_Время_выезда_факт.HasValue == true)) {
+                command.Parameters[7].Value = ((System.DateTime)(Дата_Время_выезда_факт.Value));
             }
             else {
                 command.Parameters[7].Value = global::System.DBNull.Value;
             }
-            if ((Нулевой_пробег_выезд.HasValue == true)) {
-                command.Parameters[8].Value = ((int)(Нулевой_пробег_выезд.Value));
+            if ((Дата_Время_возвращения_граф.HasValue == true)) {
+                command.Parameters[8].Value = ((System.DateTime)(Дата_Время_возвращения_граф.Value));
             }
             else {
                 command.Parameters[8].Value = global::System.DBNull.Value;
             }
-            if ((Нулевой_пробег_возвр.HasValue == true)) {
-                command.Parameters[9].Value = ((int)(Нулевой_пробег_возвр.Value));
+            if ((Дата_Время_возвращения_факт.HasValue == true)) {
+                command.Parameters[9].Value = ((System.DateTime)(Дата_Время_возвращения_факт.Value));
             }
             else {
                 command.Parameters[9].Value = global::System.DBNull.Value;
             }
-            if ((Время_работы_двигателя_выезд.HasValue == true)) {
-                command.Parameters[10].Value = ((double)(Время_работы_двигателя_выезд.Value));
+            if ((Нулевой_пробег_выезд.HasValue == true)) {
+                command.Parameters[10].Value = ((int)(Нулевой_пробег_выезд.Value));
             }
             else {
                 command.Parameters[10].Value = global::System.DBNull.Value;
             }
-            if ((Время_работы_двигателя_возвр.HasValue == true)) {
-                command.Parameters[11].Value = ((double)(Время_работы_двигателя_возвр.Value));
+            if ((Нулевой_пробег_возвр.HasValue == true)) {
+                command.Parameters[11].Value = ((int)(Нулевой_пробег_возвр.Value));
             }
             else {
                 command.Parameters[11].Value = global::System.DBNull.Value;
             }
-            if ((Время_работы_спецоборудования_выезд.HasValue == true)) {
-                command.Parameters[12].Value = ((double)(Время_работы_спецоборудования_выезд.Value));
+            if ((Время_работы_двигателя_выезд.HasValue == true)) {
+                command.Parameters[12].Value = ((double)(Время_работы_двигателя_выезд.Value));
             }
             else {
                 command.Parameters[12].Value = global::System.DBNull.Value;
             }
-            if ((Время_работы_спецоборудования_возвр.HasValue == true)) {
-                command.Parameters[13].Value = ((double)(Время_работы_спецоборудования_возвр.Value));
+            if ((Время_работы_двигателя_возвр.HasValue == true)) {
+                command.Parameters[13].Value = ((double)(Время_работы_двигателя_возвр.Value));
             }
             else {
                 command.Parameters[13].Value = global::System.DBNull.Value;
             }
-            if ((Остаток_ТСМ1_выезд.HasValue == true)) {
-                command.Parameters[14].Value = ((double)(Остаток_ТСМ1_выезд.Value));
+            if ((Время_работы_спецоборудования_выезд.HasValue == true)) {
+                command.Parameters[14].Value = ((double)(Время_работы_спецоборудования_выезд.Value));
             }
             else {
                 command.Parameters[14].Value = global::System.DBNull.Value;
             }
-            if ((Остаток_ТСМ1_возвр.HasValue == true)) {
-                command.Parameters[15].Value = ((double)(Остаток_ТСМ1_возвр.Value));
+            if ((Время_работы_спецоборудования_возвр.HasValue == true)) {
+                command.Parameters[15].Value = ((double)(Время_работы_спецоборудования_возвр.Value));
             }
             else {
                 command.Parameters[15].Value = global::System.DBNull.Value;
             }
-            if ((Остаток_ТСМ2_выезд.HasValue == true)) {
-                command.Parameters[16].Value = ((double)(Остаток_ТСМ2_выезд.Value));
+            if ((Остаток_ТСМ1_выезд.HasValue == true)) {
+                command.Parameters[16].Value = ((double)(Остаток_ТСМ1_выезд.Value));
             }
             else {
                 command.Parameters[16].Value = global::System.DBNull.Value;
             }
-            if ((Остаток_ТСМ2_возвр.HasValue == true)) {
-                command.Parameters[17].Value = ((double)(Остаток_ТСМ2_возвр.Value));
+            if ((Остаток_ТСМ1_возвр.HasValue == true)) {
+                command.Parameters[17].Value = ((double)(Остаток_ТСМ1_возвр.Value));
             }
             else {
                 command.Parameters[17].Value = global::System.DBNull.Value;
             }
-            command.Parameters[18].Value = ((int)(ID_Водителя));
-            command.Parameters[19].Value = ((int)(ID_Автомобиля));
-            if ((ID_Отдела.HasValue == true)) {
-                command.Parameters[20].Value = ((int)(ID_Отдела.Value));
+            if ((Остаток_ТСМ2_выезд.HasValue == true)) {
+                command.Parameters[18].Value = ((double)(Остаток_ТСМ2_выезд.Value));
             }
             else {
-                command.Parameters[20].Value = global::System.DBNull.Value;
+                command.Parameters[18].Value = global::System.DBNull.Value;
+            }
+            if ((Остаток_ТСМ2_возвр.HasValue == true)) {
+                command.Parameters[19].Value = ((double)(Остаток_ТСМ2_возвр.Value));
+            }
+            else {
+                command.Parameters[19].Value = global::System.DBNull.Value;
+            }
+            command.Parameters[20].Value = ((int)(ID_Водителя));
+            command.Parameters[21].Value = ((int)(ID_Автомобиля));
+            if ((ID_Отдела.HasValue == true)) {
+                command.Parameters[22].Value = ((int)(ID_Отдела.Value));
+            }
+            else {
+                command.Parameters[22].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -19647,6 +19890,1502 @@ WHERE        ([ID_Путевого листа] = @ID)";
             else {
                 return ((object)(returnValue));
             }
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class DanieJournalTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public DanieJournalTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "DanieJournal";
+            tableMapping.ColumnMappings.Add("ФИО", "ФИО");
+            tableMapping.ColumnMappings.Add("Подразделение", "Подразделение");
+            tableMapping.ColumnMappings.Add("Пункт_отправления", "Пункт_отправления");
+            tableMapping.ColumnMappings.Add("Пункт_назначения", "Пункт_назначения");
+            tableMapping.ColumnMappings.Add("Остаток_ТСМ1_выезд", "Остаток_ТСМ1_выезд");
+            tableMapping.ColumnMappings.Add("Остаток_ТСМ1_возвр", "Остаток_ТСМ1_возвр");
+            tableMapping.ColumnMappings.Add("Остаток_ТСМ2_выезд", "Остаток_ТСМ2_выезд");
+            tableMapping.ColumnMappings.Add("Остаток_ТСМ2_возвр", "Остаток_ТСМ2_возвр");
+            tableMapping.ColumnMappings.Add("Показания_спидометра_при_выезде", "Показания_спидометра_при_выезде");
+            tableMapping.ColumnMappings.Add("Показания_спидометра_при_возвращении", "Показания_спидометра_при_возвращении");
+            tableMapping.ColumnMappings.Add("Дата_путевого_листа", "Дата_путевого_листа");
+            tableMapping.ColumnMappings.Add("Номер_путевого_листа", "Номер_путевого_листа");
+            tableMapping.ColumnMappings.Add("Заправлено_ТСМ1", "Заправлено_ТСМ1");
+            tableMapping.ColumnMappings.Add("Заправлено_ТСМ2", "Заправлено_ТСМ2");
+            tableMapping.ColumnMappings.Add("Дата_Время_выезда_факт", "Дата_Время_выезда_факт");
+            tableMapping.ColumnMappings.Add("Дата_Время_возвращения_факт", "Дата_Время_возвращения_факт");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::AUTOPARK.Properties.Settings.Default.Путевые_листыConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT  [Путевой лист Грузового авто].[Дата путевого листа] AS \'Дата_путевого_лис" +
+                "та\', \r\n\t[Путевой лист Грузового авто].[Номер путевого листа] AS \'Номер_путевого_" +
+                "листа\', \r\n    [Личный состав].Фамилия + \' \' + LEFT([Личный состав].Имя, 1) + \'. " +
+                "\' + LEFT([Личный состав].Отчество, 1) + \'. \' AS \'ФИО\', \r\n\tОтделы.Подразделение, " +
+                "\r\n    [Путевой лист Грузового авто].Пункт_отправления,\r\n\t[Путевой лист Грузового" +
+                " авто].Пункт_назначения,\r\n\tISNULL(zapr.Запрaвлено, 0) AS \'Заправлено_ТСМ1\',\r\n\tIS" +
+                "NULL(zapr2.Запрaвлено2, 0) AS \'Заправлено_ТСМ2\',\r\n    [Путевой лист Грузового ав" +
+                "то].Остаток_ТСМ1_выезд,\r\n\t[Путевой лист Грузового авто].Остаток_ТСМ1_возвр, \r\n\t[" +
+                "Путевой лист Грузового авто].Остаток_ТСМ2_выезд, \r\n    [Путевой лист Грузового а" +
+                "вто].Остаток_ТСМ2_возвр,\r\n    CONVERT(time,[Путевой лист Грузового авто].Дата_Вр" +
+                "емя_выезда_факт) AS \'Дата_Время_выезда_факт\',\r\n    CONVERT(time,[Путевой лист Гр" +
+                "узового авто].Дата_Время_возвращения_факт) AS \'Дата_Время_возвращения_факт\', \r\n\t" +
+                "[Путевой лист Грузового авто].Показания_спидометра_при_выезде,\r\n\t[Путевой лист Г" +
+                "рузового авто].Показания_спидометра_при_возвращении \r\nFROM  [Личный состав] \r\nIN" +
+                "NER JOIN [Путевой лист Грузового авто] \r\n\tON [Личный состав].[табельный  номер] " +
+                "= [Путевой лист Грузового авто].ID_Водителя \r\nINNER JOIN Отделы \r\n\tON [Путевой л" +
+                "ист Грузового авто].ID_Отдела = Отделы.Код \r\nINNER JOIN [Подвижной состав] \r\n\tON" +
+                " [Путевой лист Грузового авто].ID_Автомобиля = [Подвижной состав].ID \r\nLEFT JOIN" +
+                "\r\n    (SELECT [ID_Путевого листа], \r\n\t\t\t[Марка ТСМ],\r\n\t\t\tSUM(Количество) as \'Зап" +
+                "рaвлено\' \r\n\tFROM [Заправка ТСМ]\r\n\tGROUP BY [ID_Путевого листа],[Марка ТСМ]\r\n\t)  " +
+                "as zapr \r\n\tON [Путевой лист Грузового авто].[ID_Путевого листа] = zapr.[ID_Путев" +
+                "ого листа] AND [Подвижной состав].[Вид топлива] = zapr.[Марка ТСМ]\r\nLEFT JOIN\r\n " +
+                "   (SELECT [ID_Путевого листа], \r\n\t\t\t[Марка ТСМ],\r\n\t\t\tSUM(Количество) as \'Запрaв" +
+                "лено2\' \r\n\tFROM [Заправка ТСМ]\r\n\tGROUP BY [ID_Путевого листа],[Марка ТСМ]\r\n\t)  as" +
+                " zapr2 \r\n\tON [Путевой лист Грузового авто].[ID_Путевого листа] = zapr2.[ID_Путев" +
+                "ого листа] AND [Подвижной состав].[Дополнительный вид топлива] = zapr2.[Марка ТС" +
+                "М]";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT  [Путевой лист Грузового авто].[Дата путевого листа] AS \'Дата_путевого_лис" +
+                "та\', \r\n\t[Путевой лист Грузового авто].[Номер путевого листа] AS \'Номер_путевого_" +
+                "листа\', \r\n    [Личный состав].Фамилия + \' \' + LEFT([Личный состав].Имя, 1) + \'. " +
+                "\' + LEFT([Личный состав].Отчество, 1) + \'. \' AS \'ФИО\', \r\n\tОтделы.Подразделение, " +
+                "\r\n    [Путевой лист Грузового авто].Пункт_отправления,\r\n\t[Путевой лист Грузового" +
+                " авто].Пункт_назначения,\r\n\tISNULL(zapr.Запрaвлено, 0) AS \'Заправлено_ТСМ1\',\r\n\tIS" +
+                "NULL(zapr2.Запрaвлено2, 0) AS \'Заправлено_ТСМ2\',\r\n    [Путевой лист Грузового ав" +
+                "то].Остаток_ТСМ1_выезд,\r\n\t[Путевой лист Грузового авто].Остаток_ТСМ1_возвр, \r\n\t[" +
+                "Путевой лист Грузового авто].Остаток_ТСМ2_выезд, \r\n    [Путевой лист Грузового а" +
+                "вто].Остаток_ТСМ2_возвр,\r\n    CONVERT(time,[Путевой лист Грузового авто].Дата_Вр" +
+                "емя_выезда_факт) AS \'Дата_Время_выезда_факт\',\r\n    CONVERT(time,[Путевой лист Гр" +
+                "узового авто].Дата_Время_возвращения_факт) AS \'Дата_Время_возвращения_факт\', \r\n\t" +
+                "[Путевой лист Грузового авто].Показания_спидометра_при_выезде,\r\n\t[Путевой лист Г" +
+                "рузового авто].Показания_спидометра_при_возвращении \r\nFROM  [Личный состав] \r\nIN" +
+                "NER JOIN [Путевой лист Грузового авто] \r\n\tON [Личный состав].[табельный  номер] " +
+                "= [Путевой лист Грузового авто].ID_Водителя \r\nINNER JOIN Отделы \r\n\tON [Путевой л" +
+                "ист Грузового авто].ID_Отдела = Отделы.Код \r\nINNER JOIN [Подвижной состав] \r\n\tON" +
+                " [Путевой лист Грузового авто].ID_Автомобиля = [Подвижной состав].ID \r\nLEFT JOIN" +
+                "\r\n    (SELECT [ID_Путевого листа], \r\n\t\t\t[Марка ТСМ],\r\n\t\t\tSUM(Количество) as \'Зап" +
+                "рaвлено\' \r\n\tFROM [Заправка ТСМ]\r\n\tGROUP BY [ID_Путевого листа],[Марка ТСМ]\r\n\t)  " +
+                "as zapr \r\n\tON [Путевой лист Грузового авто].[ID_Путевого листа] = zapr.[ID_Путев" +
+                "ого листа] AND [Подвижной состав].[Вид топлива] = zapr.[Марка ТСМ]\r\nLEFT JOIN\r\n " +
+                "   (SELECT [ID_Путевого листа], \r\n\t\t\t[Марка ТСМ],\r\n\t\t\tSUM(Количество) as \'Запрaв" +
+                "лено2\' \r\n\tFROM [Заправка ТСМ]\r\n\tGROUP BY [ID_Путевого листа],[Марка ТСМ]\r\n\t)  as" +
+                " zapr2 \r\n\tON [Путевой лист Грузового авто].[ID_Путевого листа] = zapr2.[ID_Путев" +
+                "ого листа] AND [Подвижной состав].[Дополнительный вид топлива] = zapr2.[Марка ТС" +
+                "М]\r\nWHERE [Путевой лист Грузового авто].[Дата путевого листа] BETWEEN @DateStart" +
+                " AND @DateEnd\r\nAND [Путевой лист Грузового авто].[ID_Автомобиля] = @Auto";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DateStart", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Дата_путевого_листа", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DateEnd", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Дата_путевого_листа", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Auto", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Автомобиля", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "SELECT putevoi.[За период с] AS \'Дата_путевого_листа\', \r\nputevoi.[Номер путевого " +
+                "листа] AS \'Номер_путевого_листа\', \r\n[Личный состав].Фамилия + \' \' + LEFT([Личный" +
+                " состав].Имя, 1) + \'. \' + LEFT([Личный состав].Отчество, 1) + \'. \' AS \'ФИО\', \r\nО" +
+                "тделы.Подразделение, \r\nputevoi.Пункт_отправления, \r\nputevoi.Пункт_назначения, \r\n" +
+                "dan.[Заправлено] AS \'Заправлено_ТСМ1\',\r\n0 AS \'Заправлено_ТСМ2\',\r\ndan1.[Остаток_т" +
+                "оплива_при_выезде] AS \'Остаток_ТСМ1_выезд\', \r\ndan2.[Остаток_топлива_при_возвраще" +
+                "нии] AS \'Остаток_ТСМ1_возвр\', \r\n0 AS \'Остаток_ТСМ2_выезд\', \r\n0 AS \'Остаток_ТСМ2_" +
+                "возвр\', \r\ndan1.[Время_выезда] AS \'Дата_Время_выезда_факт\', \r\ndan2.[Время_возвращ" +
+                "ения] AS \'Дата_Время_возвращения_факт\', \r\ndan.[Показания_спидометра_при_выезде]," +
+                "\r\ndan.[Показания_спидометра_при_возвращении]\r\nFROM [Путевой лист легкового автом" +
+                "обиля] as putevoi\r\nINNER JOIN\r\n[Личный состав] ON putevoi.ID_Водитель = [Личный " +
+                "состав].[табельный  номер] \r\nINNER JOIN\r\n[Подвижной состав] ON putevoi.ID_Автомо" +
+                "биль = [Подвижной состав].ID \r\nINNER JOIN\r\nОтделы ON putevoi.ID_Отдела = Отделы." +
+                "Код\r\ninner join\r\n(SELECT [ID_Путевого листа], MIN([Показания спидометра при выез" +
+                "де]) AS \'Показания_спидометра_при_выезде\', \r\nMAX([Показания спидометра при возвр" +
+                "ащении]) AS \'Показания_спидометра_при_возвращении\', \r\nSUM([Заправлено топлива л]" +
+                ") AS \'Заправлено\' \r\nFROM [Данные Путевой лист легкового авто] \r\nGROUP BY [ID_Пут" +
+                "евого листа]\r\n)AS dan\r\nON \r\nputevoi.[ID_Путевого листа] = dan.[ID_Путевого листа" +
+                "] \r\nINNER JOIN \r\n(SELECT [ID_Путевого листа], \r\nMIN(id_Данных) as \'min_id\',MAX(i" +
+                "d_Данных) as \'max_id\'\r\nFROM [Данные Путевой лист легкового авто] \r\nGROUP BY [ID_" +
+                "Путевого листа])\r\nas ident \r\nON putevoi.[ID_Путевого листа] = ident.[ID_Путевого" +
+                " листа]\r\nINNER JOIN\r\n(SELECT id_Данных,[ID_Путевого листа], \r\n[Остаток топлива п" +
+                "ри выезде] AS \'Остаток_топлива_при_выезде\', \r\n[Время выезда] AS \'Время_выезда\'\r\n" +
+                "FROM [Данные Путевой лист легкового авто] \r\n)AS dan1\r\nON \r\nident.min_id =  dan1." +
+                "id_Данных\r\nINNER JOIN\r\n(SELECT id_Данных,[ID_Путевого листа], \r\n[Остаток топлива" +
+                " при возвращении] AS \'Остаток_топлива_при_возвращении\', \r\n[Время возвращения] AS" +
+                " \'Время_возвращения\'\r\nFROM [Данные Путевой лист легкового авто] \r\n)AS dan2\r\nON \r" +
+                "\nident.max_id =  dan2.id_Данных\r\n\r\nWHERE putevoi.[За период с] BETWEEN @DateStar" +
+                "t AND @DateEnd\r\nAND putevoi.ID_Автомобиль = @Auto";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DateStart", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Дата_путевого_листа", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DateEnd", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Дата_путевого_листа", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Auto", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Автомобиль", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(AutoparkDB.DanieJournalDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual AutoparkDB.DanieJournalDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            AutoparkDB.DanieJournalDataTable dataTable = new AutoparkDB.DanieJournalDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByAutoAndDate(AutoparkDB.DanieJournalDataTable dataTable, System.DateTime DateStart, System.DateTime DateEnd, int Auto) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(DateStart));
+            this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(DateEnd));
+            this.Adapter.SelectCommand.Parameters[2].Value = ((int)(Auto));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual AutoparkDB.DanieJournalDataTable GetDataByAutoAndDate(System.DateTime DateStart, System.DateTime DateEnd, int Auto) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(DateStart));
+            this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(DateEnd));
+            this.Adapter.SelectCommand.Parameters[2].Value = ((int)(Auto));
+            AutoparkDB.DanieJournalDataTable dataTable = new AutoparkDB.DanieJournalDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByAutoAndDateLegk(AutoparkDB.DanieJournalDataTable dataTable, global::System.Nullable<global::System.DateTime> DateStart, global::System.Nullable<global::System.DateTime> DateEnd, global::System.Nullable<int> Auto) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((DateStart.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(DateStart.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((DateEnd.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(DateEnd.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((Auto.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((int)(Auto.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual AutoparkDB.DanieJournalDataTable GetDataByAutoAndDateLegk(global::System.Nullable<global::System.DateTime> DateStart, global::System.Nullable<global::System.DateTime> DateEnd, global::System.Nullable<int> Auto) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((DateStart.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(DateStart.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((DateEnd.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(DateEnd.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((Auto.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((int)(Auto.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            AutoparkDB.DanieJournalDataTable dataTable = new AutoparkDB.DanieJournalDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class HeaderJournalTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public HeaderJournalTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "HeaderJournal";
+            tableMapping.ColumnMappings.Add("классность", "классность");
+            tableMapping.ColumnMappings.Add("ФИО", "ФИО");
+            tableMapping.ColumnMappings.Add("Марка_и_модель", "Марка_и_модель");
+            tableMapping.ColumnMappings.Add("Гаражный_номер", "Гаражный_номер");
+            tableMapping.ColumnMappings.Add("дата_окончания_страховки", "дата_окончания_страховки");
+            tableMapping.ColumnMappings.Add("Вид_топлива", "Вид_топлива");
+            tableMapping.ColumnMappings.Add("номер_водительского_удостоверения", "номер_водительского_удостоверения");
+            tableMapping.ColumnMappings.Add("срок_действия_мед_справки", "срок_действия_мед_справки");
+            tableMapping.ColumnMappings.Add("Гос_номер", "Гос_номер");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::AUTOPARK.Properties.Settings.Default.Путевые_листыConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = @"SELECT        [Подвижной состав].[Марка и модель] AS 'Марка_и_модель', 
+[Подвижной состав].[Гос.номер]  AS 'Гос_номер',
+[Подвижной состав].[Гаражный номер] AS 'Гаражный_номер', 
+[Подвижной состав].[дата окончания страховки] AS 'дата_окончания_страховки', 
+[Подвижной состав].[Вид топлива] AS 'Вид_топлива',
+ [Личный состав].Фамилия +' '+ [Личный состав].Имя +' '+ [Личный состав].Отчество AS 'ФИО', 
+[Личный состав].[номер водительского удостоверения] AS 'номер_водительского_удостоверения', 
+[Личный состав].классность, 
+[Личный состав].[срок действия мед. справки]  AS 'срок_действия_мед_справки'
+FROM            (SELECT        TOP (1) ID, ID_Водитель, ID_Авто, Date
+                          FROM            [Водители авто]
+                          ORDER BY Date) AS c INNER JOIN
+                         [Личный состав] ON c.ID_Водитель = [Личный состав].[табельный  номер] INNER JOIN
+                         [Подвижной состав] ON c.ID_Авто = [Подвижной состав].ID";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = @"SELECT        [Подвижной состав].[Марка и модель] AS 'Марка_и_модель', 
+[Подвижной состав].[Гос.номер]  AS 'Гос_номер', 
+[Подвижной состав].[Гаражный номер] AS 'Гаражный_номер', 
+[Подвижной состав].[дата окончания страховки] AS 'дата_окончания_страховки', 
+[Подвижной состав].[Вид топлива] AS 'Вид_топлива',
+ [Личный состав].Фамилия +' '+ [Личный состав].Имя +' '+ [Личный состав].Отчество AS 'ФИО', 
+[Личный состав].[номер водительского удостоверения] AS 'номер_водительского_удостоверения', 
+[Личный состав].классность, 
+[Личный состав].[срок действия мед. справки]  AS 'срок_действия_мед_справки'
+FROM            (SELECT TOP (1) ID, ID_Водитель, ID_Авто, Date
+                          FROM  [Водители авто]
+                          WHERE (Date BETWEEN @DateStart AND @DateEnd) AND (ID_Авто = @Auto)
+                          ORDER BY Date) AS c INNER JOIN
+                         [Личный состав] ON c.ID_Водитель = [Личный состав].[табельный  номер] INNER JOIN
+                         [Подвижной состав] ON c.ID_Авто = [Подвижной состав].ID";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DateStart", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DateEnd", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Auto", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(AutoparkDB.HeaderJournalDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual AutoparkDB.HeaderJournalDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            AutoparkDB.HeaderJournalDataTable dataTable = new AutoparkDB.HeaderJournalDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByAutoAndDate(AutoparkDB.HeaderJournalDataTable dataTable, global::System.Nullable<global::System.DateTime> DateStart, global::System.Nullable<global::System.DateTime> DateEnd, global::System.Nullable<int> Auto) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((DateStart.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(DateStart.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((DateEnd.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(DateEnd.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((Auto.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((int)(Auto.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual AutoparkDB.HeaderJournalDataTable GetDataByAutoAndDate(global::System.Nullable<global::System.DateTime> DateStart, global::System.Nullable<global::System.DateTime> DateEnd, global::System.Nullable<int> Auto) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((DateStart.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(DateStart.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((DateEnd.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(DateEnd.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((Auto.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((int)(Auto.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            AutoparkDB.HeaderJournalDataTable dataTable = new AutoparkDB.HeaderJournalDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class LichniiSpravkiTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public LichniiSpravkiTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "Личный состав Справки";
+            tableMapping.ColumnMappings.Add("табельный  номер", "табельный  номер");
+            tableMapping.ColumnMappings.Add("Фамилия", "Фамилия");
+            tableMapping.ColumnMappings.Add("Имя", "Имя");
+            tableMapping.ColumnMappings.Add("Отчество", "Отчество");
+            tableMapping.ColumnMappings.Add("номер водительского удостоверения", "номер водительского удостоверения");
+            tableMapping.ColumnMappings.Add("срок действия мед. справки", "срок действия мед_ справки");
+            tableMapping.ColumnMappings.Add("остаток дней до окончания срока действия справки", "остаток дней до окончания срока действия справки");
+            this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.DeleteCommand.Connection = this.Connection;
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [Личный состав] WHERE (([табельный  номер] = @Original_табельный__номер) AND ((@IsNull_Фамилия = 1 AND [Фамилия] IS NULL) OR ([Фамилия] = @Original_Фамилия)) AND ((@IsNull_Имя = 1 AND [Имя] IS NULL) OR ([Имя] = @Original_Имя)) AND ((@IsNull_Отчество = 1 AND [Отчество] IS NULL) OR ([Отчество] = @Original_Отчество)) AND ((@IsNull_номер_водительского_удостоверения = 1 AND [номер водительского удостоверения] IS NULL) OR ([номер водительского удостоверения] = @Original_номер_водительского_удостоверения)) AND ((@p3 = 1 AND [срок действия мед. справки] IS NULL) OR ([срок действия мед. справки] = @p2)))";
+            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_табельный__номер", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "табельный  номер", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Фамилия", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Фамилия", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Фамилия", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Фамилия", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Имя", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Имя", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Имя", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Имя", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Отчество", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Отчество", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Отчество", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Отчество", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_номер_водительского_удостоверения", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "номер водительского удостоверения", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_номер_водительского_удостоверения", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "номер водительского удостоверения", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p3", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "срок действия мед. справки", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p2", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "срок действия мед. справки", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.InsertCommand.Connection = this.Connection;
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [Личный состав] ([табельный  номер], [Фамилия], [Имя], [Отчество], [номер водительского удостоверения], [срок действия мед. справки]) VALUES (@табельный__номер, @Фамилия, @Имя, @Отчество, @номер_водительского_удостоверения, @p1);
+SELECT [табельный  номер], Фамилия, Имя, Отчество, [номер водительского удостоверения], [срок действия мед. справки], DATEDIFF(day, GETDATE(), [срок действия мед. справки]) AS 'остаток дней до окончания срока действия справки' FROM [Личный состав] WHERE ([табельный  номер] = @табельный__номер)";
+            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@табельный__номер", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "табельный  номер", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Фамилия", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Фамилия", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Имя", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Имя", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Отчество", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Отчество", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@номер_водительского_удостоверения", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "номер водительского удостоверения", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p1", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "срок действия мед. справки", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.UpdateCommand.Connection = this.Connection;
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [Личный состав] SET [табельный  номер] = @табельный__номер, [Фамилия] = @Фамилия, [Имя] = @Имя, [Отчество] = @Отчество, [номер водительского удостоверения] = @номер_водительского_удостоверения, [срок действия мед. справки] = @p1 WHERE (([табельный  номер] = @Original_табельный__номер) AND ((@IsNull_Фамилия = 1 AND [Фамилия] IS NULL) OR ([Фамилия] = @Original_Фамилия)) AND ((@IsNull_Имя = 1 AND [Имя] IS NULL) OR ([Имя] = @Original_Имя)) AND ((@IsNull_Отчество = 1 AND [Отчество] IS NULL) OR ([Отчество] = @Original_Отчество)) AND ((@IsNull_номер_водительского_удостоверения = 1 AND [номер водительского удостоверения] IS NULL) OR ([номер водительского удостоверения] = @Original_номер_водительского_удостоверения)) AND ((@p3 = 1 AND [срок действия мед. справки] IS NULL) OR ([срок действия мед. справки] = @p2)));
+SELECT [табельный  номер], Фамилия, Имя, Отчество, [номер водительского удостоверения], [срок действия мед. справки], DATEDIFF(day, GETDATE(), [срок действия мед. справки]) AS 'остаток дней до окончания срока действия справки' FROM [Личный состав] WHERE ([табельный  номер] = @табельный__номер)";
+            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@табельный__номер", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "табельный  номер", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Фамилия", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Фамилия", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Имя", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Имя", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Отчество", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Отчество", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@номер_водительского_удостоверения", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "номер водительского удостоверения", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p1", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "срок действия мед. справки", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_табельный__номер", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "табельный  номер", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Фамилия", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Фамилия", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Фамилия", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Фамилия", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Имя", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Имя", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Имя", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Имя", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Отчество", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Отчество", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Отчество", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Отчество", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_номер_водительского_удостоверения", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "номер водительского удостоверения", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_номер_водительского_удостоверения", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "номер водительского удостоверения", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p3", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "срок действия мед. справки", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p2", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "срок действия мед. справки", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::AUTOPARK.Properties.Settings.Default.Путевые_листыConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = @"SELECT        [табельный  номер], Фамилия, Имя, Отчество, [номер водительского удостоверения], [срок действия мед. справки], DATEDIFF(day, GETDATE(), [срок действия мед. справки]) AS 'остаток дней до окончания срока действия справки'
+FROM            [Личный состав]
+WHERE        (DATEDIFF(day, GETDATE(), [срок действия мед. справки]) < 31)";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(AutoparkDB.Личный_состав_СправкиDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual AutoparkDB.Личный_состав_СправкиDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            AutoparkDB.Личный_состав_СправкиDataTable dataTable = new AutoparkDB.Личный_состав_СправкиDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(AutoparkDB.Личный_состав_СправкиDataTable dataTable) {
+            return this.Adapter.Update(dataTable);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(AutoparkDB dataSet) {
+            return this.Adapter.Update(dataSet, "Личный состав Справки");
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow dataRow) {
+            return this.Adapter.Update(new global::System.Data.DataRow[] {
+                        dataRow});
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow[] dataRows) {
+            return this.Adapter.Update(dataRows);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
+        public virtual int Delete(int Original_табельный__номер, string Original_Фамилия, string Original_Имя, string Original_Отчество, string Original_номер_водительского_удостоверения, global::System.Nullable<global::System.DateTime> p2) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_табельный__номер));
+            if ((Original_Фамилия == null)) {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_Фамилия));
+            }
+            if ((Original_Имя == null)) {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_Имя));
+            }
+            if ((Original_Отчество == null)) {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_Отчество));
+            }
+            if ((Original_номер_водительского_удостоверения == null)) {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((string)(Original_номер_водительского_удостоверения));
+            }
+            if ((p2.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((System.DateTime)(p2.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
+            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.DeleteCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.DeleteCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
+        public virtual int Insert(int табельный__номер, string Фамилия, string Имя, string Отчество, string номер_водительского_удостоверения, global::System.Nullable<global::System.DateTime> p1) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(табельный__номер));
+            if ((Фамилия == null)) {
+                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Фамилия));
+            }
+            if ((Имя == null)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(Имя));
+            }
+            if ((Отчество == null)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(Отчество));
+            }
+            if ((номер_водительского_удостоверения == null)) {
+                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(номер_водительского_удостоверения));
+            }
+            if ((p1.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[5].Value = ((System.DateTime)(p1.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
+            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.InsertCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.InsertCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(int табельный__номер, string Фамилия, string Имя, string Отчество, string номер_водительского_удостоверения, global::System.Nullable<global::System.DateTime> p1, int Original_табельный__номер, string Original_Фамилия, string Original_Имя, string Original_Отчество, string Original_номер_водительского_удостоверения, global::System.Nullable<global::System.DateTime> p2) {
+            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(табельный__номер));
+            if ((Фамилия == null)) {
+                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Фамилия));
+            }
+            if ((Имя == null)) {
+                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Имя));
+            }
+            if ((Отчество == null)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Отчество));
+            }
+            if ((номер_водительского_удостоверения == null)) {
+                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(номер_водительского_удостоверения));
+            }
+            if ((p1.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((System.DateTime)(p1.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_табельный__номер));
+            if ((Original_Фамилия == null)) {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_Фамилия));
+            }
+            if ((Original_Имя == null)) {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_Имя));
+            }
+            if ((Original_Отчество == null)) {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_Отчество));
+            }
+            if ((Original_номер_водительского_удостоверения == null)) {
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(Original_номер_водительского_удостоверения));
+            }
+            if ((p2.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((System.DateTime)(p2.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
+            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.UpdateCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.UpdateCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(string Фамилия, string Имя, string Отчество, string номер_водительского_удостоверения, global::System.Nullable<global::System.DateTime> p1, int Original_табельный__номер, string Original_Фамилия, string Original_Имя, string Original_Отчество, string Original_номер_водительского_удостоверения, global::System.Nullable<global::System.DateTime> p2) {
+            return this.Update(Original_табельный__номер, Фамилия, Имя, Отчество, номер_водительского_удостоверения, p1, Original_табельный__номер, Original_Фамилия, Original_Имя, Original_Отчество, Original_номер_водительского_удостоверения, p2);
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class PersonAutoTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public PersonAutoTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "Водители авто";
+            tableMapping.ColumnMappings.Add("ID", "ID");
+            tableMapping.ColumnMappings.Add("ID_Водитель", "ID_Водитель");
+            tableMapping.ColumnMappings.Add("ID_Авто", "ID_Авто");
+            tableMapping.ColumnMappings.Add("Date", "Date");
+            this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.DeleteCommand.Connection = this.Connection;
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [Водители авто] WHERE (([ID] = @Original_ID) AND ((@IsNull_ID_Водитель = 1 AND [ID_Водитель] IS NULL) OR ([ID_Водитель] = @Original_ID_Водитель)) AND ((@IsNull_ID_Авто = 1 AND [ID_Авто] IS NULL) OR ([ID_Авто] = @Original_ID_Авто)) AND ((@IsNull_Date = 1 AND [Date] IS NULL) OR ([Date] = @Original_Date)))";
+            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ID_Водитель", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Водитель", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_Водитель", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Водитель", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ID_Авто", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Авто", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_Авто", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Авто", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Date", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Date", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.InsertCommand.Connection = this.Connection;
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [Водители авто] ([ID_Водитель], [ID_Авто], [Date]) VALUES (@ID_Водите" +
+                "ль, @ID_Авто, @Date);\r\nSELECT ID, ID_Водитель, ID_Авто, Date FROM [Водители авто" +
+                "] WHERE (ID = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_Водитель", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Водитель", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_Авто", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Авто", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Date", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.UpdateCommand.Connection = this.Connection;
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [Водители авто] SET [ID_Водитель] = @ID_Водитель, [ID_Авто] = @ID_Авто, [Date] = @Date WHERE (([ID] = @Original_ID) AND ((@IsNull_ID_Водитель = 1 AND [ID_Водитель] IS NULL) OR ([ID_Водитель] = @Original_ID_Водитель)) AND ((@IsNull_ID_Авто = 1 AND [ID_Авто] IS NULL) OR ([ID_Авто] = @Original_ID_Авто)) AND ((@IsNull_Date = 1 AND [Date] IS NULL) OR ([Date] = @Original_Date)));
+SELECT ID, ID_Водитель, ID_Авто, Date FROM [Водители авто] WHERE (ID = @ID)";
+            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_Водитель", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Водитель", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_Авто", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Авто", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Date", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ID_Водитель", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Водитель", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_Водитель", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Водитель", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ID_Авто", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Авто", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_Авто", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Авто", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Date", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Date", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::AUTOPARK.Properties.Settings.Default.Путевые_листыConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT        [Водители авто].*\r\nFROM            [Водители авто]";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(AutoparkDB.Водители_автоDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual AutoparkDB.Водители_автоDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            AutoparkDB.Водители_автоDataTable dataTable = new AutoparkDB.Водители_автоDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(AutoparkDB.Водители_автоDataTable dataTable) {
+            return this.Adapter.Update(dataTable);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(AutoparkDB dataSet) {
+            return this.Adapter.Update(dataSet, "Водители авто");
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow dataRow) {
+            return this.Adapter.Update(new global::System.Data.DataRow[] {
+                        dataRow});
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow[] dataRows) {
+            return this.Adapter.Update(dataRows);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
+        public virtual int Delete(int Original_ID, global::System.Nullable<int> Original_ID_Водитель, global::System.Nullable<int> Original_ID_Авто, global::System.Nullable<global::System.DateTime> Original_Date) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ID));
+            if ((Original_ID_Водитель.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_ID_Водитель.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((Original_ID_Авто.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((int)(Original_ID_Авто.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Date.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((System.DateTime)(Original_Date.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
+            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.DeleteCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.DeleteCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
+        public virtual int Insert(global::System.Nullable<int> ID_Водитель, global::System.Nullable<int> ID_Авто, global::System.Nullable<global::System.DateTime> Date) {
+            if ((ID_Водитель.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((int)(ID_Водитель.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((ID_Авто.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((int)(ID_Авто.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((Date.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((System.DateTime)(Date.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
+            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.InsertCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.InsertCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(global::System.Nullable<int> ID_Водитель, global::System.Nullable<int> ID_Авто, global::System.Nullable<global::System.DateTime> Date, int Original_ID, global::System.Nullable<int> Original_ID_Водитель, global::System.Nullable<int> Original_ID_Авто, global::System.Nullable<global::System.DateTime> Original_Date, int ID) {
+            if ((ID_Водитель.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(ID_Водитель.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((ID_Авто.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(ID_Авто.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((Date.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((System.DateTime)(Date.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Original_ID));
+            if ((Original_ID_Водитель.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_ID_Водитель.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            if ((Original_ID_Авто.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_ID_Авто.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Date.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((System.DateTime)(Original_Date.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(ID));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
+            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.UpdateCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.UpdateCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(global::System.Nullable<int> ID_Водитель, global::System.Nullable<int> ID_Авто, global::System.Nullable<global::System.DateTime> Date, int Original_ID, global::System.Nullable<int> Original_ID_Водитель, global::System.Nullable<int> Original_ID_Авто, global::System.Nullable<global::System.DateTime> Original_Date) {
+            return this.Update(ID_Водитель, ID_Авто, Date, Original_ID, Original_ID_Водитель, Original_ID_Авто, Original_Date, Original_ID);
         }
     }
     
@@ -19972,6 +21711,10 @@ WHERE        ([ID_Путевого листа] = @ID)";
         
         private TablePutevieGruzovieTableAdapter _tablePutevieGruzovieTableAdapter;
         
+        private LichniiSpravkiTableAdapter _lichniiSpravkiTableAdapter;
+        
+        private PersonAutoTableAdapter _personAutoTableAdapter;
+        
         private bool _backupDataSetBeforeUpdate;
         
         private global::System.Data.IDbConnection _connection;
@@ -20115,6 +21858,34 @@ WHERE        ([ID_Путевого листа] = @ID)";
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
+            "a", "System.Drawing.Design.UITypeEditor")]
+        public LichniiSpravkiTableAdapter LichniiSpravkiTableAdapter {
+            get {
+                return this._lichniiSpravkiTableAdapter;
+            }
+            set {
+                this._lichniiSpravkiTableAdapter = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
+            "a", "System.Drawing.Design.UITypeEditor")]
+        public PersonAutoTableAdapter PersonAutoTableAdapter {
+            get {
+                return this._personAutoTableAdapter;
+            }
+            set {
+                this._personAutoTableAdapter = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public bool BackupDataSetBeforeUpdate {
             get {
                 return this._backupDataSetBeforeUpdate;
@@ -20168,6 +21939,14 @@ WHERE        ([ID_Путевого листа] = @ID)";
                             && (this._tablePutevieGruzovieTableAdapter.Connection != null))) {
                     return this._tablePutevieGruzovieTableAdapter.Connection;
                 }
+                if (((this._lichniiSpravkiTableAdapter != null) 
+                            && (this._lichniiSpravkiTableAdapter.Connection != null))) {
+                    return this._lichniiSpravkiTableAdapter.Connection;
+                }
+                if (((this._personAutoTableAdapter != null) 
+                            && (this._personAutoTableAdapter.Connection != null))) {
+                    return this._personAutoTableAdapter.Connection;
+                }
                 return null;
             }
             set {
@@ -20208,6 +21987,12 @@ WHERE        ([ID_Путевого листа] = @ID)";
                 if ((this._tablePutevieGruzovieTableAdapter != null)) {
                     count = (count + 1);
                 }
+                if ((this._lichniiSpravkiTableAdapter != null)) {
+                    count = (count + 1);
+                }
+                if ((this._personAutoTableAdapter != null)) {
+                    count = (count + 1);
+                }
                 return count;
             }
         }
@@ -20219,6 +22004,15 @@ WHERE        ([ID_Путевого листа] = @ID)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private int UpdateUpdatedRows(AutoparkDB dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
+            if ((this._otdelTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Отделы.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._otdelTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
             if ((this._lichniiTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.Личный_состав.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
@@ -20228,12 +22022,12 @@ WHERE        ([ID_Путевого листа] = @ID)";
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._otdelTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Отделы.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._lichniiSpravkiTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Личный_состав_Справки.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._otdelTableAdapter.Update(updatedRows));
+                    result = (result + this._lichniiSpravkiTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -20246,15 +22040,6 @@ WHERE        ([ID_Путевого листа] = @ID)";
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._putevoiListLegkTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.PutevoiListLegkTable.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._putevoiListLegkTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             if ((this._tablePutevieGruzovieTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.Путевой_лист_Грузового_авто.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
@@ -20264,12 +22049,21 @@ WHERE        ([ID_Путевого листа] = @ID)";
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._zapravkaTCMTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Заправка_ТСМ.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._putevoiListLegkTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.PutevoiListLegkTable.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._zapravkaTCMTableAdapter.Update(updatedRows));
+                    result = (result + this._putevoiListLegkTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._personAutoTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Водители_авто.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._personAutoTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -20282,21 +22076,30 @@ WHERE        ([ID_Путевого листа] = @ID)";
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._zadanieVoditelTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Задание_водителю.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._zadanieVoditelTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             if ((this._normyTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet._Нормы_расхода_ГСМ_на_авто_тракторы.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._normyTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._zapravkaTCMTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Заправка_ТСМ.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._zapravkaTCMTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._zadanieVoditelTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Задание_водителю.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._zadanieVoditelTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -20310,6 +22113,14 @@ WHERE        ([ID_Путевого листа] = @ID)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private int UpdateInsertedRows(AutoparkDB dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
+            if ((this._otdelTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Отделы.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._otdelTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
             if ((this._lichniiTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.Личный_состав.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -20318,11 +22129,11 @@ WHERE        ([ID_Путевого листа] = @ID)";
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._otdelTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Отделы.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._lichniiSpravkiTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Личный_состав_Справки.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._otdelTableAdapter.Update(addedRows));
+                    result = (result + this._lichniiSpravkiTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -20334,14 +22145,6 @@ WHERE        ([ID_Путевого листа] = @ID)";
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._putevoiListLegkTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.PutevoiListLegkTable.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._putevoiListLegkTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             if ((this._tablePutevieGruzovieTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.Путевой_лист_Грузового_авто.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -20350,11 +22153,19 @@ WHERE        ([ID_Путевого листа] = @ID)";
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._zapravkaTCMTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Заправка_ТСМ.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._putevoiListLegkTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.PutevoiListLegkTable.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._zapravkaTCMTableAdapter.Update(addedRows));
+                    result = (result + this._putevoiListLegkTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._personAutoTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Водители_авто.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._personAutoTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -20366,19 +22177,27 @@ WHERE        ([ID_Путевого листа] = @ID)";
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._zadanieVoditelTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Задание_водителю.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._zadanieVoditelTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             if ((this._normyTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet._Нормы_расхода_ГСМ_на_авто_тракторы.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._normyTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._zapravkaTCMTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Заправка_ТСМ.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._zapravkaTCMTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._zadanieVoditelTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Задание_водителю.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._zadanieVoditelTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -20392,27 +22211,11 @@ WHERE        ([ID_Путевого листа] = @ID)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private int UpdateDeletedRows(AutoparkDB dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._normyTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet._Нормы_расхода_ГСМ_на_авто_тракторы.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._normyTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
             if ((this._zadanieVoditelTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.Задание_водителю.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._zadanieVoditelTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._putListLegkovogoDannieTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Данные_Путевой_лист_легкового_авто.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._putListLegkovogoDannieTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -20424,11 +22227,27 @@ WHERE        ([ID_Путевого листа] = @ID)";
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._tablePutevieGruzovieTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Путевой_лист_Грузового_авто.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._normyTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet._Нормы_расхода_ГСМ_на_авто_тракторы.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._tablePutevieGruzovieTableAdapter.Update(deletedRows));
+                    result = (result + this._normyTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._putListLegkovogoDannieTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Данные_Путевой_лист_легкового_авто.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._putListLegkovogoDannieTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._personAutoTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Водители_авто.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._personAutoTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -20440,6 +22259,14 @@ WHERE        ([ID_Путевого листа] = @ID)";
                     allChangedRows.AddRange(deletedRows);
                 }
             }
+            if ((this._tablePutevieGruzovieTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Путевой_лист_Грузового_авто.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._tablePutevieGruzovieTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
             if ((this._podvijnoiTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.Подвижной_состав.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
@@ -20448,11 +22275,11 @@ WHERE        ([ID_Путевого листа] = @ID)";
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._otdelTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Отделы.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._lichniiSpravkiTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Личный_состав_Справки.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._otdelTableAdapter.Update(deletedRows));
+                    result = (result + this._lichniiSpravkiTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -20461,6 +22288,14 @@ WHERE        ([ID_Путевого листа] = @ID)";
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._lichniiTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._otdelTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Отделы.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._otdelTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -20545,6 +22380,16 @@ WHERE        ([ID_Путевого листа] = @ID)";
             }
             if (((this._tablePutevieGruzovieTableAdapter != null) 
                         && (this.MatchTableAdapterConnection(this._tablePutevieGruzovieTableAdapter.Connection) == false))) {
+                throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
+                        "tring.");
+            }
+            if (((this._lichniiSpravkiTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._lichniiSpravkiTableAdapter.Connection) == false))) {
+                throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
+                        "tring.");
+            }
+            if (((this._personAutoTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._personAutoTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
@@ -20661,6 +22506,24 @@ WHERE        ([ID_Путевого листа] = @ID)";
                         adaptersWithAcceptChangesDuringUpdate.Add(this._tablePutevieGruzovieTableAdapter.Adapter);
                     }
                 }
+                if ((this._lichniiSpravkiTableAdapter != null)) {
+                    revertConnections.Add(this._lichniiSpravkiTableAdapter, this._lichniiSpravkiTableAdapter.Connection);
+                    this._lichniiSpravkiTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._lichniiSpravkiTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._lichniiSpravkiTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._lichniiSpravkiTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._lichniiSpravkiTableAdapter.Adapter);
+                    }
+                }
+                if ((this._personAutoTableAdapter != null)) {
+                    revertConnections.Add(this._personAutoTableAdapter, this._personAutoTableAdapter.Connection);
+                    this._personAutoTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._personAutoTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._personAutoTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._personAutoTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._personAutoTableAdapter.Adapter);
+                    }
+                }
                 // 
                 //---- Perform updates -----------
                 //
@@ -20754,6 +22617,14 @@ WHERE        ([ID_Путевого листа] = @ID)";
                 if ((this._tablePutevieGruzovieTableAdapter != null)) {
                     this._tablePutevieGruzovieTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._tablePutevieGruzovieTableAdapter]));
                     this._tablePutevieGruzovieTableAdapter.Transaction = null;
+                }
+                if ((this._lichniiSpravkiTableAdapter != null)) {
+                    this._lichniiSpravkiTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._lichniiSpravkiTableAdapter]));
+                    this._lichniiSpravkiTableAdapter.Transaction = null;
+                }
+                if ((this._personAutoTableAdapter != null)) {
+                    this._personAutoTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._personAutoTableAdapter]));
+                    this._personAutoTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];

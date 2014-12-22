@@ -12,8 +12,8 @@ namespace AUTOPARK
         public Journal()
         {
             InitializeComponent();
-            var tablep = new AutoparkDBTableAdapters.BannerJornalGruzovieTableAdapter();
-            _bindingAuto.DataSource = tablep.GetData();
+            //var tablep = new AutoparkDBTableAdapters.BannerJornalGruzovieTableAdapter();
+            //_bindingAuto.DataSource = tablep.GetData();
 
             cbZnak.DataSource = _bindingAuto;
             cbZnak.DisplayMember = "Гос_номер";

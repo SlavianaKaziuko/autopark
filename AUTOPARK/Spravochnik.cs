@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
 using AUTOPARK.AutoparkDBTableAdapters;
 
 namespace AUTOPARK
@@ -43,6 +44,20 @@ namespace AUTOPARK
                     _binding.DataSource = table.GetData();
                     break;
                 }
+                case "Список водителей с истекающей медицинской справкой":
+                {
+                    var table = new LichniiSpravkiTableAdapter();
+                    _binding.DataSource = table.GetData();
+                    dgvSpravochnik.Enabled = false;
+                    btnSaveChanges.Visible = false;
+                    break;
+                }
+                case "Водители авто":
+                {
+                    var table = new PersonAutoTableAdapter();
+                    _binding.DataSource = table.GetData();
+                    break;
+                }
             }
 
             dgvSpravochnik.DataSource = _binding;
@@ -54,7 +69,7 @@ namespace AUTOPARK
             {
                 case "Личный состав":
                 {
-                    var table = new AutoparkDBTableAdapters.LichniiTableAdapter();
+                    var table = new LichniiTableAdapter();
                     // сохраняет все изменения в Личном составе
                     table.Update((AutoparkDB.Личный_составDataTable) _binding.DataSource);
                     break;
@@ -62,7 +77,7 @@ namespace AUTOPARK
 
                 case "Подвижной состав":
                 {
-                    var table = new AutoparkDBTableAdapters.PodvijnoiTableAdapter();
+                    var table = new PodvijnoiTableAdapter();
                     // сохраняет все изменения в Подвижном составе 
                     table.Update((AutoparkDB.Подвижной_составDataTable) _binding.DataSource);
                     break;
@@ -70,7 +85,7 @@ namespace AUTOPARK
 
                 case "Нормы расхода ГСМ":
                 {
-                    var table = new AutoparkDBTableAdapters.NormyTableAdapter();
+                    var table = new NormyTableAdapter();
                     // сохраняет все изменения в Нормы расхода ГСМ
                     table.Update((AutoparkDB._Нормы_расхода_ГСМ_на_авто_тракторыDataTable) _binding.DataSource);
                     break;
@@ -78,8 +93,14 @@ namespace AUTOPARK
 
                 case "Отделы":
                 {
-                    var table = new AutoparkDBTableAdapters.OtdelTableAdapter(); // сохраняет все изменения в Отделы
+                    var table = new OtdelTableAdapter(); // сохраняет все изменения в Отделы
                     table.Update((AutoparkDB.ОтделыDataTable) _binding.DataSource);
+                    break;
+                }
+                case "Водители авто":
+                {
+                    var table = new PersonAutoTableAdapter();
+                    table.Update((AutoparkDB.Водители_автоDataTable) _binding.DataSource);
                     break;
                 }
             }
@@ -143,7 +164,7 @@ namespace AUTOPARK
                         AutoComplete = true,
                         Name = "Дополнительный тип топлива",
                         DisplayIndex = 6
-                    };                    
+                    };
                     dgvSpravochnik.Columns.Add(dcDop);
                     foreach (DataGridViewRow row in dgvSpravochnik.Rows)
                     {
@@ -160,6 +181,41 @@ namespace AUTOPARK
                     dataGridViewColumn = dgvSpravochnik.Columns["Код"];
                     if (dataGridViewColumn != null)
                         dataGridViewColumn.Visible = false;
+                    break;
+                case "Водители авто":
+                    var tableAuto = new PodvijnoiTableAdapter();
+                    var tablePerson = new LichniiTableAdapter();
+                    var datac = new DataGridViewComboBoxColumn
+                    {
+                        Name = "Автомобиль",
+                        DisplayIndex = 1,
+                        DisplayMember = "Гос_номер",
+                        ValueMember = "ID",
+                        DataSource = tableAuto.GetData()
+                    };
+                    var dataperson = new DataGridViewComboBoxColumn
+                    {
+                        DisplayIndex = 2,
+                        Name = "Шофер",
+                        ValueMember = "табельный_номер",
+                        DisplayMember = "ФИО",
+                        DataSource = tablePerson.GetDataSpisokVoditeli()
+                    };
+                    var viewColumn = dgvSpravochnik.Columns["ID"];
+                    if (viewColumn != null) viewColumn.Visible = false;
+                    viewColumn = dgvSpravochnik.Columns["ID_Водитель"];
+                    if (viewColumn != null) viewColumn.Visible = false;
+                    viewColumn = dgvSpravochnik.Columns["ID_Авто"];
+                    if (viewColumn != null) viewColumn.Visible = false;
+
+                    dgvSpravochnik.Columns.Add(datac);
+                    dgvSpravochnik.Columns.Add(dataperson);
+
+                    foreach (DataGridViewRow row in dgvSpravochnik.Rows)
+                    {
+                        row.Cells["Шофер"].Value = row.Cells["ID_Водитель"].Value;
+                        row.Cells["Автомобиль"].Value = row.Cells["ID_Авто"].Value;
+                    }
                     break;
             }
         }
@@ -231,8 +287,50 @@ namespace AUTOPARK
                     }
                     break;
                 }
+                ////case "Водители авто":
+                ////switch (dgvSpravochnik.CurrentCell.OwningColumn.Name)
+                ////{
+                ////    case "Шофер":
+                ////        {
+                ////            if (dgvSpravochnik.CurrentRow != null)
+                ////                dgvSpravochnik.CurrentRow.Cells["ID_Водитель"].Value = e.FormattedValue;
+                ////            break;
+                ////        }
+                ////    case "Автомобиль":
+                ////        {
+                ////            if (dgvSpravochnik.CurrentRow != null)
+                ////                dgvSpravochnik.CurrentRow.Cells["ID_Авто"].Value = e.FormattedValue;
+                ////            break;
+                ////        }
+                ////}
+                ////break;
             }
 
+        }
+
+        private void dgvSpravochnik_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            if (((DataGridView)sender).CurrentCell == null) return;
+            switch (_name)
+            {
+                case "Водители авто":
+                    switch (dgvSpravochnik.CurrentCell.OwningColumn.Name)
+                    {
+                        case "Шофер":
+                        {
+                            if (dgvSpravochnik.CurrentRow != null)
+                                dgvSpravochnik.CurrentRow.Cells["ID_Водитель"].Value = dgvSpravochnik.CurrentCell.Value;
+                            break;
+                        }
+                        case "Автомобиль":
+                        {
+                            if (dgvSpravochnik.CurrentRow != null)
+                                dgvSpravochnik.CurrentRow.Cells["ID_Авто"].Value = dgvSpravochnik.CurrentCell.Value;
+                            break;
+                        }
+                    }
+                    break;
+            }
         }
     }
 }

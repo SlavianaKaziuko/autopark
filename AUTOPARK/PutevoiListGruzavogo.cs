@@ -174,14 +174,20 @@ namespace AUTOPARK
                 _idauto = int.Parse(cbZnak.SelectedValue.ToString());
                 _idvod = int.Parse(cbImia.SelectedValue.ToString());
                 _idotdel = int.Parse(cbOtdel.SelectedValue.ToString());
-                PutevoiId = int.Parse(tablePutevoi.InsertQuery(int.Parse(txtNumber.Text), dtpHapka.Value.ToString(CultureInfo.CurrentCulture), int.Parse(txtViezdSpidometr.Text), int.Parse(txtVozvrahenieSpidometr.Text),
-                    dtpPoGraphViezd.Value, dtpFactViezd.Value, dtpPoGraphVozvr.Value, dtpFactVozvr.Value,
-                    int.Parse(txtNulevoiProbegViezd.Text), int.Parse(txtNulevoiProbegVozvrahenie.Text),
-                    Convert.ToDouble(txtVremiaDvigViezd.Text), Convert.ToDouble(txtVremiaDvigVozvr.Text),
-                    Convert.ToDouble(txtVremiaOborudViezd.Text), Convert.ToDouble(txtVremiaOborudVozvr.Text),
-                    Convert.ToDouble(txtPriViezdiTCM.Text), Convert.ToDouble(txtPriVozvracheniiTCM.Text),
-                    Convert.ToDouble(txtPriViezdiTCM2.Text), Convert.ToDouble(txtPriVozvracheniiTCM2.Text), _idvod,
-                    _idauto, _idotdel).ToString());
+                PutevoiId =
+                    int.Parse(
+                        tablePutevoi.InsertQuery(int.Parse(txtNumber.Text),
+                            dtpHapka.Value.ToString(CultureInfo.CurrentCulture), txtPunktOtpravlen.Text,
+                            txtPunktNaznach.Text, int.Parse(txtViezdSpidometr.Text),
+                            int.Parse(txtVozvrahenieSpidometr.Text),
+                            dtpPoGraphViezd.Value, dtpFactViezd.Value, dtpPoGraphVozvr.Value, dtpFactVozvr.Value,
+                            int.Parse(txtNulevoiProbegViezd.Text), int.Parse(txtNulevoiProbegVozvrahenie.Text),
+                            Convert.ToDouble(txtVremiaDvigViezd.Text), Convert.ToDouble(txtVremiaDvigVozvr.Text),
+                            Convert.ToDouble(txtVremiaOborudViezd.Text), Convert.ToDouble(txtVremiaOborudVozvr.Text),
+                            Convert.ToDouble(txtPriViezdiTCM.Text), Convert.ToDouble(txtPriVozvracheniiTCM.Text),
+                            Convert.ToDouble(txtPriViezdiTCM2.Text), Convert.ToDouble(txtPriVozvracheniiTCM2.Text),
+                            _idvod,
+                            _idauto, _idotdel).ToString());
                 _bindingZadanie.DataSource = tableZadanie.GetDataByPutevoiId(PutevoiId);
                 dgvZadanieVoditelu.DataSource = _bindingZadanie;
                 _bindingZapravka.DataSource = tableZapravka.GetDataByPutevoiID(PutevoiId);
@@ -206,7 +212,7 @@ namespace AUTOPARK
             else
             {
                 _mainInfo = tablePutevoi.GetDataByID(PutevoiId).ToList();
-                tablePutevoi.Update(int.Parse(txtNumber.Text), dtpHapka.Value, int.Parse(txtViezdSpidometr.Text),
+                tablePutevoi.Update(int.Parse(txtNumber.Text), dtpHapka.Value,txtPunktOtpravlen.Text, txtPunktNaznach.Text, int.Parse(txtViezdSpidometr.Text),
                     int.Parse(txtVozvrahenieSpidometr.Text),
                     dtpPoGraphViezd.Value, dtpFactViezd.Value, dtpPoGraphVozvr.Value, dtpFactVozvr.Value,
                     int.Parse(txtNulevoiProbegViezd.Text), int.Parse(txtNulevoiProbegVozvrahenie.Text),
@@ -214,7 +220,7 @@ namespace AUTOPARK
                     Convert.ToDouble(txtVremiaOborudViezd.Text), Convert.ToDouble(txtVremiaOborudVozvr.Text),
                     Convert.ToDouble(txtPriViezdiTCM.Text), Convert.ToDouble(txtPriVozvracheniiTCM.Text),
                     Convert.ToDouble(txtPriViezdiTCM2.Text), Convert.ToDouble(txtPriVozvracheniiTCM2.Text), _idvod,
-                    _idauto, _idotdel, PutevoiId,_mainInfo[0].Номер_путевого_листа,_mainInfo[0].Дата_путевого_листа,
+                    _idauto, _idotdel, PutevoiId,_mainInfo[0].Номер_путевого_листа,_mainInfo[0].Дата_путевого_листа,_mainInfo[0].Пункт_отправления,_mainInfo[0].Пункт_назначения,
                     _mainInfo[0].Показания_спидометра_при_выезде,
                     _mainInfo[0].Показания_спидометра_при_возвращении,
                     _mainInfo[0].Дата_Время_выезда_граф, _mainInfo[0].Дата_Время_выезда_факт,

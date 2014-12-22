@@ -361,16 +361,6 @@ WHERE        ([Путевой лист легкового автомобиля].
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="Путевые_листыConnectionString (Settings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="GetNewLegkNumber" Modifier="Public" Name="GetNewLegkNumber" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="GetNewLegkNumber">
-                <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        ISNULL(MAX([Номер путевого листа]), 0) + 1 AS newID
-FROM            [Путевой лист легкового автомобиля]
-WHERE        (YEAR([За период с]) = YEAR(GETDATE()))</CommandText>
-                    <Parameters />
-                  </DbCommand>
-                </SelectCommand>
-              </DbSource>
             </Sources>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="PutevieGruzovieTableAdapter" GeneratorDataComponentClassName="PutevieGruzovieTableAdapter" Name="Путевые листы грузовые" UserDataComponentName="PutevieGruzovieTableAdapter">
@@ -747,121 +737,6 @@ WHERE  [ID_Путевого листа]=@IdPutevoi</CommandText>
               </DbSource>
             </Sources>
           </TableAdapter>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DanieJournalLegkovieTableAdapter" GeneratorDataComponentClassName="DanieJournalLegkovieTableAdapter" Name="DanieJournalLegkovie" UserDataComponentName="DanieJournalLegkovieTableAdapter">
-            <MainSource>
-              <DbSource ConnectionRef="Путевые_листыConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
-                <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        [Данные Путевой лист легкового авто].Число, [Путевой лист легкового автомобиля].[Номер путевого листа], 
-                         [Данные Путевой лист легкового авто].[Остаток топлива при выезде], [Данные Путевой лист легкового авто].[Остаток топлива при возвращении], 
-                         [Данные Путевой лист легкового авто].[Время выезда], [Данные Путевой лист легкового авто].[Время возвращения], 
-                         [Данные Путевой лист легкового авто].[Показания спидометра при выезде], 
-                         [Данные Путевой лист легкового авто].[Показания спидометра при возвращении], [Подвижной состав].[В чье распоряжение занаряжена автомашина], 
-                         [Данные Путевой лист легкового авто].[Маршрут перевозки откуда], [Данные Путевой лист легкового авто].[Маршрут перевозки куда], 
-                         [Данные Путевой лист легкового авто].[Заправлено топлива л]
-FROM            [Путевой лист легкового автомобиля] INNER JOIN
-                         [Подвижной состав] ON [Путевой лист легкового автомобиля].ID_Автомобиль = [Подвижной состав].ID INNER JOIN
-                         [Данные Путевой лист легкового авто] ON 
-                         [Путевой лист легкового автомобиля].[ID_Путевого листа] = [Данные Путевой лист легкового авто].[ID_Путевого листа]</CommandText>
-                    <Parameters />
-                  </DbCommand>
-                </SelectCommand>
-              </DbSource>
-            </MainSource>
-            <Mappings>
-              <Mapping SourceColumn="Число" DataSetColumn="Число" />
-              <Mapping SourceColumn="Номер путевого листа" DataSetColumn="Номер путевого листа" />
-              <Mapping SourceColumn="Остаток топлива при выезде" DataSetColumn="Остаток топлива при выезде" />
-              <Mapping SourceColumn="Остаток топлива при возвращении" DataSetColumn="Остаток топлива при возвращении" />
-              <Mapping SourceColumn="Время выезда" DataSetColumn="Время выезда" />
-              <Mapping SourceColumn="Время возвращения" DataSetColumn="Время возвращения" />
-              <Mapping SourceColumn="Показания спидометра при выезде" DataSetColumn="Показания спидометра при выезде" />
-              <Mapping SourceColumn="Показания спидометра при возвращении" DataSetColumn="Показания спидометра при возвращении" />
-              <Mapping SourceColumn="В чье распоряжение занаряжена автомашина" DataSetColumn="В чье распоряжение занаряжена автомашина" />
-              <Mapping SourceColumn="Маршрут перевозки откуда" DataSetColumn="Маршрут перевозки откуда" />
-              <Mapping SourceColumn="Маршрут перевозки куда" DataSetColumn="Маршрут перевозки куда" />
-              <Mapping SourceColumn="Заправлено топлива л" DataSetColumn="Заправлено топлива л" />
-            </Mappings>
-            <Sources />
-          </TableAdapter>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DanieJournalGruzovieTableAdapter" GeneratorDataComponentClassName="DanieJournalGruzovieTableAdapter" Name="DanieJournalGruzovie" UserDataComponentName="DanieJournalGruzovieTableAdapter">
-            <MainSource>
-              <DbSource ConnectionRef="Путевые_листыConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
-                <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        [Путевой лист Грузового авто].[Номер путевого листа], [Путевой лист Грузового авто].[Дата путевого листа], 
-                         [Подвижной состав].[В чье распоряжение занаряжена автомашина], [Задание водителю].[Пункт отправления], [Задание водителю].[Пункт назначения], 
-                         [Заправка ТСМ].Количество, [Путевой лист Грузового авто].[Спидометр при выезде], [Путевой лист Грузового авто].[Спидометр при возвращении], 
-                         [Путевой лист Грузового авто].[Время выезда], [Путевой лист Грузового авто].[Время возвращения], [Движение ТСМ].[Остаток ТСМ при выезде], 
-                         [Движение ТСМ].[Остаток ТСМ при возвращении]
-FROM            [Путевой лист Грузового авто] INNER JOIN
-                         [Подвижной состав] ON [Путевой лист Грузового авто].ID_Автомобиля = [Подвижной состав].ID INNER JOIN
-                         [Задание водителю] ON [Путевой лист Грузового авто].[ID_Путевого листа] = [Задание водителю].[ID_Путевого листа] INNER JOIN
-                         [Заправка ТСМ] ON [Путевой лист Грузового авто].[ID_Путевого листа] = [Заправка ТСМ].[ID_Путевого листа] INNER JOIN
-                         [Движение ТСМ] ON [Путевой лист Грузового авто].[ID_Путевого листа] = [Движение ТСМ].[ID_Путевого листа]</CommandText>
-                    <Parameters />
-                  </DbCommand>
-                </SelectCommand>
-              </DbSource>
-            </MainSource>
-            <Mappings>
-              <Mapping SourceColumn="Номер путевого листа" DataSetColumn="Номер путевого листа" />
-              <Mapping SourceColumn="Дата путевого листа" DataSetColumn="Дата путевого листа" />
-              <Mapping SourceColumn="В чье распоряжение занаряжена автомашина" DataSetColumn="В чье распоряжение занаряжена автомашина" />
-              <Mapping SourceColumn="Пункт отправления" DataSetColumn="Пункт отправления" />
-              <Mapping SourceColumn="Пункт назначения" DataSetColumn="Пункт назначения" />
-              <Mapping SourceColumn="Количество" DataSetColumn="Количество" />
-              <Mapping SourceColumn="Спидометр при выезде" DataSetColumn="Спидометр при выезде" />
-              <Mapping SourceColumn="Спидометр при возвращении" DataSetColumn="Спидометр при возвращении" />
-              <Mapping SourceColumn="Время выезда" DataSetColumn="Время выезда" />
-              <Mapping SourceColumn="Время возвращения" DataSetColumn="Время возвращения" />
-              <Mapping SourceColumn="Остаток ТСМ при выезде" DataSetColumn="Остаток ТСМ при выезде" />
-              <Mapping SourceColumn="Остаток ТСМ при возвращении" DataSetColumn="Остаток ТСМ при возвращении" />
-            </Mappings>
-            <Sources />
-          </TableAdapter>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="BannerJornalGruzovieTableAdapter" GeneratorDataComponentClassName="BannerJornalGruzovieTableAdapter" Name="BannerJornalGruzovie" UserDataComponentName="BannerJornalGruzovieTableAdapter">
-            <MainSource>
-              <DbSource ConnectionRef="Путевые_листыConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
-                <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        [Личный состав].Фамилия, [Личный состав].Имя, [Личный состав].Отчество, [Личный состав].[срок действия мед. справки], [Личный состав].классность, 
-                         [Личный состав].[номер водительского удостоверения], [Подвижной состав].[Марка и модель], [Подвижной состав].[Гос.номер], 
-                         [Подвижной состав].[Гаражный номер], [Подвижной состав].[дата окончания страховки], [Подвижной состав].[Вид топлива], [Подвижной состав].ID
-FROM            [Личный состав] CROSS JOIN
-                         [Подвижной состав]</CommandText>
-                    <Parameters />
-                  </DbCommand>
-                </SelectCommand>
-              </DbSource>
-            </MainSource>
-            <Mappings>
-              <Mapping SourceColumn="Фамилия" DataSetColumn="Фамилия" />
-              <Mapping SourceColumn="Имя" DataSetColumn="Имя" />
-              <Mapping SourceColumn="Отчество" DataSetColumn="Отчество" />
-              <Mapping SourceColumn="срок действия мед. справки" DataSetColumn="срок действия мед_ справки" />
-              <Mapping SourceColumn="классность" DataSetColumn="классность" />
-              <Mapping SourceColumn="номер водительского удостоверения" DataSetColumn="номер водительского удостоверения" />
-              <Mapping SourceColumn="Марка и модель" DataSetColumn="Марка и модель" />
-              <Mapping SourceColumn="Гос.номер" DataSetColumn="Гос_номер" />
-              <Mapping SourceColumn="Гаражный номер" DataSetColumn="Гаражный номер" />
-              <Mapping SourceColumn="дата окончания страховки" DataSetColumn="дата окончания страховки" />
-              <Mapping SourceColumn="Вид топлива" DataSetColumn="Вид топлива" />
-              <Mapping SourceColumn="ID" DataSetColumn="ID" />
-            </Mappings>
-            <Sources>
-              <DbSource ConnectionRef="Путевые_листыConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillSpisokVoditel" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataSpisokVoditel" GeneratorSourceName="FillSpisokVoditel" GetMethodModifier="Public" GetMethodName="GetDataSpisokVoditel" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataSpisokVoditel" UserSourceName="FillSpisokVoditel">
-                <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        классность,Фамилия +' '+Имя +' '+Отчество AS 'ФИО', [номер водительского удостоверения], [срок действия мед_ справки], [Гос_номер], [классность],[Гаражный номер], [дата окончания страховки],[Марка и модель],[Вид топлива],ID
-FROM            [Личный состав] CROSS JOIN
-                         [Подвижной состав]</CommandText>
-                    <Parameters />
-                  </DbCommand>
-                </SelectCommand>
-              </DbSource>
-            </Sources>
-          </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ZapravkaTCMTableAdapter" GeneratorDataComponentClassName="ZapravkaTCMTableAdapter" Name="Заправка ТСМ" UserDataComponentName="ZapravkaTCMTableAdapter">
             <MainSource>
               <DbSource ConnectionRef="Путевые_листыConnectionString (Settings)" DbObjectName="[Путевые листы].dbo.[Заправка ТСМ]" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
@@ -1178,11 +1053,15 @@ SELECT Код, Подразделение, [Полное название] FROM 
               <DbSource ConnectionRef="Путевые_листыConnectionString (Settings)" DbObjectName="[Путевые листы].dbo.[Путевой лист Грузового авто]" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>DELETE FROM [Путевой лист Грузового авто] WHERE (([ID_Путевого листа] = @Original_ID_Путевого_листа) AND ([Номер путевого листа] = @Original_Номер_путевого_листа) AND ([Дата путевого листа] = @Original_Дата_путевого_листа) AND ((@IsNull_Показания_спидометра_при_выезде = 1 AND [Показания_спидометра_при_выезде] IS NULL) OR ([Показания_спидометра_при_выезде] = @Original_Показания_спидометра_при_выезде)) AND ((@IsNull_Показания_спидометра_при_возвращении = 1 AND [Показания_спидометра_при_возвращении] IS NULL) OR ([Показания_спидометра_при_возвращении] = @Original_Показания_спидометра_при_возвращении)) AND ((@IsNull_Дата_Время_выезда_граф = 1 AND [Дата_Время_выезда_граф] IS NULL) OR ([Дата_Время_выезда_граф] = @Original_Дата_Время_выезда_граф)) AND ((@IsNull_Дата_Время_выезда_факт = 1 AND [Дата_Время_выезда_факт] IS NULL) OR ([Дата_Время_выезда_факт] = @Original_Дата_Время_выезда_факт)) AND ((@IsNull_Дата_Время_возвращения_граф = 1 AND [Дата_Время_возвращения_граф] IS NULL) OR ([Дата_Время_возвращения_граф] = @Original_Дата_Время_возвращения_граф)) AND ((@IsNull_Дата_Время_возвращения_факт = 1 AND [Дата_Время_возвращения_факт] IS NULL) OR ([Дата_Время_возвращения_факт] = @Original_Дата_Время_возвращения_факт)) AND ((@IsNull_Нулевой_пробег_выезд = 1 AND [Нулевой_пробег_выезд] IS NULL) OR ([Нулевой_пробег_выезд] = @Original_Нулевой_пробег_выезд)) AND ((@IsNull_Нулевой_пробег_возвр = 1 AND [Нулевой_пробег_возвр] IS NULL) OR ([Нулевой_пробег_возвр] = @Original_Нулевой_пробег_возвр)) AND ((@IsNull_Время_работы_двигателя_выезд = 1 AND [Время_работы_двигателя_выезд] IS NULL) OR ([Время_работы_двигателя_выезд] = @Original_Время_работы_двигателя_выезд)) AND ((@IsNull_Время_работы_двигателя_возвр = 1 AND [Время_работы_двигателя_возвр] IS NULL) OR ([Время_работы_двигателя_возвр] = @Original_Время_работы_двигателя_возвр)) AND ((@IsNull_Время_работы_спецоборудования_выезд = 1 AND [Время_работы_спецоборудования_выезд] IS NULL) OR ([Время_работы_спецоборудования_выезд] = @Original_Время_работы_спецоборудования_выезд)) AND ((@IsNull_Время_работы_спецоборудования_возвр = 1 AND [Время_работы_спецоборудования_возвр] IS NULL) OR ([Время_работы_спецоборудования_возвр] = @Original_Время_работы_спецоборудования_возвр)) AND ((@IsNull_Остаток_ТСМ1_выезд = 1 AND [Остаток_ТСМ1_выезд] IS NULL) OR ([Остаток_ТСМ1_выезд] = @Original_Остаток_ТСМ1_выезд)) AND ((@IsNull_Остаток_ТСМ1_возвр = 1 AND [Остаток_ТСМ1_возвр] IS NULL) OR ([Остаток_ТСМ1_возвр] = @Original_Остаток_ТСМ1_возвр)) AND ((@IsNull_Остаток_ТСМ2_выезд = 1 AND [Остаток_ТСМ2_выезд] IS NULL) OR ([Остаток_ТСМ2_выезд] = @Original_Остаток_ТСМ2_выезд)) AND ((@IsNull_Остаток_ТСМ2_возвр = 1 AND [Остаток_ТСМ2_возвр] IS NULL) OR ([Остаток_ТСМ2_возвр] = @Original_Остаток_ТСМ2_возвр)) AND ([ID_Водителя] = @Original_ID_Водителя) AND ([ID_Автомобиля] = @Original_ID_Автомобиля) AND ((@IsNull_ID_Отдела = 1 AND [ID_Отдела] IS NULL) OR ([ID_Отдела] = @Original_ID_Отдела)))</CommandText>
+                    <CommandText>DELETE FROM [Путевой лист Грузового авто] WHERE (([ID_Путевого листа] = @Original_ID_Путевого_листа) AND ([Номер путевого листа] = @Original_Номер_путевого_листа) AND ([Дата путевого листа] = @Original_Дата_путевого_листа) AND ((@IsNull_Пункт_отправления = 1 AND [Пункт_отправления] IS NULL) OR ([Пункт_отправления] = @Original_Пункт_отправления)) AND ((@IsNull_Пункт_назначения = 1 AND [Пункт_назначения] IS NULL) OR ([Пункт_назначения] = @Original_Пункт_назначения)) AND ((@IsNull_Показания_спидометра_при_выезде = 1 AND [Показания_спидометра_при_выезде] IS NULL) OR ([Показания_спидометра_при_выезде] = @Original_Показания_спидометра_при_выезде)) AND ((@IsNull_Показания_спидометра_при_возвращении = 1 AND [Показания_спидометра_при_возвращении] IS NULL) OR ([Показания_спидометра_при_возвращении] = @Original_Показания_спидометра_при_возвращении)) AND ((@IsNull_Дата_Время_выезда_граф = 1 AND [Дата_Время_выезда_граф] IS NULL) OR ([Дата_Время_выезда_граф] = @Original_Дата_Время_выезда_граф)) AND ((@IsNull_Дата_Время_выезда_факт = 1 AND [Дата_Время_выезда_факт] IS NULL) OR ([Дата_Время_выезда_факт] = @Original_Дата_Время_выезда_факт)) AND ((@IsNull_Дата_Время_возвращения_граф = 1 AND [Дата_Время_возвращения_граф] IS NULL) OR ([Дата_Время_возвращения_граф] = @Original_Дата_Время_возвращения_граф)) AND ((@IsNull_Дата_Время_возвращения_факт = 1 AND [Дата_Время_возвращения_факт] IS NULL) OR ([Дата_Время_возвращения_факт] = @Original_Дата_Время_возвращения_факт)) AND ((@IsNull_Нулевой_пробег_выезд = 1 AND [Нулевой_пробег_выезд] IS NULL) OR ([Нулевой_пробег_выезд] = @Original_Нулевой_пробег_выезд)) AND ((@IsNull_Нулевой_пробег_возвр = 1 AND [Нулевой_пробег_возвр] IS NULL) OR ([Нулевой_пробег_возвр] = @Original_Нулевой_пробег_возвр)) AND ((@IsNull_Время_работы_двигателя_выезд = 1 AND [Время_работы_двигателя_выезд] IS NULL) OR ([Время_работы_двигателя_выезд] = @Original_Время_работы_двигателя_выезд)) AND ((@IsNull_Время_работы_двигателя_возвр = 1 AND [Время_работы_двигателя_возвр] IS NULL) OR ([Время_работы_двигателя_возвр] = @Original_Время_работы_двигателя_возвр)) AND ((@IsNull_Время_работы_спецоборудования_выезд = 1 AND [Время_работы_спецоборудования_выезд] IS NULL) OR ([Время_работы_спецоборудования_выезд] = @Original_Время_работы_спецоборудования_выезд)) AND ((@IsNull_Время_работы_спецоборудования_возвр = 1 AND [Время_работы_спецоборудования_возвр] IS NULL) OR ([Время_работы_спецоборудования_возвр] = @Original_Время_работы_спецоборудования_возвр)) AND ((@IsNull_Остаток_ТСМ1_выезд = 1 AND [Остаток_ТСМ1_выезд] IS NULL) OR ([Остаток_ТСМ1_выезд] = @Original_Остаток_ТСМ1_выезд)) AND ((@IsNull_Остаток_ТСМ1_возвр = 1 AND [Остаток_ТСМ1_возвр] IS NULL) OR ([Остаток_ТСМ1_возвр] = @Original_Остаток_ТСМ1_возвр)) AND ((@IsNull_Остаток_ТСМ2_выезд = 1 AND [Остаток_ТСМ2_выезд] IS NULL) OR ([Остаток_ТСМ2_выезд] = @Original_Остаток_ТСМ2_выезд)) AND ((@IsNull_Остаток_ТСМ2_возвр = 1 AND [Остаток_ТСМ2_возвр] IS NULL) OR ([Остаток_ТСМ2_возвр] = @Original_Остаток_ТСМ2_возвр)) AND ([ID_Водителя] = @Original_ID_Водителя) AND ([ID_Автомобиля] = @Original_ID_Автомобиля) AND ((@IsNull_ID_Отдела = 1 AND [ID_Отдела] IS NULL) OR ([ID_Отдела] = @Original_ID_Отдела)))</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_ID_Путевого_листа" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ID_Путевого листа" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_Номер_путевого_листа" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Номер путевого листа" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@Original_Дата_путевого_листа" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="Дата путевого листа" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Пункт_отправления" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Пункт_отправления" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_Пункт_отправления" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Пункт_отправления" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Пункт_назначения" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Пункт_назначения" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_Пункт_назначения" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Пункт_назначения" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Показания_спидометра_при_выезде" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Показания_спидометра_при_выезде" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_Показания_спидометра_при_выезде" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Показания_спидометра_при_выезде" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Показания_спидометра_при_возвращении" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Показания_спидометра_при_возвращении" SourceColumnNullMapping="true" SourceVersion="Original" />
@@ -1224,11 +1103,13 @@ SELECT Код, Подразделение, [Полное название] FROM 
                 </DeleteCommand>
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>INSERT INTO [Путевой лист Грузового авто] ([Номер путевого листа], [Дата путевого листа], [Показания_спидометра_при_выезде], [Показания_спидометра_при_возвращении], [Дата_Время_выезда_граф], [Дата_Время_выезда_факт], [Дата_Время_возвращения_граф], [Дата_Время_возвращения_факт], [Нулевой_пробег_выезд], [Нулевой_пробег_возвр], [Время_работы_двигателя_выезд], [Время_работы_двигателя_возвр], [Время_работы_спецоборудования_выезд], [Время_работы_спецоборудования_возвр], [Остаток_ТСМ1_выезд], [Остаток_ТСМ1_возвр], [Остаток_ТСМ2_выезд], [Остаток_ТСМ2_возвр], [ID_Водителя], [ID_Автомобиля], [ID_Отдела]) VALUES (@Номер_путевого_листа, @Дата_путевого_листа, @Показания_спидометра_при_выезде, @Показания_спидометра_при_возвращении, @Дата_Время_выезда_граф, @Дата_Время_выезда_факт, @Дата_Время_возвращения_граф, @Дата_Время_возвращения_факт, @Нулевой_пробег_выезд, @Нулевой_пробег_возвр, @Время_работы_двигателя_выезд, @Время_работы_двигателя_возвр, @Время_работы_спецоборудования_выезд, @Время_работы_спецоборудования_возвр, @Остаток_ТСМ1_выезд, @Остаток_ТСМ1_возвр, @Остаток_ТСМ2_выезд, @Остаток_ТСМ2_возвр, @ID_Водителя, @ID_Автомобиля, @ID_Отдела);
-SELECT [ID_Путевого листа], [Номер путевого листа], [Дата путевого листа], Показания_спидометра_при_выезде, Показания_спидометра_при_возвращении, Дата_Время_выезда_граф, Дата_Время_выезда_факт, Дата_Время_возвращения_граф, Дата_Время_возвращения_факт, Нулевой_пробег_выезд, Нулевой_пробег_возвр, Время_работы_двигателя_выезд, Время_работы_двигателя_возвр, Время_работы_спецоборудования_выезд, Время_работы_спецоборудования_возвр, Остаток_ТСМ1_выезд, Остаток_ТСМ1_возвр, Остаток_ТСМ2_выезд, Остаток_ТСМ2_возвр, ID_Водителя, ID_Автомобиля, ID_Отдела FROM [Путевой лист Грузового авто] WHERE ([ID_Путевого листа] = SCOPE_IDENTITY())</CommandText>
+                    <CommandText>INSERT INTO [Путевой лист Грузового авто] ([Номер путевого листа], [Дата путевого листа], [Пункт_отправления], [Пункт_назначения], [Показания_спидометра_при_выезде], [Показания_спидометра_при_возвращении], [Дата_Время_выезда_граф], [Дата_Время_выезда_факт], [Дата_Время_возвращения_граф], [Дата_Время_возвращения_факт], [Нулевой_пробег_выезд], [Нулевой_пробег_возвр], [Время_работы_двигателя_выезд], [Время_работы_двигателя_возвр], [Время_работы_спецоборудования_выезд], [Время_работы_спецоборудования_возвр], [Остаток_ТСМ1_выезд], [Остаток_ТСМ1_возвр], [Остаток_ТСМ2_выезд], [Остаток_ТСМ2_возвр], [ID_Водителя], [ID_Автомобиля], [ID_Отдела]) VALUES (@Номер_путевого_листа, @Дата_путевого_листа, @Пункт_отправления, @Пункт_назначения, @Показания_спидометра_при_выезде, @Показания_спидометра_при_возвращении, @Дата_Время_выезда_граф, @Дата_Время_выезда_факт, @Дата_Время_возвращения_граф, @Дата_Время_возвращения_факт, @Нулевой_пробег_выезд, @Нулевой_пробег_возвр, @Время_работы_двигателя_выезд, @Время_работы_двигателя_возвр, @Время_работы_спецоборудования_выезд, @Время_работы_спецоборудования_возвр, @Остаток_ТСМ1_выезд, @Остаток_ТСМ1_возвр, @Остаток_ТСМ2_выезд, @Остаток_ТСМ2_возвр, @ID_Водителя, @ID_Автомобиля, @ID_Отдела);
+SELECT [ID_Путевого листа], [Номер путевого листа], [Дата путевого листа], Пункт_отправления, Пункт_назначения, Показания_спидометра_при_выезде, Показания_спидометра_при_возвращении, Дата_Время_выезда_граф, Дата_Время_выезда_факт, Дата_Время_возвращения_граф, Дата_Время_возвращения_факт, Нулевой_пробег_выезд, Нулевой_пробег_возвр, Время_работы_двигателя_выезд, Время_работы_двигателя_возвр, Время_работы_спецоборудования_выезд, Время_работы_спецоборудования_возвр, Остаток_ТСМ1_выезд, Остаток_ТСМ1_возвр, Остаток_ТСМ2_выезд, Остаток_ТСМ2_возвр, ID_Водителя, ID_Автомобиля, ID_Отдела FROM [Путевой лист Грузового авто] WHERE ([ID_Путевого листа] = SCOPE_IDENTITY())</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Номер_путевого_листа" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Номер путевого листа" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@Дата_путевого_листа" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="Дата путевого листа" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Пункт_отправления" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Пункт_отправления" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Пункт_назначения" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Пункт_назначения" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Показания_спидометра_при_выезде" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Показания_спидометра_при_выезде" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Показания_спидометра_при_возвращении" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Показания_спидометра_при_возвращении" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Дата_Время_выезда_граф" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="Дата_Время_выезда_граф" SourceColumnNullMapping="false" SourceVersion="Current" />
@@ -1260,11 +1141,13 @@ FROM            [Путевой лист Грузового авто]</CommandTe
                 </SelectCommand>
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>UPDATE [Путевой лист Грузового авто] SET [Номер путевого листа] = @Номер_путевого_листа, [Дата путевого листа] = @Дата_путевого_листа, [Показания_спидометра_при_выезде] = @Показания_спидометра_при_выезде, [Показания_спидометра_при_возвращении] = @Показания_спидометра_при_возвращении, [Дата_Время_выезда_граф] = @Дата_Время_выезда_граф, [Дата_Время_выезда_факт] = @Дата_Время_выезда_факт, [Дата_Время_возвращения_граф] = @Дата_Время_возвращения_граф, [Дата_Время_возвращения_факт] = @Дата_Время_возвращения_факт, [Нулевой_пробег_выезд] = @Нулевой_пробег_выезд, [Нулевой_пробег_возвр] = @Нулевой_пробег_возвр, [Время_работы_двигателя_выезд] = @Время_работы_двигателя_выезд, [Время_работы_двигателя_возвр] = @Время_работы_двигателя_возвр, [Время_работы_спецоборудования_выезд] = @Время_работы_спецоборудования_выезд, [Время_работы_спецоборудования_возвр] = @Время_работы_спецоборудования_возвр, [Остаток_ТСМ1_выезд] = @Остаток_ТСМ1_выезд, [Остаток_ТСМ1_возвр] = @Остаток_ТСМ1_возвр, [Остаток_ТСМ2_выезд] = @Остаток_ТСМ2_выезд, [Остаток_ТСМ2_возвр] = @Остаток_ТСМ2_возвр, [ID_Водителя] = @ID_Водителя, [ID_Автомобиля] = @ID_Автомобиля, [ID_Отдела] = @ID_Отдела WHERE (([ID_Путевого листа] = @Original_ID_Путевого_листа) AND ([Номер путевого листа] = @Original_Номер_путевого_листа) AND ([Дата путевого листа] = @Original_Дата_путевого_листа) AND ((@IsNull_Показания_спидометра_при_выезде = 1 AND [Показания_спидометра_при_выезде] IS NULL) OR ([Показания_спидометра_при_выезде] = @Original_Показания_спидометра_при_выезде)) AND ((@IsNull_Показания_спидометра_при_возвращении = 1 AND [Показания_спидометра_при_возвращении] IS NULL) OR ([Показания_спидометра_при_возвращении] = @Original_Показания_спидометра_при_возвращении)) AND ((@IsNull_Дата_Время_выезда_граф = 1 AND [Дата_Время_выезда_граф] IS NULL) OR ([Дата_Время_выезда_граф] = @Original_Дата_Время_выезда_граф)) AND ((@IsNull_Дата_Время_выезда_факт = 1 AND [Дата_Время_выезда_факт] IS NULL) OR ([Дата_Время_выезда_факт] = @Original_Дата_Время_выезда_факт)) AND ((@IsNull_Дата_Время_возвращения_граф = 1 AND [Дата_Время_возвращения_граф] IS NULL) OR ([Дата_Время_возвращения_граф] = @Original_Дата_Время_возвращения_граф)) AND ((@IsNull_Дата_Время_возвращения_факт = 1 AND [Дата_Время_возвращения_факт] IS NULL) OR ([Дата_Время_возвращения_факт] = @Original_Дата_Время_возвращения_факт)) AND ((@IsNull_Нулевой_пробег_выезд = 1 AND [Нулевой_пробег_выезд] IS NULL) OR ([Нулевой_пробег_выезд] = @Original_Нулевой_пробег_выезд)) AND ((@IsNull_Нулевой_пробег_возвр = 1 AND [Нулевой_пробег_возвр] IS NULL) OR ([Нулевой_пробег_возвр] = @Original_Нулевой_пробег_возвр)) AND ((@IsNull_Время_работы_двигателя_выезд = 1 AND [Время_работы_двигателя_выезд] IS NULL) OR ([Время_работы_двигателя_выезд] = @Original_Время_работы_двигателя_выезд)) AND ((@IsNull_Время_работы_двигателя_возвр = 1 AND [Время_работы_двигателя_возвр] IS NULL) OR ([Время_работы_двигателя_возвр] = @Original_Время_работы_двигателя_возвр)) AND ((@IsNull_Время_работы_спецоборудования_выезд = 1 AND [Время_работы_спецоборудования_выезд] IS NULL) OR ([Время_работы_спецоборудования_выезд] = @Original_Время_работы_спецоборудования_выезд)) AND ((@IsNull_Время_работы_спецоборудования_возвр = 1 AND [Время_работы_спецоборудования_возвр] IS NULL) OR ([Время_работы_спецоборудования_возвр] = @Original_Время_работы_спецоборудования_возвр)) AND ((@IsNull_Остаток_ТСМ1_выезд = 1 AND [Остаток_ТСМ1_выезд] IS NULL) OR ([Остаток_ТСМ1_выезд] = @Original_Остаток_ТСМ1_выезд)) AND ((@IsNull_Остаток_ТСМ1_возвр = 1 AND [Остаток_ТСМ1_возвр] IS NULL) OR ([Остаток_ТСМ1_возвр] = @Original_Остаток_ТСМ1_возвр)) AND ((@IsNull_Остаток_ТСМ2_выезд = 1 AND [Остаток_ТСМ2_выезд] IS NULL) OR ([Остаток_ТСМ2_выезд] = @Original_Остаток_ТСМ2_выезд)) AND ((@IsNull_Остаток_ТСМ2_возвр = 1 AND [Остаток_ТСМ2_возвр] IS NULL) OR ([Остаток_ТСМ2_возвр] = @Original_Остаток_ТСМ2_возвр)) AND ([ID_Водителя] = @Original_ID_Водителя) AND ([ID_Автомобиля] = @Original_ID_Автомобиля) AND ((@IsNull_ID_Отдела = 1 AND [ID_Отдела] IS NULL) OR ([ID_Отдела] = @Original_ID_Отдела)));
-SELECT [ID_Путевого листа], [Номер путевого листа], [Дата путевого листа], Показания_спидометра_при_выезде, Показания_спидометра_при_возвращении, Дата_Время_выезда_граф, Дата_Время_выезда_факт, Дата_Время_возвращения_граф, Дата_Время_возвращения_факт, Нулевой_пробег_выезд, Нулевой_пробег_возвр, Время_работы_двигателя_выезд, Время_работы_двигателя_возвр, Время_работы_спецоборудования_выезд, Время_работы_спецоборудования_возвр, Остаток_ТСМ1_выезд, Остаток_ТСМ1_возвр, Остаток_ТСМ2_выезд, Остаток_ТСМ2_возвр, ID_Водителя, ID_Автомобиля, ID_Отдела FROM [Путевой лист Грузового авто] WHERE ([ID_Путевого листа] = @ID_Путевого_листа)</CommandText>
+                    <CommandText>UPDATE [Путевой лист Грузового авто] SET [Номер путевого листа] = @Номер_путевого_листа, [Дата путевого листа] = @Дата_путевого_листа, [Пункт_отправления] = @Пункт_отправления, [Пункт_назначения] = @Пункт_назначения, [Показания_спидометра_при_выезде] = @Показания_спидометра_при_выезде, [Показания_спидометра_при_возвращении] = @Показания_спидометра_при_возвращении, [Дата_Время_выезда_граф] = @Дата_Время_выезда_граф, [Дата_Время_выезда_факт] = @Дата_Время_выезда_факт, [Дата_Время_возвращения_граф] = @Дата_Время_возвращения_граф, [Дата_Время_возвращения_факт] = @Дата_Время_возвращения_факт, [Нулевой_пробег_выезд] = @Нулевой_пробег_выезд, [Нулевой_пробег_возвр] = @Нулевой_пробег_возвр, [Время_работы_двигателя_выезд] = @Время_работы_двигателя_выезд, [Время_работы_двигателя_возвр] = @Время_работы_двигателя_возвр, [Время_работы_спецоборудования_выезд] = @Время_работы_спецоборудования_выезд, [Время_работы_спецоборудования_возвр] = @Время_работы_спецоборудования_возвр, [Остаток_ТСМ1_выезд] = @Остаток_ТСМ1_выезд, [Остаток_ТСМ1_возвр] = @Остаток_ТСМ1_возвр, [Остаток_ТСМ2_выезд] = @Остаток_ТСМ2_выезд, [Остаток_ТСМ2_возвр] = @Остаток_ТСМ2_возвр, [ID_Водителя] = @ID_Водителя, [ID_Автомобиля] = @ID_Автомобиля, [ID_Отдела] = @ID_Отдела WHERE (([ID_Путевого листа] = @Original_ID_Путевого_листа) AND ([Номер путевого листа] = @Original_Номер_путевого_листа) AND ([Дата путевого листа] = @Original_Дата_путевого_листа) AND ((@IsNull_Пункт_отправления = 1 AND [Пункт_отправления] IS NULL) OR ([Пункт_отправления] = @Original_Пункт_отправления)) AND ((@IsNull_Пункт_назначения = 1 AND [Пункт_назначения] IS NULL) OR ([Пункт_назначения] = @Original_Пункт_назначения)) AND ((@IsNull_Показания_спидометра_при_выезде = 1 AND [Показания_спидометра_при_выезде] IS NULL) OR ([Показания_спидометра_при_выезде] = @Original_Показания_спидометра_при_выезде)) AND ((@IsNull_Показания_спидометра_при_возвращении = 1 AND [Показания_спидометра_при_возвращении] IS NULL) OR ([Показания_спидометра_при_возвращении] = @Original_Показания_спидометра_при_возвращении)) AND ((@IsNull_Дата_Время_выезда_граф = 1 AND [Дата_Время_выезда_граф] IS NULL) OR ([Дата_Время_выезда_граф] = @Original_Дата_Время_выезда_граф)) AND ((@IsNull_Дата_Время_выезда_факт = 1 AND [Дата_Время_выезда_факт] IS NULL) OR ([Дата_Время_выезда_факт] = @Original_Дата_Время_выезда_факт)) AND ((@IsNull_Дата_Время_возвращения_граф = 1 AND [Дата_Время_возвращения_граф] IS NULL) OR ([Дата_Время_возвращения_граф] = @Original_Дата_Время_возвращения_граф)) AND ((@IsNull_Дата_Время_возвращения_факт = 1 AND [Дата_Время_возвращения_факт] IS NULL) OR ([Дата_Время_возвращения_факт] = @Original_Дата_Время_возвращения_факт)) AND ((@IsNull_Нулевой_пробег_выезд = 1 AND [Нулевой_пробег_выезд] IS NULL) OR ([Нулевой_пробег_выезд] = @Original_Нулевой_пробег_выезд)) AND ((@IsNull_Нулевой_пробег_возвр = 1 AND [Нулевой_пробег_возвр] IS NULL) OR ([Нулевой_пробег_возвр] = @Original_Нулевой_пробег_возвр)) AND ((@IsNull_Время_работы_двигателя_выезд = 1 AND [Время_работы_двигателя_выезд] IS NULL) OR ([Время_работы_двигателя_выезд] = @Original_Время_работы_двигателя_выезд)) AND ((@IsNull_Время_работы_двигателя_возвр = 1 AND [Время_работы_двигателя_возвр] IS NULL) OR ([Время_работы_двигателя_возвр] = @Original_Время_работы_двигателя_возвр)) AND ((@IsNull_Время_работы_спецоборудования_выезд = 1 AND [Время_работы_спецоборудования_выезд] IS NULL) OR ([Время_работы_спецоборудования_выезд] = @Original_Время_работы_спецоборудования_выезд)) AND ((@IsNull_Время_работы_спецоборудования_возвр = 1 AND [Время_работы_спецоборудования_возвр] IS NULL) OR ([Время_работы_спецоборудования_возвр] = @Original_Время_работы_спецоборудования_возвр)) AND ((@IsNull_Остаток_ТСМ1_выезд = 1 AND [Остаток_ТСМ1_выезд] IS NULL) OR ([Остаток_ТСМ1_выезд] = @Original_Остаток_ТСМ1_выезд)) AND ((@IsNull_Остаток_ТСМ1_возвр = 1 AND [Остаток_ТСМ1_возвр] IS NULL) OR ([Остаток_ТСМ1_возвр] = @Original_Остаток_ТСМ1_возвр)) AND ((@IsNull_Остаток_ТСМ2_выезд = 1 AND [Остаток_ТСМ2_выезд] IS NULL) OR ([Остаток_ТСМ2_выезд] = @Original_Остаток_ТСМ2_выезд)) AND ((@IsNull_Остаток_ТСМ2_возвр = 1 AND [Остаток_ТСМ2_возвр] IS NULL) OR ([Остаток_ТСМ2_возвр] = @Original_Остаток_ТСМ2_возвр)) AND ([ID_Водителя] = @Original_ID_Водителя) AND ([ID_Автомобиля] = @Original_ID_Автомобиля) AND ((@IsNull_ID_Отдела = 1 AND [ID_Отдела] IS NULL) OR ([ID_Отдела] = @Original_ID_Отдела)));
+SELECT [ID_Путевого листа], [Номер путевого листа], [Дата путевого листа], Пункт_отправления, Пункт_назначения, Показания_спидометра_при_выезде, Показания_спидометра_при_возвращении, Дата_Время_выезда_граф, Дата_Время_выезда_факт, Дата_Время_возвращения_граф, Дата_Время_возвращения_факт, Нулевой_пробег_выезд, Нулевой_пробег_возвр, Время_работы_двигателя_выезд, Время_работы_двигателя_возвр, Время_работы_спецоборудования_выезд, Время_работы_спецоборудования_возвр, Остаток_ТСМ1_выезд, Остаток_ТСМ1_возвр, Остаток_ТСМ2_выезд, Остаток_ТСМ2_возвр, ID_Водителя, ID_Автомобиля, ID_Отдела FROM [Путевой лист Грузового авто] WHERE ([ID_Путевого листа] = @ID_Путевого_листа)</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Номер_путевого_листа" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Номер путевого листа" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@Дата_путевого_листа" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="Дата путевого листа" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Пункт_отправления" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Пункт_отправления" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Пункт_назначения" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Пункт_назначения" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Показания_спидометра_при_выезде" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Показания_спидометра_при_выезде" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Показания_спидометра_при_возвращении" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Показания_спидометра_при_возвращении" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Дата_Время_выезда_граф" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="Дата_Время_выезда_граф" SourceColumnNullMapping="false" SourceVersion="Current" />
@@ -1287,6 +1170,10 @@ SELECT [ID_Путевого листа], [Номер путевого листа
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_ID_Путевого_листа" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ID_Путевого листа" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_Номер_путевого_листа" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Номер путевого листа" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@Original_Дата_путевого_листа" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="Дата путевого листа" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Пункт_отправления" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Пункт_отправления" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_Пункт_отправления" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Пункт_отправления" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Пункт_назначения" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Пункт_назначения" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_Пункт_назначения" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Пункт_назначения" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Показания_спидометра_при_выезде" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Показания_спидометра_при_выезде" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_Показания_спидометра_при_выезде" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Показания_спидометра_при_выезде" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Показания_спидометра_при_возвращении" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Показания_спидометра_при_возвращении" SourceColumnNullMapping="true" SourceVersion="Original" />
@@ -1352,6 +1239,8 @@ SELECT [ID_Путевого листа], [Номер путевого листа
               <Mapping SourceColumn="ID_Водителя" DataSetColumn="ID_Водителя" />
               <Mapping SourceColumn="ID_Автомобиля" DataSetColumn="ID_Автомобиля" />
               <Mapping SourceColumn="ID_Отдела" DataSetColumn="ID_Отдела" />
+              <Mapping SourceColumn="Пункт_отправления" DataSetColumn="Пункт_отправления" />
+              <Mapping SourceColumn="Пункт_назначения" DataSetColumn="Пункт_назначения" />
             </Mappings>
             <Sources>
               <DbSource ConnectionRef="Путевые_листыConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteQueryById" Modifier="Public" Name="DeleteQueryById" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="DeleteQueryById">
@@ -1368,13 +1257,7 @@ WHERE        ([ID_Путевого листа] = @Original_ID_Путевого_�
               <DbSource ConnectionRef="Путевые_листыConnectionString (Settings)" DbObjectName="[Путевые листы].dbo.[Путевой лист Грузового авто]" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByID" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByID" GeneratorSourceName="FillByID" GetMethodModifier="Public" GetMethodName="GetDataByID" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByID" UserSourceName="FillByID">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        [ID_Путевого листа], [Номер путевого листа], [Дата путевого листа], Показания_спидометра_при_выезде, Показания_спидометра_при_возвращении, 
-                         Дата_Время_выезда_граф, Дата_Время_выезда_факт, Дата_Время_возвращения_граф, Дата_Время_возвращения_факт, Нулевой_пробег_выезд, 
-                         Нулевой_пробег_возвр, Время_работы_двигателя_выезд, Время_работы_двигателя_возвр, Время_работы_спецоборудования_выезд, 
-                         Время_работы_спецоборудования_возвр, Остаток_ТСМ1_выезд, Остаток_ТСМ1_возвр, Остаток_ТСМ2_выезд, Остаток_ТСМ2_возвр, ID_Водителя, 
-                         ID_Автомобиля, ID_Отдела
-FROM            [Путевой лист Грузового авто]
-WHERE        ([ID_Путевого листа] = @ID)</CommandText>
+                    <CommandText>SELECT ID_Автомобиля, ID_Водителя, ID_Отдела, [ID_Путевого листа], Время_работы_двигателя_возвр, Время_работы_двигателя_выезд, Время_работы_спецоборудования_возвр, Время_работы_спецоборудования_выезд, [Дата путевого листа], Дата_Время_возвращения_граф, Дата_Время_возвращения_факт, Дата_Время_выезда_граф, Дата_Время_выезда_факт, [Номер путевого листа], Нулевой_пробег_возвр, Нулевой_пробег_выезд, Остаток_ТСМ1_возвр, Остаток_ТСМ1_выезд, Остаток_ТСМ2_возвр, Остаток_ТСМ2_выезд, Показания_спидометра_при_возвращении, Показания_спидометра_при_выезде, Пункт_назначения, Пункт_отправления FROM [Путевой лист Грузового авто] WHERE ([ID_Путевого листа] = @ID)</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="ID" ColumnName="ID_Путевого листа" DataSourceName="[Путевые листы].dbo.[Путевой лист Грузового авто]" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@ID" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="ID_Путевого листа" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
@@ -1384,11 +1267,13 @@ WHERE        ([ID_Путевого листа] = @ID)</CommandText>
               <DbSource ConnectionRef="Путевые_листыConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertQuery" Modifier="Public" Name="InsertQuery" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="InsertQuery">
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>INSERT INTO [Путевой лист Грузового авто] ([Номер путевого листа], [Дата путевого листа], [Показания_спидометра_при_выезде], [Показания_спидометра_при_возвращении], [Дата_Время_выезда_граф], [Дата_Время_выезда_факт], [Дата_Время_возвращения_граф], [Дата_Время_возвращения_факт], [Нулевой_пробег_выезд], [Нулевой_пробег_возвр], [Время_работы_двигателя_выезд], [Время_работы_двигателя_возвр], [Время_работы_спецоборудования_выезд], [Время_работы_спецоборудования_возвр], [Остаток_ТСМ1_выезд], [Остаток_ТСМ1_возвр], [Остаток_ТСМ2_выезд], [Остаток_ТСМ2_возвр], [ID_Водителя], [ID_Автомобиля], [ID_Отдела]) VALUES (@Номер_путевого_листа, @Дата_путевого_листа, @Показания_спидометра_при_выезде, @Показания_спидометра_при_возвращении, @Дата_Время_выезда_граф, @Дата_Время_выезда_факт, @Дата_Время_возвращения_граф, @Дата_Время_возвращения_факт, @Нулевой_пробег_выезд, @Нулевой_пробег_возвр, @Время_работы_двигателя_выезд, @Время_работы_двигателя_возвр, @Время_работы_спецоборудования_выезд, @Время_работы_спецоборудования_возвр, @Остаток_ТСМ1_выезд, @Остаток_ТСМ1_возвр, @Остаток_ТСМ2_выезд, @Остаток_ТСМ2_возвр, @ID_Водителя, @ID_Автомобиля, @ID_Отдела);
-SELECT [ID_Путевого листа], [Номер путевого листа], [Дата путевого листа], Показания_спидометра_при_выезде, Показания_спидометра_при_возвращении, Дата_Время_выезда_граф, Дата_Время_выезда_факт, Дата_Время_возвращения_граф, Дата_Время_возвращения_факт, Нулевой_пробег_выезд, Нулевой_пробег_возвр, Время_работы_двигателя_выезд, Время_работы_двигателя_возвр, Время_работы_спецоборудования_выезд, Время_работы_спецоборудования_возвр, Остаток_ТСМ1_выезд, Остаток_ТСМ1_возвр, Остаток_ТСМ2_выезд, Остаток_ТСМ2_возвр, ID_Водителя, ID_Автомобиля, ID_Отдела FROM [Путевой лист Грузового авто] WHERE ([ID_Путевого листа] = SCOPE_IDENTITY())</CommandText>
+                    <CommandText>INSERT INTO [Путевой лист Грузового авто] ([Номер путевого листа], [Дата путевого листа], [Пункт_отправления], [Пункт_назначения], [Показания_спидометра_при_выезде], [Показания_спидометра_при_возвращении], [Дата_Время_выезда_граф], [Дата_Время_выезда_факт], [Дата_Время_возвращения_граф], [Дата_Время_возвращения_факт], [Нулевой_пробег_выезд], [Нулевой_пробег_возвр], [Время_работы_двигателя_выезд], [Время_работы_двигателя_возвр], [Время_работы_спецоборудования_выезд], [Время_работы_спецоборудования_возвр], [Остаток_ТСМ1_выезд], [Остаток_ТСМ1_возвр], [Остаток_ТСМ2_выезд], [Остаток_ТСМ2_возвр], [ID_Водителя], [ID_Автомобиля], [ID_Отдела]) VALUES (@Номер_путевого_листа, @Дата_путевого_листа, @Пункт_отправления, @Пункт_назначения, @Показания_спидометра_при_выезде, @Показания_спидометра_при_возвращении, @Дата_Время_выезда_граф, @Дата_Время_выезда_факт, @Дата_Время_возвращения_граф, @Дата_Время_возвращения_факт, @Нулевой_пробег_выезд, @Нулевой_пробег_возвр, @Время_работы_двигателя_выезд, @Время_работы_двигателя_возвр, @Время_работы_спецоборудования_выезд, @Время_работы_спецоборудования_возвр, @Остаток_ТСМ1_выезд, @Остаток_ТСМ1_возвр, @Остаток_ТСМ2_выезд, @Остаток_ТСМ2_возвр, @ID_Водителя, @ID_Автомобиля, @ID_Отдела);
+SELECT [ID_Путевого листа], [Номер путевого листа], [Дата путевого листа], Пункт_отправления, Пункт_назначения, Показания_спидометра_при_выезде, Показания_спидометра_при_возвращении, Дата_Время_выезда_граф, Дата_Время_выезда_факт, Дата_Время_возвращения_граф, Дата_Время_возвращения_факт, Нулевой_пробег_выезд, Нулевой_пробег_возвр, Время_работы_двигателя_выезд, Время_работы_двигателя_возвр, Время_работы_спецоборудования_выезд, Время_работы_спецоборудования_возвр, Остаток_ТСМ1_выезд, Остаток_ТСМ1_возвр, Остаток_ТСМ2_выезд, Остаток_ТСМ2_возвр, ID_Водителя, ID_Автомобиля, ID_Отдела FROM [Путевой лист Грузового авто] WHERE ([ID_Путевого листа] = SCOPE_IDENTITY())</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="Номер_путевого_листа" ColumnName="Номер путевого листа" DataSourceName="[Путевые листы].dbo.[Путевой лист Грузового авто]" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@Номер_путевого_листа" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="Номер путевого листа" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="Дата_путевого_листа" ColumnName="Дата путевого листа" DataSourceName="[Путевые листы].dbo.[Путевой лист Грузового авто]" DataTypeServer="date" DbType="AnsiString" Direction="Input" ParameterName="@Дата_путевого_листа" Precision="0" ProviderType="Date" Scale="0" Size="3" SourceColumn="Дата путевого листа" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="Пункт_отправления" ColumnName="Пункт_отправления" DataSourceName="[Путевые листы].dbo.[Путевой лист Грузового авто]" DataTypeServer="nvarchar(50)" DbType="String" Direction="Input" ParameterName="@Пункт_отправления" Precision="0" ProviderType="NVarChar" Scale="0" Size="50" SourceColumn="Пункт_отправления" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="Пункт_назначения" ColumnName="Пункт_назначения" DataSourceName="[Путевые листы].dbo.[Путевой лист Грузового авто]" DataTypeServer="nvarchar(50)" DbType="String" Direction="Input" ParameterName="@Пункт_назначения" Precision="0" ProviderType="NVarChar" Scale="0" Size="50" SourceColumn="Пункт_назначения" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="Показания_спидометра_при_выезде" ColumnName="Показания_спидометра_при_выезде" DataSourceName="[Путевые листы].dbo.[Путевой лист Грузового авто]" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@Показания_спидометра_при_выезде" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="Показания_спидометра_при_выезде" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="Показания_спидометра_при_возвращении" ColumnName="Показания_спидометра_при_возвращении" DataSourceName="[Путевые листы].dbo.[Путевой лист Грузового авто]" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@Показания_спидометра_при_возвращении" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="Показания_спидометра_при_возвращении" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="Дата_Время_выезда_граф" ColumnName="Дата_Время_выезда_граф" DataSourceName="[Путевые листы].dbo.[Путевой лист Грузового авто]" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@Дата_Время_выезда_граф" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="Дата_Время_выезда_граф" SourceColumnNullMapping="false" SourceVersion="Current" />
@@ -1413,6 +1298,406 @@ SELECT [ID_Путевого листа], [Номер путевого листа
                 </InsertCommand>
               </DbSource>
             </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DanieJournalTableAdapter" GeneratorDataComponentClassName="DanieJournalTableAdapter" Name="DanieJournal" UserDataComponentName="DanieJournalTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="Путевые_листыConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT  [Путевой лист Грузового авто].[Дата путевого листа] AS 'Дата_путевого_листа', 
+	[Путевой лист Грузового авто].[Номер путевого листа] AS 'Номер_путевого_листа', 
+    [Личный состав].Фамилия + ' ' + LEFT([Личный состав].Имя, 1) + '. ' + LEFT([Личный состав].Отчество, 1) + '. ' AS 'ФИО', 
+	Отделы.Подразделение, 
+    [Путевой лист Грузового авто].Пункт_отправления,
+	[Путевой лист Грузового авто].Пункт_назначения,
+	ISNULL(zapr.Запрaвлено, 0) AS 'Заправлено_ТСМ1',
+	ISNULL(zapr2.Запрaвлено2, 0) AS 'Заправлено_ТСМ2',
+    [Путевой лист Грузового авто].Остаток_ТСМ1_выезд,
+	[Путевой лист Грузового авто].Остаток_ТСМ1_возвр, 
+	[Путевой лист Грузового авто].Остаток_ТСМ2_выезд, 
+    [Путевой лист Грузового авто].Остаток_ТСМ2_возвр,
+    CONVERT(time,[Путевой лист Грузового авто].Дата_Время_выезда_факт) AS 'Дата_Время_выезда_факт',
+    CONVERT(time,[Путевой лист Грузового авто].Дата_Время_возвращения_факт) AS 'Дата_Время_возвращения_факт', 
+	[Путевой лист Грузового авто].Показания_спидометра_при_выезде,
+	[Путевой лист Грузового авто].Показания_спидометра_при_возвращении 
+FROM  [Личный состав] 
+INNER JOIN [Путевой лист Грузового авто] 
+	ON [Личный состав].[табельный  номер] = [Путевой лист Грузового авто].ID_Водителя 
+INNER JOIN Отделы 
+	ON [Путевой лист Грузового авто].ID_Отдела = Отделы.Код 
+INNER JOIN [Подвижной состав] 
+	ON [Путевой лист Грузового авто].ID_Автомобиля = [Подвижной состав].ID 
+LEFT JOIN
+    (SELECT [ID_Путевого листа], 
+			[Марка ТСМ],
+			SUM(Количество) as 'Запрaвлено' 
+	FROM [Заправка ТСМ]
+	GROUP BY [ID_Путевого листа],[Марка ТСМ]
+	)  as zapr 
+	ON [Путевой лист Грузового авто].[ID_Путевого листа] = zapr.[ID_Путевого листа] AND [Подвижной состав].[Вид топлива] = zapr.[Марка ТСМ]
+LEFT JOIN
+    (SELECT [ID_Путевого листа], 
+			[Марка ТСМ],
+			SUM(Количество) as 'Запрaвлено2' 
+	FROM [Заправка ТСМ]
+	GROUP BY [ID_Путевого листа],[Марка ТСМ]
+	)  as zapr2 
+	ON [Путевой лист Грузового авто].[ID_Путевого листа] = zapr2.[ID_Путевого листа] AND [Подвижной состав].[Дополнительный вид топлива] = zapr2.[Марка ТСМ]</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ФИО" DataSetColumn="ФИО" />
+              <Mapping SourceColumn="Подразделение" DataSetColumn="Подразделение" />
+              <Mapping SourceColumn="Пункт_отправления" DataSetColumn="Пункт_отправления" />
+              <Mapping SourceColumn="Пункт_назначения" DataSetColumn="Пункт_назначения" />
+              <Mapping SourceColumn="Остаток_ТСМ1_выезд" DataSetColumn="Остаток_ТСМ1_выезд" />
+              <Mapping SourceColumn="Остаток_ТСМ1_возвр" DataSetColumn="Остаток_ТСМ1_возвр" />
+              <Mapping SourceColumn="Остаток_ТСМ2_выезд" DataSetColumn="Остаток_ТСМ2_выезд" />
+              <Mapping SourceColumn="Остаток_ТСМ2_возвр" DataSetColumn="Остаток_ТСМ2_возвр" />
+              <Mapping SourceColumn="Показания_спидометра_при_выезде" DataSetColumn="Показания_спидометра_при_выезде" />
+              <Mapping SourceColumn="Показания_спидометра_при_возвращении" DataSetColumn="Показания_спидометра_при_возвращении" />
+              <Mapping SourceColumn="Дата_путевого_листа" DataSetColumn="Дата_путевого_листа" />
+              <Mapping SourceColumn="Номер_путевого_листа" DataSetColumn="Номер_путевого_листа" />
+              <Mapping SourceColumn="Заправлено_ТСМ1" DataSetColumn="Заправлено_ТСМ1" />
+              <Mapping SourceColumn="Заправлено_ТСМ2" DataSetColumn="Заправлено_ТСМ2" />
+              <Mapping SourceColumn="Дата_Время_выезда_факт" DataSetColumn="Дата_Время_выезда_факт" />
+              <Mapping SourceColumn="Дата_Время_возвращения_факт" DataSetColumn="Дата_Время_возвращения_факт" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="Путевые_листыConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillByAutoAndDate" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByAutoAndDate" GeneratorSourceName="FillByAutoAndDate" GetMethodModifier="Public" GetMethodName="GetDataByAutoAndDate" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByAutoAndDate" UserSourceName="FillByAutoAndDate">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT  [Путевой лист Грузового авто].[Дата путевого листа] AS 'Дата_путевого_листа', 
+	[Путевой лист Грузового авто].[Номер путевого листа] AS 'Номер_путевого_листа', 
+    [Личный состав].Фамилия + ' ' + LEFT([Личный состав].Имя, 1) + '. ' + LEFT([Личный состав].Отчество, 1) + '. ' AS 'ФИО', 
+	Отделы.Подразделение, 
+    [Путевой лист Грузового авто].Пункт_отправления,
+	[Путевой лист Грузового авто].Пункт_назначения,
+	ISNULL(zapr.Запрaвлено, 0) AS 'Заправлено_ТСМ1',
+	ISNULL(zapr2.Запрaвлено2, 0) AS 'Заправлено_ТСМ2',
+    [Путевой лист Грузового авто].Остаток_ТСМ1_выезд,
+	[Путевой лист Грузового авто].Остаток_ТСМ1_возвр, 
+	[Путевой лист Грузового авто].Остаток_ТСМ2_выезд, 
+    [Путевой лист Грузового авто].Остаток_ТСМ2_возвр,
+    CONVERT(time,[Путевой лист Грузового авто].Дата_Время_выезда_факт) AS 'Дата_Время_выезда_факт',
+    CONVERT(time,[Путевой лист Грузового авто].Дата_Время_возвращения_факт) AS 'Дата_Время_возвращения_факт', 
+	[Путевой лист Грузового авто].Показания_спидометра_при_выезде,
+	[Путевой лист Грузового авто].Показания_спидометра_при_возвращении 
+FROM  [Личный состав] 
+INNER JOIN [Путевой лист Грузового авто] 
+	ON [Личный состав].[табельный  номер] = [Путевой лист Грузового авто].ID_Водителя 
+INNER JOIN Отделы 
+	ON [Путевой лист Грузового авто].ID_Отдела = Отделы.Код 
+INNER JOIN [Подвижной состав] 
+	ON [Путевой лист Грузового авто].ID_Автомобиля = [Подвижной состав].ID 
+LEFT JOIN
+    (SELECT [ID_Путевого листа], 
+			[Марка ТСМ],
+			SUM(Количество) as 'Запрaвлено' 
+	FROM [Заправка ТСМ]
+	GROUP BY [ID_Путевого листа],[Марка ТСМ]
+	)  as zapr 
+	ON [Путевой лист Грузового авто].[ID_Путевого листа] = zapr.[ID_Путевого листа] AND [Подвижной состав].[Вид топлива] = zapr.[Марка ТСМ]
+LEFT JOIN
+    (SELECT [ID_Путевого листа], 
+			[Марка ТСМ],
+			SUM(Количество) as 'Запрaвлено2' 
+	FROM [Заправка ТСМ]
+	GROUP BY [ID_Путевого листа],[Марка ТСМ]
+	)  as zapr2 
+	ON [Путевой лист Грузового авто].[ID_Путевого листа] = zapr2.[ID_Путевого листа] AND [Подвижной состав].[Дополнительный вид топлива] = zapr2.[Марка ТСМ]
+WHERE [Путевой лист Грузового авто].[Дата путевого листа] BETWEEN @DateStart AND @DateEnd
+AND [Путевой лист Грузового авто].[ID_Автомобиля] = @Auto</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="DateStart" ColumnName="Дата путевого листа" DataSourceName="[Путевые листы].dbo.[Путевой лист Грузового авто]" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@DateStart" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="Дата_путевого_листа" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="DateEnd" ColumnName="Дата путевого листа" DataSourceName="[Путевые листы].dbo.[Путевой лист Грузового авто]" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@DateEnd" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="Дата_путевого_листа" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Auto" ColumnName="ID_Автомобиля" DataSourceName="[Путевые листы].dbo.[Путевой лист Грузового авто]" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@Auto" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="ID_Автомобиля" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="Путевые_листыConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillByAutoAndDateLegk" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByAutoAndDateLegk" GeneratorSourceName="FillByAutoAndDateLegk" GetMethodModifier="Public" GetMethodName="GetDataByAutoAndDateLegk" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByAutoAndDateLegk" UserSourceName="FillByAutoAndDateLegk">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT putevoi.[За период с] AS 'Дата_путевого_листа', 
+putevoi.[Номер путевого листа] AS 'Номер_путевого_листа', 
+[Личный состав].Фамилия + ' ' + LEFT([Личный состав].Имя, 1) + '. ' + LEFT([Личный состав].Отчество, 1) + '. ' AS 'ФИО', 
+Отделы.Подразделение, 
+putevoi.Пункт_отправления, 
+putevoi.Пункт_назначения, 
+dan.[Заправлено] AS 'Заправлено_ТСМ1',
+0 AS 'Заправлено_ТСМ2',
+dan1.[Остаток_топлива_при_выезде] AS 'Остаток_ТСМ1_выезд', 
+dan2.[Остаток_топлива_при_возвращении] AS 'Остаток_ТСМ1_возвр', 
+0 AS 'Остаток_ТСМ2_выезд', 
+0 AS 'Остаток_ТСМ2_возвр', 
+dan1.[Время_выезда] AS 'Дата_Время_выезда_факт', 
+dan2.[Время_возвращения] AS 'Дата_Время_возвращения_факт', 
+dan.[Показания_спидометра_при_выезде],
+dan.[Показания_спидометра_при_возвращении]
+FROM [Путевой лист легкового автомобиля] as putevoi
+INNER JOIN
+[Личный состав] ON putevoi.ID_Водитель = [Личный состав].[табельный  номер] 
+INNER JOIN
+[Подвижной состав] ON putevoi.ID_Автомобиль = [Подвижной состав].ID 
+INNER JOIN
+Отделы ON putevoi.ID_Отдела = Отделы.Код
+inner join
+(SELECT [ID_Путевого листа], MIN([Показания спидометра при выезде]) AS 'Показания_спидометра_при_выезде', 
+MAX([Показания спидометра при возвращении]) AS 'Показания_спидометра_при_возвращении', 
+SUM([Заправлено топлива л]) AS 'Заправлено' 
+FROM [Данные Путевой лист легкового авто] 
+GROUP BY [ID_Путевого листа]
+)AS dan
+ON 
+putevoi.[ID_Путевого листа] = dan.[ID_Путевого листа] 
+INNER JOIN 
+(SELECT [ID_Путевого листа], 
+MIN(id_Данных) as 'min_id',MAX(id_Данных) as 'max_id'
+FROM [Данные Путевой лист легкового авто] 
+GROUP BY [ID_Путевого листа])
+as ident 
+ON putevoi.[ID_Путевого листа] = ident.[ID_Путевого листа]
+INNER JOIN
+(SELECT id_Данных,[ID_Путевого листа], 
+[Остаток топлива при выезде] AS 'Остаток_топлива_при_выезде', 
+[Время выезда] AS 'Время_выезда'
+FROM [Данные Путевой лист легкового авто] 
+)AS dan1
+ON 
+ident.min_id =  dan1.id_Данных
+INNER JOIN
+(SELECT id_Данных,[ID_Путевого листа], 
+[Остаток топлива при возвращении] AS 'Остаток_топлива_при_возвращении', 
+[Время возвращения] AS 'Время_возвращения'
+FROM [Данные Путевой лист легкового авто] 
+)AS dan2
+ON 
+ident.max_id =  dan2.id_Данных
+
+WHERE putevoi.[За период с] BETWEEN @DateStart AND @DateEnd
+AND putevoi.ID_Автомобиль = @Auto</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="DateStart" ColumnName="За период с" DataSourceName="[Путевые листы].dbo.[Путевой лист легкового автомобиля]" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@DateStart" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="Дата_путевого_листа" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="DateEnd" ColumnName="За период с" DataSourceName="[Путевые листы].dbo.[Путевой лист легкового автомобиля]" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@DateEnd" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="Дата_путевого_листа" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="Auto" ColumnName="ID_Автомобиль" DataSourceName="[Путевые листы].dbo.[Путевой лист легкового автомобиля]" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@Auto" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="ID_Автомобиль" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="HeaderJournalTableAdapter" GeneratorDataComponentClassName="HeaderJournalTableAdapter" Name="HeaderJournal" UserDataComponentName="HeaderJournalTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="Путевые_листыConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        [Подвижной состав].[Марка и модель] AS 'Марка_и_модель', 
+[Подвижной состав].[Гос.номер]  AS 'Гос_номер',
+[Подвижной состав].[Гаражный номер] AS 'Гаражный_номер', 
+[Подвижной состав].[дата окончания страховки] AS 'дата_окончания_страховки', 
+[Подвижной состав].[Вид топлива] AS 'Вид_топлива',
+ [Личный состав].Фамилия +' '+ [Личный состав].Имя +' '+ [Личный состав].Отчество AS 'ФИО', 
+[Личный состав].[номер водительского удостоверения] AS 'номер_водительского_удостоверения', 
+[Личный состав].классность, 
+[Личный состав].[срок действия мед. справки]  AS 'срок_действия_мед_справки'
+FROM            (SELECT        TOP (1) ID, ID_Водитель, ID_Авто, Date
+                          FROM            [Водители авто]
+                          ORDER BY Date) AS c INNER JOIN
+                         [Личный состав] ON c.ID_Водитель = [Личный состав].[табельный  номер] INNER JOIN
+                         [Подвижной состав] ON c.ID_Авто = [Подвижной состав].ID</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="классность" DataSetColumn="классность" />
+              <Mapping SourceColumn="ФИО" DataSetColumn="ФИО" />
+              <Mapping SourceColumn="Марка_и_модель" DataSetColumn="Марка_и_модель" />
+              <Mapping SourceColumn="Гаражный_номер" DataSetColumn="Гаражный_номер" />
+              <Mapping SourceColumn="дата_окончания_страховки" DataSetColumn="дата_окончания_страховки" />
+              <Mapping SourceColumn="Вид_топлива" DataSetColumn="Вид_топлива" />
+              <Mapping SourceColumn="номер_водительского_удостоверения" DataSetColumn="номер_водительского_удостоверения" />
+              <Mapping SourceColumn="срок_действия_мед_справки" DataSetColumn="срок_действия_мед_справки" />
+              <Mapping SourceColumn="Гос_номер" DataSetColumn="Гос_номер" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="Путевые_листыConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillByAutoAndDate" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByAutoAndDate" GeneratorSourceName="FillByAutoAndDate" GetMethodModifier="Public" GetMethodName="GetDataByAutoAndDate" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByAutoAndDate" UserSourceName="FillByAutoAndDate">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        [Подвижной состав].[Марка и модель] AS 'Марка_и_модель', 
+[Подвижной состав].[Гос.номер]  AS 'Гос_номер', 
+[Подвижной состав].[Гаражный номер] AS 'Гаражный_номер', 
+[Подвижной состав].[дата окончания страховки] AS 'дата_окончания_страховки', 
+[Подвижной состав].[Вид топлива] AS 'Вид_топлива',
+ [Личный состав].Фамилия +' '+ [Личный состав].Имя +' '+ [Личный состав].Отчество AS 'ФИО', 
+[Личный состав].[номер водительского удостоверения] AS 'номер_водительского_удостоверения', 
+[Личный состав].классность, 
+[Личный состав].[срок действия мед. справки]  AS 'срок_действия_мед_справки'
+FROM            (SELECT TOP (1) ID, ID_Водитель, ID_Авто, Date
+                          FROM  [Водители авто]
+                          WHERE (Date BETWEEN @DateStart AND @DateEnd) AND (ID_Авто = @Auto)
+                          ORDER BY Date) AS c INNER JOIN
+                         [Личный состав] ON c.ID_Водитель = [Личный состав].[табельный  номер] INNER JOIN
+                         [Подвижной состав] ON c.ID_Авто = [Подвижной состав].ID</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="DateStart" ColumnName="" DataSourceName="" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@DateStart" Precision="0" Scale="0" Size="8" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="DateEnd" ColumnName="" DataSourceName="" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@DateEnd" Precision="0" Scale="0" Size="8" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="Auto" ColumnName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@Auto" Precision="0" Scale="0" Size="4" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="LichniiSpravkiTableAdapter" GeneratorDataComponentClassName="LichniiSpravkiTableAdapter" Name="Личный состав Справки" UserDataComponentName="LichniiSpravkiTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="Путевые_листыConnectionString (Settings)" DbObjectName="[Путевые листы].dbo.[Личный состав]" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [Личный состав] WHERE (([табельный  номер] = @Original_табельный__номер) AND ((@IsNull_Фамилия = 1 AND [Фамилия] IS NULL) OR ([Фамилия] = @Original_Фамилия)) AND ((@IsNull_Имя = 1 AND [Имя] IS NULL) OR ([Имя] = @Original_Имя)) AND ((@IsNull_Отчество = 1 AND [Отчество] IS NULL) OR ([Отчество] = @Original_Отчество)) AND ((@IsNull_номер_водительского_удостоверения = 1 AND [номер водительского удостоверения] IS NULL) OR ([номер водительского удостоверения] = @Original_номер_водительского_удостоверения)) AND ((@p3 = 1 AND [срок действия мед. справки] IS NULL) OR ([срок действия мед. справки] = @p2)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_табельный__номер" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="табельный  номер" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Фамилия" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Фамилия" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_Фамилия" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Фамилия" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Имя" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Имя" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_Имя" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Имя" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Отчество" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Отчество" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_Отчество" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Отчество" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_номер_водительского_удостоверения" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="номер водительского удостоверения" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_номер_водительского_удостоверения" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="номер водительского удостоверения" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p3" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="срок действия мед. справки" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@p2" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="срок действия мед. справки" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [Личный состав] ([табельный  номер], [Фамилия], [Имя], [Отчество], [номер водительского удостоверения], [срок действия мед. справки]) VALUES (@табельный__номер, @Фамилия, @Имя, @Отчество, @номер_водительского_удостоверения, @p1);
+SELECT [табельный  номер], Фамилия, Имя, Отчество, [номер водительского удостоверения], [срок действия мед. справки], DATEDIFF(day, GETDATE(), [срок действия мед. справки]) AS 'остаток дней до окончания срока действия справки' FROM [Личный состав] WHERE ([табельный  номер] = @табельный__номер)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@табельный__номер" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="табельный  номер" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Фамилия" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Фамилия" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Имя" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Имя" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Отчество" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Отчество" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@номер_водительского_удостоверения" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="номер водительского удостоверения" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@p1" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="срок действия мед. справки" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        [табельный  номер], Фамилия, Имя, Отчество, [номер водительского удостоверения], [срок действия мед. справки], DATEDIFF(day, GETDATE(), [срок действия мед. справки]) AS 'остаток дней до окончания срока действия справки'
+FROM            [Личный состав]
+WHERE        (DATEDIFF(day, GETDATE(), [срок действия мед. справки]) &lt; 31)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [Личный состав] SET [табельный  номер] = @табельный__номер, [Фамилия] = @Фамилия, [Имя] = @Имя, [Отчество] = @Отчество, [номер водительского удостоверения] = @номер_водительского_удостоверения, [срок действия мед. справки] = @p1 WHERE (([табельный  номер] = @Original_табельный__номер) AND ((@IsNull_Фамилия = 1 AND [Фамилия] IS NULL) OR ([Фамилия] = @Original_Фамилия)) AND ((@IsNull_Имя = 1 AND [Имя] IS NULL) OR ([Имя] = @Original_Имя)) AND ((@IsNull_Отчество = 1 AND [Отчество] IS NULL) OR ([Отчество] = @Original_Отчество)) AND ((@IsNull_номер_водительского_удостоверения = 1 AND [номер водительского удостоверения] IS NULL) OR ([номер водительского удостоверения] = @Original_номер_водительского_удостоверения)) AND ((@p3 = 1 AND [срок действия мед. справки] IS NULL) OR ([срок действия мед. справки] = @p2)));
+SELECT [табельный  номер], Фамилия, Имя, Отчество, [номер водительского удостоверения], [срок действия мед. справки], DATEDIFF(day, GETDATE(), [срок действия мед. справки]) AS 'остаток дней до окончания срока действия справки' FROM [Личный состав] WHERE ([табельный  номер] = @табельный__номер)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@табельный__номер" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="табельный  номер" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Фамилия" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Фамилия" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Имя" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Имя" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Отчество" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Отчество" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@номер_водительского_удостоверения" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="номер водительского удостоверения" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@p1" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="срок действия мед. справки" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_табельный__номер" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="табельный  номер" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Фамилия" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Фамилия" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_Фамилия" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Фамилия" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Имя" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Имя" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_Имя" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Имя" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Отчество" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Отчество" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_Отчество" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Отчество" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_номер_водительского_удостоверения" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="номер водительского удостоверения" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_номер_водительского_удостоверения" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="номер водительского удостоверения" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p3" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="срок действия мед. справки" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@p2" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="срок действия мед. справки" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="табельный  номер" DataSetColumn="табельный  номер" />
+              <Mapping SourceColumn="Фамилия" DataSetColumn="Фамилия" />
+              <Mapping SourceColumn="Имя" DataSetColumn="Имя" />
+              <Mapping SourceColumn="Отчество" DataSetColumn="Отчество" />
+              <Mapping SourceColumn="номер водительского удостоверения" DataSetColumn="номер водительского удостоверения" />
+              <Mapping SourceColumn="срок действия мед. справки" DataSetColumn="срок действия мед_ справки" />
+              <Mapping SourceColumn="остаток дней до окончания срока действия справки" DataSetColumn="остаток дней до окончания срока действия справки" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="PersonAutoTableAdapter" GeneratorDataComponentClassName="PersonAutoTableAdapter" Name="Водители авто" UserDataComponentName="PersonAutoTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="Путевые_листыConnectionString (Settings)" DbObjectName="[Путевые листы].dbo.[Водители авто]" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [Водители авто] WHERE (([ID] = @Original_ID) AND ((@IsNull_ID_Водитель = 1 AND [ID_Водитель] IS NULL) OR ([ID_Водитель] = @Original_ID_Водитель)) AND ((@IsNull_ID_Авто = 1 AND [ID_Авто] IS NULL) OR ([ID_Авто] = @Original_ID_Авто)) AND ((@IsNull_Date = 1 AND [Date] IS NULL) OR ([Date] = @Original_Date)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_ID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_ID_Водитель" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ID_Водитель" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_ID_Водитель" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ID_Водитель" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_ID_Авто" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ID_Авто" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_ID_Авто" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ID_Авто" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Date" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Date" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_Date" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="Date" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [Водители авто] ([ID_Водитель], [ID_Авто], [Date]) VALUES (@ID_Водитель, @ID_Авто, @Date);
+SELECT ID, ID_Водитель, ID_Авто, Date FROM [Водители авто] WHERE (ID = SCOPE_IDENTITY())</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@ID_Водитель" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ID_Водитель" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@ID_Авто" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ID_Авто" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Date" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="Date" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        [Водители авто].*
+FROM            [Водители авто]</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [Водители авто] SET [ID_Водитель] = @ID_Водитель, [ID_Авто] = @ID_Авто, [Date] = @Date WHERE (([ID] = @Original_ID) AND ((@IsNull_ID_Водитель = 1 AND [ID_Водитель] IS NULL) OR ([ID_Водитель] = @Original_ID_Водитель)) AND ((@IsNull_ID_Авто = 1 AND [ID_Авто] IS NULL) OR ([ID_Авто] = @Original_ID_Авто)) AND ((@IsNull_Date = 1 AND [Date] IS NULL) OR ([Date] = @Original_Date)));
+SELECT ID, ID_Водитель, ID_Авто, Date FROM [Водители авто] WHERE (ID = @ID)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@ID_Водитель" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ID_Водитель" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@ID_Авто" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ID_Авто" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Date" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="Date" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_ID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_ID_Водитель" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ID_Водитель" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_ID_Водитель" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ID_Водитель" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_ID_Авто" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ID_Авто" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_ID_Авто" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ID_Авто" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Date" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Date" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_Date" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="Date" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="ID" ColumnName="ID" DataSourceName="[Путевые листы].dbo.[Водители авто]" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@ID" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ID" DataSetColumn="ID" />
+              <Mapping SourceColumn="ID_Водитель" DataSetColumn="ID_Водитель" />
+              <Mapping SourceColumn="ID_Авто" DataSetColumn="ID_Авто" />
+              <Mapping SourceColumn="Date" DataSetColumn="Date" />
+            </Mappings>
+            <Sources />
           </TableAdapter>
         </Tables>
         <Sources>
@@ -1826,162 +2111,6 @@ SELECT [ID_Путевого листа], [Номер путевого листа
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="DanieJournalLegkovie" msprop:Generator_TableClassName="DanieJournalLegkovieDataTable" msprop:Generator_TableVarName="tableDanieJournalLegkovie" msprop:Generator_TablePropName="DanieJournalLegkovie" msprop:Generator_RowDeletingName="DanieJournalLegkovieRowDeleting" msprop:Generator_RowChangingName="DanieJournalLegkovieRowChanging" msprop:Generator_RowEvHandlerName="DanieJournalLegkovieRowChangeEventHandler" msprop:Generator_RowDeletedName="DanieJournalLegkovieRowDeleted" msprop:Generator_UserTableName="DanieJournalLegkovie" msprop:Generator_RowChangedName="DanieJournalLegkovieRowChanged" msprop:Generator_RowEvArgName="DanieJournalLegkovieRowChangeEvent" msprop:Generator_RowClassName="DanieJournalLegkovieRow">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="Число" msprop:Generator_ColumnVarNameInTable="columnЧисло" msprop:Generator_ColumnPropNameInRow="Число" msprop:Generator_ColumnPropNameInTable="ЧислоColumn" msprop:Generator_UserColumnName="Число" type="xs:dateTime" />
-              <xs:element name="Номер_x0020_путевого_x0020_листа" msprop:Generator_ColumnVarNameInTable="columnНомер_путевого_листа" msprop:Generator_ColumnPropNameInRow="Номер_путевого_листа" msprop:Generator_ColumnPropNameInTable="Номер_путевого_листаColumn" msprop:Generator_UserColumnName="Номер путевого листа" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="10" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Остаток_x0020_топлива_x0020_при_x0020_выезде" msprop:Generator_ColumnVarNameInTable="columnОстаток_топлива_при_выезде" msprop:Generator_ColumnPropNameInRow="Остаток_топлива_при_выезде" msprop:Generator_ColumnPropNameInTable="Остаток_топлива_при_выездеColumn" msprop:Generator_UserColumnName="Остаток топлива при выезде" type="xs:double" />
-              <xs:element name="Остаток_x0020_топлива_x0020_при_x0020_возвращении" msprop:Generator_ColumnVarNameInTable="columnОстаток_топлива_при_возвращении" msprop:Generator_ColumnPropNameInRow="Остаток_топлива_при_возвращении" msprop:Generator_ColumnPropNameInTable="Остаток_топлива_при_возвращенииColumn" msprop:Generator_UserColumnName="Остаток топлива при возвращении" type="xs:double" />
-              <xs:element name="Время_x0020_выезда" msprop:Generator_ColumnVarNameInTable="columnВремя_выезда" msprop:Generator_ColumnPropNameInRow="Время_выезда" msprop:Generator_ColumnPropNameInTable="Время_выездаColumn" msprop:Generator_UserColumnName="Время выезда" type="xs:duration" />
-              <xs:element name="Время_x0020_возвращения" msprop:Generator_ColumnVarNameInTable="columnВремя_возвращения" msprop:Generator_ColumnPropNameInRow="Время_возвращения" msprop:Generator_ColumnPropNameInTable="Время_возвращенияColumn" msprop:Generator_UserColumnName="Время возвращения" type="xs:duration" />
-              <xs:element name="Показания_x0020_спидометра_x0020_при_x0020_выезде" msprop:Generator_ColumnVarNameInTable="columnПоказания_спидометра_при_выезде" msprop:Generator_ColumnPropNameInRow="Показания_спидометра_при_выезде" msprop:Generator_ColumnPropNameInTable="Показания_спидометра_при_выездеColumn" msprop:Generator_UserColumnName="Показания спидометра при выезде" type="xs:int" />
-              <xs:element name="Показания_x0020_спидометра_x0020_при_x0020_возвращении" msprop:Generator_ColumnVarNameInTable="columnПоказания_спидометра_при_возвращении" msprop:Generator_ColumnPropNameInRow="Показания_спидометра_при_возвращении" msprop:Generator_ColumnPropNameInTable="Показания_спидометра_при_возвращенииColumn" msprop:Generator_UserColumnName="Показания спидометра при возвращении" type="xs:int" />
-              <xs:element name="В_x0020_чье_x0020_распоряжение_x0020_занаряжена_x0020_автомашина" msprop:Generator_ColumnVarNameInTable="columnВ_чье_распоряжение_занаряжена_автомашина" msprop:Generator_ColumnPropNameInRow="В_чье_распоряжение_занаряжена_автомашина" msprop:Generator_ColumnPropNameInTable="В_чье_распоряжение_занаряжена_автомашинаColumn" msprop:Generator_UserColumnName="В чье распоряжение занаряжена автомашина" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Маршрут_x0020_перевозки_x0020_откуда" msprop:Generator_ColumnVarNameInTable="columnМаршрут_перевозки_откуда" msprop:Generator_ColumnPropNameInRow="Маршрут_перевозки_откуда" msprop:Generator_ColumnPropNameInTable="Маршрут_перевозки_откудаColumn" msprop:Generator_UserColumnName="Маршрут перевозки откуда" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Маршрут_x0020_перевозки_x0020_куда" msprop:Generator_ColumnVarNameInTable="columnМаршрут_перевозки_куда" msprop:Generator_ColumnPropNameInRow="Маршрут_перевозки_куда" msprop:Generator_ColumnPropNameInTable="Маршрут_перевозки_кудаColumn" msprop:Generator_UserColumnName="Маршрут перевозки куда" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Заправлено_x0020_топлива_x0020_л" msprop:Generator_ColumnVarNameInTable="columnЗаправлено_топлива_л" msprop:Generator_ColumnPropNameInRow="Заправлено_топлива_л" msprop:Generator_ColumnPropNameInTable="Заправлено_топлива_лColumn" msprop:Generator_UserColumnName="Заправлено топлива л" type="xs:double" />
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-        <xs:element name="DanieJournalGruzovie" msprop:Generator_TableClassName="DanieJournalGruzovieDataTable" msprop:Generator_TableVarName="tableDanieJournalGruzovie" msprop:Generator_RowChangedName="DanieJournalGruzovieRowChanged" msprop:Generator_TablePropName="DanieJournalGruzovie" msprop:Generator_RowDeletingName="DanieJournalGruzovieRowDeleting" msprop:Generator_RowChangingName="DanieJournalGruzovieRowChanging" msprop:Generator_RowEvHandlerName="DanieJournalGruzovieRowChangeEventHandler" msprop:Generator_RowDeletedName="DanieJournalGruzovieRowDeleted" msprop:Generator_RowClassName="DanieJournalGruzovieRow" msprop:Generator_UserTableName="DanieJournalGruzovie" msprop:Generator_RowEvArgName="DanieJournalGruzovieRowChangeEvent">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="Номер_x0020_путевого_x0020_листа" msprop:Generator_ColumnVarNameInTable="columnНомер_путевого_листа" msprop:Generator_ColumnPropNameInRow="Номер_путевого_листа" msprop:Generator_ColumnPropNameInTable="Номер_путевого_листаColumn" msprop:Generator_UserColumnName="Номер путевого листа" type="xs:int" />
-              <xs:element name="Дата_x0020_путевого_x0020_листа" msprop:Generator_ColumnVarNameInTable="columnДата_путевого_листа" msprop:Generator_ColumnPropNameInRow="Дата_путевого_листа" msprop:Generator_ColumnPropNameInTable="Дата_путевого_листаColumn" msprop:Generator_UserColumnName="Дата путевого листа" type="xs:dateTime" />
-              <xs:element name="В_x0020_чье_x0020_распоряжение_x0020_занаряжена_x0020_автомашина" msprop:Generator_ColumnVarNameInTable="columnВ_чье_распоряжение_занаряжена_автомашина" msprop:Generator_ColumnPropNameInRow="В_чье_распоряжение_занаряжена_автомашина" msprop:Generator_ColumnPropNameInTable="В_чье_распоряжение_занаряжена_автомашинаColumn" msprop:Generator_UserColumnName="В чье распоряжение занаряжена автомашина" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Пункт_x0020_отправления" msprop:Generator_ColumnVarNameInTable="columnПункт_отправления" msprop:Generator_ColumnPropNameInRow="Пункт_отправления" msprop:Generator_ColumnPropNameInTable="Пункт_отправленияColumn" msprop:Generator_UserColumnName="Пункт отправления" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="100" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Пункт_x0020_назначения" msprop:Generator_ColumnVarNameInTable="columnПункт_назначения" msprop:Generator_ColumnPropNameInRow="Пункт_назначения" msprop:Generator_ColumnPropNameInTable="Пункт_назначенияColumn" msprop:Generator_UserColumnName="Пункт назначения" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="100" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Количество" msprop:Generator_ColumnVarNameInTable="columnКоличество" msprop:Generator_ColumnPropNameInRow="Количество" msprop:Generator_ColumnPropNameInTable="КоличествоColumn" msprop:Generator_UserColumnName="Количество" type="xs:double" minOccurs="0" />
-              <xs:element name="Спидометр_x0020_при_x0020_выезде" msprop:Generator_ColumnVarNameInTable="columnСпидометр_при_выезде" msprop:Generator_ColumnPropNameInRow="Спидометр_при_выезде" msprop:Generator_ColumnPropNameInTable="Спидометр_при_выездеColumn" msprop:Generator_UserColumnName="Спидометр при выезде" type="xs:int" minOccurs="0" />
-              <xs:element name="Спидометр_x0020_при_x0020_возвращении" msprop:Generator_ColumnVarNameInTable="columnСпидометр_при_возвращении" msprop:Generator_ColumnPropNameInRow="Спидометр_при_возвращении" msprop:Generator_ColumnPropNameInTable="Спидометр_при_возвращенииColumn" msprop:Generator_UserColumnName="Спидометр при возвращении" type="xs:int" minOccurs="0" />
-              <xs:element name="Время_x0020_выезда" msprop:Generator_ColumnVarNameInTable="columnВремя_выезда" msprop:Generator_ColumnPropNameInRow="Время_выезда" msprop:Generator_ColumnPropNameInTable="Время_выездаColumn" msprop:Generator_UserColumnName="Время выезда" type="xs:duration" minOccurs="0" />
-              <xs:element name="Время_x0020_возвращения" msprop:Generator_ColumnVarNameInTable="columnВремя_возвращения" msprop:Generator_ColumnPropNameInRow="Время_возвращения" msprop:Generator_ColumnPropNameInTable="Время_возвращенияColumn" msprop:Generator_UserColumnName="Время возвращения" type="xs:duration" minOccurs="0" />
-              <xs:element name="Остаток_x0020_ТСМ_x0020_при_x0020_выезде" msprop:Generator_ColumnVarNameInTable="columnОстаток_ТСМ_при_выезде" msprop:Generator_ColumnPropNameInRow="Остаток_ТСМ_при_выезде" msprop:Generator_ColumnPropNameInTable="Остаток_ТСМ_при_выездеColumn" msprop:Generator_UserColumnName="Остаток ТСМ при выезде">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Остаток_x0020_ТСМ_x0020_при_x0020_возвращении" msprop:Generator_ColumnVarNameInTable="columnОстаток_ТСМ_при_возвращении" msprop:Generator_ColumnPropNameInRow="Остаток_ТСМ_при_возвращении" msprop:Generator_ColumnPropNameInTable="Остаток_ТСМ_при_возвращенииColumn" msprop:Generator_UserColumnName="Остаток ТСМ при возвращении" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-        <xs:element name="BannerJornalGruzovie" msprop:Generator_TableClassName="BannerJornalGruzovieDataTable" msprop:Generator_TableVarName="tableBannerJornalGruzovie" msprop:Generator_RowChangedName="BannerJornalGruzovieRowChanged" msprop:Generator_TablePropName="BannerJornalGruzovie" msprop:Generator_RowDeletingName="BannerJornalGruzovieRowDeleting" msprop:Generator_RowChangingName="BannerJornalGruzovieRowChanging" msprop:Generator_RowEvHandlerName="BannerJornalGruzovieRowChangeEventHandler" msprop:Generator_RowDeletedName="BannerJornalGruzovieRowDeleted" msprop:Generator_RowClassName="BannerJornalGruzovieRow" msprop:Generator_UserTableName="BannerJornalGruzovie" msprop:Generator_RowEvArgName="BannerJornalGruzovieRowChangeEvent">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="Фамилия" msprop:Generator_ColumnVarNameInTable="columnФамилия" msprop:Generator_ColumnPropNameInRow="Фамилия" msprop:Generator_ColumnPropNameInTable="ФамилияColumn" msprop:Generator_UserColumnName="Фамилия" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Имя" msprop:Generator_ColumnVarNameInTable="columnИмя" msprop:Generator_ColumnPropNameInRow="Имя" msprop:Generator_ColumnPropNameInTable="ИмяColumn" msprop:Generator_UserColumnName="Имя" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Отчество" msprop:Generator_ColumnVarNameInTable="columnОтчество" msprop:Generator_ColumnPropNameInRow="Отчество" msprop:Generator_ColumnPropNameInTable="ОтчествоColumn" msprop:Generator_UserColumnName="Отчество" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="срок_x0020_действия_x0020_мед__x0020_справки" msdata:Caption="срок действия мед. справки" msprop:Generator_ColumnVarNameInTable="columnсрок_действия_мед__справки" msprop:Generator_ColumnPropNameInRow="срок_действия_мед__справки" msprop:Generator_ColumnPropNameInTable="срок_действия_мед__справкиColumn" msprop:Generator_UserColumnName="срок действия мед_ справки" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="классность" msprop:Generator_ColumnVarNameInTable="columnклассность" msprop:Generator_ColumnPropNameInRow="классность" msprop:Generator_ColumnPropNameInTable="классностьColumn" msprop:Generator_UserColumnName="классность" type="xs:int" minOccurs="0" />
-              <xs:element name="номер_x0020_водительского_x0020_удостоверения" msprop:Generator_ColumnVarNameInTable="columnномер_водительского_удостоверения" msprop:Generator_ColumnPropNameInRow="номер_водительского_удостоверения" msprop:Generator_ColumnPropNameInTable="номер_водительского_удостоверенияColumn" msprop:Generator_UserColumnName="номер водительского удостоверения" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Марка_x0020_и_x0020_модель" msprop:Generator_ColumnVarNameInTable="columnМарка_и_модель" msprop:Generator_ColumnPropNameInRow="Марка_и_модель" msprop:Generator_ColumnPropNameInTable="Марка_и_модельColumn" msprop:Generator_UserColumnName="Марка и модель">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Гос_номер" msdata:Caption="Гос.номер" msprop:Generator_ColumnVarNameInTable="columnГос_номер" msprop:Generator_ColumnPropNameInRow="Гос_номер" msprop:Generator_ColumnPropNameInTable="Гос_номерColumn" msprop:Generator_UserColumnName="Гос_номер">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Гаражный_x0020_номер" msprop:Generator_ColumnVarNameInTable="columnГаражный_номер" msprop:Generator_ColumnPropNameInRow="Гаражный_номер" msprop:Generator_ColumnPropNameInTable="Гаражный_номерColumn" msprop:Generator_UserColumnName="Гаражный номер" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="дата_x0020_окончания_x0020_страховки" msprop:Generator_ColumnVarNameInTable="columnдата_окончания_страховки" msprop:Generator_ColumnPropNameInRow="дата_окончания_страховки" msprop:Generator_ColumnPropNameInTable="дата_окончания_страховкиColumn" msprop:Generator_UserColumnName="дата окончания страховки" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="Вид_x0020_топлива" msprop:Generator_ColumnVarNameInTable="columnВид_топлива" msprop:Generator_ColumnPropNameInRow="Вид_топлива" msprop:Generator_ColumnPropNameInTable="Вид_топливаColumn" msprop:Generator_UserColumnName="Вид топлива" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
         <xs:element name="Заправка_x0020_ТСМ" msprop:Generator_TableClassName="Заправка_ТСМDataTable" msprop:Generator_TableVarName="tableЗаправка_ТСМ" msprop:Generator_RowChangedName="Заправка_ТСМRowChanged" msprop:Generator_TablePropName="Заправка_ТСМ" msprop:Generator_RowDeletingName="Заправка_ТСМRowDeleting" msprop:Generator_RowChangingName="Заправка_ТСМRowChanging" msprop:Generator_RowEvHandlerName="Заправка_ТСМRowChangeEventHandler" msprop:Generator_RowDeletedName="Заправка_ТСМRowDeleted" msprop:Generator_RowClassName="Заправка_ТСМRow" msprop:Generator_UserTableName="Заправка ТСМ" msprop:Generator_RowEvArgName="Заправка_ТСМRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
@@ -2093,6 +2222,164 @@ SELECT [ID_Путевого листа], [Номер путевого листа
               <xs:element name="ID_Водителя" msprop:Generator_ColumnVarNameInTable="columnID_Водителя" msprop:Generator_ColumnPropNameInRow="ID_Водителя" msprop:Generator_ColumnPropNameInTable="ID_ВодителяColumn" msprop:Generator_UserColumnName="ID_Водителя" type="xs:int" />
               <xs:element name="ID_Автомобиля" msprop:Generator_ColumnVarNameInTable="columnID_Автомобиля" msprop:Generator_ColumnPropNameInRow="ID_Автомобиля" msprop:Generator_ColumnPropNameInTable="ID_АвтомобиляColumn" msprop:Generator_UserColumnName="ID_Автомобиля" type="xs:int" />
               <xs:element name="ID_Отдела" msprop:Generator_ColumnVarNameInTable="columnID_Отдела" msprop:Generator_ColumnPropNameInRow="ID_Отдела" msprop:Generator_ColumnPropNameInTable="ID_ОтделаColumn" msprop:Generator_UserColumnName="ID_Отдела" type="xs:int" minOccurs="0" />
+              <xs:element name="Пункт_отправления" msprop:Generator_ColumnVarNameInTable="columnПункт_отправления" msprop:Generator_ColumnPropNameInRow="Пункт_отправления" msprop:Generator_ColumnPropNameInTable="Пункт_отправленияColumn" msprop:Generator_UserColumnName="Пункт_отправления" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Пункт_назначения" msprop:Generator_ColumnVarNameInTable="columnПункт_назначения" msprop:Generator_ColumnPropNameInRow="Пункт_назначения" msprop:Generator_ColumnPropNameInTable="Пункт_назначенияColumn" msprop:Generator_UserColumnName="Пункт_назначения" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="DanieJournal" msprop:Generator_TableClassName="DanieJournalDataTable" msprop:Generator_TableVarName="tableDanieJournal" msprop:Generator_TablePropName="DanieJournal" msprop:Generator_RowDeletingName="DanieJournalRowDeleting" msprop:Generator_RowChangingName="DanieJournalRowChanging" msprop:Generator_RowEvHandlerName="DanieJournalRowChangeEventHandler" msprop:Generator_RowDeletedName="DanieJournalRowDeleted" msprop:Generator_UserTableName="DanieJournal" msprop:Generator_RowChangedName="DanieJournalRowChanged" msprop:Generator_RowEvArgName="DanieJournalRowChangeEvent" msprop:Generator_RowClassName="DanieJournalRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ФИО" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnФИО" msprop:Generator_ColumnPropNameInRow="ФИО" msprop:Generator_ColumnPropNameInTable="ФИОColumn" msprop:Generator_UserColumnName="ФИО" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="57" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Подразделение" msprop:Generator_ColumnVarNameInTable="columnПодразделение" msprop:Generator_ColumnPropNameInRow="Подразделение" msprop:Generator_ColumnPropNameInTable="ПодразделениеColumn" msprop:Generator_UserColumnName="Подразделение" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Пункт_отправления" msprop:Generator_ColumnVarNameInTable="columnПункт_отправления" msprop:Generator_ColumnPropNameInRow="Пункт_отправления" msprop:Generator_ColumnPropNameInTable="Пункт_отправленияColumn" msprop:Generator_UserColumnName="Пункт_отправления" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Пункт_назначения" msprop:Generator_ColumnVarNameInTable="columnПункт_назначения" msprop:Generator_ColumnPropNameInRow="Пункт_назначения" msprop:Generator_ColumnPropNameInTable="Пункт_назначенияColumn" msprop:Generator_UserColumnName="Пункт_назначения" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Остаток_ТСМ1_выезд" msprop:Generator_ColumnVarNameInTable="columnОстаток_ТСМ1_выезд" msprop:Generator_ColumnPropNameInRow="Остаток_ТСМ1_выезд" msprop:Generator_ColumnPropNameInTable="Остаток_ТСМ1_выездColumn" msprop:Generator_UserColumnName="Остаток_ТСМ1_выезд" type="xs:double" minOccurs="0" />
+              <xs:element name="Остаток_ТСМ1_возвр" msprop:Generator_ColumnVarNameInTable="columnОстаток_ТСМ1_возвр" msprop:Generator_ColumnPropNameInRow="Остаток_ТСМ1_возвр" msprop:Generator_ColumnPropNameInTable="Остаток_ТСМ1_возврColumn" msprop:Generator_UserColumnName="Остаток_ТСМ1_возвр" type="xs:double" minOccurs="0" />
+              <xs:element name="Остаток_ТСМ2_выезд" msprop:Generator_ColumnVarNameInTable="columnОстаток_ТСМ2_выезд" msprop:Generator_ColumnPropNameInRow="Остаток_ТСМ2_выезд" msprop:Generator_ColumnPropNameInTable="Остаток_ТСМ2_выездColumn" msprop:Generator_UserColumnName="Остаток_ТСМ2_выезд" type="xs:double" minOccurs="0" />
+              <xs:element name="Остаток_ТСМ2_возвр" msprop:Generator_ColumnVarNameInTable="columnОстаток_ТСМ2_возвр" msprop:Generator_ColumnPropNameInRow="Остаток_ТСМ2_возвр" msprop:Generator_ColumnPropNameInTable="Остаток_ТСМ2_возврColumn" msprop:Generator_UserColumnName="Остаток_ТСМ2_возвр" type="xs:double" minOccurs="0" />
+              <xs:element name="Показания_спидометра_при_выезде" msprop:Generator_ColumnVarNameInTable="columnПоказания_спидометра_при_выезде" msprop:Generator_ColumnPropNameInRow="Показания_спидометра_при_выезде" msprop:Generator_ColumnPropNameInTable="Показания_спидометра_при_выездеColumn" msprop:Generator_UserColumnName="Показания_спидометра_при_выезде" type="xs:int" minOccurs="0" />
+              <xs:element name="Показания_спидометра_при_возвращении" msprop:Generator_ColumnVarNameInTable="columnПоказания_спидометра_при_возвращении" msprop:Generator_ColumnPropNameInRow="Показания_спидометра_при_возвращении" msprop:Generator_ColumnPropNameInTable="Показания_спидометра_при_возвращенииColumn" msprop:Generator_UserColumnName="Показания_спидометра_при_возвращении" type="xs:int" minOccurs="0" />
+              <xs:element name="Дата_путевого_листа" msprop:Generator_ColumnVarNameInTable="columnДата_путевого_листа" msprop:Generator_ColumnPropNameInRow="Дата_путевого_листа" msprop:Generator_ColumnPropNameInTable="Дата_путевого_листаColumn" msprop:Generator_UserColumnName="Дата_путевого_листа" type="xs:dateTime" />
+              <xs:element name="Номер_путевого_листа" msprop:Generator_ColumnVarNameInTable="columnНомер_путевого_листа" msprop:Generator_ColumnPropNameInRow="Номер_путевого_листа" msprop:Generator_ColumnPropNameInTable="Номер_путевого_листаColumn" msprop:Generator_UserColumnName="Номер_путевого_листа" type="xs:int" />
+              <xs:element name="Заправлено_ТСМ1" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnЗаправлено_ТСМ1" msprop:Generator_ColumnPropNameInRow="Заправлено_ТСМ1" msprop:Generator_ColumnPropNameInTable="Заправлено_ТСМ1Column" msprop:Generator_UserColumnName="Заправлено_ТСМ1" type="xs:double" minOccurs="0" />
+              <xs:element name="Заправлено_ТСМ2" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnЗаправлено_ТСМ2" msprop:Generator_ColumnPropNameInRow="Заправлено_ТСМ2" msprop:Generator_ColumnPropNameInTable="Заправлено_ТСМ2Column" msprop:Generator_UserColumnName="Заправлено_ТСМ2" type="xs:double" minOccurs="0" />
+              <xs:element name="Дата_Время_выезда_факт" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnДата_Время_выезда_факт" msprop:Generator_ColumnPropNameInRow="Дата_Время_выезда_факт" msprop:Generator_ColumnPropNameInTable="Дата_Время_выезда_фактColumn" msprop:Generator_UserColumnName="Дата_Время_выезда_факт" type="xs:duration" minOccurs="0" />
+              <xs:element name="Дата_Время_возвращения_факт" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnДата_Время_возвращения_факт" msprop:Generator_ColumnPropNameInRow="Дата_Время_возвращения_факт" msprop:Generator_ColumnPropNameInTable="Дата_Время_возвращения_фактColumn" msprop:Generator_UserColumnName="Дата_Время_возвращения_факт" type="xs:duration" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="HeaderJournal" msprop:Generator_TableClassName="HeaderJournalDataTable" msprop:Generator_TableVarName="tableHeaderJournal" msprop:Generator_RowChangedName="HeaderJournalRowChanged" msprop:Generator_TablePropName="HeaderJournal" msprop:Generator_RowDeletingName="HeaderJournalRowDeleting" msprop:Generator_RowChangingName="HeaderJournalRowChanging" msprop:Generator_RowEvHandlerName="HeaderJournalRowChangeEventHandler" msprop:Generator_RowDeletedName="HeaderJournalRowDeleted" msprop:Generator_RowClassName="HeaderJournalRow" msprop:Generator_UserTableName="HeaderJournal" msprop:Generator_RowEvArgName="HeaderJournalRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="классность" msprop:Generator_ColumnVarNameInTable="columnклассность" msprop:Generator_ColumnPropNameInRow="классность" msprop:Generator_ColumnPropNameInTable="классностьColumn" msprop:Generator_UserColumnName="классность" type="xs:int" minOccurs="0" />
+              <xs:element name="ФИО" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnФИО" msprop:Generator_ColumnPropNameInRow="ФИО" msprop:Generator_ColumnPropNameInTable="ФИОColumn" msprop:Generator_UserColumnName="ФИО" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="152" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Марка_и_модель" msprop:Generator_ColumnVarNameInTable="columnМарка_и_модель" msprop:Generator_ColumnPropNameInRow="Марка_и_модель" msprop:Generator_ColumnPropNameInTable="Марка_и_модельColumn" msprop:Generator_UserColumnName="Марка_и_модель">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Гаражный_номер" msprop:Generator_ColumnVarNameInTable="columnГаражный_номер" msprop:Generator_ColumnPropNameInRow="Гаражный_номер" msprop:Generator_ColumnPropNameInTable="Гаражный_номерColumn" msprop:Generator_UserColumnName="Гаражный_номер" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="дата_окончания_страховки" msprop:Generator_ColumnVarNameInTable="columnдата_окончания_страховки" msprop:Generator_ColumnPropNameInRow="дата_окончания_страховки" msprop:Generator_ColumnPropNameInTable="дата_окончания_страховкиColumn" msprop:Generator_UserColumnName="дата_окончания_страховки" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Вид_топлива" msprop:Generator_ColumnVarNameInTable="columnВид_топлива" msprop:Generator_ColumnPropNameInRow="Вид_топлива" msprop:Generator_ColumnPropNameInTable="Вид_топливаColumn" msprop:Generator_UserColumnName="Вид_топлива" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="номер_водительского_удостоверения" msprop:Generator_ColumnVarNameInTable="columnномер_водительского_удостоверения" msprop:Generator_ColumnPropNameInRow="номер_водительского_удостоверения" msprop:Generator_ColumnPropNameInTable="номер_водительского_удостоверенияColumn" msprop:Generator_UserColumnName="номер_водительского_удостоверения" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="срок_действия_мед_справки" msprop:Generator_ColumnVarNameInTable="columnсрок_действия_мед_справки" msprop:Generator_ColumnPropNameInRow="срок_действия_мед_справки" msprop:Generator_ColumnPropNameInTable="срок_действия_мед_справкиColumn" msprop:Generator_UserColumnName="срок_действия_мед_справки" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Гос_номер" msprop:Generator_ColumnVarNameInTable="columnГос_номер" msprop:Generator_ColumnPropNameInRow="Гос_номер" msprop:Generator_ColumnPropNameInTable="Гос_номерColumn" msprop:Generator_UserColumnName="Гос_номер">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Личный_x0020_состав_x0020_Справки" msprop:Generator_TableClassName="Личный_состав_СправкиDataTable" msprop:Generator_TableVarName="tableЛичный_состав_Справки" msprop:Generator_TablePropName="Личный_состав_Справки" msprop:Generator_RowDeletingName="Личный_состав_СправкиRowDeleting" msprop:Generator_RowChangingName="Личный_состав_СправкиRowChanging" msprop:Generator_RowEvHandlerName="Личный_состав_СправкиRowChangeEventHandler" msprop:Generator_RowDeletedName="Личный_состав_СправкиRowDeleted" msprop:Generator_UserTableName="Личный состав Справки" msprop:Generator_RowChangedName="Личный_состав_СправкиRowChanged" msprop:Generator_RowEvArgName="Личный_состав_СправкиRowChangeEvent" msprop:Generator_RowClassName="Личный_состав_СправкиRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="табельный_x0020__x0020_номер" msprop:Generator_ColumnVarNameInTable="columnтабельный__номер" msprop:Generator_ColumnPropNameInRow="табельный__номер" msprop:Generator_ColumnPropNameInTable="табельный__номерColumn" msprop:Generator_UserColumnName="табельный  номер" type="xs:int" />
+              <xs:element name="Фамилия" msprop:Generator_ColumnVarNameInTable="columnФамилия" msprop:Generator_ColumnPropNameInRow="Фамилия" msprop:Generator_ColumnPropNameInTable="ФамилияColumn" msprop:Generator_UserColumnName="Фамилия" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Имя" msprop:Generator_ColumnVarNameInTable="columnИмя" msprop:Generator_ColumnPropNameInRow="Имя" msprop:Generator_ColumnPropNameInTable="ИмяColumn" msprop:Generator_UserColumnName="Имя" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Отчество" msprop:Generator_ColumnVarNameInTable="columnОтчество" msprop:Generator_ColumnPropNameInRow="Отчество" msprop:Generator_ColumnPropNameInTable="ОтчествоColumn" msprop:Generator_UserColumnName="Отчество" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="номер_x0020_водительского_x0020_удостоверения" msprop:Generator_ColumnVarNameInTable="columnномер_водительского_удостоверения" msprop:Generator_ColumnPropNameInRow="номер_водительского_удостоверения" msprop:Generator_ColumnPropNameInTable="номер_водительского_удостоверенияColumn" msprop:Generator_UserColumnName="номер водительского удостоверения" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="срок_x0020_действия_x0020_мед__x0020_справки" msdata:Caption="срок действия мед. справки" msprop:Generator_ColumnVarNameInTable="columnсрок_действия_мед__справки" msprop:Generator_ColumnPropNameInRow="срок_действия_мед__справки" msprop:Generator_ColumnPropNameInTable="срок_действия_мед__справкиColumn" msprop:Generator_UserColumnName="срок действия мед_ справки" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="остаток_x0020_дней_x0020_до_x0020_окончания_x0020_срока_x0020_действия_x0020_справки" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnостаток_дней_до_окончания_срока_действия_справки" msprop:Generator_ColumnPropNameInRow="остаток_дней_до_окончания_срока_действия_справки" msprop:Generator_ColumnPropNameInTable="остаток_дней_до_окончания_срока_действия_справкиColumn" msprop:Generator_UserColumnName="остаток дней до окончания срока действия справки" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Водители_x0020_авто" msprop:Generator_TableClassName="Водители_автоDataTable" msprop:Generator_TableVarName="tableВодители_авто" msprop:Generator_TablePropName="Водители_авто" msprop:Generator_RowDeletingName="Водители_автоRowDeleting" msprop:Generator_RowChangingName="Водители_автоRowChanging" msprop:Generator_RowEvHandlerName="Водители_автоRowChangeEventHandler" msprop:Generator_RowDeletedName="Водители_автоRowDeleted" msprop:Generator_UserTableName="Водители авто" msprop:Generator_RowChangedName="Водители_автоRowChanged" msprop:Generator_RowEvArgName="Водители_автоRowChangeEvent" msprop:Generator_RowClassName="Водители_автоRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
+              <xs:element name="ID_Водитель" msprop:Generator_ColumnVarNameInTable="columnID_Водитель" msprop:Generator_ColumnPropNameInRow="ID_Водитель" msprop:Generator_ColumnPropNameInTable="ID_ВодительColumn" msprop:Generator_UserColumnName="ID_Водитель" type="xs:int" minOccurs="0" />
+              <xs:element name="ID_Авто" msprop:Generator_ColumnVarNameInTable="columnID_Авто" msprop:Generator_ColumnPropNameInRow="ID_Авто" msprop:Generator_ColumnPropNameInTable="ID_АвтоColumn" msprop:Generator_UserColumnName="ID_Авто" type="xs:int" minOccurs="0" />
+              <xs:element name="Date" msprop:Generator_ColumnVarNameInTable="columnDate" msprop:Generator_ColumnPropNameInRow="Date" msprop:Generator_ColumnPropNameInTable="DateColumn" msprop:Generator_UserColumnName="Date" type="xs:dateTime" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -2122,10 +2409,6 @@ SELECT [ID_Путевого листа], [Номер путевого листа
       <xs:selector xpath=".//mstns:Задание_x0020_водителю" />
       <xs:field xpath="mstns:id" />
     </xs:unique>
-    <xs:unique name="BannerJornalGruzovie_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
-      <xs:selector xpath=".//mstns:BannerJornalGruzovie" />
-      <xs:field xpath="mstns:ID" />
-    </xs:unique>
     <xs:unique name="Заправка_x0020_ТСМ_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:Заправка_x0020_ТСМ" />
       <xs:field xpath="mstns:ID_Заправка_x0020_ТСМ" />
@@ -2142,6 +2425,14 @@ SELECT [ID_Путевого листа], [Номер путевого листа
       <xs:selector xpath=".//mstns:Путевой_x0020_лист_x0020_Грузового_x0020_авто" />
       <xs:field xpath="mstns:ID_Путевого_x0020_листа" />
     </xs:unique>
+    <xs:unique name="Личный_x0020_состав_x0020_Справки_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Личный_x0020_состав_x0020_Справки" />
+      <xs:field xpath="mstns:табельный_x0020__x0020_номер" />
+    </xs:unique>
+    <xs:unique name="Водители_x0020_авто_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Водители_x0020_авто" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
@@ -2156,6 +2447,11 @@ SELECT [ID_Путевого листа], [Номер путевого листа
       <msdata:Relationship name="FK_Путевой_x0020_лист_x0020_Грузового_x0020_авто_личный_x0020_состав3" msdata:parent="Личный_x0020_состав" msdata:child="Путевой_x0020_лист_x0020_Грузового_x0020_авто" msdata:parentkey="табельный_номер" msdata:childkey="ID_Водителя" msprop:Generator_UserChildTable="Путевой лист Грузового авто" msprop:Generator_ChildPropName="GetПутевой_лист_Грузового_автоRows" msprop:Generator_UserRelationName="FK_Путевой лист Грузового авто_личный состав3" msprop:Generator_ParentPropName="Личный_составRow" msprop:Generator_RelationVarName="relationFK_Путевой_лист_Грузового_авто_личный_состав3" msprop:Generator_UserParentTable="Личный состав" />
       <msdata:Relationship name="FK_Путевой_x0020_лист_x0020_Грузового_x0020_авто_Подвижной_x0020_состав1" msdata:parent="Подвижной_x0020_состав" msdata:child="Путевой_x0020_лист_x0020_Грузового_x0020_авто" msdata:parentkey="ID" msdata:childkey="ID_Автомобиля" msprop:Generator_UserChildTable="Путевой лист Грузового авто" msprop:Generator_ChildPropName="GetПутевой_лист_Грузового_автоRows" msprop:Generator_UserRelationName="FK_Путевой лист Грузового авто_Подвижной состав1" msprop:Generator_ParentPropName="Подвижной_составRow" msprop:Generator_RelationVarName="relationFK_Путевой_лист_Грузового_авто_Подвижной_состав1" msprop:Generator_UserParentTable="Подвижной состав" />
       <msdata:Relationship name="Путевой_x0020_лист_x0020_Грузового_x0020_авто_Заправка_x0020_ТСМ" msdata:parent="Путевой_x0020_лист_x0020_Грузового_x0020_авто" msdata:child="Заправка_x0020_ТСМ" msdata:parentkey="ID_Путевого_x0020_листа" msdata:childkey="ID_Путевого_x0020_листа" msprop:Generator_UserChildTable="Заправка ТСМ" msprop:Generator_ChildPropName="GetЗаправка_ТСМRows" msprop:Generator_UserRelationName="Путевой лист Грузового авто_Заправка ТСМ" msprop:Generator_RelationVarName="relationПутевой_лист_Грузового_авто_Заправка_ТСМ" msprop:Generator_UserParentTable="Путевой лист Грузового авто" msprop:Generator_ParentPropName="Путевой_лист_Грузового_автоRow" />
+      <msdata:Relationship name="FK_Путевой_x0020_лист_x0020_легкового_x0020_автомобиля_личный_x0020_состав" msdata:parent="Личный_x0020_состав_x0020_Справки" msdata:child="PutevoiListLegkTable" msdata:parentkey="табельный_x0020__x0020_номер" msdata:childkey="ID_Водитель" msprop:Generator_UserChildTable="PutevoiListLegkTable" msprop:Generator_ChildPropName="GetPutevoiListLegkTableRows" msprop:Generator_UserRelationName="FK_Путевой лист легкового автомобиля_личный состав" msprop:Generator_RelationVarName="relationFK_Путевой_лист_легкового_автомобиля_личный_состав" msprop:Generator_UserParentTable="Личный состав Справки" msprop:Generator_ParentPropName="Личный_состав_СправкиRow" />
+      <msdata:Relationship name="FK_Путевой_x0020_лист_x0020_Грузового_x0020_авто_личный_x0020_состав2" msdata:parent="Личный_x0020_состав_x0020_Справки" msdata:child="Путевой_x0020_лист_x0020_Грузового_x0020_авто" msdata:parentkey="табельный_x0020__x0020_номер" msdata:childkey="ID_Водителя" msprop:Generator_UserChildTable="Путевой лист Грузового авто" msprop:Generator_ChildPropName="GetПутевой_лист_Грузового_автоRows" msprop:Generator_UserRelationName="FK_Путевой лист Грузового авто_личный состав2" msprop:Generator_RelationVarName="relationFK_Путевой_лист_Грузового_авто_личный_состав2" msprop:Generator_UserParentTable="Личный состав Справки" msprop:Generator_ParentPropName="Личный_состав_СправкиRow" />
+      <msdata:Relationship name="FK_Водители_x0020_авто_id_авто" msdata:parent="Подвижной_x0020_состав" msdata:child="Водители_x0020_авто" msdata:parentkey="ID" msdata:childkey="ID_Авто" msprop:Generator_UserChildTable="Водители авто" msprop:Generator_ChildPropName="GetВодители_автоRows" msprop:Generator_UserRelationName="FK_Водители авто_id_авто" msprop:Generator_ParentPropName="Подвижной_составRow" msprop:Generator_RelationVarName="relationFK_Водители_авто_id_авто" msprop:Generator_UserParentTable="Подвижной состав" />
+      <msdata:Relationship name="FK_Водители_x0020_авто_id_водитель" msdata:parent="Личный_x0020_состав" msdata:child="Водители_x0020_авто" msdata:parentkey="табельный_номер" msdata:childkey="ID_Водитель" msprop:Generator_UserChildTable="Водители авто" msprop:Generator_ChildPropName="GetВодители_автоRows" msprop:Generator_UserRelationName="FK_Водители авто_id_водитель" msprop:Generator_ParentPropName="Личный_составRow" msprop:Generator_RelationVarName="relationFK_Водители_авто_id_водитель" msprop:Generator_UserParentTable="Личный состав" />
+      <msdata:Relationship name="FK_Водители_x0020_авто_id_водитель1" msdata:parent="Личный_x0020_состав_x0020_Справки" msdata:child="Водители_x0020_авто" msdata:parentkey="табельный_x0020__x0020_номер" msdata:childkey="ID_Водитель" msprop:Generator_UserChildTable="Водители авто" msprop:Generator_ChildPropName="GetВодители_автоRows" msprop:Generator_UserRelationName="FK_Водители авто_id_водитель1" msprop:Generator_ParentPropName="Личный_состав_СправкиRow" msprop:Generator_RelationVarName="relationFK_Водители_авто_id_водитель1" msprop:Generator_UserParentTable="Личный состав Справки" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

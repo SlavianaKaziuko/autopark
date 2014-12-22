@@ -98,6 +98,10 @@
             this.lblG = new System.Windows.Forms.Label();
             this.lblOtdel = new System.Windows.Forms.Label();
             this.cbOtdel = new System.Windows.Forms.ComboBox();
+            this.lblOtpr = new System.Windows.Forms.Label();
+            this.lblNaznach = new System.Windows.Forms.Label();
+            this.txtPunktOtpravlen = new System.Windows.Forms.TextBox();
+            this.txtPunktNaznach = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvZapravkaTCM)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvZadanieVoditelu)).BeginInit();
             this.panel1.SuspendLayout();
@@ -139,7 +143,7 @@
             // 
             this.lblAvtoPricep.AutoSize = true;
             this.lblAvtoPricep.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblAvtoPricep.Location = new System.Drawing.Point(102, 36);
+            this.lblAvtoPricep.Location = new System.Drawing.Point(102, 12);
             this.lblAvtoPricep.Name = "lblAvtoPricep";
             this.lblAvtoPricep.Size = new System.Drawing.Size(255, 20);
             this.lblAvtoPricep.TabIndex = 3;
@@ -149,7 +153,7 @@
             // 
             this.lblMarka.AutoSize = true;
             this.lblMarka.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblMarka.Location = new System.Drawing.Point(17, 90);
+            this.lblMarka.Location = new System.Drawing.Point(17, 66);
             this.lblMarka.Name = "lblMarka";
             this.lblMarka.Size = new System.Drawing.Size(134, 30);
             this.lblMarka.TabIndex = 4;
@@ -158,7 +162,7 @@
             // txtMarka
             // 
             this.txtMarka.Enabled = false;
-            this.txtMarka.Location = new System.Drawing.Point(20, 135);
+            this.txtMarka.Location = new System.Drawing.Point(20, 111);
             this.txtMarka.Name = "txtMarka";
             this.txtMarka.Size = new System.Drawing.Size(131, 21);
             this.txtMarka.TabIndex = 5;
@@ -166,7 +170,7 @@
             // cbZnak
             // 
             this.cbZnak.FormattingEnabled = true;
-            this.cbZnak.Location = new System.Drawing.Point(174, 135);
+            this.cbZnak.Location = new System.Drawing.Point(174, 111);
             this.cbZnak.Name = "cbZnak";
             this.cbZnak.Size = new System.Drawing.Size(138, 23);
             this.cbZnak.TabIndex = 6;
@@ -175,7 +179,7 @@
             // txtGaraz
             // 
             this.txtGaraz.Enabled = false;
-            this.txtGaraz.Location = new System.Drawing.Point(336, 135);
+            this.txtGaraz.Location = new System.Drawing.Point(336, 111);
             this.txtGaraz.Name = "txtGaraz";
             this.txtGaraz.Size = new System.Drawing.Size(100, 21);
             this.txtGaraz.TabIndex = 7;
@@ -184,7 +188,7 @@
             // 
             this.lblZnak.AutoSize = true;
             this.lblZnak.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.lblZnak.Location = new System.Drawing.Point(171, 91);
+            this.lblZnak.Location = new System.Drawing.Point(171, 67);
             this.lblZnak.Name = "lblZnak";
             this.lblZnak.Size = new System.Drawing.Size(141, 15);
             this.lblZnak.TabIndex = 8;
@@ -194,7 +198,7 @@
             // 
             this.lblGaraz.AutoSize = true;
             this.lblGaraz.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblGaraz.Location = new System.Drawing.Point(333, 90);
+            this.lblGaraz.Location = new System.Drawing.Point(333, 66);
             this.lblGaraz.Name = "lblGaraz";
             this.lblGaraz.Size = new System.Drawing.Size(107, 15);
             this.lblGaraz.TabIndex = 9;
@@ -585,7 +589,7 @@
             this.panel2.Controls.Add(this.lblAvtoPricep);
             this.panel2.Location = new System.Drawing.Point(16, 72);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(457, 199);
+            this.panel2.Size = new System.Drawing.Size(457, 153);
             this.panel2.TabIndex = 51;
             // 
             // panel3
@@ -598,7 +602,7 @@
             this.panel3.Controls.Add(this.lblNomer);
             this.panel3.Controls.Add(this.lblFamilia);
             this.panel3.Controls.Add(this.lblVoditel);
-            this.panel3.Location = new System.Drawing.Point(16, 291);
+            this.panel3.Location = new System.Drawing.Point(16, 246);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(457, 114);
             this.panel3.TabIndex = 52;
@@ -767,26 +771,63 @@
             // lblOtdel
             // 
             this.lblOtdel.AutoSize = true;
-            this.lblOtdel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblOtdel.Location = new System.Drawing.Point(908, 36);
+            this.lblOtdel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblOtdel.Location = new System.Drawing.Point(45, 376);
             this.lblOtdel.Name = "lblOtdel";
-            this.lblOtdel.Size = new System.Drawing.Size(53, 18);
+            this.lblOtdel.Size = new System.Drawing.Size(44, 15);
             this.lblOtdel.TabIndex = 59;
             this.lblOtdel.Text = "Отдел";
             // 
             // cbOtdel
             // 
+            this.cbOtdel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.cbOtdel.FormattingEnabled = true;
-            this.cbOtdel.Location = new System.Drawing.Point(967, 33);
+            this.cbOtdel.Location = new System.Drawing.Point(104, 374);
             this.cbOtdel.Name = "cbOtdel";
             this.cbOtdel.Size = new System.Drawing.Size(121, 23);
             this.cbOtdel.TabIndex = 60;
+            // 
+            // lblOtpr
+            // 
+            this.lblOtpr.AutoSize = true;
+            this.lblOtpr.Location = new System.Drawing.Point(45, 407);
+            this.lblOtpr.Name = "lblOtpr";
+            this.lblOtpr.Size = new System.Drawing.Size(213, 15);
+            this.lblOtpr.TabIndex = 61;
+            this.lblOtpr.Text = "Пункт отправления путевого листа";
+            // 
+            // lblNaznach
+            // 
+            this.lblNaznach.AutoSize = true;
+            this.lblNaznach.Location = new System.Drawing.Point(45, 437);
+            this.lblNaznach.Name = "lblNaznach";
+            this.lblNaznach.Size = new System.Drawing.Size(204, 15);
+            this.lblNaznach.TabIndex = 62;
+            this.lblNaznach.Text = "Пункт назначения путевого листа";
+            // 
+            // txtPunktOtpravlen
+            // 
+            this.txtPunktOtpravlen.Location = new System.Drawing.Point(274, 404);
+            this.txtPunktOtpravlen.Name = "txtPunktOtpravlen";
+            this.txtPunktOtpravlen.Size = new System.Drawing.Size(199, 21);
+            this.txtPunktOtpravlen.TabIndex = 63;
+            // 
+            // txtPunktNaznach
+            // 
+            this.txtPunktNaznach.Location = new System.Drawing.Point(274, 434);
+            this.txtPunktNaznach.Name = "txtPunktNaznach";
+            this.txtPunktNaznach.Size = new System.Drawing.Size(199, 21);
+            this.txtPunktNaznach.TabIndex = 64;
             // 
             // PutevoiListGruzavogo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1234, 605);
+            this.Controls.Add(this.txtPunktNaznach);
+            this.Controls.Add(this.txtPunktOtpravlen);
+            this.Controls.Add(this.lblNaznach);
+            this.Controls.Add(this.lblOtpr);
             this.Controls.Add(this.cbOtdel);
             this.Controls.Add(this.lblOtdel);
             this.Controls.Add(this.lblG);
@@ -898,5 +939,9 @@
         private System.Windows.Forms.DateTimePicker dtpFactViezd;
         private System.Windows.Forms.Label lblToplivo2;
         private System.Windows.Forms.Label lblToplivo1;
+        private System.Windows.Forms.Label lblOtpr;
+        private System.Windows.Forms.Label lblNaznach;
+        private System.Windows.Forms.TextBox txtPunktOtpravlen;
+        private System.Windows.Forms.TextBox txtPunktNaznach;
     }
 }

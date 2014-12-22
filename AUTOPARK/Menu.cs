@@ -14,6 +14,7 @@ namespace AUTOPARK
         public Menu()
         {
             InitializeComponent();
+            linkJurnal.Visible = false;
         }
 
         private void linkSpravochniki_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -40,6 +41,5 @@ namespace AUTOPARK
         {
             Environment.Exit(0);
         }
-
     }
 }
