@@ -19,7 +19,7 @@ namespace AUTOPARK
         private int _idvod;
         private DateTime _dateStart;
         private DateTime _dateEnd;
-        private readonly bool _modeIsNew; ////true - add, false - update
+        private bool _modeIsNew; ////true - add, false - update
         private int PutevoiId { get; set; }
 
         public PutListLegkovogoavto()
@@ -156,6 +156,17 @@ namespace AUTOPARK
                 var dataGridViewColumn = dgvPutevieLegkovie.Columns["ID_Путевого листа"];
                 if (dataGridViewColumn != null)
                     dataGridViewColumn.Visible = false;
+                dataGridViewColumn = dgvPutevieLegkovie.Columns["id_Данных"];
+                if (dataGridViewColumn != null)
+                    dataGridViewColumn.Visible = false;
+                var res = tablePutevoi.GetDataByID(PutevoiId).ToList();
+                _number = res[0].Номер_путевого_листа;
+                _idauto = res[0].ID_Автомобиль;
+                _idvod = res[0].ID_Водитель;
+                _idotd = res[0].ID_Отдела;
+                _dateStart = res[0].За_период_с;
+                _dateEnd = res[0].За_период_по;
+                _modeIsNew = false;
             }
             else
             {
@@ -241,15 +252,22 @@ namespace AUTOPARK
 
         private void dgvPutevieLegkovie_DataError(object sender, DataGridViewDataErrorEventArgs e)
         {
-            var res =
-                MessageBox.Show(
-                    String.Format(@"Введите ""Число"" в корретном формате {0}\nили отмените редактирование ячейки",
-                        CultureInfo.CurrentCulture.DateTimeFormat.ShortDatePattern), "",
-                    MessageBoxButtons.RetryCancel);
-            if (res != DialogResult.Cancel) return;
-            if (dgvPutevieLegkovie.CurrentRow == null) return;
-            var id = dgvPutevieLegkovie.CurrentRow.Index;
-            dgvPutevieLegkovie.Rows.RemoveAt(id);
+            if (dgvPutevieLegkovie.CurrentCell.OwningColumn.Name == "Число")
+            {
+                var res =
+                    MessageBox.Show(
+                        String.Format("Введите \"Число\" в корретном формате {0}\nили отмените редактирование ячейки",
+                            CultureInfo.CurrentCulture.DateTimeFormat.ShortDatePattern), "",
+                        MessageBoxButtons.RetryCancel);
+                if (res != DialogResult.Cancel) return;
+                if (dgvPutevieLegkovie.CurrentRow == null) return;
+                var id = dgvPutevieLegkovie.CurrentRow.Index;
+                dgvPutevieLegkovie.Rows.RemoveAt(id);
+            }
+            else
+            {
+                MessageBox.Show(e.ThrowException.ToString());
+            }
         }
 
         private void dgvPutevieLegkovie_CellLeave(object sender, DataGridViewCellEventArgs e)
@@ -283,6 +301,11 @@ namespace AUTOPARK
                 }
                     break;
             }
+        }
+
+        private void dgvPutevieLegkovie_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
+        {
+            
         }
     }
 }
