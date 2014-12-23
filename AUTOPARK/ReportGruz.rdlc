@@ -514,14 +514,24 @@
         </Paragraphs>
         <rd:DefaultName>Textbox4</rd:DefaultName>
         <Top>4.80751cm</Top>
-        <Left>3.32136cm</Left>
+        <Left>3.32135cm</Left>
         <Height>1.23528cm</Height>
         <Width>2.50472cm</Width>
         <ZIndex>3</ZIndex>
         <Style>
           <Border>
-            <Style>Solid</Style>
+            <Style>None</Style>
           </Border>
+          <TopBorder>
+            <Color>Black</Color>
+            <Style>Solid</Style>
+            <Width>1pt</Width>
+          </TopBorder>
+          <RightBorder>
+            <Color>Black</Color>
+            <Style>Solid</Style>
+            <Width>1pt</Width>
+          </RightBorder>
           <VerticalAlign>Middle</VerticalAlign>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
@@ -550,14 +560,24 @@
         </Paragraphs>
         <rd:DefaultName>Textbox5</rd:DefaultName>
         <Top>4.80751cm</Top>
-        <Left>5.82607cm</Left>
+        <Left>5.82606cm</Left>
         <Height>1.23528cm</Height>
         <Width>1.488cm</Width>
         <ZIndex>4</ZIndex>
         <Style>
           <Border>
-            <Style>Solid</Style>
+            <Style>None</Style>
           </Border>
+          <TopBorder>
+            <Color>Black</Color>
+            <Style>Solid</Style>
+            <Width>1pt</Width>
+          </TopBorder>
+          <RightBorder>
+            <Color>Black</Color>
+            <Style>Solid</Style>
+            <Width>1pt</Width>
+          </RightBorder>
           <VerticalAlign>Middle</VerticalAlign>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
@@ -926,8 +946,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox11</rd:DefaultName>
-        <Top>4.06695cm</Top>
-        <Left>18.85773cm</Left>
+        <Top>4.03112cm</Top>
+        <Left>18.6751cm</Left>
         <Height>0.6cm</Height>
         <Width>4.19333cm</Width>
         <ZIndex>10</ZIndex>
@@ -961,35 +981,25 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox18</rd:DefaultName>
-        <Top>4.84334cm</Top>
-        <Left>11.72816cm</Left>
+        <Top>4.84279cm</Top>
+        <Left>11.74032cm</Left>
         <Height>1.2cm</Height>
-        <Width>2.5cm</Width>
+        <Width>2.51392cm</Width>
         <ZIndex>11</ZIndex>
         <Style>
           <Border>
-            <Style>Solid</Style>
+            <Style>None</Style>
           </Border>
           <TopBorder>
             <Color>Black</Color>
             <Style>Solid</Style>
             <Width>1pt</Width>
           </TopBorder>
-          <BottomBorder>
-            <Color>Black</Color>
-            <Style>Solid</Style>
-            <Width>1pt</Width>
-          </BottomBorder>
           <LeftBorder>
             <Color>Black</Color>
             <Style>Solid</Style>
             <Width>1pt</Width>
           </LeftBorder>
-          <RightBorder>
-            <Color>Black</Color>
-            <Style>Solid</Style>
-            <Width>1pt</Width>
-          </RightBorder>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
           <PaddingTop>2pt</PaddingTop>
@@ -1014,35 +1024,25 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox19</rd:DefaultName>
-        <Top>4.84334cm</Top>
-        <Left>14.22814cm</Left>
+        <Top>4.84279cm</Top>
+        <Left>14.26478cm</Left>
         <Height>1.2cm</Height>
-        <Width>3.08208cm</Width>
+        <Width>3.07156cm</Width>
         <ZIndex>12</ZIndex>
         <Style>
           <Border>
-            <Style>Solid</Style>
+            <Style>None</Style>
           </Border>
           <TopBorder>
             <Color>Black</Color>
             <Style>Solid</Style>
             <Width>1pt</Width>
           </TopBorder>
-          <BottomBorder>
-            <Color>Black</Color>
-            <Style>Solid</Style>
-            <Width>1pt</Width>
-          </BottomBorder>
           <LeftBorder>
             <Color>Black</Color>
             <Style>Solid</Style>
             <Width>1pt</Width>
           </LeftBorder>
-          <RightBorder>
-            <Color>Black</Color>
-            <Style>Solid</Style>
-            <Width>1pt</Width>
-          </RightBorder>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
           <PaddingTop>2pt</PaddingTop>
@@ -1069,25 +1069,20 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox20</rd:DefaultName>
-        <Top>4.84334cm</Top>
-        <Left>17.31024cm</Left>
+        <Top>4.84223cm</Top>
+        <Left>17.33634cm</Left>
         <Height>0.65292cm</Height>
         <Width>4.90771cm</Width>
         <ZIndex>13</ZIndex>
         <Style>
           <Border>
-            <Style>Solid</Style>
+            <Style>None</Style>
           </Border>
           <TopBorder>
             <Color>Black</Color>
             <Style>Solid</Style>
             <Width>1pt</Width>
           </TopBorder>
-          <BottomBorder>
-            <Color>Black</Color>
-            <Style>Solid</Style>
-            <Width>1pt</Width>
-          </BottomBorder>
           <LeftBorder>
             <Color>Black</Color>
             <Style>Solid</Style>
@@ -1124,25 +1119,20 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox21</rd:DefaultName>
-        <Top>4.84334cm</Top>
-        <Left>22.21793cm</Left>
+        <Top>4.84223cm</Top>
+        <Left>22.24403cm</Left>
         <Height>1.2cm</Height>
         <Width>2.64111cm</Width>
         <ZIndex>14</ZIndex>
         <Style>
           <Border>
-            <Style>Solid</Style>
+            <Style>None</Style>
           </Border>
           <TopBorder>
             <Color>Black</Color>
             <Style>Solid</Style>
             <Width>1pt</Width>
           </TopBorder>
-          <BottomBorder>
-            <Color>Black</Color>
-            <Style>Solid</Style>
-            <Width>1pt</Width>
-          </BottomBorder>
           <LeftBorder>
             <Color>Black</Color>
             <Style>Solid</Style>
@@ -1179,25 +1169,20 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox22</rd:DefaultName>
-        <Top>4.84334cm</Top>
-        <Left>24.85906cm</Left>
+        <Top>4.84223cm</Top>
+        <Left>24.88516cm</Left>
         <Height>0.65292cm</Height>
         <Width>4.05222cm</Width>
         <ZIndex>15</ZIndex>
         <Style>
           <Border>
-            <Style>Solid</Style>
+            <Style>None</Style>
           </Border>
           <TopBorder>
             <Color>Black</Color>
             <Style>Solid</Style>
             <Width>1pt</Width>
           </TopBorder>
-          <BottomBorder>
-            <Color>Black</Color>
-            <Style>Solid</Style>
-            <Width>1pt</Width>
-          </BottomBorder>
           <LeftBorder>
             <Color>Black</Color>
             <Style>Solid</Style>
@@ -1234,25 +1219,20 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox26</rd:DefaultName>
-        <Top>5.49626cm</Top>
-        <Left>17.31024cm</Left>
+        <Top>5.49515cm</Top>
+        <Left>17.33634cm</Left>
         <Height>0.54708cm</Height>
-        <Width>2.40771cm</Width>
+        <Width>2.4077cm</Width>
         <ZIndex>16</ZIndex>
         <Style>
           <Border>
-            <Style>Solid</Style>
+            <Style>None</Style>
           </Border>
           <TopBorder>
             <Color>Black</Color>
             <Style>Solid</Style>
             <Width>1pt</Width>
           </TopBorder>
-          <BottomBorder>
-            <Color>Black</Color>
-            <Style>Solid</Style>
-            <Width>1pt</Width>
-          </BottomBorder>
           <LeftBorder>
             <Color>Black</Color>
             <Style>Solid</Style>
@@ -1289,25 +1269,20 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox27</rd:DefaultName>
-        <Top>5.49626cm</Top>
-        <Left>19.71794cm</Left>
+        <Top>5.49515cm</Top>
+        <Left>19.74404cm</Left>
         <Height>0.54708cm</Height>
         <Width>2.5cm</Width>
         <ZIndex>17</ZIndex>
         <Style>
           <Border>
-            <Style>Solid</Style>
+            <Style>None</Style>
           </Border>
           <TopBorder>
             <Color>Black</Color>
             <Style>Solid</Style>
             <Width>1pt</Width>
           </TopBorder>
-          <BottomBorder>
-            <Color>Black</Color>
-            <Style>Solid</Style>
-            <Width>1pt</Width>
-          </BottomBorder>
           <LeftBorder>
             <Color>Black</Color>
             <Style>Solid</Style>
@@ -1344,25 +1319,20 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox28</rd:DefaultName>
-        <Top>5.49626cm</Top>
-        <Left>24.85906cm</Left>
+        <Top>5.49515cm</Top>
+        <Left>24.88516cm</Left>
         <Height>0.54708cm</Height>
         <Width>1.4962cm</Width>
         <ZIndex>18</ZIndex>
         <Style>
           <Border>
-            <Style>Solid</Style>
+            <Style>None</Style>
           </Border>
           <TopBorder>
             <Color>Black</Color>
             <Style>Solid</Style>
             <Width>1pt</Width>
           </TopBorder>
-          <BottomBorder>
-            <Color>Black</Color>
-            <Style>Solid</Style>
-            <Width>1pt</Width>
-          </BottomBorder>
           <LeftBorder>
             <Color>Black</Color>
             <Style>Solid</Style>
@@ -1399,25 +1369,20 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox29</rd:DefaultName>
-        <Top>5.49626cm</Top>
-        <Left>26.35526cm</Left>
+        <Top>5.49515cm</Top>
+        <Left>26.38135cm</Left>
         <Height>0.54708cm</Height>
         <Width>2.55602cm</Width>
         <ZIndex>19</ZIndex>
         <Style>
           <Border>
-            <Style>Solid</Style>
+            <Style>None</Style>
           </Border>
           <TopBorder>
             <Color>Black</Color>
             <Style>Solid</Style>
             <Width>1pt</Width>
           </TopBorder>
-          <BottomBorder>
-            <Color>Black</Color>
-            <Style>Solid</Style>
-            <Width>1pt</Width>
-          </BottomBorder>
           <LeftBorder>
             <Color>Black</Color>
             <Style>Solid</Style>
@@ -3690,13 +3655,13 @@
               <Width>1.21889in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.94792in</Width>
+              <Width>0.95207in</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>0.98425in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.0398in</Width>
+              <Width>1.03566in</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>0.5871in</Width>
@@ -3927,7 +3892,7 @@
         <Top>6.04335cm</Top>
         <Left>14.22979cm</Left>
         <Height>0.93515cm</Height>
-        <Width>14.69205cm</Width>
+        <Width>14.69207cm</Width>
         <ZIndex>43</ZIndex>
         <Style>
           <Border>
@@ -4768,7 +4733,9 @@
             <TextRuns>
               <TextRun>
                 <Value>Прочие отметки _______________________________________________________________________________________________________________________________________</Value>
-                <Style />
+                <Style>
+                  <FontSize>8pt</FontSize>
+                </Style>
               </TextRun>
             </TextRuns>
             <Style />
@@ -4777,16 +4744,106 @@
             <TextRuns>
               <TextRun>
                 <Value>_____________________________________________________________________________________________________________________________________________________</Value>
-                <Style />
+                <Style>
+                  <FontSize>8pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style>
+                  <FontSize>8pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Водительское удостоверение проверил,задание выдал                 Автомобиль технически исправен.                                                        Автомобиль сдал.</Value>
+                <Style>
+                  <FontSize>8pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style>
+                  <FontSize>8pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Выдать топлива__________________л.                                             Подпись(штамп)___________________________________                  Подпись водителя___________________</Value>
+                <Style>
+                  <FontSize>8pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value xml:space="preserve">                                                                                                   </Value>
+                <Style>
+                  <FontSize>8pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Подпись(штамп)__________________                                                Автомобиль в технически исправном состоянии принял.                  Автомобиль принял.</Value>
+                <Style>
+                  <FontSize>8pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style>
+                  <FontSize>8pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Сопровождающие лица____________                                                 Подпись водителя_________________________________                   Подпись(штамп)_____________________</Value>
+                <Style>
+                  <FontSize>8pt</FontSize>
+                </Style>
               </TextRun>
             </TextRuns>
             <Style />
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox60</rd:DefaultName>
-        <Top>17.21591cm</Top>
+        <Top>16.84549cm</Top>
         <Left>0.46868cm</Left>
-        <Height>3.51042cm</Height>
+        <Height>3.88992cm</Height>
         <Width>28.13213cm</Width>
         <ZIndex>51</ZIndex>
         <Style>

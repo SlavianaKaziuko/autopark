@@ -49,7 +49,7 @@
             this.Controls.Add(this.reportViewer);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "OtchetJournal";
-            this.Text = "OtchetJournal";
+            this.Text = "Журнал учета выдачи путевых листов";
             this.Load += new System.EventHandler(this.OtchetJournal_Load);
             this.ResumeLayout(false);
 
