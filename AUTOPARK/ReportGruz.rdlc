@@ -53,7 +53,7 @@
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="Гос_номер">
-          <DataField>Гос.номер</DataField>
+          <DataField>Гос_номер</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>
@@ -133,7 +133,7 @@
     <DataSet Name="Voditel">
       <Fields>
         <Field Name="табельный_номер">
-          <DataField>табельный  номер</DataField>
+          <DataField>табельный_номер</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
         <Field Name="Фамилия">
@@ -4760,6 +4760,45 @@
           </Border>
         </Style>
       </Tablix>
+      <Textbox Name="Textbox60">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Прочие отметки _______________________________________________________________________________________________________________________________________</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>_____________________________________________________________________________________________________________________________________________________</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox60</rd:DefaultName>
+        <Top>17.21591cm</Top>
+        <Left>0.46868cm</Left>
+        <Height>3.51042cm</Height>
+        <Width>28.13213cm</Width>
+        <ZIndex>51</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
     </ReportItems>
     <Height>21cm</Height>
     <Style />
