@@ -115,6 +115,8 @@ namespace AUTOPARK
 
         private void PutevoiListGruzavogo_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "autoparkDB.Заправка_ТСМ". При необходимости она может быть перемещена или удалена.
+            this.zapravkaTCMTableAdapter.Fill(this.autoparkDB.Заправка_ТСМ);
             dgvZadanieVoditelu.DataSource = _bindingZadanie;
             txtNumber.Text = _number.ToString(CultureInfo.InvariantCulture);
             cbZnak.SelectedItem = _bindingAuto.Find("ID", _idauto);
@@ -288,5 +290,12 @@ namespace AUTOPARK
             if (dgvZadanieVoditelu.CurrentRow != null)
                 dgvZadanieVoditelu.CurrentRow.Cells["ID_Путевого листа"].Value = PutevoiId;
         }
+
+        private void dgvZadanieVoditelu_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+       
     }
 }

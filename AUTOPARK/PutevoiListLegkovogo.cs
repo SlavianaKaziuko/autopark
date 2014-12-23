@@ -203,8 +203,10 @@ namespace AUTOPARK
             dgvPutevieLegkovie.CurrentRow.Cells["Время возвращения"].Value = new TimeSpan(17, 0, 0);
             dgvPutevieLegkovie.CurrentRow.Cells["Время в наряде"].Value = new TimeSpan(8, 45, 0);
             var queriesResult = new AutoparkDBTableAdapters.QueriesTableAdapter();
-            dgvPutevieLegkovie.CurrentRow.Cells["Показания спидометра при выезде"].Value =
+            dgvPutevieLegkovie.CurrentRow.Cells["Показания спидометра при выезде"].Value =                                     //    Дублирование  спидометра при возвращении на следующую строку спидометра при выезде
                 queriesResult.GetMileageLegk(_idauto, _dateEnd);
+            dgvPutevieLegkovie.CurrentRow.Cells["Остаток топлива при выезде"].Value =                                  //    Дублирование  остатка топлива при возвращении на следующую строку остатка топлива при выезде
+                queriesResult.GetToplivoLegk(_idauto, _dateEnd);
         }
 
         private void btnCancel_Click(object sender, EventArgs e) // Кнопка Отмена 

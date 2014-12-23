@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PutevoiListGruzavogo));
             this.lblGruzovoi = new System.Windows.Forms.Label();
             this.txtNumber = new System.Windows.Forms.TextBox();
@@ -102,6 +103,9 @@
             this.lblNaznach = new System.Windows.Forms.Label();
             this.txtPunktOtpravlen = new System.Windows.Forms.TextBox();
             this.txtPunktNaznach = new System.Windows.Forms.TextBox();
+            this.autoparkDB = new AUTOPARK.AutoparkDB();
+            this.заправкаТСМBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.zapravkaTCMTableAdapter = new AUTOPARK.AutoparkDBTableAdapters.ZapravkaTCMTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dgvZapravkaTCM)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvZadanieVoditelu)).BeginInit();
             this.panel1.SuspendLayout();
@@ -109,6 +113,8 @@
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.autoparkDB)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.заправкаТСМBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // lblGruzovoi
@@ -526,6 +532,7 @@
             this.dgvZadanieVoditelu.Name = "dgvZadanieVoditelu";
             this.dgvZadanieVoditelu.Size = new System.Drawing.Size(1206, 80);
             this.dgvZadanieVoditelu.TabIndex = 49;
+            this.dgvZadanieVoditelu.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvZadanieVoditelu_CellContentClick);
             this.dgvZadanieVoditelu.RowLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvZadanieVoditelu_RowLeave);
             // 
             // panel1
@@ -821,6 +828,20 @@
             this.txtPunktNaznach.Size = new System.Drawing.Size(199, 21);
             this.txtPunktNaznach.TabIndex = 64;
             // 
+            // autoparkDB
+            // 
+            this.autoparkDB.DataSetName = "AutoparkDB";
+            this.autoparkDB.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // заправкаТСМBindingSource
+            // 
+            this.заправкаТСМBindingSource.DataMember = "Заправка ТСМ";
+            this.заправкаТСМBindingSource.DataSource = this.autoparkDB;
+            // 
+            // zapravkaTCMTableAdapter
+            // 
+            this.zapravkaTCMTableAdapter.ClearBeforeFill = true;
+            // 
             // PutevoiListGruzavogo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -865,6 +886,8 @@
             this.panel4.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.autoparkDB)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.заправкаТСМBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -945,5 +968,8 @@
         private System.Windows.Forms.Label lblNaznach;
         private System.Windows.Forms.TextBox txtPunktOtpravlen;
         private System.Windows.Forms.TextBox txtPunktNaznach;
+        private AutoparkDB autoparkDB;
+        private System.Windows.Forms.BindingSource заправкаТСМBindingSource;
+        private AutoparkDBTableAdapters.ZapravkaTCMTableAdapter zapravkaTCMTableAdapter;
     }
 }
