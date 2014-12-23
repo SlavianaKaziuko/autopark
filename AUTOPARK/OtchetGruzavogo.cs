@@ -12,9 +12,7 @@ namespace AUTOPARK
         private readonly BindingSource _bindingVoditel = new BindingSource();
         private readonly BindingSource _bindingDannie = new BindingSource();
         private readonly BindingSource _bindingZadanie = new BindingSource();
-        private readonly BindingSource _bindingDannieOst = new BindingSource();
         private readonly BindingSource _bindingDannieZapr = new BindingSource();
-        private readonly BindingSource _bindingVoditelWork = new BindingSource();
 
         private int PutevoiId { get; set; }
 
@@ -41,17 +39,18 @@ namespace AUTOPARK
 
             var tableZadanie = new AutoparkDBTableAdapters.ZadanieVoditelTableAdapter();
             _bindingZadanie.DataSource = tableZadanie.GetDataByPutevoiId(PutevoiId);
+
+            var tableZapr = new AutoparkDBTableAdapters.ZapravkaTCMTableAdapter();
+            _bindingDannieZapr.DataSource = tableZapr.GetDataByPutevoiID(PutevoiId);
         }
 
         private void Form2_Load(object sender, EventArgs e)
         {
             reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("ReportHead", _bindingHead));
             reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("DannieAuto", _bindingAuto));
-            reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("ZadanieVoditel", _bindingZadanie));
             reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("Voditel", _bindingVoditel));
-            reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("OstatokTCM", _bindingDannieOst));
+            reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("ZadanieVoditel", _bindingZadanie));
             reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("ZapravkaTCM", _bindingDannieZapr));
-            reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("RabotaVoditelAuto", _bindingVoditelWork));
             reportViewer1.RefreshReport();
         }
     }

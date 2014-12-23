@@ -385,6 +385,7 @@
             this.dtpPoGraphVozvr.Name = "dtpPoGraphVozvr";
             this.dtpPoGraphVozvr.Size = new System.Drawing.Size(88, 21);
             this.dtpPoGraphVozvr.TabIndex = 30;
+            this.dtpPoGraphVozvr.Value = new System.DateTime(1990, 1, 1, 0, 0, 0, 0);
             // 
             // txtNulevoiProbegViezd
             // 
@@ -567,6 +568,7 @@
             this.dtpFactVozvr.Name = "dtpFactVozvr";
             this.dtpFactVozvr.Size = new System.Drawing.Size(88, 21);
             this.dtpFactVozvr.TabIndex = 38;
+            this.dtpFactVozvr.Value = new System.DateTime(1990, 1, 1, 0, 0, 0, 0);
             // 
             // dtpFactViezd
             // 
