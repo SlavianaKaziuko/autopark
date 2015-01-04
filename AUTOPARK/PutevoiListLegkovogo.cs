@@ -203,10 +203,10 @@ namespace AUTOPARK
             dgvPutevieLegkovie.CurrentRow.Cells["Время возвращения"].Value = new TimeSpan(17, 0, 0);
             dgvPutevieLegkovie.CurrentRow.Cells["Время в наряде"].Value = new TimeSpan(8, 45, 0);
             var queriesResult = new AutoparkDBTableAdapters.QueriesTableAdapter();
-            dgvPutevieLegkovie.CurrentRow.Cells["Показания спидометра при выезде"].Value =                                     //    Дублирование  спидометра при возвращении на следующую строку спидометра при выезде
-                queriesResult.GetMileageLegk(_idauto, _dateEnd);
-            dgvPutevieLegkovie.CurrentRow.Cells["Остаток топлива при выезде"].Value =                                  //    Дублирование  остатка топлива при возвращении на следующую строку остатка топлива при выезде
-                queriesResult.GetToplivoLegk(_idauto, _dateEnd);
+            dgvPutevieLegkovie.CurrentRow.Cells["Показания спидометра при выезде"].Value =      //    Дублирование  спидометра при возвращении на следующую строку спидометра при выезде
+                int.Parse(queriesResult.GetMileageLegk(_idauto, _dateEnd).ToString());
+            dgvPutevieLegkovie.CurrentRow.Cells["Остаток топлива при выезде"].Value =           //    Дублирование  остатка топлива при возвращении на следующую строку остатка топлива при выезде
+                int.Parse(queriesResult.GetToplivoLegk(_idauto, _dateEnd).ToString());
         }
 
         private void btnCancel_Click(object sender, EventArgs e) // Кнопка Отмена 
@@ -281,25 +281,21 @@ namespace AUTOPARK
                 case "Показания спидометра при возвращении":
                 {
                     var dataGridViewRow = ((DataGridView) sender).CurrentRow;
-                    if (dataGridViewRow != null)
-                        dataGridViewRow.Cells["Пробег км"].Value =
-                            int.Parse(
-                                dataGridViewRow.Cells["Показания спидометра при возвращении"].EditedFormattedValue.ToString()) -
-                            int.Parse(
-                                dataGridViewRow.Cells["Показания спидометра при выезде"].EditedFormattedValue.ToString());
+                    if (dataGridViewRow == null) return;
+                    var vozvr = dataGridViewRow.Cells["Показания спидометра при возвращении"].EditedFormattedValue.ToString();
+                    var viezd = dataGridViewRow.Cells["Показания спидометра при выезде"].EditedFormattedValue.ToString();
+                    if (vozvr != "" && viezd!="")
+                        dataGridViewRow.Cells["Пробег км"].Value = int.Parse(vozvr) - int.Parse(viezd);
                 }
                     break;
                 case "Заправлено топлива л":
                 {
                     var dataGridViewRow = ((DataGridView) sender).CurrentRow;
-                    if (dataGridViewRow != null)
-                        dataGridViewRow.Cells["Расход топлива фактически"].Value =
-                            int.Parse(
-                                dataGridViewRow.Cells["Остаток топлива при выезде"].EditedFormattedValue.ToString()) +
-                            int.Parse(
-                                dataGridViewRow.Cells["Заправлено топлива л"].EditedFormattedValue.ToString()) -
-                            int.Parse(
-                                dataGridViewRow.Cells["Остаток топлива при возвращении"].EditedFormattedValue.ToString());
+                    if (dataGridViewRow == null) return;
+                    var ostvozvr =dataGridViewRow.Cells["Остаток топлива при возвращении"].EditedFormattedValue.ToString();
+                    var zapr =dataGridViewRow.Cells["Заправлено топлива л"].EditedFormattedValue.ToString();
+                    var ostviezd = dataGridViewRow.Cells["Остаток топлива при выезде"].EditedFormattedValue.ToString();
+                        dataGridViewRow.Cells["Расход топлива фактически"].Value = int.Parse(ostviezd) + int.Parse(zapr) - int.Parse(ostvozvr);
                 }
                     break;
             }
