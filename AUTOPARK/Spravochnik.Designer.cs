@@ -35,6 +35,7 @@
             this.навигацияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiToMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiExitApplication = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnDelete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSpravochnik)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -93,11 +94,22 @@
             this.tsmiExitApplication.Text = "Выйти из приложения";
             this.tsmiExitApplication.Click += new System.EventHandler(this.tsmiExitApplication_Click);
             // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(557, 342);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnDelete.TabIndex = 3;
+            this.btnDelete.Text = "Удалить";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
             // Spravochnik
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(791, 377);
+            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnSaveChanges);
             this.Controls.Add(this.dgvSpravochnik);
             this.Controls.Add(this.menuStrip1);
@@ -123,5 +135,6 @@
         private System.Windows.Forms.ToolStripMenuItem навигацияToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tsmiToMenu;
         private System.Windows.Forms.ToolStripMenuItem tsmiExitApplication;
+        private System.Windows.Forms.Button btnDelete;
     }
 }

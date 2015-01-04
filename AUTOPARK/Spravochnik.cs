@@ -177,11 +177,6 @@ namespace AUTOPARK
                     if (dataGridViewColumn != null)
                         dataGridViewColumn.Visible = false;
                     break;
-                case "Отделы":
-                    dataGridViewColumn = dgvSpravochnik.Columns["Код"];
-                    if (dataGridViewColumn != null)
-                        dataGridViewColumn.Visible = false;
-                    break;
                 case "Водители авто":
                     var tableAuto = new PodvijnoiTableAdapter();
                     var tablePerson = new LichniiTableAdapter();
@@ -331,6 +326,24 @@ namespace AUTOPARK
                     }
                     break;
             }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (dgvSpravochnik.CurrentRow == null)
+            {
+                return;
+            }
+
+            var rowid = (int)dgvSpravochnik.CurrentRow.Cells[0].Value;
+            var result = MessageBox.Show(string.Format("Вы точно хотите удалить путевой лист {0} легкового авто?", rowid), @"Предупреждение", MessageBoxButtons.YesNo);
+            if (result != DialogResult.Yes)
+            {
+                return;
+            }
+
+            dgvSpravochnik.Rows.Remove(dgvSpravochnik.CurrentRow);
+            btnSaveChanges_Click(sender, e);
         }
     }
 }
