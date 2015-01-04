@@ -105,24 +105,24 @@ namespace AUTOPARK
             {
                 throw new Exception("Пожалуйста, заполните справочник \"Личный состав\"");
             }
-            cbImia.DataSource = _bindingVoditel;
             cbImia.DisplayMember = "ФИО";
             cbImia.ValueMember = "табельный_номер";
+            cbImia.DataSource = _bindingVoditel;
 
             var tableOtdeli = new AutoparkDBTableAdapters.OtdelTableAdapter();
             _bindingOtdel.DataSource = tableOtdeli.GetData();
-            cbOtdel.DataSource = _bindingOtdel;
             cbOtdel.DisplayMember = "Подразделение";
             cbOtdel.ValueMember = "Код";
+            cbOtdel.DataSource = _bindingOtdel;
         }
 
         private void PutevoiListGruzavogo_Load(object sender, EventArgs e)
         {
             dgvZadanieVoditelu.DataSource = _bindingZadanie;
             txtNumber.Text = _number.ToString(CultureInfo.InvariantCulture);
-            cbZnak.SelectedItem = _bindingAuto.Find("ID", _idauto);
-            cbImia.SelectedItem = _bindingVoditel.Find("табельный_номер", _idvod);
-            cbOtdel.SelectedItem = _bindingOtdel.Find("Код", _idotdel);
+            cbZnak.SelectedValue = _idauto;
+            cbImia.SelectedValue = _idvod;
+            cbOtdel.SelectedValue = _idotdel;
             dtpHapka.Value = _date;
             if (_modeIsNew)
             {
