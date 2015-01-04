@@ -46,6 +46,7 @@
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.btnSelect = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPutevii)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -65,7 +66,7 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(666, 462);
+            this.btnAdd.Location = new System.Drawing.Point(705, 463);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(87, 27);
             this.btnAdd.TabIndex = 1;
@@ -75,9 +76,9 @@
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(761, 462);
+            this.btnEdit.Location = new System.Drawing.Point(798, 462);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(117, 27);
+            this.btnEdit.Size = new System.Drawing.Size(101, 27);
             this.btnEdit.TabIndex = 2;
             this.btnEdit.Text = "Редактировать";
             this.btnEdit.UseVisualStyleBackColor = true;
@@ -85,9 +86,9 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(884, 462);
+            this.btnDelete.Location = new System.Drawing.Point(905, 462);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(87, 27);
+            this.btnDelete.Size = new System.Drawing.Size(69, 27);
             this.btnDelete.TabIndex = 3;
             this.btnDelete.Text = "Удалить";
             this.btnDelete.UseVisualStyleBackColor = true;
@@ -168,10 +169,10 @@
             // 
             // btnOtchet
             // 
-            this.btnOtchet.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnOtchet.Location = new System.Drawing.Point(884, 31);
+            this.btnOtchet.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnOtchet.Location = new System.Drawing.Point(643, 463);
             this.btnOtchet.Name = "btnOtchet";
-            this.btnOtchet.Size = new System.Drawing.Size(87, 29);
+            this.btnOtchet.Size = new System.Drawing.Size(56, 27);
             this.btnOtchet.TabIndex = 9;
             this.btnOtchet.Text = "Отчёт";
             this.btnOtchet.UseVisualStyleBackColor = true;
@@ -213,11 +214,22 @@
             this.label4.TabIndex = 13;
             this.label4.Text = "с";
             // 
+            // btnSelect
+            // 
+            this.btnSelect.Location = new System.Drawing.Point(885, 33);
+            this.btnSelect.Name = "btnSelect";
+            this.btnSelect.Size = new System.Drawing.Size(86, 23);
+            this.btnSelect.TabIndex = 14;
+            this.btnSelect.Text = "Выбрать";
+            this.btnSelect.UseVisualStyleBackColor = true;
+            this.btnSelect.Click += new System.EventHandler(this.btnSelect_Click);
+            // 
             // PutevieListi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(986, 502);
+            this.Controls.Add(this.btnSelect);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.dateTimePicker2);
@@ -266,5 +278,6 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btnSelect;
     }
 }

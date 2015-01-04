@@ -15,31 +15,33 @@ namespace AUTOPARK
         private readonly BindingSource _bindingOtdel = new BindingSource();
         private readonly BindingSource _bindingZadanie = new BindingSource();
         private readonly BindingSource _bindingZapravka = new BindingSource();
+        private readonly AutoparkDBTableAdapters.QueriesTableAdapter _queries;
+
         private List<AutoparkDB.Путевой_лист_Грузового_автоRow> _mainInfo;
         private readonly int _number;
         private int _idauto;
         private int _idvod;
         private readonly DateTime _date;
         private int _idotdel;
-        private readonly bool _modeIsNew; ////true - add, false - update
+        private bool _modeIsNew; ////true - add, false - update
         private int PutevoiId { get; set; }
 
         public PutevoiListGruzavogo()
         {
             InitializeComponent();
+            _queries = new AutoparkDBTableAdapters.QueriesTableAdapter();
             PrepareComboBoxDataSources();
 
             _modeIsNew = true;
             _idauto = int.Parse(cbZnak.SelectedValue.ToString());
-            var queries = new AutoparkDBTableAdapters.QueriesTableAdapter();
-            var newLegkNumber = queries.GetNewNumberGruz();
+            var newLegkNumber = _queries.GetNewNumberGruz();
             if (newLegkNumber != null)
                 _number = int.Parse(newLegkNumber.ToString());
             _date = DateTime.Today;
-            txtViezdSpidometr.Text = queries.GetMileageGruz(_idauto, _date).ToString();
+            txtViezdSpidometr.Text = _queries.GetMileageGruz(_idauto, _date).ToString();
             txtVozvrahenieSpidometr.Text = txtViezdSpidometr.Text;
-            txtPriViezdiTCM.Text = queries.GetToplivoGruz(_idauto, 1, _date).ToString();
-            txtPriViezdiTCM2.Text = queries.GetToplivoGruz(_idauto, 2, _date).ToString();
+            txtPriViezdiTCM.Text = _queries.GetToplivoGruz(_idauto, 1, _date).ToString();
+            txtPriViezdiTCM2.Text = _queries.GetToplivoGruz(_idauto, 2, _date).ToString();
             txtPriVozvracheniiTCM.Text = txtPriViezdiTCM.Text;
             txtPriVozvracheniiTCM2.Text = txtPriViezdiTCM2.Text;
 
@@ -49,10 +51,11 @@ namespace AUTOPARK
         public PutevoiListGruzavogo(int id)
         {
             InitializeComponent();
+            _queries = new AutoparkDBTableAdapters.QueriesTableAdapter();
             PrepareComboBoxDataSources();
             _modeIsNew = false;
             PutevoiId = id;
-            
+
             var tablePutevoi = new AutoparkDBTableAdapters.TablePutevieGruzovieTableAdapter();
             _mainInfo = tablePutevoi.GetDataByID(id).ToList();
             _number = _mainInfo[0].Номер_путевого_листа;
@@ -115,8 +118,6 @@ namespace AUTOPARK
 
         private void PutevoiListGruzavogo_Load(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "autoparkDB.Заправка_ТСМ". При необходимости она может быть перемещена или удалена.
-            this.zapravkaTCMTableAdapter.Fill(this.autoparkDB.Заправка_ТСМ);
             dgvZadanieVoditelu.DataSource = _bindingZadanie;
             txtNumber.Text = _number.ToString(CultureInfo.InvariantCulture);
             cbZnak.SelectedItem = _bindingAuto.Find("ID", _idauto);
@@ -125,7 +126,6 @@ namespace AUTOPARK
             dtpHapka.Value = _date;
             if (_modeIsNew)
             {
-
                 return;
             }
             txtViezdSpidometr.Text = _mainInfo[0].Показания_спидометра_при_выезде.ToString(CultureInfo.InvariantCulture);
@@ -144,6 +144,8 @@ namespace AUTOPARK
             txtVremiaDvigVozvr.Text = _mainInfo[0].Время_работы_двигателя_возвр.ToString(CultureInfo.InvariantCulture);
             txtVremiaOborudViezd.Text = _mainInfo[0].Время_работы_спецоборудования_выезд.ToString(CultureInfo.InvariantCulture);
             txtVremiaOborudVozvr.Text = _mainInfo[0].Время_работы_спецоборудования_возвр.ToString(CultureInfo.InvariantCulture);
+            txtPunktOtpravlen.Text = _mainInfo[0].Пункт_отправления.ToString(CultureInfo.InvariantCulture);
+            txtPunktNaznach.Text = _mainInfo[0].Пункт_назначения.ToString(CultureInfo.InvariantCulture);
         }
 
         private void cbZnak_SelectedValueChanged(object sender, EventArgs e)               //  Комбобок cbZnak  (Автомобиль)
@@ -155,6 +157,10 @@ namespace AUTOPARK
             txtMarka.Text = ((DataRowView)_bindingAuto[_bindingAuto.Find("ID", id)])["Марка и модель"].ToString();
             lblToplivo1.Text = ((DataRowView) _bindingAuto[_bindingAuto.Find("ID", id)])["Вид топлива"].ToString();
             lblToplivo2.Text = ((DataRowView) _bindingAuto[_bindingAuto.Find("ID", id)])["Дополнительный вид топлива"].ToString();
+            txtPriViezdiTCM.Text = _queries.GetToplivoGruz(id, 1, dtpHapka.Value).ToString();
+            txtPriViezdiTCM2.Text = _queries.GetToplivoGruz(id, 2, dtpHapka.Value).ToString();
+            txtPriVozvracheniiTCM.Text = txtPriViezdiTCM.Text;
+            txtPriVozvracheniiTCM2.Text = txtPriViezdiTCM2.Text;
         }
 
         private void cbImia_SelectedValueChanger(object sender, EventArgs e)           //  Комбобок cbImia  (Автомобиль)
@@ -210,6 +216,8 @@ namespace AUTOPARK
                 dataGridViewColumn = dgvZapravkaTCM.Columns["ID_Заправка ТСМ"];
                 if (dataGridViewColumn != null)
                     dataGridViewColumn.Visible = false;
+
+                _modeIsNew = false;
             }
             else
             {
@@ -218,7 +226,7 @@ namespace AUTOPARK
                     int.Parse(txtVozvrahenieSpidometr.Text),
                     dtpPoGraphViezd.Value, dtpFactViezd.Value, dtpPoGraphVozvr.Value, dtpFactVozvr.Value,
                     int.Parse(txtNulevoiProbegViezd.Text), int.Parse(txtNulevoiProbegVozvrahenie.Text),
-                    Convert.ToDouble(txtVremiaDvigViezd.Text), Convert.ToDouble(txtVremiaDvigVozvr),
+                    Convert.ToDouble(txtVremiaDvigViezd.Text), Convert.ToDouble(txtVremiaDvigVozvr.Text),
                     Convert.ToDouble(txtVremiaOborudViezd.Text), Convert.ToDouble(txtVremiaOborudVozvr.Text),
                     Convert.ToDouble(txtPriViezdiTCM.Text), Convert.ToDouble(txtPriVozvracheniiTCM.Text),
                     Convert.ToDouble(txtPriViezdiTCM2.Text), Convert.ToDouble(txtPriVozvracheniiTCM2.Text), _idvod,

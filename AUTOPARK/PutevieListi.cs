@@ -45,8 +45,11 @@ namespace AUTOPARK
 
             dgvPutevii.DataSource = _binding;
 
+            var dataGridViewColumn = dgvPutevii.Columns["ID_Путевого листа"];
+            if (dataGridViewColumn != null)
+                dataGridViewColumn.Visible = false;
             if (_name != "Путевые листы легковых автомобилей") return;
-            var dataGridViewColumn = dgvPutevii.Columns["ID_Автомобиль"];
+            dataGridViewColumn = dgvPutevii.Columns["ID_Автомобиль"];
             if (dataGridViewColumn != null)
                 dataGridViewColumn.Visible = false;
             dataGridViewColumn = dgvPutevii.Columns["ID_Водитель"];
@@ -79,13 +82,10 @@ namespace AUTOPARK
                             MessageBox.Show(exc.Message);
                         }
                         break;
-
                     }
 
                 case "Путевые листы грузовых автомобилей":
                 {
-     
-                    
                     var form = new PutevoiListGruzavogo(); ////создание экземпляра формы PutevoiListGruzavogo
                     this.Hide(); //// скрытие текущей формы
                     form.ShowDialog(); //// открытие формы Spravochnik
@@ -94,11 +94,8 @@ namespace AUTOPARK
                     this.Show(); //// отображение главной формы после закрытия PutevoiListGruzavogo
                     break;
                 }
-
                 case "Журнал учета выдачи путевых листов":
                 {
-
-
                     var form = new Journal (); ////создание экземпляра формы Журнала  !!!!!!!!!!!!!!
                     this.Hide(); //// скрытие текущей формы
                     form.ShowDialog(); //// открытие формы Spravochnik
@@ -107,12 +104,8 @@ namespace AUTOPARK
                     this.Show(); //// отображение главной формы после закрытия PutevoiListGruzavogo
                     break;
                 }
-
-
-
-
-
             }
+
             dgvPutevii.DataSource = _binding;
         }
 
@@ -134,7 +127,6 @@ namespace AUTOPARK
                     this.Show(); //// отображение главной формы после закрытия PutListLegkovogoavto
                     break;
                 }
-
                 case "Путевые листы грузовых автомобилей":
                 {
                     var form = new PutevoiListGruzavogo(rowid); ////создание экземпляра формы PutevoiListGruzavogo
@@ -178,7 +170,6 @@ namespace AUTOPARK
                     _binding.DataSource = tableData.GetData();
                     break;
                 }
-
                 case "Путевые листы грузовых автомобилей":
                 {
                     var table = new AutoparkDBTableAdapters.TablePutevieGruzovieTableAdapter();
@@ -205,9 +196,10 @@ namespace AUTOPARK
             dgvPutevii.Width = this.Width - 40;
             dgvPutevii.Height = this.Height - dgvPutevii.Location.Y - 100;
 
-            btnAdd.Location = new Point(this.Width - 300, this.Height - 73);
-            btnEdit.Location = new Point(this.Width - 214, this.Height - 73);
-            btnDelete.Location = new Point(this.Width - 103, this.Height - 73);
+            btnDelete.Location = new Point(this.Width - btnDelete.Width - 25, this.Height - 73);
+            btnEdit.Location = new Point(btnDelete.Location.X - btnEdit.Width - 5, this.Height - 73);
+            btnAdd.Location = new Point(btnEdit.Location.X - btnAdd.Width - 5, this.Height - 73);
+            btnOtchet.Location = new Point(btnAdd.Location.X - btnOtchet.Width - 5, this.Height - 73);
         }
 
         private void tsmiToMenu_Click(object sender, EventArgs e)
@@ -273,6 +265,24 @@ namespace AUTOPARK
                     {
                         var f1 = new OtchetJournal(new DateTime(2014, 1, 1), new DateTime(2014, 12, 31), int.Parse(cbAuto.SelectedValue.ToString()),'Г');
                         f1.Show();
+                        break;
+                    }
+            }
+        }
+
+        private void btnSelect_Click(object sender, EventArgs e)
+        {
+            switch (_name)
+            {
+                case "Путевые листы легковых автомобилей":
+                    {
+                        _binding.Filter = "[ID_Автомобиль] = " + int.Parse(cbAuto.SelectedValue.ToString());
+                        break;
+                    }
+                case "Путевые листы грузовых автомобилей":
+                    {
+
+                        _binding.Filter = "[Гос_номер] = '" + cbAuto.Text + "'";
                         break;
                     }
             }

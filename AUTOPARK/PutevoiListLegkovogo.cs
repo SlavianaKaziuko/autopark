@@ -178,7 +178,7 @@ namespace AUTOPARK
                     PutevoiId, _number, _dateStart, _dateEnd, _idauto, _idvod, _idotd);
 
                 tableDannie.Update((AutoparkDB.Данные_Путевой_лист_легкового_автоDataTable) _bindingDannie.DataSource);
-                _bindingDannie.DataSource = tableDannie.GetData();
+                //_bindingDannie.DataSource = tableDannie.GetData();
                 _bindingDannie.Filter = "[ID_Путевого листа] = " + PutevoiId;
                 dgvPutevieLegkovie.DataSource = _bindingDannie;
                 _number = int.Parse(txtNumber.Text);
