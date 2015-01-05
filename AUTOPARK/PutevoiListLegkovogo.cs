@@ -292,10 +292,13 @@ namespace AUTOPARK
                 {
                     var dataGridViewRow = ((DataGridView) sender).CurrentRow;
                     if (dataGridViewRow == null) return;
-                    var ostvozvr =dataGridViewRow.Cells["Остаток топлива при возвращении"].EditedFormattedValue.ToString();
-                    var zapr =dataGridViewRow.Cells["Заправлено топлива л"].EditedFormattedValue.ToString();
+                    var ostvozvr = dataGridViewRow.Cells["Остаток топлива при возвращении"].EditedFormattedValue.ToString();
+                    var zapr = dataGridViewRow.Cells["Заправлено топлива л"].EditedFormattedValue.ToString();
                     var ostviezd = dataGridViewRow.Cells["Остаток топлива при выезде"].EditedFormattedValue.ToString();
-                        dataGridViewRow.Cells["Расход топлива фактически"].Value = int.Parse(ostviezd) + int.Parse(zapr) - int.Parse(ostvozvr);
+                    if (string.IsNullOrEmpty(ostviezd)) ostviezd = "0";
+                    if (string.IsNullOrEmpty(ostvozvr)) ostvozvr = "0";
+                    if (string.IsNullOrEmpty(zapr)) zapr = "0";
+                    dataGridViewRow.Cells["Расход топлива фактически"].Value = Convert.ToDouble(ostviezd) + Convert.ToDouble(zapr) - Convert.ToDouble(ostvozvr);
                 }
                     break;
             }
