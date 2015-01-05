@@ -42,8 +42,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.cbAuto = new System.Windows.Forms.ComboBox();
             this.btnOtchet = new System.Windows.Forms.Button();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dtpStart = new System.Windows.Forms.DateTimePicker();
+            this.dtpEnd = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.btnSelect = new System.Windows.Forms.Button();
@@ -178,23 +178,23 @@
             this.btnOtchet.UseVisualStyleBackColor = true;
             this.btnOtchet.Click += new System.EventHandler(this.btnOtchet_Click);
             // 
-            // dateTimePicker1
+            // dtpStart
             // 
-            this.dateTimePicker1.CustomFormat = "dd MMMM yyyy";
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(533, 33);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(152, 23);
-            this.dateTimePicker1.TabIndex = 10;
+            this.dtpStart.CustomFormat = "dd MMMM yyyy";
+            this.dtpStart.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpStart.Location = new System.Drawing.Point(533, 33);
+            this.dtpStart.Name = "dtpStart";
+            this.dtpStart.Size = new System.Drawing.Size(152, 23);
+            this.dtpStart.TabIndex = 10;
             // 
-            // dateTimePicker2
+            // dtpEnd
             // 
-            this.dateTimePicker2.CustomFormat = "dd MMMM yyyy";
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker2.Location = new System.Drawing.Point(726, 33);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(152, 23);
-            this.dateTimePicker2.TabIndex = 11;
+            this.dtpEnd.CustomFormat = "dd MMMM yyyy";
+            this.dtpEnd.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpEnd.Location = new System.Drawing.Point(726, 33);
+            this.dtpEnd.Name = "dtpEnd";
+            this.dtpEnd.Size = new System.Drawing.Size(152, 23);
+            this.dtpEnd.TabIndex = 11;
             // 
             // label3
             // 
@@ -232,8 +232,8 @@
             this.Controls.Add(this.btnSelect);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.dateTimePicker2);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dtpEnd);
+            this.Controls.Add(this.dtpStart);
             this.Controls.Add(this.btnOtchet);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cbAuto);
@@ -274,8 +274,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cbAuto;
         private System.Windows.Forms.Button btnOtchet;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker dtpStart;
+        private System.Windows.Forms.DateTimePicker dtpEnd;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnSelect;

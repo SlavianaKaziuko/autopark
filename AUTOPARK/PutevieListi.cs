@@ -257,13 +257,13 @@ namespace AUTOPARK
             {
                 case "Путевые листы легковых автомобилей":
                     {
-                        var f1 = new OtchetJournal(new DateTime(2014, 1, 1), new DateTime(2014, 12, 31), int.Parse(cbAuto.SelectedValue.ToString()), 'Л');
+                        var f1 = new OtchetJournal(dtpStart.Value, dtpEnd.Value, int.Parse(cbAuto.SelectedValue.ToString()), 'Л');
                         f1.Show();
                         break;
                     }
                 case "Путевые листы грузовых автомобилей":
                     {
-                        var f1 = new OtchetJournal(new DateTime(2014, 1, 1), new DateTime(2014, 12, 31), int.Parse(cbAuto.SelectedValue.ToString()),'Г');
+                        var f1 = new OtchetJournal(dtpStart.Value, dtpEnd.Value, int.Parse(cbAuto.SelectedValue.ToString()), 'Г');
                         f1.Show();
                         break;
                     }
