@@ -14,10 +14,10 @@ WHERE [ID_Автомобиля] = @Auto
 ORDER BY [Дата_Время_возвращения_граф] DESC
 
 IF (@ToplivoID = 1)
-	SELECT @result1 AS  N'Остаток_ТСМ_возвр'
+	SELECT ISNULL(@result1, 0) AS  N'Остаток_ТСМ_возвр'
 END	
 IF (@ToplivoID = 2)
 BEGIN
-	SELECT @result2  AS  N'Остаток_ТСМ_возвр'
+	SELECT ISNULL(@result2, 0)  AS  N'Остаток_ТСМ_возвр'
 END
 RETURN 0
