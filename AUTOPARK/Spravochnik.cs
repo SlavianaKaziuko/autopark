@@ -112,6 +112,7 @@ namespace AUTOPARK
             dgvSpravochnik.Width = this.Width - 40;
             dgvSpravochnik.Height = this.Height - dgvSpravochnik.Location.X - 500;
             btnSaveChanges.Location = new Point(this.Width - 170, this.Height - 75);
+            btnDelete.Location = new Point(this.Width - 270, this.Height - 75);
         }
 
         private void dgvSpravochnik_DataError(object sender, DataGridViewDataErrorEventArgs e)

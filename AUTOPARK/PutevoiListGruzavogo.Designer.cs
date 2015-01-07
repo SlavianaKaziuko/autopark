@@ -492,6 +492,7 @@
             this.dgvZapravkaTCM.Name = "dgvZapravkaTCM";
             this.dgvZapravkaTCM.Size = new System.Drawing.Size(370, 64);
             this.dgvZapravkaTCM.TabIndex = 45;
+           
             // 
             // txtPriViezdiTCM
             // 

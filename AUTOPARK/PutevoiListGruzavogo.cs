@@ -76,7 +76,7 @@ namespace AUTOPARK
             var dataGridViewColumn = dgvZadanieVoditelu.Columns["ID_Путевого листа"];
             if (dataGridViewColumn != null)
                 dataGridViewColumn.Visible = false;
-            dataGridViewColumn = dgvZadanieVoditelu.Columns["id_Данных"];
+            dataGridViewColumn = dgvZadanieVoditelu.Columns["id"];
             if (dataGridViewColumn != null)
                 dataGridViewColumn.Visible = false;
              dataGridViewColumn = dgvZapravkaTCM.Columns["ID_Путевого листа"];
@@ -303,6 +303,8 @@ namespace AUTOPARK
         {
 
         }
+
+       
 
        
     }
