@@ -123,6 +123,7 @@ namespace AUTOPARK
             cbZnak.SelectedValue = _idauto;
             cbImia.SelectedValue = _idvod;
             cbOtdel.SelectedValue = _idotdel;
+
             dtpHapka.Value = _date;
             if (_modeIsNew)
             {
@@ -145,7 +146,7 @@ namespace AUTOPARK
             txtVremiaOborudViezd.Text = _mainInfo[0].Время_работы_спецоборудования_выезд.ToString(CultureInfo.InvariantCulture);
             txtVremiaOborudVozvr.Text = _mainInfo[0].Время_работы_спецоборудования_возвр.ToString(CultureInfo.InvariantCulture);
             txtPunktOtpravlen.Text = _mainInfo[0].Пункт_отправления.ToString(CultureInfo.InvariantCulture);
-            txtPunktNaznach.Text = _mainInfo[0].Пункт_назначения.ToString(CultureInfo.InvariantCulture);
+            txtPunktNaznach.Text = _mainInfo[0].Пункт_назначения.ToString(CultureInfo.InvariantCulture);   
         }
 
         private void cbZnak_SelectedValueChanged(object sender, EventArgs e)               //  Комбобок cbZnak  (Автомобиль)
@@ -293,15 +294,23 @@ namespace AUTOPARK
             btnReport.Location = new Point(btnReport.Location.X, this.Height - 70);
         }
 
-        private void dgvZadanieVoditelu_RowLeave(object sender, DataGridViewCellEventArgs e)
+        private void dgvZadanieVoditelu_RowLeave(object sender, DataGridViewCellEventArgs e)           // сохраняет вводимые данные из dgvZadanieVoditelu и заносит их в базу
         {
             if (dgvZadanieVoditelu.CurrentRow != null)
                 dgvZadanieVoditelu.CurrentRow.Cells["ID_Путевого листа"].Value = PutevoiId;
         }
 
+        
+
         private void dgvZadanieVoditelu_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void dgvZapravkaTCM_RowLeave_1(object sender, DataGridViewCellEventArgs e)             // сохраняет вводимые данные из dgvZapravkaTCM и заносит их в базу
+        {
+            if (dgvZapravkaTCM.CurrentRow != null)
+                dgvZapravkaTCM.CurrentRow.Cells["ID_Путевого листа"].Value = PutevoiId;
         }
 
        

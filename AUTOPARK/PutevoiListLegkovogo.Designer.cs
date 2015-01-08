@@ -180,6 +180,7 @@
             this.dgvPutevieLegkovie.Name = "dgvPutevieLegkovie";
             this.dgvPutevieLegkovie.Size = new System.Drawing.Size(981, 278);
             this.dgvPutevieLegkovie.TabIndex = 16;
+           // this.dgvPutevieLegkovie.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPutevieLegkovie_CellContentClick);
             this.dgvPutevieLegkovie.CellLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPutevieLegkovie_CellLeave);
             this.dgvPutevieLegkovie.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.dgvPutevieLegkovie_CellValidating);
             this.dgvPutevieLegkovie.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgvPutevieLegkovie_DataError);

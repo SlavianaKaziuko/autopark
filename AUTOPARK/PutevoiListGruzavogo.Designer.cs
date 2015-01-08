@@ -492,7 +492,7 @@
             this.dgvZapravkaTCM.Name = "dgvZapravkaTCM";
             this.dgvZapravkaTCM.Size = new System.Drawing.Size(370, 64);
             this.dgvZapravkaTCM.TabIndex = 45;
-           
+            this.dgvZapravkaTCM.RowLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvZapravkaTCM_RowLeave_1);
             // 
             // txtPriViezdiTCM
             // 
