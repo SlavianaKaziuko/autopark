@@ -44,6 +44,11 @@ namespace AUTOPARK
             txtPriViezdiTCM2.Text = _queries.GetToplivoGruz(_idauto, 2, _date).ToString();
             txtPriVozvracheniiTCM.Text = txtPriViezdiTCM.Text;
             txtPriVozvracheniiTCM2.Text = txtPriViezdiTCM2.Text;
+           
+
+           
+
+            
 
             _mainInfo = new List<AutoparkDB.Путевой_лист_Грузового_автоRow>();
         }
@@ -162,6 +167,8 @@ namespace AUTOPARK
             txtPriViezdiTCM2.Text = _queries.GetToplivoGruz(id, 2, dtpHapka.Value).ToString();
             txtPriVozvracheniiTCM.Text = txtPriViezdiTCM.Text;
             txtPriVozvracheniiTCM2.Text = txtPriViezdiTCM2.Text;
+            txtViezdSpidometr.Text = _queries.GetMileageGruz(id, dtpHapka.Value).ToString();
+            txtVozvrahenieSpidometr.Text = txtViezdSpidometr.Text;
         }
 
         private void cbImia_SelectedValueChanger(object sender, EventArgs e)           //  Комбобок cbImia  (Автомобиль)
@@ -217,7 +224,7 @@ namespace AUTOPARK
                 dataGridViewColumn = dgvZapravkaTCM.Columns["ID_Заправка ТСМ"];
                 if (dataGridViewColumn != null)
                     dataGridViewColumn.Visible = false;
-
+               
                 _modeIsNew = false;
             }
             else
