@@ -212,14 +212,7 @@ namespace AUTOPARK
 
         private void PutevieListi_Load(object sender, EventArgs e)
         {
-            ////заполнение combobox значениями годов, начиная с 2014 по следующий за текущим год
-            var years = new List<int> { 2014 };
-            for (var y = years.First(); y <= DateTime.Now.AddYears(1).Year; y++)
-            {
-                years.Add(y);
-            }
-            cbYears.DataSource = years;
-
+            dtpStart.Value = dtpEnd.Value.AddYears(-1);
             cbAuto.DisplayMember = "Гос_номер";
             cbAuto.ValueMember = "ID";
             cbAuto.DataSource = _bindingAuto;
