@@ -19849,8 +19849,8 @@ WHERE        ([ID_Путевого листа] = @Original_ID_Путевого_�
 putevoi.[Номер путевого листа] AS 'Номер_путевого_листа', 
 [Личный состав].Фамилия + ' ' + LEFT([Личный состав].Имя, 1) + '. ' + LEFT([Личный состав].Отчество, 1) + '. ' AS 'ФИО', 
 Отделы.Подразделение, 
-putevoi.Пункт_отправления, 
-putevoi.Пункт_назначения, 
+d.[Маршрут перевозки откуда] AS 'Пункт_отправления', 
+d.[Маршрут перевозки куда] AS 'Пункт_назначения', 
 d.[Заправлено топлива л] AS 'Заправлено_ТСМ1',
 0 AS 'Заправлено_ТСМ2',
 d.[Остаток топлива при выезде] AS 'Остаток_ТСМ1_выезд', 
@@ -19867,11 +19867,11 @@ INNER JOIN [Подвижной состав] ON putevoi.ID_Автомобиль 
 INNER JOIN [Отделы] ON putevoi.ID_Отдела = Отделы.Код
 LEFT JOIN [Данные Путевой лист легкового авто] AS d ON d.[ID_Путевого листа] = putevoi.[ID_Путевого листа]
 
-WHERE CAST(d.Число AS date) BETWEEN @DateStart AND @DateEnd
+WHERE d.Число BETWEEN @DateStart AND @DateEnd
 AND putevoi.ID_Автомобиль = @Auto";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DateStart", global::System.Data.SqlDbType.DateTime, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DateEnd", global::System.Data.SqlDbType.DateTime, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DateStart", global::System.Data.SqlDbType.DateTime, 3, global::System.Data.ParameterDirection.Input, 0, 0, "Дата_путевого_листа", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DateEnd", global::System.Data.SqlDbType.DateTime, 3, global::System.Data.ParameterDirection.Input, 0, 0, "Дата_путевого_листа", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Auto", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Автомобиль", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
