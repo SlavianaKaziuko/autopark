@@ -165,10 +165,7 @@ namespace AUTOPARK
             lblToplivo2.Text = ((DataRowView) _bindingAuto[_bindingAuto.Find("ID", id)])["Дополнительный вид топлива"].ToString();
             txtPriViezdiTCM.Text = _queries.GetToplivoGruz(id, 1, dtpHapka.Value).ToString();
             txtPriViezdiTCM2.Text = _queries.GetToplivoGruz(id, 2, dtpHapka.Value).ToString();
-            txtPriVozvracheniiTCM.Text = txtPriViezdiTCM.Text;
-            txtPriVozvracheniiTCM2.Text = txtPriViezdiTCM2.Text;
             txtViezdSpidometr.Text = _queries.GetMileageGruz(id, dtpHapka.Value).ToString();
-            txtVozvrahenieSpidometr.Text = txtViezdSpidometr.Text;
         }
 
         private void cbImia_SelectedValueChanger(object sender, EventArgs e)           //  Комбобок cbImia  (Автомобиль)
