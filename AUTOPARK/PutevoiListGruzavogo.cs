@@ -37,19 +37,11 @@ namespace AUTOPARK
             var newLegkNumber = _queries.GetNewNumberGruz();
             if (newLegkNumber != null)
                 _number = int.Parse(newLegkNumber.ToString());
+            _idvod = int.Parse(cbImia.SelectedValue.ToString());
             _date = DateTime.Today;
             txtViezdSpidometr.Text = _queries.GetMileageGruz(_idauto, _date).ToString();
-            txtVozvrahenieSpidometr.Text = txtViezdSpidometr.Text;
             txtPriViezdiTCM.Text = _queries.GetToplivoGruz(_idauto, 1, _date).ToString();
             txtPriViezdiTCM2.Text = _queries.GetToplivoGruz(_idauto, 2, _date).ToString();
-            txtPriVozvracheniiTCM.Text = txtPriViezdiTCM.Text;
-            txtPriVozvracheniiTCM2.Text = txtPriViezdiTCM2.Text;
-           
-
-           
-
-            
-
             _mainInfo = new List<AutoparkDB.Путевой_лист_Грузового_автоRow>();
         }
 

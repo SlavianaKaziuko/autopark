@@ -366,7 +366,6 @@
             this.txtVozvrahenieSpidometr.Name = "txtVozvrahenieSpidometr";
             this.txtVozvrahenieSpidometr.Size = new System.Drawing.Size(82, 21);
             this.txtVozvrahenieSpidometr.TabIndex = 28;
-            this.txtVozvrahenieSpidometr.Text = "0";
             // 
             // dtpPoGraphViezd
             // 
@@ -508,7 +507,6 @@
             this.txtPriVozvracheniiTCM.Name = "txtPriVozvracheniiTCM";
             this.txtPriVozvracheniiTCM.Size = new System.Drawing.Size(94, 20);
             this.txtPriVozvracheniiTCM.TabIndex = 47;
-            this.txtPriVozvracheniiTCM.Text = "0";
             // 
             // lblZadanieVoditel
             // 
@@ -691,7 +689,6 @@
             this.txtPriVozvracheniiTCM2.Name = "txtPriVozvracheniiTCM2";
             this.txtPriVozvracheniiTCM2.Size = new System.Drawing.Size(94, 20);
             this.txtPriVozvracheniiTCM2.TabIndex = 50;
-            this.txtPriVozvracheniiTCM2.Text = "0";
             // 
             // txtPriViezdiTCM2
             // 
