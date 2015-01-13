@@ -393,6 +393,7 @@
             this.txtNulevoiProbegViezd.Size = new System.Drawing.Size(114, 21);
             this.txtNulevoiProbegViezd.TabIndex = 31;
             this.txtNulevoiProbegViezd.Text = "0";
+            
             // 
             // txtNulevoiProbegVozvrahenie
             // 

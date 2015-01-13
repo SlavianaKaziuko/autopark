@@ -3773,14 +3773,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Время_работы_двигателя_выезд1">
+                    <Textbox Name="Нулевой_пробег_выезд">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Время_работы_двигателя_выезд.Value</Value>
+                              <Value>=Fields!Нулевой_пробег_выезд.Value</Value>
                               <Style>
                                 <FontFamily>Times New Roman</FontFamily>
                                 <FontSize>8pt</FontSize>
@@ -3790,7 +3790,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Время_работы_двигателя_выезд1</rd:DefaultName>
+                      <rd:DefaultName>Нулевой_пробег_выезд</rd:DefaultName>
                       <Style>
                         <Border>
                           <Style>Solid</Style>

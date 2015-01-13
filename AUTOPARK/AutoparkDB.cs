@@ -15,3 +15,10 @@
         }
     }
 }
+
+namespace AUTOPARK.AutoparkDBTableAdapters {
+    
+    
+    public partial class TablePutevieGruzovieTableAdapter {
+    }
+}
