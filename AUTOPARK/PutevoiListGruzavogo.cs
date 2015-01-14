@@ -143,7 +143,23 @@ namespace AUTOPARK
             txtVremiaOborudViezd.Text = _mainInfo[0].Время_работы_спецоборудования_выезд.ToString(CultureInfo.InvariantCulture);
             txtVremiaOborudVozvr.Text = _mainInfo[0].Время_работы_спецоборудования_возвр.ToString(CultureInfo.InvariantCulture);
             txtPunktOtpravlen.Text = _mainInfo[0].Пункт_отправления.ToString(CultureInfo.InvariantCulture);
-            txtPunktNaznach.Text = _mainInfo[0].Пункт_назначения.ToString(CultureInfo.InvariantCulture);   
+            txtPunktNaznach.Text = _mainInfo[0].Пункт_назначения.ToString(CultureInfo.InvariantCulture);
+            txtViezdSpidometr.Text = txtVozvrahenieSpidometr.Text;
+            txtVozvrahenieSpidometr.Text = "";
+            txtPriViezdiTCM.Text = txtPriVozvracheniiTCM.Text;
+            txtPriVozvracheniiTCM.Text = "";
+            txtPriViezdiTCM2.Text = txtPriVozvracheniiTCM2.Text;
+            txtPriVozvracheniiTCM2.Text = "";
+            txtNulevoiProbegViezd.Text = "";
+            txtNulevoiProbegVozvrahenie.Text = "";
+            txtVremiaDvigViezd.Text = "";
+            txtVremiaOborudViezd.Text = "";
+            txtVremiaOborudVozvr.Text = "";
+            txtVremiaDvigVozvr.Text = "";
+
+
+
+
         }
 
         private void cbZnak_SelectedValueChanged(object sender, EventArgs e)               //  Комбобок cbZnak  (Автомобиль)
@@ -186,8 +202,10 @@ namespace AUTOPARK
                             txtPunktNaznach.Text,
                             int.Parse(txtViezdSpidometr.Text),
                             int.Parse((txtVozvrahenieSpidometr.Text == "") ? txtViezdSpidometr.Text : txtVozvrahenieSpidometr.Text),
-                            dtpPoGraphViezd.Value, dtpFactViezd.Value, 
-                            dtpPoGraphVozvr.Value, dtpFactVozvr.Value,
+                            dtpPoGraphViezd.Value, 
+                            dtpFactViezd.Value, 
+                            dtpPoGraphVozvr.Value,
+                            dtpFactVozvr.Value,
                             int.Parse(txtNulevoiProbegViezd.Text), 
                             int.Parse((txtNulevoiProbegVozvrahenie.Text=="")?txtNulevoiProbegViezd.Text:txtNulevoiProbegVozvrahenie.Text),
                             Convert.ToDouble(txtVremiaDvigViezd.Text),
@@ -254,8 +272,10 @@ namespace AUTOPARK
                     _mainInfo[0].Пункт_отправления, _mainInfo[0].Пункт_назначения,
                     _mainInfo[0].Показания_спидометра_при_выезде,
                     _mainInfo[0].Показания_спидометра_при_возвращении,
-                    _mainInfo[0].Дата_Время_выезда_граф, _mainInfo[0].Дата_Время_выезда_факт,
-                    _mainInfo[0].Дата_Время_возвращения_граф, _mainInfo[0].Дата_Время_возвращения_факт,
+                    _mainInfo[0].Дата_Время_выезда_граф,
+                    _mainInfo[0].Дата_Время_выезда_факт,
+                    _mainInfo[0].Дата_Время_возвращения_граф,
+                    _mainInfo[0].Дата_Время_возвращения_факт,
                     _mainInfo[0].Нулевой_пробег_выезд,
                     _mainInfo[0].Нулевой_пробег_возвр,
                     _mainInfo[0].Время_работы_двигателя_выезд,
@@ -277,7 +297,6 @@ namespace AUTOPARK
                 tableZadanie.Update((AutoparkDB.Задание_водителюDataTable)_bindingZadanie.DataSource);
                 tableZapravka.Update((AutoparkDB.Заправка_ТСМDataTable) _bindingZapravka.DataSource);
             }
-
             btnCancel.Visible = false;
         }
 
@@ -331,6 +350,11 @@ namespace AUTOPARK
         {
             if (dgvZapravkaTCM.CurrentRow != null)
                 dgvZapravkaTCM.CurrentRow.Cells["ID_Путевого листа"].Value = PutevoiId;
+        }
+
+        private void txtPriVozvracheniiTCM2_TextChanged(object sender, EventArgs e)
+        {
+
         }
 
        
