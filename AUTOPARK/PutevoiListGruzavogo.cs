@@ -39,9 +39,17 @@ namespace AUTOPARK
                 _number = int.Parse(newLegkNumber.ToString());
             _idvod = int.Parse(cbImia.SelectedValue.ToString());
             _date = DateTime.Today;
-            txtViezdSpidometr.Text = _queries.GetMileageGruz(_idauto, _date).ToString();
+            txtViezdSpidometr.Text = _queries.GetMileageGruz(_idauto, _date).ToString();    //перенос данные Показание спидометра и  остаток ТСМ
+            txtVozvrahenieSpidometr.Text = txtViezdSpidometr.Text;
             txtPriViezdiTCM.Text = _queries.GetToplivoGruz(_idauto, 1, _date).ToString();
             txtPriViezdiTCM2.Text = _queries.GetToplivoGruz(_idauto, 2, _date).ToString();
+            txtPriVozvracheniiTCM.Text = txtPriViezdiTCM.Text;
+            txtPriVozvracheniiTCM.Text = "";
+            txtPriVozvracheniiTCM2.Text = txtPriViezdiTCM2.Text;
+            txtPriVozvracheniiTCM2.Text = "";
+            txtVozvrahenieSpidometr.Text = "";
+           
+            
             _mainInfo = new List<AutoparkDB.Путевой_лист_Грузового_автоRow>();
         }
 
@@ -144,22 +152,9 @@ namespace AUTOPARK
             txtVremiaOborudVozvr.Text = _mainInfo[0].Время_работы_спецоборудования_возвр.ToString(CultureInfo.InvariantCulture);
             txtPunktOtpravlen.Text = _mainInfo[0].Пункт_отправления.ToString(CultureInfo.InvariantCulture);
             txtPunktNaznach.Text = _mainInfo[0].Пункт_назначения.ToString(CultureInfo.InvariantCulture);
-            txtViezdSpidometr.Text = txtVozvrahenieSpidometr.Text;
-            txtVozvrahenieSpidometr.Text = "";
-            txtPriViezdiTCM.Text = txtPriVozvracheniiTCM.Text;
-            txtPriVozvracheniiTCM.Text = "";
-            txtPriViezdiTCM2.Text = txtPriVozvracheniiTCM2.Text;
-            txtPriVozvracheniiTCM2.Text = "";
-            txtNulevoiProbegViezd.Text = "";
-            txtNulevoiProbegVozvrahenie.Text = "";
-            txtVremiaDvigViezd.Text = "";
-            txtVremiaOborudViezd.Text = "";
-            txtVremiaOborudVozvr.Text = "";
-            txtVremiaDvigVozvr.Text = "";
-
-
-
-
+            
+           
+           
         }
 
         private void cbZnak_SelectedValueChanged(object sender, EventArgs e)               //  Комбобок cbZnak  (Автомобиль)
@@ -174,6 +169,12 @@ namespace AUTOPARK
             txtPriViezdiTCM.Text = _queries.GetToplivoGruz(id, 1, dtpHapka.Value).ToString();
             txtPriViezdiTCM2.Text = _queries.GetToplivoGruz(id, 2, dtpHapka.Value).ToString();
             txtViezdSpidometr.Text = _queries.GetMileageGruz(id, dtpHapka.Value).ToString();
+            txtPriVozvracheniiTCM.Text = txtPriViezdiTCM.Text;
+            txtPriVozvracheniiTCM2.Text = txtPriViezdiTCM2.Text;
+            txtVozvrahenieSpidometr.Text = txtViezdSpidometr.Text;
+            txtPriVozvracheniiTCM.Text = "";
+            txtPriVozvracheniiTCM2.Text = "";
+            txtVozvrahenieSpidometr.Text = "";
         }
 
         private void cbImia_SelectedValueChanger(object sender, EventArgs e)           //  Комбобок cbImia  (Автомобиль)
@@ -216,7 +217,7 @@ namespace AUTOPARK
                             Convert.ToDouble((txtPriVozvracheniiTCM.Text == "") ? txtPriViezdiTCM.Text : txtPriVozvracheniiTCM.Text),
                             Convert.ToDouble(txtPriViezdiTCM2.Text),
                             Convert.ToDouble((txtPriVozvracheniiTCM2.Text == "") ? txtPriViezdiTCM2.Text : txtPriVozvracheniiTCM2.Text),
-                            _idvod,
+                             _idvod,
                             _idauto, _idotdel).ToString());
                 _bindingZadanie.DataSource = tableZadanie.GetDataByPutevoiId(PutevoiId);
                 dgvZadanieVoditelu.DataSource = _bindingZadanie;
@@ -248,7 +249,10 @@ namespace AUTOPARK
                     txtPunktNaznach.Text, 
                     int.Parse(txtViezdSpidometr.Text),
                     int.Parse((txtVozvrahenieSpidometr.Text == "") ? txtViezdSpidometr.Text : txtVozvrahenieSpidometr.Text),
-                    dtpPoGraphViezd.Value, dtpFactViezd.Value, dtpPoGraphVozvr.Value, dtpFactVozvr.Value,
+                    dtpPoGraphViezd.Value, 
+                    dtpFactViezd.Value, 
+                    dtpPoGraphVozvr.Value, 
+                    dtpFactVozvr.Value,
                     int.Parse(txtNulevoiProbegViezd.Text),
                     int.Parse((txtNulevoiProbegVozvrahenie.Text == "")
                         ? txtNulevoiProbegViezd.Text
@@ -352,19 +356,7 @@ namespace AUTOPARK
                 dgvZapravkaTCM.CurrentRow.Cells["ID_Путевого листа"].Value = PutevoiId;
         }
 
-        private void txtPriVozvracheniiTCM2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
        
-       
-       
-
-       
-
-       
-
        
     }
 }
