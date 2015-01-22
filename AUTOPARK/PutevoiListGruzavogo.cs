@@ -44,10 +44,10 @@ namespace AUTOPARK
             txtPriViezdiTCM.Text = _queries.GetToplivoGruz(_idauto, 1, _date).ToString();
             txtPriViezdiTCM2.Text = _queries.GetToplivoGruz(_idauto, 2, _date).ToString();
             txtPriVozvracheniiTCM.Text = txtPriViezdiTCM.Text;
-            txtPriVozvracheniiTCM.Text = "";
+            txtPriVozvracheniiTCM.Text = "0";
             txtPriVozvracheniiTCM2.Text = txtPriViezdiTCM2.Text;
-            txtPriVozvracheniiTCM2.Text = "";
-            txtVozvrahenieSpidometr.Text = "";
+            txtPriVozvracheniiTCM2.Text = "0";
+            txtVozvrahenieSpidometr.Text = "0";
            
             
             _mainInfo = new List<AutoparkDB.Путевой_лист_Грузового_автоRow>();
@@ -172,9 +172,9 @@ namespace AUTOPARK
             txtPriVozvracheniiTCM.Text = txtPriViezdiTCM.Text;
             txtPriVozvracheniiTCM2.Text = txtPriViezdiTCM2.Text;
             txtVozvrahenieSpidometr.Text = txtViezdSpidometr.Text;
-            txtPriVozvracheniiTCM.Text = "";
-            txtPriVozvracheniiTCM2.Text = "";
-            txtVozvrahenieSpidometr.Text = "";
+            txtPriVozvracheniiTCM.Text = "0";
+            txtPriVozvracheniiTCM2.Text = "0";
+            txtVozvrahenieSpidometr.Text = "0";
         }
 
         private void cbImia_SelectedValueChanger(object sender, EventArgs e)           //  Комбобок cbImia  (Автомобиль)
@@ -355,6 +355,8 @@ namespace AUTOPARK
             if (dgvZapravkaTCM.CurrentRow != null)
                 dgvZapravkaTCM.CurrentRow.Cells["ID_Путевого листа"].Value = PutevoiId;
         }
+
+       
 
        
        
