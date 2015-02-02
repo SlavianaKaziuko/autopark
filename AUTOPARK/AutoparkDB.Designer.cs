@@ -6168,6 +6168,8 @@ namespace AUTOPARK {
             
             private global::System.Data.DataColumn columnГос_номер;
             
+            private global::System.Data.DataColumn columnДополнительный_вид_топлива;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public HeaderJournalDataTable() {
@@ -6275,6 +6277,14 @@ namespace AUTOPARK {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Дополнительный_вид_топливаColumn {
+                get {
+                    return this.columnДополнительный_вид_топлива;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -6310,7 +6320,7 @@ namespace AUTOPARK {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public HeaderJournalRow AddHeaderJournalRow(int классность, string ФИО, string Марка_и_модель, string Гаражный_номер, System.DateTime дата_окончания_страховки, string Вид_топлива, string номер_водительского_удостоверения, System.DateTime срок_действия_мед_справки, string Гос_номер) {
+            public HeaderJournalRow AddHeaderJournalRow(int классность, string ФИО, string Марка_и_модель, string Гаражный_номер, System.DateTime дата_окончания_страховки, string Вид_топлива, string номер_водительского_удостоверения, System.DateTime срок_действия_мед_справки, string Гос_номер, string Дополнительный_вид_топлива) {
                 HeaderJournalRow rowHeaderJournalRow = ((HeaderJournalRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         классность,
@@ -6321,7 +6331,8 @@ namespace AUTOPARK {
                         Вид_топлива,
                         номер_водительского_удостоверения,
                         срок_действия_мед_справки,
-                        Гос_номер};
+                        Гос_номер,
+                        Дополнительный_вид_топлива};
                 rowHeaderJournalRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowHeaderJournalRow);
                 return rowHeaderJournalRow;
@@ -6353,6 +6364,7 @@ namespace AUTOPARK {
                 this.columnномер_водительского_удостоверения = base.Columns["номер_водительского_удостоверения"];
                 this.columnсрок_действия_мед_справки = base.Columns["срок_действия_мед_справки"];
                 this.columnГос_номер = base.Columns["Гос_номер"];
+                this.columnДополнительный_вид_топлива = base.Columns["Дополнительный_вид_топлива"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6396,6 +6408,12 @@ namespace AUTOPARK {
                 base.Columns.Add(this.columnсрок_действия_мед_справки);
                 this.columnГос_номер = new global::System.Data.DataColumn("Гос_номер", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnГос_номер);
+                this.columnДополнительный_вид_топлива = new global::System.Data.DataColumn("Дополнительный_вид_топлива", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnДополнительный_вид_топлива.ExtendedProperties.Add("Generator_ColumnPropNameInRow", "Дополнительный_вид_топлива");
+                this.columnДополнительный_вид_топлива.ExtendedProperties.Add("Generator_ColumnPropNameInTable", "Дополнительный_вид_топливаColumn");
+                this.columnДополнительный_вид_топлива.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "columnДополнительный_вид_топлива");
+                this.columnДополнительный_вид_топлива.ExtendedProperties.Add("Generator_UserColumnName", "Дополнительный_вид_топлива");
+                base.Columns.Add(this.columnДополнительный_вид_топлива);
                 this.columnФИО.ReadOnly = true;
                 this.columnФИО.MaxLength = 152;
                 this.columnМарка_и_модель.AllowDBNull = false;
@@ -6405,6 +6423,7 @@ namespace AUTOPARK {
                 this.columnномер_водительского_удостоверения.MaxLength = 50;
                 this.columnГос_номер.AllowDBNull = false;
                 this.columnГос_номер.MaxLength = 50;
+                this.columnДополнительный_вид_топлива.MaxLength = 20;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -11492,6 +11511,23 @@ namespace AUTOPARK {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Дополнительный_вид_топлива {
+                get {
+                    try {
+                        return ((string)(this[this.tableHeaderJournal.Дополнительный_вид_топливаColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Дополнительный_вид_топлива\' в таблице \'HeaderJournal\' равно" +
+                                " DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableHeaderJournal.Дополнительный_вид_топливаColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsклассностьNull() {
                 return this.IsNull(this.tableHeaderJournal.классностьColumn);
             }
@@ -11572,6 +11608,18 @@ namespace AUTOPARK {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void Setсрок_действия_мед_справкиNull() {
                 this[this.tableHeaderJournal.срок_действия_мед_справкиColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsДополнительный_вид_топливаNull() {
+                return this.IsNull(this.tableHeaderJournal.Дополнительный_вид_топливаColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetДополнительный_вид_топливаNull() {
+                this[this.tableHeaderJournal.Дополнительный_вид_топливаColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -20111,6 +20159,7 @@ AND putevoi.ID_Автомобиль = @Auto";
             tableMapping.ColumnMappings.Add("номер_водительского_удостоверения", "номер_водительского_удостоверения");
             tableMapping.ColumnMappings.Add("срок_действия_мед_справки", "срок_действия_мед_справки");
             tableMapping.ColumnMappings.Add("Гос_номер", "Гос_номер");
+            tableMapping.ColumnMappings.Add("Дополнительный_вид_топлива", "Дополнительный_вид_топлива");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -20132,6 +20181,7 @@ AND putevoi.ID_Автомобиль = @Auto";
 [Подвижной состав].[Гаражный номер] AS 'Гаражный_номер', 
 [Подвижной состав].[дата окончания страховки] AS 'дата_окончания_страховки', 
 [Подвижной состав].[Вид топлива] AS 'Вид_топлива',
+[Подвижной состав].[Дополнительный вид топлива] AS 'Дополнительный_вид_топлива',
  [Личный состав].Фамилия +' '+ [Личный состав].Имя +' '+ [Личный состав].Отчество AS 'ФИО', 
 [Личный состав].[номер водительского удостоверения] AS 'номер_водительского_удостоверения', 
 [Личный состав].классность, 
@@ -20149,6 +20199,7 @@ FROM            (SELECT        TOP (1) ID, ID_Водитель, ID_Авто, Dat
 [Подвижной состав].[Гаражный номер] AS 'Гаражный_номер', 
 [Подвижной состав].[дата окончания страховки] AS 'дата_окончания_страховки', 
 [Подвижной состав].[Вид топлива] AS 'Вид_топлива',
+[Подвижной состав].[Дополнительный вид топлива] AS 'Дополнительный_вид_топлива',
  [Личный состав].Фамилия +' '+ [Личный состав].Имя +' '+ [Личный состав].Отчество AS 'ФИО', 
 [Личный состав].[номер водительского удостоверения] AS 'номер_водительского_удостоверения', 
 [Личный состав].классность, 

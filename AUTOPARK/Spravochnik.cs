@@ -146,8 +146,8 @@ namespace AUTOPARK
                         DataSource = new List<string>
                         {
                             "АИ-92",
-                            "Д/Т",
-                            "СУГ"
+                            "Д/Т"
+                           // "СУГ"
                         },
                         AutoComplete = true,
                         Name = "Тип топлива",
@@ -158,9 +158,12 @@ namespace AUTOPARK
                     {
                         DataSource = new List<string>
                         {
-                            "АИ-92",
-                            "Д/Т",
-                            "СУГ"
+                          // "АИ-92",
+                           // "Д/Т",
+                            "СУГ",
+                            " "
+                           
+                            
                         },
                         AutoComplete = true,
                         Name = "Дополнительный тип топлива",
