@@ -10,11 +10,12 @@ using System.Windows.Forms;
 namespace AUTOPARK
 {
     public partial class Menu : Form
+    
     {
         public Menu()
         {
             InitializeComponent();
-            linkJurnal.Visible = false;
+           // linkJurnal.Visible = false;
         }
 
         private void linkSpravochniki_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -33,13 +34,13 @@ namespace AUTOPARK
             this.Show(); //// отображение главной формы после закрытия PutevieListi
         }
 
-        private void Spravochniki_Enter(object sender, EventArgs e)
-        {
-        }
+        
 
         private void Menu_FormClosed(object sender, FormClosedEventArgs e)
         {
             Environment.Exit(0);
         }
+
+       
     }
 }

@@ -499,7 +499,6 @@
             this.txtPriViezdiTCM.Name = "txtPriViezdiTCM";
             this.txtPriViezdiTCM.Size = new System.Drawing.Size(83, 21);
             this.txtPriViezdiTCM.TabIndex = 46;
-           
             // 
             // txtPriVozvracheniiTCM
             // 
@@ -690,7 +689,6 @@
             this.txtPriVozvracheniiTCM2.Name = "txtPriVozvracheniiTCM2";
             this.txtPriVozvracheniiTCM2.Size = new System.Drawing.Size(94, 20);
             this.txtPriVozvracheniiTCM2.TabIndex = 50;
-          
             // 
             // txtPriViezdiTCM2
             // 
@@ -698,7 +696,6 @@
             this.txtPriViezdiTCM2.Name = "txtPriViezdiTCM2";
             this.txtPriViezdiTCM2.Size = new System.Drawing.Size(83, 21);
             this.txtPriViezdiTCM2.TabIndex = 49;
-            
             // 
             // btnSave
             // 
@@ -736,7 +733,7 @@
             this.навигацияToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1234, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1211, 24);
             this.menuStrip1.TabIndex = 57;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -827,7 +824,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1234, 605);
+            this.ClientSize = new System.Drawing.Size(1211, 605);
             this.Controls.Add(this.txtPunktNaznach);
             this.Controls.Add(this.txtPunktOtpravlen);
             this.Controls.Add(this.lblNaznach);

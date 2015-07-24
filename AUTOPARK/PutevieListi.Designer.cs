@@ -46,6 +46,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.btnSelect = new System.Windows.Forms.Button();
+            this.btnPrilogenieL = new System.Windows.Forms.Button();
+            this.btnPrilogenieC = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPutevii)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -214,11 +216,33 @@
             this.btnSelect.UseVisualStyleBackColor = true;
             this.btnSelect.Click += new System.EventHandler(this.btnSelect_Click);
             // 
+            // btnPrilogenieL
+            // 
+            this.btnPrilogenieL.Location = new System.Drawing.Point(424, 463);
+            this.btnPrilogenieL.Name = "btnPrilogenieL";
+            this.btnPrilogenieL.Size = new System.Drawing.Size(107, 27);
+            this.btnPrilogenieL.TabIndex = 15;
+            this.btnPrilogenieL.Text = "Приложение Л";
+            this.btnPrilogenieL.UseVisualStyleBackColor = true;
+            this.btnPrilogenieL.Click += new System.EventHandler(this.btnPrilogenieL_Click);
+            // 
+            // btnPrilogenieC
+            // 
+            this.btnPrilogenieC.Location = new System.Drawing.Point(537, 463);
+            this.btnPrilogenieC.Name = "btnPrilogenieC";
+            this.btnPrilogenieC.Size = new System.Drawing.Size(100, 26);
+            this.btnPrilogenieC.TabIndex = 16;
+            this.btnPrilogenieC.Text = "Приложени С";
+            this.btnPrilogenieC.UseVisualStyleBackColor = true;
+            this.btnPrilogenieC.Click += new System.EventHandler(this.btnPrilogenieC_Click);
+            // 
             // PutevieListi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(986, 502);
+            this.ClientSize = new System.Drawing.Size(986, 500);
+            this.Controls.Add(this.btnPrilogenieC);
+            this.Controls.Add(this.btnPrilogenieL);
             this.Controls.Add(this.btnSelect);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -267,5 +291,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnSelect;
+        private System.Windows.Forms.Button btnPrilogenieL;
+        private System.Windows.Forms.Button btnPrilogenieC;
     }
 }

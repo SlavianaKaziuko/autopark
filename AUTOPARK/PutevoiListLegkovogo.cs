@@ -307,6 +307,10 @@ namespace AUTOPARK
         private void dgvPutevieLegkovie_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
         {
             
-        } 
+        }
+
+        
+
+        
     }
 }

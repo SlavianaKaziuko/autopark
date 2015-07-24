@@ -18,9 +18,9 @@ namespace AUTOPARK
             InitializeComponent();
             _name = name;
             Text = _name;
-            var tableAuto = new AutoparkDBTableAdapters.PodvijnoiTableAdapter();
+            var tableAuto = new AutoparkDBTableAdapters.PodvijnoiTableAdapter();  
             switch (_name)
-            {
+            { 
                 case "Путевые листы легковых автомобилей":
                 {
                     var table = new AutoparkDBTableAdapters.PutevieLegkovieTableAdapter();   //  Создание Путевых листов легкового авто
@@ -154,7 +154,7 @@ namespace AUTOPARK
             }
 
             var rowid = (int)dgvPutevii.CurrentRow.Cells[0].Value;
-            var result = MessageBox.Show(string.Format("Вы точно хотите удалить путевой лист {0} легкового авто?", rowid), @"Предупреждение", MessageBoxButtons.YesNo);
+            var result = MessageBox.Show(string.Format("Вы точно хотите удалить путевой лист {0}  авто?", rowid), @"Предупреждение", MessageBoxButtons.YesNo);
             if (result != DialogResult.Yes)
             {
                 return;
@@ -200,6 +200,9 @@ namespace AUTOPARK
             btnEdit.Location = new Point(btnDelete.Location.X - btnEdit.Width - 5, this.Height - 73);
             btnAdd.Location = new Point(btnEdit.Location.X - btnAdd.Width - 5, this.Height - 73);
             btnOtchet.Location = new Point(btnAdd.Location.X - btnOtchet.Width - 5, this.Height - 73);
+            btnPrilogenieC.Location = new Point(btnAdd.Location.X - btnOtchet.Width - 222, this.Height - 73);
+            btnPrilogenieL.Location = new Point(btnAdd.Location.X - btnOtchet.Width - 116, this.Height - 73);
+            
         }
 
         private void tsmiToMenu_Click(object sender, EventArgs e)
@@ -223,9 +226,11 @@ namespace AUTOPARK
             Environment.Exit(0);  //Полный выход из программы если нажимаем на дверку в Путевых листах легкового авто
         }
 
+       
+        
         private void cbAuto_SelectedValueChanged(object sender, EventArgs e)
         {
-            switch (_name)
+            switch (_name) 
             {
                 case "Путевые листы легковых автомобилей":
                     {
@@ -241,26 +246,67 @@ namespace AUTOPARK
                     }
             }
 
-            dgvPutevii.DataSource = _binding;
-        }
+           dgvPutevii.DataSource = _binding;
+       }
 
-        private void btnOtchet_Click(object sender, EventArgs e)
+          private void btnOtchet_Click(object sender, EventArgs e)
+           {
+               switch (_name)
+               {
+                   case "Путевые листы легковых автомобилей":
+                       {
+                           var f1 = new OtchetJournal(dtpStart.Value, dtpEnd.Value, int.Parse(cbAuto.SelectedValue.ToString()), 'Л');
+                           f1.Show();
+                           break;
+                       }
+                   case "Путевые листы грузовых автомобилей":
+                       {
+                           var f1 = new OtchetJournal(dtpStart.Value, dtpEnd.Value, int.Parse(cbAuto.SelectedValue.ToString()), 'Г');
+                           f1.Show();
+                           break;
+                       }
+               }
+           }
+
+        private void btnPrilogenieL_Click(object sender, EventArgs e)
+          {
+              switch (_name)
+              {
+                  case "Путевые листы легковых автомобилей":
+                      {
+                          var f1 = new PrilogenieL(dtpStart.Value, dtpEnd.Value, int.Parse(cbAuto.SelectedValue.ToString()), 'Л');
+                          f1.Show();
+                          break;
+                      }
+                  case "Путевые листы грузовых автомобилей":
+                      {
+                          var f1 = new PrilogenieL(dtpStart.Value, dtpEnd.Value, int.Parse(cbAuto.SelectedValue.ToString()), 'Г');
+                          f1.Show();
+                          break;
+                      }
+              }
+
+          }
+
+
+       private void btnPrilogenieC_Click(object sender, EventArgs e)
         {
             switch (_name)
             {
                 case "Путевые листы легковых автомобилей":
                     {
-                        var f1 = new OtchetJournal(dtpStart.Value, dtpEnd.Value, int.Parse(cbAuto.SelectedValue.ToString()), 'Л');
+                        var f1 = new PrilogenieC(dtpStart.Value, dtpEnd.Value, int.Parse(cbAuto.SelectedValue.ToString()), 'Л');
                         f1.Show();
                         break;
                     }
                 case "Путевые листы грузовых автомобилей":
                     {
-                        var f1 = new OtchetJournal(dtpStart.Value, dtpEnd.Value, int.Parse(cbAuto.SelectedValue.ToString()), 'Г');
+                        var f1 = new PrilogenieC(dtpStart.Value, dtpEnd.Value, int.Parse(cbAuto.SelectedValue.ToString()), 'Г');
                         f1.Show();
                         break;
-                    }
+                   }
             }
+
         }
 
         private void btnSelect_Click(object sender, EventArgs e)
@@ -280,5 +326,16 @@ namespace AUTOPARK
                     }
             }
         }
+
+       
+
+        
+
+       
+
+       
+
+          
+       
     }
 }

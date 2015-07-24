@@ -37,7 +37,6 @@
             this.linkNormy = new System.Windows.Forms.LinkLabel();
             this.linkPodvijnoi = new System.Windows.Forms.LinkLabel();
             this.groupListi = new System.Windows.Forms.GroupBox();
-            this.linkJurnal = new System.Windows.Forms.LinkLabel();
             this.linkGruzovoi = new System.Windows.Forms.LinkLabel();
             this.linkLegkovoi = new System.Windows.Forms.LinkLabel();
             this.llblSpravka = new System.Windows.Forms.LinkLabel();
@@ -71,7 +70,6 @@
             this.Spravochniki.TabIndex = 1;
             this.Spravochniki.TabStop = false;
             this.Spravochniki.Text = "Справочники";
-            this.Spravochniki.Enter += new System.EventHandler(this.Spravochniki_Enter);
             // 
             // lblVoditeliAuto
             // 
@@ -127,7 +125,6 @@
             // 
             // groupListi
             // 
-            this.groupListi.Controls.Add(this.linkJurnal);
             this.groupListi.Controls.Add(this.linkGruzovoi);
             this.groupListi.Controls.Add(this.linkLegkovoi);
             this.groupListi.Location = new System.Drawing.Point(556, 176);
@@ -136,18 +133,6 @@
             this.groupListi.TabIndex = 2;
             this.groupListi.TabStop = false;
             this.groupListi.Text = "Путевые листы";
-            // 
-            // linkJurnal
-            // 
-            this.linkJurnal.AutoSize = true;
-            this.linkJurnal.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.linkJurnal.LinkColor = System.Drawing.Color.Navy;
-            this.linkJurnal.Location = new System.Drawing.Point(7, 90);
-            this.linkJurnal.Name = "linkJurnal";
-            this.linkJurnal.Size = new System.Drawing.Size(298, 20);
-            this.linkJurnal.TabIndex = 2;
-            this.linkJurnal.TabStop = true;
-            this.linkJurnal.Text = "Журнал учета выдачи путевых листов";
             // 
             // linkGruzovoi
             // 
@@ -202,6 +187,7 @@
             this.Name = "Menu";
             this.Text = "ОАО \"Зенит\" Автопарк";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Menu_FormClosed);
+            
             this.Spravochniki.ResumeLayout(false);
             this.Spravochniki.PerformLayout();
             this.groupListi.ResumeLayout(false);
@@ -219,7 +205,6 @@
         private System.Windows.Forms.LinkLabel linkPodvijnoi;
         private System.Windows.Forms.GroupBox groupListi;
         private System.Windows.Forms.LinkLabel linkLegkovoi;
-        private System.Windows.Forms.LinkLabel linkJurnal;
         private System.Windows.Forms.LinkLabel linkGruzovoi;
         private System.Windows.Forms.LinkLabel lblVoditeliAuto;
         private System.Windows.Forms.LinkLabel lblOtdel;

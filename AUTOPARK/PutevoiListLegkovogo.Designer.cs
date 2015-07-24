@@ -81,7 +81,6 @@
             this.txtNumber.Size = new System.Drawing.Size(130, 24);
             this.txtNumber.TabIndex = 1;
             this.txtNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            
             // 
             // lblperiod
             // 
@@ -230,6 +229,7 @@
             this.txtOtdel.Size = new System.Drawing.Size(53, 18);
             this.txtOtdel.TabIndex = 21;
             this.txtOtdel.Text = "Отдел";
+           
             // 
             // cbOtdel
             // 
@@ -315,7 +315,7 @@
             this.tsmiRefresh});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1008, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1039, 24);
             this.menuStrip1.TabIndex = 24;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -353,7 +353,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1008, 522);
+            this.ClientSize = new System.Drawing.Size(1039, 537);
             this.Controls.Add(this.btnReport);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);

@@ -16135,10 +16135,7 @@ FROM            [Задание водителю]";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = @"SELECT        id, [ID_Путевого листа], Заказчик, [Дата и время прибытия], [Дата и время убытия], [Пункт отправления], [Пункт назначения], [Расстояние км], [Наименование груза], [Вес груза т], [Количество поездок с грузом час]
-                         
-FROM            [Задание водителю]
-WHERE  [ID_Путевого листа]=@IdPutevoi";
+            this._commandCollection[1].CommandText = @"SELECT [ID_Путевого листа], id, [Вес груза т], [Дата и время прибытия], [Дата и время убытия], Заказчик, [Количество поездок с грузом час], [Наименование груза], [Пункт назначения], [Пункт отправления], [Расстояние км] FROM [Задание водителю] WHERE ([ID_Путевого листа] = @IdPutevoi)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IdPutevoi", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Путевого листа", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
